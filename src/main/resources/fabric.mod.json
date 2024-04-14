@@ -26,6 +26,9 @@
 		],
 		"afterGameStart": [
 			"cursedbread.morefeatures.FeaturesMain"
+		],
+		"recipesReady": [
+			"cursedbread.morefeatures.FeaturesCraft"
 		]
 	},
   "mixins": [
