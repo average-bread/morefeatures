@@ -53,7 +53,8 @@ public class VanilaBlockColoredGlowstone
 				return new ItemStack[]{new ItemStack(this, 1, meta)};
 			}
 		}
-		return new ItemStack[]{new ItemStack(Item.dustGlowstone, world.rand.nextInt(1, 4))};
+		int dust = world.rand.nextInt(4);
+		return new ItemStack[]{new ItemStack(Item.dustGlowstone, dust+1)};
 	}
 
 	@Override
