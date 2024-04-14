@@ -6,6 +6,7 @@ import net.minecraft.core.block.BlockLadder;
 import net.minecraft.core.block.entity.TileEntity;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.enums.EnumDropCause;
+import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.world.World;
@@ -43,9 +44,16 @@ public class VanilaBlockColoredGlowstone
 		TextureHelper.getOrCreateBlockTextureIndex(MOD_ID, "glowstone/red_glowstone.png"),
 		TextureHelper.getOrCreateBlockTextureIndex(MOD_ID, "glowstone/black_glowstone.png"),
 	};
+
 	@Override
 	public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-		return new ItemStack[]{new ItemStack(this, 1, meta)};
+		switch (dropCause) {
+			case SILK_TOUCH:
+			case PICK_BLOCK: {
+				return new ItemStack[]{new ItemStack(this, 1, meta)};
+			}
+		}
+		return new ItemStack[]{new ItemStack(Item.dustGlowstone, world.rand.nextInt(1, 4))};
 	}
 
 	@Override

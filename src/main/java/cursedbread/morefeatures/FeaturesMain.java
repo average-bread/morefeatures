@@ -10,6 +10,7 @@ import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemArmor;
 import net.minecraft.core.item.block.ItemBlockPainted;
 import net.minecraft.core.item.material.ArmorMaterial;
+import net.minecraft.core.sound.BlockSound;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import turniplabs.halplibe.helper.ArmorHelper;
@@ -29,7 +30,13 @@ public class FeaturesMain implements ModInitializer, GameStartEntrypoint {
 	public static BlockBuilder glowstoneBlock = new BlockBuilder(MOD_ID)
 		.setBlockModel(new BlockModelRenderBlocks(0))
 		.setLuminance(15)
+		.setBlockSound(new BlockSound("step.stone", "random.glass", 1.0f, 1.0f))
 		.setHardness(0.5f);
+
+	public static BlockBuilder fireBlock = new BlockBuilder(MOD_ID)
+		.setBlockModel(new BlockModelRenderBlocks(3))
+		.setLuminance(15)
+		.setHardness(0.1f);
 
 	public static int blockId;
 	public static int itemId;
