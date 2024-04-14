@@ -29,7 +29,7 @@ public class VanilaBlockColoredGlowstone
 		TextureHelper.getOrCreateBlockTextureIndex(MOD_ID, "glowstone/white_glowstone.png"),
 		TextureHelper.getOrCreateBlockTextureIndex(MOD_ID, "glowstone/orange_glowstone.png"),
 		TextureHelper.getOrCreateBlockTextureIndex(MOD_ID, "glowstone/magenta_glowstone.png"),
-		TextureHelper.getOrCreateBlockTextureIndex(MOD_ID, "glowstone/lightBlue_glowstone.png"),
+		TextureHelper.getOrCreateBlockTextureIndex(MOD_ID, "glowstone/lightblue_glowstone.png"),
 		TextureHelper.getOrCreateBlockTextureIndex(MOD_ID, "glowstone/yellow_glowstone.png"),
 		TextureHelper.getOrCreateBlockTextureIndex(MOD_ID, "glowstone/lime_glowstone.png"),
 		TextureHelper.getOrCreateBlockTextureIndex(MOD_ID, "glowstone/pink_glowstone.png"),
