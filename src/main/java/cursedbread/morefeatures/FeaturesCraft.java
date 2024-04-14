@@ -32,5 +32,22 @@ public class FeaturesCraft implements RecipeEntrypoint {
 			.setShape("HHH", "H H")
 			.addInput('H', Block.deadbush)
 			.create("cherryCrown", new ItemStack(FeaturesMain.deadbushCrown, 1));
+
+		RecipeBuilder.Shaped(MOD_ID)
+			.setShape("HHH", "H H")
+			.addInput('H', Block.bedrock)
+			.create("cherryCrown", new ItemStack(FeaturesMain.bedrockHelmet, 1));
+		RecipeBuilder.Shaped(MOD_ID)
+			.setShape("H H", "HHH", "HHH")
+			.addInput('H', Block.bedrock)
+			.create("cherryCrown", new ItemStack(FeaturesMain.bedrockChestplate, 1));
+		RecipeBuilder.Shaped(MOD_ID)
+			.setShape("HHH", "H H", "H H")
+			.addInput('H', Block.bedrock)
+			.create("cherryCrown", new ItemStack(FeaturesMain.bedrockLeggings, 1));
+		RecipeBuilder.Shaped(MOD_ID)
+			.setShape("H H", "H H")
+			.addInput('H', Block.bedrock)
+			.create("cherryCrown", new ItemStack(FeaturesMain.bedrockBoots, 1));
 	}
 }
