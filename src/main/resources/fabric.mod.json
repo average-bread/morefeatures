@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "id": "morefeatures",
+  "version": "${version}",
+
+  "name": "More Features",
+  "description": "Adds more stuff to the game, mostly random",
+  "authors": [
+    "Bread (with a lot of help)"
+  ],
+  "contact": {
+    "homepage": "",
+    "sources": ""
+  },
+
+	"icon": "icon.png",
+  "license": "CC0-1.0",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+			"cursedbread.morefeatures.FeaturesMain"
+    ],
+		"beforeGameStart": [
+			"cursedbread.morefeatures.FeaturesMain"
+		],
+		"afterGameStart": [
+			"cursedbread.morefeatures.FeaturesMain"
+		]
+	},
+  "mixins": [
+      "morefeatures.mixins.json"
+  ],
+
+  "depends": {
+		"minecraft": "7.1",
+    "fabricloader": ">=0.15.5"
+  },
+  "suggests": {
+  }
+}
