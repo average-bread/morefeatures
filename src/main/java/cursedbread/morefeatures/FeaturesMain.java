@@ -1,9 +1,10 @@
 package cursedbread.morefeatures;
 
-import cursedbread.morefeatures.blocks.VanilaBlockColoredLadder;
+import cursedbread.morefeatures.blocks.VanilaBlockColoredGlowstone;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.client.render.block.model.BlockModelRenderBlocks;
 import net.minecraft.core.block.Block;
+import net.minecraft.core.block.material.Material;
 import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemArmor;
 import net.minecraft.core.item.block.ItemBlockPainted;
@@ -12,6 +13,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import turniplabs.halplibe.helper.ArmorHelper;
 import turniplabs.halplibe.helper.BlockBuilder;
+import turniplabs.halplibe.helper.CreativeHelper;
 import turniplabs.halplibe.helper.ItemHelper;
 import turniplabs.halplibe.util.ConfigHandler;
 import turniplabs.halplibe.util.GameStartEntrypoint;
@@ -23,8 +25,9 @@ public class FeaturesMain implements ModInitializer, GameStartEntrypoint {
     public static final String MOD_ID = "morefeatures";
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
-	public static BlockBuilder ladderBlock = new BlockBuilder(MOD_ID)
-		.setBlockModel(new BlockModelRenderBlocks(8))
+	public static BlockBuilder glowstoneBlock = new BlockBuilder(MOD_ID)
+		.setBlockModel(new BlockModelRenderBlocks(0))
+		.setLuminance(15)
 		.setHardness(0.5f);
 
 	public static int blockId;
@@ -41,7 +44,7 @@ public class FeaturesMain implements ModInitializer, GameStartEntrypoint {
 
 		config.updateConfig();
 	}
-	public static Block vanillaColoredLadder;
+	public static Block vanillaColoredGlowstone;
 
 	public static ArmorMaterial dandelionArmor = ArmorHelper.createArmorMaterial(MOD_ID, "dandeline", 27, 0f, 0f, 0f, 0f);
 	public static ArmorMaterial roseArmor = ArmorHelper.createArmorMaterial(MOD_ID, "rose", 27, 0f, 0f, 0f, 0f);
@@ -63,16 +66,19 @@ public class FeaturesMain implements ModInitializer, GameStartEntrypoint {
     }
 
 	private void initializeBlockDetails() {
-		Item.itemsList[vanillaColoredLadder.id] = new ItemBlockPainted(vanillaColoredLadder, false);
+		Item.itemsList[vanillaColoredGlowstone.id] = new ItemBlockPainted(vanillaColoredGlowstone, false);
+		for (int color = 2; color < 17; color++) {
+			CreativeHelper.setParent(vanillaColoredGlowstone, color - 1, FeaturesMain.vanillaColoredGlowstone, 0);
 		}
+	}
 
 	@Override
 	public void beforeGameStart() {
-		vanillaColoredLadder = ladderBlock
-			.setTextures("ladder/black_ladder.png").setTextures("ladder/red_ladder.png").setTextures("ladder/green_ladder.png").setTextures("ladder/brown_ladder.png").setTextures("ladder/blue_ladder.png").setTextures("ladder/purple_ladder.png").setTextures("ladder/cyan_ladder.png").setTextures("ladder/silver_ladder.png")
-			.setTextures("ladder/gray_ladder.png").setTextures("ladder/pink_ladder.png").setTextures("ladder/lime_ladder.png").setTextures("ladder/yellow_ladder.png").setTextures("ladder/lightblue_ladder.png").setTextures("ladder/magenta_ladder.png").setTextures("ladder/orange_ladder.png").setTextures("ladder/white_ladder.png")
+		vanillaColoredGlowstone = glowstoneBlock
+			.setTextures("glowstone/black_glowstone.png").setTextures("glowstone/red_glowstone.png").setTextures("glowstone/green_glowstone.png").setTextures("glowstone/brown_glowstone.png").setTextures("glowstone/blue_glowstone.png").setTextures("glowstone/purple_glowstone.png").setTextures("glowstone/cyan_glowstone.png").setTextures("glowstone/silver_glowstone.png")
+			.setTextures("glowstone/gray_glowstone.png").setTextures("glowstone/pink_glowstone.png").setTextures("glowstone/lime_glowstone.png").setTextures("glowstone/yellow_glowstone.png").setTextures("glowstone/lightblue_glowstone.png").setTextures("glowstone/magenta_glowstone.png").setTextures("glowstone/orange_glowstone.png").setTextures("glowstone/white_glowstone.png")
 			.setItemBlock(block -> new ItemBlockPainted(block, false))
-			.build(new VanilaBlockColoredLadder("vanilla.colored.Ladder", blockId++));
+			.build(new VanilaBlockColoredGlowstone("vanilla.colored.glowstone", blockId++, Material.glass));
 
 		dandelionCrown = ItemHelper.createItem(MOD_ID, new ItemArmor("crown.dandeline", itemId++, dandelionArmor, 0), "dandeline_helmet.png");
 		roseCrown = ItemHelper.createItem(MOD_ID, new ItemArmor("crown.rose", itemId++, roseArmor, 0), "rose_helmet.png");
@@ -83,6 +89,8 @@ public class FeaturesMain implements ModInitializer, GameStartEntrypoint {
 		bedrockChestplate = ItemHelper.createItem(MOD_ID, new ItemArmor("chestplate.bedrock", itemId++, bedrockArmor, 1), "bedrock_chestplate.png");
 		bedrockLeggings = ItemHelper.createItem(MOD_ID, new ItemArmor("leggings.bedrock", itemId++, bedrockArmor, 2), "bedrock_leggings.png");
 		bedrockBoots = ItemHelper.createItem(MOD_ID, new ItemArmor("boots.bedrock", itemId++, bedrockArmor, 3), "bedrock_boots.png");
+
+		initializeBlockDetails();
 	}
 
 	@Override
