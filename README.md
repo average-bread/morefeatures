@@ -8,3 +8,5 @@ Currently, adds:
 * Bedrock armor (no bedrock obtaining in survival)
 
 * Colored glowstone blocks that can be crafted using 8 of any glowstone block and 1 dye
+
+* Workbench On A Stick. Can be crafted using a stick and a workbench. Right click any block to use workbench anywhere
