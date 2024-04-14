@@ -72,5 +72,11 @@ public class FeaturesCraft implements RecipeEntrypoint {
 			.setShape("H H", "H H")
 			.addInput('H', Block.bedrock)
 			.create("cherryCrown", new ItemStack(FeaturesMain.bedrockBoots, 1));
+
+		RecipeBuilder.Shaped(MOD_ID)
+			.setShape(" W", "S ")
+			.addInput('S', Item.stick)
+			.addInput('W', Block.workbench)
+			.create("cherryCrown", new ItemStack(FeaturesMain.workbenchOnStick, 1));
 	}
 }

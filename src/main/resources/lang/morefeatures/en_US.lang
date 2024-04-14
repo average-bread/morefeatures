@@ -51,3 +51,10 @@ item.morefeatures.leggings.bedrock.name=Bedrock Leggings
 item.morefeatures.leggings.bedrock.desc=A pair of impossibly strong bedrock leggings
 item.morefeatures.boots.bedrock.name=Bedrock Boots
 item.morefeatures.boots.bedrock.desc=A pair of impossibly strong bedrock boots
+
+item.morefeatures.stick.workbench.name=Workbench On A Stick
+item.morefeatures.stick.workbench.desc=Right click to craft whenever you want!
+item.morefeatures.stick.furnace.name=Furnace On A Stick
+item.morefeatures.stick.furnace.desc=Right click to smelt whenever you want!
+item.morefeatures.stick.blast.name=Blast Furnace On A Stick
+item.morefeatures.stick.blast.desc=Right click to blast whenever you want!
