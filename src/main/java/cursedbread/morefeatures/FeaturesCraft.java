@@ -20,5 +20,17 @@ public class FeaturesCraft implements RecipeEntrypoint {
 			.setShape("HHH", "H H")
 			.addInput('H', Block.flowerYellow)
 			.create("dandelionCrown", new ItemStack(FeaturesMain.dandelionCrown, 1));
+		RecipeBuilder.Shaped(MOD_ID)
+			.setShape("HHH", "H H")
+			.addInput('H', Block.flowerRed)
+			.create("roseCrown", new ItemStack(FeaturesMain.roseCrown, 1));
+		RecipeBuilder.Shaped(MOD_ID)
+			.setShape("HHH", "H H")
+			.addInput('H', Block.leavesCherryFlowering)
+			.create("cherryCrown", new ItemStack(FeaturesMain.cherryCrown, 1));
+		RecipeBuilder.Shaped(MOD_ID)
+			.setShape("HHH", "H H")
+			.addInput('H', Block.deadbush)
+			.create("cherryCrown", new ItemStack(FeaturesMain.deadbushCrown, 1));
 	}
 }

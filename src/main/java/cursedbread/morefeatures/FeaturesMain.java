@@ -46,9 +46,11 @@ public class FeaturesMain implements ModInitializer, GameStartEntrypoint {
 	public static ArmorMaterial dandelionArmor = ArmorHelper.createArmorMaterial(MOD_ID, "dandeline", 27, 0f, 0f, 0f, 0f);
 	public static ArmorMaterial roseArmor = ArmorHelper.createArmorMaterial(MOD_ID, "rose", 27, 0f, 0f, 0f, 0f);
 	public static ArmorMaterial cherryArmor = ArmorHelper.createArmorMaterial(MOD_ID, "cherry", 27, 0f, 0f, 0f, 0f);
+	public static ArmorMaterial deadbushArmor = ArmorHelper.createArmorMaterial(MOD_ID, "deadbush", 1, -1000f, -1000f, -1000f, -1000f);
 	public static Item dandelionCrown;
 	public static Item roseCrown;
 	public static Item cherryCrown;
+	public static Item deadbushCrown;
     @Override
     public void onInitialize() {
         LOGGER.info("Adding some stuff");
@@ -69,6 +71,7 @@ public class FeaturesMain implements ModInitializer, GameStartEntrypoint {
 		dandelionCrown = ItemHelper.createItem(MOD_ID, new ItemArmor("crown.dandeline", itemId++, dandelionArmor, 0), "dandeline_helmet.png");
 		roseCrown = ItemHelper.createItem(MOD_ID, new ItemArmor("crown.rose", itemId++, roseArmor, 0), "rose_helmet.png");
 		cherryCrown = ItemHelper.createItem(MOD_ID, new ItemArmor("crown.cherry", itemId++, cherryArmor, 0), "cherry_helmet.png");
+		deadbushCrown = ItemHelper.createItem(MOD_ID, new ItemArmor("crown.deadbush", itemId++, deadbushArmor, 0), "deadbush_helmet.png");
 	}
 
 	@Override
