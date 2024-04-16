@@ -1,6 +1,8 @@
 package cursedbread.morefeatures;
 
 import cursedbread.morefeatures.blocks.VanilaBlockColoredGlowstone;
+import cursedbread.morefeatures.item.ItemBombQuiver;
+import cursedbread.morefeatures.item.ItemBombQuiverEndless;
 import cursedbread.morefeatures.item.StickWorkbench;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.client.render.block.model.BlockModelRenderBlocks;
@@ -13,10 +15,7 @@ import net.minecraft.core.item.material.ArmorMaterial;
 import net.minecraft.core.sound.BlockSound;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import turniplabs.halplibe.helper.ArmorHelper;
-import turniplabs.halplibe.helper.BlockBuilder;
-import turniplabs.halplibe.helper.CreativeHelper;
-import turniplabs.halplibe.helper.ItemHelper;
+import turniplabs.halplibe.helper.*;
 import turniplabs.halplibe.util.ConfigHandler;
 import turniplabs.halplibe.util.GameStartEntrypoint;
 
@@ -54,15 +53,27 @@ public class FeaturesMain implements ModInitializer, GameStartEntrypoint {
 	}
 	public static Block vanillaColoredGlowstone;
 
-	public static ArmorMaterial dandelionArmor = ArmorHelper.createArmorMaterial(MOD_ID, "dandeline", 27, 0f, 0f, 0f, 0f);
-	public static ArmorMaterial roseArmor = ArmorHelper.createArmorMaterial(MOD_ID, "rose", 27, 0f, 0f, 0f, 0f);
-	public static ArmorMaterial cherryArmor = ArmorHelper.createArmorMaterial(MOD_ID, "cherry", 27, 0f, 0f, 0f, 0f);
-	public static ArmorMaterial deadbushArmor = ArmorHelper.createArmorMaterial(MOD_ID, "deadbush", 1, -1000f, -1000f, -1000f, -1000f);
-	public static ArmorMaterial bedrockArmor = ArmorHelper.createArmorMaterial(MOD_ID, "bedrock", 999999999, 100f, 100f, 100f, 100f);
+	public static ArmorMaterial dandelionArmor = ArmorHelper.createArmorMaterial(MOD_ID, "crown/dandeline", 27, 0f, 0f, 0f, 0f);
+	public static ArmorMaterial roseArmor = ArmorHelper.createArmorMaterial(MOD_ID, "crown/rose", 27, 0f, 0f, 0f, 0f);
+	public static ArmorMaterial cherryArmor = ArmorHelper.createArmorMaterial(MOD_ID, "crown/cherry", 27, 0f, 0f, 0f, 0f);
+	public static ArmorMaterial deadbushArmor = ArmorHelper.createArmorMaterial(MOD_ID, "crown/deadbush", 1, -1000f, -1000f, -1000f, -1000f);
+	public static ArmorMaterial bedrockArmor = ArmorHelper.createArmorMaterial(MOD_ID, "bedrock_armor/bedrock", 999999999, 999999999f, 999999999f, 999999999f, 999999999f);
+	public static ArmorMaterial leatherCrownArmor = ArmorHelper.createArmorMaterial(MOD_ID, "crown/cloth_crown", 180, 20f, 20f, 20f, 120f);
+	public static ArmorMaterial chainCrownArmor = ArmorHelper.createArmorMaterial(MOD_ID, "crown/chain_crown", 240, 120f, 35f, 35f, 35f);
+	public static ArmorMaterial ironCrownArmor = ArmorHelper.createArmorMaterial(MOD_ID, "crown/iron_crown", 200, 45f, 45f, 45f, 45f);
+	public static ArmorMaterial goldCrownArmor = ArmorHelper.createArmorMaterial(MOD_ID, "crown/gold_crown", 120, 70f, 70f, 70f, 70f);
+	public static ArmorMaterial diamondCrownArmor = ArmorHelper.createArmorMaterial(MOD_ID, "crown/diamond_crown", 800, 65f, 65f, 125f, 65f);
+	public static ArmorMaterial steelCrownArmor = ArmorHelper.createArmorMaterial(MOD_ID, "crown/steel_crown", 1200, 55f, 150f, 55f, 55f);
 	public static Item dandelionCrown;
 	public static Item roseCrown;
 	public static Item cherryCrown;
 	public static Item deadbushCrown;
+	public static Item leatherCrown;
+	public static Item chainCrown;
+	public static Item ironCrown;
+	public static Item goldCrown;
+	public static Item diamondCrown;
+	public static Item steelCrown;
 
 	public static Item bedrockHelmet;
 	public static Item bedrockChestplate;
@@ -70,6 +81,8 @@ public class FeaturesMain implements ModInitializer, GameStartEntrypoint {
 	public static Item bedrockBoots;
 
 	public static Item workbenchOnStick;
+	public static Item bombBag;
+	public static Item bombBagGold;
     @Override
     public void onInitialize() {
         LOGGER.info("Adding some stuff");
@@ -84,6 +97,8 @@ public class FeaturesMain implements ModInitializer, GameStartEntrypoint {
 
 	@Override
 	public void beforeGameStart() {
+		TextureHelper.getOrCreateItemTextureIndex(MOD_ID, "extra/bomb_bag_empty.png");
+		TextureHelper.getOrCreateItemTextureIndex(MOD_ID, "extra/bomb_bag_full.png");
 		vanillaColoredGlowstone = glowstoneBlock
 			.setTextures("glowstone/black_glowstone.png").setTextures("glowstone/red_glowstone.png").setTextures("glowstone/green_glowstone.png").setTextures("glowstone/brown_glowstone.png").setTextures("glowstone/blue_glowstone.png").setTextures("glowstone/purple_glowstone.png").setTextures("glowstone/cyan_glowstone.png").setTextures("glowstone/silver_glowstone.png")
 			.setTextures("glowstone/gray_glowstone.png").setTextures("glowstone/pink_glowstone.png").setTextures("glowstone/lime_glowstone.png").setTextures("glowstone/yellow_glowstone.png").setTextures("glowstone/lightblue_glowstone.png").setTextures("glowstone/magenta_glowstone.png").setTextures("glowstone/orange_glowstone.png").setTextures("glowstone/white_glowstone.png")
@@ -94,13 +109,22 @@ public class FeaturesMain implements ModInitializer, GameStartEntrypoint {
 		roseCrown = ItemHelper.createItem(MOD_ID, new ItemArmor("crown.rose", itemId++, roseArmor, 0), "crown/rose_helmet.png");
 		cherryCrown = ItemHelper.createItem(MOD_ID, new ItemArmor("crown.cherry", itemId++, cherryArmor, 0), "crown/cherry_helmet.png");
 		deadbushCrown = ItemHelper.createItem(MOD_ID, new ItemArmor("crown.deadbush", itemId++, deadbushArmor, 0), "crown/deadbush_helmet.png");
+		leatherCrown = ItemHelper.createItem(MOD_ID, new ItemArmor("crown.leather", itemId++, leatherCrownArmor, 0), "crown/leather_crown.png");
+		chainCrown = ItemHelper.createItem(MOD_ID, new ItemArmor("crown.chain", itemId++, chainCrownArmor, 0), "crown/chain_crown.png");
+		ironCrown = ItemHelper.createItem(MOD_ID, new ItemArmor("crown.iron", itemId++, ironCrownArmor, 0), "crown/iron_crown.png");
+		goldCrown = ItemHelper.createItem(MOD_ID, new ItemArmor("crown.gold", itemId++, goldCrownArmor, 0), "crown/gold_crown.png");
+		diamondCrown = ItemHelper.createItem(MOD_ID, new ItemArmor("crown.diamond", itemId++, diamondCrownArmor, 0), "crown/diamond_crown.png");
+		steelCrown= ItemHelper.createItem(MOD_ID, new ItemArmor("crown.steel", itemId++, steelCrownArmor, 0), "crown/steel_crown.png");
 
 		bedrockHelmet = ItemHelper.createItem(MOD_ID, new ItemArmor("helmet.bedrock", itemId++, bedrockArmor, 0), "bedrock/bedrock_helmet.png");
 		bedrockChestplate = ItemHelper.createItem(MOD_ID, new ItemArmor("chestplate.bedrock", itemId++, bedrockArmor, 1), "bedrock/bedrock_chestplate.png");
 		bedrockLeggings = ItemHelper.createItem(MOD_ID, new ItemArmor("leggings.bedrock", itemId++, bedrockArmor, 2), "bedrock/bedrock_leggings.png");
 		bedrockBoots = ItemHelper.createItem(MOD_ID, new ItemArmor("boots.bedrock", itemId++, bedrockArmor, 3), "bedrock/bedrock_boots.png");
 
-		workbenchOnStick = ItemHelper.createItem(MOD_ID, new StickWorkbench("stick.workbench", itemId++), "station_on_stick/workbench_on_stick.png");
+		bombBag = ItemHelper.createItem(MOD_ID, new ItemBombQuiver("bag.normal", itemId++), "extra/bomb_bag_empty.png");
+		bombBagGold = ItemHelper.createItem(MOD_ID, new ItemBombQuiverEndless("bag.gold", itemId++), "extra/bomb_bag_gold.png");
+
+		workbenchOnStick = ItemHelper.createItem(MOD_ID, new StickWorkbench("stick.workbench", itemId++), "extra/workbench_on_stick.png");
 		initializeBlockDetails();
 	}
 

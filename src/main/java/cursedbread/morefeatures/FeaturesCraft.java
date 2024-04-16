@@ -11,6 +11,31 @@ public class FeaturesCraft implements RecipeEntrypoint {
 
 	public static final String MOD_ID = "morefeatures";
 
+	public static int[] crownMaterial = {
+		Block.flowerYellow.id,
+		Block.flowerRed.id,
+		Block.leavesCherryFlowering.id,
+		Block.deadbush.id,
+		Item.leather.id,
+		Item.chainlink.id,
+		Item.ingotIron.id,
+		Item.ingotGold.id,
+		Item.diamond.id,
+		Item.ingotSteel.id
+	};
+	public static Item[] crownResult = {
+		FeaturesMain.dandelionCrown,
+		FeaturesMain.roseCrown,
+		FeaturesMain.cherryCrown,
+		FeaturesMain.deadbushCrown,
+		FeaturesMain.leatherCrown,
+		FeaturesMain.chainCrown,
+		FeaturesMain.ironCrown,
+		FeaturesMain.goldCrown,
+		FeaturesMain.diamondCrown,
+		FeaturesMain.steelCrown
+	};
+
 	@Override
 	public void initNamespaces() {
 		Registries.ITEM_GROUPS.register("morefeatures:glowstones", Registries.stackListOf(Block.glowstone, new ItemStack(FeaturesMain.vanillaColoredGlowstone, 1, 0),
@@ -39,22 +64,14 @@ public class FeaturesCraft implements RecipeEntrypoint {
 				.addInput('G', "morefeatures:glowstones")
 				.create("itemGroupExample", new ItemStack(FeaturesMain.vanillaColoredGlowstone, 8, 15-i));
 		}
-		RecipeBuilder.Shaped(MOD_ID)
-			.setShape("HHH", "H H")
-			.addInput('H', Block.flowerYellow)
-			.create("dandelionCrown", new ItemStack(FeaturesMain.dandelionCrown, 1));
-		RecipeBuilder.Shaped(MOD_ID)
-			.setShape("HHH", "H H")
-			.addInput('H', Block.flowerRed)
-			.create("roseCrown", new ItemStack(FeaturesMain.roseCrown, 1));
-		RecipeBuilder.Shaped(MOD_ID)
-			.setShape("HHH", "H H")
-			.addInput('H', Block.leavesCherryFlowering)
-			.create("cherryCrown", new ItemStack(FeaturesMain.cherryCrown, 1));
-		RecipeBuilder.Shaped(MOD_ID)
-			.setShape("HHH", "H H")
-			.addInput('H', Block.deadbush)
-			.create("cherryCrown", new ItemStack(FeaturesMain.deadbushCrown, 1));
+		for (int j = 0; j < crownMaterial.length; j++) {
+			Item material = Item.itemsList[crownMaterial[j]];
+			RecipeBuilder.Shaped(MOD_ID)
+				.setShape("H H", "HHH")
+				.addInput('H', material)
+				.create("dandelionCrown", new ItemStack(crownResult[j], 1));
+		}
+
 
 		RecipeBuilder.Shaped(MOD_ID)
 			.setShape("HHH", "H H")

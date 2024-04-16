@@ -42,6 +42,18 @@ item.morefeatures.crown.cherry.name=Cherry Crown
 item.morefeatures.crown.cherry.desc=Flower crown made with cherry (pretty hard to make)
 item.morefeatures.crown.deadbush.name=Dead Bush Crown
 item.morefeatures.crown.deadbush.desc=Flower crown made with dead bushes (just...why)
+item.morefeatures.crown.leather.name=Leather Crown
+item.morefeatures.crown.leather.desc=Flower crown made with dead bushes (just...why)
+item.morefeatures.crown.chain.name=Chainmail Crown
+item.morefeatures.crown.chain.desc=Flower crown made with dead bushes (just...why)
+item.morefeatures.crown.iron.name=Iron Crown
+item.morefeatures.crown.iron.desc=Flower crown made with dead bushes (just...why)
+item.morefeatures.crown.gold.name=Gold Crown
+item.morefeatures.crown.gold.desc=Flower crown made with dead bushes (just...why)
+item.morefeatures.crown.diamond.name=Diamond Crown
+item.morefeatures.crown.diamond.desc=Flower crown made with dead bushes (just...why)
+item.morefeatures.crown.steel.name=Steel Crown
+item.morefeatures.crown.steel.desc=Flower crown made with dead bushes (just...why)
 
 item.morefeatures.helmet.bedrock.name=Bedrock Helpmet
 item.morefeatures.helmet.bedrock.desc=An impossibly strong bedrock helmet
@@ -58,3 +70,8 @@ item.morefeatures.stick.furnace.name=Furnace On A Stick
 item.morefeatures.stick.furnace.desc=Right click to smelt whenever you want!
 item.morefeatures.stick.blast.name=Blast Furnace On A Stick
 item.morefeatures.stick.blast.desc=Right click to blast whenever you want!
+
+item.morefeatures.bag.normal.name=Explosive Bag
+item.morefeatures.bag.normal.desc=Hold your explosive charges in style (not finished)
+item.morefeatures.bag.gold.name=Golden Explosive Bag
+item.morefeatures.bag.gold.desc=An endless supply of explosive charges (not finished)
