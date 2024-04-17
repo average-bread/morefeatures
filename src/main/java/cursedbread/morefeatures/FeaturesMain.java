@@ -1,6 +1,7 @@
 package cursedbread.morefeatures;
 
 import cursedbread.morefeatures.blocks.VanilaBlockColoredGlowstone;
+import cursedbread.morefeatures.blocks.VanilaBlockColoredPaperwall;
 import cursedbread.morefeatures.item.ItemBombQuiver;
 import cursedbread.morefeatures.item.ItemBombQuiverEndless;
 import cursedbread.morefeatures.item.StickWorkbench;
@@ -13,6 +14,7 @@ import net.minecraft.core.item.ItemArmor;
 import net.minecraft.core.item.block.ItemBlockPainted;
 import net.minecraft.core.item.material.ArmorMaterial;
 import net.minecraft.core.sound.BlockSound;
+import net.minecraft.core.sound.BlockSounds;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import turniplabs.halplibe.helper.*;
@@ -30,6 +32,11 @@ public class FeaturesMain implements ModInitializer, GameStartEntrypoint {
 		.setBlockModel(new BlockModelRenderBlocks(0))
 		.setLuminance(15)
 		.setBlockSound(new BlockSound("step.stone", "random.glass", 1.0f, 1.0f))
+		.setHardness(0.5f);
+
+	public static BlockBuilder paperwallBlock = new BlockBuilder(MOD_ID)
+		.setBlockModel(new BlockModelRenderBlocks(0))
+		.setBlockSound(BlockSounds.CLOTH)
 		.setHardness(0.5f);
 
 	public static BlockBuilder fireBlock = new BlockBuilder(MOD_ID)
@@ -52,6 +59,7 @@ public class FeaturesMain implements ModInitializer, GameStartEntrypoint {
 		config.updateConfig();
 	}
 	public static Block vanillaColoredGlowstone;
+	public static Block vanillaColoredPaperwall;
 
 	public static ArmorMaterial dandelionArmor = ArmorHelper.createArmorMaterial(MOD_ID, "crown/dandeline", 27, 0f, 0f, 0f, 0f);
 	public static ArmorMaterial roseArmor = ArmorHelper.createArmorMaterial(MOD_ID, "crown/rose", 27, 0f, 0f, 0f, 0f);
@@ -90,8 +98,12 @@ public class FeaturesMain implements ModInitializer, GameStartEntrypoint {
 
 	private void initializeBlockDetails() {
 		Item.itemsList[vanillaColoredGlowstone.id] = new ItemBlockPainted(vanillaColoredGlowstone, false);
+		Item.itemsList[vanillaColoredPaperwall.id] = new ItemBlockPainted(vanillaColoredPaperwall, false);
 		for (int color = 2; color < 17; color++) {
 			CreativeHelper.setParent(vanillaColoredGlowstone, color - 1, FeaturesMain.vanillaColoredGlowstone, 0);
+		}
+		for (int color = 2; color < 17; color++) {
+			CreativeHelper.setParent(vanillaColoredPaperwall, color - 1, FeaturesMain.vanillaColoredPaperwall, 0);
 		}
 	}
 
@@ -104,6 +116,12 @@ public class FeaturesMain implements ModInitializer, GameStartEntrypoint {
 			.setTextures("glowstone/gray_glowstone.png").setTextures("glowstone/pink_glowstone.png").setTextures("glowstone/lime_glowstone.png").setTextures("glowstone/yellow_glowstone.png").setTextures("glowstone/lightblue_glowstone.png").setTextures("glowstone/magenta_glowstone.png").setTextures("glowstone/orange_glowstone.png").setTextures("glowstone/white_glowstone.png")
 			.setItemBlock(block -> new ItemBlockPainted(block, false))
 			.build(new VanilaBlockColoredGlowstone("vanilla.colored.glowstone", blockId++, Material.glass));
+
+		vanillaColoredGlowstone = glowstoneBlock
+			.setTextures("paperwall/black_paperwall.png").setTextures("paperwall/red_paperwall.png").setTextures("paperwall/green_paperwall.png").setTextures("paperwall/brown_paperwall.png").setTextures("paperwall/blue_paperwall.png").setTextures("paperwall/purple_paperwall.png").setTextures("paperwall/cyan_paperwall.png").setTextures("paperwall/silver_paperwall.png")
+			.setTextures("paperwall/gray_paperwall.png").setTextures("paperwall/pink_paperwall.png").setTextures("paperwall/lime_paperwall.png").setTextures("paperwall/yellow_paperwall.png").setTextures("paperwall/lightblue_paperwall.png").setTextures("paperwall/magenta_paperwall.png").setTextures("paperwall/orange_paperwall.png").setTextures("paperwall/white_paperwall.png")
+			.setItemBlock(block -> new ItemBlockPainted(block, false))
+			.build(new VanilaBlockColoredPaperwall("vanilla.colored.paperwall", blockId++, Material.glass));
 
 		dandelionCrown = ItemHelper.createItem(MOD_ID, new ItemArmor("crown.dandeline", itemId++, dandelionArmor, 0), "crown/dandeline_helmet.png");
 		roseCrown = ItemHelper.createItem(MOD_ID, new ItemArmor("crown.rose", itemId++, roseArmor, 0), "crown/rose_helmet.png");

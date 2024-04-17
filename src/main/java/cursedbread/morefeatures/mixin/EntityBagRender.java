@@ -19,7 +19,7 @@ public class EntityBagRender{
 	String quiver_texture_path = "/armor/quiver.png";
 
 	@Unique
-	String bomb_bag_texture_path = "/armor/bagnormal_1.png";
+	String bomb_quiver_texture_path = "/armor/bag/bag_normal_1.png";
 
 	@Inject(method = "loadTexture", at = @At("HEAD"), cancellable = true)
 	protected void loadTexture(String texturePath, CallbackInfo ci) {
@@ -28,7 +28,7 @@ public class EntityBagRender{
 			if (chest_item != null && chest_item.getItem() instanceof ItemBombQuiver) {
 				EntityRenderer<?> thisAs = (EntityRenderer<?>) (Object) this;
 				RenderEngine renderEngine = thisAs.renderDispatcher.renderEngine;
-				renderEngine.bindTexture(renderEngine.getTexture(bomb_bag_texture_path));
+				renderEngine.bindTexture(renderEngine.getTexture(bomb_quiver_texture_path));
 				ci.cancel();
 			}
 		}
