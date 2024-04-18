@@ -36,6 +36,25 @@ public class FeaturesCraft implements RecipeEntrypoint {
 		FeaturesMain.steelCrown
 	};
 
+	public static int[] armorMaterial = {
+		Block.bedrock.id,
+		Block.blockClay.id
+	};
+	public static Item[] armorHelmetResult = {
+		FeaturesMain.bedrockHelmet,
+		FeaturesMain.plateHelmet
+	};
+	public static Item[] armorChestplateResult = {
+		FeaturesMain.bedrockChestplate,
+		FeaturesMain.plateChestplate
+	};
+	public static Item[] armorLeggingsResult = {
+		FeaturesMain.bedrockLeggings
+	};
+	public static Item[] armorBootsResult = {
+		FeaturesMain.bedrockBoots
+	};
+
 	@Override
 	public void initNamespaces() {
 		Registries.ITEM_GROUPS.register("morefeatures:glowstones", Registries.stackListOf(Block.glowstone, new ItemStack(FeaturesMain.vanillaColoredGlowstone, 1, 0),
@@ -73,22 +92,34 @@ public class FeaturesCraft implements RecipeEntrypoint {
 		}
 
 
-		RecipeBuilder.Shaped(MOD_ID)
-			.setShape("HHH", "H H")
-			.addInput('H', Block.bedrock)
-			.create("cherryCrown", new ItemStack(FeaturesMain.bedrockHelmet, 1));
-		RecipeBuilder.Shaped(MOD_ID)
-			.setShape("H H", "HHH", "HHH")
-			.addInput('H', Block.bedrock)
-			.create("cherryCrown", new ItemStack(FeaturesMain.bedrockChestplate, 1));
-		RecipeBuilder.Shaped(MOD_ID)
-			.setShape("HHH", "H H", "H H")
-			.addInput('H', Block.bedrock)
-			.create("cherryCrown", new ItemStack(FeaturesMain.bedrockLeggings, 1));
-		RecipeBuilder.Shaped(MOD_ID)
-			.setShape("H H", "H H")
-			.addInput('H', Block.bedrock)
-			.create("cherryCrown", new ItemStack(FeaturesMain.bedrockBoots, 1));
+		for (int i = 0; i < armorHelmetResult.length; i++) {
+			Item material = Item.itemsList[armorMaterial[i]];
+			RecipeBuilder.Shaped(MOD_ID)
+				.setShape("HHH", "H H")
+				.addInput('H', material)
+				.create("helmets", new ItemStack(armorHelmetResult[i], 1));
+		}
+		for (int i = 0; i < armorChestplateResult.length; i++) {
+			Item material = Item.itemsList[armorMaterial[i]];
+			RecipeBuilder.Shaped(MOD_ID)
+				.setShape("H H", "HHH", "HHH")
+				.addInput('H', material)
+				.create("chectplates", new ItemStack(armorChestplateResult[i], 1));
+		}
+		for (int i = 0; i < armorLeggingsResult.length; i++) {
+			Item material = Item.itemsList[armorMaterial[i]];
+			RecipeBuilder.Shaped(MOD_ID)
+				.setShape("HHH", "H H", "H H")
+				.addInput('H', material)
+				.create("leggings", new ItemStack(armorLeggingsResult[i], 1));
+		}
+		for (int i = 0; i < armorBootsResult.length; i++) {
+			Item material = Item.itemsList[armorMaterial[i]];
+			RecipeBuilder.Shaped(MOD_ID)
+				.setShape("H H", "H H")
+				.addInput('H', material)
+				.create("boots", new ItemStack(armorBootsResult[i], 1));
+		}
 
 		RecipeBuilder.Shaped(MOD_ID)
 			.setShape(" W", "S ")

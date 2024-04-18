@@ -65,7 +65,8 @@ public class FeaturesMain implements ModInitializer, GameStartEntrypoint {
 	public static ArmorMaterial roseArmor = ArmorHelper.createArmorMaterial(MOD_ID, "crown/rose", 27, 0f, 0f, 0f, 0f);
 	public static ArmorMaterial cherryArmor = ArmorHelper.createArmorMaterial(MOD_ID, "crown/cherry", 27, 0f, 0f, 0f, 0f);
 	public static ArmorMaterial deadbushArmor = ArmorHelper.createArmorMaterial(MOD_ID, "crown/deadbush", 1, -1000f, -1000f, -1000f, -1000f);
-	public static ArmorMaterial bedrockArmor = ArmorHelper.createArmorMaterial(MOD_ID, "bedrock_armor/bedrock", 999999999, 999999999f, 999999999f, 999999999f, 999999999f);
+	public static ArmorMaterial bedrockArmor = ArmorHelper.createArmorMaterial(MOD_ID, "extra_armor/bedrock", 999999999, 999999999f, 999999999f, 999999999f, 999999999f);
+	public static ArmorMaterial plateArmor = ArmorHelper.createArmorMaterial(MOD_ID, "extra_armor/plate_armor", 240, 58f, 58f, 58f, 58f);
 	public static ArmorMaterial leatherCrownArmor = ArmorHelper.createArmorMaterial(MOD_ID, "crown/cloth_crown", 180, 20f, 20f, 20f, 120f);
 	public static ArmorMaterial chainCrownArmor = ArmorHelper.createArmorMaterial(MOD_ID, "crown/chain_crown", 240, 120f, 35f, 35f, 35f);
 	public static ArmorMaterial ironCrownArmor = ArmorHelper.createArmorMaterial(MOD_ID, "crown/iron_crown", 200, 45f, 45f, 45f, 45f);
@@ -87,6 +88,9 @@ public class FeaturesMain implements ModInitializer, GameStartEntrypoint {
 	public static Item bedrockChestplate;
 	public static Item bedrockLeggings;
 	public static Item bedrockBoots;
+
+	public static Item plateHelmet;
+	public static Item plateChestplate;
 
 	public static Item workbenchOnStick;
 	public static Item bombBag;
@@ -117,11 +121,11 @@ public class FeaturesMain implements ModInitializer, GameStartEntrypoint {
 			.setItemBlock(block -> new ItemBlockPainted(block, false))
 			.build(new VanilaBlockColoredGlowstone("vanilla.colored.glowstone", blockId++, Material.glass));
 
-		vanillaColoredGlowstone = glowstoneBlock
+		vanillaColoredPaperwall = paperwallBlock
 			.setTextures("paperwall/black_paperwall.png").setTextures("paperwall/red_paperwall.png").setTextures("paperwall/green_paperwall.png").setTextures("paperwall/brown_paperwall.png").setTextures("paperwall/blue_paperwall.png").setTextures("paperwall/purple_paperwall.png").setTextures("paperwall/cyan_paperwall.png").setTextures("paperwall/silver_paperwall.png")
 			.setTextures("paperwall/gray_paperwall.png").setTextures("paperwall/pink_paperwall.png").setTextures("paperwall/lime_paperwall.png").setTextures("paperwall/yellow_paperwall.png").setTextures("paperwall/lightblue_paperwall.png").setTextures("paperwall/magenta_paperwall.png").setTextures("paperwall/orange_paperwall.png").setTextures("paperwall/white_paperwall.png")
 			.setItemBlock(block -> new ItemBlockPainted(block, false))
-			.build(new VanilaBlockColoredPaperwall("vanilla.colored.paperwall", blockId++, Material.glass));
+			.build(new VanilaBlockColoredPaperwall("vanilla.colored.paperwall", blockId++, Material.wood));
 
 		dandelionCrown = ItemHelper.createItem(MOD_ID, new ItemArmor("crown.dandeline", itemId++, dandelionArmor, 0), "crown/dandeline_helmet.png");
 		roseCrown = ItemHelper.createItem(MOD_ID, new ItemArmor("crown.rose", itemId++, roseArmor, 0), "crown/rose_helmet.png");
@@ -134,10 +138,14 @@ public class FeaturesMain implements ModInitializer, GameStartEntrypoint {
 		diamondCrown = ItemHelper.createItem(MOD_ID, new ItemArmor("crown.diamond", itemId++, diamondCrownArmor, 0), "crown/diamond_crown.png");
 		steelCrown= ItemHelper.createItem(MOD_ID, new ItemArmor("crown.steel", itemId++, steelCrownArmor, 0), "crown/steel_crown.png");
 
-		bedrockHelmet = ItemHelper.createItem(MOD_ID, new ItemArmor("helmet.bedrock", itemId++, bedrockArmor, 0), "bedrock/bedrock_helmet.png");
-		bedrockChestplate = ItemHelper.createItem(MOD_ID, new ItemArmor("chestplate.bedrock", itemId++, bedrockArmor, 1), "bedrock/bedrock_chestplate.png");
-		bedrockLeggings = ItemHelper.createItem(MOD_ID, new ItemArmor("leggings.bedrock", itemId++, bedrockArmor, 2), "bedrock/bedrock_leggings.png");
-		bedrockBoots = ItemHelper.createItem(MOD_ID, new ItemArmor("boots.bedrock", itemId++, bedrockArmor, 3), "bedrock/bedrock_boots.png");
+		bedrockHelmet = ItemHelper.createItem(MOD_ID, new ItemArmor("helmet.bedrock", itemId++, bedrockArmor, 0), "armoritem/bedrock_helmet.png");
+		bedrockChestplate = ItemHelper.createItem(MOD_ID, new ItemArmor("chestplate.bedrock", itemId++, bedrockArmor, 1), "armoritem/bedrock_chestplate.png");
+		bedrockLeggings = ItemHelper.createItem(MOD_ID, new ItemArmor("leggings.bedrock", itemId++, bedrockArmor, 2), "armoritem/bedrock_leggings.png");
+		bedrockBoots = ItemHelper.createItem(MOD_ID, new ItemArmor("boots.bedrock", itemId++, bedrockArmor, 3), "armoritem/bedrock_boots.png");
+
+		plateHelmet = ItemHelper.createItem(MOD_ID, new ItemArmor("helmet.plate", itemId++, plateArmor, 0), "armoritem/plate_helmet.png");
+		plateChestplate = ItemHelper.createItem(MOD_ID, new ItemArmor("chestplate.plate", itemId++, plateArmor, 1), "armoritem/plate_chestplate.png");
+
 
 		bombBag = ItemHelper.createItem(MOD_ID, new ItemBombQuiver("bag.normal", itemId++), "extra/bomb_bag_empty.png");
 		bombBagGold = ItemHelper.createItem(MOD_ID, new ItemBombQuiverEndless("bag.gold", itemId++), "extra/bomb_bag_gold.png");
