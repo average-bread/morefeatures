@@ -19,7 +19,7 @@ public class EntityBagRender{
 	String quiver_texture_path = "/armor/quiver.png";
 
 	@Unique
-	String bomb_quiver_texture_path = "/armor/bag/bag_normal_1.png";
+	String bomb_quiver_texture_path = "/assets/morefeatures/armor/bag/bag_normal_1.png";
 
 	@Inject(method = "loadTexture", at = @At("HEAD"), cancellable = true)
 	protected void loadTexture(String texturePath, CallbackInfo ci) {
