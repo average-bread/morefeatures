@@ -108,9 +108,10 @@ public class FeaturesCraft implements RecipeEntrypoint {
 		for (int j = 0; j < crownMaterial.length; j++) {
 			Item material = Item.itemsList[crownMaterial[j]];
 			RecipeBuilder.Shaped(MOD_ID)
-				.setShape("H H", "HHH")
+				.setShape("HCH", "HHH")
 				.addInput('H', material)
-				.create("dandelionCrown", new ItemStack(crownResult[j], 1));
+				.addInput('C', Item.cloth)
+				.create("rown", new ItemStack(crownResult[j], 1));
 		}
 
 
