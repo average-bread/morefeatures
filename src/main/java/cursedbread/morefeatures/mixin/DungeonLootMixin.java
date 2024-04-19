@@ -27,7 +27,7 @@ public class DungeonLootMixin {
 		if (i == 16) {
 			cir.setReturnValue( new ItemStack(FeaturesMain.bombBagGold));
 		}
-		int j = random.nextInt(16);
+		int j = random.nextInt(32);
 		if (j == 1) {
 			cir.setReturnValue( new ItemStack(FeaturesMain.plateHelmet));
 		} else if (j == 2) {
