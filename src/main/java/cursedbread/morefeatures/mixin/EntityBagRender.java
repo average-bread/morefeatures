@@ -20,6 +20,9 @@ public class EntityBagRender{
 	String quiver_texture_path = "/armor/quiver.png";
 
 	@Unique
+	String gold_quiver_texture_path = "/armor/quiver_golden.png";
+
+	@Unique
 	String bomb_quiver_texture_path = "/assets/morefeatures/armor/bag/bag_normal_1.png";
 
 	@Unique
@@ -34,7 +37,12 @@ public class EntityBagRender{
 				RenderEngine renderEngine = thisAs.renderDispatcher.renderEngine;
 				renderEngine.bindTexture(renderEngine.getTexture(bomb_quiver_texture_path));
 				ci.cancel();
-			} else if (chest_item != null && chest_item.getItem() instanceof ItemBombQuiverEndless) {
+			}
+		}
+
+		if (texturePath.equals(gold_quiver_texture_path)) {
+			ItemStack chest_item = Minecraft.getMinecraft(this).thePlayer.inventory.armorItemInSlot(2);
+			if (chest_item != null && chest_item.getItem() instanceof ItemBombQuiverEndless) {
 				EntityRenderer<?> thisAs = (EntityRenderer<?>) (Object) this;
 				RenderEngine renderEngine = thisAs.renderDispatcher.renderEngine;
 				renderEngine.bindTexture(renderEngine.getTexture(bomb_golden_quiver_texture_path));

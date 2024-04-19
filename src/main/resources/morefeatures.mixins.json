@@ -8,7 +8,8 @@
       "BagArmor",
       "EntityBagRender",
       "ItemCannonMixin",
-      "SlotArmorMixin"
+      "SlotArmorMixin",
+      "DungeonLootMixin"
     ],
     "client": [
     ],

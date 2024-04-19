@@ -37,16 +37,13 @@ public class FeaturesCraft implements RecipeEntrypoint {
 	};
 
 	public static int[] armorMaterial = {
-		Block.bedrock.id,
-		Block.blockClay.id
+		Block.bedrock.id
 	};
 	public static Item[] armorHelmetResult = {
-		FeaturesMain.bedrockHelmet,
-		FeaturesMain.plateHelmet
+		FeaturesMain.bedrockHelmet
 	};
 	public static Item[] armorChestplateResult = {
-		FeaturesMain.bedrockChestplate,
-		FeaturesMain.plateChestplate
+		FeaturesMain.bedrockChestplate
 	};
 	public static Item[] armorLeggingsResult = {
 		FeaturesMain.bedrockLeggings
@@ -150,13 +147,13 @@ public class FeaturesCraft implements RecipeEntrypoint {
 			.setShape(" W", "S ")
 			.addInput('S', Item.stick)
 			.addInput('W', Block.workbench)
-			.create("cherryCrown", new ItemStack(FeaturesMain.workbenchOnStick, 1));
+			.create("craftingOnAStick", new ItemStack(FeaturesMain.workbenchOnStick, 1));
 
 		RecipeBuilder.Shaped(MOD_ID)
 		.setShape("S S", "CCC", "LLL")
 			.addInput('S', Item.string)
 			.addInput('L', Item.leather)
 			.addInput('C', Item.cloth)
-			.create("cherryCrown", new ItemStack(FeaturesMain.bombBag, 1, 48));
+			.create("bomBagCraft", new ItemStack(FeaturesMain.bombBag, 1, 48));
 	}
 }
