@@ -73,6 +73,23 @@ public class FeaturesCraft implements RecipeEntrypoint {
 			new ItemStack(FeaturesMain.vanillaColoredGlowstone, 1, 13),
 			new ItemStack(FeaturesMain.vanillaColoredGlowstone, 1, 14),
 			new ItemStack(FeaturesMain.vanillaColoredGlowstone, 1, 15)));
+
+		Registries.ITEM_GROUPS.register("morefeatures:paperwall", Registries.stackListOf(Block.paperWall, new ItemStack(FeaturesMain.vanillaColoredPaperwall, 1, 0),
+			new ItemStack(FeaturesMain.vanillaColoredPaperwall, 1, 1),
+			new ItemStack(FeaturesMain.vanillaColoredPaperwall, 1, 2),
+			new ItemStack(FeaturesMain.vanillaColoredPaperwall, 1, 3),
+			new ItemStack(FeaturesMain.vanillaColoredPaperwall, 1, 4),
+			new ItemStack(FeaturesMain.vanillaColoredPaperwall, 1, 5),
+			new ItemStack(FeaturesMain.vanillaColoredPaperwall, 1, 6),
+			new ItemStack(FeaturesMain.vanillaColoredPaperwall, 1, 7),
+			new ItemStack(FeaturesMain.vanillaColoredPaperwall, 1, 8),
+			new ItemStack(FeaturesMain.vanillaColoredPaperwall, 1, 9),
+			new ItemStack(FeaturesMain.vanillaColoredPaperwall, 1, 10),
+			new ItemStack(FeaturesMain.vanillaColoredPaperwall, 1, 11),
+			new ItemStack(FeaturesMain.vanillaColoredPaperwall, 1, 12),
+			new ItemStack(FeaturesMain.vanillaColoredPaperwall, 1, 13),
+			new ItemStack(FeaturesMain.vanillaColoredPaperwall, 1, 14),
+			new ItemStack(FeaturesMain.vanillaColoredPaperwall, 1, 15)));
 	}
 	@Override
 	public void onRecipesReady() {
@@ -82,6 +99,14 @@ public class FeaturesCraft implements RecipeEntrypoint {
 				.addInput('D', Item.dye, i)
 				.addInput('G', "morefeatures:glowstones")
 				.create("itemGroupExample", new ItemStack(FeaturesMain.vanillaColoredGlowstone, 8, 15-i));
+		}
+
+		for (int i = 0; i <=15; i++){
+			RecipeBuilder.Shaped(MOD_ID)
+				.setShape("GGG", "GDG", "GGG")
+				.addInput('D', Item.dye, i)
+				.addInput('G', "morefeatures:paperwall")
+				.create("itemGroupExample", new ItemStack(FeaturesMain.vanillaColoredPaperwall, 8, 15-i));
 		}
 		for (int j = 0; j < crownMaterial.length; j++) {
 			Item material = Item.itemsList[crownMaterial[j]];
@@ -126,5 +151,12 @@ public class FeaturesCraft implements RecipeEntrypoint {
 			.addInput('S', Item.stick)
 			.addInput('W', Block.workbench)
 			.create("cherryCrown", new ItemStack(FeaturesMain.workbenchOnStick, 1));
+
+		RecipeBuilder.Shaped(MOD_ID)
+		.setShape("S S", "CCC", "LLL")
+			.addInput('S', Item.string)
+			.addInput('L', Item.leather)
+			.addInput('C', Item.cloth)
+			.create("cherryCrown", new ItemStack(FeaturesMain.bombBag, 1, 48));
 	}
 }

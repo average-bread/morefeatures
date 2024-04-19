@@ -46,15 +46,19 @@ public class FeaturesMain implements ModInitializer, GameStartEntrypoint {
 
 	public static int blockId;
 	public static int itemId;
+	//public static int paperWallAlt;
 
 	static {
 		Properties prop = new Properties();
 		prop.setProperty("starting_block_id","2000");
 		prop.setProperty("starting_item_id","17000");
+		//prop.setProperty("alternative_colored_paper_walls_texture_(0_or_1)","0");
 		ConfigHandler config = new ConfigHandler(MOD_ID,prop);
 
 		blockId = config.getInt("starting_block_id");
 		itemId = config.getInt("starting_item_id");
+
+		//paperWallAlt = config.getInt("alternative_colored_paper_walls_texture_(0_or_1)");
 
 		config.updateConfig();
 	}
@@ -104,7 +108,7 @@ public class FeaturesMain implements ModInitializer, GameStartEntrypoint {
 		Item.itemsList[vanillaColoredGlowstone.id] = new ItemBlockPainted(vanillaColoredGlowstone, false);
 		Item.itemsList[vanillaColoredPaperwall.id] = new ItemBlockPainted(vanillaColoredPaperwall, false);
 		for (int color = 2; color < 17; color++) {
-			CreativeHelper.setParent(vanillaColoredGlowstone, color - 1, FeaturesMain.vanillaColoredGlowstone, 0);
+			CreativeHelper.setParent(vanillaColoredGlowstone, color - 1, FeaturesMain.vanillaColoredGlowstone, color);
 		}
 		for (int color = 2; color < 17; color++) {
 			CreativeHelper.setParent(vanillaColoredPaperwall, color - 1, FeaturesMain.vanillaColoredPaperwall, 0);
@@ -124,6 +128,8 @@ public class FeaturesMain implements ModInitializer, GameStartEntrypoint {
 		vanillaColoredPaperwall = paperwallBlock
 			.setTextures("paperwall/black_paperwall.png").setTextures("paperwall/red_paperwall.png").setTextures("paperwall/green_paperwall.png").setTextures("paperwall/brown_paperwall.png").setTextures("paperwall/blue_paperwall.png").setTextures("paperwall/purple_paperwall.png").setTextures("paperwall/cyan_paperwall.png").setTextures("paperwall/silver_paperwall.png")
 			.setTextures("paperwall/gray_paperwall.png").setTextures("paperwall/pink_paperwall.png").setTextures("paperwall/lime_paperwall.png").setTextures("paperwall/yellow_paperwall.png").setTextures("paperwall/lightblue_paperwall.png").setTextures("paperwall/magenta_paperwall.png").setTextures("paperwall/orange_paperwall.png").setTextures("paperwall/white_paperwall.png")
+			.setTextures("paperwall/black_paperwall_alt.png").setTextures("paperwall/red_paperwall_alt.png").setTextures("paperwall/green_paperwall_alt.png").setTextures("paperwall/brown_paperwall_alt.png").setTextures("paperwall/blue_paperwall_alt.png").setTextures("paperwall/purple_paperwall_alt.png").setTextures("paperwall/cyan_paperwall_alt.png").setTextures("paperwall/silver_paperwall_alt.png")
+			.setTextures("paperwall/gray_paperwall_alt.png").setTextures("paperwall/pink_paperwall_alt.png").setTextures("paperwall/lime_paperwall_alt.png").setTextures("paperwall/yellow_paperwall_alt.png").setTextures("paperwall/lightblue_paperwall_alt.png").setTextures("paperwall/magenta_paperwall_alt.png").setTextures("paperwall/orange_paperwall_alt.png").setTextures("paperwall/white_paperwall_alt.png")
 			.setItemBlock(block -> new ItemBlockPainted(block, false))
 			.build(new VanilaBlockColoredPaperwall("vanilla.colored.paperwall", blockId++, Material.wood));
 

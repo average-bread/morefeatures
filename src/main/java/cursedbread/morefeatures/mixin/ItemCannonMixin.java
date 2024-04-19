@@ -18,15 +18,11 @@ public class ItemCannonMixin {
 		if (quiverSlot != null && quiverSlot.getItem().equals(FeaturesMain.bombBag) && quiverSlot.getMetadata() < quiverSlot.getMaxDamage()) {
 			entityplayer.inventory.armorItemInSlot(2).damageItem(1, entityplayer);
 			itemstack.damageItem(1, entityplayer);
-			if (entityplayer.inventory.consumeInventoryItem(Item.ammoChargeExplosive.id)) {
-				entityplayer.setCurrentItem(Item.handcannonLoaded.id);
-			}
-			cir.setReturnValue(itemstack);
-		} else if (quiverSlot != null && quiverSlot.getItem().equals(FeaturesMain.bombBagGold) && quiverSlot.getMetadata() < quiverSlot.getMaxDamage()) {
-			if (entityplayer.inventory.consumeInventoryItem(Item.ammoChargeExplosive.id)) {
-				entityplayer.setCurrentItem(Item.handcannonLoaded.id);
-			}
-			cir.setReturnValue(itemstack);
+			world.playSoundAtEntity(entityplayer, entityplayer, "random.click", 1.0F, 1.9F);
+			cir.setReturnValue(new ItemStack(Item.handcannonLoaded, 1, itemstack.getMetadata(), itemstack.getData()));
+		} else if (quiverSlot != null && quiverSlot.getItem().equals(FeaturesMain.bombBagGold)) {
+			world.playSoundAtEntity(entityplayer, entityplayer, "random.click", 1.0F, 1.9F);
+			cir.setReturnValue(new ItemStack(Item.handcannonLoaded, 1, itemstack.getMetadata(), itemstack.getData()));
 		}
 	}
 }

@@ -1,6 +1,7 @@
 package cursedbread.morefeatures.mixin;
 
 import cursedbread.morefeatures.item.ItemBombQuiver;
+import cursedbread.morefeatures.item.ItemBombQuiverEndless;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.render.EntityRenderDispatcher;
 import net.minecraft.client.render.RenderEngine;
@@ -21,6 +22,9 @@ public class EntityBagRender{
 	@Unique
 	String bomb_quiver_texture_path = "/assets/morefeatures/armor/bag/bag_normal_1.png";
 
+	@Unique
+	String bomb_golden_quiver_texture_path = "/assets/morefeatures/armor/bag/bag_gold_1.png";
+
 	@Inject(method = "loadTexture", at = @At("HEAD"), cancellable = true)
 	protected void loadTexture(String texturePath, CallbackInfo ci) {
 		if (texturePath.equals(quiver_texture_path)) {
@@ -29,6 +33,11 @@ public class EntityBagRender{
 				EntityRenderer<?> thisAs = (EntityRenderer<?>) (Object) this;
 				RenderEngine renderEngine = thisAs.renderDispatcher.renderEngine;
 				renderEngine.bindTexture(renderEngine.getTexture(bomb_quiver_texture_path));
+				ci.cancel();
+			} else if (chest_item != null && chest_item.getItem() instanceof ItemBombQuiverEndless) {
+				EntityRenderer<?> thisAs = (EntityRenderer<?>) (Object) this;
+				RenderEngine renderEngine = thisAs.renderDispatcher.renderEngine;
+				renderEngine.bindTexture(renderEngine.getTexture(bomb_golden_quiver_texture_path));
 				ci.cancel();
 			}
 		}

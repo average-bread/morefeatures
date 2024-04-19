@@ -6,7 +6,9 @@
     "mixins": [
       "WorkbenchFix",
       "BagArmor",
-      "EntityBagRender"
+      "EntityBagRender",
+      "ItemCannonMixin",
+      "SlotArmorMixin"
     ],
     "client": [
     ],

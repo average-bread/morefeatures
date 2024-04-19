@@ -20,27 +20,27 @@ public class VanilaBlockColoredPaperwall
 
 	@Override
 	public int getRenderBlockPass() {
-		return 1;
+		return 0;
 	}
 
 
 	private static final int[] textures = new int[] {
-		TextureHelper.getOrCreateBlockTextureIndex(MOD_ID, "paperwall/white_paperwall.png"),
-		TextureHelper.getOrCreateBlockTextureIndex(MOD_ID, "paperwall/orange_paperwall.png"),
-		TextureHelper.getOrCreateBlockTextureIndex(MOD_ID, "paperwall/magenta_paperwall.png"),
-		TextureHelper.getOrCreateBlockTextureIndex(MOD_ID, "paperwall/lightblue_paperwall.png"),
-		TextureHelper.getOrCreateBlockTextureIndex(MOD_ID, "paperwall/yellow_paperwall.png"),
-		TextureHelper.getOrCreateBlockTextureIndex(MOD_ID, "paperwall/lime_paperwall.png"),
-		TextureHelper.getOrCreateBlockTextureIndex(MOD_ID, "paperwall/pink_paperwall.png"),
-		TextureHelper.getOrCreateBlockTextureIndex(MOD_ID, "paperwall/gray_paperwall.png"),
-		TextureHelper.getOrCreateBlockTextureIndex(MOD_ID, "paperwall/silver_paperwall.png"),
-		TextureHelper.getOrCreateBlockTextureIndex(MOD_ID, "paperwall/cyan_paperwall.png"),
-		TextureHelper.getOrCreateBlockTextureIndex(MOD_ID, "paperwall/purple_paperwall.png"),
-		TextureHelper.getOrCreateBlockTextureIndex(MOD_ID, "paperwall/blue_paperwall.png"),
-		TextureHelper.getOrCreateBlockTextureIndex(MOD_ID, "paperwall/brown_paperwall.png"),
-		TextureHelper.getOrCreateBlockTextureIndex(MOD_ID, "paperwall/green_paperwall.png"),
-		TextureHelper.getOrCreateBlockTextureIndex(MOD_ID, "paperwall/red_paperwall.png"),
-		TextureHelper.getOrCreateBlockTextureIndex(MOD_ID, "paperwall/black_paperwall.png"),
+		TextureHelper.getOrCreateBlockTextureIndex(MOD_ID, "paperwall/main/white_paperwall.png"),
+		TextureHelper.getOrCreateBlockTextureIndex(MOD_ID, "paperwall/main/orange_paperwall.png"),
+		TextureHelper.getOrCreateBlockTextureIndex(MOD_ID, "paperwall/main/magenta_paperwall.png"),
+		TextureHelper.getOrCreateBlockTextureIndex(MOD_ID, "paperwall/main/lightblue_paperwall.png"),
+		TextureHelper.getOrCreateBlockTextureIndex(MOD_ID, "paperwall/main/yellow_paperwall.png"),
+		TextureHelper.getOrCreateBlockTextureIndex(MOD_ID, "paperwall/main/lime_paperwall.png"),
+		TextureHelper.getOrCreateBlockTextureIndex(MOD_ID, "paperwall/main/pink_paperwall.png"),
+		TextureHelper.getOrCreateBlockTextureIndex(MOD_ID, "paperwall/main/gray_paperwall.png"),
+		TextureHelper.getOrCreateBlockTextureIndex(MOD_ID, "paperwall/main/silver_paperwall.png"),
+		TextureHelper.getOrCreateBlockTextureIndex(MOD_ID, "paperwall/main/cyan_paperwall.png"),
+		TextureHelper.getOrCreateBlockTextureIndex(MOD_ID, "paperwall/main/purple_paperwall.png"),
+		TextureHelper.getOrCreateBlockTextureIndex(MOD_ID, "paperwall/main/blue_paperwall.png"),
+		TextureHelper.getOrCreateBlockTextureIndex(MOD_ID, "paperwall/main/brown_paperwall.png"),
+		TextureHelper.getOrCreateBlockTextureIndex(MOD_ID, "paperwall/main/green_paperwall.png"),
+		TextureHelper.getOrCreateBlockTextureIndex(MOD_ID, "paperwall/main/red_paperwall.png"),
+		TextureHelper.getOrCreateBlockTextureIndex(MOD_ID, "paperwall/main/black_paperwall.png"),
 	};
 
 	@Override

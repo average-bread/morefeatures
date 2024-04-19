@@ -22,7 +22,7 @@ public class VanilaBlockColoredGlowstone
 
 	@Override
 	public int getRenderBlockPass() {
-		return 1;
+		return 0;
 	}
 
 
