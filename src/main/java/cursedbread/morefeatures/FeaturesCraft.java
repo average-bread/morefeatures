@@ -109,6 +109,12 @@ public class FeaturesCraft implements RecipeEntrypoint {
 				.create("itemGroupExample", new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 8, 15-i));
 		}
 
+		RecipeBuilder.Shaped(MOD_ID)
+			.setShape("GGG", "GDG", "GGG")
+			.addInput('D', Item.bucketWater)
+			.addInput('G', "morefeatures:glowstones")
+			.create("itemGroupExample", new ItemStack(Block.glowstone, 8));
+
 		for (int i = 0; i <=15; i++){
 			RecipeBuilder.Shaped(MOD_ID)
 				.setShape("GGG", "GDG", "GGG")
@@ -116,6 +122,14 @@ public class FeaturesCraft implements RecipeEntrypoint {
 				.addInput('G', "morefeatures:paperwall")
 				.create("itemGroupExample", new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 8, 15-i));
 		}
+
+		RecipeBuilder.Shaped(MOD_ID)
+			.setShape("GGG", "GDG", "GGG")
+			.addInput('D', Item.bucketWater)
+			.addInput('G', "morefeatures:paperwall")
+			.create("itemGroupExample", new ItemStack(Block.paperWall, 8));
+
+
 		for (int j = 0; j < crownMaterial.length; j++) {
 			Item material = Item.itemsList[crownMaterial[j]];
 			RecipeBuilder.Shaped(MOD_ID)
@@ -124,7 +138,6 @@ public class FeaturesCraft implements RecipeEntrypoint {
 				.addInput('C', Item.cloth)
 				.create("rown", new ItemStack(crownResult[j], 1));
 		}
-
 
 		for (int i = 0; i < armorHelmetResult.length; i++) {
 			Item material = Item.itemsList[armorMaterial[i]];
