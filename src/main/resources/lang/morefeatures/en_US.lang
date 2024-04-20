@@ -102,6 +102,24 @@ item.morefeatures.helmet.plate.desc=An extremely old plate helmet
 item.morefeatures.chestplate.plate.name=Plate Chestplate
 item.morefeatures.chestplate.plate.desc=An extremely old plate chestplate
 
+item.morefeatures.helmet.leatherchain.name=Studded Helmet
+item.morefeatures.helmet.leatherchain.desc=A hat made from cow's hide and tiny chains. Can't be repaired
+item.morefeatures.chestplate.leatherchain.name=Studded Chestplate
+item.morefeatures.chestplate.leatherchain.desc=A tunic made from cow's hide and tiny chains. Can't be repaired
+item.morefeatures.leggings.leatherchain.name=Studded Leggings
+item.morefeatures.leggings.leatherchain.desc=A pair of trousers made from cow's hide and tiny chains. Can't be repaired
+item.morefeatures.boots.leatherchain.name=Studded Boots
+item.morefeatures.boots.leatherchain.desc=A pair of boots made from cow's hide and tiny chains. Can't be repaired
+
+item.morefeatures.helmet.stone.name=Stone Helmet
+item.morefeatures.helmet.stone.desc=A weak but protective strong stone helmet
+item.morefeatures.chestplate.stone.name=Stone Chestplate
+item.morefeatures.chestplate.stone.desc=A weak but protective strong stone chestplate
+item.morefeatures.leggings.stone.name=Stone Leggings
+item.morefeatures.leggings.stone.desc=A pair of weak but protective strong stone leggings
+item.morefeatures.boots.stone.name=Stone Boots
+item.morefeatures.boots.stone.desc=A pair of weak but protective strong stone boots
+
 item.morefeatures.stick.workbench.name=Workbench On A Stick
 item.morefeatures.stick.workbench.desc=Right click to craft whenever you want!
 

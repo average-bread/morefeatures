@@ -4,6 +4,10 @@ import cursedbread.morefeatures.blocks.FeaturesBlocks;
 import cursedbread.morefeatures.item.FeaturesItems;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.data.registry.Registries;
+import net.minecraft.core.data.registry.recipe.RecipeGroup;
+import net.minecraft.core.data.registry.recipe.RecipeSymbol;
+import net.minecraft.core.data.registry.recipe.entry.RecipeEntryCrafting;
+import net.minecraft.core.data.registry.recipe.entry.RecipeEntryRepairable;
 import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemStack;
 import turniplabs.halplibe.helper.RecipeBuilder;
@@ -39,19 +43,24 @@ public class FeaturesCraft implements RecipeEntrypoint {
 	};
 
 	public static int[] armorMaterial = {
-		Block.bedrock.id
+		Block.bedrock.id,
+		Block.stone.id
 	};
 	public static Item[] armorHelmetResult = {
-		FeaturesItems.bedrockHelmet
+		FeaturesItems.bedrockHelmet,
+		FeaturesItems.stoneHelmet
 	};
 	public static Item[] armorChestplateResult = {
-		FeaturesItems.bedrockChestplate
+		FeaturesItems.bedrockChestplate,
+		FeaturesItems.stoneChestplate
 	};
 	public static Item[] armorLeggingsResult = {
-		FeaturesItems.bedrockLeggings
+		FeaturesItems.bedrockLeggings,
+		FeaturesItems.stoneLeggings
 	};
 	public static Item[] armorBootsResult = {
-		FeaturesItems.bedrockBoots
+		FeaturesItems.bedrockBoots,
+		FeaturesItems.stoneBoots
 	};
 
 	@Override
@@ -166,14 +175,32 @@ public class FeaturesCraft implements RecipeEntrypoint {
 		RecipeBuilder.Shapeless(MOD_ID)
 			.addInput(Item.armorChestplateLeather)
 			.addInput(Item.armorChestplateChainmail)
-			.create("leather-chainHelmet", new ItemStack(FeaturesItems.leatherChainChestplate, 1));
+			.create("leather-chainChestplate", new ItemStack(FeaturesItems.leatherChainChestplate, 1));
 		RecipeBuilder.Shapeless(MOD_ID)
 			.addInput(Item.armorLeggingsLeather)
 			.addInput(Item.armorLeggingsChainmail)
-			.create("leather-chainHelmet", new ItemStack(FeaturesItems.leatherChainLeggings, 1));
+			.create("leather-chainLeggings", new ItemStack(FeaturesItems.leatherChainLeggings, 1));
 		RecipeBuilder.Shapeless(MOD_ID)
 			.addInput(Item.armorBootsLeather)
 			.addInput(Item.armorBootsChainmail)
-			.create("leather-chainHelmet", new ItemStack(FeaturesItems.leatherChainBoots, 1));
+			.create("leather-chainBoots", new ItemStack(FeaturesItems.leatherChainBoots, 1));
+
+
+
+
+		RecipeGroup<RecipeEntryCrafting<?, ?>> workbenchGroup = ((RecipeGroup<RecipeEntryCrafting<?, ?>>) RecipeBuilder.getRecipeGroup(MOD_ID, "workbench", new RecipeSymbol(Block.workbench.getDefaultStack())));
+		workbenchGroup.register("leather-chainHelmetReapir", new RecipeEntryRepairable(FeaturesItems.leatherChainHelmet, Item.chainlink));
+		RecipeBuilder.getRecipeGroup(MOD_ID, "workbench", new RecipeSymbol(Block.workbench.getDefaultStack()));
+		workbenchGroup.register("leather-chainHelmetReapir", new RecipeEntryRepairable(FeaturesItems.leatherChainChestplate, Item.chainlink));
+		RecipeBuilder.getRecipeGroup(MOD_ID, "workbench", new RecipeSymbol(Block.workbench.getDefaultStack()));
+		workbenchGroup.register("leather-chainChestplateReapir", new RecipeEntryRepairable(FeaturesItems.leatherChainLeggings, Item.chainlink));
+		RecipeBuilder.getRecipeGroup(MOD_ID, "workbench", new RecipeSymbol(Block.workbench.getDefaultStack()));
+		workbenchGroup.register("leather-chainLeggingsReapir", new RecipeEntryRepairable(FeaturesItems.leatherChainBoots, Item.chainlink));
+		RecipeBuilder.getRecipeGroup(MOD_ID, "workbench", new RecipeSymbol(Block.workbench.getDefaultStack()));
+		workbenchGroup.register("leather-chainBootsReapir", new RecipeEntryRepairable(FeaturesItems.leatherChainBoots, Item.chainlink));
+		RecipeBuilder.getRecipeGroup(MOD_ID, "workbench", new RecipeSymbol(Block.workbench.getDefaultStack()));
+		workbenchGroup.register("plateHelmetReapir", new RecipeEntryRepairable(FeaturesItems.plateHelmet, Item.ingotIron));
+		RecipeBuilder.getRecipeGroup(MOD_ID, "workbench", new RecipeSymbol(Block.workbench.getDefaultStack()));
+		workbenchGroup.register("plateChestplateReapir", new RecipeEntryRepairable(FeaturesItems.plateChestplate, Item.ingotIron));
 	}
 }

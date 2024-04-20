@@ -16,10 +16,6 @@ import java.util.Random;
 
 @Mixin(value = WorldFeatureLabyrinth.class, remap = false)
 public class DungeonLootMixin {
-	@Shadow
-	private boolean treasureGenerated;
-	@Shadow
-	private int dungeonSize;
 
 	@Inject(method = "pickCheckLootItem", at = @At("HEAD"), cancellable = true)
 	private void pickCheckLootItem(Random random, CallbackInfoReturnable<ItemStack> cir) {
@@ -29,9 +25,9 @@ public class DungeonLootMixin {
 		}
 		int j = random.nextInt(32);
 		if (j == 1) {
-			cir.setReturnValue( new ItemStack(FeaturesItems.plateHelmet));
+			cir.setReturnValue( new ItemStack(FeaturesItems.plateHelmet, 1, FeaturesItems.plateHelmet.getMaxDamage() - random.nextInt(FeaturesItems.plateHelmet.getMaxDamage())));
 		} else if (j == 2) {
-			cir.setReturnValue( new ItemStack(FeaturesItems.plateChestplate));
+			cir.setReturnValue( new ItemStack(FeaturesItems.plateChestplate, 1, FeaturesItems.plateChestplate.getMaxDamage() - random.nextInt(FeaturesItems.plateChestplate.getMaxDamage())));
 		}
 	}
 }
