@@ -1,6 +1,7 @@
 package cursedbread.morefeatures.mixin;
 
 import cursedbread.morefeatures.FeaturesMain;
+import cursedbread.morefeatures.item.FeaturesItems;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.player.inventory.slot.SlotArmor;
 import org.spongepowered.asm.mixin.Final;
@@ -19,7 +20,7 @@ public class BagArmor {
 
 	@Inject(method = "canPutStackInSlot", at = @At("HEAD"), cancellable = true)
 	public void canPutStackInSlot(ItemStack itemstack, CallbackInfoReturnable<Boolean> cir) {
-		if ((itemstack != null && itemstack.getItem().equals(FeaturesMain.bombBag)) || itemstack != null && itemstack.getItem().equals(FeaturesMain.bombBagGold)) {
+		if ((itemstack != null && itemstack.getItem().equals(FeaturesItems.bombBag)) || itemstack != null && itemstack.getItem().equals(FeaturesItems.bombBagGold)) {
 			cir.setReturnValue(this.armorType == 1);
 		}
 	}

@@ -1,5 +1,7 @@
 package cursedbread.morefeatures;
 
+import cursedbread.morefeatures.blocks.FeaturesBlocks;
+import cursedbread.morefeatures.item.FeaturesItems;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.data.registry.Registries;
 import net.minecraft.core.item.Item;
@@ -24,69 +26,69 @@ public class FeaturesCraft implements RecipeEntrypoint {
 		Item.ingotSteel.id
 	};
 	public static Item[] crownResult = {
-		FeaturesMain.dandelionCrown,
-		FeaturesMain.roseCrown,
-		FeaturesMain.cherryCrown,
-		FeaturesMain.deadbushCrown,
-		FeaturesMain.leatherCrown,
-		FeaturesMain.chainCrown,
-		FeaturesMain.ironCrown,
-		FeaturesMain.goldCrown,
-		FeaturesMain.diamondCrown,
-		FeaturesMain.steelCrown
+		FeaturesItems.dandelionCrown,
+		FeaturesItems.roseCrown,
+		FeaturesItems.cherryCrown,
+		FeaturesItems.deadbushCrown,
+		FeaturesItems.leatherCrown,
+		FeaturesItems.chainCrown,
+		FeaturesItems.ironCrown,
+		FeaturesItems.goldCrown,
+		FeaturesItems.diamondCrown,
+		FeaturesItems.steelCrown
 	};
 
 	public static int[] armorMaterial = {
 		Block.bedrock.id
 	};
 	public static Item[] armorHelmetResult = {
-		FeaturesMain.bedrockHelmet
+		FeaturesItems.bedrockHelmet
 	};
 	public static Item[] armorChestplateResult = {
-		FeaturesMain.bedrockChestplate
+		FeaturesItems.bedrockChestplate
 	};
 	public static Item[] armorLeggingsResult = {
-		FeaturesMain.bedrockLeggings
+		FeaturesItems.bedrockLeggings
 	};
 	public static Item[] armorBootsResult = {
-		FeaturesMain.bedrockBoots
+		FeaturesItems.bedrockBoots
 	};
 
 	@Override
 	public void initNamespaces() {
-		Registries.ITEM_GROUPS.register("morefeatures:glowstones", Registries.stackListOf(Block.glowstone, new ItemStack(FeaturesMain.vanillaColoredGlowstone, 1, 0),
-			new ItemStack(FeaturesMain.vanillaColoredGlowstone, 1, 1),
-			new ItemStack(FeaturesMain.vanillaColoredGlowstone, 1, 2),
-			new ItemStack(FeaturesMain.vanillaColoredGlowstone, 1, 3),
-			new ItemStack(FeaturesMain.vanillaColoredGlowstone, 1, 4),
-			new ItemStack(FeaturesMain.vanillaColoredGlowstone, 1, 5),
-			new ItemStack(FeaturesMain.vanillaColoredGlowstone, 1, 6),
-			new ItemStack(FeaturesMain.vanillaColoredGlowstone, 1, 7),
-			new ItemStack(FeaturesMain.vanillaColoredGlowstone, 1, 8),
-			new ItemStack(FeaturesMain.vanillaColoredGlowstone, 1, 9),
-			new ItemStack(FeaturesMain.vanillaColoredGlowstone, 1, 10),
-			new ItemStack(FeaturesMain.vanillaColoredGlowstone, 1, 11),
-			new ItemStack(FeaturesMain.vanillaColoredGlowstone, 1, 12),
-			new ItemStack(FeaturesMain.vanillaColoredGlowstone, 1, 13),
-			new ItemStack(FeaturesMain.vanillaColoredGlowstone, 1, 14),
-			new ItemStack(FeaturesMain.vanillaColoredGlowstone, 1, 15)));
+		Registries.ITEM_GROUPS.register("morefeatures:glowstones", Registries.stackListOf(Block.glowstone, new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 0),
+			new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 1),
+			new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 2),
+			new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 3),
+			new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 4),
+			new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 5),
+			new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 6),
+			new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 7),
+			new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 8),
+			new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 9),
+			new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 10),
+			new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 11),
+			new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 12),
+			new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 13),
+			new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 14),
+			new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 15)));
 
-		Registries.ITEM_GROUPS.register("morefeatures:paperwall", Registries.stackListOf(Block.paperWall, new ItemStack(FeaturesMain.vanillaColoredPaperwall, 1, 0),
-			new ItemStack(FeaturesMain.vanillaColoredPaperwall, 1, 1),
-			new ItemStack(FeaturesMain.vanillaColoredPaperwall, 1, 2),
-			new ItemStack(FeaturesMain.vanillaColoredPaperwall, 1, 3),
-			new ItemStack(FeaturesMain.vanillaColoredPaperwall, 1, 4),
-			new ItemStack(FeaturesMain.vanillaColoredPaperwall, 1, 5),
-			new ItemStack(FeaturesMain.vanillaColoredPaperwall, 1, 6),
-			new ItemStack(FeaturesMain.vanillaColoredPaperwall, 1, 7),
-			new ItemStack(FeaturesMain.vanillaColoredPaperwall, 1, 8),
-			new ItemStack(FeaturesMain.vanillaColoredPaperwall, 1, 9),
-			new ItemStack(FeaturesMain.vanillaColoredPaperwall, 1, 10),
-			new ItemStack(FeaturesMain.vanillaColoredPaperwall, 1, 11),
-			new ItemStack(FeaturesMain.vanillaColoredPaperwall, 1, 12),
-			new ItemStack(FeaturesMain.vanillaColoredPaperwall, 1, 13),
-			new ItemStack(FeaturesMain.vanillaColoredPaperwall, 1, 14),
-			new ItemStack(FeaturesMain.vanillaColoredPaperwall, 1, 15)));
+		Registries.ITEM_GROUPS.register("morefeatures:paperwall", Registries.stackListOf(Block.paperWall, new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 0),
+			new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 1),
+			new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 2),
+			new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 3),
+			new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 4),
+			new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 5),
+			new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 6),
+			new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 7),
+			new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 8),
+			new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 9),
+			new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 10),
+			new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 11),
+			new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 12),
+			new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 13),
+			new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 14),
+			new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 15)));
 	}
 	@Override
 	public void onRecipesReady() {
@@ -95,7 +97,7 @@ public class FeaturesCraft implements RecipeEntrypoint {
 				.setShape("GGG", "GDG", "GGG")
 				.addInput('D', Item.dye, i)
 				.addInput('G', "morefeatures:glowstones")
-				.create("itemGroupExample", new ItemStack(FeaturesMain.vanillaColoredGlowstone, 8, 15-i));
+				.create("itemGroupExample", new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 8, 15-i));
 		}
 
 		for (int i = 0; i <=15; i++){
@@ -103,7 +105,7 @@ public class FeaturesCraft implements RecipeEntrypoint {
 				.setShape("GGG", "GDG", "GGG")
 				.addInput('D', Item.dye, i)
 				.addInput('G', "morefeatures:paperwall")
-				.create("itemGroupExample", new ItemStack(FeaturesMain.vanillaColoredPaperwall, 8, 15-i));
+				.create("itemGroupExample", new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 8, 15-i));
 		}
 		for (int j = 0; j < crownMaterial.length; j++) {
 			Item material = Item.itemsList[crownMaterial[j]];
@@ -148,13 +150,30 @@ public class FeaturesCraft implements RecipeEntrypoint {
 			.setShape(" W", "S ")
 			.addInput('S', Item.stick)
 			.addInput('W', Block.workbench)
-			.create("craftingOnAStick", new ItemStack(FeaturesMain.workbenchOnStick, 1));
+			.create("craftingOnAStick", new ItemStack(FeaturesItems.workbenchOnStick, 1));
 
 		RecipeBuilder.Shaped(MOD_ID)
 		.setShape("S S", "CCC", "LLL")
 			.addInput('S', Item.string)
 			.addInput('L', Item.leather)
 			.addInput('C', Item.cloth)
-			.create("bomBagCraft", new ItemStack(FeaturesMain.bombBag, 1, 48));
+			.create("bomBagCraft", new ItemStack(FeaturesItems.bombBag, 1, 48));
+
+		RecipeBuilder.Shapeless(MOD_ID)
+			.addInput(Item.armorHelmetLeather)
+			.addInput(Item.armorHelmetChainmail)
+			.create("leather-chainHelmet", new ItemStack(FeaturesItems.leatherChainHelmet, 1));
+		RecipeBuilder.Shapeless(MOD_ID)
+			.addInput(Item.armorChestplateLeather)
+			.addInput(Item.armorChestplateChainmail)
+			.create("leather-chainHelmet", new ItemStack(FeaturesItems.leatherChainChestplate, 1));
+		RecipeBuilder.Shapeless(MOD_ID)
+			.addInput(Item.armorLeggingsLeather)
+			.addInput(Item.armorLeggingsChainmail)
+			.create("leather-chainHelmet", new ItemStack(FeaturesItems.leatherChainLeggings, 1));
+		RecipeBuilder.Shapeless(MOD_ID)
+			.addInput(Item.armorBootsLeather)
+			.addInput(Item.armorBootsChainmail)
+			.create("leather-chainHelmet", new ItemStack(FeaturesItems.leatherChainBoots, 1));
 	}
 }
