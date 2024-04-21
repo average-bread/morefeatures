@@ -38,7 +38,7 @@
   "depends": {
 		"minecraft": "7.1",
     "fabricloader": ">=0.15.5"
-  },
-  "suggests": {
-  }
+  },"suggests": {
+	     "nonamedyes": ">=1.2"
+    }
 }

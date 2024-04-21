@@ -33,6 +33,8 @@ public class FeaturesItems {
 	public static Item roseCrown;
 	public static Item cherryCrown;
 	public static Item deadbushCrown;
+
+	public static int flowerCrownEnabled;
 	public static Item leatherCrown;
 	public static Item chainCrown;
 	public static Item ironCrown;
@@ -40,67 +42,96 @@ public class FeaturesItems {
 	public static Item diamondCrown;
 	public static Item steelCrown;
 
+	public static int regularCrownEnabled;
+
 	public static Item bedrockHelmet;
 	public static Item bedrockChestplate;
 	public static Item bedrockLeggings;
 	public static Item bedrockBoots;
+
+	public static int bedrockArmorEnabled;
 
 	public static Item stoneHelmet;
 	public static Item stoneChestplate;
 	public static Item stoneLeggings;
 	public static Item stoneBoots;
 
+	public static int stoneArmorEnabled;
+
 	public static Item leatherChainHelmet;
 	public static Item leatherChainChestplate;
 	public static Item leatherChainLeggings;
 	public static Item leatherChainBoots;
 
+	public static int leatherchainArmorEnabled;
+
 	public static Item plateHelmet;
 	public static Item plateChestplate;
 
+	public static int plateArmorEnabled;
+
 	public static Item workbenchOnStick;
+
+	public static int workbenchonstickEnabled;
 	public static Item bombBag;
 	public static Item bombBagGold;
+
+	public static int bombQuibersEnabled;
 
 	public void initilizeItems() {
 
 		//items
-		TextureHelper.getOrCreateItemTextureIndex(MOD_ID, "extra/bomb_bag_empty.png");
-		TextureHelper.getOrCreateItemTextureIndex(MOD_ID, "extra/bomb_bag_full.png");
+		if (flowerCrownEnabled == 1) {
+			dandelionCrown = ItemHelper.createItem(MOD_ID, new ItemArmor("crown.dandeline", itemId++, dandelionArmor, 0), "crown/dandeline_helmet.png");
+			roseCrown = ItemHelper.createItem(MOD_ID, new ItemArmor("crown.rose", itemId++, roseArmor, 0), "crown/rose_helmet.png");
+			cherryCrown = ItemHelper.createItem(MOD_ID, new ItemArmor("crown.cherry", itemId++, cherryArmor, 0), "crown/cherry_helmet.png");
+			deadbushCrown = ItemHelper.createItem(MOD_ID, new ItemArmor("crown.deadbush", itemId++, deadbushArmor, 0), "crown/deadbush_helmet.png");
+		}
+		if (regularCrownEnabled == 1) {
+			leatherCrown = ItemHelper.createItem(MOD_ID, new ItemArmor("crown.leather", itemId++, leatherExtraArmor, 0), "crown/leather_crown.png");
+			chainCrown = ItemHelper.createItem(MOD_ID, new ItemArmor("crown.chain", itemId++, chainExtraArmor, 0), "crown/chain_crown.png");
+			ironCrown = ItemHelper.createItem(MOD_ID, new ItemArmor("crown.iron", itemId++, ironExtraArmor, 0), "crown/iron_crown.png");
+			goldCrown = ItemHelper.createItem(MOD_ID, new ItemArmor("crown.gold", itemId++, goldExtraArmor, 0), "crown/gold_crown.png");
+			diamondCrown = ItemHelper.createItem(MOD_ID, new ItemArmor("crown.diamond", itemId++, diamondExtraArmor, 0), "crown/diamond_crown.png");
+			steelCrown= ItemHelper.createItem(MOD_ID, new ItemArmor("crown.steel", itemId++, steelExtraArmor, 0), "crown/steel_crown.png");
+		}
+
+		if (bedrockArmorEnabled == 1) {
+			bedrockHelmet = ItemHelper.createItem(MOD_ID, new ItemArmor("helmet.bedrock", itemId++, bedrockArmor, 0), "armoritem/bedrock_helmet.png");
+			bedrockChestplate = ItemHelper.createItem(MOD_ID, new ItemArmor("chestplate.bedrock", itemId++, bedrockArmor, 1), "armoritem/bedrock_chestplate.png");
+			bedrockLeggings = ItemHelper.createItem(MOD_ID, new ItemArmor("leggings.bedrock", itemId++, bedrockArmor, 2), "armoritem/bedrock_leggings.png");
+			bedrockBoots = ItemHelper.createItem(MOD_ID, new ItemArmor("boots.bedrock", itemId++, bedrockArmor, 3), "armoritem/bedrock_boots.png");
+		}
+
+		if (plateArmorEnabled == 1) {
+			plateHelmet = ItemHelper.createItem(MOD_ID, new ItemArmor("helmet.plate", itemId++, plateArmor, 0), "armoritem/plate_helmet.png");
+			plateChestplate = ItemHelper.createItem(MOD_ID, new ItemArmor("chestplate.plate", itemId++, plateArmor, 1), "armoritem/plate_chestplate.png");
+		}
+
+		if (leatherchainArmorEnabled == 1) {
+			leatherChainHelmet = ItemHelper.createItem(MOD_ID, new ItemArmor("helmet.leatherchain", itemId++, leatherChainArmor, 0), "armoritem/leatherchain_helmet.png");
+			leatherChainChestplate = ItemHelper.createItem(MOD_ID, new ItemArmor("chestplate.leatherchain", itemId++, leatherChainArmor, 1), "armoritem/leatherchain_chestplate.png");
+			leatherChainLeggings = ItemHelper.createItem(MOD_ID, new ItemArmor("leggings.leatherchain", itemId++, leatherChainArmor, 2), "armoritem/leatherchain_leggings.png");
+			leatherChainBoots = ItemHelper.createItem(MOD_ID, new ItemArmor("boots.leatherchain", itemId++, leatherChainArmor, 3), "armoritem/leatherchain_boots.png");
+		}
+
+		if (stoneArmorEnabled == 1) {
+			stoneHelmet = ItemHelper.createItem(MOD_ID, new ItemArmor("helmet.stone", itemId++, stoneArmor, 0), "armoritem/stone_helmet.png");
+			stoneChestplate = ItemHelper.createItem(MOD_ID, new ItemArmor("chestplate.stone", itemId++, stoneArmor, 1), "armoritem/stone_chestplate.png");
+			stoneLeggings = ItemHelper.createItem(MOD_ID, new ItemArmor("leggings.stone", itemId++, stoneArmor, 2), "armoritem/stone_leggings.png");
+			stoneBoots = ItemHelper.createItem(MOD_ID, new ItemArmor("boots.stone", itemId++, stoneArmor, 3), "armoritem/stone_boots.png");
+		}
 
 
-		dandelionCrown = ItemHelper.createItem(MOD_ID, new ItemArmor("crown.dandeline", itemId++, dandelionArmor, 0), "crown/dandeline_helmet.png");
-		roseCrown = ItemHelper.createItem(MOD_ID, new ItemArmor("crown.rose", itemId++, roseArmor, 0), "crown/rose_helmet.png");
-		cherryCrown = ItemHelper.createItem(MOD_ID, new ItemArmor("crown.cherry", itemId++, cherryArmor, 0), "crown/cherry_helmet.png");
-		deadbushCrown = ItemHelper.createItem(MOD_ID, new ItemArmor("crown.deadbush", itemId++, deadbushArmor, 0), "crown/deadbush_helmet.png");
-		leatherCrown = ItemHelper.createItem(MOD_ID, new ItemArmor("crown.leather", itemId++, leatherExtraArmor, 0), "crown/leather_crown.png");
-		chainCrown = ItemHelper.createItem(MOD_ID, new ItemArmor("crown.chain", itemId++, chainExtraArmor, 0), "crown/chain_crown.png");
-		ironCrown = ItemHelper.createItem(MOD_ID, new ItemArmor("crown.iron", itemId++, ironExtraArmor, 0), "crown/iron_crown.png");
-		goldCrown = ItemHelper.createItem(MOD_ID, new ItemArmor("crown.gold", itemId++, goldExtraArmor, 0), "crown/gold_crown.png");
-		diamondCrown = ItemHelper.createItem(MOD_ID, new ItemArmor("crown.diamond", itemId++, diamondExtraArmor, 0), "crown/diamond_crown.png");
-		steelCrown= ItemHelper.createItem(MOD_ID, new ItemArmor("crown.steel", itemId++, steelExtraArmor, 0), "crown/steel_crown.png");
+		if (bombQuibersEnabled == 1) {
+			TextureHelper.getOrCreateItemTextureIndex(MOD_ID, "extra/bomb_bag_empty.png");
+			TextureHelper.getOrCreateItemTextureIndex(MOD_ID, "extra/bomb_bag_full.png");
+			bombBag = ItemHelper.createItem(MOD_ID, new ItemBombQuiver("bag.normal", itemId++), "extra/bomb_bag_empty.png");
+			bombBagGold = ItemHelper.createItem(MOD_ID, new ItemBombQuiverEndless("bag.gold", itemId++), "extra/bomb_bag_gold.png");
+		}
 
-		bedrockHelmet = ItemHelper.createItem(MOD_ID, new ItemArmor("helmet.bedrock", itemId++, bedrockArmor, 0), "armoritem/bedrock_helmet.png");
-		bedrockChestplate = ItemHelper.createItem(MOD_ID, new ItemArmor("chestplate.bedrock", itemId++, bedrockArmor, 1), "armoritem/bedrock_chestplate.png");
-		bedrockLeggings = ItemHelper.createItem(MOD_ID, new ItemArmor("leggings.bedrock", itemId++, bedrockArmor, 2), "armoritem/bedrock_leggings.png");
-		bedrockBoots = ItemHelper.createItem(MOD_ID, new ItemArmor("boots.bedrock", itemId++, bedrockArmor, 3), "armoritem/bedrock_boots.png");
-
-		plateHelmet = ItemHelper.createItem(MOD_ID, new ItemArmor("helmet.plate", itemId++, plateArmor, 0), "armoritem/plate_helmet.png");
-		plateChestplate = ItemHelper.createItem(MOD_ID, new ItemArmor("chestplate.plate", itemId++, plateArmor, 1), "armoritem/plate_chestplate.png");
-
-		leatherChainHelmet = ItemHelper.createItem(MOD_ID, new ItemArmor("helmet.leatherchain", itemId++, leatherChainArmor, 0), "armoritem/leatherchain_helmet.png");
-		leatherChainChestplate = ItemHelper.createItem(MOD_ID, new ItemArmor("chestplate.leatherchain", itemId++, leatherChainArmor, 1), "armoritem/leatherchain_chestplate.png");
-		leatherChainLeggings = ItemHelper.createItem(MOD_ID, new ItemArmor("leggings.leatherchain", itemId++, leatherChainArmor, 2), "armoritem/leatherchain_leggings.png");
-		leatherChainBoots = ItemHelper.createItem(MOD_ID, new ItemArmor("boots.leatherchain", itemId++, leatherChainArmor, 3), "armoritem/leatherchain_boots.png");
-
-		stoneHelmet = ItemHelper.createItem(MOD_ID, new ItemArmor("helmet.stone", itemId++, stoneArmor, 0), "armoritem/stone_helmet.png");
-		stoneChestplate = ItemHelper.createItem(MOD_ID, new ItemArmor("chestplate.stone", itemId++, stoneArmor, 1), "armoritem/stone_chestplate.png");
-		stoneLeggings = ItemHelper.createItem(MOD_ID, new ItemArmor("leggings.stone", itemId++, stoneArmor, 2), "armoritem/stone_leggings.png");
-		stoneBoots = ItemHelper.createItem(MOD_ID, new ItemArmor("boots.stone", itemId++, stoneArmor, 3), "armoritem/stone_boots.png");
-
-		bombBag = ItemHelper.createItem(MOD_ID, new ItemBombQuiver("bag.normal", itemId++), "extra/bomb_bag_empty.png");
-		bombBagGold = ItemHelper.createItem(MOD_ID, new ItemBombQuiverEndless("bag.gold", itemId++), "extra/bomb_bag_gold.png");
-
-		workbenchOnStick = ItemHelper.createItem(MOD_ID, new StickWorkbench("stick.workbench", itemId++), "extra/workbench_on_stick.png");
+		if (workbenchonstickEnabled == 1) {
+			workbenchOnStick = ItemHelper.createItem(MOD_ID, new StickWorkbench("stick.workbench", itemId++), "extra/workbench_on_stick.png");
+		}
 	}
 }

@@ -19,15 +19,19 @@ public class DungeonLootMixin {
 
 	@Inject(method = "pickCheckLootItem", at = @At("HEAD"), cancellable = true)
 	private void pickCheckLootItem(Random random, CallbackInfoReturnable<ItemStack> cir) {
-		int i = random.nextInt(68);
-		if (i == 16) {
-			cir.setReturnValue( new ItemStack(FeaturesItems.bombBagGold));
+		if (FeaturesItems.bombQuibersEnabled == 1) {
+			int i = random.nextInt(68);
+			if (i == 16) {
+				cir.setReturnValue( new ItemStack(FeaturesItems.bombBagGold));
+			}
 		}
-		int j = random.nextInt(32);
-		if (j == 1) {
-			cir.setReturnValue( new ItemStack(FeaturesItems.plateHelmet, 1, FeaturesItems.plateHelmet.getMaxDamage() - random.nextInt(FeaturesItems.plateHelmet.getMaxDamage())));
-		} else if (j == 2) {
-			cir.setReturnValue( new ItemStack(FeaturesItems.plateChestplate, 1, FeaturesItems.plateChestplate.getMaxDamage() - random.nextInt(FeaturesItems.plateChestplate.getMaxDamage())));
+		if (FeaturesItems.plateArmorEnabled == 1) {
+			int j = random.nextInt(32);
+			if (j == 1) {
+				cir.setReturnValue( new ItemStack(FeaturesItems.plateHelmet, 1, FeaturesItems.plateHelmet.getMaxDamage() - random.nextInt(FeaturesItems.plateHelmet.getMaxDamage())));
+			} else if (j == 2) {
+				cir.setReturnValue( new ItemStack(FeaturesItems.plateChestplate, 1, FeaturesItems.plateChestplate.getMaxDamage() - random.nextInt(FeaturesItems.plateChestplate.getMaxDamage())));
+			}
 		}
 	}
 }
