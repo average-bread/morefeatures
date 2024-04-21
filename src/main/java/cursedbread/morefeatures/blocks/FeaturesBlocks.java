@@ -36,7 +36,6 @@ public class FeaturesBlocks {
 	public static int blockId;
 
 	public static Block vanillaColoredGlowstone;
-	public static Block nonameColoredGlowstone;
 	public static int glowstaniEnabled;
 	public static Block vanillaColoredPaperwall;
 
@@ -47,10 +46,6 @@ public class FeaturesBlocks {
 			Item.itemsList[vanillaColoredGlowstone.id] = new ItemBlockPainted(vanillaColoredGlowstone, false);
 			for (int color = 2; color < 17; color++) {
 				CreativeHelper.setParent(vanillaColoredGlowstone, color - 1, vanillaColoredGlowstone, color);
-			}
-			Item.itemsList[nonameColoredGlowstone.id] = new ItemBlockPainted(nonameColoredGlowstone, false);
-			for (int color = 2; color < 14; color++) {
-				CreativeHelper.setParent(nonameColoredGlowstone, color - 1, nonameColoredGlowstone, color);
 			}
 		}
 		if (paperwallEnabled == 1) {
@@ -69,13 +64,6 @@ public class FeaturesBlocks {
 				.setItemBlock(block -> new ItemBlockPainted(block, false))
 				.build(new VanilaBlockColoredGlowstone("vanilla.colored.glowstone", blockId++, Material.glass));
 
-			if (FeaturesMain.nonamedyesOn == true) {
-				nonameColoredGlowstone = glowstoneBlock
-					.setTextures("glowstone/crimson_glowstone.png").setTextures("glowstone/maroon_glowstone.png").setTextures("glowstone/ash_gray_glowstone.png").setTextures("glowstone/olive_glowstone.png").setTextures("glowstone/ochre_glowstone.png").setTextures("glowstone/buff_glowstone.png").setTextures("glowstone/verdigris_glowstone.png").setTextures("glowstone/light_yellow_glowstone.png")
-					.setTextures("glowstone/indigo_glowstone.png").setTextures("glowstone/xanthic_glowstone.png").setTextures("glowstone/cinnamon_glowstone.png").setTextures("glowstone/navy_blue_glowstone.png").setTextures("glowstone/royal_purple_glowstone.png")
-					.setItemBlock(block -> new ItemBlockPainted(block, false))
-					.build(new NonameBlockColoredGlowstone("noname.colored.glowstone", blockId++, Material.glass));
-			}
 		}
 		if (paperwallEnabled == 1) {
 			if (FeaturesMain.paperWallAlt == 0) {

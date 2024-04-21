@@ -12,7 +12,6 @@ import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemStack;
 import turniplabs.halplibe.helper.RecipeBuilder;
 import turniplabs.halplibe.util.RecipeEntrypoint;
-import goocraft4evr.nonamedyes.item.ModItems;
 
 public class FeaturesCraft implements RecipeEntrypoint {
 
@@ -51,7 +50,9 @@ public class FeaturesCraft implements RecipeEntrypoint {
 
 	@Override
 	public void initNamespaces() {
-		Registries.ITEM_GROUPS.register("morefeatures:glowstones", Registries.stackListOf(Block.glowstone, new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 0),
+		Registries.ITEM_GROUPS.register("morefeatures:glowstones", Registries.stackListOf(
+			Block.glowstone,
+			new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 0),
 			new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 1),
 			new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 2),
 			new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 3),
@@ -66,21 +67,7 @@ public class FeaturesCraft implements RecipeEntrypoint {
 			new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 12),
 			new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 13),
 			new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 14),
-			new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 15),
-
-			new ItemStack(FeaturesBlocks.nonameColoredGlowstone, 1, 0),
-			new ItemStack(FeaturesBlocks.nonameColoredGlowstone, 1, 1),
-			new ItemStack(FeaturesBlocks.nonameColoredGlowstone, 1, 2),
-			new ItemStack(FeaturesBlocks.nonameColoredGlowstone, 1, 3),
-			new ItemStack(FeaturesBlocks.nonameColoredGlowstone, 1, 4),
-			new ItemStack(FeaturesBlocks.nonameColoredGlowstone, 1, 5),
-			new ItemStack(FeaturesBlocks.nonameColoredGlowstone, 1, 6),
-			new ItemStack(FeaturesBlocks.nonameColoredGlowstone, 1, 7),
-			new ItemStack(FeaturesBlocks.nonameColoredGlowstone, 1, 8),
-			new ItemStack(FeaturesBlocks.nonameColoredGlowstone, 1, 9),
-			new ItemStack(FeaturesBlocks.nonameColoredGlowstone, 1, 10),
-			new ItemStack(FeaturesBlocks.nonameColoredGlowstone, 1, 11),
-			new ItemStack(FeaturesBlocks.nonameColoredGlowstone, 1, 12)));
+			new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 15)));
 
 		Registries.ITEM_GROUPS.register("morefeatures:paperwall", Registries.stackListOf(Block.paperWall, new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 0),
 			new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 1),
@@ -109,14 +96,6 @@ public class FeaturesCraft implements RecipeEntrypoint {
 					.addInput('D', Item.dye, i)
 					.addInput('G', "morefeatures:glowstones")
 					.create("itemGroupExample", new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 8, 15 - i));
-			}
-
-			for (int i = 0; i <=12; i++) {
-				RecipeBuilder.Shaped(MOD_ID)
-					.setShape("GGG", "GDG", "GGG")
-					.addInput('D', ModItems.dye, i)
-					.addInput('G', "morefeatures:glowstones")
-					.create("itemGroupExample", new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 8, 13-i));
 			}
 
 			RecipeBuilder.Shaped(MOD_ID)
