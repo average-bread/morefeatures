@@ -47,7 +47,7 @@ public class FeaturesItems {
 	public static Item diamondCrown;
 	public static Item steelCrown;
 
-	public static Item stoneCrown;
+
 
 	public static int regularCrownEnabled;
 
@@ -63,7 +63,18 @@ public class FeaturesItems {
 	public static Item stoneLeggings;
 	public static Item stoneBoots;
 
+	public static Item stoneCrown;
+
 	public static int stoneArmorEnabled;
+
+	public static Item olivineHelmet;
+	public static Item olivineChestplate;
+	public static Item olivineLeggings;
+	public static Item olivineBoots;
+
+	public static Item olivineCrown;
+
+	public static int olivineArmorEnabled;
 
 	public static Item leatherChainHelmet;
 	public static Item leatherChainChestplate;
@@ -104,6 +115,9 @@ public class FeaturesItems {
 			if (stoneArmorEnabled == 1) {
 				stoneCrown = ItemHelper.createItem(MOD_ID, new ItemArmor("crown.stone", itemId++, stoneExtraArmor, 0), "crown/stone_crown.png");
 			}
+			if (olivineArmorEnabled == 1) {
+				olivineCrown = ItemHelper.createItem(MOD_ID, new ItemArmor("crown.olivine", itemId++, olivineExtraArmor, 0), "crown/olivine_crown.png");
+			}
 		}
 
 		if (bedrockArmorEnabled == 1) {
@@ -130,6 +144,13 @@ public class FeaturesItems {
 			stoneChestplate = ItemHelper.createItem(MOD_ID, new ItemArmor("chestplate.stone", itemId++, stoneArmor, 1), "armoritem/stone_chestplate.png");
 			stoneLeggings = ItemHelper.createItem(MOD_ID, new ItemArmor("leggings.stone", itemId++, stoneArmor, 2), "armoritem/stone_leggings.png");
 			stoneBoots = ItemHelper.createItem(MOD_ID, new ItemArmor("boots.stone", itemId++, stoneArmor, 3), "armoritem/stone_boots.png");
+		}
+
+		if (olivineArmorEnabled == 1) {
+			olivineHelmet = ItemHelper.createItem(MOD_ID, new ItemArmor("helmet.olivine", itemId++, olivineArmor, 0), "armoritem/olivine_helmet.png");
+			olivineChestplate = ItemHelper.createItem(MOD_ID, new ItemArmor("chestplate.olivine", itemId++, olivineArmor, 1), "armoritem/olivine_chestplate.png");
+			olivineLeggings = ItemHelper.createItem(MOD_ID, new ItemArmor("leggings.olivine", itemId++, olivineArmor, 2), "armoritem/olivine_leggings.png");
+			olivineBoots = ItemHelper.createItem(MOD_ID, new ItemArmor("boots.olivine", itemId++, olivineArmor, 3), "armoritem/olivine_boots.png");
 		}
 
 

@@ -54,8 +54,10 @@ public class FeaturesMain implements ModInitializer, GameStartEntrypoint {
 		prop.setProperty("Add_plate_armor", "1");
 		prop.setProperty("Add_studded_armor", "1");
 		prop.setProperty("Add_stone_armor", "1");
+		prop.setProperty("Add_olivine_armor", "1");
 		prop.setProperty("Add_bomb_quivers", "1");
 		prop.setProperty("Add_workbench_on_a_stick", "1");
+
 		prop.setProperty("Add_new_dungeons", "1");
 		ConfigHandler config = new ConfigHandler(MOD_ID,prop);
 
@@ -75,6 +77,7 @@ public class FeaturesMain implements ModInitializer, GameStartEntrypoint {
 		FeaturesItems.plateArmorEnabled = config.getInt("Add_plate_armor");
 		FeaturesItems.leatherchainArmorEnabled = config.getInt("Add_studded_armor");
 		FeaturesItems.stoneArmorEnabled = config.getInt("Add_stone_armor");
+		FeaturesItems.olivineArmorEnabled = config.getInt("Add_olivine_armor");
 		FeaturesItems.bombQuibersEnabled = config.getInt("Add_bomb_quivers");
 		FeaturesItems.workbenchonstickEnabled = config.getInt("Add_workbench_on_a_stick");
 		//Extra

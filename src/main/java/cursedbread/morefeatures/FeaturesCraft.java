@@ -141,6 +141,13 @@ public class FeaturesCraft implements RecipeEntrypoint {
 			}
 			workbenchGroup.register("chainCrownReapir", new RecipeEntryRepairable(FeaturesItems.chainCrown, Item.chainlink));
 			RecipeBuilder.getRecipeGroup(MOD_ID, "workbench", new RecipeSymbol(Block.workbench.getDefaultStack()));
+			if (FeaturesItems.stoneArmorEnabled == 1) {
+				RecipeBuilder.Shaped(MOD_ID)
+					.setShape("HCH", "HHH")
+					.addInput('H', "minecraft:stones")
+					.addInput('C', Item.cloth)
+					.create("crown", new ItemStack(FeaturesItems.stoneCrown, 1));
+			}
 		}
 
 		if (FeaturesItems.bedrockArmorEnabled == 1) {

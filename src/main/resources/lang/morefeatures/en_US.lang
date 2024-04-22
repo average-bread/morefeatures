@@ -87,8 +87,6 @@ item.morefeatures.crown.diamond.name=Diamond Crown
 item.morefeatures.crown.diamond.desc=A fancy diamond crown
 item.morefeatures.crown.steel.name=Steel Crown
 item.morefeatures.crown.steel.desc=A durable steel crown
-item.morefeatures.crown.stone.name=Steel Crown
-item.morefeatures.crown.stone.desc=A weak but protective stone crown
 
 item.morefeatures.helmet.bedrock.name=Bedrock Helmet
 item.morefeatures.helmet.bedrock.desc=An impossibly strong bedrock helmet
@@ -121,6 +119,19 @@ item.morefeatures.leggings.stone.name=Stone Leggings
 item.morefeatures.leggings.stone.desc=A pair of weak but protective strong stone leggings
 item.morefeatures.boots.stone.name=Stone Boots
 item.morefeatures.boots.stone.desc=A pair of weak but protective strong stone boots
+item.morefeatures.crown.stone.name=Stone Crown
+item.morefeatures.crown.stone.desc=A weak but protective stone crown
+
+item.morefeatures.helmet.olivine.name=Olivine Helmet
+item.morefeatures.helmet.olivine.desc=A renewable olivine helmet
+item.morefeatures.chestplate.olivine.name=Olivine Chestplate
+item.morefeatures.chestplate.olivine.desc=A renewable olivine chestplate
+item.morefeatures.leggings.olivine.name=Olivine Leggings
+item.morefeatures.leggings.olivine.desc=A renewable olivine leggings
+item.morefeatures.boots.olivine.name=Olivine Boots
+item.morefeatures.boots.olivine.desc=A renewable olivine boots
+item.morefeatures.crown.olivine.name=Olivine Crown
+item.morefeatures.crown.olivine.desc=A renewable olivine crown
 
 item.morefeatures.stick.workbench.name=Workbench On A Stick
 item.morefeatures.stick.workbench.desc=Right click to craft whenever you want!
