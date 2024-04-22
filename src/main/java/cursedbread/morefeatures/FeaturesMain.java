@@ -36,6 +36,7 @@ public class FeaturesMain implements ModInitializer, GameStartEntrypoint {
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 	public static boolean nonamedyesOn = ModVersionHelper.isModPresent("nonamedyes");
 	public static int paperWallAlt;
+	public static int newDUngeonsEnabled;
 
 	static {
 		Properties prop = new Properties();
@@ -55,6 +56,7 @@ public class FeaturesMain implements ModInitializer, GameStartEntrypoint {
 		prop.setProperty("Add_stone_armor", "1");
 		prop.setProperty("Add_bomb_quivers", "1");
 		prop.setProperty("Add_workbench_on_a_stick", "1");
+		prop.setProperty("Add_new_dungeons", "1");
 		ConfigHandler config = new ConfigHandler(MOD_ID,prop);
 
 
@@ -75,6 +77,8 @@ public class FeaturesMain implements ModInitializer, GameStartEntrypoint {
 		FeaturesItems.stoneArmorEnabled = config.getInt("Add_stone_armor");
 		FeaturesItems.bombQuibersEnabled = config.getInt("Add_bomb_quivers");
 		FeaturesItems.workbenchonstickEnabled = config.getInt("Add_workbench_on_a_stick");
+		//Extra
+		newDUngeonsEnabled = config.getInt("Add_new_dungeons");
 	}
     @Override
     public void onInitialize() {

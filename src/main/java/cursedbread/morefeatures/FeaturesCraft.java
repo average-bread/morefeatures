@@ -26,7 +26,6 @@ public class FeaturesCraft implements RecipeEntrypoint {
 
 	public static int[] regularMaterial = {
 		Item.leather.id,
-		Item.chainlink.id,
 		Item.ingotIron.id,
 		Item.ingotGold.id,
 		Item.diamond.id,
@@ -41,7 +40,6 @@ public class FeaturesCraft implements RecipeEntrypoint {
 
 	public static Item[] regularcrownResult = {
 		FeaturesItems.leatherCrown,
-		FeaturesItems.chainCrown,
 		FeaturesItems.ironCrown,
 		FeaturesItems.goldCrown,
 		FeaturesItems.diamondCrown,
@@ -139,8 +137,10 @@ public class FeaturesCraft implements RecipeEntrypoint {
 					.setShape("HCH", "HHH")
 					.addInput('H', material)
 					.addInput('C', Item.cloth)
-					.create("rown", new ItemStack(regularcrownResult[j], 1));
+					.create("crown", new ItemStack(regularcrownResult[j], 1));
 			}
+			workbenchGroup.register("chainCrownReapir", new RecipeEntryRepairable(FeaturesItems.chainCrown, Item.chainlink));
+			RecipeBuilder.getRecipeGroup(MOD_ID, "workbench", new RecipeSymbol(Block.workbench.getDefaultStack()));
 		}
 
 		if (FeaturesItems.bedrockArmorEnabled == 1) {

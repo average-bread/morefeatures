@@ -9,8 +9,8 @@
       "EntityBagRender",
       "ItemCannonMixin",
       "SlotArmorMixin",
-      "DungeonLootMixin",
-      "DungeonGenerationMixin"
+      "LabyrinthLootMixin",
+      "LabyrinthGenerationMixin"
     ],
     "client": [
     ],
