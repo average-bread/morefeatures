@@ -36,7 +36,7 @@ public class FeaturesMain implements ModInitializer, GameStartEntrypoint {
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 	public static boolean nonamedyesOn = ModVersionHelper.isModPresent("nonamedyes");
 	public static int paperWallAlt;
-	public static int newDUngeonsEnabled;
+	public static int newDungeonsEnabled;
 
 	static {
 		Properties prop = new Properties();
@@ -68,7 +68,7 @@ public class FeaturesMain implements ModInitializer, GameStartEntrypoint {
 		paperWallAlt = config.getInt("painted_or_alt_or_colored_paper_walls_texture_(0_or_1_or_2)");
 
 		//Blocks
-		FeaturesBlocks.glowstaniEnabled = config.getInt("Add_colored_glowstone_blocks");
+		FeaturesBlocks.glowstoneEnabled = config.getInt("Add_colored_glowstone_blocks");
 		FeaturesBlocks.paperwallEnabled = config.getInt("Add_colored_paper_wall_blocks");
 		//Items
 		FeaturesItems.flowerCrownEnabled = config.getInt("Add_flower_crowns");
@@ -81,7 +81,7 @@ public class FeaturesMain implements ModInitializer, GameStartEntrypoint {
 		FeaturesItems.bombQuibersEnabled = config.getInt("Add_bomb_quivers");
 		FeaturesItems.workbenchonstickEnabled = config.getInt("Add_workbench_on_a_stick");
 		//Extra
-		newDUngeonsEnabled = config.getInt("Add_new_dungeons");
+		newDungeonsEnabled = config.getInt("Add_new_dungeons");
 	}
     @Override
     public void onInitialize() {

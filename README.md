@@ -7,7 +7,7 @@ Currently, adds:
 
 * Bedrock armor (no bedrock obtaining in survival)
 
-* Colored glowstone blocks that can be crafted using 8 of any glowstone block and 1 dye
+* Colored glowstone blocks that can be crafted using 8 of any glowstone block and 1 dye. Can now generate naturally
 
 * Workbench On A Stick. Can be crafted using a stick and a workbench. Right click any block to use workbench anywhere
 
@@ -19,4 +19,20 @@ Currently, adds:
 
 * Golden Bomb Quiver can be found in dungeons and let you use infinite explosive charges
 
-* Plate armor can be found in dungeons, can't be repaired, has stats between iron and gold, has double of gold durability (Only helmet and chestplate exist)
+* Plate armor can be found in dungeons, can be repaired, has stats between iron and gold, has double of gold durability (Only helmet and chestplate exist)
+
+* Stone armor can be crafted with any stone, weaker iron version
+
+* Module mod structure. Parts of the mod can be disabled or enabled in config (all enabled by default) and stuff like paper wall texture can be changed
+
+* Inner compatibility. If you have specific modules enabled at the same time, you could get some extra content
+
+* New labyrinths: limestone, granite, basalt, swamp and bricks
+
+* Scorpion spawners can be found in desert labyrinths 
+
+* Olive armor. Only good at explosion protection 
+
+* Studded armor, craft from chain and leather, can be repaired like chain armor
+
+* No name Dyes compatibility!

@@ -12,6 +12,8 @@ import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemStack;
 import turniplabs.halplibe.helper.RecipeBuilder;
 import turniplabs.halplibe.util.RecipeEntrypoint;
+import goocraft4evr.nonamedyes.item.ModItems;
+
 
 public class FeaturesCraft implements RecipeEntrypoint {
 
@@ -48,46 +50,110 @@ public class FeaturesCraft implements RecipeEntrypoint {
 
 	@Override
 	public void initNamespaces() {
-		Registries.ITEM_GROUPS.register("morefeatures:glowstones", Registries.stackListOf(
-			Block.glowstone,
-			new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 0),
-			new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 1),
-			new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 2),
-			new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 3),
-			new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 4),
-			new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 5),
-			new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 6),
-			new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 7),
-			new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 8),
-			new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 9),
-			new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 10),
-			new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 11),
-			new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 12),
-			new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 13),
-			new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 14),
-			new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 15)));
+		if (FeaturesMain.nonamedyesOn) {
+			Registries.ITEM_GROUPS.register("morefeatures:glowstones", Registries.stackListOf(
+				Block.glowstone,
+				new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 0),
+				new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 1),
+				new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 2),
+				new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 3),
+				new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 4),
+				new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 5),
+				new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 6),
+				new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 7),
+				new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 8),
+				new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 9),
+				new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 10),
+				new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 11),
+				new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 12),
+				new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 13),
+				new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 14),
+				new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 15),
+				new ItemStack(FeaturesBlocks.nonameColoredGlowstone, 1, 0),
+				new ItemStack(FeaturesBlocks.nonameColoredGlowstone, 1, 1),
+				new ItemStack(FeaturesBlocks.nonameColoredGlowstone, 1, 2),
+				new ItemStack(FeaturesBlocks.nonameColoredGlowstone, 1, 3),
+				new ItemStack(FeaturesBlocks.nonameColoredGlowstone, 1, 4),
+				new ItemStack(FeaturesBlocks.nonameColoredGlowstone, 1, 5),
+				new ItemStack(FeaturesBlocks.nonameColoredGlowstone, 1, 6),
+				new ItemStack(FeaturesBlocks.nonameColoredGlowstone, 1, 7),
+				new ItemStack(FeaturesBlocks.nonameColoredGlowstone, 1, 8),
+				new ItemStack(FeaturesBlocks.nonameColoredGlowstone, 1, 9),
+				new ItemStack(FeaturesBlocks.nonameColoredGlowstone, 1, 10),
+				new ItemStack(FeaturesBlocks.nonameColoredGlowstone, 1, 11),
+				new ItemStack(FeaturesBlocks.nonameColoredGlowstone, 1, 12)));
 
-		Registries.ITEM_GROUPS.register("morefeatures:paperwall", Registries.stackListOf(Block.paperWall, new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 0),
-			new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 1),
-			new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 2),
-			new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 3),
-			new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 4),
-			new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 5),
-			new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 6),
-			new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 7),
-			new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 8),
-			new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 9),
-			new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 10),
-			new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 11),
-			new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 12),
-			new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 13),
-			new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 14),
-			new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 15)));
+			Registries.ITEM_GROUPS.register("morefeatures:paperwall", Registries.stackListOf(Block.paperWall, new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 0),
+				new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 1),
+				new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 2),
+				new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 3),
+				new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 4),
+				new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 5),
+				new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 6),
+				new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 7),
+				new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 8),
+				new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 9),
+				new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 10),
+				new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 11),
+				new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 12),
+				new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 13),
+				new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 14),
+				new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 15),
+				new ItemStack(FeaturesBlocks.nonameColoredPaperwall, 1, 0),
+				new ItemStack(FeaturesBlocks.nonameColoredPaperwall, 1, 1),
+				new ItemStack(FeaturesBlocks.nonameColoredPaperwall, 1, 2),
+				new ItemStack(FeaturesBlocks.nonameColoredPaperwall, 1, 3),
+				new ItemStack(FeaturesBlocks.nonameColoredPaperwall, 1, 4),
+				new ItemStack(FeaturesBlocks.nonameColoredPaperwall, 1, 5),
+				new ItemStack(FeaturesBlocks.nonameColoredPaperwall, 1, 6),
+				new ItemStack(FeaturesBlocks.nonameColoredPaperwall, 1, 7),
+				new ItemStack(FeaturesBlocks.nonameColoredPaperwall, 1, 8),
+				new ItemStack(FeaturesBlocks.nonameColoredPaperwall, 1, 9),
+				new ItemStack(FeaturesBlocks.nonameColoredPaperwall, 1, 10),
+				new ItemStack(FeaturesBlocks.nonameColoredPaperwall, 1, 11),
+				new ItemStack(FeaturesBlocks.nonameColoredPaperwall, 1, 12)));
+		} else {
+			Registries.ITEM_GROUPS.register("morefeatures:glowstones", Registries.stackListOf(
+				Block.glowstone,
+				new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 0),
+				new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 1),
+				new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 2),
+				new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 3),
+				new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 4),
+				new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 5),
+				new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 6),
+				new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 7),
+				new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 8),
+				new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 9),
+				new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 10),
+				new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 11),
+				new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 12),
+				new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 13),
+				new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 14),
+				new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 15)));
+
+			Registries.ITEM_GROUPS.register("morefeatures:paperwall", Registries.stackListOf(Block.paperWall, new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 0),
+				new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 1),
+				new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 2),
+				new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 3),
+				new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 4),
+				new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 5),
+				new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 6),
+				new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 7),
+				new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 8),
+				new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 9),
+				new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 10),
+				new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 11),
+				new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 12),
+				new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 13),
+				new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 14),
+				new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 15)));
+		}
 	}
 	@Override
 	public void onRecipesReady() {
 		RecipeGroup<RecipeEntryCrafting<?, ?>> workbenchGroup = ((RecipeGroup<RecipeEntryCrafting<?, ?>>) RecipeBuilder.getRecipeGroup(MOD_ID, "workbench", new RecipeSymbol(Block.workbench.getDefaultStack())));
-		if (FeaturesBlocks.glowstaniEnabled == 1) {
+		if (FeaturesBlocks.glowstoneEnabled == 1) {
 			for (int i = 0; i <=15; i++) {
 				RecipeBuilder.Shaped(MOD_ID)
 					.setShape("GGG", "GDG", "GGG")
@@ -101,6 +167,15 @@ public class FeaturesCraft implements RecipeEntrypoint {
 				.addInput('D', Item.bucketWater)
 				.addInput('G', "morefeatures:glowstones")
 				.create("itemGroupExample", new ItemStack(Block.glowstone, 8));
+			if (FeaturesMain.nonamedyesOn) {
+				for (int i = 0; i <=12; i++) {
+					RecipeBuilder.Shaped(MOD_ID)
+						.setShape("GGG", "GDG", "GGG")
+						.addInput('D', ModItems.dye, i)
+						.addInput('G', "morefeatures:glowstones")
+						.create("itemGroupExample", new ItemStack(FeaturesBlocks.nonameColoredGlowstone, 8, i));
+				}
+			}
 		}
 
 		if (FeaturesBlocks.paperwallEnabled == 1) {
@@ -110,6 +185,16 @@ public class FeaturesCraft implements RecipeEntrypoint {
 					.addInput('D', Item.dye, i)
 					.addInput('G', "morefeatures:paperwall")
 					.create("itemGroupExample", new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 8, 15-i));
+			}
+
+			if (FeaturesMain.nonamedyesOn) {
+				for (int i = 0; i <=12; i++) {
+					RecipeBuilder.Shaped(MOD_ID)
+						.setShape("GGG", "GDG", "GGG")
+						.addInput('D', ModItems.dye, i)
+						.addInput('G', "morefeatures:paperwall")
+						.create("itemGroupExample", new ItemStack(FeaturesBlocks.nonameColoredPaperwall, 8, i));
+				}
 			}
 
 			RecipeBuilder.Shaped(MOD_ID)

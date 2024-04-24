@@ -10,7 +10,8 @@
       "ItemCannonMixin",
       "SlotArmorMixin",
       "LabyrinthLootMixin",
-      "LabyrinthGenerationMixin"
+      "LabyrinthGenerationMixin",
+      "ColoredGlowstoneAMixin"
     ],
     "client": [
     ],

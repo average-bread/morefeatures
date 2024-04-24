@@ -29,16 +29,26 @@ public class LabyrinthGenerationMixin {
 	@Shadow
 	int slabBlock;
 
+	@Unique
+	private boolean isHot;
+
+	@Unique
+	private boolean isSwamp;
+
 	@Inject(method = "generate", at = @At("HEAD"))
 	public void generate(World world, Random random, int x, int y, int z, CallbackInfoReturnable<Boolean> cir) {
 		Biome biome = world.getBlockBiome(x, y, z);
-		if (FeaturesMain.newDUngeonsEnabled == 1) {
+		if (FeaturesMain.newDungeonsEnabled == 1) {
+			if (biome == Biomes.OVERWORLD_DESERT || biome == Biomes.OVERWORLD_OUTBACK) {
+				this.isHot = true;
+			}
 			if (biome == Biomes.OVERWORLD_SWAMPLAND || biome == Biomes.OVERWORLD_SWAMPLAND_MUDDY) {
 				this.wallBlockA = Block.mudBaked.id;
 				this.wallBlockB = Block.mudBaked.id;
 				this.brickBlockA = Block.logOakMossy.id;
 				this.brickBlockB = Block.logOakMossy.id;
 				this.slabBlock = Block.slabPlanksOak.id;
+				this.isSwamp = true;
 			}
 			if (world.getBlockId(x, y, z) == Block.limestone.id) {
 				this.wallBlockA = Block.cobbleLimestone.id;
@@ -60,6 +70,30 @@ public class LabyrinthGenerationMixin {
 				this.brickBlockA = Block.brickGranite.id;
 				this.brickBlockB = Block.brickGranite.id;
 				this.slabBlock = Block.slabBrickGranite.id;
+			}
+			int i = random.nextInt(2);
+			if (i == 1) {
+				this.wallBlockA = Block.brickClay.id;
+				this.wallBlockB = Block.brickClay.id;
+				this.brickBlockA = Block.brickLapis.id;
+				this.brickBlockB = Block.brickLapis.id;
+				this.slabBlock = Block.slabBrickClay.id;
+			}
+		}
+	}
+
+
+	@Inject(method = "pickMobSpawner(Ljava/util/Random;)Ljava/lang/String;", at = @At("HEAD"), cancellable = true)
+	private void pickMobSpawner(Random random, CallbackInfoReturnable<String> cir) {
+		if (FeaturesMain.newDungeonsEnabled == 1) {
+			int i = random.nextInt(4);
+			if (i == 0) {
+				cir.setReturnValue("Skeleton");
+			} else if (i == 1) {
+				cir.setReturnValue("Zombie");
+			} else{
+				cir.setReturnValue(isSwamp && i == 2 ? "Creeper" : "ArmouredZombie");
+				cir.setReturnValue(isHot && i == 2 ? "Scorpion" : "ArmouredZombie");
 			}
 		}
 	}
