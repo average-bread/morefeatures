@@ -25,7 +25,7 @@ public class ColoredGlowstoneAMixin {
 				} else if (world.getBlockId(x, y + 1, z) != Block.netherrack.id) {
 					cir.setReturnValue(false);
 				} else {
-					int r = random.nextInt(15);
+					int r = random.nextInt(16);
 					world.setBlockAndMetadataWithNotify(x, y, z, FeaturesBlocks.vanillaColoredGlowstone.id, r);
 
 					for(int l = 0; l < 1500; ++l) {
@@ -80,7 +80,7 @@ public class ColoredGlowstoneAMixin {
 					} else if (world.getBlockId(x, y + 1, z) != Block.netherrack.id) {
 						cir.setReturnValue(false);
 					} else {
-						int r = random.nextInt(12);
+						int r = random.nextInt(13 );
 						world.setBlockAndMetadataWithNotify(x, y, z, FeaturesBlocks.nonameColoredGlowstone.id, r);
 
 						for(int l = 0; l < 1500; ++l) {

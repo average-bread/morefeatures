@@ -18,6 +18,7 @@ import goocraft4evr.nonamedyes.item.ModItems;
 public class FeaturesCraft implements RecipeEntrypoint {
 
 	public static final String MOD_ID = "morefeatures";
+	public static  final RecipeGroup<RecipeEntryCrafting<?, ?>> workbenchGroup = ((RecipeGroup<RecipeEntryCrafting<?, ?>>) RecipeBuilder.getRecipeGroup(MOD_ID, "workbench", new RecipeSymbol(Block.workbench.getDefaultStack())));
 
 	public static int[] flowerMaterial = {
 		Block.flowerYellow.id,
@@ -50,6 +51,8 @@ public class FeaturesCraft implements RecipeEntrypoint {
 
 	@Override
 	public void initNamespaces() {
+		RecipeBuilder.initNameSpace(FeaturesMain.MOD_ID);
+		RecipeBuilder.getRecipeNamespace(FeaturesMain.MOD_ID);
 		if (FeaturesMain.nonamedyesOn) {
 			Registries.ITEM_GROUPS.register("morefeatures:glowstones", Registries.stackListOf(
 				Block.glowstone,
@@ -152,7 +155,6 @@ public class FeaturesCraft implements RecipeEntrypoint {
 	}
 	@Override
 	public void onRecipesReady() {
-		RecipeGroup<RecipeEntryCrafting<?, ?>> workbenchGroup = ((RecipeGroup<RecipeEntryCrafting<?, ?>>) RecipeBuilder.getRecipeGroup(MOD_ID, "workbench", new RecipeSymbol(Block.workbench.getDefaultStack())));
 		if (FeaturesBlocks.glowstoneEnabled == 1) {
 			for (int i = 0; i <=15; i++) {
 				RecipeBuilder.Shaped(MOD_ID)
@@ -233,6 +235,32 @@ public class FeaturesCraft implements RecipeEntrypoint {
 					.addInput('C', Item.cloth)
 					.create("crown", new ItemStack(FeaturesItems.stoneCrown, 1));
 			}
+			if (FeaturesItems.olivineArmorEnabled == 1) {
+				RecipeBuilder.Shaped(MOD_ID)
+					.setShape("HCH", "HHH")
+					.addInput('H', Item.olivine)
+					.addInput('C', Item.cloth)
+					.create("crown", new ItemStack(FeaturesItems.olivineCrown, 1));
+			}
+			if (FeaturesItems.bedrockArmorEnabled == 1) {
+				RecipeBuilder.Shaped(MOD_ID)
+					.setShape("HCH", "HHH")
+					.addInput('H', Block.bedrock)
+					.addInput('C', Item.cloth)
+					.create("crown", new ItemStack(FeaturesItems.bedrockCrown, 1));
+			}
+			if (FeaturesItems.plateArmorEnabled == 1) {
+				workbenchGroup.register("plateCrownReapir", new RecipeEntryRepairable(FeaturesItems.plateCrown, Item.ingotIron));
+				RecipeBuilder.getRecipeGroup(MOD_ID, "workbench", new RecipeSymbol(Block.workbench.getDefaultStack()));
+			}
+			if (FeaturesItems.leatherchainArmorEnabled == 1) {
+				RecipeBuilder.Shapeless(MOD_ID)
+					.addInput(FeaturesItems.leatherCrown)
+					.addInput(FeaturesItems.chainCrown)
+					.create("leather-chaincrown", new ItemStack(FeaturesItems.leatherChainCrown, 1));
+				workbenchGroup.register("leather-chainCrownReapir", new RecipeEntryRepairable(FeaturesItems.leatherChainCrown, Item.chainlink));
+				RecipeBuilder.getRecipeGroup(MOD_ID, "workbench", new RecipeSymbol(Block.workbench.getDefaultStack()));
+			}
 		}
 
 		if (FeaturesItems.bedrockArmorEnabled == 1) {
@@ -271,6 +299,24 @@ public class FeaturesCraft implements RecipeEntrypoint {
 				.setShape("H H", "H H")
 				.addInput('H', "minecraft:stones")
 				.create("boots", new ItemStack(FeaturesItems.stoneBoots, 1));
+		}
+		if (FeaturesItems.olivineArmorEnabled == 1) {
+			RecipeBuilder.Shaped(MOD_ID)
+				.setShape("HHH", "H H")
+				.addInput('H', Item.olivine)
+				.create("helmets", new ItemStack(FeaturesItems.olivineHelmet, 1));
+			RecipeBuilder.Shaped(MOD_ID)
+				.setShape("H H", "HHH", "HHH")
+				.addInput('H', Item.olivine)
+				.create("chectplates", new ItemStack(FeaturesItems.olivineChestplate, 1));
+			RecipeBuilder.Shaped(MOD_ID)
+				.setShape("HHH", "H H", "H H")
+				.addInput('H', Item.olivine)
+				.create("leggings", new ItemStack(FeaturesItems.olivineLeggings, 1));
+			RecipeBuilder.Shaped(MOD_ID)
+				.setShape("H H", "H H")
+				.addInput('H', Item.olivine)
+				.create("boots", new ItemStack(FeaturesItems.olivineBoots, 1));
 		}
 
 		if (FeaturesItems.leatherchainArmorEnabled == 1) {
@@ -324,6 +370,7 @@ public class FeaturesCraft implements RecipeEntrypoint {
 			workbenchGroup.register("plateHelmetReapir", new RecipeEntryRepairable(FeaturesItems.plateHelmet, Item.ingotIron));
 			RecipeBuilder.getRecipeGroup(MOD_ID, "workbench", new RecipeSymbol(Block.workbench.getDefaultStack()));
 			workbenchGroup.register("plateChestplateReapir", new RecipeEntryRepairable(FeaturesItems.plateChestplate, Item.ingotIron));
+			RecipeBuilder.getRecipeGroup(MOD_ID, "workbench", new RecipeSymbol(Block.workbench.getDefaultStack()));
 		}
 	}
 }

@@ -18,7 +18,9 @@ public class FeaturesItems {
 	public static ArmorMaterial cherryArmor = ArmorHelper.createArmorMaterial(MOD_ID, "extra/cherry", 27, 0f, 0f, 0f, 0f);
 	public static ArmorMaterial deadbushArmor = ArmorHelper.createArmorMaterial(MOD_ID, "extra/deadbush", 1, -1000f, -1000f, -1000f, -1000f);
 	public static ArmorMaterial bedrockArmor = ArmorHelper.createArmorMaterial(MOD_ID, "armor/bedrock", 999999999, 999999999f, 999999999f, 999999999f, 999999999f);
-	public static ArmorMaterial plateArmor = ArmorHelper.createArmorMaterial(MOD_ID, "armor/plate_armor", 240, 58f, 58f, 58f, 58f);
+	public static ArmorMaterial bedrockExtraArmor = ArmorHelper.createArmorMaterial(MOD_ID, "extra/bedrock_extra", 999999999, 999999999f, 999999999f, 999999999f, 999999999f);
+	public static ArmorMaterial plateArmor = ArmorHelper.createArmorMaterial(MOD_ID, "armor/plate", 240, 58f, 58f, 58f, 58f);
+	public static ArmorMaterial plateExtraArmor = ArmorHelper.createArmorMaterial(MOD_ID, "extra/plate_extra", 240, 58f, 58f, 58f, 58f);
 	public static ArmorMaterial leatherExtraArmor = ArmorHelper.createArmorMaterial(MOD_ID, "extra/cloth_extra", 180, 20f, 20f, 20f, 120f);
 	public static ArmorMaterial chainExtraArmor = ArmorHelper.createArmorMaterial(MOD_ID, "extra/chain_extra", 240, 120f, 35f, 35f, 35f);
 	public static ArmorMaterial ironExtraArmor = ArmorHelper.createArmorMaterial(MOD_ID, "extra/iron_extra", 200, 45f, 45f, 45f, 45f);
@@ -26,6 +28,7 @@ public class FeaturesItems {
 	public static ArmorMaterial diamondExtraArmor = ArmorHelper.createArmorMaterial(MOD_ID, "extra/diamond_extra", 800, 65f, 65f, 125f, 65f);
 	public static ArmorMaterial steelExtraArmor = ArmorHelper.createArmorMaterial(MOD_ID, "extra/steel_extra", 1200, 55f, 150f, 55f, 55f);
 	public static ArmorMaterial leatherChainArmor = ArmorHelper.createArmorMaterial(MOD_ID, "armor/leatherchain", 360, 120f, 30f, 30f, 120f);
+	public static ArmorMaterial leatherChainExtraArmor = ArmorHelper.createArmorMaterial(MOD_ID, "extra/leatherchain_extra", 360, 120f, 30f, 30f, 120f);
 	public static ArmorMaterial stoneArmor = ArmorHelper.createArmorMaterial(MOD_ID, "armor/stone", 190, 30f, 30f, 30f, 30f);
 	public static ArmorMaterial stoneExtraArmor = ArmorHelper.createArmorMaterial(MOD_ID, "extra/stone_extra", 190, 30f, 30f, 30f, 30f);
 	public static ArmorMaterial olivineArmor = ArmorHelper.createArmorMaterial(MOD_ID, "armor/olivine", 200, 0f, 120f, 0f, 0f);
@@ -56,6 +59,8 @@ public class FeaturesItems {
 	public static Item bedrockLeggings;
 	public static Item bedrockBoots;
 
+	public static Item bedrockCrown;
+
 	public static int bedrockArmorEnabled;
 
 	public static Item stoneHelmet;
@@ -81,10 +86,14 @@ public class FeaturesItems {
 	public static Item leatherChainLeggings;
 	public static Item leatherChainBoots;
 
+	public static Item leatherChainCrown;
+
 	public static int leatherchainArmorEnabled;
 
 	public static Item plateHelmet;
 	public static Item plateChestplate;
+
+	public static Item plateCrown;
 
 	public static int plateArmorEnabled;
 
@@ -117,6 +126,15 @@ public class FeaturesItems {
 			}
 			if (olivineArmorEnabled == 1) {
 				olivineCrown = ItemHelper.createItem(MOD_ID, new ItemArmor("crown.olivine", itemId++, olivineExtraArmor, 0), "crown/olivine_crown.png");
+			}
+			if (bedrockArmorEnabled == 1) {
+				bedrockCrown = ItemHelper.createItem(MOD_ID, new ItemArmor("crown.bedrock", itemId++, bedrockExtraArmor, 0), "crown/bedrock_crown.png");
+			}
+			if (plateArmorEnabled == 1) {
+				plateCrown = ItemHelper.createItem(MOD_ID, new ItemArmor("crown.plate", itemId++, plateExtraArmor, 0), "crown/plate_crown.png");
+			}
+			if (leatherchainArmorEnabled == 1) {
+				leatherChainCrown = ItemHelper.createItem(MOD_ID, new ItemArmor("crown.leatherchain", itemId++, leatherChainExtraArmor, 0), "crown/leatherchain_crown.png");
 			}
 		}
 

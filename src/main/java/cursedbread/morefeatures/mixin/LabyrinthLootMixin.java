@@ -28,6 +28,9 @@ public class LabyrinthLootMixin {
 			} else if (j == 2) {
 				cir.setReturnValue( new ItemStack(FeaturesItems.plateChestplate, 1, FeaturesItems.plateChestplate.getMaxDamage() - random.nextInt(FeaturesItems.plateChestplate.getMaxDamage())));
 			}
+			if (FeaturesItems.regularCrownEnabled == 1 && j == 3){
+				cir.setReturnValue( new ItemStack(FeaturesItems.plateCrown, 1, FeaturesItems.plateCrown.getMaxDamage() - random.nextInt(FeaturesItems.plateCrown.getMaxDamage())));
+			}
 		}
 		if (FeaturesItems.regularCrownEnabled == 1) {
 			int a = random.nextInt(16);

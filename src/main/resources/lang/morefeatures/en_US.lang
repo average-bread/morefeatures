@@ -150,20 +150,26 @@ item.morefeatures.leggings.bedrock.name=Bedrock Leggings
 item.morefeatures.leggings.bedrock.desc=A pair of impossibly strong bedrock leggings
 item.morefeatures.boots.bedrock.name=Bedrock Boots
 item.morefeatures.boots.bedrock.desc=A pair of impossibly strong bedrock boots
+item.morefeatures.crown.bedrock.name=Bedrock Crown
+item.morefeatures.crown.bedrock.desc=An impossibly strong bedrock crown
 
 item.morefeatures.helmet.plate.name=Plate Helmet
-item.morefeatures.helmet.plate.desc=An extremely old plate helmet
+item.morefeatures.helmet.plate.desc=An extremely old plate helmet. Can be repaired
 item.morefeatures.chestplate.plate.name=Plate Chestplate
-item.morefeatures.chestplate.plate.desc=An extremely old plate chestplate
+item.morefeatures.chestplate.plate.desc=An extremely old plate chestplate. Can be repaired
+item.morefeatures.crown.plate.name=Plate Crown
+item.morefeatures.crown.plate.desc=An extremely old plate crown. Can be repaired
 
 item.morefeatures.helmet.leatherchain.name=Studded Helmet
-item.morefeatures.helmet.leatherchain.desc=A hat made from cow's hide and tiny chains. Can't be repaired
+item.morefeatures.helmet.leatherchain.desc=A hat made from cow's hide and tiny chains. Can be repaired
 item.morefeatures.chestplate.leatherchain.name=Studded Chestplate
-item.morefeatures.chestplate.leatherchain.desc=A tunic made from cow's hide and tiny chains. Can't be repaired
+item.morefeatures.chestplate.leatherchain.desc=A tunic made from cow's hide and tiny chains. Can be repaired
 item.morefeatures.leggings.leatherchain.name=Studded Leggings
-item.morefeatures.leggings.leatherchain.desc=A pair of trousers made from cow's hide and tiny chains. Can't be repaired
+item.morefeatures.leggings.leatherchain.desc=A pair of trousers made from cow's hide and tiny chains. Can be repaired
 item.morefeatures.boots.leatherchain.name=Studded Boots
-item.morefeatures.boots.leatherchain.desc=A pair of boots made from cow's hide and tiny chains. Can't be repaired
+item.morefeatures.boots.leatherchain.desc=A pair of boots made from cow's hide and tiny chains. Can be repaired
+item.morefeatures.crown.leatherchain.name=Studded Crown
+item.morefeatures.crown.leatherchain.desc=A crown made from cow's hide and tiny chains. Can be repaired
 
 item.morefeatures.helmet.stone.name=Stone Helmet
 item.morefeatures.helmet.stone.desc=A weak but protective strong stone helmet
