@@ -1,4 +1,4 @@
-package cursedbread.morefeatures.blocks;
+package cursedbread.morefeatures.blocks.glowstone;
 
 import net.minecraft.core.block.Block;
 import net.minecraft.core.block.BlockGlowStone;

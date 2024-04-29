@@ -1,32 +1,13 @@
 package cursedbread.morefeatures;
 
 import cursedbread.morefeatures.blocks.FeaturesBlocks;
-import cursedbread.morefeatures.blocks.VanilaBlockColoredGlowstone;
-import cursedbread.morefeatures.blocks.paperwall.VanilaBlockAltPaperwall;
-import cursedbread.morefeatures.blocks.paperwall.VanilaBlockColoredPaperwall;
-import cursedbread.morefeatures.blocks.paperwall.VanilaBlockPaintedPaperwall;
 import cursedbread.morefeatures.item.FeaturesItems;
-import cursedbread.morefeatures.item.ItemBombQuiver;
-import cursedbread.morefeatures.item.ItemBombQuiverEndless;
-import cursedbread.morefeatures.item.StickWorkbench;
 import net.fabricmc.api.ModInitializer;
-import net.minecraft.client.render.block.model.BlockModelRenderBlocks;
-import net.minecraft.core.block.Block;
-import net.minecraft.core.block.material.Material;
-import net.minecraft.core.item.Item;
-import net.minecraft.core.item.ItemArmor;
-import net.minecraft.core.item.block.ItemBlockPainted;
-import net.minecraft.core.item.material.ArmorMaterial;
-import net.minecraft.core.sound.BlockSound;
-import net.minecraft.core.sound.BlockSounds;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import turniplabs.halplibe.helper.*;
 import turniplabs.halplibe.util.ConfigHandler;
-import turniplabs.halplibe.util.ConfigUpdater;
 import turniplabs.halplibe.util.GameStartEntrypoint;
-import turniplabs.halplibe.util.TomlConfigHandler;
-import turniplabs.halplibe.util.toml.Toml;
 
 import java.util.Properties;
 
@@ -46,6 +27,8 @@ public class FeaturesMain implements ModInitializer, GameStartEntrypoint {
 
 		prop.setProperty("Add_colored_glowstone_blocks", "1");
 		prop.setProperty("Add_colored_paper_wall_blocks", "1");
+		prop.setProperty("Add_gilding_table", "1");
+		prop.setProperty("Add_colored_glass_blocks", "1");
 
 		prop.setProperty("Comment", "yes_is_1|no_is_0");
 		prop.setProperty("Add_flower_crowns", "1");
@@ -55,8 +38,10 @@ public class FeaturesMain implements ModInitializer, GameStartEntrypoint {
 		prop.setProperty("Add_studded_armor", "1");
 		prop.setProperty("Add_stone_armor", "1");
 		prop.setProperty("Add_olivine_armor", "1");
+		prop.setProperty("Add_quartz_armor", "1");
 		prop.setProperty("Add_bomb_quivers", "1");
 		prop.setProperty("Add_workbench_on_a_stick", "1");
+		prop.setProperty("Add_mob_soul", "1");
 
 		prop.setProperty("Add_new_dungeons", "1");
 		ConfigHandler config = new ConfigHandler(MOD_ID,prop);
@@ -70,6 +55,8 @@ public class FeaturesMain implements ModInitializer, GameStartEntrypoint {
 		//Blocks
 		FeaturesBlocks.glowstoneEnabled = config.getInt("Add_colored_glowstone_blocks");
 		FeaturesBlocks.paperwallEnabled = config.getInt("Add_colored_paper_wall_blocks");
+		FeaturesBlocks.gildingtableEnabled = config.getInt("Add_gilding_table");
+		FeaturesBlocks.glassEnabled = config.getInt("Add_colored_glass_blocks");
 		//Items
 		FeaturesItems.flowerCrownEnabled = config.getInt("Add_flower_crowns");
 		FeaturesItems.regularCrownEnabled = config.getInt("Add_regular_crowns");
@@ -78,8 +65,10 @@ public class FeaturesMain implements ModInitializer, GameStartEntrypoint {
 		FeaturesItems.leatherchainArmorEnabled = config.getInt("Add_studded_armor");
 		FeaturesItems.stoneArmorEnabled = config.getInt("Add_stone_armor");
 		FeaturesItems.olivineArmorEnabled = config.getInt("Add_olivine_armor");
+		FeaturesItems.quartzArmorEnabled = config.getInt("Add_quartz_armor");
 		FeaturesItems.bombQuibersEnabled = config.getInt("Add_bomb_quivers");
 		FeaturesItems.workbenchonstickEnabled = config.getInt("Add_workbench_on_a_stick");
+		FeaturesItems.soulEnabled = config.getInt("Add_mob_soul");
 		//Extra
 		newDungeonsEnabled = config.getInt("Add_new_dungeons");
 	}

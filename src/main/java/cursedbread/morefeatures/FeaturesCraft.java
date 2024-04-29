@@ -115,6 +115,38 @@ public class FeaturesCraft implements RecipeEntrypoint {
 				new ItemStack(FeaturesBlocks.nonameColoredPaperwall, 1, 10),
 				new ItemStack(FeaturesBlocks.nonameColoredPaperwall, 1, 11),
 				new ItemStack(FeaturesBlocks.nonameColoredPaperwall, 1, 12)));
+
+			Registries.ITEM_GROUPS.register("morefeatures:glasses", Registries.stackListOf(
+				Block.glass,
+				new ItemStack(FeaturesBlocks.vanillaColoredGlass, 1, 0),
+				new ItemStack(FeaturesBlocks.vanillaColoredGlass, 1, 1),
+				new ItemStack(FeaturesBlocks.vanillaColoredGlass, 1, 2),
+				new ItemStack(FeaturesBlocks.vanillaColoredGlass, 1, 3),
+				new ItemStack(FeaturesBlocks.vanillaColoredGlass, 1, 4),
+				new ItemStack(FeaturesBlocks.vanillaColoredGlass, 1, 5),
+				new ItemStack(FeaturesBlocks.vanillaColoredGlass, 1, 6),
+				new ItemStack(FeaturesBlocks.vanillaColoredGlass, 1, 7),
+				new ItemStack(FeaturesBlocks.vanillaColoredGlass, 1, 8),
+				new ItemStack(FeaturesBlocks.vanillaColoredGlass, 1, 9),
+				new ItemStack(FeaturesBlocks.vanillaColoredGlass, 1, 10),
+				new ItemStack(FeaturesBlocks.vanillaColoredGlass, 1, 11),
+				new ItemStack(FeaturesBlocks.vanillaColoredGlass, 1, 12),
+				new ItemStack(FeaturesBlocks.vanillaColoredGlass, 1, 13),
+				new ItemStack(FeaturesBlocks.vanillaColoredGlass, 1, 14),
+				new ItemStack(FeaturesBlocks.vanillaColoredGlass, 1, 15),
+				new ItemStack(FeaturesBlocks.nonameColoredGlass, 1, 0),
+				new ItemStack(FeaturesBlocks.nonameColoredGlass, 1, 1),
+				new ItemStack(FeaturesBlocks.nonameColoredGlass, 1, 2),
+				new ItemStack(FeaturesBlocks.nonameColoredGlass, 1, 3),
+				new ItemStack(FeaturesBlocks.nonameColoredGlass, 1, 4),
+				new ItemStack(FeaturesBlocks.nonameColoredGlass, 1, 5),
+				new ItemStack(FeaturesBlocks.nonameColoredGlass, 1, 6),
+				new ItemStack(FeaturesBlocks.nonameColoredGlass, 1, 7),
+				new ItemStack(FeaturesBlocks.nonameColoredGlass, 1, 8),
+				new ItemStack(FeaturesBlocks.nonameColoredGlass, 1, 9),
+				new ItemStack(FeaturesBlocks.nonameColoredGlass, 1, 10),
+				new ItemStack(FeaturesBlocks.nonameColoredGlass, 1, 11),
+				new ItemStack(FeaturesBlocks.nonameColoredGlass, 1, 12)));
 		} else {
 			Registries.ITEM_GROUPS.register("morefeatures:glowstones", Registries.stackListOf(
 				Block.glowstone,
@@ -151,10 +183,30 @@ public class FeaturesCraft implements RecipeEntrypoint {
 				new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 13),
 				new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 14),
 				new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 15)));
+
+			Registries.ITEM_GROUPS.register("morefeatures:glasses", Registries.stackListOf(
+				Block.glass,
+				new ItemStack(FeaturesBlocks.vanillaColoredGlass, 1, 0),
+				new ItemStack(FeaturesBlocks.vanillaColoredGlass, 1, 1),
+				new ItemStack(FeaturesBlocks.vanillaColoredGlass, 1, 2),
+				new ItemStack(FeaturesBlocks.vanillaColoredGlass, 1, 3),
+				new ItemStack(FeaturesBlocks.vanillaColoredGlass, 1, 4),
+				new ItemStack(FeaturesBlocks.vanillaColoredGlass, 1, 5),
+				new ItemStack(FeaturesBlocks.vanillaColoredGlass, 1, 6),
+				new ItemStack(FeaturesBlocks.vanillaColoredGlass, 1, 7),
+				new ItemStack(FeaturesBlocks.vanillaColoredGlass, 1, 8),
+				new ItemStack(FeaturesBlocks.vanillaColoredGlass, 1, 9),
+				new ItemStack(FeaturesBlocks.vanillaColoredGlass, 1, 10),
+				new ItemStack(FeaturesBlocks.vanillaColoredGlass, 1, 11),
+				new ItemStack(FeaturesBlocks.vanillaColoredGlass, 1, 12),
+				new ItemStack(FeaturesBlocks.vanillaColoredGlass, 1, 13),
+				new ItemStack(FeaturesBlocks.vanillaColoredGlass, 1, 14),
+				new ItemStack(FeaturesBlocks.vanillaColoredGlass, 1, 15)));
 		}
 	}
 	@Override
 	public void onRecipesReady() {
+		//colored glowstone crafting
 		if (FeaturesBlocks.glowstoneEnabled == 1) {
 			for (int i = 0; i <=15; i++) {
 				RecipeBuilder.Shaped(MOD_ID)
@@ -179,7 +231,7 @@ public class FeaturesCraft implements RecipeEntrypoint {
 				}
 			}
 		}
-
+		//colored paper walls crafting
 		if (FeaturesBlocks.paperwallEnabled == 1) {
 			for (int i = 0; i <=15; i++){
 				RecipeBuilder.Shaped(MOD_ID)
@@ -205,18 +257,52 @@ public class FeaturesCraft implements RecipeEntrypoint {
 				.addInput('G', "morefeatures:paperwall")
 				.create("itemGroupExample", new ItemStack(Block.paperWall, 8));
 		}
+		//colored glass crafting
+		if (FeaturesBlocks.glassEnabled == 1) {
+			for (int i = 0; i <=15; i++) {
+				RecipeBuilder.Shaped(MOD_ID)
+					.setShape("GGG", "GDG", "GGG")
+					.addInput('D', Item.dye, i)
+					.addInput('G', "morefeatures:glasses")
+					.create("itemGroupExample", new ItemStack(FeaturesBlocks.vanillaColoredGlass, 8, 15 - i));
+			}
 
+			RecipeBuilder.Shaped(MOD_ID)
+				.setShape("GGG", "GDG", "GGG")
+				.addInput('D', Item.bucketWater)
+				.addInput('G', "morefeatures:glasses")
+				.create("itemGroupExample", new ItemStack(Block.glowstone, 8));
+			if (FeaturesMain.nonamedyesOn) {
+				for (int i = 0; i <=12; i++) {
+					RecipeBuilder.Shaped(MOD_ID)
+						.setShape("GGG", "GDG", "GGG")
+						.addInput('D', ModItems.dye, i)
+						.addInput('G', "morefeatures:glasses")
+						.create("itemGroupExample", new ItemStack(FeaturesBlocks.nonameColoredGlass, 8, i));
+				}
+			}
+		}
+		//gilding block crafting
+		if (FeaturesBlocks.gildingtableEnabled == 1) {
+			RecipeBuilder.Shaped(MOD_ID)
+				.setShape("HHH", "DDD", "EEE")
+				.addInput('H', Block.blockGold)
+				.addInput('D', Block.slate)
+				.addInput('E', Block.slatePolished)
+				.create("gilderCraft", new ItemStack(FeaturesBlocks.gildingTable, 1));
+		}
 
+		//flower crowns crafting
 		if (FeaturesItems.flowerCrownEnabled == 1) {
 			for (int j = 0; j < flowerMaterial.length; j++) {
 				Item material = Item.itemsList[flowerMaterial[j]];
 				RecipeBuilder.Shaped(MOD_ID)
-					.setShape("H H", "HHH")
+					.setShape("HHH", "H H", "HHH")
 					.addInput('H', material)
 					.create("rown", new ItemStack(flowercrownResult[j], 1));
 			}
 		}
-
+		//regular crown crafting
 		if (FeaturesItems.regularCrownEnabled == 1) {
 			for (int j = 0; j < regularMaterial.length; j++) {
 				Item material = Item.itemsList[regularMaterial[j]];
@@ -262,7 +348,7 @@ public class FeaturesCraft implements RecipeEntrypoint {
 				RecipeBuilder.getRecipeGroup(MOD_ID, "workbench", new RecipeSymbol(Block.workbench.getDefaultStack()));
 			}
 		}
-
+		//bedrock armor crafting
 		if (FeaturesItems.bedrockArmorEnabled == 1) {
 			RecipeBuilder.Shaped(MOD_ID)
 				.setShape("HHH", "H H")
@@ -281,7 +367,7 @@ public class FeaturesCraft implements RecipeEntrypoint {
 				.addInput('H', Block.bedrock)
 				.create("boots", new ItemStack(FeaturesItems.bedrockBoots, 1));
 		}
-
+		//stone armor crafting
 		if (FeaturesItems.stoneArmorEnabled == 1) {
 			RecipeBuilder.Shaped(MOD_ID)
 				.setShape("HHH", "H H")
@@ -300,6 +386,7 @@ public class FeaturesCraft implements RecipeEntrypoint {
 				.addInput('H', "minecraft:stones")
 				.create("boots", new ItemStack(FeaturesItems.stoneBoots, 1));
 		}
+		//olivine armor crafting
 		if (FeaturesItems.olivineArmorEnabled == 1) {
 			RecipeBuilder.Shaped(MOD_ID)
 				.setShape("HHH", "H H")
@@ -318,7 +405,7 @@ public class FeaturesCraft implements RecipeEntrypoint {
 				.addInput('H', Item.olivine)
 				.create("boots", new ItemStack(FeaturesItems.olivineBoots, 1));
 		}
-
+		//leather-chain armor crafting and repairing
 		if (FeaturesItems.leatherchainArmorEnabled == 1) {
 			RecipeBuilder.Shapeless(MOD_ID)
 				.addInput(Item.armorHelmetLeather)
@@ -348,7 +435,7 @@ public class FeaturesCraft implements RecipeEntrypoint {
 			workbenchGroup.register("leather-chainBootsReapir", new RecipeEntryRepairable(FeaturesItems.leatherChainBoots, Item.chainlink));
 			RecipeBuilder.getRecipeGroup(MOD_ID, "workbench", new RecipeSymbol(Block.workbench.getDefaultStack()));
 		}
-
+		//workbench on a stick crafting
 		if (FeaturesItems.workbenchonstickEnabled == 1) {
 			RecipeBuilder.Shaped(MOD_ID)
 				.setShape(" W", "S ")
@@ -356,7 +443,7 @@ public class FeaturesCraft implements RecipeEntrypoint {
 				.addInput('W', Block.workbench)
 				.create("craftingOnAStick", new ItemStack(FeaturesItems.workbenchOnStick, 1));
 		}
-
+		//bomb quiver crafting
 		if (FeaturesItems.bombQuibersEnabled == 1) {
 			RecipeBuilder.Shaped(MOD_ID)
 				.setShape("S S", "CCC", "LLL")
@@ -365,7 +452,7 @@ public class FeaturesCraft implements RecipeEntrypoint {
 				.addInput('C', Item.cloth)
 				.create("bomBagCraft", new ItemStack(FeaturesItems.bombBag, 1, 48));
 		}
-
+		//plate armor repairing
 		if (FeaturesItems.plateArmorEnabled == 1) {
 			workbenchGroup.register("plateHelmetReapir", new RecipeEntryRepairable(FeaturesItems.plateHelmet, Item.ingotIron));
 			RecipeBuilder.getRecipeGroup(MOD_ID, "workbench", new RecipeSymbol(Block.workbench.getDefaultStack()));

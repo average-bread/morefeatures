@@ -19,7 +19,7 @@ public class ItemBombQuiver extends ItemQuiver {
 	}
 
 	public int getIconFromDamage(int id) {
-		return id >= this.getMaxDamage() ? TextureHelper.getOrCreateItemTextureIndex(MOD_ID, "extra/bomb_bag_empty.png") : TextureHelper.getOrCreateItemTextureIndex(MOD_ID, "extra/bomb_bag_full.png");
+		return id >= this.getMaxDamage() ? TextureHelper.getOrCreateItemTextureIndex(MOD_ID, "extra_item/bomb_bag_empty.png") : TextureHelper.getOrCreateItemTextureIndex(MOD_ID, "extra_item/bomb_bag_full.png");
 	}
 
 	public boolean hasInventoryInteraction() {

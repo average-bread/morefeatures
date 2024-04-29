@@ -1,10 +1,17 @@
 package cursedbread.morefeatures.blocks;
 
 import cursedbread.morefeatures.FeaturesMain;
+import cursedbread.morefeatures.blocks.glass.NonameBlockColoredGlass;
+import cursedbread.morefeatures.blocks.glass.NonameBlockColoredGlassTrapdoor;
+import cursedbread.morefeatures.blocks.glass.VanilaBlockColoredGlass;
+import cursedbread.morefeatures.blocks.glass.VanilaBlockColoredGlassTrapdoor;
+import cursedbread.morefeatures.blocks.glowstone.NonameBlockColoredGlowstone;
+import cursedbread.morefeatures.blocks.glowstone.VanilaBlockColoredGlowstone;
 import cursedbread.morefeatures.blocks.paperwall.*;
 import net.minecraft.client.render.block.model.BlockModelRenderBlocks;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.block.material.Material;
+import net.minecraft.core.block.tag.BlockTags;
 import net.minecraft.core.item.Item;
 import net.minecraft.core.item.block.ItemBlockPainted;
 import net.minecraft.core.sound.BlockSound;
@@ -15,6 +22,24 @@ import turniplabs.halplibe.helper.CreativeHelper;
 import static cursedbread.morefeatures.FeaturesMain.MOD_ID;
 
 public class FeaturesBlocks {
+
+	public static BlockBuilder fullBlock = new BlockBuilder(MOD_ID)
+		.setBlockModel(new BlockModelRenderBlocks(0));
+
+	public static final BlockBuilder coloredglass = new BlockBuilder(MOD_ID)
+		.setBlockModel(new BlockModelRenderBlocks(0))
+		.setBlockSound(new BlockSound("step.stone", "random.glass", 1.0f, 1.0f))
+		.setHardness(0.3F)
+		.setResistance(0.3F)
+		.setVisualUpdateOnMetadata()
+		.setUseInternalLight();
+	public static final BlockBuilder coloredglasstrapdoors = new BlockBuilder(MOD_ID)
+		.setBlockModel(new BlockModelRenderBlocks(30))
+		.setBlockSound(new BlockSound("step.stone", "random.glass", 1.0f, 1.0f))
+		.setHardness(0.3F)
+		.setResistance(0.3F)
+		.setVisualUpdateOnMetadata()
+		.setUseInternalLight();
 	public static BlockBuilder glowstoneBlock = new BlockBuilder(MOD_ID)
 		.setBlockModel(new BlockModelRenderBlocks(0))
 		.setLuminance(15)
@@ -42,6 +67,16 @@ public class FeaturesBlocks {
 
 	public static int paperwallEnabled;
 
+	public static Block gildingTable;
+
+	public static int gildingtableEnabled;
+
+	public static Block vanillaColoredGlass;
+	public static Block vanillaColoredGlassTrapdoor;
+	public static Block nonameColoredGlass;
+	public static Block nonameColoredGlassTrapdoor;
+	public static int glassEnabled;
+
 	private void initializeBlockDetails() {
 		if (glowstoneEnabled == 1) {
 			Item.itemsList[vanillaColoredGlowstone.id] = new ItemBlockPainted(vanillaColoredGlowstone, false);
@@ -66,6 +101,28 @@ public class FeaturesBlocks {
 					CreativeHelper.setParent(nonameColoredPaperwall, color - 1, nonameColoredPaperwall, color);
 				}
 			}
+		}
+		if (glassEnabled == 1) {
+			Item.itemsList[vanillaColoredGlass.id] = new ItemBlockPainted(vanillaColoredGlass, false);
+			for (int color = 2; color < 17; color++) {
+				CreativeHelper.setParent(vanillaColoredGlass, color - 1, vanillaColoredGlass, color);
+			}
+			if (FeaturesMain.nonamedyesOn == true) {
+				Item.itemsList[nonameColoredGlass.id] = new ItemBlockPainted(nonameColoredGlass, false);
+				for (int color = 2; color < 14; color++) {
+					CreativeHelper.setParent(nonameColoredGlass, color - 1, nonameColoredGlass, color);
+				}
+			}
+			/*Item.itemsList[vanillaColoredGlassTrapdoor.id] = new ItemBlockPainted(vanillaColoredGlassTrapdoor, false);
+			for (int color = 2; color < 17; color++) {
+				CreativeHelper.setParent(vanillaColoredGlassTrapdoor, color - 1, vanillaColoredGlassTrapdoor, color);
+			}
+			if (FeaturesMain.nonamedyesOn) {
+				Item.itemsList[nonameColoredGlassTrapdoor.id] = new ItemBlockPainted(nonameColoredGlassTrapdoor, false);
+				for (int color = 2; color < 14; color++) {
+					CreativeHelper.setParent(nonameColoredGlassTrapdoor, color - 1, nonameColoredGlassTrapdoor, color);
+				}
+			}*/
 		}
 	}
 
@@ -126,6 +183,44 @@ public class FeaturesBlocks {
 				}
 			}
 		}
+		if (glassEnabled == 1) {
+			vanillaColoredGlass = coloredglass
+				.setTextures("glass/black_glass.png").setTextures("glass/red_glass.png").setTextures("glass/green_glass.png").setTextures("glass/brown_glass.png").setTextures("glass/blue_glass.png").setTextures("glass/purple_glass.png").setTextures("glass/cyan_glass.png").setTextures("glass/silver_glass.png")
+				.setTextures("glass/gray_glass.png").setTextures("glass/pink_glass.png").setTextures("glass/lime_glass.png").setTextures("glass/yellow_glass.png").setTextures("glass/lightblue_glass.png").setTextures("glass/magenta_glass.png").setTextures("glass/orange_glass.png").setTextures("glass/white_glass.png")
+				.setItemBlock(block -> new ItemBlockPainted(block, false))
+				.build(new VanilaBlockColoredGlass("vanilla.colored.glass", blockId++, Material.glass));
+			if (FeaturesMain.nonamedyesOn == true) {
+				nonameColoredGlass = coloredglass
+					.setTextures("glass/crimson_glass.png").setTextures("glass/maroon_glass.png").setTextures("glass/ash_gray_glass.png").setTextures("glass/ochre_glass.png").setTextures("glass/buff_glass.png").setTextures("glass/olive_glass.png").setTextures("glass/verdigris_glass.png").setTextures("glass/light_yellow_glass.png")
+					.setTextures("glass/indigo_glass.png").setTextures("glass/xanthic_glass.png").setTextures("glass/cinnamon_glass.png").setTextures("glass/navy_blue_glass.png").setTextures("glass/royal_purple_glass.png")
+					.setItemBlock(block -> new ItemBlockPainted(block, false))
+					.build(new NonameBlockColoredGlass("noname.colored.glasstrapdoor", blockId++, Material.glass));
+			}
+			/*vanillaColoredGlassTrapdoor = coloredglasstrapdoors
+				.setTextures("glass/black_glass.png").setTextures("glass/red_glass.png").setTextures("glass/green_glass.png").setTextures("glass/brown_glass.png").setTextures("glass/blue_glass.png").setTextures("glass/purple_glass.png").setTextures("glass/cyan_glass.png").setTextures("glass/silver_glass.png")
+				.setTextures("glass/gray_glass.png").setTextures("glass/pink_glass.png").setTextures("glass/lime_glass.png").setTextures("glass/yellow_glass.png").setTextures("glass/lightblue_glass.png").setTextures("glass/magenta_glass.png").setTextures("glass/orange_glass.png").setTextures("glass/white_glass.png")
+				.setItemBlock(block -> new ItemBlockPainted(block, false))
+				.build(new VanilaBlockColoredGlassTrapdoor("vanilla.colored.glass", blockId++, Material.glass));
+			if (FeaturesMain.nonamedyesOn) {
+				nonameColoredGlassTrapdoor = coloredglasstrapdoors
+					.setTextures("glass/crimson_glass.png").setTextures("glass/maroon_glass.png").setTextures("glass/ash_gray_glass.png").setTextures("glass/ochre_glass.png").setTextures("glass/buff_glass.png").setTextures("glass/olive_glass.png").setTextures("glass/verdigris_glass.png").setTextures("glass/light_yellow_glass.png")
+					.setTextures("glass/indigo_glass.png").setTextures("glass/xanthic_glass.png").setTextures("glass/cinnamon_glass.png").setTextures("glass/navy_blue_glass.png").setTextures("glass/royal_purple_glass.png")
+					.setItemBlock(block -> new ItemBlockPainted(block, false))
+					.build(new NonameBlockColoredGlassTrapdoor("noname.colored.glasstrapdoor", blockId++, Material.glass));
+			}*/
+		}
+
+		if (gildingtableEnabled == 1) {
+			gildingTable = fullBlock
+				.setTextures("extra_block/gilding_table.png")
+				.setTopBottomTexture(17, 4)
+				.setBottomTexture(8, 14)
+				.setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.FENCES_CONNECT)
+				.setHardness(5f)
+				.build(new GilderBlock("gilder", blockId++));
+		}
+
+
 		initializeBlockDetails();
 	}
 }
