@@ -43,7 +43,7 @@ public abstract class ChunkDecoratorOverworldMixin {
         rand.setSeed((long)chunkX * l1 + (long)chunkZ * l2 ^ this.world.getRandomSeed());
         int blockX, blockY, blockZ;
 
-		if ((biome != Biomes.PARADISE_PARADISE)
+		if ((FeaturesBlocks.rainbowflowerEnabled == 1 && biome != Biomes.PARADISE_PARADISE)
 			&& rand.nextInt(2) == 0) {
 			blockX = x + rand.nextInt(16) + 8;
 			blockY = minY + rand.nextInt(rangeY);
