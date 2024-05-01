@@ -31,7 +31,7 @@ Currently, adds:
 
 * Scorpion spawners can be found in desert labyrinths 
 
-* Olive armor
+* Olive armor makes you faster
 
 * Studded armor, craft from chain and leather, can be repaired like chain armor
 

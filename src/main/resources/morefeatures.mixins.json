@@ -9,6 +9,7 @@
     "ChunkDecoratorOverworldMixin",
     "ColoredGlowstoneAMixin",
     "EntityBagRender",
+    "EntityPlayerMixin",
     "ItemCannonMixin",
     "LabyrinthGenerationMixin",
     "LabyrinthLootMixin",
