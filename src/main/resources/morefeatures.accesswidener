@@ -1,3 +1,4 @@
 accessWidener v2 named
 accessible field net/minecraft/client/render/entity/EntityRenderer renderDispatcher Lnet/minecraft/client/render/EntityRenderDispatcher;
 accessible field net/minecraft/core/item/Item itemRand Ljava/util/Random;
+accessible field net/minecraft/core/entity/player/EntityPlayer baseSpeed F

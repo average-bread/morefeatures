@@ -459,5 +459,22 @@ public class FeaturesCraft implements RecipeEntrypoint {
 			workbenchGroup.register("plateChestplateReapir", new RecipeEntryRepairable(FeaturesItems.plateChestplate, Item.ingotIron));
 			RecipeBuilder.getRecipeGroup(MOD_ID, "workbench", new RecipeSymbol(Block.workbench.getDefaultStack()));
 		}
+		//rainbow flower stuff
+		if (FeaturesBlocks.rainbowflowerEnabled == 1){
+			for (int i = 0; i <= 15; i++) {
+				RecipeBuilder.Shapeless(MOD_ID)
+					.addInput(FeaturesBlocks.rainbowFlower)
+					.addInput(Item.dye, i)
+					.create("dye-cloning", new ItemStack(Item.dye, 3, i));
+			}
+			if (FeaturesMain.nonamedyesOn) {
+				for (int i = 0; i <= 12; i++) {
+					RecipeBuilder.Shapeless(MOD_ID)
+						.addInput(FeaturesBlocks.rainbowFlower)
+						.addInput(ModItems.dye, i)
+						.create("dye-cloning", new ItemStack(ModItems.dye, 3, i));
+				}
+			}
+		}
 	}
 }

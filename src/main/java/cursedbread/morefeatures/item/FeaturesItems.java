@@ -31,8 +31,8 @@ public class FeaturesItems {
 	public static ArmorMaterial leatherChainExtraArmor = ArmorHelper.createArmorMaterial(MOD_ID, "extra_armor/leatherchain_extra", 360, 120f, 30f, 30f, 120f);
 	public static ArmorMaterial stoneArmor = ArmorHelper.createArmorMaterial(MOD_ID, "armor/stone", 190, 30f, 30f, 30f, 30f);
 	public static ArmorMaterial stoneExtraArmor = ArmorHelper.createArmorMaterial(MOD_ID, "extra_armor/stone_extra", 190, 30f, 30f, 30f, 30f);
-	public static ArmorMaterial olivineArmor = ArmorHelper.createArmorMaterial(MOD_ID, "armor/olivine", 200, 0f, 0f, 0f, 0f);
-	public static ArmorMaterial olivineExtraArmor = ArmorHelper.createArmorMaterial(MOD_ID, "extra_armor/olivine_extra", 200, 0f, 0f, 0f, 0f);
+	public static ArmorMaterial olivineArmor = ArmorHelper.createArmorMaterial(MOD_ID, "armor/olivine", 200, 10f, 60f, 20f, 0f);
+	public static ArmorMaterial olivineExtraArmor = ArmorHelper.createArmorMaterial(MOD_ID, "extra_armor/olivine_extra", 200, 10f, 60f, 20f, 0f);
 	public static ArmorMaterial quartzArmor = ArmorHelper.createArmorMaterial(MOD_ID, "armor/quartz", 200, 10f, 0f, 20f, 30f);
 	public static ArmorMaterial quartzExtraArmor = ArmorHelper.createArmorMaterial(MOD_ID, "extra_armor/quartz_extra", 200, 10f, 0f, 20f, 30f);
 

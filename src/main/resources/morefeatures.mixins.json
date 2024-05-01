@@ -5,9 +5,10 @@
   "compatibilityLevel": "JAVA_8",
   "mixins": [
     "BagArmor",
+    "BlockGrassMixin",
+    "ChunkDecoratorOverworldMixin",
     "ColoredGlowstoneAMixin",
     "EntityBagRender",
-    "EntityPlayerMixin",
     "ItemCannonMixin",
     "LabyrinthGenerationMixin",
     "LabyrinthLootMixin",

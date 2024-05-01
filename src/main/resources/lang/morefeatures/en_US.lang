@@ -343,3 +343,9 @@ tile.morefeatures.noname.colored.glasstrapdoor.orange.name=Maroon Glass Trapdoor
 tile.morefeatures.noname.colored.glasstrapdoor.orange.desc=Glass trapdoor painted maroon
 tile.morefeatures.noname.colored.glasstrapdoor.white.name=Crimson Glass Trapdoor
 tile.morefeatures.noname.colored.glasstrapdoor.white.desc=Glass trapdoor painted crimson
+
+tile.morefeatures.flower.rainbow.name=Rainbow Flower
+tile.morefeatures.flower.rainbow.desc=Can be crafted into various of dyes
+
+tile.morefeatures.fire.red.name=Red Fire
+tile.morefeatures.fire.red.desc=Extra hot

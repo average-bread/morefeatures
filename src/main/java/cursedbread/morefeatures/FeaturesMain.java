@@ -28,6 +28,8 @@ public class FeaturesMain implements ModInitializer, GameStartEntrypoint {
 		prop.setProperty("Add_colored_glowstone_blocks", "1");
 		prop.setProperty("Add_colored_paper_wall_blocks", "1");
 		prop.setProperty("Add_gilding_table", "1");
+		prop.setProperty("Add_rainbow_flower", "1");
+		prop.setProperty("Add_red_fire", "1");
 		prop.setProperty("Add_colored_glass_blocks", "1");
 
 		prop.setProperty("Comment", "yes_is_1|no_is_0");
@@ -57,6 +59,8 @@ public class FeaturesMain implements ModInitializer, GameStartEntrypoint {
 		FeaturesBlocks.paperwallEnabled = config.getInt("Add_colored_paper_wall_blocks");
 		FeaturesBlocks.gildingtableEnabled = config.getInt("Add_gilding_table");
 		FeaturesBlocks.glassEnabled = config.getInt("Add_colored_glass_blocks");
+		FeaturesBlocks.rainbowflowerEnabled = config.getInt("Add_rainbow_flower");
+		FeaturesBlocks.redFireEnabled = config.getInt("Add_red_fire");
 		//Items
 		FeaturesItems.flowerCrownEnabled = config.getInt("Add_flower_crowns");
 		FeaturesItems.regularCrownEnabled = config.getInt("Add_regular_crowns");

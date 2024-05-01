@@ -10,6 +10,8 @@ import cursedbread.morefeatures.blocks.glowstone.VanilaBlockColoredGlowstone;
 import cursedbread.morefeatures.blocks.paperwall.*;
 import net.minecraft.client.render.block.model.BlockModelRenderBlocks;
 import net.minecraft.core.block.Block;
+import net.minecraft.core.block.BlockFire;
+import net.minecraft.core.block.BlockFlower;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.block.tag.BlockTags;
 import net.minecraft.core.item.Item;
@@ -25,6 +27,9 @@ public class FeaturesBlocks {
 
 	public static BlockBuilder fullBlock = new BlockBuilder(MOD_ID)
 		.setBlockModel(new BlockModelRenderBlocks(0));
+
+	public static BlockBuilder crossedBlock = new BlockBuilder(MOD_ID)
+		.setBlockModel(new BlockModelRenderBlocks(1));
 
 	public static final BlockBuilder coloredglass = new BlockBuilder(MOD_ID)
 		.setBlockModel(new BlockModelRenderBlocks(0))
@@ -53,6 +58,7 @@ public class FeaturesBlocks {
 
 	public static BlockBuilder fireBlock = new BlockBuilder(MOD_ID)
 		.setBlockModel(new BlockModelRenderBlocks(3))
+		.setTags(BlockTags.NOT_IN_CREATIVE_MENU)
 		.setLuminance(15)
 		.setHardness(0.1f);
 
@@ -76,6 +82,12 @@ public class FeaturesBlocks {
 	public static Block nonameColoredGlass;
 	public static Block nonameColoredGlassTrapdoor;
 	public static int glassEnabled;
+
+	public static Block rainbowFlower;
+	public static int rainbowflowerEnabled;
+
+	public static Block redFire;
+	public static int redFireEnabled;
 
 	private void initializeBlockDetails() {
 		if (glowstoneEnabled == 1) {
@@ -218,6 +230,19 @@ public class FeaturesBlocks {
 				.setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.FENCES_CONNECT)
 				.setHardness(5f)
 				.build(new GilderBlock("gilder", blockId++));
+		}
+
+		if (rainbowflowerEnabled == 1) {
+			rainbowFlower = crossedBlock
+				.setTextures("extra_block/rainbow_flower.png")
+				.setBlockSound(new BlockSound("step.grass", "step.grass", 1.0f, 1.0f))
+				.build(new BlockFlower("flower.rainbow", blockId++));
+		}
+
+		if (redFireEnabled == 1){
+			redFire = fireBlock
+				.setTextures("extra_block/red_fire.png")
+				.build(new BlockFire("fire.red", blockId++));
 		}
 
 

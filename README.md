@@ -31,8 +31,18 @@ Currently, adds:
 
 * Scorpion spawners can be found in desert labyrinths 
 
-* Olive armor. Only good at explosion protection 
+* Olive armor
 
 * Studded armor, craft from chain and leather, can be repaired like chain armor
 
 * No name Dyes compatibility!
+
+* Quartz armor
+
+* Gilding table that allows you to convert quiver and bomb quiver into their golden variations
+
+* Mob soul. Will drop with small chance if mob is killed using golden sword. Allow to change mob in the spawner
+
+* Colored glass. Can be crafted with 8 of any glass and 1 dye
+
+* Rainbow flower. Can't be crafted in dye but can create two copies of any dye
