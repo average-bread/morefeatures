@@ -21,7 +21,6 @@ public class GilderBlock extends Block {
 
 	public boolean blockActivated(World world, int x, int y, int z, EntityPlayer player) {
 		ItemStack stack = player.getHeldItem();
-		ItemStack drop = new ItemStack(Item.armorQuiverGold);
 		for (i = -1; i <= 1; i++) {
 			for (j = -1; j <= 1; j++) {
 				if (world.getBlockId(x + i, y-1, z + j) == Block.blockGold.id) {
@@ -32,11 +31,11 @@ public class GilderBlock extends Block {
 									for (k = -1; k <= 1; k++) {
 										world.setBlock(x + q, y + t, z + k, 0);
 										world.setBlock(x, y, z, Block.gravel.id);
-										stack.consumeItem(player);
-										world.dropItem(x, y, z, drop);
 									}
 								}
 							}
+							stack.consumeItem(player);
+							player.inventory.insertItem(new ItemStack(Item.armorQuiverGold), true);
 							break;
 						} else {player.addChatMessage("Check if your are holding a quiver");}
 						break;
@@ -47,9 +46,8 @@ public class GilderBlock extends Block {
 			}
 			break;
 		}
+
 		if (FeaturesItems.bombQuibersEnabled == 1){
-			ItemStack bombstack = player.getHeldItem();
-			ItemStack bombdrop = new ItemStack(FeaturesItems.bombBagGold);
 			for (i = -1; i <= 1; i++) {
 				for (j = -1; j <= 1; j++) {
 					if (world.getBlockId(x + i, y-1, z + j) == Block.blockGold.id) {
@@ -60,11 +58,11 @@ public class GilderBlock extends Block {
 										for (k = -1; k <= 1; k++) {
 											world.setBlock(x + q, y + t, z + k, 0);
 											world.setBlock(x, y, z, Block.gravel.id);
-											bombstack.consumeItem(player);
-											world.dropItem(x, y, z, bombdrop);
 										}
 									}
 								}
+								stack.consumeItem(player);
+								player.inventory.insertItem(new ItemStack(FeaturesItems.bombBagGold), true);
 								break;
 							} else {player.addChatMessage("Check if your are holding a quiver");}
 							break;

@@ -20,23 +20,25 @@ public class EntityPlayerMixin {
 
 	@Inject(method = "onLivingUpdate()V", at = @At("TAIL"))
 	private void armor_effects(CallbackInfo ci) {
-		ItemStack helmet_item = Minecraft.getMinecraft(this).thePlayer.inventory.armorItemInSlot(3);
-		ItemStack chest_item = Minecraft.getMinecraft(this).thePlayer.inventory.armorItemInSlot(2);
-		ItemStack leggings_item = Minecraft.getMinecraft(this).thePlayer.inventory.armorItemInSlot(1);
-		ItemStack boots_item = Minecraft.getMinecraft(this).thePlayer.inventory.armorItemInSlot(0);
 		if (FeaturesItems.olivineArmorEnabled == 1){
-			if (chest_item != null && chest_item.getItem().equals(FeaturesItems.olivineChestplate)) {
-				this.baseSpeed = 0.2f;
-			} else if (leggings_item != null && leggings_item.getItem().equals(FeaturesItems.olivineLeggings)) {
-				this.baseSpeed = 0.17f;
-			} else if (helmet_item != null && FeaturesItems.regularCrownEnabled == 1 && helmet_item.getItem().equals(FeaturesItems.olivineCrown)) {
-				this.baseSpeed = 0.15f;
-			} else if (helmet_item != null && helmet_item.getItem().equals(FeaturesItems.olivineHelmet)) {
-				this.baseSpeed = 0.15f;
-			} else  if (boots_item != null && boots_item.getItem().equals(FeaturesItems.olivineBoots)) {
-				this.baseSpeed = 0.13f;
-			} else {
-				this.baseSpeed = 0.1f;
+			ItemStack helmet_item = Minecraft.getMinecraft(this).thePlayer.inventory.armorItemInSlot(3);
+			ItemStack chest_item = Minecraft.getMinecraft(this).thePlayer.inventory.armorItemInSlot(2);
+			ItemStack leggings_item = Minecraft.getMinecraft(this).thePlayer.inventory.armorItemInSlot(1);
+			ItemStack boots_item = Minecraft.getMinecraft(this).thePlayer.inventory.armorItemInSlot(0);
+			if (FeaturesItems.olivineArmorEnabled == 1){
+				if (chest_item != null && chest_item.getItem().equals(FeaturesItems.olivineChestplate)) {
+					this.baseSpeed = 0.2f;
+				} else if (leggings_item != null && leggings_item.getItem().equals(FeaturesItems.olivineLeggings)) {
+					this.baseSpeed = 0.17f;
+				} else if (helmet_item != null && FeaturesItems.regularCrownEnabled == 1 && helmet_item.getItem().equals(FeaturesItems.olivineCrown)) {
+					this.baseSpeed = 0.15f;
+				} else if (helmet_item != null && helmet_item.getItem().equals(FeaturesItems.olivineHelmet)) {
+					this.baseSpeed = 0.15f;
+				} else  if (boots_item != null && boots_item.getItem().equals(FeaturesItems.olivineBoots)) {
+					this.baseSpeed = 0.13f;
+				} else {
+					this.baseSpeed = 0.1f;
+				}
 			}
 		}
 	}
