@@ -239,12 +239,6 @@ public class FeaturesBlocks {
 				.build(new BlockFlower("flower.rainbow", blockId++));
 		}
 
-		if (redFireEnabled == 1){
-			redFire = fireBlock
-				.setTextures("extra_block/red_fire.png")
-				.build(new BlockFire("fire.red", blockId++));
-		}
-
 
 		initializeBlockDetails();
 	}
