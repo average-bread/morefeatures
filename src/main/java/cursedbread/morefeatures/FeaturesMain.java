@@ -21,8 +21,8 @@ public class FeaturesMain implements ModInitializer, GameStartEntrypoint {
 
 	static {
 		Properties prop = new Properties();
-		prop.setProperty("starting_block_id","2000");
-		prop.setProperty("starting_item_id","17000");
+		prop.setProperty("starting_block_id","2200");
+		prop.setProperty("starting_item_id","17890");
 		prop.setProperty("painted_or_alt_or_colored_paper_walls_texture_(0_or_1_or_2)","0");
 
 		prop.setProperty("Add_colored_glowstone_blocks", "1");

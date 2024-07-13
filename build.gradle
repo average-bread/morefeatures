@@ -94,7 +94,7 @@ repositories {
 
 	dependencies {
 
-		modImplementation "BTA_Babric_PrismaticLibe:prismaticlibe:${project.prismatic_version}"
+		//modImplementation "BTA_Babric_PrismaticLibe:prismaticlibe:${project.prismatic_version}"
 
 	}
 	repositories {
@@ -110,7 +110,7 @@ repositories {
 
 	dependencies {
 
-		modImplementation "TerrainAPI:terrainapi:${project.terrain_api_version}"
+		//modImplementation "TerrainAPI:terrainapi:${project.terrain_api_version}"
 
 	}
 

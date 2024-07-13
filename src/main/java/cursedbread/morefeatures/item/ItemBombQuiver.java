@@ -7,7 +7,7 @@ import net.minecraft.core.item.ItemQuiver;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.item.material.ArmorMaterial;
 import net.minecraft.core.player.inventory.slot.Slot;
-import turniplabs.halplibe.helper.TextureHelper;
+import net.minecraft.client.render.stitcher.TextureRegistry;
 
 import static cursedbread.morefeatures.FeaturesMain.MOD_ID;
 
@@ -18,14 +18,12 @@ public class ItemBombQuiver extends ItemQuiver {
 		this.setMaxDamage(48);
 	}
 
-	public int getIconFromDamage(int id) {
-		return id >= this.getMaxDamage() ? TextureHelper.getOrCreateItemTextureIndex(MOD_ID, "extra_item/bomb_bag_empty.png") : TextureHelper.getOrCreateItemTextureIndex(MOD_ID, "extra_item/bomb_bag_full.png");
-	}
-
+    @Override
 	public boolean hasInventoryInteraction() {
 		return true;
 	}
 
+    @Override
 	public ItemStack onInventoryInteract(EntityPlayer player, Slot slot, ItemStack stackInSlot, boolean isItemGrabbed) {
 		ItemStack bagItem;
 		if (isItemGrabbed) {
@@ -87,6 +85,7 @@ public class ItemBombQuiver extends ItemQuiver {
 		stack.setMetadata(stack.getMaxDamage() - count);
 	}
 
+    @Override
 	public boolean showFullDurability() {
 		return true;
 	}

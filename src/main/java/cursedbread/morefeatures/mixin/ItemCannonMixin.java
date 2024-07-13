@@ -12,8 +12,8 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(value = ItemHandCannonUnloaded.class, remap = false)
 public class ItemCannonMixin {
 
-	@Inject(method = "onItemRightClick", at=@At("HEAD"), cancellable = true)
-	public void onItemRightClick(ItemStack itemstack, World world, EntityPlayer entityplayer, CallbackInfoReturnable<ItemStack> cir) {
+	@Inject(method = "onUseItem", at=@At("HEAD"), cancellable = true)
+	public void onUseItem(ItemStack itemstack, World world, EntityPlayer entityplayer, CallbackInfoReturnable<ItemStack> cir) {
 		ItemStack quiverSlot = entityplayer.inventory.armorItemInSlot(2);
 		if (quiverSlot != null && quiverSlot.getItem().equals(FeaturesItems.bombBag) && quiverSlot.getMetadata() < quiverSlot.getMaxDamage()) {
 			entityplayer.inventory.armorItemInSlot(2).damageItem(1, entityplayer);

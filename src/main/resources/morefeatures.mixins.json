@@ -16,7 +16,9 @@
     "SlotArmorMixin",
     "SoulDrop",
     "SpawnerSurvival",
-    "WorkbenchFix"
+    "WorkbenchFix",
+    "ContainerWorkbenchMixin",
+    "RenderEngineMixin"
   ],
   "client": [
   ],

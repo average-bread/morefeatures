@@ -6,7 +6,7 @@ import net.minecraft.core.item.ItemQuiver;
 import net.minecraft.core.item.ItemQuiverEndless;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.player.inventory.slot.Slot;
-import turniplabs.halplibe.helper.TextureHelper;
+import net.minecraft.client.render.stitcher.TextureRegistry;
 
 import static cursedbread.morefeatures.FeaturesMain.MOD_ID;
 

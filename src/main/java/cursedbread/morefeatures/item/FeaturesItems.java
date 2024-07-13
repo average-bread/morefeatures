@@ -5,36 +5,37 @@ import net.minecraft.core.item.ItemArmor;
 import net.minecraft.core.item.material.ArmorMaterial;
 import turniplabs.halplibe.helper.ArmorHelper;
 import turniplabs.halplibe.helper.CreativeHelper;
-import turniplabs.halplibe.helper.ItemHelper;
-import turniplabs.halplibe.helper.TextureHelper;
+import turniplabs.halplibe.helper.ItemBuilder;
+import net.minecraft.client.render.item.model.ItemModelStandard;
+import net.minecraft.client.render.stitcher.TextureRegistry;
 
 import static cursedbread.morefeatures.FeaturesMain.MOD_ID;
 
 public class FeaturesItems {
 	public static int itemId;
 
-	public static ArmorMaterial dandelionArmor = ArmorHelper.createArmorMaterial(MOD_ID, "extra_armor/dandeline", 27, 0f, 0f, 0f, 0f);
-	public static ArmorMaterial roseArmor = ArmorHelper.createArmorMaterial(MOD_ID, "extra_armor/rose", 27, 0f, 0f, 0f, 0f);
-	public static ArmorMaterial cherryArmor = ArmorHelper.createArmorMaterial(MOD_ID, "extra_armor/cherry", 27, 0f, 0f, 0f, 0f);
-	public static ArmorMaterial deadbushArmor = ArmorHelper.createArmorMaterial(MOD_ID, "extra_armor/deadbush", 1, -1000f, -1000f, -1000f, -1000f);
-	public static ArmorMaterial bedrockArmor = ArmorHelper.createArmorMaterial(MOD_ID, "armor/bedrock", 999999999, 999999999f, 999999999f, 999999999f, 999999999f);
-	public static ArmorMaterial bedrockExtraArmor = ArmorHelper.createArmorMaterial(MOD_ID, "extra_armor/bedrock_extra", 999999999, 999999999f, 999999999f, 999999999f, 999999999f);
-	public static ArmorMaterial plateArmor = ArmorHelper.createArmorMaterial(MOD_ID, "armor/plate", 240, 58f, 58f, 58f, 58f);
-	public static ArmorMaterial plateExtraArmor = ArmorHelper.createArmorMaterial(MOD_ID, "extra_armor/plate_extra", 240, 58f, 58f, 58f, 58f);
-	public static ArmorMaterial leatherExtraArmor = ArmorHelper.createArmorMaterial(MOD_ID, "extra_armor/cloth_extra", 180, 20f, 20f, 20f, 120f);
-	public static ArmorMaterial chainExtraArmor = ArmorHelper.createArmorMaterial(MOD_ID, "extra_armor/chain_extra", 240, 120f, 35f, 35f, 35f);
-	public static ArmorMaterial ironExtraArmor = ArmorHelper.createArmorMaterial(MOD_ID, "extra_armor/iron_extra", 200, 45f, 45f, 45f, 45f);
-	public static ArmorMaterial goldExtraArmor = ArmorHelper.createArmorMaterial(MOD_ID, "extra_armor/gold_extra", 120, 70f, 70f, 70f, 70f);
-	public static ArmorMaterial diamondExtraArmor = ArmorHelper.createArmorMaterial(MOD_ID, "extra_armor/diamond_extra", 800, 65f, 65f, 125f, 65f);
-	public static ArmorMaterial steelExtraArmor = ArmorHelper.createArmorMaterial(MOD_ID, "extra_armor/steel_extra", 1200, 55f, 150f, 55f, 55f);
-	public static ArmorMaterial leatherChainArmor = ArmorHelper.createArmorMaterial(MOD_ID, "armor/leatherchain", 360, 120f, 30f, 30f, 120f);
-	public static ArmorMaterial leatherChainExtraArmor = ArmorHelper.createArmorMaterial(MOD_ID, "extra_armor/leatherchain_extra", 360, 120f, 30f, 30f, 120f);
-	public static ArmorMaterial stoneArmor = ArmorHelper.createArmorMaterial(MOD_ID, "armor/stone", 190, 30f, 30f, 30f, 30f);
-	public static ArmorMaterial stoneExtraArmor = ArmorHelper.createArmorMaterial(MOD_ID, "extra_armor/stone_extra", 190, 30f, 30f, 30f, 30f);
-	public static ArmorMaterial olivineArmor = ArmorHelper.createArmorMaterial(MOD_ID, "armor/olivine", 200, 10f, 60f, 20f, 0f);
-	public static ArmorMaterial olivineExtraArmor = ArmorHelper.createArmorMaterial(MOD_ID, "extra_armor/olivine_extra", 200, 10f, 60f, 20f, 0f);
-	public static ArmorMaterial quartzArmor = ArmorHelper.createArmorMaterial(MOD_ID, "armor/quartz", 200, 10f, 0f, 20f, 30f);
-	public static ArmorMaterial quartzExtraArmor = ArmorHelper.createArmorMaterial(MOD_ID, "extra_armor/quartz_extra", 200, 10f, 0f, 20f, 30f);
+	public static ArmorMaterial dandelionArmor = ArmorHelper.createArmorMaterial(MOD_ID, "extra_armor_dandeline", 27, 0f, 0f, 0f, 0f);
+	public static ArmorMaterial roseArmor = ArmorHelper.createArmorMaterial(MOD_ID, "extra_armor_rose", 27, 0f, 0f, 0f, 0f);
+	public static ArmorMaterial cherryArmor = ArmorHelper.createArmorMaterial(MOD_ID, "extra_armor_cherry", 27, 0f, 0f, 0f, 0f);
+	public static ArmorMaterial deadbushArmor = ArmorHelper.createArmorMaterial(MOD_ID, "extra_armor_deadbush", 1, -1000f, -1000f, -1000f, -1000f);
+	public static ArmorMaterial bedrockArmor = ArmorHelper.createArmorMaterial(MOD_ID, "armor_bedrock", 999999999, 999999999f, 999999999f, 999999999f, 999999999f);
+	public static ArmorMaterial bedrockExtraArmor = ArmorHelper.createArmorMaterial(MOD_ID, "extra_armor_bedrock_extra", 999999999, 999999999f, 999999999f, 999999999f, 999999999f);
+	public static ArmorMaterial plateArmor = ArmorHelper.createArmorMaterial(MOD_ID, "armor_plate", 240, 58f, 58f, 58f, 58f);
+	public static ArmorMaterial plateExtraArmor = ArmorHelper.createArmorMaterial(MOD_ID, "extra_armor_plate_extra", 240, 58f, 58f, 58f, 58f);
+	public static ArmorMaterial leatherExtraArmor = ArmorHelper.createArmorMaterial(MOD_ID, "extra_armor_cloth_extra", 180, 20f, 20f, 20f, 120f);
+	public static ArmorMaterial chainExtraArmor = ArmorHelper.createArmorMaterial(MOD_ID, "extra_armor_chain_extra", 240, 120f, 35f, 35f, 35f);
+	public static ArmorMaterial ironExtraArmor = ArmorHelper.createArmorMaterial(MOD_ID, "extra_armor_iron_extra", 200, 45f, 45f, 45f, 45f);
+	public static ArmorMaterial goldExtraArmor = ArmorHelper.createArmorMaterial(MOD_ID, "extra_armor_gold_extra", 120, 70f, 70f, 70f, 70f);
+	public static ArmorMaterial diamondExtraArmor = ArmorHelper.createArmorMaterial(MOD_ID, "extra_armor_diamond_extra", 800, 65f, 65f, 125f, 65f);
+	public static ArmorMaterial steelExtraArmor = ArmorHelper.createArmorMaterial(MOD_ID, "extra_armor_steel_extra", 1200, 55f, 150f, 55f, 55f);
+	public static ArmorMaterial leatherChainArmor = ArmorHelper.createArmorMaterial(MOD_ID, "armor_leatherchain", 360, 120f, 30f, 30f, 120f);
+	public static ArmorMaterial leatherChainExtraArmor = ArmorHelper.createArmorMaterial(MOD_ID, "extra_armor_leatherchain_extra", 360, 120f, 30f, 30f, 120f);
+	public static ArmorMaterial stoneArmor = ArmorHelper.createArmorMaterial(MOD_ID, "armor_stone", 190, 30f, 30f, 30f, 30f);
+	public static ArmorMaterial stoneExtraArmor = ArmorHelper.createArmorMaterial(MOD_ID, "extra_armor_stone_extra", 190, 30f, 30f, 30f, 30f);
+	public static ArmorMaterial olivineArmor = ArmorHelper.createArmorMaterial(MOD_ID, "armor_olivine", 200, 10f, 60f, 20f, 0f);
+	public static ArmorMaterial olivineExtraArmor = ArmorHelper.createArmorMaterial(MOD_ID, "extra_armor_olivine_extra", 200, 10f, 60f, 20f, 0f);
+	public static ArmorMaterial quartzArmor = ArmorHelper.createArmorMaterial(MOD_ID, "armor_quartz", 200, 10f, 0f, 20f, 30f);
+	public static ArmorMaterial quartzExtraArmor = ArmorHelper.createArmorMaterial(MOD_ID, "extra_armor_quartz_extra", 200, 10f, 0f, 20f, 30f);
 
 
 	public static Item dandelionCrown;
@@ -49,8 +50,6 @@ public class FeaturesItems {
 	public static Item goldCrown;
 	public static Item diamondCrown;
 	public static Item steelCrown;
-
-
 
 	public static int regularCrownEnabled;
 
@@ -119,95 +118,209 @@ public class FeaturesItems {
 	public static int soulEnabled;
 
 	public void initilizeItems() {
-
 		//items
 		if (flowerCrownEnabled == 1) {
-			dandelionCrown = ItemHelper.createItem(MOD_ID, new ItemArmor("crown.dandeline", itemId++, dandelionArmor, 0), "crown/dandeline_helmet.png");
-			roseCrown = ItemHelper.createItem(MOD_ID, new ItemArmor("crown.rose", itemId++, roseArmor, 0), "crown/rose_helmet.png");
-			cherryCrown = ItemHelper.createItem(MOD_ID, new ItemArmor("crown.cherry", itemId++, cherryArmor, 0), "crown/cherry_helmet.png");
-			deadbushCrown = ItemHelper.createItem(MOD_ID, new ItemArmor("crown.deadbush", itemId++, deadbushArmor, 0), "crown/deadbush_helmet.png");
+			dandelionCrown = new ItemBuilder(MOD_ID)
+			    .setIcon("morefeatures:item/crown_dandeline_helmet")
+			    .build(new ItemArmor("crown.dandeline", itemId++, dandelionArmor, 0));
+
+			roseCrown = new ItemBuilder(MOD_ID)
+			    .setIcon("morefeatures:item/crown_rose_helmet")
+			    .build(new ItemArmor("crown.rose", itemId++, roseArmor, 0));
+
+			cherryCrown = new ItemBuilder(MOD_ID)
+			    .setIcon("morefeatures:item/crown_cherry_helmet")
+			    .build(new ItemArmor("crown.cherry", itemId++, cherryArmor, 0));
+
+			deadbushCrown = new ItemBuilder(MOD_ID)
+			    .setIcon("morefeatures:item/crown_deadbush_helmet")
+			    .build(new ItemArmor("crown.deadbush", itemId++, deadbushArmor, 0));
 		}
+
 		if (regularCrownEnabled == 1) {
-			leatherCrown = ItemHelper.createItem(MOD_ID, new ItemArmor("crown.leather", itemId++, leatherExtraArmor, 0), "crown/leather_crown.png");
-			chainCrown = ItemHelper.createItem(MOD_ID, new ItemArmor("crown.chain", itemId++, chainExtraArmor, 0), "crown/chain_crown.png");
-			ironCrown = ItemHelper.createItem(MOD_ID, new ItemArmor("crown.iron", itemId++, ironExtraArmor, 0), "crown/iron_crown.png");
-			goldCrown = ItemHelper.createItem(MOD_ID, new ItemArmor("crown.gold", itemId++, goldExtraArmor, 0), "crown/gold_crown.png");
-			diamondCrown = ItemHelper.createItem(MOD_ID, new ItemArmor("crown.diamond", itemId++, diamondExtraArmor, 0), "crown/diamond_crown.png");
-			steelCrown= ItemHelper.createItem(MOD_ID, new ItemArmor("crown.steel", itemId++, steelExtraArmor, 0), "crown/steel_crown.png");
+			leatherCrown = new ItemBuilder(MOD_ID)
+			    .setIcon("morefeatures:item/crown_leather_crown")
+			    .build(new ItemArmor("crown.leather", itemId++, leatherExtraArmor, 0));
+
+			chainCrown = new ItemBuilder(MOD_ID)
+			    .setIcon("morefeatures:item/crown_chain_crown")
+			    .build(new ItemArmor("crown.chain", itemId++, chainExtraArmor, 0));
+
+			ironCrown = new ItemBuilder(MOD_ID)
+			    .setIcon("morefeatures:item/crown_iron_crown")
+			    .build(new ItemArmor("crown.iron", itemId++, ironExtraArmor, 0));
+
+			goldCrown = new ItemBuilder(MOD_ID)
+			    .setIcon("morefeatures:item/crown_gold_crown")
+			    .build(new ItemArmor("crown.gold", itemId++, goldExtraArmor, 0));
+
+			diamondCrown = new ItemBuilder(MOD_ID)
+			    .setIcon("morefeatures:item/crown_diamond_crown")
+			    .build(new ItemArmor("crown.diamond", itemId++, diamondExtraArmor, 0));
+
+			steelCrown= new ItemBuilder(MOD_ID)
+			    .setIcon("morefeatures:item/crown_steel_crown")
+			    .build(new ItemArmor("crown.steel", itemId++, steelExtraArmor, 0));
+
 			if (stoneArmorEnabled == 1) {
-				stoneCrown = ItemHelper.createItem(MOD_ID, new ItemArmor("crown.stone", itemId++, stoneExtraArmor, 0), "crown/stone_crown.png");
+				stoneCrown = new ItemBuilder(MOD_ID)
+				    .setIcon("morefeatures:item/crown_stone_crown")
+				    .build(new ItemArmor("crown.stone", itemId++, stoneExtraArmor, 0));
 			}
+
 			if (olivineArmorEnabled == 1) {
-				olivineCrown = ItemHelper.createItem(MOD_ID, new ItemArmor("crown.olivine", itemId++, olivineExtraArmor, 0), "crown/olivine_crown.png");
+				olivineCrown = new ItemBuilder(MOD_ID)
+				    .setIcon("morefeatures:item/crown_olivine_crown")
+				    .build(new ItemArmor("crown.olivine", itemId++, olivineExtraArmor, 0));
 			}
+
 			if (bedrockArmorEnabled == 1) {
-				bedrockCrown = ItemHelper.createItem(MOD_ID, new ItemArmor("crown.bedrock", itemId++, bedrockExtraArmor, 0), "crown/bedrock_crown.png");
+				bedrockCrown = new ItemBuilder(MOD_ID)
+				    .setIcon("morefeatures:item/crown_bedrock_crown")
+				    .build(new ItemArmor("crown.bedrock", itemId++, bedrockExtraArmor, 0));
 			}
+
 			if (plateArmorEnabled == 1) {
-				plateCrown = ItemHelper.createItem(MOD_ID, new ItemArmor("crown.plate", itemId++, plateExtraArmor, 0), "crown/plate_crown.png");
+				plateCrown = new ItemBuilder(MOD_ID)
+				    .setIcon("morefeatures:item/crown_plate_crown")
+				    .build(new ItemArmor("crown.plate", itemId++, plateExtraArmor, 0));
 			}
+
 			if (leatherchainArmorEnabled == 1) {
-				leatherChainCrown = ItemHelper.createItem(MOD_ID, new ItemArmor("crown.leatherchain", itemId++, leatherChainExtraArmor, 0), "crown/leatherchain_crown.png");
+				leatherChainCrown = new ItemBuilder(MOD_ID)
+				    .setIcon("morefeatures:item/crown_leatherchain_crown")
+				    .build(new ItemArmor("crown.leatherchain", itemId++, leatherChainExtraArmor, 0));
 			}
+
 			if (quartzArmorEnabled == 1) {
-				quartzCrown = ItemHelper.createItem(MOD_ID, new ItemArmor("crown.quartz", itemId++, quartzExtraArmor, 0), "crown/quartz_crown.png");
+				quartzCrown = new ItemBuilder(MOD_ID)
+				    .setIcon("morefeatures:item/crown_quartz_crown")
+				    .build(new ItemArmor("crown.quartz", itemId++, quartzExtraArmor, 0));
 			}
 		}
 
 		if (bedrockArmorEnabled == 1) {
-			bedrockHelmet = ItemHelper.createItem(MOD_ID, new ItemArmor("helmet.bedrock", itemId++, bedrockArmor, 0), "armoritem/bedrock_helmet.png");
-			bedrockChestplate = ItemHelper.createItem(MOD_ID, new ItemArmor("chestplate.bedrock", itemId++, bedrockArmor, 1), "armoritem/bedrock_chestplate.png");
-			bedrockLeggings = ItemHelper.createItem(MOD_ID, new ItemArmor("leggings.bedrock", itemId++, bedrockArmor, 2), "armoritem/bedrock_leggings.png");
-			bedrockBoots = ItemHelper.createItem(MOD_ID, new ItemArmor("boots.bedrock", itemId++, bedrockArmor, 3), "armoritem/bedrock_boots.png");
+			bedrockHelmet = new ItemBuilder(MOD_ID)
+			    .setIcon("morefeatures:item/armoritem_bedrock_helmet")
+			    .build(new ItemArmor("helmet.bedrock", itemId++, bedrockArmor, 0));
+
+			bedrockChestplate = new ItemBuilder(MOD_ID)
+			    .setIcon("morefeatures:item/armoritem_bedrock_chestplate")
+			    .build(new ItemArmor("chestplate.bedrock", itemId++, bedrockArmor, 1));
+
+			bedrockLeggings = new ItemBuilder(MOD_ID)
+			    .setIcon("morefeatures:item/armoritem_bedrock_leggings")
+			    .build(new ItemArmor("leggings.bedrock", itemId++, bedrockArmor, 2));
+
+			bedrockBoots = new ItemBuilder(MOD_ID)
+			    .setIcon("morefeatures:item/armoritem_bedrock_boots")
+			    .build(new ItemArmor("boots.bedrock", itemId++, bedrockArmor, 3));
 		}
 
 		if (plateArmorEnabled == 1) {
-			plateHelmet = ItemHelper.createItem(MOD_ID, new ItemArmor("helmet.plate", itemId++, plateArmor, 0), "armoritem/plate_helmet.png");
-			plateChestplate = ItemHelper.createItem(MOD_ID, new ItemArmor("chestplate.plate", itemId++, plateArmor, 1), "armoritem/plate_chestplate.png");
+			plateHelmet = new ItemBuilder(MOD_ID)
+			    .setIcon("morefeatures:item/armoritem_plate_helmet")
+			    .build(new ItemArmor("helmet.plate", itemId++, plateArmor, 0));
+
+			plateChestplate = new ItemBuilder(MOD_ID)
+			    .setIcon("morefeatures:item/armoritem_plate_chestplate")
+			    .build(new ItemArmor("chestplate.plate", itemId++, plateArmor, 1));
 		}
 
 		if (leatherchainArmorEnabled == 1) {
-			leatherChainHelmet = ItemHelper.createItem(MOD_ID, new ItemArmor("helmet.leatherchain", itemId++, leatherChainArmor, 0), "armoritem/leatherchain_helmet.png");
-			leatherChainChestplate = ItemHelper.createItem(MOD_ID, new ItemArmor("chestplate.leatherchain", itemId++, leatherChainArmor, 1), "armoritem/leatherchain_chestplate.png");
-			leatherChainLeggings = ItemHelper.createItem(MOD_ID, new ItemArmor("leggings.leatherchain", itemId++, leatherChainArmor, 2), "armoritem/leatherchain_leggings.png");
-			leatherChainBoots = ItemHelper.createItem(MOD_ID, new ItemArmor("boots.leatherchain", itemId++, leatherChainArmor, 3), "armoritem/leatherchain_boots.png");
+			leatherChainHelmet = new ItemBuilder(MOD_ID)
+			    .setIcon("morefeatures:item/armoritem_leatherchain_helmet")
+			    .build(new ItemArmor("helmet.leatherchain", itemId++, leatherChainArmor, 0));
+
+			leatherChainChestplate = new ItemBuilder(MOD_ID)
+			    .setIcon("morefeatures:item/armoritem_leatherchain_chestplate")
+			    .build(new ItemArmor("chestplate.leatherchain", itemId++, leatherChainArmor, 1));
+
+			leatherChainLeggings = new ItemBuilder(MOD_ID)
+			    .setIcon("morefeatures:item/armoritem_leatherchain_leggings")
+			    .build(new ItemArmor("leggings.leatherchain", itemId++, leatherChainArmor, 2));
+
+			leatherChainBoots = new ItemBuilder(MOD_ID)
+			    .setIcon("morefeatures:item/armoritem_leatherchain_boots")
+			    .build(new ItemArmor("boots.leatherchain", itemId++, leatherChainArmor, 3));
 		}
 
 		if (stoneArmorEnabled == 1) {
-			stoneHelmet = ItemHelper.createItem(MOD_ID, new ItemArmor("helmet.stone", itemId++, stoneArmor, 0), "armoritem/stone_helmet.png");
-			stoneChestplate = ItemHelper.createItem(MOD_ID, new ItemArmor("chestplate.stone", itemId++, stoneArmor, 1), "armoritem/stone_chestplate.png");
-			stoneLeggings = ItemHelper.createItem(MOD_ID, new ItemArmor("leggings.stone", itemId++, stoneArmor, 2), "armoritem/stone_leggings.png");
-			stoneBoots = ItemHelper.createItem(MOD_ID, new ItemArmor("boots.stone", itemId++, stoneArmor, 3), "armoritem/stone_boots.png");
+			stoneHelmet = new ItemBuilder(MOD_ID)
+			    .setIcon("morefeatures:item/armoritem_stone_helmet")
+			    .build(new ItemArmor("helmet.stone", itemId++, stoneArmor, 0));
+
+			stoneChestplate = new ItemBuilder(MOD_ID)
+			    .setIcon("morefeatures:item/armoritem_stone_chestplate")
+			    .build(new ItemArmor("chestplate.stone", itemId++, stoneArmor, 1));
+
+			stoneLeggings = new ItemBuilder(MOD_ID)
+			    .setIcon("morefeatures:item/armoritem_stone_leggings")
+			    .build(new ItemArmor("leggings.stone", itemId++, stoneArmor, 2));
+
+			stoneBoots = new ItemBuilder(MOD_ID)
+			    .setIcon("morefeatures:item/armoritem_stone_boots")
+			    .build(new ItemArmor("boots.stone", itemId++, stoneArmor, 3));
 		}
 
 		if (olivineArmorEnabled == 1) {
-			olivineHelmet = ItemHelper.createItem(MOD_ID, new ItemArmor("helmet.olivine", itemId++, olivineArmor, 0), "armoritem/olivine_helmet.png");
-			olivineChestplate = ItemHelper.createItem(MOD_ID, new ItemArmor("chestplate.olivine", itemId++, olivineArmor, 1), "armoritem/olivine_chestplate.png");
-			olivineLeggings = ItemHelper.createItem(MOD_ID, new ItemArmor("leggings.olivine", itemId++, olivineArmor, 2), "armoritem/olivine_leggings.png");
-			olivineBoots = ItemHelper.createItem(MOD_ID, new ItemArmor("boots.olivine", itemId++, olivineArmor, 3), "armoritem/olivine_boots.png");
+			olivineHelmet = new ItemBuilder(MOD_ID)
+			    .setIcon("morefeatures:item/armoritem_olivine_helmet")
+			    .build(new ItemArmor("helmet.olivine", itemId++, olivineArmor, 0));
+
+			olivineChestplate = new ItemBuilder(MOD_ID)
+			    .setIcon("morefeatures:item/armoritem_olivine_chestplate")
+			    .build(new ItemArmor("chestplate.olivine", itemId++, olivineArmor, 1));
+
+			olivineLeggings = new ItemBuilder(MOD_ID)
+			    .setIcon("morefeatures:item/armoritem_olivine_leggings")
+			    .build(new ItemArmor("leggings.olivine", itemId++, olivineArmor, 2));
+
+			olivineBoots = new ItemBuilder(MOD_ID)
+			    .setIcon("morefeatures:item/armoritem_olivine_boots")
+			    .build(new ItemArmor("boots.olivine", itemId++, olivineArmor, 3));
 		}
 
 		if (quartzArmorEnabled == 1) {
-			quartzHelmet = ItemHelper.createItem(MOD_ID, new ItemArmor("helmet.quartz", itemId++, quartzArmor, 0), "armoritem/quartz_helmet.png");
-			quartzChestplate = ItemHelper.createItem(MOD_ID, new ItemArmor("chestplate.quartz", itemId++, quartzArmor, 1), "armoritem/quartz_chestplate.png");
-			quartzLeggings = ItemHelper.createItem(MOD_ID, new ItemArmor("leggings.quartz", itemId++, quartzArmor, 2), "armoritem/quartz_leggings.png");
-			quartzBoots = ItemHelper.createItem(MOD_ID, new ItemArmor("boots.quartz", itemId++, quartzArmor, 3), "armoritem/quartz_boots.png");
+			quartzHelmet = new ItemBuilder(MOD_ID)
+			    .setIcon("morefeatures:item/armoritem_quartz_helmet")
+			    .build(new ItemArmor("helmet.quartz", itemId++, quartzArmor, 0));
+
+			quartzChestplate = new ItemBuilder(MOD_ID)
+			    .setIcon("morefeatures:item/armoritem_quartz_chestplate")
+			    .build(new ItemArmor("chestplate.quartz", itemId++, quartzArmor, 1));
+
+			quartzLeggings = new ItemBuilder(MOD_ID)
+			    .setIcon("morefeatures:item/armoritem_quartz_leggings")
+			    .build(new ItemArmor("leggings.quartz", itemId++, quartzArmor, 2));
+
+			quartzBoots = new ItemBuilder(MOD_ID)
+			    .setIcon("morefeatures:item/armoritem_quartz_boots")
+			    .build(new ItemArmor("boots.quartz", itemId++, quartzArmor, 3));
 		}
 
-
 		if (bombQuibersEnabled == 1) {
-			TextureHelper.getOrCreateItemTextureIndex(MOD_ID, "extra_item/bomb_bag_empty.png");
-			TextureHelper.getOrCreateItemTextureIndex(MOD_ID, "extra_item/bomb_bag_full.png");
-			bombBag = ItemHelper.createItem(MOD_ID, new ItemBombQuiver("bag.normal", itemId++), "extra_item/bomb_bag_empty.png");
-			bombBagGold = ItemHelper.createItem(MOD_ID, new ItemBombQuiverEndless("bag.gold", itemId++), "extra_item/bomb_bag_gold.png");
+			bombBag = new ItemBuilder(MOD_ID)
+			    .setIcon("morefeatures:item/extra_item_bomb_bag_empty")
+			    .setItemModel(item -> new ItemModelBombQuiver(item, "morefeatures"))
+			    .build(new ItemBombQuiver("bag.normal", itemId++));
+
+			bombBagGold = new ItemBuilder(MOD_ID)
+			    .setIcon("morefeatures:item/extra_item_bomb_bag_gold")
+			    .build(new ItemBombQuiverEndless("bag.gold", itemId++));
 		}
 
 		if (workbenchonstickEnabled == 1) {
-			workbenchOnStick = ItemHelper.createItem(MOD_ID, new StickWorkbench("stick.workbench", itemId++), "extra_item/workbench_on_stick.png");
+			workbenchOnStick = new ItemBuilder(MOD_ID)
+			    .setIcon("morefeatures:item/extra_item_workbench_on_stick")
+			    .setItemModel(item -> new ItemModelStandard(item, "morefeatures").setFull3D())
+			    .build(new StickWorkbench("stick.workbench", itemId++));
 		}
 
-		if (soulEnabled == 1){
-			mobSoul = ItemHelper.createItem(MOD_ID, new Item("soul", itemId++), "extra_item/soul.png");
+		if (soulEnabled == 1) {
+			mobSoul = new ItemBuilder(MOD_ID)
+			    .setIcon("morefeatures:item/extra_item_soul")
+			    .build(new Item("soul", itemId++));
 		}
 	}
 }
