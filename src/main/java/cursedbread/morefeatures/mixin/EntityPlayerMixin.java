@@ -12,11 +12,8 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(value = EntityPlayer.class, remap = false)
 public class EntityPlayerMixin {
-
 	@Shadow
 	protected float baseSpeed;
-
-
 
 	@Inject(method = "onLivingUpdate()V", at = @At("TAIL"))
 	private void armor_effects(CallbackInfo ci) {

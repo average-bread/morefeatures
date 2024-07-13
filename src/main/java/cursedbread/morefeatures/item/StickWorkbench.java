@@ -14,12 +14,8 @@ public class StickWorkbench extends Item {
 	}
 
 	@Override
-	public boolean onItemUse(ItemStack itemstack, EntityPlayer entityplayer, World world, int x, int y, int z, Side side, double xPlaced, double yPlaced) {
+	public boolean onUseItemOnBlock(ItemStack itemstack, EntityPlayer entityplayer, World world, int x, int y, int z, Side side, double xPlaced, double yPlaced) {
 		entityplayer.displayGUIWorkbench(x, y, z);
 		return false;
-	}
-
-	public boolean isFull3D() {
-		return true;
 	}
 }
