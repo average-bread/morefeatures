@@ -18,4 +18,10 @@ public class StickWorkbench extends Item {
 		entityplayer.displayGUIWorkbench(x, y, z);
 		return false;
 	}
+
+    @Override
+	public ItemStack onUseItem(ItemStack stack, World world, EntityPlayer player) {
+	    player.displayGUIWorkbench((int) player.x, (int) player.y, (int) player.z);
+	    return stack;
+	}
 }
