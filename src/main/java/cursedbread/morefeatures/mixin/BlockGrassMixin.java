@@ -17,8 +17,8 @@ public abstract class BlockGrassMixin {
     @ModifyVariable(method="updateTick",at=@At(value="LOAD"),name="idToSpawn")
     private int updateId(int id, World world, int x, int y, int z, Random rand) {
         if (FeaturesBlocks.rainbowflowerEnabled == 1){
-			if (!(id == Block.flowerRed.id && rand.nextInt(2) == 0)) return id;
-			return FeaturesBlocks.rainbowFlower.id;
+			if (id == Block.flowerRed.id && rand.nextInt(100) <= FeaturesBlocks.rainbowFlowerChance - 1)
+				return FeaturesBlocks.rainbowFlower.id;
 		}
 		return id;
 	}

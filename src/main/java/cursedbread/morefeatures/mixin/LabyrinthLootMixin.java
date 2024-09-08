@@ -35,7 +35,7 @@ public class LabyrinthLootMixin {
 		if (FeaturesItems.regularCrownEnabled == 1) {
 			int a = random.nextInt(16);
 			if (a == 1) {
-				cir.setReturnValue( new ItemStack(FeaturesItems.chainCrown, 1, FeaturesItems.plateHelmet.getMaxDamage() - random.nextInt(FeaturesItems.plateHelmet.getMaxDamage() / 2)));
+				cir.setReturnValue( new ItemStack(FeaturesItems.chainCrown, 1, FeaturesItems.chainCrown.getMaxDamage() - random.nextInt(FeaturesItems.chainCrown.getMaxDamage() / 2)));
 			}
 		}
 	}
