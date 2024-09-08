@@ -70,6 +70,7 @@ public class FeaturesBlocks {
 
 	public static Block rainbowFlower;
 	public static int rainbowflowerEnabled;
+	public static int rainbowFlowerChance;
 
 	public static Block redFire;
 	public static int redFireEnabled;
