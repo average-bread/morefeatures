@@ -24,7 +24,7 @@ public abstract class EntityPlayerMixin extends Entity {
 
 	@Inject(method = "onLivingUpdate()V", at = @At("TAIL"))
 	private void armor_effects(CallbackInfo ci) {
-		if (FeaturesItems.olivineArmorEnabled == 1 && !world.isClientSide){
+		if (FeaturesItems.olivineArmorEnabled == 1 && world.isClientSide){
 			ItemStack helmet_item = Minecraft.getMinecraft(this).thePlayer.inventory.armorItemInSlot(3);
 			ItemStack chest_item = Minecraft.getMinecraft(this).thePlayer.inventory.armorItemInSlot(2);
 			ItemStack leggings_item = Minecraft.getMinecraft(this).thePlayer.inventory.armorItemInSlot(1);
