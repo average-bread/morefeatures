@@ -85,7 +85,8 @@ public class FeaturesCraft implements RecipeEntrypoint {
 					new ItemStack(FeaturesBlocks.nonameColoredGlowstone, 1, 9),
 					new ItemStack(FeaturesBlocks.nonameColoredGlowstone, 1, 10),
 					new ItemStack(FeaturesBlocks.nonameColoredGlowstone, 1, 11),
-					new ItemStack(FeaturesBlocks.nonameColoredGlowstone, 1, 12)));
+					new ItemStack(FeaturesBlocks.nonameColoredGlowstone, 1, 12),
+					new ItemStack(FeaturesBlocks.nonameColoredGlowstone, 1, 13)));
 			}
 
 			if (FeaturesBlocks.paperwallEnabled == 1){
@@ -117,7 +118,8 @@ public class FeaturesCraft implements RecipeEntrypoint {
 					new ItemStack(FeaturesBlocks.nonameColoredPaperwall, 1, 9),
 					new ItemStack(FeaturesBlocks.nonameColoredPaperwall, 1, 10),
 					new ItemStack(FeaturesBlocks.nonameColoredPaperwall, 1, 11),
-					new ItemStack(FeaturesBlocks.nonameColoredPaperwall, 1, 12)));
+					new ItemStack(FeaturesBlocks.nonameColoredPaperwall, 1, 12),
+					new ItemStack(FeaturesBlocks.nonameColoredPaperwall, 1, 13)));
 			}
 
 			if (FeaturesBlocks.glassEnabled == 1){
@@ -151,7 +153,8 @@ public class FeaturesCraft implements RecipeEntrypoint {
 					new ItemStack(FeaturesBlocks.nonameColoredGlass, 1, 9),
 					new ItemStack(FeaturesBlocks.nonameColoredGlass, 1, 10),
 					new ItemStack(FeaturesBlocks.nonameColoredGlass, 1, 11),
-					new ItemStack(FeaturesBlocks.nonameColoredGlass, 1, 12)));
+					new ItemStack(FeaturesBlocks.nonameColoredGlass, 1, 12),
+					new ItemStack(FeaturesBlocks.nonameColoredGlass, 1, 13)));
 			}
 		} else {
 			if (FeaturesBlocks.glowstoneEnabled == 1){
@@ -234,7 +237,7 @@ public class FeaturesCraft implements RecipeEntrypoint {
 				.addInput('G', "morefeatures:glowstones")
 				.create("itemGroupExample", new ItemStack(Block.glowstone, 8));
 			if (FeaturesMain.nonamedyesOn) {
-				for (int i = 0; i <=12; i++) {
+				for (int i = 0; i <=13; i++) {
 					RecipeBuilder.Shaped(MOD_ID)
 						.setShape("GGG", "GDG", "GGG")
 						.addInput('D', ModItems.dye, i)
@@ -254,7 +257,7 @@ public class FeaturesCraft implements RecipeEntrypoint {
 			}
 
 			if (FeaturesMain.nonamedyesOn) {
-				for (int i = 0; i <=12; i++) {
+				for (int i = 0; i <=13; i++) {
 					RecipeBuilder.Shaped(MOD_ID)
 						.setShape("GGG", "GDG", "GGG")
 						.addInput('D', ModItems.dye, i)
@@ -285,7 +288,7 @@ public class FeaturesCraft implements RecipeEntrypoint {
 				.addInput('G', "morefeatures:glasses")
 				.create("itemGroupExample", new ItemStack(Block.glowstone, 8));
 			if (FeaturesMain.nonamedyesOn) {
-				for (int i = 0; i <=12; i++) {
+				for (int i = 0; i <=13; i++) {
 					RecipeBuilder.Shaped(MOD_ID)
 						.setShape("GGG", "GDG", "GGG")
 						.addInput('D', ModItems.dye, i)
