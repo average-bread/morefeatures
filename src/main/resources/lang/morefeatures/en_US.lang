@@ -34,6 +34,8 @@ tile.morefeatures.vanilla.colored.glowstone.orange.desc=Glowstone painted orange
 tile.morefeatures.vanilla.colored.glowstone.white.name=White Glowstone
 tile.morefeatures.vanilla.colored.glowstone.white.desc=Glowstone painted white
 
+tile.morefeatures.noname.colored.glowstone.green.name=Viridian Glowstone
+tile.morefeatures.noname.colored.glowstone.green.desc=Glowstone painted viridian
 tile.morefeatures.noname.colored.glowstone.brown.name=Royal Purple Glowstone
 tile.morefeatures.noname.colored.glowstone.brown.desc=Glowstone painted royal purple
 tile.morefeatures.noname.colored.glowstone.blue.name=Navy Blue Glowstone
@@ -94,6 +96,8 @@ tile.morefeatures.vanilla.paperwall.orange.desc=Paper wall painted orange
 tile.morefeatures.vanilla.paperwall.white.name=White Paper Wall
 tile.morefeatures.vanilla.paperwall.white.desc=Paper wall painted white
 
+tile.morefeatures.noname.paperwall.green.name=Viridian Paper Wall
+tile.morefeatures.noname.paperwall.green.desc=Paper wall painted viridian
 tile.morefeatures.noname.paperwall.brown.name=Royal Purple Paper Wall
 tile.morefeatures.noname.paperwall.brown.desc=Paper wall painted royal purple
 tile.morefeatures.noname.paperwall.blue.name=Navy Blue Paper Wall
@@ -254,6 +258,8 @@ tile.morefeatures.vanilla.colored.glass.orange.desc=Glass painted orange
 tile.morefeatures.vanilla.colored.glass.white.name=White Glass
 tile.morefeatures.vanilla.colored.glass.white.desc=Glass painted white
 
+tile.morefeatures.noname.colored.glass.green.name=Viridian Glass
+tile.morefeatures.noname.colored.glass.green.desc=Glass painted viridian
 tile.morefeatures.noname.colored.glass.brown.name=Royal Purple Glass
 tile.morefeatures.noname.colored.glass.brown.desc=Glass painted royal purple
 tile.morefeatures.noname.colored.glass.blue.name=Navy Blue Glass

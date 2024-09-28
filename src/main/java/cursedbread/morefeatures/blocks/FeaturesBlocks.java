@@ -83,7 +83,7 @@ public class FeaturesBlocks {
 			}
 			if (FeaturesMain.nonamedyesOn == true) {
 				Item.itemsList[nonameColoredGlowstone.id] = new ItemBlockPainted(nonameColoredGlowstone, false);
-				for (int color = 2; color < 14; color++) {
+				for (int color = 2; color < 15; color++) {
 					CreativeHelper.setParent(nonameColoredGlowstone, color - 1, nonameColoredGlowstone, color);
 				}
 			}
@@ -95,7 +95,7 @@ public class FeaturesBlocks {
 			}
 			if (FeaturesMain.nonamedyesOn == true) {
 				Item.itemsList[nonameColoredPaperwall.id] = new ItemBlockPainted(nonameColoredPaperwall, false);
-				for (int color = 2; color < 14; color++) {
+				for (int color = 2; color < 15; color++) {
 					CreativeHelper.setParent(nonameColoredPaperwall, color - 1, nonameColoredPaperwall, color);
 				}
 			}
@@ -107,7 +107,7 @@ public class FeaturesBlocks {
 			}
 			if (FeaturesMain.nonamedyesOn == true) {
 				Item.itemsList[nonameColoredGlass.id] = new ItemBlockPainted(nonameColoredGlass, false);
-				for (int color = 2; color < 14; color++) {
+				for (int color = 2; color < 15; color++) {
 					CreativeHelper.setParent(nonameColoredGlass, color - 1, nonameColoredGlass, color);
 				}
 			}
@@ -143,10 +143,10 @@ public class FeaturesBlocks {
 		        .setBlockModel(block -> new BlockModelPaperwall(block, FeaturesMain.paperWallAlt, false))
 		        .build(new BlockPaperwall("vanilla.paperwall", blockId++, Material.wood));
 			if (FeaturesMain.nonamedyesOn) {
-    		    vanillaColoredPaperwall = paperwallBlock
+    		    nonameColoredPaperwall = paperwallBlock
     		        .setItemBlock(block -> new ItemBlockPainted(block, false))
     		        .setBlockModel(block -> new BlockModelPaperwall(block, FeaturesMain.paperWallAlt, true))
-    		        .build(new BlockPaperwall("vanilla.paperwall", blockId++, Material.wood));
+    		        .build(new BlockPaperwall("noname.paperwall", blockId++, Material.wood));
 			}
 		}
 		if (glassEnabled == 1) {
@@ -158,7 +158,7 @@ public class FeaturesBlocks {
 				nonameColoredGlass = coloredglass
 					.setItemBlock(block -> new ItemBlockPainted(block, false))
     				.setBlockModel(block -> new BlockModelColoredGlass(block, true))
-					.build(new BlockColoredGlass("noname.colored.glasstrapdoor", blockId++, Material.glass));
+					.build(new BlockColoredGlass("noname.colored.glass", blockId++, Material.glass));
 			}
 			/*vanillaColoredGlassTrapdoor = coloredglasstrapdoors
 				.setItemBlock(block -> new ItemBlockPainted(block, false))
