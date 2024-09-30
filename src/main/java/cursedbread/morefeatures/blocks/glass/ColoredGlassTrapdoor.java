@@ -1,6 +1,7 @@
 package cursedbread.morefeatures.blocks.glass;
 
 import net.minecraft.core.block.BlockTrapDoor;
+import net.minecraft.core.block.BlockTrapDoorPainted;
 import net.minecraft.core.block.entity.TileEntity;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.enums.EnumDropCause;
@@ -12,9 +13,9 @@ import net.minecraft.client.render.stitcher.TextureRegistry;
 
 import static cursedbread.morefeatures.FeaturesMain.MOD_ID;
 
-public class ColoredGlassTrapdoor extends BlockTrapDoor {
+public class ColoredGlassTrapdoor extends BlockTrapDoorPainted {
 	public ColoredGlassTrapdoor(String key, int id, Material material) {
-		super(key, id, material, false);
+		super(key, id, material);
 	}
 
 	@Override

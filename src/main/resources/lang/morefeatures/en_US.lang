@@ -212,9 +212,9 @@ item.morefeatures.stick.workbench.name=Workbench On A Stick
 item.morefeatures.stick.workbench.desc=Right click to craft whenever you want!
 
 item.morefeatures.bag.normal.name=Bomb Quiver
-item.morefeatures.bag.normal.desc=Hold your explosive charges in style (not finished)
+item.morefeatures.bag.normal.desc=Hold your explosive charges in style
 item.morefeatures.bag.gold.name=Golden Bomb Quiver
-item.morefeatures.bag.gold.desc=An endless supply of explosive charges (not finished)
+item.morefeatures.bag.gold.desc=An endless supply of explosive charges
 
 item.morefeatures.soul.name=Mob Soul
 item.morefeatures.soul.desc=Not only you can respawn. Mobs can do it too, but not this one anymore. Allows you to change mob inside a spawner ones

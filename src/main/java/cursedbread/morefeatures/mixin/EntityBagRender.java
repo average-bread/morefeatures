@@ -1,5 +1,6 @@
 package cursedbread.morefeatures.mixin;
 
+import cursedbread.morefeatures.FeaturesMain;
 import cursedbread.morefeatures.item.ItemBombQuiver;
 import cursedbread.morefeatures.item.ItemBombQuiverEndless;
 import net.minecraft.client.Minecraft;
@@ -17,16 +18,16 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(value = EntityRenderer.class, remap = false)
 public class EntityBagRender{
 	@Unique
-	String quiver_texture_path = "/armor/quiver.png";
+	String quiver_texture_path = "/assets/minecraft/textures/armor/quiver.png";
 
 	@Unique
-	String gold_quiver_texture_path = "/armor/quiver_golden.png";
+	String gold_quiver_texture_path = "/assets/minecraft/textures/armor/quiver_golden.png";
 
 	@Unique
-	String bomb_quiver_texture_path = "/assets/morefeatures/armor/bag/bag_normal_1.png";
+	String bomb_quiver_texture_path = "/assets/morefeatures/textures/armor/bag_bag_normal_1.png";
 
 	@Unique
-	String bomb_golden_quiver_texture_path = "/assets/morefeatures/armor/bag/bag_gold_1.png";
+	String bomb_golden_quiver_texture_path = "/assets/morefeatures/textures/armor/bag_bag_gold_1.png";
 
 	@Inject(method = "loadTexture", at = @At("HEAD"), cancellable = true)
 	protected void loadTexture(String texturePath, CallbackInfo ci) {

@@ -188,6 +188,8 @@ public class FeaturesBlocks {
 				.build(new BlockFlower("flower.rainbow", blockId++));
 		}
 
+		
+
 
 		initializeBlockDetails();
 	}
