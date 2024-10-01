@@ -24,23 +24,25 @@ public abstract class EntityPlayerMixin extends Entity {
 
 	@Inject(method = "onLivingUpdate()V", at = @At("TAIL"))
 	private void armor_effects(CallbackInfo ci) {
-		if (FeaturesItems.olivineArmorEnabled == 1 && world.isClientSide){
+		if (FeaturesItems.olivineArmorEnabled == 1 && !world.isClientSide){
 			ItemStack helmet_item = Minecraft.getMinecraft(this).thePlayer.inventory.armorItemInSlot(3);
 			ItemStack chest_item = Minecraft.getMinecraft(this).thePlayer.inventory.armorItemInSlot(2);
 			ItemStack leggings_item = Minecraft.getMinecraft(this).thePlayer.inventory.armorItemInSlot(1);
 			ItemStack boots_item = Minecraft.getMinecraft(this).thePlayer.inventory.armorItemInSlot(0);
+			float olivineboost = 0;
 			if (chest_item != null && chest_item.getItem().equals(FeaturesItems.olivineChestplate)) {
-				this.baseSpeed = 0.2f;
+				olivineboost = this.speed + 0.5f;
 			} else if (leggings_item != null && leggings_item.getItem().equals(FeaturesItems.olivineLeggings)) {
-				this.baseSpeed = 0.17f;
-			} else if (helmet_item != null && FeaturesItems.regularCrownEnabled == 1 && helmet_item.getItem().equals(FeaturesItems.olivineCrown)) {
-				this.baseSpeed = 0.15f;
-			} else if (helmet_item != null && helmet_item.getItem().equals(FeaturesItems.olivineHelmet)) {
-				this.baseSpeed = 0.15f;
+				olivineboost = this.speed + 0.3f;
+			} else if ((helmet_item != null && helmet_item.getItem().equals(FeaturesItems.olivineHelmet)) || (helmet_item != null && FeaturesItems.regularCrownEnabled == 1 && helmet_item.getItem().equals(FeaturesItems.olivineCrown))) {
+				olivineboost = this.speed + 0.1f;
 			} else  if (boots_item != null && boots_item.getItem().equals(FeaturesItems.olivineBoots)) {
-				this.baseSpeed = 0.13f;
+				olivineboost = this.speed + 0.1f;
+			}
+			if (olivineboost > 0){
+				this.speed = (float)((double)this.speed + (double)this.baseSpeed * olivineboost);
 			} else {
-				this.baseSpeed = 0.1f;
+				this.speed = this.baseSpeed;
 			}
 		}
 	}
