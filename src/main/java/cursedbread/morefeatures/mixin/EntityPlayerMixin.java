@@ -29,16 +29,23 @@ public abstract class EntityPlayerMixin extends Entity {
 			ItemStack chest_item = Minecraft.getMinecraft(this).thePlayer.inventory.armorItemInSlot(2);
 			ItemStack leggings_item = Minecraft.getMinecraft(this).thePlayer.inventory.armorItemInSlot(1);
 			ItemStack boots_item = Minecraft.getMinecraft(this).thePlayer.inventory.armorItemInSlot(0);
-			float olivineboost = 0;
+			float olivineheadboost = 0;
+			float olivinetorsoboost = 0;
+			float olivinelegsboost = 0;
+			float olivinebootsboost = 0;
 			if (chest_item != null && chest_item.getItem().equals(FeaturesItems.olivineChestplate)) {
-				olivineboost = this.speed + 0.5f;
-			} else if (leggings_item != null && leggings_item.getItem().equals(FeaturesItems.olivineLeggings)) {
-				olivineboost = this.speed + 0.3f;
-			} else if ((helmet_item != null && helmet_item.getItem().equals(FeaturesItems.olivineHelmet)) || (helmet_item != null && FeaturesItems.regularCrownEnabled == 1 && helmet_item.getItem().equals(FeaturesItems.olivineCrown))) {
-				olivineboost = this.speed + 0.1f;
-			} else  if (boots_item != null && boots_item.getItem().equals(FeaturesItems.olivineBoots)) {
-				olivineboost = this.speed + 0.1f;
+				olivinetorsoboost = this.speed + 0.05F;
 			}
+			if (leggings_item != null && leggings_item.getItem().equals(FeaturesItems.olivineLeggings)) {
+				olivinelegsboost = this.speed + 0.03F;
+			}
+			if ((helmet_item != null && helmet_item.getItem().equals(FeaturesItems.olivineHelmet)) || (helmet_item != null && FeaturesItems.regularCrownEnabled == 1 && helmet_item.getItem().equals(FeaturesItems.olivineCrown))) {
+				olivineheadboost = this.speed + 0.01F;
+			}
+			if (boots_item != null && boots_item.getItem().equals(FeaturesItems.olivineBoots)) {
+				olivinebootsboost = this.speed + 0.01F;
+			}
+			float olivineboost = olivineheadboost + olivinetorsoboost + olivinelegsboost + olivinebootsboost;
 			if (olivineboost > 0){
 				this.speed = (float)((double)this.speed + (double)this.baseSpeed * olivineboost);
 			} else {
