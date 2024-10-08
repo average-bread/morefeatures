@@ -1,7 +1,9 @@
 package cursedbread.morefeatures.mixin;
 
+import cursedbread.morefeatures.FeaturesMain;
 import cursedbread.morefeatures.item.FeaturesItems;
 import net.minecraft.client.Minecraft;
+import net.minecraft.core.Global;
 import net.minecraft.core.entity.Entity;
 import net.minecraft.core.entity.player.EntityPlayer;
 import net.minecraft.core.item.ItemStack;
@@ -22,9 +24,8 @@ public abstract class EntityPlayerMixin extends Entity {
 		super(world);
 	}
 
-	@Inject(method = "onLivingUpdate()V", at = @At("TAIL"))
-	private void armor_effects(CallbackInfo ci) {
-		if (FeaturesItems.olivineArmorEnabled == 1 && !world.isClientSide){
+	public void SpeedOlivine(){
+		if (FeaturesItems.olivineArmorEnabled == 1){
 			ItemStack helmet_item = Minecraft.getMinecraft(this).thePlayer.inventory.armorItemInSlot(3);
 			ItemStack chest_item = Minecraft.getMinecraft(this).thePlayer.inventory.armorItemInSlot(2);
 			ItemStack leggings_item = Minecraft.getMinecraft(this).thePlayer.inventory.armorItemInSlot(1);
@@ -48,9 +49,16 @@ public abstract class EntityPlayerMixin extends Entity {
 			float olivineboost = olivineheadboost + olivinetorsoboost + olivinelegsboost + olivinebootsboost;
 			if (olivineboost > 0){
 				this.speed = (float)((double)this.speed + (double)this.baseSpeed * olivineboost);
-			} else {
+			} else if (!this.isSprinting()) {
 				this.speed = this.baseSpeed;
 			}
+		}
+	}
+
+	@Inject(method = "onLivingUpdate()V", at = @At("TAIL"))
+	private void armor_effects(CallbackInfo ci) {
+		if (FeaturesItems.olivineArmorEnabled == 1 && !Global.isServer){
+			SpeedOlivine();
 		}
 	}
 }
