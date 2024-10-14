@@ -1,4 +1,4 @@
-package cursedbread.morefeatures.blocks;
+package cursedbread.morefeatures.blocks.other;
 
 import cursedbread.morefeatures.item.FeaturesItems;
 import net.minecraft.core.block.Block;
@@ -11,10 +11,10 @@ import net.minecraft.core.world.World;
 
 import java.util.HashMap;
 
-public class GilderBlock extends Block {
+public class BlockGilder extends Block {
     static public HashMap<Integer, ItemStack> item_map = new HashMap<>();
     static boolean init = false;
-	public GilderBlock(String key, int id) {
+	public BlockGilder(String key, int id) {
 		super(key, id, Material.metal);
 		init = false;
 	}

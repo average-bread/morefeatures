@@ -8,6 +8,7 @@
     "BlockGrassMixin",
     "ChunkDecoratorOverworldMixin",
     "ColoredGlowstoneAMixin",
+    "ColoredGlowstoneBMixin",
     "EntityBagRender",
     "EntityPlayerMixin",
     "ItemCannonMixin",

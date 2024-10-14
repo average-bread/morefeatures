@@ -18,6 +18,12 @@ public class FeaturesItems {
 	public static ArmorMaterial roseArmor = ArmorHelper.createArmorMaterial(MOD_ID, "extra_armor_rose", 27, 0f, 0f, 0f, 0f);
 	public static ArmorMaterial cherryArmor = ArmorHelper.createArmorMaterial(MOD_ID, "extra_armor_cherry", 27, 0f, 0f, 0f, 0f);
 	public static ArmorMaterial deadbushArmor = ArmorHelper.createArmorMaterial(MOD_ID, "extra_armor_deadbush", 1, -1000f, -1000f, -1000f, -1000f);
+	public static ArmorMaterial orchidArmor = ArmorHelper.createArmorMaterial(MOD_ID, "extra_armor_orchid", 27, 0f, 0f, 0f, 0f);
+	public static ArmorMaterial heatherArmor = ArmorHelper.createArmorMaterial(MOD_ID, "extra_armor_heather", 27, 0f, 0f, 0f, 0f);
+	public static ArmorMaterial bluebellArmor = ArmorHelper.createArmorMaterial(MOD_ID, "extra_armor_bluebell", 27, 0f, 0f, 0f, 0f);
+	public static ArmorMaterial marigoldArmor = ArmorHelper.createArmorMaterial(MOD_ID, "extra_armor_marigold", 27, 0f, 0f, 0f, 0f);
+
+
 	public static ArmorMaterial bedrockArmor = ArmorHelper.createArmorMaterial(MOD_ID, "armor_bedrock", 999999999, 999999999f, 999999999f, 999999999f, 999999999f);
 	public static ArmorMaterial bedrockExtraArmor = ArmorHelper.createArmorMaterial(MOD_ID, "extra_armor_bedrock_extra", 999999999, 999999999f, 999999999f, 999999999f, 999999999f);
 	public static ArmorMaterial plateArmor = ArmorHelper.createArmorMaterial(MOD_ID, "armor_plate", 240, 58f, 58f, 58f, 58f);
@@ -42,6 +48,10 @@ public class FeaturesItems {
 	public static Item roseCrown;
 	public static Item cherryCrown;
 	public static Item deadbushCrown;
+	public static Item orchidCrown;
+	public static Item heatherCrown;
+	public static Item bluebellCrown;
+	public static Item marigoldCrown;
 
 	public static int flowerCrownEnabled;
 	public static Item leatherCrown;
@@ -135,6 +145,22 @@ public class FeaturesItems {
 			deadbushCrown = new ItemBuilder(MOD_ID)
 			    .setIcon("morefeatures:item/crown_deadbush_helmet")
 			    .build(new ItemArmor("crown.deadbush", itemId++, deadbushArmor, 0));
+
+			orchidCrown = new ItemBuilder(MOD_ID)
+				.setIcon("morefeatures:item/crown_orchid_helmet")
+				.build(new ItemArmor("crown.orchid", itemId++, orchidArmor, 0));
+
+			heatherCrown = new ItemBuilder(MOD_ID)
+				.setIcon("morefeatures:item/crown_heather_helmet")
+				.build(new ItemArmor("crown.heather", itemId++, heatherArmor, 0));
+
+			bluebellCrown = new ItemBuilder(MOD_ID)
+				.setIcon("morefeatures:item/crown_bluebell_helmet")
+				.build(new ItemArmor("crown.bluebell", itemId++, bluebellArmor, 0));
+
+			marigoldCrown = new ItemBuilder(MOD_ID)
+				.setIcon("morefeatures:item/crown_marigold_helmet")
+				.build(new ItemArmor("crown.marigold", itemId++, marigoldArmor, 0));
 		}
 
 		if (regularCrownEnabled == 1) {

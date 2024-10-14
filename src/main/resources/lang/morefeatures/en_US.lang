@@ -133,6 +133,15 @@ item.morefeatures.crown.cherry.name=Cherry Crown
 item.morefeatures.crown.cherry.desc=Flower crown made with cherry (pretty hard to make)
 item.morefeatures.crown.deadbush.name=Dead Bush Crown
 item.morefeatures.crown.deadbush.desc=Flower crown made with dead bushes (just...why)
+item.morefeatures.crown.orchid.name=Orchid Crown
+item.morefeatures.crown.orchid.desc=Flower crown made with orchid
+item.morefeatures.crown.heather.name=Heather Crown
+item.morefeatures.crown.heather.desc=Flower crown made with heather
+item.morefeatures.crown.bluebell.name=Bluebell Crown
+item.morefeatures.crown.bluebell.desc=Flower crown made with bluebell
+item.morefeatures.crown.marigold.name=Marigold Crown
+item.morefeatures.crown.marigold.desc=Flower crown made with marigold
+
 item.morefeatures.crown.leather.name=Leather Crown
 item.morefeatures.crown.leather.desc=A crown made from cow's hide
 item.morefeatures.crown.chain.name=Chainmail Crown
@@ -352,6 +361,11 @@ tile.morefeatures.noname.colored.glasstrapdoor.white.desc=Glass trapdoor painted
 
 tile.morefeatures.flower.rainbow.name=Rainbow Flower
 tile.morefeatures.flower.rainbow.desc=Can be crafted into various of dyes
+
+tile.morefeatures.ham.name=Block Of Ham
+tile.morefeatures.ham.desc=Pig^3
+tile.morefeatures.cookedham.name=Cooked Block Of Ham
+tile.morefeatures.cookedham.desc=Well done, congratulations even
 
 tile.morefeatures.fire.red.name=Red Fire
 tile.morefeatures.fire.red.desc=Extra hot

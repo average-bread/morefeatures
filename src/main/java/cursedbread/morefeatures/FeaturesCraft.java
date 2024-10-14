@@ -24,7 +24,22 @@ public class FeaturesCraft implements RecipeEntrypoint {
 		Block.flowerYellow.id,
 		Block.flowerRed.id,
 		Block.leavesCherryFlowering.id,
-		Block.deadbush.id
+		Block.deadbush.id,
+		Block.flowerPink.id,
+		Block.flowerPurple.id,
+		Block.flowerLightBlue.id,
+		Block.flowerOrange.id
+	};
+
+	public static Item[] flowercrownResult = {
+		FeaturesItems.dandelionCrown,
+		FeaturesItems.roseCrown,
+		FeaturesItems.cherryCrown,
+		FeaturesItems.deadbushCrown,
+		FeaturesItems.orchidCrown,
+		FeaturesItems.heatherCrown,
+		FeaturesItems.bluebellCrown,
+		FeaturesItems.marigoldCrown
 	};
 
 	public static int[] regularMaterial = {
@@ -34,12 +49,6 @@ public class FeaturesCraft implements RecipeEntrypoint {
 		Item.diamond.id,
 		Item.ingotSteel.id
 	};
-	public static Item[] flowercrownResult = {
-		FeaturesItems.dandelionCrown,
-		FeaturesItems.roseCrown,
-		FeaturesItems.cherryCrown,
-		FeaturesItems.deadbushCrown
-	};
 
 	public static Item[] regularcrownResult = {
 		FeaturesItems.leatherCrown,
@@ -47,6 +56,16 @@ public class FeaturesCraft implements RecipeEntrypoint {
 		FeaturesItems.goldCrown,
 		FeaturesItems.diamondCrown,
 		FeaturesItems.steelCrown
+	};
+
+	public static int[] smallsquireMaterial = {
+		Item.foodPorkchopRaw.id,
+		Item.foodPorkchopCooked.id
+	};
+
+	public static Block[] smallsquireResult = {
+		FeaturesBlocks.ham,
+		FeaturesBlocks.cookedham
 	};
 
 	@Override
@@ -490,6 +509,26 @@ public class FeaturesCraft implements RecipeEntrypoint {
 						.create("dye-cloning", new ItemStack(ModItems.dye, 3, i));
 				}
 			}
+		}
+
+		if (FeaturesBlocks.hamEnabled == 1) {
+			for (int j = 0; j < smallsquireMaterial.length; j++) {
+				RecipeBuilder.Shaped(MOD_ID)
+					.setShape("HH", "HH")
+					.addInput('H', Item.itemsList[smallsquireMaterial[j]])
+					.create("hamblockcrafting", new ItemStack(smallsquireResult[j]));
+				RecipeBuilder.Shapeless(MOD_ID)
+					.addInput(smallsquireResult[j])
+					.create("hamblockuncrafting", new ItemStack(Item.itemsList[smallsquireMaterial[j]], 4));
+			}
+
+			RecipeBuilder.Furnace(MOD_ID)
+				.setInput(FeaturesBlocks.ham)
+				.create("cookingham", new ItemStack(FeaturesBlocks.cookedham));
+
+			RecipeBuilder.BlastFurnace(MOD_ID)
+				.setInput(FeaturesBlocks.ham)
+				.create("cookingham", new ItemStack(FeaturesBlocks.cookedham));
 		}
 	}
 }

@@ -3,9 +3,10 @@ package cursedbread.morefeatures.blocks;
 import cursedbread.morefeatures.FeaturesMain;
 import cursedbread.morefeatures.blocks.glass.*;
 import cursedbread.morefeatures.blocks.glowstone.*;
+import cursedbread.morefeatures.blocks.other.BlockGilder;
+import cursedbread.morefeatures.blocks.other.BlockHam;
 import cursedbread.morefeatures.blocks.paperwall.*;
 import net.minecraft.core.block.Block;
-import net.minecraft.core.block.BlockFire;
 import net.minecraft.core.block.BlockFlower;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.block.tag.BlockTags;
@@ -71,6 +72,10 @@ public class FeaturesBlocks {
 	public static Block rainbowFlower;
 	public static int rainbowflowerEnabled;
 	public static int rainbowFlowerChance;
+
+	public static Block ham;
+	public static Block cookedham;
+	public static int hamEnabled;
 
 	public static Block redFire;
 	public static int redFireEnabled;
@@ -178,7 +183,7 @@ public class FeaturesBlocks {
 			    )
 				.setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.FENCES_CONNECT)
 				.setHardness(5f)
-				.build(new GilderBlock("gilder", blockId++));
+				.build(new BlockGilder("gilder", blockId++));
 		}
 
 		if (rainbowflowerEnabled == 1) {
@@ -188,8 +193,23 @@ public class FeaturesBlocks {
 				.build(new BlockFlower("flower.rainbow", blockId++));
 		}
 
-		
+		if (hamEnabled == 1) {
+			ham = fullBlock
+				.setBlockModel(block -> new BlockModelStandard(block)
+					.withTextures("morefeatures:block/extra_block_ham_block")
+				)
+				.setTags(BlockTags.FENCES_CONNECT, BlockTags.MINEABLE_BY_SWORD)
+				.setHardness(0.1f)
+				.build(new BlockHam("ham", blockId++, Material.stone));
 
+			cookedham = fullBlock
+				.setBlockModel(block -> new BlockModelStandard(block)
+					.withTextures("morefeatures:block/extra_block_ham_cooked_block")
+				)
+				.setTags(BlockTags.FENCES_CONNECT, BlockTags.MINEABLE_BY_SWORD)
+				.setHardness(0.1f)
+				.build(new Block("cookedham", blockId++, Material.stone));
+		}
 
 		initializeBlockDetails();
 	}
