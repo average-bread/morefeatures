@@ -1,8 +1,12 @@
 package cursedbread.morefeatures.item;
 
+import net.minecraft.core.block.material.Material;
 import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemArmor;
 import net.minecraft.core.item.material.ArmorMaterial;
+import net.minecraft.core.item.material.ToolMaterial;
+import net.minecraft.core.item.tool.ItemTool;
+import net.minecraft.core.item.tool.ItemToolPickaxe;
 import turniplabs.halplibe.helper.ArmorHelper;
 import turniplabs.halplibe.helper.CreativeHelper;
 import turniplabs.halplibe.helper.ItemBuilder;
@@ -126,6 +130,14 @@ public class FeaturesItems {
 	public static Item mobSoul;
 
 	public static int soulEnabled;
+
+	public static int paxelsEnabled;
+	public static Item paxelWood;
+	public static Item paxelStone;
+	public static Item paxelIron;
+	public static Item paxelGold;
+	public static Item paxelDiamond;
+	public static Item paxelSteel;
 
 	public void initilizeItems() {
 		//items
@@ -347,6 +359,32 @@ public class FeaturesItems {
 			mobSoul = new ItemBuilder(MOD_ID)
 			    .setIcon("morefeatures:item/extra_item_soul")
 			    .build(new Item("soul", itemId++));
+		}
+
+		if (paxelsEnabled == 1){
+			paxelWood = new ItemBuilder(MOD_ID)
+				.setIcon("morefeatures:item/tool_paxel_wood")
+				.build(new ItemToolPaxel("paxel.wood", itemId++, ToolMaterial.wood));
+
+			paxelStone = new ItemBuilder(MOD_ID)
+				.setIcon("morefeatures:item/tool_paxel_stone")
+				.build(new ItemToolPaxel("paxel.stone", itemId++, ToolMaterial.stone));
+
+			paxelIron = new ItemBuilder(MOD_ID)
+				.setIcon("morefeatures:item/tool_paxel_iron")
+				.build(new ItemToolPaxel("paxel.iron", itemId++, ToolMaterial.iron));
+
+			paxelGold = new ItemBuilder(MOD_ID)
+				.setIcon("morefeatures:item/tool_paxel_gold")
+				.build(new ItemToolPaxel("paxel.gold", itemId++, ToolMaterial.gold));
+
+			paxelDiamond = new ItemBuilder(MOD_ID)
+				.setIcon("morefeatures:item/tool_paxel_diamond")
+				.build(new ItemToolPaxel("paxel.diamond", itemId++, ToolMaterial.diamond));
+
+			paxelSteel = new ItemBuilder(MOD_ID)
+				.setIcon("morefeatures:item/tool_paxel_steel")
+				.build(new ItemToolPaxel("paxel.steel", itemId++, ToolMaterial.steel));
 		}
 	}
 }

@@ -45,6 +45,7 @@ public class FeaturesMain implements ModInitializer, GameStartEntrypoint {
 		prop.setProperty("Add_bomb_quivers", "1");
 		prop.setProperty("Add_workbench_on_a_stick", "1");
 		prop.setProperty("Add_mob_soul", "1");
+		prop.setProperty("Add_paxels", "1");
 
 		prop.setProperty("Add_new_dungeons", "1");
 		ConfigHandler config = new ConfigHandler(MOD_ID,prop);
@@ -75,6 +76,7 @@ public class FeaturesMain implements ModInitializer, GameStartEntrypoint {
 		FeaturesItems.bombQuibersEnabled = config.getInt("Add_bomb_quivers");
 		FeaturesItems.workbenchonstickEnabled = config.getInt("Add_workbench_on_a_stick");
 		FeaturesItems.soulEnabled = config.getInt("Add_mob_soul");
+		FeaturesItems.paxelsEnabled = config.getInt("Add_paxels");
 		//Extra
 		newDungeonsEnabled = config.getInt("Add_new_dungeons");
 	}

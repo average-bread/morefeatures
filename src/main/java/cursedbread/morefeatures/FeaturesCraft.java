@@ -68,6 +68,48 @@ public class FeaturesCraft implements RecipeEntrypoint {
 		FeaturesBlocks.cookedham
 	};
 
+	public static int[] paxelCraftAxeMaterial = {
+		Item.toolAxeWood.id,
+		Item.toolAxeStone.id,
+		Item.toolAxeIron.id,
+		Item.toolAxeGold.id,
+		Item.toolAxeDiamond.id,
+		Item.toolAxeSteel.id
+	};
+	public static int[] paxelCraftPickaxeMaterial = {
+		Item.toolPickaxeWood.id,
+		Item.toolPickaxeStone.id,
+		Item.toolPickaxeIron.id,
+		Item.toolPickaxeGold.id,
+		Item.toolPickaxeDiamond.id,
+		Item.toolPickaxeSteel.id
+	};
+	public static int[] paxelCraftShovelMaterial = {
+		Item.toolShovelWood.id,
+		Item.toolShovelStone.id,
+		Item.toolShovelIron.id,
+		Item.toolShovelGold.id,
+		Item.toolShovelDiamond.id,
+		Item.toolShovelSteel.id
+	};
+	public static int[] paxelCraftSwordMaterial = {
+		Item.toolSwordWood.id,
+		Item.toolSwordStone.id,
+		Item.toolSwordIron.id,
+		Item.toolSwordGold.id,
+		Item.toolSwordDiamond.id,
+		Item.toolSwordSteel.id
+	};
+
+	public static Item[] paxelCraftResult = {
+		FeaturesItems.paxelWood,
+		FeaturesItems.paxelStone,
+		FeaturesItems.paxelIron,
+		FeaturesItems.paxelGold,
+		FeaturesItems.paxelDiamond,
+		FeaturesItems.paxelSteel
+	};
+
 	@Override
 	public void initNamespaces() {
 		RecipeBuilder.initNameSpace(FeaturesMain.MOD_ID);
@@ -529,6 +571,19 @@ public class FeaturesCraft implements RecipeEntrypoint {
 			RecipeBuilder.BlastFurnace(MOD_ID)
 				.setInput(FeaturesBlocks.ham)
 				.create("cookingham", new ItemStack(FeaturesBlocks.cookedham));
+		}
+
+		if (FeaturesItems.paxelsEnabled == 1){
+			for (int i = 0; i < 6; i++){
+				RecipeBuilder.Shaped(MOD_ID)
+					.setShape("APH", " W ", " S ")
+					.addInput('S', Item.stick)
+					.addInput('A', Item.itemsList[paxelCraftAxeMaterial[i]])
+					.addInput('P', Item.itemsList[paxelCraftPickaxeMaterial[i]])
+					.addInput('H', Item.itemsList[paxelCraftShovelMaterial[i]])
+					.addInput('W', Item.itemsList[paxelCraftSwordMaterial[i]])
+					.create("paxelcraft", new ItemStack(paxelCraftResult[i]));
+			}
 		}
 	}
 }
