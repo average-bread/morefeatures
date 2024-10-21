@@ -368,17 +368,83 @@ tile.morefeatures.cookedham.name=Cooked Block Of Ham
 tile.morefeatures.cookedham.desc=Well done, congratulations even.
 
 item.morefeatures.paxel.wood.name=Wooden Paxel
-item.morefeatures.paxel.wood.desk=Slay monsters, dig up the dirt, pick some stone or chop some trees with this wooden tool.
+item.morefeatures.paxel.wood.desc=Slay monsters, dig up the dirt, pick some stone or chop some trees with this wooden tool.
 item.morefeatures.paxel.stone.name=Stone Paxel
-item.morefeatures.paxel.stone.desk=Slay monsters, dig up the dirt, pick some stone or chop some trees with this stone tool.
+item.morefeatures.paxel.stone.desc=Slay monsters, dig up the dirt, pick some stone or chop some trees with this stone tool.
 item.morefeatures.paxel.iron.name=Iron Paxel
-item.morefeatures.paxel.iron.desk=Slay monsters, dig up the dirt, pick some stone or chop some trees with this iron tool.
+item.morefeatures.paxel.iron.desc=Slay monsters, dig up the dirt, pick some stone or chop some trees with this iron tool.
 item.morefeatures.paxel.gold.name=Golden Paxel
-item.morefeatures.paxel.gold.desk=Slay monsters, dig up the dirt, pick some stone or chop some trees with this gold tool.
+item.morefeatures.paxel.gold.desc=Slay monsters, dig up the dirt, pick some stone or chop some trees with this gold tool.
 item.morefeatures.paxel.diamond.name=Diamond Paxel
-item.morefeatures.paxel.diamond.desk=Slay monsters, dig up the dirt, pick some stone or chop some trees with this diamond tool.
+item.morefeatures.paxel.diamond.desc=Slay monsters, dig up the dirt, pick some stone or chop some trees with this diamond tool.
 item.morefeatures.paxel.steel.name=Steel Paxel
-item.morefeatures.paxel.steel.desk=Slay monsters, dig up the dirt, pick some stone or chop some trees with this steel tool.
+item.morefeatures.paxel.steel.desc=Slay monsters, dig up the dirt, pick some stone or chop some trees with this steel tool.
+
+tile.morefeatures.superore.coal.stone.name=Super Stone Coal Ore
+tile.morefeatures.superore.coal.stone.desc=A CHONK of coal embedded in stone.
+tile.morefeatures.superore.coal.basalt.name=Super Basalt Coal Ore
+tile.morefeatures.superore.coal.basalt.desc=A CHONK of coal embedded in basalt.
+tile.morefeatures.superore.coal.limestone.name=Super Limestone Coal Ore
+tile.morefeatures.superore.coal.limestone.desc=A CHONK of coal embedded in limestone.
+tile.morefeatures.superore.coal.granite.name=Super Granite Coal Ore
+tile.morefeatures.superore.coal.granite.desc=A CHONK of coal embedded in granite.
+
+tile.morefeatures.superore.iron.stone.name=Super Stone Iron Ore
+tile.morefeatures.superore.iron.stone.desc=A CHONK of iron embedded in stone.
+tile.morefeatures.superore.iron.basalt.name=Super Basalt Iron Ore
+tile.morefeatures.superore.iron.basalt.desc=A CHONK of iron embedded in basalt.
+tile.morefeatures.superore.iron.limestone.name=Super Limestone Iron Ore
+tile.morefeatures.superore.iron.limestone.desc=A CHONK of iron embedded in limestone.
+tile.morefeatures.superore.iron.granite.name=Super Granite Iron Ore
+tile.morefeatures.superore.iron.granite.desc=A CHONK of iron embedded in granite.
+
+tile.morefeatures.superore.gold.stone.name=Super Stone Gold Ore
+tile.morefeatures.superore.gold.stone.desc=A CHONK of gold embedded in stone.
+tile.morefeatures.superore.gold.basalt.name=Super Basalt Gold Ore
+tile.morefeatures.superore.gold.basalt.desc=A CHONK of gold embedded in basalt.
+tile.morefeatures.superore.gold.limestone.name=Super Limestone Gold Ore
+tile.morefeatures.superore.gold.limestone.desc=A CHONK of gold embedded in limestone.
+tile.morefeatures.superore.gold.granite.name=Super Granite Gold Ore
+tile.morefeatures.superore.gold.granite.desc=A CHONK of gold embedded in granite.
+
+tile.morefeatures.superore.lapis.stone.name=Super Stone Lapis Ore
+tile.morefeatures.superore.lapis.stone.desc=A CHONK of lapis embedded in stone.
+tile.morefeatures.superore.lapis.basalt.name=Super Basalt Lapis Ore
+tile.morefeatures.superore.lapis.basalt.desc=A CHONK of lapis embedded in basalt.
+tile.morefeatures.superore.lapis.limestone.name=Super Limestone Lapis Ore
+tile.morefeatures.superore.lapis.limestone.desc=A CHONK of lapis embedded in limestone.
+tile.morefeatures.superore.lapis.granite.name=Super Granite Lapis Ore
+tile.morefeatures.superore.lapis.granite.desc=A CHONK of lapis embedded in granite.
+
+tile.morefeatures.superore.redstone.stone.name=Super Stone Redstone Ore
+tile.morefeatures.superore.redstone.stone.desc=A CHONK of redstone embedded in stone.
+tile.morefeatures.superore.redstone.basalt.name=Super Basalt Redstone Ore
+tile.morefeatures.superore.redstone.basalt.desc=A CHONK of redstone embedded in basalt.
+tile.morefeatures.superore.redstone.limestone.name=Super Limestone Redstone Ore
+tile.morefeatures.superore.redstone.limestone.desc=A CHONK of redstone embedded in limestone.
+tile.morefeatures.superore.redstone.granite.name=Super Granite Redstone Ore
+tile.morefeatures.superore.redstone.granite.desc=A CHONK of redstone embedded in granite.
+
+tile.morefeatures.superore.redstone.glowing.stone.name=Super Stone Redstone.glowing Ore
+tile.morefeatures.superore.redstone.glowing.stone.desc=A CHONK of redstone.glowing embedded in stone.
+tile.morefeatures.superore.redstone.glowing.basalt.name=Super Basalt Redstone.glowing Ore
+tile.morefeatures.superore.redstone.glowing.basalt.desc=A CHONK of redstone.glowing embedded in basalt.
+tile.morefeatures.superore.redstone.glowing.limestone.name=Super Limestone Redstone.glowing Ore
+tile.morefeatures.superore.redstone.glowing.limestone.desc=A CHONK of redstone.glowing embedded in limestone.
+tile.morefeatures.superore.redstone.glowing.granite.name=Super Granite Redstone.glowing Ore
+tile.morefeatures.superore.redstone.glowing.granite.desc=A CHONK of redstone.glowing embedded in granite.
+
+tile.morefeatures.superore.diamond.stone.name=Super Stone Diamond Ore
+tile.morefeatures.superore.diamond.stone.desc=A CHONK of diamond embedded in stone.
+tile.morefeatures.superore.diamond.basalt.name=Super Basalt Diamond Ore
+tile.morefeatures.superore.diamond.basalt.desc=A CHONK of diamond embedded in basalt.
+tile.morefeatures.superore.diamond.limestone.name=Super Limestone Diamond Ore
+tile.morefeatures.superore.diamond.limestone.desc=A CHONK of diamond embedded in limestone.
+tile.morefeatures.superore.diamond.granite.name=Super Granite Diamond Ore
+tile.morefeatures.superore.diamond.granite.desc=A CHONK of diamond embedded in granite.
+
+tile.morefeatures.superore.nether.coal.netherrack.name=Super Nether Coal Ore
+tile.morefeatures.superore.nether.coal.netherrack.desc=A CHONK of nether coal embedded in netherrack.
 
 tile.morefeatures.fire.red.name=Red Fire
 tile.morefeatures.fire.red.desc=Extra hot.

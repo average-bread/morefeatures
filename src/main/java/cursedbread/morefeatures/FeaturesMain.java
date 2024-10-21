@@ -32,6 +32,7 @@ public class FeaturesMain implements ModInitializer, GameStartEntrypoint {
 		prop.setProperty("Chance_to_rainbow_a_flower", "5");
 		prop.setProperty("Add_colored_glass_blocks", "1");
 		prop.setProperty("Add_ham_blocks", "1");
+		prop.setProperty("Add_super_ores", "0");
 
 		prop.setProperty("Comment", "yes_is_1|no_is_0");
 		prop.setProperty("Add_flower_crowns", "1");
@@ -64,6 +65,7 @@ public class FeaturesMain implements ModInitializer, GameStartEntrypoint {
 		FeaturesBlocks.rainbowflowerEnabled = config.getInt("Add_rainbow_flower");
 		FeaturesBlocks.rainbowFlowerChance = Math.max(Math.min(config.getInt("Chance_to_rainbow_a_flower"), 100), 1);
 		FeaturesBlocks.hamEnabled = config.getInt("Add_ham_blocks");
+		FeaturesBlocks.superoresEnabled = config.getInt("Add_super_ores");
 		//Items
 		FeaturesItems.flowerCrownEnabled = config.getInt("Add_flower_crowns");
 		FeaturesItems.regularCrownEnabled = config.getInt("Add_regular_crowns");

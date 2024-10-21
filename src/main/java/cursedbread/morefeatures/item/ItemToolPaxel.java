@@ -56,7 +56,7 @@ public class ItemToolPaxel extends Item {
 	public boolean onBlockDestroyed(World world, ItemStack itemstack, int i, int j, int k, int l, EntityLiving entityliving) {
 		Block block = Block.blocksList[i];
 		if (block != null && (block.getHardness() > 0.0F || this.isSilkTouch())) {
-			itemstack.damageItem(2, entityliving);
+			itemstack.damageItem(1, entityliving);
 		}
 
 		return true;

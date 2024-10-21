@@ -364,26 +364,32 @@ public class FeaturesItems {
 		if (paxelsEnabled == 1){
 			paxelWood = new ItemBuilder(MOD_ID)
 				.setIcon("morefeatures:item/tool_paxel_wood")
+				.setItemModel(item -> new ItemModelStandard(item, "morefeatures").setFull3D())
 				.build(new ItemToolPaxel("paxel.wood", itemId++, ToolMaterial.wood));
 
 			paxelStone = new ItemBuilder(MOD_ID)
 				.setIcon("morefeatures:item/tool_paxel_stone")
+				.setItemModel(item -> new ItemModelStandard(item, "morefeatures").setFull3D())
 				.build(new ItemToolPaxel("paxel.stone", itemId++, ToolMaterial.stone));
 
 			paxelIron = new ItemBuilder(MOD_ID)
 				.setIcon("morefeatures:item/tool_paxel_iron")
+				.setItemModel(item -> new ItemModelStandard(item, "morefeatures").setFull3D())
 				.build(new ItemToolPaxel("paxel.iron", itemId++, ToolMaterial.iron));
 
 			paxelGold = new ItemBuilder(MOD_ID)
 				.setIcon("morefeatures:item/tool_paxel_gold")
+				.setItemModel(item -> new ItemModelStandard(item, "morefeatures").setFull3D())
 				.build(new ItemToolPaxel("paxel.gold", itemId++, ToolMaterial.gold));
 
 			paxelDiamond = new ItemBuilder(MOD_ID)
 				.setIcon("morefeatures:item/tool_paxel_diamond")
+				.setItemModel(item -> new ItemModelStandard(item, "morefeatures").setFull3D())
 				.build(new ItemToolPaxel("paxel.diamond", itemId++, ToolMaterial.diamond));
 
 			paxelSteel = new ItemBuilder(MOD_ID)
 				.setIcon("morefeatures:item/tool_paxel_steel")
+				.setItemModel(item -> new ItemModelStandard(item, "morefeatures").setFull3D())
 				.build(new ItemToolPaxel("paxel.steel", itemId++, ToolMaterial.steel));
 		}
 	}

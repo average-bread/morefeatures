@@ -3,11 +3,14 @@ package cursedbread.morefeatures.blocks;
 import cursedbread.morefeatures.FeaturesMain;
 import cursedbread.morefeatures.blocks.glass.*;
 import cursedbread.morefeatures.blocks.glowstone.*;
+import cursedbread.morefeatures.blocks.ores.*;
 import cursedbread.morefeatures.blocks.other.BlockGilder;
 import cursedbread.morefeatures.blocks.other.BlockHam;
 import cursedbread.morefeatures.blocks.paperwall.*;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.block.BlockFlower;
+import net.minecraft.core.block.BlockOreCoal;
+import net.minecraft.core.block.BlockOreRedstone;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.block.tag.BlockTags;
 import net.minecraft.core.item.Item;
@@ -76,6 +79,44 @@ public class FeaturesBlocks {
 	public static Block ham;
 	public static Block cookedham;
 	public static int hamEnabled;
+
+	public static int superoresEnabled;
+	public static Block superCoalStoneOre;
+	public static Block superCoalBasaltOre;
+	public static Block superCoalLimestoneOre;
+	public static Block superCoalGraniteOre;
+
+	public static Block superIronStoneOre;
+	public static Block superIronBasaltOre;
+	public static Block superIronLimestoneOre;
+	public static Block superIronGraniteOre;
+
+	public static Block superGoldStoneOre;
+	public static Block superGoldBasaltOre;
+	public static Block superGoldLimestoneOre;
+	public static Block superGoldGraniteOre;
+
+	public static Block superLapisStoneOre;
+	public static Block superLapisBasaltOre;
+	public static Block superLapisLimestoneOre;
+	public static Block superLapisGraniteOre;
+
+	public static Block superRedstoneStoneOre;
+	public static Block superRedstoneBasaltOre;
+	public static Block superRedstoneLimestoneOre;
+	public static Block superRedstoneGraniteOre;
+
+	public static Block superRedstoneGlowingStoneOre;
+	public static Block superRedstoneGlowingBasaltOre;
+	public static Block superRedstoneGlowingLimestoneOre;
+	public static Block superRedstoneGlowingGraniteOre;
+
+	public static Block superDiamondStoneOre;
+	public static Block superDiamondBasaltOre;
+	public static Block superDiamondLimestoneOre;
+	public static Block superDiamondGraniteOre;
+
+	public static Block superNetherCoalOre;
 
 	public static Block redFire;
 	public static int redFireEnabled;
@@ -209,6 +250,161 @@ public class FeaturesBlocks {
 				.setTags(BlockTags.FENCES_CONNECT, BlockTags.MINEABLE_BY_SWORD)
 				.setHardness(0.1f)
 				.build(new Block("cookedham", blockId++, Material.stone));
+		}
+
+		if (superoresEnabled == 1) {
+			superCoalStoneOre = fullBlock
+				.setBlockModel(block -> new BlockModelStandard(block).withTextures("morefeatures:block/ores/superore_coal_stone"))
+				.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+				.setHardness(3f)
+				.build(new BlockSuperOreCoal("superore.coal.stone", blockId++)).withBlastResistance(5.0F);
+			superCoalBasaltOre = fullBlock
+				.setBlockModel(block -> new BlockModelStandard(block).withTextures("morefeatures:block/ores/superore_coal_basalt"))
+				.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+				.setHardness(3f)
+				.build(new BlockSuperOreCoal("superore.coal.basalt", blockId++)).withBlastResistance(5.0F);
+			superCoalLimestoneOre = fullBlock
+				.setBlockModel(block -> new BlockModelStandard(block).withTextures("morefeatures:block/ores/superore_coal_limestone"))
+				.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+				.setHardness(3f)
+				.build(new BlockSuperOreCoal("superore.coal.limestone", blockId++)).withBlastResistance(5.0F);
+			superCoalGraniteOre = fullBlock
+				.setBlockModel(block -> new BlockModelStandard(block).withTextures("morefeatures:block/ores/superore_coal_granite"))
+				.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+				.setHardness(3f)
+				.build(new BlockSuperOreCoal("superore.coal.granite", blockId++)).withBlastResistance(5.0F);
+
+			superIronStoneOre = fullBlock
+				.setBlockModel(block -> new BlockModelStandard(block).withTextures("morefeatures:block/ores/superore_iron_stone"))
+				.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+				.setHardness(3f)
+				.build(new BlockSuperOreIron("superore.iron.stone", blockId++)).withBlastResistance(5.0F);
+			superIronBasaltOre = fullBlock
+				.setBlockModel(block -> new BlockModelStandard(block).withTextures("morefeatures:block/ores/superore_iron_basalt"))
+				.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+				.setHardness(3f)
+				.build(new BlockSuperOreIron("superore.iron.basalt", blockId++)).withBlastResistance(5.0F);
+			superIronLimestoneOre = fullBlock
+				.setBlockModel(block -> new BlockModelStandard(block).withTextures("morefeatures:block/ores/superore_iron_limestone"))
+				.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+				.setHardness(3f)
+				.build(new BlockSuperOreIron("superore.iron.limestone", blockId++)).withBlastResistance(5.0F);
+			superIronGraniteOre = fullBlock
+				.setBlockModel(block -> new BlockModelStandard(block).withTextures("morefeatures:block/ores/superore_iron_granite"))
+				.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+				.setHardness(3f)
+				.build(new BlockSuperOreIron("superore.iron.granite", blockId++)).withBlastResistance(5.0F);
+
+			superGoldStoneOre = fullBlock
+				.setBlockModel(block -> new BlockModelStandard(block).withTextures("morefeatures:block/ores/superore_gold_stone"))
+				.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+				.setHardness(3f)
+				.build(new BlockSuperOreGold("superore.gold.stone", blockId++)).withBlastResistance(5.0F);
+			superGoldBasaltOre = fullBlock
+				.setBlockModel(block -> new BlockModelStandard(block).withTextures("morefeatures:block/ores/superore_gold_basalt"))
+				.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+				.setHardness(3f)
+				.build(new BlockSuperOreGold("superore.gold.basalt", blockId++)).withBlastResistance(5.0F);
+			superGoldLimestoneOre = fullBlock
+				.setBlockModel(block -> new BlockModelStandard(block).withTextures("morefeatures:block/ores/superore_gold_limestone"))
+				.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+				.setHardness(3f)
+				.build(new BlockSuperOreGold("superore.gold.limestone", blockId++)).withBlastResistance(5.0F);
+			superGoldGraniteOre = fullBlock
+				.setBlockModel(block -> new BlockModelStandard(block).withTextures("morefeatures:block/ores/superore_gold_granite"))
+				.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+				.setHardness(3f)
+				.build(new BlockSuperOreGold("superore.gold.granite", blockId++)).withBlastResistance(5.0F);
+
+			superLapisStoneOre = fullBlock
+				.setBlockModel(block -> new BlockModelStandard(block).withTextures("morefeatures:block/ores/superore_lapis_stone"))
+				.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+				.setHardness(3f)
+				.build(new BlockSuperOreLapis("superore.lapis.stone", blockId++)).withBlastResistance(5.0F);
+			superLapisBasaltOre = fullBlock
+				.setBlockModel(block -> new BlockModelStandard(block).withTextures("morefeatures:block/ores/superore_lapis_basalt"))
+				.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+				.setHardness(3f)
+				.build(new BlockSuperOreLapis("superore.lapis.basalt", blockId++)).withBlastResistance(5.0F);
+			superLapisLimestoneOre = fullBlock
+				.setBlockModel(block -> new BlockModelStandard(block).withTextures("morefeatures:block/ores/superore_lapis_limestone"))
+				.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+				.setHardness(3f)
+				.build(new BlockSuperOreLapis("superore.lapis.limestone", blockId++)).withBlastResistance(5.0F);
+			superLapisGraniteOre = fullBlock
+				.setBlockModel(block -> new BlockModelStandard(block).withTextures("morefeatures:block/ores/superore_lapis_granite"))
+				.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+				.setHardness(3f)
+				.build(new BlockSuperOreLapis("superore.lapis.granite", blockId++)).withBlastResistance(5.0F);
+
+			superRedstoneStoneOre = fullBlock
+				.setBlockModel(block -> new BlockModelStandard(block).withTextures("morefeatures:block/ores/superore_redstone_stone"))
+				.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+				.setHardness(3f)
+				.build(new BlockSuperOreRedstone("superore.redstone.stone", blockId++, false, "superore.redstone.stone", "superore.redstone.glowing.stone")).withBlastResistance(2.0F);
+			superRedstoneBasaltOre = fullBlock
+				.setBlockModel(block -> new BlockModelStandard(block).withTextures("morefeatures:block/ores/superore_redstone_basalt"))
+				.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+				.setHardness(3f)
+				.build(new BlockSuperOreRedstone("superore.redstone.basalt", blockId++, false, "superore.redstone.basalt", "superore.redstone.glowing.basalt")).withBlastResistance(2.0F);
+			superRedstoneLimestoneOre = fullBlock
+				.setBlockModel(block -> new BlockModelStandard(block).withTextures("morefeatures:block/ores/superore_redstone_limestone"))
+				.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+				.setHardness(3f)
+				.build(new BlockSuperOreRedstone("superore.redstone.limestone", blockId++, false, "superore.redstone.limestone", "superore.redstone.glowing.limestone")).withBlastResistance(2.0F);
+			superRedstoneGraniteOre = fullBlock
+				.setBlockModel(block -> new BlockModelStandard(block).withTextures("morefeatures:block/ores/superore_redstone_granite"))
+				.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+				.setHardness(3f)
+				.build(new BlockSuperOreRedstone("superore.redstone.granite", blockId++, false, "superore.redstone.granite", "superore.redstone.glowing.granite")).withBlastResistance(2.0F);
+
+			superRedstoneGlowingStoneOre = fullBlock
+				.setBlockModel(block -> new BlockModelStandard(block).withTextures("morefeatures:block/ores/superore_redstone_glowing_stone"))
+				.setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
+				.setHardness(3f)
+				.build(new BlockSuperOreRedstone("superore.redstone.glowing.stone", blockId++, true, "superore.redstone.stone", "superore.redstone.glowing.stone")).withBlastResistance(2.0F).withLightEmission(0.4F).withDisabledNeighborNotifyOnMetadataChange();
+			superRedstoneGlowingBasaltOre = fullBlock
+				.setBlockModel(block -> new BlockModelStandard(block).withTextures("morefeatures:block/ores/superore_redstone_glowing_basalt"))
+				.setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
+				.setHardness(3f)
+				.build(new BlockSuperOreRedstone("superore.redstone.glowing.basalt", blockId++, true, "superore.redstone.basalt", "superore.redstone.glowing.basalt")).withBlastResistance(2.0F).withLightEmission(0.4F).withDisabledNeighborNotifyOnMetadataChange();
+			superRedstoneGlowingLimestoneOre = fullBlock
+				.setBlockModel(block -> new BlockModelStandard(block).withTextures("morefeatures:block/ores/superore_redstone_glowing_limestone"))
+				.setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
+				.setHardness(3f)
+				.build(new BlockSuperOreRedstone("superore.redstone.glowing.limestone", blockId++, true, "superore.redstone.limestone", "superore.redstone.glowing.limestone")).withBlastResistance(2.0F).withLightEmission(0.4F).withDisabledNeighborNotifyOnMetadataChange();
+			superRedstoneGlowingGraniteOre = fullBlock
+				.setBlockModel(block -> new BlockModelStandard(block).withTextures("morefeatures:block/ores/superore_redstone_glowing_granite"))
+				.setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
+				.setHardness(3f)
+				.build(new BlockSuperOreRedstone("superore.redstone.glowing.granite", blockId++, true, "superore.redstone.granite", "superore.redstone.glowing.granite")).withBlastResistance(2.0F).withLightEmission(0.4F).withDisabledNeighborNotifyOnMetadataChange();
+
+			superDiamondStoneOre = fullBlock
+				.setBlockModel(block -> new BlockModelStandard(block).withTextures("morefeatures:block/ores/superore_diamond_stone"))
+				.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+				.setHardness(3f)
+				.build(new BlockSuperOreDiamond("superore.diamond.stone", blockId++)).withBlastResistance(5.0F);
+			superDiamondBasaltOre = fullBlock
+				.setBlockModel(block -> new BlockModelStandard(block).withTextures("morefeatures:block/ores/superore_diamond_basalt"))
+				.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+				.setHardness(3f)
+				.build(new BlockSuperOreDiamond("superore.diamond.basalt", blockId++)).withBlastResistance(5.0F);
+			superDiamondLimestoneOre = fullBlock
+				.setBlockModel(block -> new BlockModelStandard(block).withTextures("morefeatures:block/ores/superore_diamond_limestone"))
+				.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+				.setHardness(3f)
+				.build(new BlockSuperOreDiamond("superore.diamond.limestone", blockId++)).withBlastResistance(5.0F);
+			superDiamondGraniteOre = fullBlock
+				.setBlockModel(block -> new BlockModelStandard(block).withTextures("morefeatures:block/ores/superore_diamond_granite"))
+				.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+				.setHardness(3f)
+				.build(new BlockSuperOreDiamond("superore.diamond.granite", blockId++)).withBlastResistance(5.0F);
+
+			superNetherCoalOre = fullBlock
+				.setBlockModel(block -> new BlockModelStandard(block).withTextures("morefeatures:block/ores/superore_nethercoal_netherrack"))
+				.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+				.setHardness(3f)
+				.build(new BlockSuperOreNetherCoal("superore.nether.coal.netherrack", blockId++)).withBlastResistance(5.0F).withLightEmission(1.25F);
 		}
 
 		initializeBlockDetails();
