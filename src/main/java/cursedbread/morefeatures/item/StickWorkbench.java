@@ -1,6 +1,7 @@
 package cursedbread.morefeatures.item;
 
 import net.minecraft.core.block.Block;
+import net.minecraft.core.entity.EntityLiving;
 import net.minecraft.core.entity.player.EntityPlayer;
 import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemArmor;

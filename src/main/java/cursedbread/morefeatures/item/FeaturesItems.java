@@ -1,17 +1,12 @@
 package cursedbread.morefeatures.item;
 
-import net.minecraft.core.block.material.Material;
 import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemArmor;
 import net.minecraft.core.item.material.ArmorMaterial;
 import net.minecraft.core.item.material.ToolMaterial;
-import net.minecraft.core.item.tool.ItemTool;
-import net.minecraft.core.item.tool.ItemToolPickaxe;
 import turniplabs.halplibe.helper.ArmorHelper;
-import turniplabs.halplibe.helper.CreativeHelper;
 import turniplabs.halplibe.helper.ItemBuilder;
 import net.minecraft.client.render.item.model.ItemModelStandard;
-import net.minecraft.client.render.stitcher.TextureRegistry;
 
 import static cursedbread.morefeatures.FeaturesMain.MOD_ID;
 

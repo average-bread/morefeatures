@@ -5,7 +5,6 @@ import net.minecraft.core.block.BlockLog;
 import net.minecraft.core.block.tag.BlockTags;
 import net.minecraft.core.data.gamerule.GameRules;
 import net.minecraft.core.data.gamerule.TreecapitatorHelper;
-import net.minecraft.core.data.tag.Tag;
 import net.minecraft.core.entity.Entity;
 import net.minecraft.core.entity.EntityLiving;
 import net.minecraft.core.entity.player.EntityPlayer;
@@ -13,7 +12,6 @@ import net.minecraft.core.enums.EnumBlockSoundEffectType;
 import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.item.material.ToolMaterial;
-import net.minecraft.core.item.tool.ItemToolSword;
 import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.world.World;
 
@@ -53,12 +51,11 @@ public class ItemToolPaxel extends Item {
 		return true;
 	}
 
-	public boolean onBlockDestroyed(World world, ItemStack itemstack, int i, int j, int k, int l, EntityLiving entityliving) {
+	public boolean onBlockDestroyed(World world, ItemStack itemstack, int i, int j, int k, int l, Side side, EntityLiving entityliving) {
 		Block block = Block.blocksList[i];
 		if (block != null && (block.getHardness() > 0.0F || this.isSilkTouch())) {
 			itemstack.damageItem(1, entityliving);
 		}
-
 		return true;
 	}
 
@@ -78,7 +75,6 @@ public class ItemToolPaxel extends Item {
 				return !(new TreecapitatorHelper(world, x, y, z, player)).chopTree();
 			}
 		}
-
 		return true;
 	}
 
@@ -118,24 +114,33 @@ public class ItemToolPaxel extends Item {
 		miningLevels.put(Block.oreRedstoneGlowingLimestone, 2);
 	}
 
-	//shovel
+	//shovel and hoe
 	public boolean onUseItemOnBlock(ItemStack itemstack, EntityPlayer entityplayer, World world, int blockX, int blockY, int blockZ, Side side, double xPlaced, double yPlaced) {
 		int i1 = world.getBlockId(blockX, blockY, blockZ);
 		int j1 = world.getBlockId(blockX, blockY + 1, blockZ);
-		if (side != Side.BOTTOM && j1 == 0 && (i1 == Block.grass.id || i1 == Block.dirt.id || i1 == Block.grassRetro.id || i1 == Block.farmlandDirt.id)) {
-			Block block = Block.pathDirt;
-			world.playBlockSoundEffect(entityplayer, (double)((float)blockX + 0.5F), (double)((float)blockY + 0.5F), (double)((float)blockZ + 0.5F), Block.blocksList[i1], EnumBlockSoundEffectType.PLACE);
-			if (!world.isClientSide) {
-				world.setBlockWithNotify(blockX, blockY, blockZ, block.id);
-				itemstack.damageItem(1, entityplayer);
+		if (side != Side.BOTTOM && j1 == 0 && (i1 == Block.grass.id || i1 == Block.dirt.id || i1 == Block.grassRetro.id || i1 == Block.pathDirt.id)) {
+			if (entityplayer.isSneaking()){
+				Block block = Block.farmlandDirt;
+				world.playBlockSoundEffect(entityplayer, (double)((float)blockX + 0.5F), (double)((float)blockY + 0.5F), (double)((float)blockZ + 0.5F), Block.blocksList[i1], EnumBlockSoundEffectType.PLACE);
+				if (!world.isClientSide) {
+					world.setBlockWithNotify(blockX, blockY, blockZ, block.id);
+					itemstack.damageItem(1, entityplayer);
+				}
+				id = world.getBlockId(blockX, blockY, blockZ);
+				if (!world.isClientSide && (id == Block.grass.id || id == Block.grassRetro.id || id == Block.grassScorched.id) && world.rand.nextInt(5) == 0) {
+					world.dropItem(blockX, blockY + 1, blockZ, new ItemStack(Item.seedsWheat));
+				}
+			} else if (side != Side.BOTTOM && j1 == 0 && (i1 == Block.grass.id || i1 == Block.dirt.id || i1 == Block.grassRetro.id || i1 == Block.farmlandDirt.id)) {
+				Block block = Block.pathDirt;
+				world.playBlockSoundEffect(entityplayer, (double)((float)blockX + 0.5F), (double)((float)blockY + 0.5F), (double)((float)blockZ + 0.5F), Block.blocksList[i1], EnumBlockSoundEffectType.PLACE);
+				if (!world.isClientSide) {
+					world.setBlockWithNotify(blockX, blockY, blockZ, block.id);
+					itemstack.damageItem(1, entityplayer);
+				}
 			}
-
 			return true;
 		} else {
 			return false;
 		}
 	}
-
-	//hoe
-
 }
