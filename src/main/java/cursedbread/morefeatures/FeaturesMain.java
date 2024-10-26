@@ -18,6 +18,7 @@ public class FeaturesMain implements ModInitializer, GameStartEntrypoint {
 	public static boolean nonamedyesOn = ModVersionHelper.isModPresent("nonamedyes");
 	public static int paperWallAlt;
 	public static int newDungeonsEnabled;
+	public static int superoreChance;
 
 	static {
 		Properties prop = new Properties();
@@ -30,6 +31,7 @@ public class FeaturesMain implements ModInitializer, GameStartEntrypoint {
 		prop.setProperty("Add_gilding_table", "1");
 		prop.setProperty("Add_rainbow_flower", "1");
 		prop.setProperty("Chance_to_rainbow_a_flower", "5");
+		prop.setProperty("Chance_to_rainbow_a_super_ore", "5");
 		prop.setProperty("Add_colored_glass_blocks", "1");
 		prop.setProperty("Add_ham_blocks", "1");
 		prop.setProperty("Add_super_ores", "0");
@@ -64,6 +66,7 @@ public class FeaturesMain implements ModInitializer, GameStartEntrypoint {
 		FeaturesBlocks.glassEnabled = config.getInt("Add_colored_glass_blocks");
 		FeaturesBlocks.rainbowflowerEnabled = config.getInt("Add_rainbow_flower");
 		FeaturesBlocks.rainbowFlowerChance = Math.max(Math.min(config.getInt("Chance_to_rainbow_a_flower"), 100), 1);
+		superoreChance = Math.max(Math.min(config.getInt("Chance_to_rainbow_a_super_ore"), 100), 1);
 		FeaturesBlocks.hamEnabled = config.getInt("Add_ham_blocks");
 		FeaturesBlocks.superoresEnabled = config.getInt("Add_super_ores");
 		//Items

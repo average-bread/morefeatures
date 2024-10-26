@@ -19,7 +19,14 @@
     "SpawnerSurvival",
     "WorkbenchFix",
     "ContainerWorkbenchMixin",
-    "RenderEngineMixin"
+    "RenderEngineMixin",
+    "superores.OreToSuperoreCoal",
+    "superores.OreToSuperoreIron",
+    "superores.OreToSuperoreGold",
+    "superores.OreToSuperoreLapis",
+    "superores.OreToSuperoreRedstone",
+    "superores.OreToSuperoreDiamond",
+    "superores.OreToSuperoreNetherCoal"
   ],
   "client": [
   ],
