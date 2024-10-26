@@ -404,7 +404,7 @@ public class FeaturesBlocks {
 				.setBlockModel(block -> new BlockModelStandard(block).withTextures("morefeatures:block/ores/superore_nethercoal_netherrack"))
 				.setTags(BlockTags.MINEABLE_BY_PICKAXE)
 				.setHardness(3f)
-				.build(new BlockSuperOreNetherCoal("superore.nether.coal.netherrack", blockId++)).withBlastResistance(5.0F).withLightEmission(1.25F);
+				.build(new BlockSuperOreNetherCoal("superore.nether.coal.netherrack", blockId++)).withBlastResistance(5.0F).withLightEmission(1.0F);
 		}
 
 		initializeBlockDetails();
