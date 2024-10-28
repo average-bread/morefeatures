@@ -16,16 +16,19 @@ public class OreToSuperoreRedstone {
 	public void onBlockAdded(World world, int x, int y, int z) {
 		int g = world.rand.nextInt(100);
 		int ore = world.getBlockId(x, y, z);
-		if (g <= FeaturesMain.superoreChance - 1){
-			if (ore == Block.oreRedstoneStone.id){
-				world.setBlock(x, y, z, FeaturesBlocks.superRedstoneStoneOre.id);
-			} else if (ore == Block.oreRedstoneLimestone.id){
-				world.setBlock(x, y, z, FeaturesBlocks.superRedstoneLimestoneOre.id);
-			} else if (ore == Block.oreRedstoneGranite.id){
-				world.setBlock(x, y, z, FeaturesBlocks.superRedstoneGraniteOre.id);
-			} else if (ore == Block.oreRedstoneBasalt.id){
-				world.setBlock(x, y, z, FeaturesBlocks.superRedstoneBasaltOre.id);
+		if (FeaturesBlocks.superoresEnabled == 1) {
+			if (g <= FeaturesMain.superoreChance - 1){
+				if (ore == Block.oreRedstoneStone.id){
+					world.setBlock(x, y, z, FeaturesBlocks.superRedstoneStoneOre.id);
+				} else if (ore == Block.oreRedstoneLimestone.id){
+					world.setBlock(x, y, z, FeaturesBlocks.superRedstoneLimestoneOre.id);
+				} else if (ore == Block.oreRedstoneGranite.id){
+					world.setBlock(x, y, z, FeaturesBlocks.superRedstoneGraniteOre.id);
+				} else if (ore == Block.oreRedstoneBasalt.id){
+					world.setBlock(x, y, z, FeaturesBlocks.superRedstoneBasaltOre.id);
+				}
 			}
 		}
+
 	}
 }

@@ -16,10 +16,13 @@ public class OreToSuperoreNetherCoal {
 	public void onBlockAdded(World world, int x, int y, int z) {
 		int g = world.rand.nextInt(100);
 		int ore = world.getBlockId(x, y, z);
-		if (g <= FeaturesMain.superoreChance - 1){
-			if (ore == Block.oreNethercoalNetherrack.id){
-				world.setBlock(x, y, z, FeaturesBlocks.superNetherCoalOre.id);
+		if (FeaturesBlocks.superoresEnabled == 1) {
+			if (g <= FeaturesMain.superoreChance - 1){
+				if (ore == Block.oreNethercoalNetherrack.id){
+					world.setBlock(x, y, z, FeaturesBlocks.superNetherCoalOre.id);
+				}
 			}
 		}
+
 	}
 }

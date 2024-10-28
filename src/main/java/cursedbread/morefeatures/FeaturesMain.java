@@ -34,7 +34,7 @@ public class FeaturesMain implements ModInitializer, GameStartEntrypoint {
 		prop.setProperty("Chance_to_rainbow_a_super_ore", "5");
 		prop.setProperty("Add_colored_glass_blocks", "1");
 		prop.setProperty("Add_ham_blocks", "1");
-		prop.setProperty("Add_super_ores", "0");
+		prop.setProperty("Add_super_ores", "1");
 
 		prop.setProperty("Comment", "yes_is_1|no_is_0");
 		prop.setProperty("Add_flower_crowns", "1");
