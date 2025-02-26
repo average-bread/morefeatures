@@ -3,6 +3,7 @@ package cursedbread.morefeatures.mixin;
 import cursedbread.morefeatures.FeaturesMain;
 import cursedbread.morefeatures.blocks.FeaturesBlocks;
 import net.minecraft.core.block.Block;
+import net.minecraft.core.block.Blocks;
 import net.minecraft.core.world.World;
 import net.minecraft.core.world.generate.feature.WorldFeatureGlowstoneA;
 import org.spongepowered.asm.mixin.Mixin;
@@ -21,7 +22,7 @@ public class ColoredGlowstoneAMixin {
 			if (g == 1) {
 				if (!world.isAirBlock(x, y, z)) {
 					cir.setReturnValue(false);
-				} else if (world.getBlockId(x, y + 1, z) != Block.netherrack.id) {
+				} else if (world.getBlockId(x, y + 1, z) != Blocks.COBBLE_NETHERRACK.id()) {
 					cir.setReturnValue(false);
 				} else {
 					int p = random.nextInt(5);
@@ -37,7 +38,7 @@ public class ColoredGlowstoneAMixin {
 					} else {
 						r = 14;
 					}
-					world.setBlockAndMetadataWithNotify(x, y, z, FeaturesBlocks.vanillaColoredGlowstone.id, r);
+					world.setBlockAndMetadataWithNotify(x, y, z, FeaturesBlocks.vanillaColoredGlowstone.id(), r);
 
 					for(int l = 0; l < 1500; ++l) {
 						int i1 = x + random.nextInt(8) - random.nextInt(8);
@@ -72,23 +73,23 @@ public class ColoredGlowstoneAMixin {
 									j2 = world.getBlockId(i1, j1, k1 + 1);
 								}
 
-								if (j2 == FeaturesBlocks.vanillaColoredGlowstone.id) {
+								if (j2 == FeaturesBlocks.vanillaColoredGlowstone.id()) {
 									++l1;
 								}
 							}
 							if (l1 == 1) {
-								world.setBlockAndMetadataWithNotify(i1, j1, k1, FeaturesBlocks.vanillaColoredGlowstone.id, r);
+								world.setBlockAndMetadataWithNotify(i1, j1, k1, FeaturesBlocks.vanillaColoredGlowstone.id(), r);
 							}
 						}
 					}
 					cir.setReturnValue(true);
 				}
 			}
-			if (FeaturesMain.nonamedyesOn) {
+			if (/*FeaturesMain.nonamedyesOn*/ false) {
 				if (g == 2){
 					if (!world.isAirBlock(x, y, z)) {
 						cir.setReturnValue(false);
-					} else if (world.getBlockId(x, y + 1, z) != Block.netherrack.id) {
+					} else if (world.getBlockId(x, y + 1, z) != Blocks.COBBLE_NETHERRACK.id()) {
 						cir.setReturnValue(false);
 					} else {
 						int p = random.nextInt(3);
@@ -100,7 +101,7 @@ public class ColoredGlowstoneAMixin {
 						} else {
 							r = 9;
 						}
-						world.setBlockAndMetadataWithNotify(x, y, z, FeaturesBlocks.nonameColoredGlowstone.id, r);
+						world.setBlockAndMetadataWithNotify(x, y, z, FeaturesBlocks.nonameColoredGlowstone.id(), r);
 
 						for(int l = 0; l < 1500; ++l) {
 							int i1 = x + random.nextInt(8) - random.nextInt(8);
@@ -135,12 +136,12 @@ public class ColoredGlowstoneAMixin {
 										j2 = world.getBlockId(i1, j1, k1 + 1);
 									}
 
-									if (j2 == FeaturesBlocks.nonameColoredGlowstone.id) {
+									if (j2 == FeaturesBlocks.nonameColoredGlowstone.id()) {
 										++l1;
 									}
 								}
 								if (l1 == 1) {
-									world.setBlockAndMetadataWithNotify(i1, j1, k1, FeaturesBlocks.nonameColoredGlowstone.id, r);
+									world.setBlockAndMetadataWithNotify(i1, j1, k1, FeaturesBlocks.nonameColoredGlowstone.id(), r);
 								}
 							}
 						}
@@ -151,7 +152,7 @@ public class ColoredGlowstoneAMixin {
 		}
 	}
 
-	@Inject(method = "generate(Lnet/minecraft/core/world/World;Ljava/util/Random;III)Z", at = @At("HEAD"), cancellable = true)
+	@Inject(method = "place", at = @At("HEAD"), cancellable = true)
 	public void generate(World world, Random random, int x, int y, int z, CallbackInfoReturnable<Boolean> cir) {
 		glowstonegeneration(world, random, x, y, z, cir);
 	}

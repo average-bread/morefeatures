@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import turniplabs.halplibe.helper.*;
 import turniplabs.halplibe.util.ConfigHandler;
 import turniplabs.halplibe.util.GameStartEntrypoint;
+import turniplabs.halplibe.util.ModelEntrypoint;
 
 import java.util.Properties;
 
@@ -15,7 +16,7 @@ import java.util.Properties;
 public class FeaturesMain implements ModInitializer, GameStartEntrypoint {
     public static final String MOD_ID = "morefeatures";
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
-	public static boolean nonamedyesOn = ModVersionHelper.isModPresent("nonamedyes");
+	//public static boolean nonamedyesOn = ModVersionHelper.isModPresent("nonamedyes");
 	public static int paperWallAlt;
 	public static int newDungeonsEnabled;
 	public static int superoreChance;
@@ -90,9 +91,8 @@ public class FeaturesMain implements ModInitializer, GameStartEntrypoint {
         LOGGER.info("Adding some stuff");
 		new FeaturesBlocks().initilizeBlocks();
 		new FeaturesItems().initilizeItems();
+		new FeatureModel();
     }
-
-
 
 	@Override
 	public void beforeGameStart() {

@@ -1,6 +1,9 @@
 package cursedbread.morefeatures.blocks.glowstone;
 
+import net.minecraft.client.render.texture.stitcher.IconCoordinate;
+import net.minecraft.client.render.texture.stitcher.TextureRegistry;
 import net.minecraft.core.block.Block;
+import net.minecraft.core.block.BlockLogic;
 import net.minecraft.core.block.entity.TileEntity;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.enums.EnumDropCause;
@@ -9,12 +12,10 @@ import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.world.World;
 import net.minecraft.client.render.block.model.BlockModelStandard;
-import net.minecraft.client.render.stitcher.IconCoordinate;
-import net.minecraft.client.render.stitcher.TextureRegistry;
 
 import static cursedbread.morefeatures.FeaturesMain.MOD_ID;
 
-public class BlockModelColoredGlowstone<T extends Block> extends BlockModelStandard<T> {
+public class BlockModelColoredGlowstone<T extends BlockLogic> extends BlockModelStandard<T> {
     public boolean nnd = false;
 
     public BlockModelColoredGlowstone(Block block, boolean nnd) {

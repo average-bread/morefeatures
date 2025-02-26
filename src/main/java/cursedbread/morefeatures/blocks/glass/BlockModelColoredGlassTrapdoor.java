@@ -1,19 +1,29 @@
 package cursedbread.morefeatures.blocks.glass;
 
-import net.minecraft.client.render.block.model.BlockModelTransparent;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
+import net.minecraft.client.render.block.model.BlockModelTrapDoor;
 import net.minecraft.client.render.texture.stitcher.IconCoordinate;
 import net.minecraft.client.render.texture.stitcher.TextureRegistry;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.block.BlockLogic;
+import net.minecraft.core.block.BlockLogicTrapDoor;
+import net.minecraft.core.util.helper.Axis;
+import net.minecraft.core.util.helper.DyeColor;
 import net.minecraft.core.util.helper.Side;
+import net.minecraft.core.util.helper.Sides;
 
-public class BlockModelColoredGlass<T extends BlockLogic> extends BlockModelTransparent<T> {
-	public boolean nnd;
+import java.util.Iterator;
 
-    public BlockModelColoredGlass(Block block, boolean renderInside, boolean nnd) {
-        super(block, renderInside);
+@Environment(EnvType.CLIENT)
+public class BlockModelColoredGlassTrapdoor<T extends BlockLogic> extends BlockModelTrapDoor<T> {
+	public static final IconCoordinate[] topTextures = new IconCoordinate[16];
+	public static final IconCoordinate[] sideTextures = new IconCoordinate[16];
+	public boolean nnd = false;
+	public BlockModelColoredGlassTrapdoor(Block block, boolean nnd) {
+		super(block);
 		this.nnd = nnd;
-    }
+	}
 
 	private static final IconCoordinate[] textures_nnd = new IconCoordinate[] {
 		TextureRegistry.getTexture("morefeatures:block/glass/glass_crimson_glass"),
@@ -51,9 +61,26 @@ public class BlockModelColoredGlass<T extends BlockLogic> extends BlockModelTran
 		TextureRegistry.getTexture("morefeatures:block/glass/glass_black_glass"),
 	};
 
-	@Override
-    public IconCoordinate getBlockTextureFromSideAndMetadata(Side side, int data) {
-        if (nnd) return textures_nnd[data];
-		return textures_v[data];
+//	public IconCoordinate getBlockTextureFromSideAndMetadata(Side side, int data) {
+//		if (nnd) return textures_nnd[data];
+//		return textures_v[data];
+//	}
+
+	public IconCoordinate getBlockTextureFromSideAndMetadata(Side side, int data) {
+		int color = data >> 4 & 15;
+		int orientation = data & 3;
+		if (BlockLogicTrapDoor.isTrapdoorOpen(data)) {
+			int index = Sides.orientationLookUpTrapdoorOpen[6 * orientation + side.getId()];
+			return index < 2 ? topTextures[color] : sideTextures[color];
+		} else {
+			return side.getAxis() == Axis.Y ? topTextures[color] : sideTextures[color];
+		}
+	}
+
+	static {
+		for(DyeColor c : DyeColor.blockOrderedColors()) {
+			topTextures[c.blockMeta] = TextureRegistry.getTexture("morefeatures:block/glass/glass_" + c.colorID + "_glass");
+			sideTextures[c.blockMeta] = TextureRegistry.getTexture("morefeatures:block/glass/glass_" + c.colorID + "_glass");
+		}
 	}
 }

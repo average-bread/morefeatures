@@ -359,6 +359,39 @@ tile.morefeatures.noname.colored.glasstrapdoor.orange.desc=Glass trapdoor painte
 tile.morefeatures.noname.colored.glasstrapdoor.white.name=Crimson Glass Trapdoor
 tile.morefeatures.noname.colored.glasstrapdoor.white.desc=Glass trapdoor painted crimson.
 
+tile.morefeatures.vanilla.colored.glassdoor.black.name=Black Glass Door
+tile.morefeatures.vanilla.colored.glassdoor.black.desc=Glass door painted black.
+tile.morefeatures.vanilla.colored.glassdoor.red.name=Red Glass Door
+tile.morefeatures.vanilla.colored.glassdoor.red.desc=Glass door painted red.
+tile.morefeatures.vanilla.colored.glassdoor.green.name=Green Glass Door
+tile.morefeatures.vanilla.colored.glassdoor.green.desc=Glass door painted green.
+tile.morefeatures.vanilla.colored.glassdoor.brown.name=Brown Glass Door
+tile.morefeatures.vanilla.colored.glassdoor.brown.desc=Glass door painted brown.
+tile.morefeatures.vanilla.colored.glassdoor.blue.name=Blue Glass Door
+tile.morefeatures.vanilla.colored.glassdoor.blue.desc=Glass door painted blue.
+tile.morefeatures.vanilla.colored.glassdoor.purple.name=Purple Glass Door
+tile.morefeatures.vanilla.colored.glassdoor.purple.desc=Glass door painted purple.
+tile.morefeatures.vanilla.colored.glassdoor.cyan.name=Cyan Glass Door
+tile.morefeatures.vanilla.colored.glassdoor.cyan.desc=Glass door painted cyan.
+tile.morefeatures.vanilla.colored.glassdoor.silver.name=Light Gray Glass Door
+tile.morefeatures.vanilla.colored.glassdoor.silver.desc=Glass door painted light gray.
+tile.morefeatures.vanilla.colored.glassdoor.gray.name=Gray Glass Door
+tile.morefeatures.vanilla.colored.glassdoor.gray.desc=Glass door painted gray.
+tile.morefeatures.vanilla.colored.glassdoor.pink.name=Pink Glass Door
+tile.morefeatures.vanilla.colored.glassdoor.pink.desc=Glass door painted pink.
+tile.morefeatures.vanilla.colored.glassdoor.lime.name=Lime Glass Door
+tile.morefeatures.vanilla.colored.glassdoor.lime.desc=Glass door painted lime.
+tile.morefeatures.vanilla.colored.glassdoor.yellow.name=Yellow Glass Door
+tile.morefeatures.vanilla.colored.glassdoor.yellow.desc=Glass door painted yellow.
+tile.morefeatures.vanilla.colored.glassdoor.lightblue.name=Light Blue Glass Door
+tile.morefeatures.vanilla.colored.glassdoor.lightblue.desc=Glass door painted light blue.
+tile.morefeatures.vanilla.colored.glassdoor.magenta.name=Magenta Glass Door
+tile.morefeatures.vanilla.colored.glassdoor.magenta.desc=Glass door painted magenta.
+tile.morefeatures.vanilla.colored.glassdoor.orange.name=Orange Glass Door
+tile.morefeatures.vanilla.colored.glassdoor.orange.desc=Glass door painted orange.
+tile.morefeatures.vanilla.colored.glassdoor.white.name=White Glass Door
+tile.morefeatures.vanilla.colored.glassdoor.white.desc=Glass door painted white.
+
 tile.morefeatures.flower.rainbow.name=Rainbow Flower
 tile.morefeatures.flower.rainbow.desc=Can be crafted into various of dyes.
 
@@ -388,6 +421,8 @@ tile.morefeatures.superore.coal.limestone.name=Super Limestone Coal Ore
 tile.morefeatures.superore.coal.limestone.desc=A CHONK of coal embedded in limestone.
 tile.morefeatures.superore.coal.granite.name=Super Granite Coal Ore
 tile.morefeatures.superore.coal.granite.desc=A CHONK of coal embedded in granite.
+tile.morefeatures.superore.coal.permafrost.name=Super Permafrost Coal Ore
+tile.morefeatures.superore.coal.permafrost.desc=A CHONK of coal embedded in permafrost.
 
 tile.morefeatures.superore.iron.stone.name=Super Stone Iron Ore
 tile.morefeatures.superore.iron.stone.desc=A CHONK of iron embedded in stone.
@@ -397,6 +432,8 @@ tile.morefeatures.superore.iron.limestone.name=Super Limestone Iron Ore
 tile.morefeatures.superore.iron.limestone.desc=A CHONK of iron embedded in limestone.
 tile.morefeatures.superore.iron.granite.name=Super Granite Iron Ore
 tile.morefeatures.superore.iron.granite.desc=A CHONK of iron embedded in granite.
+tile.morefeatures.superore.iron.permafrost.name=Super Permafrost Iron Ore
+tile.morefeatures.superore.iron.permafrost.desc=A CHONK of iron embedded in permafrost.
 
 tile.morefeatures.superore.gold.stone.name=Super Stone Gold Ore
 tile.morefeatures.superore.gold.stone.desc=A CHONK of gold embedded in stone.
@@ -406,6 +443,8 @@ tile.morefeatures.superore.gold.limestone.name=Super Limestone Gold Ore
 tile.morefeatures.superore.gold.limestone.desc=A CHONK of gold embedded in limestone.
 tile.morefeatures.superore.gold.granite.name=Super Granite Gold Ore
 tile.morefeatures.superore.gold.granite.desc=A CHONK of gold embedded in granite.
+tile.morefeatures.superore.gold.permafrost.name=Super Permafrost Gold Ore
+tile.morefeatures.superore.gold.permafrost.desc=A CHONK of gold embedded in permafrost.
 
 tile.morefeatures.superore.lapis.stone.name=Super Stone Lapis Ore
 tile.morefeatures.superore.lapis.stone.desc=A CHONK of lapis embedded in stone.
@@ -415,6 +454,8 @@ tile.morefeatures.superore.lapis.limestone.name=Super Limestone Lapis Ore
 tile.morefeatures.superore.lapis.limestone.desc=A CHONK of lapis embedded in limestone.
 tile.morefeatures.superore.lapis.granite.name=Super Granite Lapis Ore
 tile.morefeatures.superore.lapis.granite.desc=A CHONK of lapis embedded in granite.
+tile.morefeatures.superore.lapis.permafrost.name=Super Permafrost Lapis Ore
+tile.morefeatures.superore.lapis.permafrost.desc=A CHONK of lapis embedded in permafrost.
 
 tile.morefeatures.superore.redstone.stone.name=Super Stone Redstone Ore
 tile.morefeatures.superore.redstone.stone.desc=A CHONK of redstone embedded in stone.
@@ -424,6 +465,8 @@ tile.morefeatures.superore.redstone.limestone.name=Super Limestone Redstone Ore
 tile.morefeatures.superore.redstone.limestone.desc=A CHONK of redstone embedded in limestone.
 tile.morefeatures.superore.redstone.granite.name=Super Granite Redstone Ore
 tile.morefeatures.superore.redstone.granite.desc=A CHONK of redstone embedded in granite.
+tile.morefeatures.superore.redstone.permafrost.name=Super Permafrost Redstone Ore
+tile.morefeatures.superore.redstone.permafrost.desc=A CHONK of redstone embedded in permafrost.
 
 tile.morefeatures.superore.redstone.glowing.stone.name=Super Stone Redstone.glowing Ore
 tile.morefeatures.superore.redstone.glowing.stone.desc=A CHONK of redstone.glowing embedded in stone.
@@ -433,6 +476,8 @@ tile.morefeatures.superore.redstone.glowing.limestone.name=Super Limestone Redst
 tile.morefeatures.superore.redstone.glowing.limestone.desc=A CHONK of redstone.glowing embedded in limestone.
 tile.morefeatures.superore.redstone.glowing.granite.name=Super Granite Redstone.glowing Ore
 tile.morefeatures.superore.redstone.glowing.granite.desc=A CHONK of redstone.glowing embedded in granite.
+tile.morefeatures.superore.redstone.glowing.permafrost.name=Super Permafrost Redstone.glowing Ore
+tile.morefeatures.superore.redstone.glowing.permafrost.desc=A CHONK of redstone.glowing embedded in permafrost.
 
 tile.morefeatures.superore.diamond.stone.name=Super Stone Diamond Ore
 tile.morefeatures.superore.diamond.stone.desc=A CHONK of diamond embedded in stone.
@@ -442,6 +487,8 @@ tile.morefeatures.superore.diamond.limestone.name=Super Limestone Diamond Ore
 tile.morefeatures.superore.diamond.limestone.desc=A CHONK of diamond embedded in limestone.
 tile.morefeatures.superore.diamond.granite.name=Super Granite Diamond Ore
 tile.morefeatures.superore.diamond.granite.desc=A CHONK of diamond embedded in granite.
+tile.morefeatures.superore.diamond.permafrost.name=Super Permafrost Diamond Ore
+tile.morefeatures.superore.diamond.permafrost.desc=A CHONK of diamond embedded in permafrost.
 
 tile.morefeatures.superore.nether.coal.netherrack.name=Super Nether Coal Ore
 tile.morefeatures.superore.nether.coal.netherrack.desc=A CHONK of nether coal embedded in netherrack.

@@ -19,7 +19,7 @@
     "SpawnerSurvival",
     "WorkbenchFix",
     "ContainerWorkbenchMixin",
-    "RenderEngineMixin",
+    "BigBirchTressMixin",
     "superores.OreToSuperoreCoal",
     "superores.OreToSuperoreIron",
     "superores.OreToSuperoreGold",

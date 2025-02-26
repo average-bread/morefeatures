@@ -1,16 +1,18 @@
 package cursedbread.morefeatures.item;
 
 import net.minecraft.core.block.Block;
-import net.minecraft.core.block.BlockLog;
+import net.minecraft.core.block.BlockLogicLog;
+import net.minecraft.core.block.Blocks;
 import net.minecraft.core.block.tag.BlockTags;
 import net.minecraft.core.data.gamerule.GameRules;
 import net.minecraft.core.data.gamerule.TreecapitatorHelper;
 import net.minecraft.core.entity.Entity;
-import net.minecraft.core.entity.EntityLiving;
-import net.minecraft.core.entity.player.EntityPlayer;
+import net.minecraft.core.entity.Mob;
+import net.minecraft.core.entity.player.Player;
 import net.minecraft.core.enums.EnumBlockSoundEffectType;
 import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemStack;
+import net.minecraft.core.item.Items;
 import net.minecraft.core.item.material.ToolMaterial;
 import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.world.World;
@@ -24,15 +26,15 @@ public class ItemToolPaxel extends Item {
 
 	public static Map<Block, Integer> miningLevels = new HashMap();
 
-	public ItemToolPaxel(String name, int id, ToolMaterial enumtoolmaterial) {
-		super(name, id);
+	public ItemToolPaxel(String name, String namespaceID, int id, ToolMaterial enumtoolmaterial) {
+		super(name, namespaceID, id);
 		this.maxStackSize = 1;
 		this.setMaxDamage(enumtoolmaterial.getDurability());
 		this.weaponDamage = 4 + enumtoolmaterial.getDamage() * 2;
 		this.material = enumtoolmaterial;
 	}
 
-	public boolean canHarvestBlock(EntityLiving entityLiving, ItemStack itemStack, Block block) {
+	public boolean canHarvestBlock(Mob entityLiving, ItemStack itemStack, Block block) {
 		Integer miningLevel = (Integer)miningLevels.get(block);
 		if (miningLevel != null) {
 			return this.material.getMiningLevel() >= miningLevel;
@@ -46,13 +48,13 @@ public class ItemToolPaxel extends Item {
 		return block.hasTag(BlockTags.MINEABLE_BY_SWORD) || block.hasTag(BlockTags.MINEABLE_BY_AXE) || block.hasTag(BlockTags.MINEABLE_BY_PICKAXE) || block.hasTag(BlockTags.MINEABLE_BY_SHOVEL) || block.hasTag(BlockTags.MINEABLE_BY_HOE) ? this.material.getEfficiency(false) : 1.0F;
 	}
 
-	public boolean hitEntity(ItemStack itemstack, EntityLiving entityliving, EntityLiving entityliving1) {
+	public boolean hitEntity(ItemStack itemstack, Mob entityliving, Mob entityliving1) {
 		itemstack.damageItem(1, entityliving1);
 		return true;
 	}
 
-	public boolean onBlockDestroyed(World world, ItemStack itemstack, int i, int j, int k, int l, Side side, EntityLiving entityliving) {
-		Block block = Block.blocksList[i];
+	public boolean onBlockDestroyed(World world, ItemStack itemstack, int i, int j, int k, int l, Side side, Mob entityliving) {
+		Block block = Blocks.blocksList[i];
 		if (block != null && (block.getHardness() > 0.0F || this.isSilkTouch())) {
 			itemstack.damageItem(1, entityliving);
 		}
@@ -68,10 +70,10 @@ public class ItemToolPaxel extends Item {
 	}
 
 	//axe
-	public boolean beforeDestroyBlock(World world, ItemStack itemStack, int x, int y, int z, EntityPlayer player) {
+	public boolean beforeDestroyBlock(World world, ItemStack itemStack, int x, int y, int z, Player player) {
 		if (!world.isClientSide && (Boolean)world.getGameRuleValue(GameRules.TREECAPITATOR) && !player.isSneaking()) {
 			int id = world.getBlockId(x, y, z);
-			if (Block.getBlock(id) instanceof BlockLog) {
+			if (Block.hasLogicClass(Blocks.getBlock(id), BlockLogicLog.class)) {
 				return !(new TreecapitatorHelper(world, x, y, z, player)).chopTree();
 			}
 		}
@@ -80,61 +82,62 @@ public class ItemToolPaxel extends Item {
 
 	//pickaxe
 	static {
-		miningLevels.put(Block.obsidian, 3);
-		miningLevels.put(Block.blockDiamond, 2);
-		miningLevels.put(Block.oreDiamondStone, 2);
-		miningLevels.put(Block.oreDiamondBasalt, 2);
-		miningLevels.put(Block.oreDiamondGranite, 2);
-		miningLevels.put(Block.oreDiamondLimestone, 2);
-		miningLevels.put(Block.blockGold, 2);
-		miningLevels.put(Block.oreGoldStone, 2);
-		miningLevels.put(Block.oreGoldBasalt, 2);
-		miningLevels.put(Block.oreGoldGranite, 2);
-		miningLevels.put(Block.oreGoldLimestone, 2);
-		miningLevels.put(Block.blockIron, 1);
-		miningLevels.put(Block.oreIronStone, 1);
-		miningLevels.put(Block.oreIronBasalt, 1);
-		miningLevels.put(Block.oreIronGranite, 1);
-		miningLevels.put(Block.oreIronLimestone, 1);
-		miningLevels.put(Block.blockSteel, 2);
-		miningLevels.put(Block.oreNethercoalNetherrack, 2);
-		miningLevels.put(Block.blockLapis, 1);
-		miningLevels.put(Block.oreLapisStone, 1);
-		miningLevels.put(Block.oreLapisBasalt, 1);
-		miningLevels.put(Block.oreLapisGranite, 1);
-		miningLevels.put(Block.oreLapisLimestone, 1);
-		miningLevels.put(Block.blockRedstone, 2);
-		miningLevels.put(Block.oreRedstoneStone, 2);
-		miningLevels.put(Block.oreRedstoneBasalt, 2);
-		miningLevels.put(Block.oreRedstoneGranite, 2);
-		miningLevels.put(Block.oreRedstoneLimestone, 2);
-		miningLevels.put(Block.oreRedstoneGlowingStone, 2);
-		miningLevels.put(Block.oreRedstoneGlowingBasalt, 2);
-		miningLevels.put(Block.oreRedstoneGlowingGranite, 2);
-		miningLevels.put(Block.oreRedstoneGlowingLimestone, 2);
+		miningLevels.put(Blocks.OBSIDIAN, 3);
+		miningLevels.put(Blocks.BLOCK_DIAMOND, 2);
+		miningLevels.put(Blocks.ORE_DIAMOND_STONE, 2);
+		miningLevels.put(Blocks.ORE_DIAMOND_BASALT, 2);
+		miningLevels.put(Blocks.ORE_DIAMOND_GRANITE, 2);
+		miningLevels.put(Blocks.ORE_DIAMOND_LIMESTONE, 2);
+		miningLevels.put(Blocks.BLOCK_GOLD, 2);
+		miningLevels.put(Blocks.ORE_GOLD_STONE, 2);
+		miningLevels.put(Blocks.ORE_GOLD_BASALT, 2);
+		miningLevels.put(Blocks.ORE_GOLD_GRANITE, 2);
+		miningLevels.put(Blocks.ORE_GOLD_LIMESTONE, 2);
+		miningLevels.put(Blocks.BLOCK_IRON, 1);
+		miningLevels.put(Blocks.ORE_IRON_STONE, 1);
+		miningLevels.put(Blocks.ORE_IRON_BASALT, 1);
+		miningLevels.put(Blocks.ORE_IRON_GRANITE, 1);
+		miningLevels.put(Blocks.ORE_IRON_LIMESTONE, 1);
+		miningLevels.put(Blocks.BLOCK_STEEL, 2);
+		miningLevels.put(Blocks.ORE_NETHERCOAL_NETHERRACK, 2);
+		miningLevels.put(Blocks.BLOCK_LAPIS, 1);
+		miningLevels.put(Blocks.ORE_LAPIS_STONE, 1);
+		miningLevels.put(Blocks.ORE_LAPIS_BASALT, 1);
+		miningLevels.put(Blocks.ORE_LAPIS_GRANITE, 1);
+		miningLevels.put(Blocks.ORE_LAPIS_LIMESTONE, 1);
+		miningLevels.put(Blocks.BLOCK_REDSTONE, 2);
+		miningLevels.put(Blocks.ORE_REDSTONE_STONE, 2);
+		miningLevels.put(Blocks.ORE_REDSTONE_BASALT, 2);
+		miningLevels.put(Blocks.ORE_REDSTONE_GRANITE, 2);
+		miningLevels.put(Blocks.ORE_REDSTONE_LIMESTONE, 2);
+		miningLevels.put(Blocks.ORE_REDSTONE_GLOWING_STONE, 2);
+		miningLevels.put(Blocks.ORE_REDSTONE_GLOWING_BASALT, 2);
+		miningLevels.put(Blocks.ORE_REDSTONE_GLOWING_GRANITE, 2);
+		miningLevels.put(Blocks.ORE_REDSTONE_GLOWING_LIMESTONE, 2);
 	}
 
 	//shovel and hoe
-	public boolean onUseItemOnBlock(ItemStack itemstack, EntityPlayer entityplayer, World world, int blockX, int blockY, int blockZ, Side side, double xPlaced, double yPlaced) {
+	public boolean onUseItemOnBlock(ItemStack itemstack, Player entityplayer, World world, int blockX, int blockY, int blockZ, Side side, double xPlaced, double yPlaced) {
 		int i1 = world.getBlockId(blockX, blockY, blockZ);
 		int j1 = world.getBlockId(blockX, blockY + 1, blockZ);
-		if (side != Side.BOTTOM && j1 == 0 && (i1 == Block.grass.id || i1 == Block.dirt.id || i1 == Block.grassRetro.id || i1 == Block.pathDirt.id)) {
+		if (side != Side.BOTTOM && j1 == 0 && (i1 == Blocks.GRASS.id() || i1 == Blocks.DIRT.id() || i1 == Blocks.GRASS_RETRO.id() || i1 == Blocks.PATH_DIRT.id())) {
 			if (entityplayer.isSneaking()){
-				Block block = Block.farmlandDirt;
-				world.playBlockSoundEffect(entityplayer, (double)((float)blockX + 0.5F), (double)((float)blockY + 0.5F), (double)((float)blockZ + 0.5F), Block.blocksList[i1], EnumBlockSoundEffectType.PLACE);
+				Block block = Blocks.FARMLAND_DIRT;
+				world.playBlockSoundEffect(entityplayer, (double)((float)blockX + 0.5F), (double)((float)blockY + 0.5F), (double)((float)blockZ + 0.5F), Blocks.blocksList[i1], EnumBlockSoundEffectType.PLACE);
 				if (!world.isClientSide) {
-					world.setBlockWithNotify(blockX, blockY, blockZ, block.id);
+					world.setBlockWithNotify(blockX, blockY, blockZ, block.id());
 					itemstack.damageItem(1, entityplayer);
 				}
+				int id;
 				id = world.getBlockId(blockX, blockY, blockZ);
-				if (!world.isClientSide && (id == Block.grass.id || id == Block.grassRetro.id || id == Block.grassScorched.id) && world.rand.nextInt(5) == 0) {
-					world.dropItem(blockX, blockY + 1, blockZ, new ItemStack(Item.seedsWheat));
+				if (!world.isClientSide && (id == Blocks.GRASS.id() || id == Blocks.GRASS_RETRO.id() || id == Blocks.GRASS_SCORCHED.id()) && world.rand.nextInt(5) == 0) {
+					world.dropItem(blockX, blockY + 1, blockZ, new ItemStack(Items.SEEDS_WHEAT));
 				}
-			} else if (side != Side.BOTTOM && j1 == 0 && (i1 == Block.grass.id || i1 == Block.dirt.id || i1 == Block.grassRetro.id || i1 == Block.farmlandDirt.id)) {
-				Block block = Block.pathDirt;
-				world.playBlockSoundEffect(entityplayer, (double)((float)blockX + 0.5F), (double)((float)blockY + 0.5F), (double)((float)blockZ + 0.5F), Block.blocksList[i1], EnumBlockSoundEffectType.PLACE);
+			} else if (side != Side.BOTTOM && j1 == 0 && (i1 == Blocks.GRASS.id() || i1 == Blocks.DIRT.id() || i1 == Blocks.GRASS_RETRO.id() || i1 == Blocks.FARMLAND_DIRT.id())) {
+				Block block = Blocks.PATH_DIRT;
+				world.playBlockSoundEffect(entityplayer, (double)((float)blockX + 0.5F), (double)((float)blockY + 0.5F), (double)((float)blockZ + 0.5F), Blocks.blocksList[i1], EnumBlockSoundEffectType.PLACE);
 				if (!world.isClientSide) {
-					world.setBlockWithNotify(blockX, blockY, blockZ, block.id);
+					world.setBlockWithNotify(blockX, blockY, blockZ, block.id());
 					itemstack.damageItem(1, entityplayer);
 				}
 			}

@@ -2,40 +2,42 @@ package cursedbread.morefeatures.blocks.ores;
 
 import net.minecraft.client.util.helper.Colors;
 import net.minecraft.core.block.Block;
+import net.minecraft.core.block.BlockLogic;
 import net.minecraft.core.block.entity.TileEntity;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.entity.Entity;
-import net.minecraft.core.entity.player.EntityPlayer;
+import net.minecraft.core.entity.player.Player;
 import net.minecraft.core.enums.EnumDropCause;
 import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemStack;
+import net.minecraft.core.item.Items;
 import net.minecraft.core.util.helper.Color;
 import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.world.World;
 
 import java.util.Random;
 
-public class BlockSuperOreRedstone extends Block {
+public class BlockLogicSuperOreRedstone extends BlockLogic {
 	private boolean illuminated;
-	private String keyNormal;
-	private String keyIlluminated;
+	private Block<?> keyNormal;
+	private Block<?> keyIlluminated;
 
-	public BlockSuperOreRedstone(String key, int id, boolean illuminated, String normalKey, String illuminatedKey) {
-		super(key, id, Material.stone);
+	public BlockLogicSuperOreRedstone(Block<?> block, Block<?> parentBlock, Material material, boolean illuminated, Block<?> normalBlock, Block<?> illuminatedBlock) {
+		super(block, Material.stone);
 		if (illuminated) {
-			this.setTicking(true);
+			block.setTicking(true);
 		}
 
 		this.illuminated = illuminated;
-		this.keyNormal = normalKey;
-		this.keyIlluminated = illuminatedKey;
+		this.keyNormal = normalBlock;
+		this.keyIlluminated = illuminatedBlock;
 	}
 
 	public int tickRate() {
 		return 30;
 	}
 
-	public void onBlockLeftClicked(World world, int x, int y, int z, EntityPlayer player, Side side, double xHit, double yHit) {
+	public void onBlockLeftClicked(World world, int x, int y, int z, Player player, Side side, double xHit, double yHit) {
 		this.lightRedstone(world, x, y, z);
 		super.onBlockLeftClicked(world, x, y, z, player, side, xHit, yHit);
 	}
@@ -67,7 +69,7 @@ public class BlockSuperOreRedstone extends Block {
 				return new ItemStack[]{new ItemStack(this)};
 			case EXPLOSION:
 			case PROPER_TOOL:
-				return new ItemStack[]{new ItemStack(Item.dustRedstone, (4 + world.rand.nextInt(2)) * (2 + world.rand.nextInt(3)))};
+				return new ItemStack[]{new ItemStack(Items.DUST_REDSTONE, (4 + world.rand.nextInt(2)) * (2 + world.rand.nextInt(3)))};
 			default:
 				return null;
 		}

@@ -5,7 +5,7 @@ import cursedbread.morefeatures.item.FeaturesItems;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.Global;
 import net.minecraft.core.entity.Entity;
-import net.minecraft.core.entity.player.EntityPlayer;
+import net.minecraft.core.entity.player.Player;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.world.World;
 import org.spongepowered.asm.mixin.Mixin;
@@ -15,7 +15,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-@Mixin(value = EntityPlayer.class, remap = false)
+@Mixin(value = Player.class, remap = false)
 public abstract class EntityPlayerMixin extends Entity {
 	@Shadow
 	protected float baseSpeed;
@@ -26,10 +26,10 @@ public abstract class EntityPlayerMixin extends Entity {
 
 	public void SpeedOlivine(){
 		if (FeaturesItems.olivineArmorEnabled == 1){
-			ItemStack helmet_item = Minecraft.getMinecraft(this).thePlayer.inventory.armorItemInSlot(3);
-			ItemStack chest_item = Minecraft.getMinecraft(this).thePlayer.inventory.armorItemInSlot(2);
-			ItemStack leggings_item = Minecraft.getMinecraft(this).thePlayer.inventory.armorItemInSlot(1);
-			ItemStack boots_item = Minecraft.getMinecraft(this).thePlayer.inventory.armorItemInSlot(0);
+			ItemStack helmet_item = Minecraft.getMinecraft().thePlayer.inventory.armorItemInSlot(3);
+			ItemStack chest_item = Minecraft.getMinecraft().thePlayer.inventory.armorItemInSlot(2);
+			ItemStack leggings_item = Minecraft.getMinecraft().thePlayer.inventory.armorItemInSlot(1);
+			ItemStack boots_item = Minecraft.getMinecraft().thePlayer.inventory.armorItemInSlot(0);
 			float olivineheadboost = 0;
 			float olivinetorsoboost = 0;
 			float olivinelegsboost = 0;

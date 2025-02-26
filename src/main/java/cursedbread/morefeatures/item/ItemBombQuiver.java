@@ -1,19 +1,15 @@
 package cursedbread.morefeatures.item;
 
-import net.minecraft.core.entity.player.EntityPlayer;
-import net.minecraft.core.item.Item;
-import net.minecraft.core.item.ItemArmor;
-import net.minecraft.core.item.ItemQuiver;
-import net.minecraft.core.item.ItemStack;
+import net.minecraft.core.entity.player.Player;
+import net.minecraft.core.item.*;
 import net.minecraft.core.item.material.ArmorMaterial;
 import net.minecraft.core.player.inventory.slot.Slot;
-import net.minecraft.client.render.stitcher.TextureRegistry;
 
 import static cursedbread.morefeatures.FeaturesMain.MOD_ID;
 
 public class ItemBombQuiver extends ItemQuiver {
-	public ItemBombQuiver(String name, int id) {
-		super(name, id);
+	public ItemBombQuiver(String name, String namespaceId, int id) {
+		super(name, namespaceId, id);
 		this.setMaxStackSize(1);
 		this.setMaxDamage(48);
 	}
@@ -24,7 +20,7 @@ public class ItemBombQuiver extends ItemQuiver {
 	}
 
     @Override
-	public ItemStack onInventoryInteract(EntityPlayer player, Slot slot, ItemStack stackInSlot, boolean isItemGrabbed) {
+	public ItemStack onInventoryInteract(Player player, Slot slot, ItemStack stackInSlot, boolean isItemGrabbed) {
 		ItemStack bagItem;
 		if (isItemGrabbed) {
 			bagItem = player.inventory.getHeldItemStack();
@@ -40,13 +36,13 @@ public class ItemBombQuiver extends ItemQuiver {
 			if (stackInSlot == null) {
 				amount = Math.min(16, bombCount);
 				if (amount > 0) {
-					ItemStack bombStack = new ItemStack(Item.ammoChargeExplosive, amount, 0);
-					if (slot.canPutStackInSlot(bombStack)) {
+					ItemStack bombStack = new ItemStack(Items.AMMO_CHARGE_EXPLOSIVE, amount, 0);
+					if (slot.mayPlace(bombStack)) {
 						this.setbombCount(bagItem, bombCount - amount);
 						stackInSlot = bombStack;
 					}
 				}
-			} else if (stackInSlot != null && stackInSlot.itemID == Item.ammoChargeExplosive.id) {
+			} else if (stackInSlot != null && stackInSlot.itemID == Items.AMMO_CHARGE_EXPLOSIVE.id) {
 				amount = Math.min(freeSpace, stackInSlot.stackSize);
 				if (amount > 0) {
 					this.setbombCount(bagItem, bombCount + amount);
@@ -56,7 +52,7 @@ public class ItemBombQuiver extends ItemQuiver {
 		} else {
 			ItemStack grabbedItem = player.inventory.getHeldItemStack();
 			int amount;
-			if (grabbedItem != null && grabbedItem.itemID == Item.ammoChargeExplosive.id) {
+			if (grabbedItem != null && grabbedItem.itemID == Items.AMMO_CHARGE_EXPLOSIVE.id) {
 				amount = Math.min(grabbedItem.stackSize, freeSpace);
 				if (amount > 0) {
 					grabbedItem.stackSize -= amount;
@@ -69,7 +65,7 @@ public class ItemBombQuiver extends ItemQuiver {
 				amount = Math.min(16, bombCount);
 				if (amount > 0) {
 					this.setbombCount(bagItem, bombCount - amount);
-					player.inventory.setHeldItemStack(new ItemStack(Item.ammoChargeExplosive, amount, 0));
+					player.inventory.setHeldItemStack(new ItemStack(Items.AMMO_CHARGE_EXPLOSIVE, amount, 0));
 				}
 			}
 		}

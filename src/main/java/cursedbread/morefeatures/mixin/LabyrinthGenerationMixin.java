@@ -2,6 +2,7 @@ package cursedbread.morefeatures.mixin;
 
 import cursedbread.morefeatures.FeaturesMain;
 import net.minecraft.core.block.Block;
+import net.minecraft.core.block.Blocks;
 import net.minecraft.core.world.World;
 import net.minecraft.core.world.biome.Biome;
 import net.minecraft.core.world.biome.Biomes;
@@ -35,7 +36,7 @@ public class LabyrinthGenerationMixin {
 	@Unique
 	private boolean isSwamp;
 
-	@Inject(method = "generate", at = @At("HEAD"))
+	@Inject(method = "place", at = @At("HEAD"))
 	public void generate(World world, Random random, int x, int y, int z, CallbackInfoReturnable<Boolean> cir) {
 		Biome biome = world.getBlockBiome(x, y, z);
 		if (FeaturesMain.newDungeonsEnabled == 1) {
@@ -43,41 +44,41 @@ public class LabyrinthGenerationMixin {
 				this.isHot = true;
 			}
 			if (biome == Biomes.OVERWORLD_SWAMPLAND || biome == Biomes.OVERWORLD_SWAMPLAND_MUDDY) {
-				this.wallBlockA = Block.mudBaked.id;
-				this.wallBlockB = Block.mudBaked.id;
-				this.brickBlockA = Block.logOakMossy.id;
-				this.brickBlockB = Block.logOakMossy.id;
-				this.slabBlock = Block.slabPlanksOak.id;
+				this.wallBlockA = Blocks.MUD_BAKED.id();
+				this.wallBlockB = Blocks.MUD_BAKED.id();
+				this.brickBlockA = Blocks.LOG_OAK_MOSSY.id();
+				this.brickBlockB = Blocks.LOG_OAK_MOSSY.id();
+				this.slabBlock = Blocks.SLAB_PLANKS_OAK.id();
 				this.isSwamp = true;
 			}
-			if (world.getBlockId(x, y, z) == Block.limestone.id) {
-				this.wallBlockA = Block.cobbleLimestone.id;
-				this.wallBlockB = Block.cobbleLimestone.id;
-				this.brickBlockA = Block.brickLimestone.id;
-				this.brickBlockB = Block.brickLimestone.id;
-				this.slabBlock = Block.slabBrickLimestone.id;
+			if (world.getBlockId(x, y, z) == Blocks.LIMESTONE.id()) {
+				this.wallBlockA = Blocks.COBBLE_LIMESTONE.id();
+				this.wallBlockB = Blocks.COBBLE_LIMESTONE.id();
+				this.brickBlockA = Blocks.BRICK_LIMESTONE.id();
+				this.brickBlockB = Blocks.BRICK_LIMESTONE.id();
+				this.slabBlock = Blocks.SLAB_BRICK_LIMESTONE.id();
 			}
-			if (world.getBlockId(x, y, z) == Block.basalt.id) {
-				this.wallBlockA = Block.cobbleBasalt.id;
-				this.wallBlockB = Block.cobbleBasalt.id;
-				this.brickBlockA = Block.brickBasalt.id;
-				this.brickBlockB = Block.brickBasalt.id;
-				this.slabBlock = Block.slabBrickBasalt.id;
+			if (world.getBlockId(x, y, z) == Blocks.BASALT.id()) {
+				this.wallBlockA = Blocks.COBBLE_BASALT.id();
+				this.wallBlockB = Blocks.COBBLE_BASALT.id();
+				this.brickBlockA = Blocks.BRICK_BASALT.id();
+				this.brickBlockB = Blocks.BRICK_BASALT.id();
+				this.slabBlock = Blocks.SLAB_BRICK_BASALT.id();
 			}
-			if (world.getBlockId(x, y, z) == Block.granite.id) {
-				this.wallBlockA = Block.cobbleGranite.id;
-				this.wallBlockB = Block.cobbleGranite.id;
-				this.brickBlockA = Block.brickGranite.id;
-				this.brickBlockB = Block.brickGranite.id;
-				this.slabBlock = Block.slabBrickGranite.id;
+			if (world.getBlockId(x, y, z) == Blocks.GRANITE.id()) {
+				this.wallBlockA = Blocks.COBBLE_GRANITE.id();
+				this.wallBlockB = Blocks.COBBLE_GRANITE.id();
+				this.brickBlockA = Blocks.BRICK_GRANITE.id();
+				this.brickBlockB = Blocks.BRICK_GRANITE.id();
+				this.slabBlock = Blocks.SLAB_BRICK_GRANITE.id();
 			}
 			int i = random.nextInt(2);
 			if (i == 1) {
-				this.wallBlockA = Block.brickClay.id;
-				this.wallBlockB = Block.brickClay.id;
-				this.brickBlockA = Block.brickLapis.id;
-				this.brickBlockB = Block.brickLapis.id;
-				this.slabBlock = Block.slabBrickClay.id;
+				this.wallBlockA = Blocks.BRICK_CLAY.id();
+				this.wallBlockB = Blocks.BRICK_CLAY.id();
+				this.brickBlockA = Blocks.BRICK_LAPIS.id();
+				this.brickBlockB = Blocks.BRICK_LAPIS.id();
+				this.slabBlock = Blocks.SLAB_BRICK_CLAY.id();
 			}
 		}
 	}
