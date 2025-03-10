@@ -1,5 +1,7 @@
 package cursedbread.morefeatures.blocks.glowstone;
 
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.client.render.texture.stitcher.IconCoordinate;
 import net.minecraft.client.render.texture.stitcher.TextureRegistry;
 import net.minecraft.core.block.Block;
@@ -15,6 +17,7 @@ import net.minecraft.client.render.block.model.BlockModelStandard;
 
 import static cursedbread.morefeatures.FeaturesMain.MOD_ID;
 
+@Environment(EnvType.CLIENT)
 public class BlockModelColoredGlowstone<T extends BlockLogic> extends BlockModelStandard<T> {
     public boolean nnd = false;
 

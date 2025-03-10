@@ -2,6 +2,8 @@ package cursedbread.morefeatures.mixin;
 
 import cursedbread.morefeatures.FeaturesMain;
 import cursedbread.morefeatures.item.FeaturesItems;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.Global;
 import net.minecraft.core.entity.Entity;
@@ -24,8 +26,9 @@ public abstract class EntityPlayerMixin extends Entity {
 		super(world);
 	}
 
+	@Unique
 	public void SpeedOlivine(){
-		if (FeaturesItems.olivineArmorEnabled == 1){
+		if (FeaturesItems.miscArmorEnabled == 1){
 			ItemStack helmet_item = Minecraft.getMinecraft().thePlayer.inventory.armorItemInSlot(3);
 			ItemStack chest_item = Minecraft.getMinecraft().thePlayer.inventory.armorItemInSlot(2);
 			ItemStack leggings_item = Minecraft.getMinecraft().thePlayer.inventory.armorItemInSlot(1);
@@ -40,7 +43,7 @@ public abstract class EntityPlayerMixin extends Entity {
 			if (leggings_item != null && leggings_item.getItem().equals(FeaturesItems.olivineLeggings)) {
 				olivinelegsboost = this.speed + 0.03F;
 			}
-			if ((helmet_item != null && helmet_item.getItem().equals(FeaturesItems.olivineHelmet)) || (helmet_item != null && FeaturesItems.regularCrownEnabled == 1 && helmet_item.getItem().equals(FeaturesItems.olivineCrown))) {
+			if ((helmet_item != null && helmet_item.getItem().equals(FeaturesItems.olivineHelmet)) || (helmet_item != null && FeaturesItems.crownsEnabled == 1 && helmet_item.getItem().equals(FeaturesItems.olivineCrown))) {
 				olivineheadboost = this.speed + 0.01F;
 			}
 			if (boots_item != null && boots_item.getItem().equals(FeaturesItems.olivineBoots)) {
@@ -57,7 +60,7 @@ public abstract class EntityPlayerMixin extends Entity {
 
 	@Inject(method = "onLivingUpdate()V", at = @At("TAIL"))
 	private void armor_effects(CallbackInfo ci) {
-		if (FeaturesItems.olivineArmorEnabled == 1 && !Global.isServer){
+		if (FeaturesItems.miscArmorEnabled == 1 && !Global.isServer){
 			SpeedOlivine();
 		}
 	}

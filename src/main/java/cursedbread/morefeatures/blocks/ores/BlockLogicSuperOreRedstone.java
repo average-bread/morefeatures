@@ -14,6 +14,7 @@ import net.minecraft.core.item.Items;
 import net.minecraft.core.util.helper.Color;
 import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.world.World;
+import net.minecraft.core.world.WorldSource;
 
 import java.util.Random;
 
@@ -33,8 +34,38 @@ public class BlockLogicSuperOreRedstone extends BlockLogic {
 		this.keyIlluminated = illuminatedBlock;
 	}
 
-	public int tickRate() {
-		return 30;
+	public boolean isSignalSource() {
+		return true;
+	}
+
+	public boolean getSignal(WorldSource worldSource, int x, int y, int z, Side side) {
+		return true;
+	}
+
+	public boolean getDirectSignal(World world, int x, int y, int z, Side side) {
+		return this.getSignal(world, x, y, z, side);
+	}
+
+	public void onBlockPlacedByWorld(World world, int x, int y, int z) {
+		Side[] var5 = Side.sides;
+		int var6 = var5.length;
+
+		for(int var7 = 0; var7 < var6; ++var7) {
+			Side s = var5[var7];
+			world.notifyBlocksOfNeighborChange(x + s.getOffsetX(), y + s.getOffsetY(), z + s.getOffsetZ(), this.id());
+		}
+
+	}
+
+	public void onBlockRemoved(World world, int x, int y, int z, int data) {
+		Side[] var6 = Side.sides;
+		int var7 = var6.length;
+
+		for(int var8 = 0; var8 < var7; ++var8) {
+			Side s = var6[var8];
+			world.notifyBlocksOfNeighborChange(x + s.getOffsetX(), y + s.getOffsetY(), z + s.getOffsetZ(), this.id());
+		}
+
 	}
 
 	public void onBlockLeftClicked(World world, int x, int y, int z, Player player, Side side, double xHit, double yHit) {
@@ -50,14 +81,14 @@ public class BlockLogicSuperOreRedstone extends BlockLogic {
 	private void lightRedstone(World world, int i, int j, int k) {
 		this.spawnParticles(world, i, j, k);
 		if (!this.illuminated) {
-			world.setBlockWithNotify(i, j, k, world.getBlockId(i, j, k) + 4);
+			world.setBlockWithNotify(i, j, k, world.getBlockId(i, j, k) + 5);
 		}
 
 	}
 
 	public void updateTick(World world, int x, int y, int z, Random rand) {
 		if (this.illuminated) {
-			world.setBlockWithNotify(x, y, z, world.getBlockId(x, y, z) - 4);
+			world.setBlockWithNotify(x, y, z, world.getBlockId(x, y, z) - 5);
 		}
 
 	}
@@ -75,11 +106,8 @@ public class BlockLogicSuperOreRedstone extends BlockLogic {
 		}
 	}
 
-	public void randomDisplayTick(World world, int x, int y, int z, Random rand) {
-		if (this.illuminated) {
-			this.spawnParticles(world, x, y, z);
-		}
-
+	public void animationTick(World world, int x, int y, int z, Random rand) {
+		this.spawnParticles(world, x, y, z);
 	}
 
 	private void spawnParticles(World world, int x, int y, int z) {

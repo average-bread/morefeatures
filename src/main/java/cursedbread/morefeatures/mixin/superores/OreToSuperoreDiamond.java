@@ -2,6 +2,8 @@ package cursedbread.morefeatures.mixin.superores;
 
 import cursedbread.morefeatures.FeaturesMain;
 import cursedbread.morefeatures.blocks.FeaturesBlocks;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.block.BlockLogicOreDiamond;
 import net.minecraft.core.block.Blocks;

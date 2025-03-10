@@ -112,6 +112,33 @@ public class FeaturesCraft implements RecipeEntrypoint {
 		FeaturesItems.paxelSteel
 	};
 
+	public static int[] toolMaterial = {
+		Items.INGOT_IRON.id,
+		Items.INGOT_GOLD.id,
+		Items.DIAMOND.id,
+		Items.INGOT_STEEL.id
+	};
+	public static int[] toolHeavyMaterial = {
+		Blocks.BLOCK_IRON.id(),
+		Blocks.BLOCK_GOLD.id(),
+		Blocks.BLOCK_DIAMOND.id(),
+		Blocks.BLOCK_STEEL.id()
+	};
+
+	public static Item[] climbPickResult = {
+		FeaturesItems.climbPickaxeIron,
+		FeaturesItems.climbPickaxeGold,
+		FeaturesItems.climbPickaxeDiamond,
+		FeaturesItems.climbPickaxeSteel
+	};
+
+	public static Item[] hammerResult = {
+		FeaturesItems.miningHammerIron,
+		FeaturesItems.miningHammerGold,
+		FeaturesItems.miningHammerDiamond,
+		FeaturesItems.miningHammerSteel
+	};
+
 	@Override
 	public void initNamespaces() {
 		RecipeBuilder.initNameSpace(FeaturesMain.MOD_ID);
@@ -377,7 +404,7 @@ public class FeaturesCraft implements RecipeEntrypoint {
 		}
 
 		//flower crowns crafting
-		if (FeaturesItems.flowerCrownEnabled == 1) {
+		if (FeaturesItems.crownsEnabled == 1) {
 			for (int j = 0; j < flowerMaterial.length; j++) {
 				Item material = Item.itemsList[flowerMaterial[j]];
 				RecipeBuilder.Shaped(MOD_ID)
@@ -387,7 +414,7 @@ public class FeaturesCraft implements RecipeEntrypoint {
 			}
 		}
 		//regular crown crafting
-		if (FeaturesItems.regularCrownEnabled == 1) {
+		if (FeaturesItems.crownsEnabled == 1) {
 			for (int j = 0; j < regularMaterial.length; j++) {
 				Item material = Item.itemsList[regularMaterial[j]];
 				RecipeBuilder.Shaped(MOD_ID)
@@ -398,32 +425,32 @@ public class FeaturesCraft implements RecipeEntrypoint {
 			}
 			workbenchGroup.register("chainCrownReapir", new RecipeEntryRepairable(new ItemStack(FeaturesItems.chainCrown), new RecipeSymbol(Items.CHAINLINK.getDefaultStack())));
 			RecipeBuilder.getRecipeGroup(MOD_ID, "workbench", new RecipeSymbol(Blocks.WORKBENCH.getDefaultStack()));
-			if (FeaturesItems.stoneArmorEnabled == 1) {
+			if (FeaturesItems.blockArmorEnabled == 1) {
 				RecipeBuilder.Shaped(MOD_ID)
 					.setShape("HCH", "HHH")
 					.addInput('H', "minecraft:stones")
 					.addInput('C', Items.CLOTH)
 					.create("crown", new ItemStack(FeaturesItems.stoneCrown, 1));
 			}
-			if (FeaturesItems.olivineArmorEnabled == 1) {
+			if (FeaturesItems.miscArmorEnabled == 1) {
 				RecipeBuilder.Shaped(MOD_ID)
 					.setShape("HCH", "HHH")
-					.addInput('H', Items.OLIVINE)
+					.addInput('H', Blocks.BLOCK_OLIVINE)
 					.addInput('C', Items.CLOTH)
 					.create("crown", new ItemStack(FeaturesItems.olivineCrown, 1));
 			}
-			if (FeaturesItems.bedrockArmorEnabled == 1) {
+			if (FeaturesItems.blockArmorEnabled == 1) {
 				RecipeBuilder.Shaped(MOD_ID)
 					.setShape("HCH", "HHH")
 					.addInput('H', Blocks.BEDROCK)
 					.addInput('C', Items.CLOTH)
 					.create("crown", new ItemStack(FeaturesItems.bedrockCrown, 1));
 			}
-			if (FeaturesItems.plateArmorEnabled == 1) {
+			if (FeaturesItems.oldArmorEnabled == 1) {
 				workbenchGroup.register("plateCrownReapir", new RecipeEntryRepairable(new ItemStack(FeaturesItems.plateCrown), new RecipeSymbol (Items.INGOT_IRON.getDefaultStack())));
 				RecipeBuilder.getRecipeGroup(MOD_ID, "workbench", new RecipeSymbol(Blocks.WORKBENCH.getDefaultStack()));
 			}
-			if (FeaturesItems.leatherchainArmorEnabled == 1) {
+			if (FeaturesItems.oldArmorEnabled == 1) {
 				RecipeBuilder.Shapeless(MOD_ID)
 					.addInput(FeaturesItems.leatherCrown)
 					.addInput(FeaturesItems.chainCrown)
@@ -433,7 +460,7 @@ public class FeaturesCraft implements RecipeEntrypoint {
 			}
 		}
 		//bedrock armor crafting
-		if (FeaturesItems.bedrockArmorEnabled == 1) {
+		if (FeaturesItems.blockArmorEnabled == 1) {
 			RecipeBuilder.Shaped(MOD_ID)
 				.setShape("HHH", "H H")
 				.addInput('H', Blocks.BEDROCK)
@@ -452,7 +479,7 @@ public class FeaturesCraft implements RecipeEntrypoint {
 				.create("boots", new ItemStack(FeaturesItems.bedrockBoots, 1));
 		}
 		//stone armor crafting
-		if (FeaturesItems.stoneArmorEnabled == 1) {
+		if (FeaturesItems.blockArmorEnabled == 1) {
 			RecipeBuilder.Shaped(MOD_ID)
 				.setShape("HHH", "H H")
 				.addInput('H', "minecraft:stones")
@@ -471,26 +498,26 @@ public class FeaturesCraft implements RecipeEntrypoint {
 				.create("boots", new ItemStack(FeaturesItems.stoneBoots, 1));
 		}
 		//olivine armor crafting
-		if (FeaturesItems.olivineArmorEnabled == 1) {
+		if (FeaturesItems.miscArmorEnabled == 1) {
 			RecipeBuilder.Shaped(MOD_ID)
 				.setShape("HHH", "H H")
-				.addInput('H', Items.OLIVINE)
+				.addInput('H', Blocks.BLOCK_OLIVINE)
 				.create("helmets", new ItemStack(FeaturesItems.olivineHelmet, 1));
 			RecipeBuilder.Shaped(MOD_ID)
 				.setShape("H H", "HHH", "HHH")
-				.addInput('H', Items.OLIVINE)
+				.addInput('H', Blocks.BLOCK_OLIVINE)
 				.create("chectplates", new ItemStack(FeaturesItems.olivineChestplate, 1));
 			RecipeBuilder.Shaped(MOD_ID)
 				.setShape("HHH", "H H", "H H")
-				.addInput('H', Items.OLIVINE)
+				.addInput('H', Blocks.BLOCK_OLIVINE)
 				.create("leggings", new ItemStack(FeaturesItems.olivineLeggings, 1));
 			RecipeBuilder.Shaped(MOD_ID)
 				.setShape("H H", "H H")
-				.addInput('H', Items.OLIVINE)
+				.addInput('H', Blocks.BLOCK_OLIVINE)
 				.create("boots", new ItemStack(FeaturesItems.olivineBoots, 1));
 		}
 		//leather-chain armor crafting and repairing
-		if (FeaturesItems.leatherchainArmorEnabled == 1) {
+		if (FeaturesItems.oldArmorEnabled == 1) {
 			RecipeBuilder.Shapeless(MOD_ID)
 				.addInput(Items.ARMOR_HELMET_LEATHER)
 				.addInput(Items.ARMOR_HELMET_CHAINMAIL)
@@ -518,7 +545,7 @@ public class FeaturesCraft implements RecipeEntrypoint {
 			RecipeBuilder.getRecipeGroup(MOD_ID, "workbench", new RecipeSymbol(Blocks.WORKBENCH.getDefaultStack()));
 		}
 		//workbench on a stick crafting
-		if (FeaturesItems.workbenchonstickEnabled == 1) {
+		if (FeaturesItems.newToolsEnabled == 1) {
 			RecipeBuilder.Shaped(MOD_ID)
 				.setShape(" W", "S ")
 				.addInput('S', Items.STICK)
@@ -535,14 +562,14 @@ public class FeaturesCraft implements RecipeEntrypoint {
 				.create("bomBagCraft", new ItemStack(FeaturesItems.bombBag, 1, 48));
 		}
 		//plate armor repairing
-		if (FeaturesItems.plateArmorEnabled == 1) {
+		if (FeaturesItems.oldArmorEnabled == 1) {
 			workbenchGroup.register("plateHelmetReapir", new RecipeEntryRepairable(new ItemStack(FeaturesItems.plateHelmet), new RecipeSymbol (Items.INGOT_IRON.getDefaultStack())));
 			RecipeBuilder.getRecipeGroup(MOD_ID, "workbench", new RecipeSymbol(Blocks.WORKBENCH.getDefaultStack()));
 			workbenchGroup.register("plateChestplateReapir", new RecipeEntryRepairable(new ItemStack(FeaturesItems.plateHelmet), new RecipeSymbol (Items.INGOT_IRON.getDefaultStack())));
 			RecipeBuilder.getRecipeGroup(MOD_ID, "workbench", new RecipeSymbol(Blocks.WORKBENCH.getDefaultStack()));
 		}
 		//rainbow flower stuff
-		if (FeaturesBlocks.rainbowflowerEnabled == 1){
+		if (FeaturesBlocks.plantEnabled == 1){
 			for (int i = 0; i <= 15; i++) {
 				RecipeBuilder.Shapeless(MOD_ID)
 					.addInput(FeaturesBlocks.rainbowFlower)
@@ -579,7 +606,7 @@ public class FeaturesCraft implements RecipeEntrypoint {
 				.create("cookingham", new ItemStack(FeaturesBlocks.cookedham));
 		}
 
-		if (FeaturesItems.paxelsEnabled == 1){
+		if (FeaturesItems.newToolsEnabled == 1){
 			for (int i = 0; i < 6; i++){
 				RecipeBuilder.Shaped(MOD_ID)
 					.setShape("APH", " W ", " S ")
@@ -589,6 +616,48 @@ public class FeaturesCraft implements RecipeEntrypoint {
 					.addInput('H', Item.itemsList[paxelCraftShovelMaterial[i]])
 					.addInput('W', Item.itemsList[paxelCraftSwordMaterial[i]])
 					.create("paxelcraft", new ItemStack(paxelCraftResult[i]));
+			}
+
+			RecipeBuilder.Shaped(MOD_ID)
+				.setShape("MM ", "MSH", " S ")
+				.addInput('S', Items.STICK)
+				.addInput('M', "minecraft:planks")
+				.addInput('H', "minecraft:logs")
+				.create("climbpickcraft", new ItemStack(FeaturesItems.climbPickaxeWood));
+			RecipeBuilder.Shaped(MOD_ID)
+				.setShape("MM ", "MSH", " S ")
+				.addInput('S', Items.STICK)
+				.addInput('M', "minecraft:cobblestones")
+				.addInput('H', "minecraft:stones")
+				.create("climbpickcraft", new ItemStack(FeaturesItems.climbPickaxeStone));
+			for (int i = 0; i < 4; i++){
+				RecipeBuilder.Shaped(MOD_ID)
+					.setShape("MM ", "MSH", " S ")
+					.addInput('S', Items.STICK)
+					.addInput('M', Item.itemsList[toolMaterial[i]])
+					.addInput('H', Item.itemsList[toolHeavyMaterial[i]])
+					.create("climbpickcraft", new ItemStack(climbPickResult[i]));
+			}
+
+			RecipeBuilder.Shaped(MOD_ID)
+				.setShape("HMH", "MSM", " S ")
+				.addInput('S', Items.STICK)
+				.addInput('M', "minecraft:planks")
+				.addInput('H', "minecraft:logs")
+				.create("hammercraft", new ItemStack(FeaturesItems.miningHammerWood));
+			RecipeBuilder.Shaped(MOD_ID)
+				.setShape("HMH", "MSM", " S ")
+				.addInput('S', Items.STICK)
+				.addInput('M', "minecraft:cobblestones")
+				.addInput('H', "minecraft:stones")
+				.create("hammercraft", new ItemStack(FeaturesItems.miningHammerStone));
+			for (int i = 0; i < 4; i++){
+				RecipeBuilder.Shaped(MOD_ID)
+					.setShape("HMH", "MSM", " S ")
+					.addInput('S', Items.STICK)
+					.addInput('M', Item.itemsList[toolMaterial[i]])
+					.addInput('H', Item.itemsList[toolHeavyMaterial[i]])
+					.create("hammercraft", new ItemStack(hammerResult[i]));
 			}
 		}
 	}

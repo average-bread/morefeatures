@@ -1,6 +1,8 @@
 package cursedbread.morefeatures.mixin;
 
 import cursedbread.morefeatures.item.FeaturesItems;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.core.entity.Entity;
 import net.minecraft.core.entity.Mob;
 import net.minecraft.core.entity.player.Player;
@@ -22,7 +24,7 @@ public abstract class SoulDrop extends Entity {
 
 	@Inject(method = "onDeath", at = @At(value = "INVOKE", target = "Lnet/minecraft/core/entity/Mob;dropDeathItems()V"))
 	private void soulDrop(Entity entity, CallbackInfo ci){
-		if (FeaturesItems.soulEnabled > 0 && entity instanceof Player){
+		if (FeaturesItems.miscItemsEnabled > 0 && entity instanceof Player){
 			ItemStack heldStack = ((Player) entity).getHeldItem();
 			ItemStack drop = new ItemStack(FeaturesItems.mobSoul);
 			if (heldStack != null && heldStack.getItem().equals(Items.TOOL_SWORD_GOLD)){

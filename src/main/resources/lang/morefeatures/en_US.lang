@@ -228,6 +228,9 @@ item.morefeatures.bag.gold.desc=An endless supply of explosive charges.
 item.morefeatures.soul.name=Mob Soul
 item.morefeatures.soul.desc=Not only you can respawn. Mobs can do it too, but not this one anymore. Allows you to change mob inside a spawner ones.
 
+item.morefeatures.flux.seed.name=Flux Seeds
+item.morefeatures.flux.seed.desc=Flux seeds that can be planted in soil.
+
 tile.morefeatures.gilder.name=Gilding Table
 tile.morefeatures.gilder.desc=Build a golden ring with slate in the middle, put the block on top and right click it with quiver to cover it with gold.
 
@@ -393,7 +396,7 @@ tile.morefeatures.vanilla.colored.glassdoor.white.name=White Glass Door
 tile.morefeatures.vanilla.colored.glassdoor.white.desc=Glass door painted white.
 
 tile.morefeatures.flower.rainbow.name=Rainbow Flower
-tile.morefeatures.flower.rainbow.desc=Can be crafted into various of dyes.
+tile.morefeatures.flower.rainbow.desc=A mesmerizing looking rainbow flower.
 
 tile.morefeatures.ham.name=Block Of Ham
 tile.morefeatures.ham.desc=Pig^3.
@@ -412,6 +415,32 @@ item.morefeatures.paxel.diamond.name=Diamond Paxel
 item.morefeatures.paxel.diamond.desc=Slay monsters, dig up the dirt, pick some stone or chop some trees with this diamond tool.
 item.morefeatures.paxel.steel.name=Steel Paxel
 item.morefeatures.paxel.steel.desc=Slay monsters, dig up the dirt, pick some stone or chop some trees with this steel tool.
+
+item.morefeatures.climbpickaxe.wood.name=Wooden Climbing Pickaxe
+item.morefeatures.climbpickaxe.wood.desc=Pick some stone and climb walls with this wooden tool.
+item.morefeatures.climbpickaxe.stone.name=Stone Climbing Pickaxe
+item.morefeatures.climbpickaxe.stone.desc=Pick some stone and climb walls with this stone tool.
+item.morefeatures.climbpickaxe.iron.name=Iron Climbing Pickaxe
+item.morefeatures.climbpickaxe.iron.desc=Pick some stone and climb walls with this iron tool.
+item.morefeatures.climbpickaxe.gold.name=Golden Climbing Pickaxe
+item.morefeatures.climbpickaxe.gold.desc=Pick some stone and climb walls with this gold tool.
+item.morefeatures.climbpickaxe.diamond.name=Diamond Climbing Pickaxe
+item.morefeatures.climbpickaxe.diamond.desc=Pick some stone and climb walls with this diamond tool.
+item.morefeatures.climbpickaxe.steel.name=Steel Climbing Pickaxe
+item.morefeatures.climbpickaxe.steel.desc=Pick some stone and climb walls with this steel tool.
+
+item.morefeatures.mininghammer.wood.name=Wooden Mining Hammer
+item.morefeatures.mininghammer.wood.desc=Pick a big amount of stone with this wooden tool.
+item.morefeatures.mininghammer.stone.name=Stone Mining Hammer
+item.morefeatures.mininghammer.stone.desc=Pick a big amount of stone with this stone tool.
+item.morefeatures.mininghammer.iron.name=Iron Mining Hammer
+item.morefeatures.mininghammer.iron.desc=Pick a big amount of stone with this iron tool.
+item.morefeatures.mininghammer.gold.name=Golden Mining Hammer
+item.morefeatures.mininghammer.gold.desc=Pick a big amount of stone with this gold tool.
+item.morefeatures.mininghammer.diamond.name=Diamond Mining Hammer
+item.morefeatures.mininghammer.diamond.desc=Pick a big amount of stone with this diamond tool.
+item.morefeatures.mininghammer.steel.name=Steel Mining Hammer
+item.morefeatures.mininghammer.steel.desc=Pick a big amount of stone with this steel tool.
 
 tile.morefeatures.superore.coal.stone.name=Super Stone Coal Ore
 tile.morefeatures.superore.coal.stone.desc=A CHONK of coal embedded in stone.

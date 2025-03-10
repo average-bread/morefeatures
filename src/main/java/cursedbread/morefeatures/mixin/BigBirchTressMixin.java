@@ -1,5 +1,7 @@
 package cursedbread.morefeatures.mixin;
 
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.block.BlockLogicSaplingBirch;
 import net.minecraft.core.block.Blocks;

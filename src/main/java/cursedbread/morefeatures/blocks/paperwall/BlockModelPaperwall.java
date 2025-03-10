@@ -1,5 +1,7 @@
 package cursedbread.morefeatures.blocks.paperwall;
 
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.client.render.block.model.BlockModelStandard;
 import net.minecraft.client.render.texture.stitcher.IconCoordinate;
 import net.minecraft.client.render.texture.stitcher.TextureRegistry;
@@ -14,6 +16,7 @@ import net.minecraft.core.world.World;
 
 import static cursedbread.morefeatures.FeaturesMain.MOD_ID;
 
+@Environment(EnvType.CLIENT)
 public class BlockModelPaperwall<T extends BlockLogic> extends BlockModelStandard<T> {
     public boolean nnd = false;
     public int alt = 0;

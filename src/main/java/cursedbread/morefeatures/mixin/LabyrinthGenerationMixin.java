@@ -1,6 +1,8 @@
 package cursedbread.morefeatures.mixin;
 
 import cursedbread.morefeatures.FeaturesMain;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.block.Blocks;
 import net.minecraft.core.world.World;

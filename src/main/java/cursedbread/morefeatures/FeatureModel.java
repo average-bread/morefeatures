@@ -1,17 +1,19 @@
 package cursedbread.morefeatures;
 
 import cursedbread.morefeatures.blocks.FeaturesBlocks;
+import cursedbread.morefeatures.blocks.flux.BlockModelCropsFlux;
 import cursedbread.morefeatures.blocks.glass.BlockModelColoredGlass;
 import cursedbread.morefeatures.blocks.glass.BlockModelColoredGlassTrapdoor;
 import cursedbread.morefeatures.blocks.glowstone.BlockModelColoredGlowstone;
 import cursedbread.morefeatures.blocks.paperwall.BlockModelPaperwall;
 import cursedbread.morefeatures.item.FeaturesItems;
-import cursedbread.morefeatures.item.ItemModelBombQuiver;
+import cursedbread.morefeatures.item.bomb_bag.ItemModelBombQuiver;
 import net.minecraft.client.render.EntityRenderDispatcher;
 import net.minecraft.client.render.TileEntityRenderDispatcher;
 import net.minecraft.client.render.block.color.BlockColorDispatcher;
 import net.minecraft.client.render.block.model.BlockModelCrossedSquares;
 import net.minecraft.client.render.block.model.BlockModelDispatcher;
+import net.minecraft.client.render.block.model.BlockModelFlowerStackable;
 import net.minecraft.client.render.block.model.BlockModelStandard;
 import net.minecraft.client.render.item.model.ItemModelDispatcher;
 import net.minecraft.client.render.item.model.ItemModelStandard;
@@ -65,12 +67,16 @@ public class FeatureModel implements ModelEntrypoint {
 			);
 		}
 
-		if (FeaturesBlocks.rainbowflowerEnabled == 1){
+		if (FeaturesBlocks.plantEnabled == 1){
 			ModelHelper.setBlockModel(
 				FeaturesBlocks.rainbowFlower,
-				() -> new BlockModelCrossedSquares<>(FeaturesBlocks.rainbowFlower)
-					.setTex(0, "morefeatures:block/flower_rainbow/flower_rainbow", Side.sides)
+				() -> new BlockModelFlowerStackable<>(FeaturesBlocks.rainbowFlower,
+					"morefeatures:block/flower_rainbow/")
 			);
+
+			ModelHelper.setBlockModel(
+				FeaturesBlocks.fluxCropws,
+				() -> new BlockModelCropsFlux<>(FeaturesBlocks.fluxCropws));
 		}
 
 		if (FeaturesBlocks.hamEnabled == 1){
@@ -280,7 +286,7 @@ public class FeatureModel implements ModelEntrypoint {
 
 	@Override
 	public void initItemModels(ItemModelDispatcher dispatcher) {
-		if (FeaturesItems.flowerCrownEnabled == 1) {
+		if (FeaturesItems.crownsEnabled == 1) {
 			ModelHelper.setItemModel(FeaturesItems.dandelionCrown,
 				() -> {
 					ItemModelStandard model = new ItemModelStandard(FeaturesItems.dandelionCrown, MOD_ID);
@@ -338,7 +344,7 @@ public class FeatureModel implements ModelEntrypoint {
 				});
 		}
 
-		if (FeaturesItems.regularCrownEnabled == 1) {
+		if (FeaturesItems.crownsEnabled == 1) {
 			ModelHelper.setItemModel(FeaturesItems.leatherCrown,
 				() -> {
 					ItemModelStandard model = new ItemModelStandard(FeaturesItems.leatherCrown, MOD_ID);
@@ -376,7 +382,7 @@ public class FeatureModel implements ModelEntrypoint {
 					return model;
 				});
 
-			if (FeaturesItems.stoneArmorEnabled == 1) {
+			if (FeaturesItems.blockArmorEnabled == 1) {
 				ModelHelper.setItemModel(FeaturesItems.stoneCrown,
 					() -> {
 						ItemModelStandard model = new ItemModelStandard(FeaturesItems.stoneCrown, MOD_ID);
@@ -384,7 +390,7 @@ public class FeatureModel implements ModelEntrypoint {
 						return model;
 					});
 			}
-			if (FeaturesItems.olivineArmorEnabled == 1) {
+			if (FeaturesItems.miscArmorEnabled == 1) {
 				ModelHelper.setItemModel(FeaturesItems.olivineCrown,
 					() -> {
 						ItemModelStandard model = new ItemModelStandard(FeaturesItems.olivineCrown, MOD_ID);
@@ -392,7 +398,7 @@ public class FeatureModel implements ModelEntrypoint {
 						return model;
 					});
 			}
-			if (FeaturesItems.bedrockArmorEnabled == 1) {
+			if (FeaturesItems.blockArmorEnabled == 1) {
 				ModelHelper.setItemModel(FeaturesItems.bedrockCrown,
 					() -> {
 						ItemModelStandard model = new ItemModelStandard(FeaturesItems.bedrockCrown, MOD_ID);
@@ -400,7 +406,7 @@ public class FeatureModel implements ModelEntrypoint {
 						return model;
 					});
 			}
-			if (FeaturesItems.plateArmorEnabled == 1) {
+			if (FeaturesItems.oldArmorEnabled == 1) {
 				ModelHelper.setItemModel(FeaturesItems.plateCrown,
 					() -> {
 						ItemModelStandard model = new ItemModelStandard(FeaturesItems.plateCrown, MOD_ID);
@@ -408,7 +414,7 @@ public class FeatureModel implements ModelEntrypoint {
 						return model;
 					});
 			}
-			if (FeaturesItems.leatherchainArmorEnabled == 1) {
+			if (FeaturesItems.oldArmorEnabled == 1) {
 				ModelHelper.setItemModel(FeaturesItems.leatherChainCrown,
 					() -> {
 						ItemModelStandard model = new ItemModelStandard(FeaturesItems.leatherChainCrown, MOD_ID);
@@ -416,7 +422,7 @@ public class FeatureModel implements ModelEntrypoint {
 						return model;
 					});
 			}
-			if (FeaturesItems.quartzArmorEnabled == 1) {
+			if (FeaturesItems.miscArmorEnabled == 1) {
 				ModelHelper.setItemModel(FeaturesItems.quartzCrown,
 					() -> {
 						ItemModelStandard model = new ItemModelStandard(FeaturesItems.quartzCrown, MOD_ID);
@@ -426,7 +432,7 @@ public class FeatureModel implements ModelEntrypoint {
 			}
 		}
 
-		if (FeaturesItems.bedrockArmorEnabled == 1) {
+		if (FeaturesItems.blockArmorEnabled == 1) {
 			ModelHelper.setItemModel(FeaturesItems.bedrockHelmet,
 				() -> {
 					ItemModelStandard model = new ItemModelStandard(FeaturesItems.bedrockHelmet, MOD_ID);
@@ -453,7 +459,7 @@ public class FeatureModel implements ModelEntrypoint {
 				});
 		}
 
-		if (FeaturesItems.plateArmorEnabled == 1) {
+		if (FeaturesItems.oldArmorEnabled == 1) {
 			ModelHelper.setItemModel(FeaturesItems.plateHelmet,
 				() -> {
 					ItemModelStandard model = new ItemModelStandard(FeaturesItems.plateHelmet, MOD_ID);
@@ -468,7 +474,7 @@ public class FeatureModel implements ModelEntrypoint {
 				});
 		}
 
-		if (FeaturesItems.leatherchainArmorEnabled == 1) {
+		if (FeaturesItems.oldArmorEnabled == 1) {
 			ModelHelper.setItemModel(FeaturesItems.leatherChainHelmet,
 				() -> {
 					ItemModelStandard model = new ItemModelStandard(FeaturesItems.leatherChainHelmet, MOD_ID);
@@ -495,7 +501,7 @@ public class FeatureModel implements ModelEntrypoint {
 				});
 		}
 
-		if (FeaturesItems.stoneArmorEnabled == 1) {
+		if (FeaturesItems.blockArmorEnabled == 1) {
 			ModelHelper.setItemModel(FeaturesItems.stoneHelmet,
 				() -> {
 					ItemModelStandard model = new ItemModelStandard(FeaturesItems.stoneHelmet, MOD_ID);
@@ -522,7 +528,7 @@ public class FeatureModel implements ModelEntrypoint {
 				});
 		}
 
-		if (FeaturesItems.olivineArmorEnabled == 1) {
+		if (FeaturesItems.miscArmorEnabled == 1) {
 			ModelHelper.setItemModel(FeaturesItems.olivineHelmet,
 				() -> {
 					ItemModelStandard model = new ItemModelStandard(FeaturesItems.olivineHelmet, MOD_ID);
@@ -549,7 +555,7 @@ public class FeatureModel implements ModelEntrypoint {
 				});
 		}
 
-		if (FeaturesItems.quartzArmorEnabled == 1) {
+		if (FeaturesItems.miscArmorEnabled == 1) {
 			ModelHelper.setItemModel(FeaturesItems.quartzHelmet,
 				() -> {
 					ItemModelStandard model = new ItemModelStandard(FeaturesItems.quartzHelmet, MOD_ID);
@@ -591,7 +597,7 @@ public class FeatureModel implements ModelEntrypoint {
 				});
 		}
 
-		if (FeaturesItems.workbenchonstickEnabled == 1) {
+		if (FeaturesItems.newToolsEnabled == 1) {
 			ModelHelper.setItemModel(FeaturesItems.workbenchOnStick,
 				() -> {
 					ItemModelStandard model = new ItemModelStandard(FeaturesItems.workbenchOnStick, MOD_ID).setFull3D();
@@ -600,16 +606,23 @@ public class FeatureModel implements ModelEntrypoint {
 				});
 		}
 
-		if (FeaturesItems.soulEnabled == 1) {
+		if (FeaturesItems.miscItemsEnabled == 1) {
 			ModelHelper.setItemModel(FeaturesItems.mobSoul,
 				() -> {
 					ItemModelStandard model = new ItemModelStandard(FeaturesItems.mobSoul, MOD_ID);
 					model.icon = TextureRegistry.getTexture(FeaturesItems.mobSoul.namespaceID);
 					return model;
 				});
+
+			ModelHelper.setItemModel(FeaturesItems.fluxSeed,
+				() -> {
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.fluxSeed, MOD_ID);
+					model.icon = TextureRegistry.getTexture(FeaturesItems.fluxSeed.namespaceID);
+					return model;
+				});
 		}
 
-		if (FeaturesItems.paxelsEnabled == 1) {
+		if (FeaturesItems.newToolsEnabled == 1) {
 			ModelHelper.setItemModel(FeaturesItems.paxelWood,
 				() -> {
 					ItemModelStandard model = new ItemModelStandard(FeaturesItems.paxelWood, MOD_ID).setFull3D();
@@ -644,6 +657,80 @@ public class FeatureModel implements ModelEntrypoint {
 				() -> {
 					ItemModelStandard model = new ItemModelStandard(FeaturesItems.paxelSteel, MOD_ID).setFull3D();
 					model.icon = TextureRegistry.getTexture(FeaturesItems.paxelSteel.namespaceID);
+					return model;
+				});
+
+			ModelHelper.setItemModel(FeaturesItems.climbPickaxeWood,
+				() -> {
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.climbPickaxeWood, MOD_ID).setFull3D();
+					model.icon = TextureRegistry.getTexture(FeaturesItems.climbPickaxeWood.namespaceID);
+					return model;
+				});
+			ModelHelper.setItemModel(FeaturesItems.climbPickaxeStone,
+				() -> {
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.climbPickaxeStone, MOD_ID).setFull3D();
+					model.icon = TextureRegistry.getTexture(FeaturesItems.climbPickaxeStone.namespaceID);
+					return model;
+				});
+			ModelHelper.setItemModel(FeaturesItems.climbPickaxeIron,
+				() -> {
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.climbPickaxeIron, MOD_ID).setFull3D();
+					model.icon = TextureRegistry.getTexture(FeaturesItems.climbPickaxeIron.namespaceID);
+					return model;
+				});
+			ModelHelper.setItemModel(FeaturesItems.climbPickaxeGold,
+				() -> {
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.climbPickaxeGold, MOD_ID).setFull3D();
+					model.icon = TextureRegistry.getTexture(FeaturesItems.climbPickaxeGold.namespaceID);
+					return model;
+				});
+			ModelHelper.setItemModel(FeaturesItems.climbPickaxeDiamond,
+				() -> {
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.climbPickaxeDiamond, MOD_ID).setFull3D();
+					model.icon = TextureRegistry.getTexture(FeaturesItems.climbPickaxeDiamond.namespaceID);
+					return model;
+				});
+			ModelHelper.setItemModel(FeaturesItems.climbPickaxeSteel,
+				() -> {
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.climbPickaxeSteel, MOD_ID).setFull3D();
+					model.icon = TextureRegistry.getTexture(FeaturesItems.climbPickaxeSteel.namespaceID);
+					return model;
+				});
+
+			ModelHelper.setItemModel(FeaturesItems.miningHammerWood,
+				() -> {
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.miningHammerWood, MOD_ID).setFull3D();
+					model.icon = TextureRegistry.getTexture(FeaturesItems.miningHammerWood.namespaceID);
+					return model;
+				});
+			ModelHelper.setItemModel(FeaturesItems.miningHammerStone,
+				() -> {
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.miningHammerStone, MOD_ID).setFull3D();
+					model.icon = TextureRegistry.getTexture(FeaturesItems.miningHammerStone.namespaceID);
+					return model;
+				});
+			ModelHelper.setItemModel(FeaturesItems.miningHammerIron,
+				() -> {
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.miningHammerIron, MOD_ID).setFull3D();
+					model.icon = TextureRegistry.getTexture(FeaturesItems.miningHammerIron.namespaceID);
+					return model;
+				});
+			ModelHelper.setItemModel(FeaturesItems.miningHammerGold,
+				() -> {
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.miningHammerGold, MOD_ID).setFull3D();
+					model.icon = TextureRegistry.getTexture(FeaturesItems.miningHammerGold.namespaceID);
+					return model;
+				});
+			ModelHelper.setItemModel(FeaturesItems.miningHammerDiamond,
+				() -> {
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.miningHammerDiamond, MOD_ID).setFull3D();
+					model.icon = TextureRegistry.getTexture(FeaturesItems.miningHammerDiamond.namespaceID);
+					return model;
+				});
+			ModelHelper.setItemModel(FeaturesItems.miningHammerSteel,
+				() -> {
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.miningHammerSteel, MOD_ID).setFull3D();
+					model.icon = TextureRegistry.getTexture(FeaturesItems.miningHammerSteel.namespaceID);
 					return model;
 				});
 		}

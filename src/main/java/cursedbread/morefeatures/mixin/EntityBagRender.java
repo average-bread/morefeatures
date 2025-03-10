@@ -1,8 +1,7 @@
 package cursedbread.morefeatures.mixin;
 
-import cursedbread.morefeatures.FeaturesMain;
-import cursedbread.morefeatures.item.ItemBombQuiver;
-import cursedbread.morefeatures.item.ItemBombQuiverEndless;
+import cursedbread.morefeatures.item.bomb_bag.ItemBombQuiver;
+import cursedbread.morefeatures.item.bomb_bag.ItemBombQuiverEndless;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.Minecraft;
@@ -17,7 +16,6 @@ import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-@Debug(export=true)
 @Mixin(value = EntityRenderer.class, remap = false)
 public class EntityBagRender{
 	@Shadow
@@ -29,10 +27,10 @@ public class EntityBagRender{
 	String gold_quiver_texture_path = "/assets/minecraft/textures/armor/quiver_golden.png";
 
 	@Unique
-	String bomb_quiver_texture_path = "/assets/morefeatures/textures/armor/bag_bag_normal_1.png";
+	String bomb_quiver_texture_path = "/assets/morefeatures/textures/armor/other/bag_bag_normal_1.png";
 
 	@Unique
-	String bomb_golden_quiver_texture_path = "/assets/morefeatures/textures/armor/bag_bag_gold_1.png";
+	String bomb_golden_quiver_texture_path = "/assets/morefeatures/textures/armor/other/bag_bag_gold_1.png";
 
 	@Inject(method = "bindTexture", at = @At("HEAD"), cancellable = true)
 	@Environment(EnvType.CLIENT)

@@ -2,6 +2,8 @@ package cursedbread.morefeatures.mixin;
 
 import cursedbread.morefeatures.FeaturesMain;
 import cursedbread.morefeatures.item.FeaturesItems;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.player.inventory.slot.SlotArmor;
 import org.spongepowered.asm.mixin.Final;

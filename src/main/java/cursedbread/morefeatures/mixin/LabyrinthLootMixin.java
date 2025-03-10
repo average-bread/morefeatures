@@ -1,6 +1,8 @@
 package cursedbread.morefeatures.mixin;
 
 import cursedbread.morefeatures.item.FeaturesItems;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.world.generate.feature.WorldFeatureLabyrinth;
 import org.spongepowered.asm.mixin.Mixin;
@@ -21,18 +23,18 @@ public class LabyrinthLootMixin {
 				cir.setReturnValue( new ItemStack(FeaturesItems.bombBagGold));
 			}
 		}
-		if (FeaturesItems.plateArmorEnabled == 1) {
+		if (FeaturesItems.oldArmorEnabled == 1) {
 			int j = random.nextInt(32);
 			if (j == 1) {
 				cir.setReturnValue( new ItemStack(FeaturesItems.plateHelmet, 1, FeaturesItems.plateHelmet.getMaxDamage() - random.nextInt(FeaturesItems.plateHelmet.getMaxDamage())));
 			} else if (j == 2) {
 				cir.setReturnValue( new ItemStack(FeaturesItems.plateChestplate, 1, FeaturesItems.plateChestplate.getMaxDamage() - random.nextInt(FeaturesItems.plateChestplate.getMaxDamage())));
 			}
-			if (FeaturesItems.regularCrownEnabled == 1 && j == 3){
+			if (FeaturesItems.crownsEnabled == 1 && j == 3){
 				cir.setReturnValue( new ItemStack(FeaturesItems.plateCrown, 1, FeaturesItems.plateCrown.getMaxDamage() - random.nextInt(FeaturesItems.plateCrown.getMaxDamage())));
 			}
 		}
-		if (FeaturesItems.regularCrownEnabled == 1) {
+		if (FeaturesItems.crownsEnabled == 1) {
 			int a = random.nextInt(16);
 			if (a == 1) {
 				cir.setReturnValue( new ItemStack(FeaturesItems.chainCrown, 1, FeaturesItems.chainCrown.getMaxDamage() - random.nextInt(FeaturesItems.chainCrown.getMaxDamage() / 2)));
