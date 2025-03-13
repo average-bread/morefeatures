@@ -149,7 +149,7 @@ public class FeaturesBlocks {
 			for (color = 2; color < 17; color++) {
 				CreativeHelper.setParent(vanillaColoredGlass, color - 1, vanillaColoredGlass, color);
 			}
-			Item.itemsList[vanillaColoredGlassTrapdoor.id()] = new ItemBlockPainted<>(vanillaColoredGlassTrapdoor, false);
+			Item.itemsList[vanillaColoredGlassTrapdoor.id()] = new ItemBlockPainted<>(vanillaColoredGlassTrapdoor, true);
 			for (color = 2; color < 17; color++) {
 				CreativeHelper.setParent(vanillaColoredGlassTrapdoor, color - 1, vanillaColoredGlassTrapdoor, color);
 			}

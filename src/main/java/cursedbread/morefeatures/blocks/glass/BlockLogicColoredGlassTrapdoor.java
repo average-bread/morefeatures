@@ -41,4 +41,8 @@ public class BlockLogicColoredGlassTrapdoor extends BlockLogicTrapDoorPainted im
 		int meta = world.getBlockMetadata(x, y, z);
 		world.setBlockAndMetadataWithNotify(x, y, z, FeaturesBlocks.vanillaColoredGlassTrapdoor.id(), meta & 15);
 	}
+
+	public void setColor(World world, int x, int y, int z, DyeColor color) {
+		super.setColor(world, x, y, z, color);
+	}
 }

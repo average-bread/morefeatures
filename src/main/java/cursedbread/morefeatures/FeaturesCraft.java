@@ -306,6 +306,25 @@ public class FeaturesCraft implements RecipeEntrypoint {
 					new ItemStack(FeaturesBlocks.vanillaColoredGlass, 1, 13),
 					new ItemStack(FeaturesBlocks.vanillaColoredGlass, 1, 14),
 					new ItemStack(FeaturesBlocks.vanillaColoredGlass, 1, 15)));
+
+				Registries.ITEM_GROUPS.register("morefeatures:glassetrapdoors", Registries.stackListOf(
+					Blocks.TRAPDOOR_GLASS,
+					new ItemStack(FeaturesBlocks.vanillaColoredGlassTrapdoor, 1, 0),
+					new ItemStack(FeaturesBlocks.vanillaColoredGlassTrapdoor, 1, 16),
+					new ItemStack(FeaturesBlocks.vanillaColoredGlassTrapdoor, 1, 32),
+					new ItemStack(FeaturesBlocks.vanillaColoredGlassTrapdoor, 1, 48),
+					new ItemStack(FeaturesBlocks.vanillaColoredGlassTrapdoor, 1, 64),
+					new ItemStack(FeaturesBlocks.vanillaColoredGlassTrapdoor, 1, 80),
+					new ItemStack(FeaturesBlocks.vanillaColoredGlassTrapdoor, 1, 96),
+					new ItemStack(FeaturesBlocks.vanillaColoredGlassTrapdoor, 1, 112),
+					new ItemStack(FeaturesBlocks.vanillaColoredGlassTrapdoor, 1, 128),
+					new ItemStack(FeaturesBlocks.vanillaColoredGlassTrapdoor, 1, 144),
+					new ItemStack(FeaturesBlocks.vanillaColoredGlassTrapdoor, 1, 160),
+					new ItemStack(FeaturesBlocks.vanillaColoredGlassTrapdoor, 1, 176),
+					new ItemStack(FeaturesBlocks.vanillaColoredGlassTrapdoor, 1, 192),
+					new ItemStack(FeaturesBlocks.vanillaColoredGlassTrapdoor, 1, 208),
+					new ItemStack(FeaturesBlocks.vanillaColoredGlassTrapdoor, 1, 224),
+					new ItemStack(FeaturesBlocks.vanillaColoredGlassTrapdoor, 1, 240)));
 			}
 		}
 	}
@@ -323,7 +342,7 @@ public class FeaturesCraft implements RecipeEntrypoint {
 
 			RecipeBuilder.Shaped(MOD_ID)
 				.setShape("GGG", "GDG", "GGG")
-				.addInput('D', Items.BUCKET_WATER)
+				.addInput('D', Blocks.SPONGE_WET)
 				.addInput('G', "morefeatures:glowstones")
 				.create("itemGroupExample", new ItemStack(Blocks.GLOWSTONE, 8));
 //			if (FeaturesMain.nonamedyesOn) {
@@ -358,7 +377,7 @@ public class FeaturesCraft implements RecipeEntrypoint {
 
 			RecipeBuilder.Shaped(MOD_ID)
 				.setShape("GGG", "GDG", "GGG")
-				.addInput('D', Items.BUCKET_WATER)
+				.addInput('D', Blocks.SPONGE_WET)
 				.addInput('G', "morefeatures:paperwall")
 				.create("itemGroupExample", new ItemStack(Blocks.PAPER_WALL, 8));
 		}
@@ -372,17 +391,27 @@ public class FeaturesCraft implements RecipeEntrypoint {
 					.create("itemGroupExample", new ItemStack(FeaturesBlocks.vanillaColoredGlass, 8, 15 - i));
 
 				RecipeBuilder.Shaped(MOD_ID)
-					.setShape("GGG", "GGG", " D ")
-					.addInput('D', Items.DYE, i)
-					.addInput('G', "morefeatures:glasses")
-					.create("itemGroupExample", new ItemStack(FeaturesBlocks.vanillaColoredGlassTrapdoor, 8, 15 - i));
+					.setShape("GGG", "GGG")
+					.addInput('G', FeaturesBlocks.vanillaColoredGlass, 15 - i)
+					.create("itemGroupExample", new ItemStack(FeaturesBlocks.vanillaColoredGlassTrapdoor, 6, (15 - i)*16));
+
+				RecipeBuilder.Shapeless(MOD_ID)
+					.addInput("morefeatures:glassetrapdoors")
+					.addInput(Items.DYE, i)
+					.create("itemGroupExample", new ItemStack(FeaturesBlocks.vanillaColoredGlassTrapdoor, 1, (15 - i)*16));
 			}
 
 			RecipeBuilder.Shaped(MOD_ID)
 				.setShape("GGG", "GDG", "GGG")
-				.addInput('D', Items.BUCKET_WATER)
+				.addInput('D', Blocks.SPONGE_WET)
 				.addInput('G', "morefeatures:glasses")
 				.create("itemGroupExample", new ItemStack(Blocks.GLASS, 8));
+
+			RecipeBuilder.Shaped(MOD_ID)
+				.setShape("GGG", "GDG", "GGG")
+				.addInput('D', Blocks.SPONGE_WET)
+				.addInput('G', "morefeatures:glassetrapdoors")
+				.create("itemGroupExample", new ItemStack(Blocks.TRAPDOOR_GLASS, 8));
 //			if (FeaturesMain.nonamedyesOn) {
 //				for (int i = 0; i <=13; i++) {
 //					RecipeBuilder.Shaped(MOD_ID)

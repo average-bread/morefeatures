@@ -1,17 +1,19 @@
 # More Features mod
 
+Thanks to Useless, Bigjango13 for help with the mod
+
 Mod that should add a lot of new blocks, items and everything that randomly get into my delusional head :D
 
 Currently, adds:
-* Four flower crowns: dandelion, rose, cherry and dead bush. All can be crafted with representing plant (check recipe book),
+* Eight flower crowns: dandelion, rose, cherry, dead bush, orcid, heather, bluebell and marigold. All can be crafted with representing plant (check recipe book),
 
 * Bedrock armor (no bedrock obtaining in survival)
 
-* Colored glowstone blocks that can be crafted using 8 of any glowstone block and 1 dye. Can now generate naturally
+* Colored glowstone blocks that can be crafted using 8 of any glowstone block and 1 dye. Some colored glowstone can generate naturally
 
-* Workbench On A Stick. Can be crafted using a stick and a workbench. Right click any block to use workbench anywhere
+* Workbench On A Stick. Can be crafted using a stick and a workbench. Right click to use workbench anywhere
 
-* Six crown: leather, chaimail, iron, golden, diamond and steel
+* Six crown: leather, chaimail, iron, golden, diamond and steel. 
 
 * Colored paper wall blocks. Can be crafted using 8 of any paper wall block and 1 dye
 
@@ -46,3 +48,17 @@ Currently, adds:
 * Colored glass. Can be crafted with 8 of any glass and 1 dye
 
 * Rainbow flower. Can't be crafted in dye but can create two copies of any dye
+
+* Colored glass trapdoors
+
+* Block of ham with cooked variant. Raw can be placed in the nether to be instantly cooked
+
+* Super ores for every vanilla ore. Can randomly replace normal ores and will drop more stuff
+
+* Paxels that can be used as universal multi-tools. 
+
+* Climbing pickaxe that allow player to climb walls.
+
+* Mining hammers that break 3x3 area.
+
+* Flux plant that can be grown to farm string. Seeds can be found if you shift+right click on grass with paxel
