@@ -11,6 +11,7 @@ import cursedbread.morefeatures.item.FeaturesItems;
 import net.minecraft.core.block.*;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.block.tag.BlockTags;
+import net.minecraft.core.data.tag.Tag;
 import net.minecraft.core.item.Item;
 import net.minecraft.core.item.block.ItemBlockPainted;
 import net.minecraft.core.sound.BlockSound;
@@ -55,32 +56,26 @@ public class FeaturesBlocks {
 
 	public static int blockId;
 
+	public static int coloredBlocksEnabled;
 	public static Block<?> vanillaColoredGlowstone;
 	public static Block<?> nonameColoredGlowstone;
-	public static int glowstoneEnabled;
 	public static Block<?> vanillaColoredPaperwall;
 	public static Block<?> nonameColoredPaperwall;
-
-	public static int paperwallEnabled;
-
-	public static Block<?> gildingTable;
-
-	public static int gildingtableEnabled;
-
 	public static Block<?> vanillaColoredGlass;
 	public static Block<?> vanillaColoredGlassTrapdoor;
 	public static Block<?> nonameColoredGlass;
 	public static Block<?> nonameColoredGlassTrapdoor;
-	public static int glassEnabled;
+
+	public static int miscBlocksEnabled;
+	public static Block<?> gildingTable;
+	public static Block<?> ham;
+	public static Block<?> cookedham;
+	public static Block<?> burnedLog;
 
 	public static int plantEnabled;
 	public static Block<BlockLogicFlowerStackable> rainbowFlower;
 	public static int rainbowFlowerChance;
 	public static Block<?> fluxCropws;
-
-	public static Block<?> ham;
-	public static Block<?> cookedham;
-	public static int hamEnabled;
 
 	public static int superoresEnabled;
 	public static Block<?> superCoalStoneOre;
@@ -132,19 +127,19 @@ public class FeaturesBlocks {
 
 	private void initializeBlockDetails() {
 		int color;
-		if (glowstoneEnabled == 1) {
+		if (coloredBlocksEnabled == 1) {
 			Item.itemsList[vanillaColoredGlowstone.id()] = new ItemBlockPainted<>(vanillaColoredGlowstone, false);
 			for (color = 1; color < 16; color++) {
 				CreativeHelper.setParent(vanillaColoredGlowstone, color, vanillaColoredGlowstone, color-1);
 			}
 		}
-		if (paperwallEnabled == 1) {
+		if (coloredBlocksEnabled == 1) {
 			Item.itemsList[vanillaColoredPaperwall.id()] = new ItemBlockPainted<>(vanillaColoredPaperwall, false);
 			for (color = 2; color < 17; color++) {
 				CreativeHelper.setParent(vanillaColoredPaperwall, color - 1, vanillaColoredPaperwall, 0);
 			}
 		}
-		if (glassEnabled == 1) {
+		if (coloredBlocksEnabled == 1) {
 			Item.itemsList[vanillaColoredGlass.id()] = new ItemBlockPainted<>(vanillaColoredGlass, false);
 			for (color = 2; color < 17; color++) {
 				CreativeHelper.setParent(vanillaColoredGlass, color - 1, vanillaColoredGlass, color);
@@ -157,24 +152,24 @@ public class FeaturesBlocks {
 	}
 
 	public void initilizeBlocks() {
-		if (glowstoneEnabled == 1) {
+		if (coloredBlocksEnabled == 1) {
 			vanillaColoredGlowstone = glowstoneBlock
 				.build("vanilla.colored.glowstone", blockId++, b -> new BlockLogicColoredGlowstone(b, Material.glass))
 				.withDisabledNeighborNotifyOnMetadataChange();
 		}
 
-		if (paperwallEnabled == 1) {
+		if (coloredBlocksEnabled == 1) {
 			vanillaColoredPaperwall = paperwallBlock
 					.build("vanilla.paperwall", blockId++, b -> new BlockLogicColoredPaperwall(b, Material.wood));
 		}
-		if (glassEnabled == 1) {
+		if (coloredBlocksEnabled == 1) {
 			vanillaColoredGlass = coloredglass
 				.build("vanilla.colored.glass", blockId++, b -> new BlockLogicColoredGlass(b, Material.glass)).withTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.EXTENDS_MOTION_SENSOR_RANGE);
 			vanillaColoredGlassTrapdoor = coloredglasstrapdoors
 				.build("vanilla.colored.glasstrapdoor", blockId++, b -> new BlockLogicColoredGlassTrapdoor(b, Material.glass)).withDisabledNeighborNotifyOnMetadataChange().setBlockItem((bl) -> new ItemBlockPainted<>(bl, true));
 		}
 
-		if (gildingtableEnabled == 1) {
+		if (miscBlocksEnabled == 1) {
 			gildingTable = fullBlock
 				.setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.FENCES_CONNECT)
 				.setHardness(5f)
@@ -187,7 +182,7 @@ public class FeaturesBlocks {
 				.build("flower.rainbow", blockId++, b -> (BlockLogicFlowerStackable) new BlockLogicFlowerStackable(b).setKilledByWeather().setBonemealable());
 		}
 
-		if (hamEnabled == 1) {
+		if (miscBlocksEnabled == 1) {
 			ham = fullBlock
 				.setTags(BlockTags.FENCES_CONNECT, BlockTags.MINEABLE_BY_SWORD)
 				.setHardness(0.1f)
@@ -364,7 +359,16 @@ public class FeaturesBlocks {
 					return FeaturesItems.fluxSeed;
 				});
 		}
-		initializeBlockDetails();
+
+
+		if (miscBlocksEnabled == 1){
+			burnedLog = fullBlock
+				.build("burned.log", blockId++, b -> new BlockLogicLog(b))
+				.withSound(BlockSounds.WOOD)
+				.withHardness(2.0F)
+				.withDisabledNeighborNotifyOnMetadataChange()
+				.withTags(new Tag[]{BlockTags.FENCES_CONNECT, BlockTags.MINEABLE_BY_AXE});
+		}
 	}
 }
 

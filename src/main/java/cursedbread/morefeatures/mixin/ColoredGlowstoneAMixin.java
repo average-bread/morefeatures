@@ -19,7 +19,7 @@ import java.util.Random;
 public class ColoredGlowstoneAMixin {
 
 	public void glowstonegeneration(World world, Random random, int x, int y, int z, CallbackInfoReturnable<Boolean> cir){
-		if (FeaturesBlocks.glowstoneEnabled == 1) {
+		if (FeaturesBlocks.coloredBlocksEnabled == 1) {
 			int g = random.nextInt(3);
 			if (g == 1) {
 				if (!world.isAirBlock(x, y, z)) {

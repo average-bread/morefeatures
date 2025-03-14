@@ -524,3 +524,6 @@ tile.morefeatures.superore.nether.coal.netherrack.desc=A CHONK of nether coal em
 
 tile.morefeatures.fire.red.name=Red Fire
 tile.morefeatures.fire.red.desc=Extra hot.
+
+tile.morefeatures.burned.log.name=Burned Log
+tile.morefeatures.burned.log.desc=A burned log.

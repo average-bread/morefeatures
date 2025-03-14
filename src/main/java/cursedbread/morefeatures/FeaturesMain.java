@@ -32,15 +32,12 @@ public class FeaturesMain implements ModInitializer, GameStartEntrypoint, Client
 
 		prop.setProperty("Comment", "yes_is_1|no_is_0");
 
-		prop.setProperty("Add_colored_glowstone_blocks", "1");
-		prop.setProperty("Add_colored_paper_wall_blocks", "1");
-		prop.setProperty("Add_gilding_table", "1");
+		prop.setProperty("Colored_blocks", "1");
+		prop.setProperty("Misc_blocks", "1");
 		prop.setProperty("Plants", "1");
 		prop.setProperty("Chance_to_rainbow_a_flower", "5");
-		prop.setProperty("Chance_to_rainbow_a_super_ore", "5");
-		prop.setProperty("Add_colored_glass_blocks", "1");
-		prop.setProperty("Add_ham_blocks", "1");
-		prop.setProperty("Add_super_ores", "1");
+		prop.setProperty("Chance_to_generate_a_super_ore", "5");
+		prop.setProperty("Super_ores", "1");
 
 		prop.setProperty("Crowns", "1");
 		prop.setProperty("Block_armor", "1");
@@ -61,15 +58,12 @@ public class FeaturesMain implements ModInitializer, GameStartEntrypoint, Client
 		paperWallAlt = config.getInt("painted_or_alt_or_colored_paper_walls_texture_(0_or_1_or_2)");
 
 		//Blocks
-		FeaturesBlocks.glowstoneEnabled = config.getInt("Add_colored_glowstone_blocks");
-		FeaturesBlocks.paperwallEnabled = config.getInt("Add_colored_paper_wall_blocks");
-		FeaturesBlocks.gildingtableEnabled = config.getInt("Add_gilding_table");
-		FeaturesBlocks.glassEnabled = config.getInt("Add_colored_glass_blocks");
+		FeaturesBlocks.coloredBlocksEnabled = config.getInt("Colored_blocks");
+		FeaturesBlocks.miscBlocksEnabled = config.getInt("Misc_blocks");
 		FeaturesBlocks.plantEnabled = config.getInt("Plants");
 		FeaturesBlocks.rainbowFlowerChance = Math.max(Math.min(config.getInt("Chance_to_rainbow_a_flower"), 100), 1);
-		superoreChance = Math.max(Math.min(config.getInt("Chance_to_rainbow_a_super_ore"), 100), 1);
-		FeaturesBlocks.hamEnabled = config.getInt("Add_ham_blocks");
-		FeaturesBlocks.superoresEnabled = config.getInt("Add_super_ores");
+		superoreChance = Math.max(Math.min(config.getInt("Chance_to_generate_a_super_ore"), 100), 1);
+		FeaturesBlocks.superoresEnabled = config.getInt("Super_ores");
 		//Items
 		FeaturesItems.crownsEnabled = config.getInt("Crowns");
 		FeaturesItems.blockArmorEnabled = config.getInt("Block_armor");

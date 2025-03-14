@@ -144,7 +144,7 @@ public class FeaturesCraft implements RecipeEntrypoint {
 		RecipeBuilder.initNameSpace(FeaturesMain.MOD_ID);
 		RecipeBuilder.getRecipeNamespace(FeaturesMain.MOD_ID);
 		if (/*FeaturesMain.nonamedyesOn*/ false) {
-			if (FeaturesBlocks.glassEnabled == 1) {
+			if (FeaturesBlocks.coloredBlocksEnabled == 1) {
 				Registries.ITEM_GROUPS.register("morefeatures:glowstones", Registries.stackListOf(
 					Blocks.GLOWSTONE,
 					new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 0),
@@ -179,7 +179,7 @@ public class FeaturesCraft implements RecipeEntrypoint {
 					new ItemStack(FeaturesBlocks.nonameColoredGlowstone, 1, 13)));
 			}
 
-			if (FeaturesBlocks.paperwallEnabled == 1){
+			if (FeaturesBlocks.coloredBlocksEnabled == 1){
 				Registries.ITEM_GROUPS.register("morefeatures:paperwall", Registries.stackListOf(Blocks.PAPER_WALL, new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 0),
 					new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 1),
 					new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 2),
@@ -212,7 +212,7 @@ public class FeaturesCraft implements RecipeEntrypoint {
 					new ItemStack(FeaturesBlocks.nonameColoredPaperwall, 1, 13)));
 			}
 
-			if (FeaturesBlocks.glassEnabled == 1){
+			if (FeaturesBlocks.coloredBlocksEnabled == 1){
 				Registries.ITEM_GROUPS.register("morefeatures:glasses", Registries.stackListOf(
 					Blocks.GLASS,
 					new ItemStack(FeaturesBlocks.vanillaColoredGlass, 1, 0),
@@ -247,7 +247,7 @@ public class FeaturesCraft implements RecipeEntrypoint {
 					new ItemStack(FeaturesBlocks.nonameColoredGlass, 1, 13)));
 			}
 		} else {
-			if (FeaturesBlocks.glowstoneEnabled == 1){
+			if (FeaturesBlocks.coloredBlocksEnabled == 1){
 				Registries.ITEM_GROUPS.register("morefeatures:glowstones", Registries.stackListOf(
 					Blocks.GLOWSTONE,
 					new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 0),
@@ -268,7 +268,7 @@ public class FeaturesCraft implements RecipeEntrypoint {
 					new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 15)));
 			}
 
-			if (FeaturesBlocks.paperwallEnabled == 1){
+			if (FeaturesBlocks.coloredBlocksEnabled == 1){
 				Registries.ITEM_GROUPS.register("morefeatures:paperwall", Registries.stackListOf(Blocks.PAPER_WALL, new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 0),
 					new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 1),
 					new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 2),
@@ -287,7 +287,7 @@ public class FeaturesCraft implements RecipeEntrypoint {
 					new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 15)));
 			}
 
-			if (FeaturesBlocks.glassEnabled == 1){
+			if (FeaturesBlocks.coloredBlocksEnabled == 1){
 				Registries.ITEM_GROUPS.register("morefeatures:glasses", Registries.stackListOf(
 					Blocks.GLASS,
 					new ItemStack(FeaturesBlocks.vanillaColoredGlass, 1, 0),
@@ -331,7 +331,7 @@ public class FeaturesCraft implements RecipeEntrypoint {
 	@Override
 	public void onRecipesReady() {
 		//colored glowstone crafting
-		if (FeaturesBlocks.glowstoneEnabled == 1) {
+		if (FeaturesBlocks.coloredBlocksEnabled == 1) {
 			for (int i = 0; i <=15; i++) {
 				RecipeBuilder.Shaped(MOD_ID)
 					.setShape("GGG", "GDG", "GGG")
@@ -356,7 +356,7 @@ public class FeaturesCraft implements RecipeEntrypoint {
 //			}
 		}
 		//colored paper walls crafting
-		if (FeaturesBlocks.paperwallEnabled == 1) {
+		if (FeaturesBlocks.coloredBlocksEnabled == 1) {
 			for (int i = 0; i <=15; i++){
 				RecipeBuilder.Shaped(MOD_ID)
 					.setShape("GGG", "GDG", "GGG")
@@ -382,7 +382,7 @@ public class FeaturesCraft implements RecipeEntrypoint {
 				.create("itemGroupExample", new ItemStack(Blocks.PAPER_WALL, 8));
 		}
 		//colored glass crafting
-		if (FeaturesBlocks.glassEnabled == 1) {
+		if (FeaturesBlocks.coloredBlocksEnabled == 1) {
 			for (int i = 0; i <=15; i++) {
 				RecipeBuilder.Shaped(MOD_ID)
 					.setShape("GGG", "GDG", "GGG")
@@ -423,7 +423,7 @@ public class FeaturesCraft implements RecipeEntrypoint {
 //			}
 		}
 		//gilding block crafting
-		if (FeaturesBlocks.gildingtableEnabled == 1) {
+		if (FeaturesBlocks.miscBlocksEnabled == 1) {
 			RecipeBuilder.Shaped(MOD_ID)
 				.setShape("HHH", "DDD", "EEE")
 				.addInput('H', Blocks.BLOCK_GOLD)
@@ -615,7 +615,7 @@ public class FeaturesCraft implements RecipeEntrypoint {
 //			}
 		}
 
-		if (FeaturesBlocks.hamEnabled == 1) {
+		if (FeaturesBlocks.miscBlocksEnabled == 1) {
 			for (int j = 0; j < smallsquireMaterial.length; j++) {
 				RecipeBuilder.Shaped(MOD_ID)
 					.setShape("HH", "HH")

@@ -13,10 +13,7 @@ import net.fabricmc.api.Environment;
 import net.minecraft.client.render.EntityRenderDispatcher;
 import net.minecraft.client.render.TileEntityRenderDispatcher;
 import net.minecraft.client.render.block.color.BlockColorDispatcher;
-import net.minecraft.client.render.block.model.BlockModelCrossedSquares;
-import net.minecraft.client.render.block.model.BlockModelDispatcher;
-import net.minecraft.client.render.block.model.BlockModelFlowerStackable;
-import net.minecraft.client.render.block.model.BlockModelStandard;
+import net.minecraft.client.render.block.model.*;
 import net.minecraft.client.render.item.model.ItemModelDispatcher;
 import net.minecraft.client.render.item.model.ItemModelStandard;
 import net.minecraft.client.render.texture.stitcher.TextureRegistry;
@@ -30,21 +27,17 @@ import static cursedbread.morefeatures.FeaturesMain.MOD_ID;
 public class FeatureModel implements ModelEntrypoint {
 	@Override
 	public void initBlockModels(BlockModelDispatcher dispatcher) {
-		if (FeaturesBlocks.glowstoneEnabled == 1) {
+		if (FeaturesBlocks.coloredBlocksEnabled == 1) {
 			ModelHelper.setBlockModel(
 				FeaturesBlocks.vanillaColoredGlowstone,
 				() -> new BlockModelColoredGlowstone<>(FeaturesBlocks.vanillaColoredGlowstone,
 					false));
-		}
 
-		if (FeaturesBlocks.paperwallEnabled == 1){
 			ModelHelper.setBlockModel(
 				FeaturesBlocks.vanillaColoredPaperwall,
 				() -> new BlockModelPaperwall<>(FeaturesBlocks.vanillaColoredPaperwall, FeaturesMain.paperWallAlt,
 					false));
-		}
 
-		if (FeaturesBlocks.glassEnabled == 1) {
 			ModelHelper.setBlockModel(
 				FeaturesBlocks.vanillaColoredGlass,
 				() -> new BlockModelColoredGlass<>(FeaturesBlocks.vanillaColoredGlass, true,
@@ -60,16 +53,6 @@ public class FeatureModel implements ModelEntrypoint {
 			);
 		}
 
-		if (FeaturesBlocks.gildingtableEnabled == 1){
-			ModelHelper.setBlockModel(
-				FeaturesBlocks.gildingTable,
-				() -> new BlockModelStandard<>(FeaturesBlocks.gildingTable)
-					.setTex(0,"morefeatures:block/extra_block_gilding_table", Side.sides)
-					.setTex(0,"minecraft:block/block_gold/top", Side.TOP)
-					.setTex(0,"minecraft:block/slate_top", Side.BOTTOM)
-			);
-		}
-
 		if (FeaturesBlocks.plantEnabled == 1){
 			ModelHelper.setBlockModel(
 				FeaturesBlocks.rainbowFlower,
@@ -82,7 +65,15 @@ public class FeatureModel implements ModelEntrypoint {
 				() -> new BlockModelCropsFlux<>(FeaturesBlocks.fluxCropws));
 		}
 
-		if (FeaturesBlocks.hamEnabled == 1){
+		if (FeaturesBlocks.miscBlocksEnabled == 1){
+			ModelHelper.setBlockModel(
+				FeaturesBlocks.gildingTable,
+				() -> new BlockModelStandard<>(FeaturesBlocks.gildingTable)
+					.setTex(0,"morefeatures:block/extra_block_gilding_table", Side.sides)
+					.setTex(0,"minecraft:block/block_gold/top", Side.TOP)
+					.setTex(0,"minecraft:block/slate_top", Side.BOTTOM)
+			);
+
 			ModelHelper.setBlockModel(
 				FeaturesBlocks.ham,
 				() -> new BlockModelStandard<>(FeaturesBlocks.ham)
@@ -93,6 +84,14 @@ public class FeatureModel implements ModelEntrypoint {
 				FeaturesBlocks.cookedham,
 				() -> new BlockModelStandard<>(FeaturesBlocks.cookedham)
 					.setTex(0, "morefeatures:block/extra_block_ham_cooked_block", Side.sides)
+			);
+
+			ModelHelper.setBlockModel(
+				FeaturesBlocks.burnedLog,
+				() -> new BlockModelAxisAligned<>(FeaturesBlocks.burnedLog)
+					.setTex(0, "morefeatures:block/logs/burned_side", Side.sides)
+					.setTex(0, "morefeatures:block/logs/burned_top", Side.TOP)
+					.setTex(0, "morefeatures:block/logs/burned_top", Side.BOTTOM)
 			);
 		}
 
