@@ -1,6 +1,8 @@
 package cursedbread.morefeatures.blocks.flux;
 
 import cursedbread.morefeatures.item.FeaturesItems;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.core.block.*;
 import net.minecraft.core.block.entity.TileEntity;
 import net.minecraft.core.entity.player.Player;

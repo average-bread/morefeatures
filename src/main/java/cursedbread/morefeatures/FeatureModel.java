@@ -8,6 +8,8 @@ import cursedbread.morefeatures.blocks.glowstone.BlockModelColoredGlowstone;
 import cursedbread.morefeatures.blocks.paperwall.BlockModelPaperwall;
 import cursedbread.morefeatures.item.FeaturesItems;
 import cursedbread.morefeatures.item.bomb_bag.ItemModelBombQuiver;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.client.render.EntityRenderDispatcher;
 import net.minecraft.client.render.TileEntityRenderDispatcher;
 import net.minecraft.client.render.block.color.BlockColorDispatcher;
@@ -24,6 +26,7 @@ import turniplabs.halplibe.util.ModelEntrypoint;
 
 import static cursedbread.morefeatures.FeaturesMain.MOD_ID;
 
+@Environment(EnvType.CLIENT)
 public class FeatureModel implements ModelEntrypoint {
 	@Override
 	public void initBlockModels(BlockModelDispatcher dispatcher) {

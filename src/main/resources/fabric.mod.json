@@ -32,6 +32,9 @@
 		],
 		"initModels": [
 			"cursedbread.morefeatures.FeatureModel"
+		],
+		"client": [
+			"cursedbread.morefeatures.FeaturesMain"
 		]
 	},
   "mixins": [

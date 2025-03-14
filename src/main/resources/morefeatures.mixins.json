@@ -13,7 +13,6 @@
     "ColoredGlowstoneBMixin",
     "ContainerWorkbenchMixin",
     "EntityBagRender",
-    "EntityPlayerMixin",
     "ItemCannonMixin",
     "LabyrinthGenerationMixin",
     "LabyrinthLootMixin",
@@ -31,6 +30,7 @@
     "superores.OreToSuperoreRedstone"
   ],
   "client": [
+    "EntityPlayerMixin"
   ],
   "injectors": {
     "defaultRequire": 1

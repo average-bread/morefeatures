@@ -4,10 +4,13 @@ import cursedbread.morefeatures.blocks.FeaturesBlocks;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.block.BlockLogic;
 import net.minecraft.core.block.material.Material;
+import net.minecraft.core.entity.Mob;
 import net.minecraft.core.sound.SoundCategory;
+import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.world.World;
 import net.minecraft.core.world.biome.Biome;
 import net.minecraft.core.world.biome.Biomes;
+import org.jetbrains.annotations.NotNull;
 
 public class BlockLogicHam extends BlockLogic {
 	public BlockLogicHam(Block block, Material material) {
@@ -15,7 +18,7 @@ public class BlockLogicHam extends BlockLogic {
 		block.setTicking(true);
 	}
 
-	public void onBlockAdded(World world, int x, int y, int z) {
+	public void onBlockPlacedByMob(World world, int x, int y, int z, @NotNull Side side, Mob mob, double xPlaced, double yPlaced) {
 		world.scheduleBlockUpdate(x, y, z, id(), block.tickDelay());
 		Biome biome = world.getBlockBiome(x,y,z);
 		if (biome == Biomes.NETHER_NETHER) {

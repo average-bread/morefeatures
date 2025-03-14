@@ -2,6 +2,7 @@ package cursedbread.morefeatures;
 
 import cursedbread.morefeatures.blocks.FeaturesBlocks;
 import cursedbread.morefeatures.item.FeaturesItems;
+import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,7 +14,7 @@ import turniplabs.halplibe.util.ModelEntrypoint;
 import java.util.Properties;
 
 
-public class FeaturesMain implements ModInitializer, GameStartEntrypoint {
+public class FeaturesMain implements ModInitializer, GameStartEntrypoint, ClientModInitializer {
     public static final String MOD_ID = "morefeatures";
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 	//public static boolean nonamedyesOn = ModVersionHelper.isModPresent("nonamedyes");
@@ -90,10 +91,15 @@ public class FeaturesMain implements ModInitializer, GameStartEntrypoint {
 
 	@Override
 	public void beforeGameStart() {
-		new FeatureModel();
+
 	}
 
 	@Override
 	public void afterGameStart() {
+	}
+
+	@Override
+	public void onInitializeClient() {
+		new FeatureModel();
 	}
 }
