@@ -16,7 +16,6 @@
     "EntityBagRender",
     "ItemCannonMixin",
     "LabyrinthGenerationMixin",
-    "LabyrinthLootMixin",
     "NewBlockGeneratorMixin",
     "SlotArmorMixin",
     "SoulDrop",

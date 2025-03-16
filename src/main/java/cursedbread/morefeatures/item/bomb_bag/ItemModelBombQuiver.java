@@ -11,8 +11,8 @@ import net.minecraft.core.item.ItemStack;
 
 @Environment(EnvType.CLIENT)
 public class ItemModelBombQuiver extends ItemModelStandard {
-    IconCoordinate bombQuiverFull = TextureRegistry.getTexture("morefeatures:item/armor/bomb_bag/bomb_bag_full");
-    IconCoordinate bombQuiverEmpty = TextureRegistry.getTexture("morefeatures:item/armor/bomb_bag/bomb_bag_empty");
+    IconCoordinate bombQuiverFull = TextureRegistry.getTexture("morefeatures:item/armor/artifacts/bomb_bag_full");
+    IconCoordinate bombQuiverEmpty = TextureRegistry.getTexture("morefeatures:item/armor/artifacts/bomb_bag_empty");
 
     public ItemModelBombQuiver(Item item, String namespace) {
         super(item, namespace);

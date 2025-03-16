@@ -9,7 +9,9 @@ import net.minecraft.core.Global;
 import net.minecraft.core.entity.Entity;
 import net.minecraft.core.entity.player.Player;
 import net.minecraft.core.item.ItemStack;
+import net.minecraft.core.world.ICarriable;
 import net.minecraft.core.world.World;
+import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
@@ -21,6 +23,13 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public abstract class EntityPlayerMixin extends Entity {
 	@Shadow
 	protected float baseSpeed;
+
+	@Shadow
+	@Nullable
+	protected ICarriable heldObject;
+
+	@Shadow
+	protected abstract boolean func_27025_G();
 
 	public EntityPlayerMixin(World world) {
 		super(world);
@@ -58,10 +67,54 @@ public abstract class EntityPlayerMixin extends Entity {
 		}
 	}
 
+	@Unique
+	private Boolean gameFullBright = null;
+	@Unique
+	private boolean toggledFullBright = false;
+
+	@Unique
+	public void CatVision(){
+		if (FeaturesItems.treasureEnabled == 1){
+			Minecraft mc = Minecraft.getMinecraft();
+			ItemStack helmet_item = Minecraft.getMinecraft().thePlayer.inventory.armorItemInSlot(3);
+			if (gameFullBright == null){
+				gameFullBright = mc.fullbright;
+			}
+			if (helmet_item != null && helmet_item.getItem().equals(FeaturesItems.catHelmet)){
+				if (!toggledFullBright && mc.fullbright)
+					gameFullBright = true;
+
+				if (!toggledFullBright) {
+					if (!mc.fullbright) {
+						mc.fullbright = true;
+						mc.renderGlobal.loadRenderers();
+					}
+					toggledFullBright = true;
+				}
+
+				if (!mc.fullbright) {
+					gameFullBright = !gameFullBright;
+					mc.fullbright = true;
+					mc.renderGlobal.loadRenderers();
+				}
+			} else {
+				if (toggledFullBright) {
+					mc.fullbright = gameFullBright;
+					toggledFullBright = false;
+					mc.renderGlobal.loadRenderers();
+				}
+			}
+		}
+	}
+
 	@Inject(method = "onLivingUpdate()V", at = @At("TAIL"))
 	private void armor_effects(CallbackInfo ci) {
 		if (FeaturesItems.miscArmorEnabled == 1 && !Global.isServer){
 			SpeedOlivine();
+		}
+
+		if (FeaturesItems.treasureEnabled == 1 && !Global.isServer){
+			CatVision();
 		}
 	}
 }

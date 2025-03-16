@@ -51,6 +51,8 @@ public class FeaturesItems {
 	public static ArmorMaterial quartzArmor = ArmorHelper.createArmorMaterial(MOD_ID, "quartz/armor_quartz", 200, 10f, 0f, 20f, 30f);
 	public static ArmorMaterial quartzExtraArmor = ArmorHelper.createArmorMaterial(MOD_ID, "quartz/extra_armor_quartz", 200, 10f, 0f, 20f, 30f);
 
+	public static ArmorMaterial catArmor = ArmorHelper.createArmorMaterial(MOD_ID, "other/cat", 200, 0f, 0f, 0f, 0f);
+
 
 	public static int crownsEnabled;
 	//flower
@@ -111,9 +113,10 @@ public class FeaturesItems {
 	public static Item quartzLeggings;
 	public static Item quartzBoots;
 
-	public static int bombQuibersEnabled;
+	public static int treasureEnabled;
 	public static Item bombBag;
 	public static Item bombBagGold;
+	public static Item catHelmet;
 
 	public static int miscItemsEnabled;
 	public static Item mobSoul;
@@ -272,11 +275,11 @@ public class FeaturesItems {
 			    .build(new ItemArmor("boots.quartz", "morefeatures:item/armor/quartz/quartz_boots", itemId++, quartzArmor, 0));
 		}
 
-		if (bombQuibersEnabled == 1) {
+		if (treasureEnabled == 1) {
 			bombBag = new ItemBuilder(MOD_ID)
-			    .build(new ItemBombQuiver("bag.normal", "morefeatures:item/armor/bomb_bag/bomb_bag_empty", itemId++));
+			    .build(new ItemBombQuiver("bag.normal", "morefeatures:item/armor/artifacts/bomb_bag_empty", itemId++));
 			bombBagGold = new ItemBuilder(MOD_ID)
-			    .build(new ItemBombQuiverEndless("bag.gold", "morefeatures:item/armor/bomb_bag/bomb_bag_gold", itemId++));
+			    .build(new ItemBombQuiverEndless("bag.gold", "morefeatures:item/armor/artifacts/bomb_bag_gold", itemId++));
 		}
 
 		if (newToolsEnabled == 1) {
@@ -333,6 +336,11 @@ public class FeaturesItems {
 		if (miscItemsEnabled == 1){
 			fluxSeed = new ItemBuilder(MOD_ID)
 				.build(new ItemSeeds("flux.seed", "morefeatures:item/other/seed_flux", itemId++, FeaturesBlocks.fluxCropws));
+		}
+
+		if (treasureEnabled == 1){
+			catHelmet = new ItemBuilder(MOD_ID)
+				.build(new ItemArmor("cat.helmet", "morefeatures:item/armor/artifacts/armor_helmet_cat", itemId++, catArmor, 3));
 		}
 	}
 }

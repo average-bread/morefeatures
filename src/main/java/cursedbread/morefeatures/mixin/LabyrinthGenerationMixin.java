@@ -1,10 +1,13 @@
 package cursedbread.morefeatures.mixin;
 
 import cursedbread.morefeatures.FeaturesMain;
+import cursedbread.morefeatures.item.FeaturesItems;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.block.Blocks;
+import net.minecraft.core.item.ItemStack;
+import net.minecraft.core.item.Items;
 import net.minecraft.core.world.World;
 import net.minecraft.core.world.biome.Biome;
 import net.minecraft.core.world.biome.Biomes;
@@ -97,6 +100,37 @@ public class LabyrinthGenerationMixin {
 			} else{
 				cir.setReturnValue(isSwamp && i == 2 ? "Creeper" : "ArmouredZombie");
 				cir.setReturnValue(isHot && i == 2 ? "Scorpion" : "ArmouredZombie");
+			}
+		}
+	}
+
+	@Inject(method = "pickCheckLootItem", at = @At("HEAD"), cancellable = true)
+	private void pickCheckLootItem(Random random, CallbackInfoReturnable<ItemStack> cir) {
+		if (FeaturesItems.treasureEnabled == 1) {
+			int i = random.nextInt(68);
+			if (i == 16) {
+				if (this.isHot) {
+					cir.setReturnValue( new ItemStack(FeaturesItems.catHelmet));
+				} else  {
+					cir.setReturnValue( new ItemStack(FeaturesItems.bombBagGold));
+				}
+			}
+		}
+		if (FeaturesItems.oldArmorEnabled == 1) {
+			int j = random.nextInt(32);
+			if (j == 1) {
+				cir.setReturnValue( new ItemStack(FeaturesItems.plateHelmet, 1, FeaturesItems.plateHelmet.getMaxDamage() - random.nextInt(FeaturesItems.plateHelmet.getMaxDamage())));
+			} else if (j == 2) {
+				cir.setReturnValue( new ItemStack(FeaturesItems.plateChestplate, 1, FeaturesItems.plateChestplate.getMaxDamage() - random.nextInt(FeaturesItems.plateChestplate.getMaxDamage())));
+			}
+			if (FeaturesItems.crownsEnabled == 1 && j == 3){
+				cir.setReturnValue( new ItemStack(FeaturesItems.plateCrown, 1, FeaturesItems.plateCrown.getMaxDamage() - random.nextInt(FeaturesItems.plateCrown.getMaxDamage())));
+			}
+		}
+		if (FeaturesItems.crownsEnabled == 1) {
+			int a = random.nextInt(16);
+			if (a == 1) {
+				cir.setReturnValue( new ItemStack(FeaturesItems.chainCrown, 1, FeaturesItems.chainCrown.getMaxDamage() - random.nextInt(FeaturesItems.chainCrown.getMaxDamage() / 2)));
 			}
 		}
 	}

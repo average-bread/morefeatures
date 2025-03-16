@@ -582,7 +582,7 @@ public class FeaturesCraft implements RecipeEntrypoint {
 				.create("craftingOnAStick", new ItemStack(FeaturesItems.workbenchOnStick, 1));
 		}
 		//bomb quiver crafting
-		if (FeaturesItems.bombQuibersEnabled == 1) {
+		if (FeaturesItems.treasureEnabled == 1) {
 			RecipeBuilder.Shaped(MOD_ID)
 				.setShape("S S", "CCC", "LLL")
 				.addInput('S', Items.STRING)
@@ -688,6 +688,12 @@ public class FeaturesCraft implements RecipeEntrypoint {
 					.addInput('H', Item.itemsList[toolHeavyMaterial[i]])
 					.create("hammercraft", new ItemStack(hammerResult[i]));
 			}
+		}
+
+		if (FeaturesBlocks.miscBlocksEnabled == 1){
+			RecipeBuilder.Shapeless(MOD_ID)
+				.addInput(FeaturesBlocks.burnedLog)
+				.create("burnedlogsintoplanks", new ItemStack(Blocks.PLANKS_OAK_PAINTED, 4, 15));
 		}
 	}
 }

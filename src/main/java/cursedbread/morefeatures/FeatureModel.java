@@ -584,7 +584,7 @@ public class FeatureModel implements ModelEntrypoint {
 				});
 		}
 
-		if (FeaturesItems.bombQuibersEnabled == 1) {
+		if (FeaturesItems.treasureEnabled == 1) {
 			ModelHelper.setItemModel(FeaturesItems.bombBag,
 				() -> {
 					ItemModelStandard model = new ItemModelBombQuiver(FeaturesItems.bombBag, MOD_ID);
@@ -595,6 +595,13 @@ public class FeatureModel implements ModelEntrypoint {
 				() -> {
 					ItemModelStandard model = new ItemModelStandard(FeaturesItems.bombBagGold, MOD_ID);
 					model.icon = TextureRegistry.getTexture(FeaturesItems.bombBagGold.namespaceID);
+					return model;
+				});
+
+			ModelHelper.setItemModel(FeaturesItems.catHelmet,
+				() -> {
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.catHelmet, MOD_ID);
+					model.icon = TextureRegistry.getTexture(FeaturesItems.catHelmet.namespaceID);
 					return model;
 				});
 		}

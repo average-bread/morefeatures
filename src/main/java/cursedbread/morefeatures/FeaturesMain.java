@@ -43,7 +43,7 @@ public class FeaturesMain implements ModInitializer, GameStartEntrypoint, Client
 		prop.setProperty("Block_armor", "1");
 		prop.setProperty("Old_armor", "1");
 		prop.setProperty("Misc_armor", "1");
-		prop.setProperty("Bomb_bags", "1");
+		prop.setProperty("Treasures", "1");
 		prop.setProperty("New_tools", "1");
 		prop.setProperty("Misc_items", "1");
 
@@ -69,7 +69,7 @@ public class FeaturesMain implements ModInitializer, GameStartEntrypoint, Client
 		FeaturesItems.blockArmorEnabled = config.getInt("Block_armor");
 		FeaturesItems.oldArmorEnabled = config.getInt("Old_armor");
 		FeaturesItems.miscArmorEnabled = config.getInt("Misc_armor");
-		FeaturesItems.bombQuibersEnabled = config.getInt("Bomb_bags");
+		FeaturesItems.treasureEnabled = config.getInt("Treasures");
 		FeaturesItems.newToolsEnabled = config.getInt("New_tools");
 		FeaturesItems.miscItemsEnabled = config.getInt("Misc_items");
 		//Extra

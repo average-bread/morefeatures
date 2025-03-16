@@ -4,6 +4,7 @@ import cursedbread.morefeatures.blocks.flux.BlockLogicCropsFlux;
 import cursedbread.morefeatures.blocks.glass.*;
 import cursedbread.morefeatures.blocks.glowstone.*;
 import cursedbread.morefeatures.blocks.ores.*;
+import cursedbread.morefeatures.blocks.other.BlockLogicBurnedLog;
 import cursedbread.morefeatures.blocks.other.BlockLogicGilder;
 import cursedbread.morefeatures.blocks.other.BlockLogicHam;
 import cursedbread.morefeatures.blocks.paperwall.*;
@@ -363,7 +364,7 @@ public class FeaturesBlocks {
 
 		if (miscBlocksEnabled == 1){
 			burnedLog = fullBlock
-				.build("burned.log", blockId++, b -> new BlockLogicLog(b))
+				.build("burned.log", blockId++, b -> new BlockLogicBurnedLog(b))
 				.withSound(BlockSounds.WOOD)
 				.withHardness(2.0F)
 				.withDisabledNeighborNotifyOnMetadataChange()
