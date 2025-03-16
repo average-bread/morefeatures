@@ -1,19 +1,18 @@
 package cursedbread.morefeatures.item;
 
 import cursedbread.morefeatures.blocks.FeaturesBlocks;
-import cursedbread.morefeatures.item.bomb_bag.ItemBombQuiver;
-import cursedbread.morefeatures.item.bomb_bag.ItemBombQuiverEndless;
+import cursedbread.morefeatures.item.other.ItemArmorUnbreakable;
+import cursedbread.morefeatures.item.artifacts.ItemBombQuiver;
+import cursedbread.morefeatures.item.artifacts.ItemBombQuiverEndless;
 import cursedbread.morefeatures.item.tool.ItemToolClimbingPickaxe;
 import cursedbread.morefeatures.item.tool.ItemToolMiningHammer;
 import cursedbread.morefeatures.item.tool.ItemToolPaxel;
 import cursedbread.morefeatures.item.tool.StickWorkbench;
-import net.minecraft.core.block.Blocks;
 import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemArmor;
 import net.minecraft.core.item.ItemSeeds;
 import net.minecraft.core.item.material.ArmorMaterial;
 import net.minecraft.core.item.material.ToolMaterial;
-import net.minecraft.core.item.tool.ItemToolPickaxe;
 import turniplabs.halplibe.helper.ArmorHelper;
 import turniplabs.halplibe.helper.ItemBuilder;
 
@@ -215,13 +214,13 @@ public class FeaturesItems {
 
 		if (blockArmorEnabled == 1) {
 			bedrockHelmet = new ItemBuilder(MOD_ID)
-			    .build(new ItemArmor("helmet.bedrock", "morefeatures:item/armor/bedrock/bedrock_helmet", itemId++, bedrockArmor, 3));
+			    .build(new ItemArmorUnbreakable("helmet.bedrock", "morefeatures:item/armor/bedrock/bedrock_helmet", itemId++, bedrockArmor, 3));
 			bedrockChestplate = new ItemBuilder(MOD_ID)
-			    .build(new ItemArmor("chestplate.bedrock", "morefeatures:item/armor/bedrock/bedrock_chestplate", itemId++, bedrockArmor, 2));
+			    .build(new ItemArmorUnbreakable("chestplate.bedrock", "morefeatures:item/armor/bedrock/bedrock_chestplate", itemId++, bedrockArmor, 2));
 			bedrockLeggings = new ItemBuilder(MOD_ID)
-			    .build(new ItemArmor("leggings.bedrock", "morefeatures:item/armor/bedrock/bedrock_leggings", itemId++, bedrockArmor, 1));
+			    .build(new ItemArmorUnbreakable("leggings.bedrock", "morefeatures:item/armor/bedrock/bedrock_leggings", itemId++, bedrockArmor, 1));
 			bedrockBoots = new ItemBuilder(MOD_ID)
-			    .build(new ItemArmor("boots.bedrock", "morefeatures:item/armor/bedrock/bedrock_boots", itemId++, bedrockArmor, 0));
+			    .build(new ItemArmorUnbreakable("boots.bedrock", "morefeatures:item/armor/bedrock/bedrock_boots", itemId++, bedrockArmor, 0));
 		}
 
 		if (oldArmorEnabled == 1) {
@@ -340,7 +339,7 @@ public class FeaturesItems {
 
 		if (treasureEnabled == 1){
 			catHelmet = new ItemBuilder(MOD_ID)
-				.build(new ItemArmor("cat.helmet", "morefeatures:item/armor/artifacts/armor_helmet_cat", itemId++, catArmor, 3));
+				.build(new ItemArmorUnbreakable("cat.helmet", "morefeatures:item/armor/artifacts/armor_helmet_cat", itemId++, catArmor, 3));
 		}
 	}
 }

@@ -1,4 +1,4 @@
-package cursedbread.morefeatures.item.bomb_bag;
+package cursedbread.morefeatures.item.artifacts;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;

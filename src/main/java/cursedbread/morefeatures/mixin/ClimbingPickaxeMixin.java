@@ -4,11 +4,14 @@ import com.mojang.nbt.tags.CompoundTag;
 import cursedbread.morefeatures.item.FeaturesItems;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
+import net.minecraft.core.block.Blocks;
+import net.minecraft.core.block.material.Material;
 import net.minecraft.core.entity.Entity;
 import net.minecraft.core.entity.Mob;
 import net.minecraft.core.entity.player.Player;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.player.inventory.container.ContainerInventory;
+import net.minecraft.core.util.phys.HitResult;
 import net.minecraft.core.world.World;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -58,9 +61,28 @@ public abstract class ClimbingPickaxeMixin extends Entity {
 			Player p = (Player) (Object) t;
 			int is = ValidClimbingItemSlot(p);
 			if (p.horizontalCollision) {
+				assert world != null;
 				if (is != -1) {
-					//p.getHeldItem().damageItem(1,p);
-					cir.setReturnValue(true);
+					for (double x1 = -0.4; x1 <= 1.4; x1++){
+						for (double z1 = -0.4; z1 <= 1.4; z1++){
+							for (double y1 = 1; y1 <= 2; y1++){
+								if (
+									(world.getBlockMaterial((int) (x+x1), (int) (y-y1), (int) (z+z1)) == Material.stone) ||
+										(world.getBlockMaterial((int) (x+x1), (int) (y-y1), (int) (z+z1)) == Material.basalt) ||
+										(world.getBlockMaterial((int) (x+x1), (int) (y-y1), (int) (z+z1)) == Material.granite) ||
+										(world.getBlockMaterial((int) (x+x1), (int) (y-y1), (int) (z+z1)) == Material.ice) ||
+										(world.getBlockMaterial((int) (x+x1), (int) (y-y1), (int) (z+z1)) == Material.limestone) ||
+										(world.getBlockMaterial((int) (x+x1), (int) (y-y1), (int) (z+z1)) == Material.marble) ||
+										(world.getBlockMaterial((int) (x+x1), (int) (y-y1), (int) (z+z1)) == Material.moss) ||
+										(world.getBlockMaterial((int) (x+x1), (int) (y-y1), (int) (z+z1)) == Material.netherrack) ||
+										(world.getBlockMaterial((int) (x+x1), (int) (y-y1), (int) (z+z1)) == Material.permafrost) ||
+										(world.getBlockMaterial((int) (x+x1), (int) (y-y1), (int) (z+z1)) == Material.slate)
+								) {
+									cir.setReturnValue(true);
+								}
+							}
+						}
+					}
 				}
 			}
 		}

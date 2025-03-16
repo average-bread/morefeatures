@@ -7,6 +7,7 @@ import net.fabricmc.api.Environment;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.Global;
 import net.minecraft.core.entity.Entity;
+import net.minecraft.core.entity.Mob;
 import net.minecraft.core.entity.player.Player;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.world.ICarriable;
@@ -19,24 +20,38 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
+import java.util.Objects;
+
 @Mixin(value = Player.class, remap = false)
-public abstract class EntityPlayerMixin extends Entity {
+public abstract class EntityPlayerMixin extends Mob {
 	@Shadow
 	protected float baseSpeed;
-
-	@Shadow
-	@Nullable
-	protected ICarriable heldObject;
-
-	@Shadow
-	protected abstract boolean func_27025_G();
 
 	public EntityPlayerMixin(World world) {
 		super(world);
 	}
 
 	@Unique
-	public void SpeedOlivine(){
+	public void bedrockProtection(){
+		if (FeaturesItems.blockArmorEnabled == 1){
+			ItemStack helmet_item = Minecraft.getMinecraft().thePlayer.inventory.armorItemInSlot(3);
+			ItemStack chest_item = Minecraft.getMinecraft().thePlayer.inventory.armorItemInSlot(2);
+			ItemStack leggings_item = Minecraft.getMinecraft().thePlayer.inventory.armorItemInSlot(1);
+			ItemStack boots_item = Minecraft.getMinecraft().thePlayer.inventory.armorItemInSlot(0);
+			if (
+				(helmet_item != null && helmet_item.getItem().equals(FeaturesItems.bedrockHelmet)) ||
+				(helmet_item != null && helmet_item.getItem().equals(FeaturesItems.bedrockCrown)) ||
+				(chest_item != null && chest_item.getItem().equals(FeaturesItems.bedrockChestplate)) ||
+				(leggings_item != null && leggings_item.getItem().equals(FeaturesItems.bedrockLeggings)) ||
+				(boots_item != null && boots_item.getItem().equals(FeaturesItems.bedrockBoots))
+			){
+				this.heal(100);
+			}
+		}
+	}
+
+	@Unique
+	public void speedOlivine(){
 		if (FeaturesItems.miscArmorEnabled == 1){
 			ItemStack helmet_item = Minecraft.getMinecraft().thePlayer.inventory.armorItemInSlot(3);
 			ItemStack chest_item = Minecraft.getMinecraft().thePlayer.inventory.armorItemInSlot(2);
@@ -109,8 +124,12 @@ public abstract class EntityPlayerMixin extends Entity {
 
 	@Inject(method = "onLivingUpdate()V", at = @At("TAIL"))
 	private void armor_effects(CallbackInfo ci) {
+		if (FeaturesItems.blockArmorEnabled == 1){
+			bedrockProtection();
+		}
+
 		if (FeaturesItems.miscArmorEnabled == 1 && !Global.isServer){
-			SpeedOlivine();
+			speedOlivine();
 		}
 
 		if (FeaturesItems.treasureEnabled == 1 && !Global.isServer){

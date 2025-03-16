@@ -1,7 +1,7 @@
 package cursedbread.morefeatures.mixin;
 
-import cursedbread.morefeatures.item.bomb_bag.ItemBombQuiver;
-import cursedbread.morefeatures.item.bomb_bag.ItemBombQuiverEndless;
+import cursedbread.morefeatures.item.artifacts.ItemBombQuiver;
+import cursedbread.morefeatures.item.artifacts.ItemBombQuiverEndless;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.Minecraft;
@@ -9,7 +9,6 @@ import net.minecraft.client.render.EntityRenderDispatcher;
 import net.minecraft.client.render.TextureManager;
 import net.minecraft.client.render.entity.EntityRenderer;
 import net.minecraft.core.item.ItemStack;
-import org.spongepowered.asm.mixin.Debug;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
