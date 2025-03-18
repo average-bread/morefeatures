@@ -7,14 +7,12 @@ import net.minecraft.core.block.*;
 import net.minecraft.core.block.entity.TileEntity;
 import net.minecraft.core.entity.player.Player;
 import net.minecraft.core.enums.EnumDropCause;
-import net.minecraft.core.item.IBonemealable;
-import net.minecraft.core.item.Item;
-import net.minecraft.core.item.ItemStack;
-import net.minecraft.core.item.Items;
+import net.minecraft.core.item.*;
 import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.world.World;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.Objects;
 import java.util.Random;
 
 public class BlockLogicCropsFlux extends BlockLogicFlower implements IBonemealable {
@@ -121,11 +119,10 @@ public class BlockLogicCropsFlux extends BlockLogicFlower implements IBonemealab
 		} else {
 			if (!world.isClientSide) {
 				this.fertilize(world, blockX, blockY, blockZ);
-				if (player == null || player.getGamemode().consumeBlocks()) {
+				if (player.getGamemode().consumeBlocks()) {
 					--itemstack.stackSize;
 				}
 			}
-
 			return true;
 		}
 	}

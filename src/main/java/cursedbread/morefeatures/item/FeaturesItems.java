@@ -1,9 +1,10 @@
 package cursedbread.morefeatures.item;
 
 import cursedbread.morefeatures.blocks.FeaturesBlocks;
-import cursedbread.morefeatures.item.other.ItemArmorUnbreakable;
+import cursedbread.morefeatures.item.artifacts.ItemArmorUnbreakable;
 import cursedbread.morefeatures.item.artifacts.ItemBombQuiver;
 import cursedbread.morefeatures.item.artifacts.ItemBombQuiverEndless;
+import cursedbread.morefeatures.item.other.ItemFertilizeBag;
 import cursedbread.morefeatures.item.tool.ItemToolClimbingPickaxe;
 import cursedbread.morefeatures.item.tool.ItemToolMiningHammer;
 import cursedbread.morefeatures.item.tool.ItemToolPaxel;
@@ -120,6 +121,7 @@ public class FeaturesItems {
 	public static int miscItemsEnabled;
 	public static Item mobSoul;
 	public static Item fluxSeed;
+	public static Item fertilizerBag;
 
 	public static int newToolsEnabled;
 	//workbench
@@ -340,6 +342,11 @@ public class FeaturesItems {
 		if (treasureEnabled == 1){
 			catHelmet = new ItemBuilder(MOD_ID)
 				.build(new ItemArmorUnbreakable("cat.helmet", "morefeatures:item/armor/artifacts/armor_helmet_cat", itemId++, catArmor, 3));
+		}
+
+		if (miscItemsEnabled == 1){
+			fertilizerBag = new ItemBuilder(MOD_ID)
+				.build(new ItemFertilizeBag("fertilizer.bag", "morefeatures:item/other/fertilizer_bag/fertilizer_bag_empty", itemId++));
 		}
 	}
 }

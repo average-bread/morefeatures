@@ -8,6 +8,7 @@ import cursedbread.morefeatures.blocks.glowstone.BlockModelColoredGlowstone;
 import cursedbread.morefeatures.blocks.paperwall.BlockModelPaperwall;
 import cursedbread.morefeatures.item.FeaturesItems;
 import cursedbread.morefeatures.item.artifacts.ItemModelBombQuiver;
+import cursedbread.morefeatures.item.other.ItemModelFertilizerBag;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.render.EntityRenderDispatcher;
@@ -627,6 +628,13 @@ public class FeatureModel implements ModelEntrypoint {
 				() -> {
 					ItemModelStandard model = new ItemModelStandard(FeaturesItems.fluxSeed, MOD_ID);
 					model.icon = TextureRegistry.getTexture(FeaturesItems.fluxSeed.namespaceID);
+					return model;
+				});
+
+			ModelHelper.setItemModel(FeaturesItems.fertilizerBag,
+				() -> {
+					ItemModelStandard model = new ItemModelFertilizerBag(FeaturesItems.fertilizerBag, MOD_ID);
+					model.icon = TextureRegistry.getTexture(FeaturesItems.fertilizerBag.namespaceID);
 					return model;
 				});
 		}

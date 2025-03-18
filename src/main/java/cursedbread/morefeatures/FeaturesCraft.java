@@ -695,5 +695,14 @@ public class FeaturesCraft implements RecipeEntrypoint {
 				.addInput(FeaturesBlocks.burnedLog)
 				.create("burnedlogsintoplanks", new ItemStack(Blocks.PLANKS_OAK_PAINTED, 4, 15));
 		}
+
+		if (FeaturesItems.miscItemsEnabled == 1){
+			RecipeBuilder.Shaped(MOD_ID)
+				.setShape(" S ", "LCL", " L ")
+				.addInput('S', Items.STRING)
+				.addInput('L', Items.LEATHER)
+				.addInput('C', Items.CLOTH)
+				.create("bomBagCraft", new ItemStack(FeaturesItems.fertilizerBag, 1, 192	));
+		}
 	}
 }

@@ -1,4 +1,4 @@
-package cursedbread.morefeatures.item.other;
+package cursedbread.morefeatures.item.artifacts;
 
 import net.minecraft.core.item.ItemArmor;
 import net.minecraft.core.item.material.ArmorMaterial;
