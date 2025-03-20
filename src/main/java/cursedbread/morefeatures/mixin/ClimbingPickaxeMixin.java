@@ -63,9 +63,9 @@ public abstract class ClimbingPickaxeMixin extends Entity {
 			if (p.horizontalCollision) {
 				assert world != null;
 				if (is != -1) {
-					for (double x1 = -0.4; x1 <= 1.4; x1++){
-						for (double z1 = -0.4; z1 <= 1.4; z1++){
-							for (double y1 = 1; y1 <= 2; y1++){
+					for (double x1 = -0.4; x1 <= 1.4; x1+=0.1){
+						for (double z1 = -0.4; z1 <= 1.4; z1+=0.1){
+							for (double y1 = 1; y1 <= 2; y1+=0.1){
 								if (
 									(world.getBlockMaterial((int) (x+x1), (int) (y-y1), (int) (z+z1)) == Material.stone) ||
 										(world.getBlockMaterial((int) (x+x1), (int) (y-y1), (int) (z+z1)) == Material.basalt) ||
