@@ -21,6 +21,8 @@
     "SoulDrop",
     "SpawnerSurvival",
     "WorkbenchFix",
+    "fuels.FurnanceBlastFuelMixin",
+    "fuels.FurnanceFuelMixin",
     "superores.OreToSuperoreCoal",
     "superores.OreToSuperoreDiamond",
     "superores.OreToSuperoreGold",

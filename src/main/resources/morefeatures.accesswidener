@@ -6,3 +6,4 @@ accessible class net/minecraft/client/render/EntityRenderDispatcher
 accessible method net/minecraft/core/block/BlockLogicFluid checkForHarden (Lnet/minecraft/core/world/World;III)V
 accessible method net/minecraft/core/block/BlockLogicFluid fizz (Lnet/minecraft/core/world/World;III)V
 accessible method net/minecraft/core/world/generate/chunk/classic/ChunkGeneratorClassic doBlockGeneration (Lnet/minecraft/core/world/chunk/Chunk;)Lnet/minecraft/core/world/generate/chunk/ChunkGeneratorResult;
+accessible method net/minecraft/core/crafting/LookupFuelFurnace register ()V
