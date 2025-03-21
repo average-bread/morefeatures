@@ -195,7 +195,7 @@ public class FeaturesItems {
 
 			if (blockArmorEnabled == 1) {
 				bedrockCrown = new ItemBuilder(MOD_ID)
-				    .build(new ItemArmor("crown.bedrock", "morefeatures:item/armor/crown/bedrock_crown", itemId++, bedrockExtraArmor, 3));
+				    .build(new ItemArmorUnbreakable("crown.bedrock", "morefeatures:item/armor/crown/bedrock_crown", itemId++, bedrockExtraArmor, 3));
 			}
 
 			if (oldArmorEnabled == 1) {

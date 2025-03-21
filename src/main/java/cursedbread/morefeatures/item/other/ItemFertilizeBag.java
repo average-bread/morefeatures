@@ -115,7 +115,7 @@ public class ItemFertilizeBag extends ItemQuiver {
 		int times = 0;
 		for (int addx = -1; addx < 2; addx++){
 			for (int addz = -1; addz < 2; addz++){
-				if (Objects.requireNonNull(player.getHeldItem()).getMetadata() < 192) {
+				if (itemstack.getMetadata() < 192) {
 					int id = world.getBlockId(blockX + addx, blockY, blockZ + addz);
 					int j1;
 					if (id == Blocks.DIRT.id()) {
@@ -128,8 +128,8 @@ public class ItemFertilizeBag extends ItemQuiver {
 							if ((world.getBlockId(blockX + addx, blockY+1, blockZ + addz) == 0 ||
 								!world.getBlock(blockX + addx, blockY+1, blockZ + addz).blocksLight())){
 								world.setBlockWithNotify(blockX + addx, blockY, blockZ + addz, j1);
-								if (player.getGamemode().consumeBlocks()) {
-									player.getHeldItem().damageItem(1, player);
+								if (player == null || player.getGamemode().consumeBlocks()) {
+									itemstack.damageItem(1, player);
 								}
 							}
 						}
@@ -143,8 +143,8 @@ public class ItemFertilizeBag extends ItemQuiver {
 							if ((world.getBlockId(blockX + addx, blockY+1, blockZ + addz) == 0 ||
 								!world.getBlock(blockX + addx, blockY+1, blockZ + addz).blocksLight())){
 								world.setBlockWithNotify(blockX + addx, blockY, blockZ + addz, j1);
-								if (player.getGamemode().consumeBlocks()) {
-									player.getHeldItem().damageItem(1, player);
+								if (player == null || player.getGamemode().consumeBlocks()) {
+									itemstack.damageItem(1, player);
 								}
 							}
 						}
@@ -155,7 +155,7 @@ public class ItemFertilizeBag extends ItemQuiver {
 					else if (Blocks.blocksList[id] != null && Blocks.blocksList[id].hasTag(BlockTags.GROWS_FLOWERS)) {
 						if (!world.isClientSide) {
 							if (player == null || player.getGamemode().consumeBlocks()) {
-								player.getHeldItem().damageItem(1, player);
+								itemstack.damageItem(1, player);
 							}
 
 							label169:
@@ -216,7 +216,7 @@ public class ItemFertilizeBag extends ItemQuiver {
 							if (!world.isClientSide) {
 								world.setBlockMetadataWithNotify(blockX + addx, blockY, blockZ + addz, 7);
 								if (player == null || player.getGamemode().consumeBlocks()) {
-									player.getHeldItem().damageItem(1, player);
+									itemstack.damageItem(1, player);
 								}
 							}
 
@@ -232,7 +232,7 @@ public class ItemFertilizeBag extends ItemQuiver {
 							if (!world.isClientSide) {
 								world.setBlockWithNotify(blockX + addx, blockY, blockZ + addz, Blocks.PUMPKIN.id());
 								if (player == null || player.getGamemode().consumeBlocks()) {
-									player.getHeldItem().damageItem(1, player);
+									itemstack.damageItem(1, player);
 								}
 							}
 
@@ -248,7 +248,7 @@ public class ItemFertilizeBag extends ItemQuiver {
 							if (!world.isClientSide) {
 								world.setBlockMetadataWithNotify(blockX + addx, blockY, blockZ + addz, 7);
 								if (player == null || player.getGamemode().consumeBlocks()) {
-									player.getHeldItem().damageItem(1, player);
+									itemstack.damageItem(1, player);
 								}
 							}
 
@@ -270,7 +270,7 @@ public class ItemFertilizeBag extends ItemQuiver {
 
 								world.setBlockMetadataWithNotify(blockX + addx, blockY, blockZ + addz, setGrowthRate(meta, 4));
 								if (player == null || player.getGamemode().consumeBlocks()) {
-									player.getHeldItem().damageItem(1, player);
+									itemstack.damageItem(1, player);
 								}
 							}
 
@@ -291,7 +291,7 @@ public class ItemFertilizeBag extends ItemQuiver {
 
 								world.setBlockMetadataWithNotify(blockX + addx, blockY, blockZ + addz, setGrowthRate(meta, 1));
 								if (player == null || player.getGamemode().consumeBlocks()) {
-									player.getHeldItem().damageItem(1, player);
+									itemstack.damageItem(1, player);
 								}
 							}
 
@@ -311,7 +311,7 @@ public class ItemFertilizeBag extends ItemQuiver {
 								world.setBlockWithNotify(blockX + addx, blockY + l, blockZ + addz, Blocks.CACTUS.id());
 							}
 							if (player == null || player.getGamemode().consumeBlocks()) {
-								player.getHeldItem().damageItem(1, player);
+								itemstack.damageItem(1, player);
 							}
 						}
 
@@ -329,7 +329,7 @@ public class ItemFertilizeBag extends ItemQuiver {
 								world.setBlockWithNotify(blockX + addx, blockY + l, blockZ + addz, Blocks.SUGARCANE.id());
 							}
 							if (player == null || player.getGamemode().consumeBlocks()) {
-								player.getHeldItem().damageItem(1, player);
+								itemstack.damageItem(1, player);
 							}
 						}
 
@@ -341,8 +341,8 @@ public class ItemFertilizeBag extends ItemQuiver {
 					else if (world.getBlockLogic(blockX + addx, blockY, blockZ + addz, BlockLogicFlowerStackable.class) != null){
 						Random rand = world.rand;
 						if (!world.isClientSide) {
-							if (player.getGamemode().consumeBlocks()) {
-								player.getHeldItem().damageItem(1, player);
+							if (player == null || player.getGamemode().consumeBlocks()) {
+								itemstack.damageItem(1, player);
 							}
 
 							label38:
@@ -373,8 +373,8 @@ public class ItemFertilizeBag extends ItemQuiver {
 
 					else if (world.getBlockLogic(blockX + addx, blockY, blockZ + addz, BlockLogicMoss.class) != null){
 						if (!world.isClientSide) {
-							if (player.getGamemode().consumeBlocks()) {
-								player.getHeldItem().damageItem(1, player);
+							if (player == null || player.getGamemode().consumeBlocks()) {
+								itemstack.damageItem(1, player);
 							}
 
 							for(j1 = 0; j1 < 32; ++j1) {
@@ -423,8 +423,8 @@ public class ItemFertilizeBag extends ItemQuiver {
 							if (!((WorldFeature)treeSmall).place(world, world.rand, blockX + addx, blockY, blockZ + addz) && !((WorldFeature)treeBig).place(world, world.rand, blockX + addx, blockY, blockZ + addz)) {
 								world.setBlock(blockX + addx, blockY, blockZ + addz, Blocks.SAPLING_OAK.id());
 							}
-							if (player.getGamemode().consumeBlocks()) {
-								player.getHeldItem().damageItem(1, player);
+							if (player == null || player.getGamemode().consumeBlocks()) {
+								itemstack.damageItem(1, player);
 							}
 						}
 
@@ -439,8 +439,8 @@ public class ItemFertilizeBag extends ItemQuiver {
 							if (!((WorldFeature)treeSmall).place(world, world.rand, blockX + addx, blockY, blockZ + addz) && !((WorldFeature)treeBig).place(world, world.rand, blockX + addx, blockY, blockZ + addz)) {
 								world.setBlock(blockX + addx, blockY, blockZ + addz, Blocks.SAPLING_BIRCH.id());
 							}
-							if (player.getGamemode().consumeBlocks()) {
-								player.getHeldItem().damageItem(1, player);
+							if (player == null || player.getGamemode().consumeBlocks()) {
+								itemstack.damageItem(1, player);
 							}
 						}
 
@@ -455,8 +455,8 @@ public class ItemFertilizeBag extends ItemQuiver {
 							if (!((WorldFeature)treeSmall).place(world, world.rand, blockX + addx, blockY, blockZ + addz) && !((WorldFeature)treeBig).place(world, world.rand, blockX + addx, blockY, blockZ + addz)) {
 								world.setBlock(blockX + addx, blockY, blockZ + addz, Blocks.SAPLING_CACAO.id());
 							}
-							if (player.getGamemode().consumeBlocks()) {
-								player.getHeldItem().damageItem(1, player);
+							if (player == null || player.getGamemode().consumeBlocks()) {
+								itemstack.damageItem(1, player);
 							}
 						}
 
@@ -471,8 +471,8 @@ public class ItemFertilizeBag extends ItemQuiver {
 							if (!((WorldFeature)treeSmall).place(world, world.rand, blockX + addx, blockY, blockZ + addz) && !((WorldFeature)treeBig).place(world, world.rand, blockX + addx, blockY, blockZ + addz)) {
 								world.setBlock(blockX + addx, blockY, blockZ + addz, Blocks.SAPLING_CHERRY.id());
 							}
-							if (player.getGamemode().consumeBlocks()) {
-								player.getHeldItem().damageItem(1, player);
+							if (player == null || player.getGamemode().consumeBlocks()) {
+								itemstack.damageItem(1, player);
 							}
 						}
 						times++;
@@ -485,6 +485,9 @@ public class ItemFertilizeBag extends ItemQuiver {
 						if (!((WorldFeature)tree).place(world, world.rand, blockX + addx, blockY, blockZ + addz)) {
 							world.setBlock(blockX + addx, blockY, blockZ + addz, Blocks.SAPLING_EUCALYPTUS.id());
 						}
+						if (player == null || player.getGamemode().consumeBlocks()) {
+							itemstack.damageItem(1, player);
+						}
 
 						times++;
 					}
@@ -492,7 +495,9 @@ public class ItemFertilizeBag extends ItemQuiver {
 					else if (world.getBlockId(blockX + addx, blockY, blockZ + addz) == Blocks.SAPLING_PALM.id()){
 						boolean big = world.getBlockId(blockX + addx, blockY - 1, blockZ + addz) != Blocks.SAND.id();
 						(new WorldFeatureTreePalm(Blocks.LOG_PALM, Blocks.LEAVES_PALM, big, true, false)).place(world, world.rand, blockX + addx, blockY, blockZ + addz);
-
+						if (player == null || player.getGamemode().consumeBlocks()) {
+							itemstack.damageItem(1, player);
+						}
 						times++;
 					}
 
@@ -502,6 +507,9 @@ public class ItemFertilizeBag extends ItemQuiver {
 						world.setBlock(blockX + addx, blockY, blockZ + addz, 0);
 						if (!((WorldFeature)treeSmall).place(world, world.rand, blockX + addx, blockY, blockZ + addz) && !((WorldFeature)treeBig).place(world, world.rand, blockX + addx, blockY, blockZ + addz)) {
 							world.setBlock(blockX + addx, blockY, blockZ + addz, Blocks.SAPLING_PINE.id());
+						}
+						if (player == null || player.getGamemode().consumeBlocks()) {
+							itemstack.damageItem(1, player);
 						}
 						times++;
 					}
@@ -513,6 +521,9 @@ public class ItemFertilizeBag extends ItemQuiver {
 						if (!((WorldFeature)treeSmall).place(world, world.rand, blockX + addx, blockY, blockZ + addz) && !((WorldFeature)treeBig).place(world, world.rand, blockX + addx, blockY, blockZ + addz)) {
 							world.setBlock(blockX + addx, blockY, blockZ + addz, Blocks.SAPLING_OAK_RETRO.id());
 						}
+						if (player == null || player.getGamemode().consumeBlocks()) {
+							itemstack.damageItem(1, player);
+						}
 						times++;
 					}
 
@@ -521,6 +532,9 @@ public class ItemFertilizeBag extends ItemQuiver {
 						WorldFeature tree = new WorldFeatureTreeShrub(Blocks.LEAVES_SHRUB.id(), Blocks.LOG_OAK.id());
 						if (!((WorldFeature)tree).place(world, world.rand, blockX + addx, blockY, blockZ + addz)) {
 							world.setBlock(blockX + addx, blockY, blockZ + addz, Blocks.SAPLING_SHRUB.id());
+						}
+						if (player == null || player.getGamemode().consumeBlocks()) {
+							itemstack.damageItem(1, player);
 						}
 						times++;
 					}
@@ -531,6 +545,9 @@ public class ItemFertilizeBag extends ItemQuiver {
 							WorldFeature treeFeature = new WorldFeatureTreeThorn(1, Blocks.LOG_THORN.id(), 0, Blocks.LEAVES_THORN.id(), 0);
 							if (!((WorldFeature)treeFeature).place(world, world.rand, blockX + addx, blockY, blockZ + addz)) {
 								world.setBlock(blockX + addx, blockY, blockZ + addz, Blocks.SAPLING_THORN.id());
+							}
+							if (player == null || player.getGamemode().consumeBlocks()) {
+								itemstack.damageItem(1, player);
 							}
 						}
 						times++;
