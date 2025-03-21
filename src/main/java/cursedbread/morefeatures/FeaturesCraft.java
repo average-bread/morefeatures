@@ -9,6 +9,7 @@ import net.minecraft.core.data.registry.recipe.RecipeGroup;
 import net.minecraft.core.data.registry.recipe.RecipeSymbol;
 import net.minecraft.core.data.registry.recipe.entry.RecipeEntryCrafting;
 import net.minecraft.core.data.registry.recipe.entry.RecipeEntryRepairable;
+import net.minecraft.core.data.registry.recipe.entry.RecipeEntryScrap;
 import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.item.Items;
@@ -454,6 +455,7 @@ public class FeaturesCraft implements RecipeEntrypoint {
 			}
 			workbenchGroup.register("chainCrownReapir", new RecipeEntryRepairable(new ItemStack(FeaturesItems.chainCrown), new RecipeSymbol(Items.CHAINLINK.getDefaultStack())));
 			RecipeBuilder.getRecipeGroup(MOD_ID, "workbench", new RecipeSymbol(Blocks.WORKBENCH.getDefaultStack()));
+			workbenchGroup.register("chaincrownScrap", new RecipeEntryScrap(FeaturesItems.chainCrown, Items.CHAINLINK, 4));
 			if (FeaturesItems.blockArmorEnabled == 1) {
 				RecipeBuilder.Shaped(MOD_ID)
 					.setShape("HCH", "HHH")
