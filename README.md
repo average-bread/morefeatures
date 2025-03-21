@@ -62,3 +62,9 @@ Currently, adds:
 * Mining hammers that break 3x3 area.
 
 * Flux plant that can be grown to farm string. Seeds can be found if you shift+right click on grass with paxel
+
+* Burned logs can be obtained by placing log near lava and can be crushed into charcoal
+
+* Cat helmet that can be found in desert labyrinth and lets the player see in dark
+
+* Fertilizing bags can be used to store up to 3 stacks of bone meal and to fertilize up to 3x3 area
