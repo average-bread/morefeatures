@@ -1,9 +1,7 @@
-package cursedbread.morefeatures.mixin;
+package cursedbread.morefeatures.mixin.generationmixins;
 
 import cursedbread.morefeatures.FeaturesMain;
 import cursedbread.morefeatures.blocks.FeaturesBlocks;
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
 import net.minecraft.core.block.BlockLogicSand;
 import net.minecraft.core.block.Blocks;
 import net.minecraft.core.world.World;
@@ -13,7 +11,6 @@ import net.minecraft.core.world.chunk.Chunk;
 import net.minecraft.core.world.generate.chunk.perlin.overworld.ChunkDecoratorOverworld;
 import net.minecraft.core.world.generate.feature.WorldFeatureDungeon;
 import net.minecraft.core.world.generate.feature.WorldFeatureFlowers;
-import net.minecraft.core.world.generate.feature.WorldFeatureOre;
 import net.minecraft.core.world.noise.PerlinNoise;
 import org.spongepowered.asm.mixin.*;
 import org.spongepowered.asm.mixin.injection.At;
@@ -21,8 +18,6 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import java.util.Random;
-
-import static org.apache.log4j.builders.appender.SocketAppenderBuilder.LOGGER;
 
 @Mixin(value = ChunkDecoratorOverworld.class, remap = false)
 public class ChunkDecoratorOverworldMixin {

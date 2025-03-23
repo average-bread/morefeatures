@@ -1,8 +1,5 @@
-package cursedbread.morefeatures.mixin;
+package cursedbread.morefeatures.mixin.itemsmixins;
 
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
-import net.minecraft.core.block.Block;
 import net.minecraft.core.entity.player.Player;
 import net.minecraft.core.player.inventory.menu.MenuCrafting;
 import org.spongepowered.asm.mixin.Mixin;

@@ -285,6 +285,12 @@ public class FeatureModel implements ModelEntrypoint {
 					.setTex(0, "morefeatures:block/ores/superore_nethercoal_netherrack", Side.sides)
 			);
 		}
+
+		ModelHelper.setBlockModel(
+			FeaturesBlocks.netherrackGravel,
+			() -> new BlockModelStandard<>(FeaturesBlocks.netherrackGravel)
+				.setTex(0,"morefeatures:block/nether_update_blocks/netherrack_gravel", Side.sides)
+		);
 	}
 
 	@Override

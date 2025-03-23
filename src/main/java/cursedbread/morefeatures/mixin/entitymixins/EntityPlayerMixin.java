@@ -1,26 +1,18 @@
-package cursedbread.morefeatures.mixin;
+package cursedbread.morefeatures.mixin.entitymixins;
 
-import cursedbread.morefeatures.FeaturesMain;
 import cursedbread.morefeatures.item.FeaturesItems;
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.Global;
-import net.minecraft.core.entity.Entity;
 import net.minecraft.core.entity.Mob;
 import net.minecraft.core.entity.player.Player;
 import net.minecraft.core.item.ItemStack;
-import net.minecraft.core.world.ICarriable;
 import net.minecraft.core.world.World;
-import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-
-import java.util.Objects;
 
 @Mixin(value = Player.class, remap = false)
 public abstract class EntityPlayerMixin extends Mob {

@@ -1,6 +1,5 @@
-package cursedbread.morefeatures.mixin.fuels;
+package cursedbread.morefeatures.mixin.itemsmixins.fuels;
 
-import cursedbread.morefeatures.blocks.FeaturesBlocks;
 import cursedbread.morefeatures.item.FeaturesItems;
 import net.minecraft.core.crafting.LookupFuelFurnace;
 import org.spongepowered.asm.mixin.Mixin;

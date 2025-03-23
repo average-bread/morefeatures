@@ -533,3 +533,6 @@ item.morefeatures.cat.helmet.desc=See in dark like ancient race of sentient cats
 
 item.morefeatures.fertilizer.bag.name=Fertilizer Bag
 item.morefeatures.fertilizer.bag.desc=Store all your bone meal in it for your gardening needs.
+
+tile.morefeatures.netherrack.gravel.name=Netherrack Gravel
+tile.morefeatures.netherrack.gravel.desc=A loose collection of nether pebbles.

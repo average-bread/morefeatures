@@ -1,14 +1,11 @@
-package cursedbread.morefeatures.mixin;
+package cursedbread.morefeatures.mixin.entitymixins;
 
 import cursedbread.morefeatures.item.FeaturesItems;
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
 import net.minecraft.core.entity.Entity;
 import net.minecraft.core.entity.Mob;
 import net.minecraft.core.entity.player.Player;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.item.Items;
-import net.minecraft.core.item.tool.ItemToolSword;
 import net.minecraft.core.world.World;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;

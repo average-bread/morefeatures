@@ -1,8 +1,6 @@
-package cursedbread.morefeatures.mixin;
+package cursedbread.morefeatures.mixin.itemsmixins;
 
 import cursedbread.morefeatures.item.FeaturesItems;
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
 import net.minecraft.core.entity.player.Player;
 import net.minecraft.core.item.*;
 import net.minecraft.core.world.World;

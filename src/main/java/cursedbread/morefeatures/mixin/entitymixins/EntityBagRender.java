@@ -1,4 +1,4 @@
-package cursedbread.morefeatures.mixin;
+package cursedbread.morefeatures.mixin.entitymixins;
 
 import cursedbread.morefeatures.item.artifacts.ItemBombQuiver;
 import cursedbread.morefeatures.item.artifacts.ItemBombQuiverEndless;

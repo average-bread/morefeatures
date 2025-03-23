@@ -1,8 +1,6 @@
-package cursedbread.morefeatures.mixin;
+package cursedbread.morefeatures.mixin.generationmixins;
 
 import cursedbread.morefeatures.FeaturesMain;
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.block.BlockLogic;
 import net.minecraft.core.block.BlockLogicFluid;
@@ -10,7 +8,6 @@ import net.minecraft.core.block.Blocks;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.entity.Entity;
 import net.minecraft.core.sound.SoundCategory;
-import net.minecraft.core.world.Dimension;
 import net.minecraft.core.world.World;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;

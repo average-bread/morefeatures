@@ -1,4 +1,4 @@
-package cursedbread.morefeatures.mixin;
+package cursedbread.morefeatures.mixin.generationmixins;
 
 import cursedbread.morefeatures.blocks.FeaturesBlocks;
 import net.minecraft.core.block.*;

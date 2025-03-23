@@ -123,8 +123,7 @@ public class FeaturesBlocks {
 
 	public static Block<?> superNetherCoalOre;
 
-	public static Block<?> redFire;
-	public static int redFireEnabled;
+	public static Block<?> netherrackGravel;
 
 	private void initializeBlockDetails() {
 		int color;
@@ -370,6 +369,12 @@ public class FeaturesBlocks {
 				.withDisabledNeighborNotifyOnMetadataChange()
 				.withTags(new Tag[]{BlockTags.FENCES_CONNECT, BlockTags.MINEABLE_BY_AXE});
 		}
+
+		netherrackGravel = fullBlock
+			.build("netherrack.gravel", blockId++, b ->new BlockLogicGravel(b))
+			.withSound(BlockSounds.GRAVEL)
+			.withHardness(0.6F)
+			.withTags(new Tag[]{BlockTags.MINEABLE_BY_SHOVEL});
 	}
 }
 

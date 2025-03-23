@@ -1,8 +1,5 @@
-package cursedbread.morefeatures.mixin;
+package cursedbread.morefeatures.mixin.generationmixins;
 
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
-import net.minecraft.core.block.Block;
 import net.minecraft.core.block.BlockLogicSaplingBirch;
 import net.minecraft.core.block.Blocks;
 import net.minecraft.core.world.World;
@@ -12,7 +9,6 @@ import net.minecraft.core.world.generate.feature.tree.WorldFeatureTreeFancy;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.Redirect;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import java.util.Random;
