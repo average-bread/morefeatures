@@ -30,25 +30,25 @@ public class FeatureModel implements ModelEntrypoint {
 	public void initBlockModels(BlockModelDispatcher dispatcher) {
 		if (FeaturesBlocks.coloredBlocksEnabled == 1) {
 			ModelHelper.setBlockModel(
-				FeaturesBlocks.vanillaColoredGlowstone,
-				() -> new BlockModelColoredGlowstone<>(FeaturesBlocks.vanillaColoredGlowstone,
+				FeaturesBlocks.vanilla_Colored_Glowstone,
+				() -> new BlockModelColoredGlowstone<>(FeaturesBlocks.vanilla_Colored_Glowstone,
 					false));
 
 			ModelHelper.setBlockModel(
-				FeaturesBlocks.vanillaColoredPaperwall,
-				() -> new BlockModelPaperwall<>(FeaturesBlocks.vanillaColoredPaperwall, FeaturesMain.paperWallAlt,
+				FeaturesBlocks.vanilla_Colored_Paperwall,
+				() -> new BlockModelPaperwall<>(FeaturesBlocks.vanilla_Colored_Paperwall, FeaturesMain.paperWallAlt,
 					false));
 
 			ModelHelper.setBlockModel(
-				FeaturesBlocks.vanillaColoredGlass,
-				() -> new BlockModelColoredGlass<>(FeaturesBlocks.vanillaColoredGlass, true,
+				FeaturesBlocks.vanilla_Colored_Glass,
+				() -> new BlockModelColoredGlass<>(FeaturesBlocks.vanilla_Colored_Glass, true,
 					false)
 					.onRenderLayer(1)
 			);
 
 			ModelHelper.setBlockModel(
-				FeaturesBlocks.vanillaColoredGlassTrapdoor,
-				() -> new BlockModelColoredGlassTrapdoor<>(FeaturesBlocks.vanillaColoredGlassTrapdoor,
+				FeaturesBlocks.vanilla_Colored_Glass_Trapdoor,
+				() -> new BlockModelColoredGlassTrapdoor<>(FeaturesBlocks.vanilla_Colored_Glass_Trapdoor,
 					false)
 					.onRenderLayer(1)
 			);
@@ -56,20 +56,20 @@ public class FeatureModel implements ModelEntrypoint {
 
 		if (FeaturesBlocks.plantEnabled == 1){
 			ModelHelper.setBlockModel(
-				FeaturesBlocks.rainbowFlower,
-				() -> new BlockModelFlowerStackable<>(FeaturesBlocks.rainbowFlower,
+				FeaturesBlocks.rainbow_Flower,
+				() -> new BlockModelFlowerStackable<>(FeaturesBlocks.rainbow_Flower,
 					"morefeatures:block/flower_rainbow/")
 			);
 
 			ModelHelper.setBlockModel(
-				FeaturesBlocks.fluxCropws,
-				() -> new BlockModelCropsFlux<>(FeaturesBlocks.fluxCropws));
+				FeaturesBlocks.flux_Cropws,
+				() -> new BlockModelCropsFlux<>(FeaturesBlocks.flux_Cropws));
 		}
 
 		if (FeaturesBlocks.miscBlocksEnabled == 1){
 			ModelHelper.setBlockModel(
-				FeaturesBlocks.gildingTable,
-				() -> new BlockModelStandard<>(FeaturesBlocks.gildingTable)
+				FeaturesBlocks.gilding_Table,
+				() -> new BlockModelStandard<>(FeaturesBlocks.gilding_Table)
 					.setTex(0,"morefeatures:block/extra_block_gilding_table", Side.sides)
 					.setTex(0,"minecraft:block/block_gold/top", Side.TOP)
 					.setTex(0,"minecraft:block/slate_top", Side.BOTTOM)
@@ -82,14 +82,14 @@ public class FeatureModel implements ModelEntrypoint {
 			);
 
 			ModelHelper.setBlockModel(
-				FeaturesBlocks.cookedham,
-				() -> new BlockModelStandard<>(FeaturesBlocks.cookedham)
+				FeaturesBlocks.ham_Cooked,
+				() -> new BlockModelStandard<>(FeaturesBlocks.ham_Cooked)
 					.setTex(0, "morefeatures:block/extra_block_ham_cooked_block", Side.sides)
 			);
 
 			ModelHelper.setBlockModel(
-				FeaturesBlocks.burnedLog,
-				() -> new BlockModelAxisAligned<>(FeaturesBlocks.burnedLog)
+				FeaturesBlocks.burned_Log,
+				() -> new BlockModelAxisAligned<>(FeaturesBlocks.burned_Log)
 					.setTex(0, "morefeatures:block/logs/burned_side", Side.sides)
 					.setTex(0, "morefeatures:block/logs/burned_top", Side.TOP)
 					.setTex(0, "morefeatures:block/logs/burned_top", Side.BOTTOM)
@@ -98,197 +98,197 @@ public class FeatureModel implements ModelEntrypoint {
 
 		if (FeaturesBlocks.superoresEnabled == 1){
 			ModelHelper.setBlockModel(
-				FeaturesBlocks.superCoalStoneOre,
-				() -> new BlockModelStandard<>(FeaturesBlocks.superCoalStoneOre)
+				FeaturesBlocks.super_Coal_Stone_Ore,
+				() -> new BlockModelStandard<>(FeaturesBlocks.super_Coal_Stone_Ore)
 					.setTex(0, "morefeatures:block/ores/superore_coal_stone", Side.sides)
 			);
 			ModelHelper.setBlockModel(
-				FeaturesBlocks.superCoalBasaltOre,
-				() -> new BlockModelStandard<>(FeaturesBlocks.superCoalBasaltOre)
+				FeaturesBlocks.super_Coal_Basalt_Ore,
+				() -> new BlockModelStandard<>(FeaturesBlocks.super_Coal_Basalt_Ore)
 					.setTex(0, "morefeatures:block/ores/superore_coal_basalt", Side.sides)
 			);
 			ModelHelper.setBlockModel(
-				FeaturesBlocks.superCoalLimestoneOre,
-				() -> new BlockModelStandard<>(FeaturesBlocks.superCoalLimestoneOre)
+				FeaturesBlocks.super_Coal_Limestone_Ore,
+				() -> new BlockModelStandard<>(FeaturesBlocks.super_Coal_Limestone_Ore)
 					.setTex(0, "morefeatures:block/ores/superore_coal_limestone", Side.sides)
 			);
 			ModelHelper.setBlockModel(
-				FeaturesBlocks.superCoalGraniteOre,
-				() -> new BlockModelStandard<>(FeaturesBlocks.superCoalGraniteOre)
+				FeaturesBlocks.super_Coal_Granite_Ore,
+				() -> new BlockModelStandard<>(FeaturesBlocks.super_Coal_Granite_Ore)
 					.setTex(0, "morefeatures:block/ores/superore_coal_granite", Side.sides)
 			);
 			ModelHelper.setBlockModel(
-				FeaturesBlocks.superCoalPermafrostOre,
-				() -> new BlockModelStandard<>(FeaturesBlocks.superCoalPermafrostOre)
+				FeaturesBlocks.super_Coal_Permafrost_Ore,
+				() -> new BlockModelStandard<>(FeaturesBlocks.super_Coal_Permafrost_Ore)
 					.setTex(0, "morefeatures:block/ores/superore_coal_permafrost", Side.sides)
 			);
 
 			ModelHelper.setBlockModel(
-				FeaturesBlocks.superIronStoneOre,
-				() -> new BlockModelStandard<>(FeaturesBlocks.superIronStoneOre)
+				FeaturesBlocks.super_Iron_Stone_Ore,
+				() -> new BlockModelStandard<>(FeaturesBlocks.super_Iron_Stone_Ore)
 					.setTex(0, "morefeatures:block/ores/superore_iron_stone", Side.sides)
 			);
 			ModelHelper.setBlockModel(
-				FeaturesBlocks.superIronBasaltOre,
-				() -> new BlockModelStandard<>(FeaturesBlocks.superIronBasaltOre)
+				FeaturesBlocks.super_Iron_Basalt_Ore,
+				() -> new BlockModelStandard<>(FeaturesBlocks.super_Iron_Basalt_Ore)
 					.setTex(0, "morefeatures:block/ores/superore_iron_basalt", Side.sides)
 			);
 			ModelHelper.setBlockModel(
-				FeaturesBlocks.superIronLimestoneOre,
-				() -> new BlockModelStandard<>(FeaturesBlocks.superIronLimestoneOre)
+				FeaturesBlocks.super_Iron_Limestone_Ore,
+				() -> new BlockModelStandard<>(FeaturesBlocks.super_Iron_Limestone_Ore)
 					.setTex(0, "morefeatures:block/ores/superore_iron_limestone", Side.sides)
 			);
 			ModelHelper.setBlockModel(
-				FeaturesBlocks.superIronGraniteOre,
-				() -> new BlockModelStandard<>(FeaturesBlocks.superIronGraniteOre)
+				FeaturesBlocks.super_Iron_Granite_Ore,
+				() -> new BlockModelStandard<>(FeaturesBlocks.super_Iron_Granite_Ore)
 					.setTex(0, "morefeatures:block/ores/superore_iron_granite", Side.sides)
 			);
 			ModelHelper.setBlockModel(
-				FeaturesBlocks.superIronPermafrostOre,
-				() -> new BlockModelStandard<>(FeaturesBlocks.superIronPermafrostOre)
+				FeaturesBlocks.super_Iron_Permafrost_Ore,
+				() -> new BlockModelStandard<>(FeaturesBlocks.super_Iron_Permafrost_Ore)
 					.setTex(0, "morefeatures:block/ores/superore_iron_permafrost", Side.sides)
 			);
 
 			ModelHelper.setBlockModel(
-				FeaturesBlocks.superGoldStoneOre,
-				() -> new BlockModelStandard<>(FeaturesBlocks.superGoldStoneOre)
+				FeaturesBlocks.super_Gold_Stone_Ore,
+				() -> new BlockModelStandard<>(FeaturesBlocks.super_Gold_Stone_Ore)
 					.setTex(0, "morefeatures:block/ores/superore_gold_stone", Side.sides)
 			);
 			ModelHelper.setBlockModel(
-				FeaturesBlocks.superGoldBasaltOre,
-				() -> new BlockModelStandard<>(FeaturesBlocks.superGoldBasaltOre)
+				FeaturesBlocks.super_Gold_Basalt_Ore,
+				() -> new BlockModelStandard<>(FeaturesBlocks.super_Gold_Basalt_Ore)
 					.setTex(0, "morefeatures:block/ores/superore_gold_basalt", Side.sides)
 			);
 			ModelHelper.setBlockModel(
-				FeaturesBlocks.superGoldLimestoneOre,
-				() -> new BlockModelStandard<>(FeaturesBlocks.superGoldLimestoneOre)
+				FeaturesBlocks.super_Gold_Limestone_Ore,
+				() -> new BlockModelStandard<>(FeaturesBlocks.super_Gold_Limestone_Ore)
 					.setTex(0, "morefeatures:block/ores/superore_gold_limestone", Side.sides)
 			);
 			ModelHelper.setBlockModel(
-				FeaturesBlocks.superGoldGraniteOre,
-				() -> new BlockModelStandard<>(FeaturesBlocks.superGoldGraniteOre)
+				FeaturesBlocks.super_Gold_Granite_Ore,
+				() -> new BlockModelStandard<>(FeaturesBlocks.super_Gold_Granite_Ore)
 					.setTex(0, "morefeatures:block/ores/superore_gold_granite", Side.sides)
 			);
 			ModelHelper.setBlockModel(
-				FeaturesBlocks.superGoldPermafrostOre,
-				() -> new BlockModelStandard<>(FeaturesBlocks.superGoldPermafrostOre)
+				FeaturesBlocks.super_Gold_Permafrost_Ore,
+				() -> new BlockModelStandard<>(FeaturesBlocks.super_Gold_Permafrost_Ore)
 					.setTex(0, "morefeatures:block/ores/superore_gold_permafrost", Side.sides)
 			);
 
 			ModelHelper.setBlockModel(
-				FeaturesBlocks.superLapisStoneOre,
-				() -> new BlockModelStandard<>(FeaturesBlocks.superLapisStoneOre)
+				FeaturesBlocks.super_Lapis_Stone_Ore,
+				() -> new BlockModelStandard<>(FeaturesBlocks.super_Lapis_Stone_Ore)
 					.setTex(0, "morefeatures:block/ores/superore_lapis_stone", Side.sides)
 			);
 			ModelHelper.setBlockModel(
-				FeaturesBlocks.superLapisBasaltOre,
-				() -> new BlockModelStandard<>(FeaturesBlocks.superLapisBasaltOre)
+				FeaturesBlocks.super_Lapis_Basalt_Ore,
+				() -> new BlockModelStandard<>(FeaturesBlocks.super_Lapis_Basalt_Ore)
 					.setTex(0, "morefeatures:block/ores/superore_lapis_basalt", Side.sides)
 			);
 			ModelHelper.setBlockModel(
-				FeaturesBlocks.superLapisLimestoneOre,
-				() -> new BlockModelStandard<>(FeaturesBlocks.superLapisLimestoneOre)
+				FeaturesBlocks.super_Lapis_Limestone_Ore,
+				() -> new BlockModelStandard<>(FeaturesBlocks.super_Lapis_Limestone_Ore)
 					.setTex(0, "morefeatures:block/ores/superore_lapis_limestone", Side.sides)
 			);
 			ModelHelper.setBlockModel(
-				FeaturesBlocks.superLapisGraniteOre,
-				() -> new BlockModelStandard<>(FeaturesBlocks.superLapisGraniteOre)
+				FeaturesBlocks.super_Lapis_Granite_Ore,
+				() -> new BlockModelStandard<>(FeaturesBlocks.super_Lapis_Granite_Ore)
 					.setTex(0, "morefeatures:block/ores/superore_lapis_granite", Side.sides)
 			);
 			ModelHelper.setBlockModel(
-				FeaturesBlocks.superLapisPermafrostOre,
-				() -> new BlockModelStandard<>(FeaturesBlocks.superLapisPermafrostOre)
+				FeaturesBlocks.super_Lapis_Permafrost_Ore,
+				() -> new BlockModelStandard<>(FeaturesBlocks.super_Lapis_Permafrost_Ore)
 					.setTex(0, "morefeatures:block/ores/superore_lapis_permafrost", Side.sides)
 			);
 
 			ModelHelper.setBlockModel(
-				FeaturesBlocks.superRedstoneStoneOre,
-				() -> new BlockModelStandard<>(FeaturesBlocks.superRedstoneStoneOre)
+				FeaturesBlocks.super_Redstone_Stone_Ore,
+				() -> new BlockModelStandard<>(FeaturesBlocks.super_Redstone_Stone_Ore)
 					.setTex(0, "morefeatures:block/ores/superore_redstone_stone", Side.sides)
 			);
 			ModelHelper.setBlockModel(
-				FeaturesBlocks.superRedstoneBasaltOre,
-				() -> new BlockModelStandard<>(FeaturesBlocks.superRedstoneBasaltOre)
+				FeaturesBlocks.super_Redstone_Basalt_Ore,
+				() -> new BlockModelStandard<>(FeaturesBlocks.super_Redstone_Basalt_Ore)
 					.setTex(0, "morefeatures:block/ores/superore_redstone_basalt", Side.sides)
 			);
 			ModelHelper.setBlockModel(
-				FeaturesBlocks.superRedstoneLimestoneOre,
-				() -> new BlockModelStandard<>(FeaturesBlocks.superRedstoneLimestoneOre)
+				FeaturesBlocks.super_Redstone_Limestone_Ore,
+				() -> new BlockModelStandard<>(FeaturesBlocks.super_Redstone_Limestone_Ore)
 					.setTex(0, "morefeatures:block/ores/superore_redstone_limestone", Side.sides)
 			);
 			ModelHelper.setBlockModel(
-				FeaturesBlocks.superRedstoneGraniteOre,
-				() -> new BlockModelStandard<>(FeaturesBlocks.superRedstoneGraniteOre)
+				FeaturesBlocks.super_Redstone_Granite_Ore,
+				() -> new BlockModelStandard<>(FeaturesBlocks.super_Redstone_Granite_Ore)
 					.setTex(0, "morefeatures:block/ores/superore_redstone_granite", Side.sides)
 			);
 			ModelHelper.setBlockModel(
-				FeaturesBlocks.superRedstonePermafrostOre,
-				() -> new BlockModelStandard<>(FeaturesBlocks.superRedstonePermafrostOre)
+				FeaturesBlocks.super_Redstone_Permafrost_Ore,
+				() -> new BlockModelStandard<>(FeaturesBlocks.super_Redstone_Permafrost_Ore)
 					.setTex(0, "morefeatures:block/ores/superore_redstone_permafrost", Side.sides)
 			);
 
 			ModelHelper.setBlockModel(
-				FeaturesBlocks.superRedstoneGlowingStoneOre,
-				() -> new BlockModelStandard<>(FeaturesBlocks.superRedstoneGlowingStoneOre)
+				FeaturesBlocks.super_Redstone_Glowing_Stone_Ore,
+				() -> new BlockModelStandard<>(FeaturesBlocks.super_Redstone_Glowing_Stone_Ore)
 					.setTex(0, "morefeatures:block/ores/superore_redstone_glowing_stone", Side.sides)
 			);
 			ModelHelper.setBlockModel(
-				FeaturesBlocks.superRedstoneGlowingBasaltOre,
-				() -> new BlockModelStandard<>(FeaturesBlocks.superRedstoneGlowingBasaltOre)
+				FeaturesBlocks.super_Redstone_Glowing_Basalt_Ore,
+				() -> new BlockModelStandard<>(FeaturesBlocks.super_Redstone_Glowing_Basalt_Ore)
 					.setTex(0, "morefeatures:block/ores/superore_redstone_glowing_basalt", Side.sides)
 			);
 			ModelHelper.setBlockModel(
-				FeaturesBlocks.superRedstoneGlowingLimestoneOre,
-				() -> new BlockModelStandard<>(FeaturesBlocks.superRedstoneGlowingLimestoneOre)
+				FeaturesBlocks.super_Redstone_Glowing_Limestone_Ore,
+				() -> new BlockModelStandard<>(FeaturesBlocks.super_Redstone_Glowing_Limestone_Ore)
 					.setTex(0, "morefeatures:block/ores/superore_redstone_glowing_limestone", Side.sides)
 			);
 			ModelHelper.setBlockModel(
-				FeaturesBlocks.superRedstoneGlowingGraniteOre,
-				() -> new BlockModelStandard<>(FeaturesBlocks.superRedstoneGlowingGraniteOre)
+				FeaturesBlocks.super_Redstone_Glowing_Granite_Ore,
+				() -> new BlockModelStandard<>(FeaturesBlocks.super_Redstone_Glowing_Granite_Ore)
 					.setTex(0, "morefeatures:block/ores/superore_redstone_glowing_granite", Side.sides)
 			);
 			ModelHelper.setBlockModel(
-				FeaturesBlocks.superRedstoneGlowingPermafrostOre,
-				() -> new BlockModelStandard<>(FeaturesBlocks.superRedstoneGlowingPermafrostOre)
+				FeaturesBlocks.super_Redstone_Glowing_Permafrost_Ore,
+				() -> new BlockModelStandard<>(FeaturesBlocks.super_Redstone_Glowing_Permafrost_Ore)
 					.setTex(0, "morefeatures:block/ores/superore_redstone_glowing_permafrost", Side.sides)
 			);
 
 			ModelHelper.setBlockModel(
-				FeaturesBlocks.superDiamondStoneOre,
-				() -> new BlockModelStandard<>(FeaturesBlocks.superDiamondStoneOre)
+				FeaturesBlocks.super_Diamond_Stone_Ore,
+				() -> new BlockModelStandard<>(FeaturesBlocks.super_Diamond_Stone_Ore)
 					.setTex(0, "morefeatures:block/ores/superore_diamond_stone", Side.sides)
 			);
 			ModelHelper.setBlockModel(
-				FeaturesBlocks.superDiamondBasaltOre,
-				() -> new BlockModelStandard<>(FeaturesBlocks.superDiamondBasaltOre)
+				FeaturesBlocks.super_Diamond_Basalt_Ore,
+				() -> new BlockModelStandard<>(FeaturesBlocks.super_Diamond_Basalt_Ore)
 					.setTex(0, "morefeatures:block/ores/superore_diamond_basalt", Side.sides)
 			);
 			ModelHelper.setBlockModel(
-				FeaturesBlocks.superDiamondLimestoneOre,
-				() -> new BlockModelStandard<>(FeaturesBlocks.superDiamondLimestoneOre)
+				FeaturesBlocks.super_Diamond_Limestone_Ore,
+				() -> new BlockModelStandard<>(FeaturesBlocks.super_Diamond_Limestone_Ore)
 					.setTex(0, "morefeatures:block/ores/superore_diamond_limestone", Side.sides)
 			);
 			ModelHelper.setBlockModel(
-				FeaturesBlocks.superDiamondGraniteOre,
-				() -> new BlockModelStandard<>(FeaturesBlocks.superDiamondGraniteOre)
+				FeaturesBlocks.super_Diamond_Granite_Ore,
+				() -> new BlockModelStandard<>(FeaturesBlocks.super_Diamond_Granite_Ore)
 					.setTex(0, "morefeatures:block/ores/superore_diamond_granite", Side.sides)
 			);
 			ModelHelper.setBlockModel(
-				FeaturesBlocks.superDiamondPermafrostOre,
-				() -> new BlockModelStandard<>(FeaturesBlocks.superDiamondPermafrostOre)
+				FeaturesBlocks.super_Diamond_Permafrost_Ore,
+				() -> new BlockModelStandard<>(FeaturesBlocks.super_Diamond_Permafrost_Ore)
 					.setTex(0, "morefeatures:block/ores/superore_diamond_permafrost", Side.sides)
 			);
 
 			ModelHelper.setBlockModel(
-				FeaturesBlocks.superNetherCoalOre,
-				() -> new BlockModelStandard<>(FeaturesBlocks.superNetherCoalOre)
+				FeaturesBlocks.super_Nether_Coal_Ore,
+				() -> new BlockModelStandard<>(FeaturesBlocks.super_Nether_Coal_Ore)
 					.setTex(0, "morefeatures:block/ores/superore_nethercoal_netherrack", Side.sides)
 			);
 		}
 
 		ModelHelper.setBlockModel(
-			FeaturesBlocks.netherrackGravel,
-			() -> new BlockModelStandard<>(FeaturesBlocks.netherrackGravel)
+			FeaturesBlocks.netherrack_Gravel,
+			() -> new BlockModelStandard<>(FeaturesBlocks.netherrack_Gravel)
 				.setTex(0,"morefeatures:block/nether_update_blocks/netherrack_gravel", Side.sides)
 		);
 	}
@@ -296,464 +296,464 @@ public class FeatureModel implements ModelEntrypoint {
 	@Override
 	public void initItemModels(ItemModelDispatcher dispatcher) {
 		if (FeaturesItems.crownsEnabled == 1) {
-			ModelHelper.setItemModel(FeaturesItems.dandelionCrown,
+			ModelHelper.setItemModel(FeaturesItems.dandelion_Crown,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.dandelionCrown, MOD_ID);
-					model.icon = TextureRegistry.getTexture(FeaturesItems.dandelionCrown.namespaceID);
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.dandelion_Crown, MOD_ID);
+					model.icon = TextureRegistry.getTexture(FeaturesItems.dandelion_Crown.namespaceID);
 					return model;
 				});
 
-			ModelHelper.setItemModel(FeaturesItems.roseCrown,
+			ModelHelper.setItemModel(FeaturesItems.rose_Crown,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.roseCrown, MOD_ID);
-					model.icon = TextureRegistry.getTexture(FeaturesItems.roseCrown.namespaceID);
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.rose_Crown, MOD_ID);
+					model.icon = TextureRegistry.getTexture(FeaturesItems.rose_Crown.namespaceID);
 					return model;
 				});
 
-			ModelHelper.setItemModel(FeaturesItems.cherryCrown,
+			ModelHelper.setItemModel(FeaturesItems.cherry_Crown,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.cherryCrown, MOD_ID);
-					model.icon = TextureRegistry.getTexture(FeaturesItems.cherryCrown.namespaceID);
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.cherry_Crown, MOD_ID);
+					model.icon = TextureRegistry.getTexture(FeaturesItems.cherry_Crown.namespaceID);
 					return model;
 				});
 
-			ModelHelper.setItemModel(FeaturesItems.deadbushCrown,
+			ModelHelper.setItemModel(FeaturesItems.deadbush_Crown,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.deadbushCrown, MOD_ID);
-					model.icon = TextureRegistry.getTexture(FeaturesItems.deadbushCrown.namespaceID);
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.deadbush_Crown, MOD_ID);
+					model.icon = TextureRegistry.getTexture(FeaturesItems.deadbush_Crown.namespaceID);
 					return model;
 				});
 
-			ModelHelper.setItemModel(FeaturesItems.orchidCrown,
+			ModelHelper.setItemModel(FeaturesItems.orchid_Crown,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.orchidCrown, MOD_ID);
-					model.icon = TextureRegistry.getTexture(FeaturesItems.orchidCrown.namespaceID);
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.orchid_Crown, MOD_ID);
+					model.icon = TextureRegistry.getTexture(FeaturesItems.orchid_Crown.namespaceID);
 					return model;
 				});
 
-			ModelHelper.setItemModel(FeaturesItems.heatherCrown,
+			ModelHelper.setItemModel(FeaturesItems.heather_Crown,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.heatherCrown, MOD_ID);
-					model.icon = TextureRegistry.getTexture(FeaturesItems.heatherCrown.namespaceID);
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.heather_Crown, MOD_ID);
+					model.icon = TextureRegistry.getTexture(FeaturesItems.heather_Crown.namespaceID);
 					return model;
 				});
 
-			ModelHelper.setItemModel(FeaturesItems.bluebellCrown,
+			ModelHelper.setItemModel(FeaturesItems.bluebell_Crown,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.bluebellCrown, MOD_ID);
-					model.icon = TextureRegistry.getTexture(FeaturesItems.bluebellCrown.namespaceID);
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.bluebell_Crown, MOD_ID);
+					model.icon = TextureRegistry.getTexture(FeaturesItems.bluebell_Crown.namespaceID);
 					return model;
 				});
 
-			ModelHelper.setItemModel(FeaturesItems.marigoldCrown,
+			ModelHelper.setItemModel(FeaturesItems.marigold_Crown,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.marigoldCrown, MOD_ID);
-					model.icon = TextureRegistry.getTexture(FeaturesItems.marigoldCrown.namespaceID);
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.marigold_Crown, MOD_ID);
+					model.icon = TextureRegistry.getTexture(FeaturesItems.marigold_Crown.namespaceID);
 					return model;
 				});
 		}
 
 		if (FeaturesItems.crownsEnabled == 1) {
-			ModelHelper.setItemModel(FeaturesItems.leatherCrown,
+			ModelHelper.setItemModel(FeaturesItems.leather_Crown,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.leatherCrown, MOD_ID);
-					model.icon = TextureRegistry.getTexture(FeaturesItems.leatherCrown.namespaceID);
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.leather_Crown, MOD_ID);
+					model.icon = TextureRegistry.getTexture(FeaturesItems.leather_Crown.namespaceID);
 					return model;
 				});
-			ModelHelper.setItemModel(FeaturesItems.chainCrown,
+			ModelHelper.setItemModel(FeaturesItems.chain_Crown,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.chainCrown, MOD_ID);
-					model.icon = TextureRegistry.getTexture(FeaturesItems.chainCrown.namespaceID);
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.chain_Crown, MOD_ID);
+					model.icon = TextureRegistry.getTexture(FeaturesItems.chain_Crown.namespaceID);
 					return model;
 				});
-			ModelHelper.setItemModel(FeaturesItems.ironCrown,
+			ModelHelper.setItemModel(FeaturesItems.iron_Crown,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.ironCrown, MOD_ID);
-					model.icon = TextureRegistry.getTexture(FeaturesItems.ironCrown.namespaceID);
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.iron_Crown, MOD_ID);
+					model.icon = TextureRegistry.getTexture(FeaturesItems.iron_Crown.namespaceID);
 					return model;
 				});
-			ModelHelper.setItemModel(FeaturesItems.goldCrown,
+			ModelHelper.setItemModel(FeaturesItems.gold_Crown,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.goldCrown, MOD_ID);
-					model.icon = TextureRegistry.getTexture(FeaturesItems.goldCrown.namespaceID);
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.gold_Crown, MOD_ID);
+					model.icon = TextureRegistry.getTexture(FeaturesItems.gold_Crown.namespaceID);
 					return model;
 				});
-			ModelHelper.setItemModel(FeaturesItems.diamondCrown,
+			ModelHelper.setItemModel(FeaturesItems.diamond_Crown,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.diamondCrown, MOD_ID);
-					model.icon = TextureRegistry.getTexture(FeaturesItems.diamondCrown.namespaceID);
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.diamond_Crown, MOD_ID);
+					model.icon = TextureRegistry.getTexture(FeaturesItems.diamond_Crown.namespaceID);
 					return model;
 				});
-			ModelHelper.setItemModel(FeaturesItems.steelCrown,
+			ModelHelper.setItemModel(FeaturesItems.steel_Crown,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.steelCrown, MOD_ID);
-					model.icon = TextureRegistry.getTexture(FeaturesItems.steelCrown.namespaceID);
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.steel_Crown, MOD_ID);
+					model.icon = TextureRegistry.getTexture(FeaturesItems.steel_Crown.namespaceID);
 					return model;
 				});
 
 			if (FeaturesItems.blockArmorEnabled == 1) {
-				ModelHelper.setItemModel(FeaturesItems.stoneCrown,
+				ModelHelper.setItemModel(FeaturesItems.stone_Crown,
 					() -> {
-						ItemModelStandard model = new ItemModelStandard(FeaturesItems.stoneCrown, MOD_ID);
-						model.icon = TextureRegistry.getTexture(FeaturesItems.stoneCrown.namespaceID);
+						ItemModelStandard model = new ItemModelStandard(FeaturesItems.stone_Crown, MOD_ID);
+						model.icon = TextureRegistry.getTexture(FeaturesItems.stone_Crown.namespaceID);
 						return model;
 					});
 			}
 			if (FeaturesItems.miscArmorEnabled == 1) {
-				ModelHelper.setItemModel(FeaturesItems.olivineCrown,
+				ModelHelper.setItemModel(FeaturesItems.olivine_Crown,
 					() -> {
-						ItemModelStandard model = new ItemModelStandard(FeaturesItems.olivineCrown, MOD_ID);
-						model.icon = TextureRegistry.getTexture(FeaturesItems.olivineCrown.namespaceID);
+						ItemModelStandard model = new ItemModelStandard(FeaturesItems.olivine_Crown, MOD_ID);
+						model.icon = TextureRegistry.getTexture(FeaturesItems.olivine_Crown.namespaceID);
 						return model;
 					});
 			}
 			if (FeaturesItems.blockArmorEnabled == 1) {
-				ModelHelper.setItemModel(FeaturesItems.bedrockCrown,
+				ModelHelper.setItemModel(FeaturesItems.bedrock_Crown,
 					() -> {
-						ItemModelStandard model = new ItemModelStandard(FeaturesItems.bedrockCrown, MOD_ID);
-						model.icon = TextureRegistry.getTexture(FeaturesItems.bedrockCrown.namespaceID);
+						ItemModelStandard model = new ItemModelStandard(FeaturesItems.bedrock_Crown, MOD_ID);
+						model.icon = TextureRegistry.getTexture(FeaturesItems.bedrock_Crown.namespaceID);
 						return model;
 					});
 			}
 			if (FeaturesItems.oldArmorEnabled == 1) {
-				ModelHelper.setItemModel(FeaturesItems.plateCrown,
+				ModelHelper.setItemModel(FeaturesItems.plate_Crown,
 					() -> {
-						ItemModelStandard model = new ItemModelStandard(FeaturesItems.plateCrown, MOD_ID);
-						model.icon = TextureRegistry.getTexture(FeaturesItems.plateCrown.namespaceID);
+						ItemModelStandard model = new ItemModelStandard(FeaturesItems.plate_Crown, MOD_ID);
+						model.icon = TextureRegistry.getTexture(FeaturesItems.plate_Crown.namespaceID);
 						return model;
 					});
 			}
 			if (FeaturesItems.oldArmorEnabled == 1) {
-				ModelHelper.setItemModel(FeaturesItems.leatherChainCrown,
+				ModelHelper.setItemModel(FeaturesItems.leather_Chain_Crown,
 					() -> {
-						ItemModelStandard model = new ItemModelStandard(FeaturesItems.leatherChainCrown, MOD_ID);
-						model.icon = TextureRegistry.getTexture(FeaturesItems.leatherChainCrown.namespaceID);
+						ItemModelStandard model = new ItemModelStandard(FeaturesItems.leather_Chain_Crown, MOD_ID);
+						model.icon = TextureRegistry.getTexture(FeaturesItems.leather_Chain_Crown.namespaceID);
 						return model;
 					});
 			}
 			if (FeaturesItems.miscArmorEnabled == 1) {
-				ModelHelper.setItemModel(FeaturesItems.quartzCrown,
+				ModelHelper.setItemModel(FeaturesItems.quartz_Crown,
 					() -> {
-						ItemModelStandard model = new ItemModelStandard(FeaturesItems.quartzCrown, MOD_ID);
-						model.icon = TextureRegistry.getTexture(FeaturesItems.quartzCrown.namespaceID);
+						ItemModelStandard model = new ItemModelStandard(FeaturesItems.quartz_Crown, MOD_ID);
+						model.icon = TextureRegistry.getTexture(FeaturesItems.quartz_Crown.namespaceID);
 						return model;
 					});
 			}
 		}
 
 		if (FeaturesItems.blockArmorEnabled == 1) {
-			ModelHelper.setItemModel(FeaturesItems.bedrockHelmet,
+			ModelHelper.setItemModel(FeaturesItems.bedrock_Helmet,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.bedrockHelmet, MOD_ID);
-					model.icon = TextureRegistry.getTexture(FeaturesItems.bedrockHelmet.namespaceID);
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.bedrock_Helmet, MOD_ID);
+					model.icon = TextureRegistry.getTexture(FeaturesItems.bedrock_Helmet.namespaceID);
 					return model;
 				});
-			ModelHelper.setItemModel(FeaturesItems.bedrockChestplate,
+			ModelHelper.setItemModel(FeaturesItems.bedrock_Chestplate,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.bedrockChestplate, MOD_ID);
-					model.icon = TextureRegistry.getTexture(FeaturesItems.bedrockChestplate.namespaceID);
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.bedrock_Chestplate, MOD_ID);
+					model.icon = TextureRegistry.getTexture(FeaturesItems.bedrock_Chestplate.namespaceID);
 					return model;
 				});
-			ModelHelper.setItemModel(FeaturesItems.bedrockLeggings,
+			ModelHelper.setItemModel(FeaturesItems.bedrock_Leggings,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.bedrockLeggings, MOD_ID);
-					model.icon = TextureRegistry.getTexture(FeaturesItems.bedrockLeggings.namespaceID);
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.bedrock_Leggings, MOD_ID);
+					model.icon = TextureRegistry.getTexture(FeaturesItems.bedrock_Leggings.namespaceID);
 					return model;
 				});
-			ModelHelper.setItemModel(FeaturesItems.bedrockBoots,
+			ModelHelper.setItemModel(FeaturesItems.bedrock_Boots,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.bedrockBoots, MOD_ID);
-					model.icon = TextureRegistry.getTexture(FeaturesItems.bedrockBoots.namespaceID);
-					return model;
-				});
-		}
-
-		if (FeaturesItems.oldArmorEnabled == 1) {
-			ModelHelper.setItemModel(FeaturesItems.plateHelmet,
-				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.plateHelmet, MOD_ID);
-					model.icon = TextureRegistry.getTexture(FeaturesItems.plateHelmet.namespaceID);
-					return model;
-				});
-			ModelHelper.setItemModel(FeaturesItems.plateChestplate,
-				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.plateChestplate, MOD_ID);
-					model.icon = TextureRegistry.getTexture(FeaturesItems.plateChestplate.namespaceID);
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.bedrock_Boots, MOD_ID);
+					model.icon = TextureRegistry.getTexture(FeaturesItems.bedrock_Boots.namespaceID);
 					return model;
 				});
 		}
 
 		if (FeaturesItems.oldArmorEnabled == 1) {
-			ModelHelper.setItemModel(FeaturesItems.leatherChainHelmet,
+			ModelHelper.setItemModel(FeaturesItems.plate_Helmet,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.leatherChainHelmet, MOD_ID);
-					model.icon = TextureRegistry.getTexture(FeaturesItems.leatherChainHelmet.namespaceID);
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.plate_Helmet, MOD_ID);
+					model.icon = TextureRegistry.getTexture(FeaturesItems.plate_Helmet.namespaceID);
 					return model;
 				});
-			ModelHelper.setItemModel(FeaturesItems.leatherChainChestplate,
+			ModelHelper.setItemModel(FeaturesItems.plate_Chestplate,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.leatherChainChestplate, MOD_ID);
-					model.icon = TextureRegistry.getTexture(FeaturesItems.leatherChainChestplate.namespaceID);
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.plate_Chestplate, MOD_ID);
+					model.icon = TextureRegistry.getTexture(FeaturesItems.plate_Chestplate.namespaceID);
 					return model;
 				});
-			ModelHelper.setItemModel(FeaturesItems.leatherChainLeggings,
+		}
+
+		if (FeaturesItems.oldArmorEnabled == 1) {
+			ModelHelper.setItemModel(FeaturesItems.leather_Chain_Helmet,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.leatherChainLeggings, MOD_ID);
-					model.icon = TextureRegistry.getTexture(FeaturesItems.leatherChainLeggings.namespaceID);
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.leather_Chain_Helmet, MOD_ID);
+					model.icon = TextureRegistry.getTexture(FeaturesItems.leather_Chain_Helmet.namespaceID);
 					return model;
 				});
-			ModelHelper.setItemModel(FeaturesItems.leatherChainBoots,
+			ModelHelper.setItemModel(FeaturesItems.leather_Chain_Chestplate,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.leatherChainBoots, MOD_ID);
-					model.icon = TextureRegistry.getTexture(FeaturesItems.leatherChainBoots.namespaceID);
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.leather_Chain_Chestplate, MOD_ID);
+					model.icon = TextureRegistry.getTexture(FeaturesItems.leather_Chain_Chestplate.namespaceID);
+					return model;
+				});
+			ModelHelper.setItemModel(FeaturesItems.leather_Chain_Leggings,
+				() -> {
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.leather_Chain_Leggings, MOD_ID);
+					model.icon = TextureRegistry.getTexture(FeaturesItems.leather_Chain_Leggings.namespaceID);
+					return model;
+				});
+			ModelHelper.setItemModel(FeaturesItems.leather_Chain_Boots,
+				() -> {
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.leather_Chain_Boots, MOD_ID);
+					model.icon = TextureRegistry.getTexture(FeaturesItems.leather_Chain_Boots.namespaceID);
 					return model;
 				});
 		}
 
 		if (FeaturesItems.blockArmorEnabled == 1) {
-			ModelHelper.setItemModel(FeaturesItems.stoneHelmet,
+			ModelHelper.setItemModel(FeaturesItems.stone_Helmet,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.stoneHelmet, MOD_ID);
-					model.icon = TextureRegistry.getTexture(FeaturesItems.stoneHelmet.namespaceID);
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.stone_Helmet, MOD_ID);
+					model.icon = TextureRegistry.getTexture(FeaturesItems.stone_Helmet.namespaceID);
 					return model;
 				});
-			ModelHelper.setItemModel(FeaturesItems.stoneChestplate,
+			ModelHelper.setItemModel(FeaturesItems.stone_Chestplate,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.stoneChestplate, MOD_ID);
-					model.icon = TextureRegistry.getTexture(FeaturesItems.stoneChestplate.namespaceID);
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.stone_Chestplate, MOD_ID);
+					model.icon = TextureRegistry.getTexture(FeaturesItems.stone_Chestplate.namespaceID);
 					return model;
 				});
-			ModelHelper.setItemModel(FeaturesItems.stoneLeggings,
+			ModelHelper.setItemModel(FeaturesItems.stone_Leggings,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.stoneLeggings, MOD_ID);
-					model.icon = TextureRegistry.getTexture(FeaturesItems.stoneLeggings.namespaceID);
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.stone_Leggings, MOD_ID);
+					model.icon = TextureRegistry.getTexture(FeaturesItems.stone_Leggings.namespaceID);
 					return model;
 				});
-			ModelHelper.setItemModel(FeaturesItems.stoneBoots,
+			ModelHelper.setItemModel(FeaturesItems.stone_Boots,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.stoneBoots, MOD_ID);
-					model.icon = TextureRegistry.getTexture(FeaturesItems.stoneBoots.namespaceID);
-					return model;
-				});
-		}
-
-		if (FeaturesItems.miscArmorEnabled == 1) {
-			ModelHelper.setItemModel(FeaturesItems.olivineHelmet,
-				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.olivineHelmet, MOD_ID);
-					model.icon = TextureRegistry.getTexture(FeaturesItems.olivineHelmet.namespaceID);
-					return model;
-				});
-			ModelHelper.setItemModel(FeaturesItems.olivineChestplate,
-				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.olivineChestplate, MOD_ID);
-					model.icon = TextureRegistry.getTexture(FeaturesItems.olivineChestplate.namespaceID);
-					return model;
-				});
-			ModelHelper.setItemModel(FeaturesItems.olivineLeggings,
-				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.olivineLeggings, MOD_ID);
-					model.icon = TextureRegistry.getTexture(FeaturesItems.olivineLeggings.namespaceID);
-					return model;
-				});
-			ModelHelper.setItemModel(FeaturesItems.olivineBoots,
-				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.olivineBoots, MOD_ID);
-					model.icon = TextureRegistry.getTexture(FeaturesItems.olivineBoots.namespaceID);
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.stone_Boots, MOD_ID);
+					model.icon = TextureRegistry.getTexture(FeaturesItems.stone_Boots.namespaceID);
 					return model;
 				});
 		}
 
 		if (FeaturesItems.miscArmorEnabled == 1) {
-			ModelHelper.setItemModel(FeaturesItems.quartzHelmet,
+			ModelHelper.setItemModel(FeaturesItems.olivine_Helmet,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.quartzHelmet, MOD_ID);
-					model.icon = TextureRegistry.getTexture(FeaturesItems.quartzHelmet.namespaceID);
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.olivine_Helmet, MOD_ID);
+					model.icon = TextureRegistry.getTexture(FeaturesItems.olivine_Helmet.namespaceID);
 					return model;
 				});
-			ModelHelper.setItemModel(FeaturesItems.quartzChestplate,
+			ModelHelper.setItemModel(FeaturesItems.olivine_Chestplate,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.quartzChestplate, MOD_ID);
-					model.icon = TextureRegistry.getTexture(FeaturesItems.quartzChestplate.namespaceID);
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.olivine_Chestplate, MOD_ID);
+					model.icon = TextureRegistry.getTexture(FeaturesItems.olivine_Chestplate.namespaceID);
 					return model;
 				});
-			ModelHelper.setItemModel(FeaturesItems.quartzLeggings,
+			ModelHelper.setItemModel(FeaturesItems.olivine_Leggings,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.quartzLeggings, MOD_ID);
-					model.icon = TextureRegistry.getTexture(FeaturesItems.quartzLeggings.namespaceID);
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.olivine_Leggings, MOD_ID);
+					model.icon = TextureRegistry.getTexture(FeaturesItems.olivine_Leggings.namespaceID);
 					return model;
 				});
-			ModelHelper.setItemModel(FeaturesItems.quartzBoots,
+			ModelHelper.setItemModel(FeaturesItems.olivine_Boots,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.quartzBoots, MOD_ID);
-					model.icon = TextureRegistry.getTexture(FeaturesItems.quartzBoots.namespaceID);
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.olivine_Boots, MOD_ID);
+					model.icon = TextureRegistry.getTexture(FeaturesItems.olivine_Boots.namespaceID);
+					return model;
+				});
+		}
+
+		if (FeaturesItems.miscArmorEnabled == 1) {
+			ModelHelper.setItemModel(FeaturesItems.quartz_Helmet,
+				() -> {
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.quartz_Helmet, MOD_ID);
+					model.icon = TextureRegistry.getTexture(FeaturesItems.quartz_Helmet.namespaceID);
+					return model;
+				});
+			ModelHelper.setItemModel(FeaturesItems.quartz_Chestplate,
+				() -> {
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.quartz_Chestplate, MOD_ID);
+					model.icon = TextureRegistry.getTexture(FeaturesItems.quartz_Chestplate.namespaceID);
+					return model;
+				});
+			ModelHelper.setItemModel(FeaturesItems.quartz_Leggings,
+				() -> {
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.quartz_Leggings, MOD_ID);
+					model.icon = TextureRegistry.getTexture(FeaturesItems.quartz_Leggings.namespaceID);
+					return model;
+				});
+			ModelHelper.setItemModel(FeaturesItems.quartz_Boots,
+				() -> {
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.quartz_Boots, MOD_ID);
+					model.icon = TextureRegistry.getTexture(FeaturesItems.quartz_Boots.namespaceID);
 					return model;
 				});
 		}
 
 		if (FeaturesItems.treasureEnabled == 1) {
-			ModelHelper.setItemModel(FeaturesItems.bombBag,
+			ModelHelper.setItemModel(FeaturesItems.bomb_Bag,
 				() -> {
-					ItemModelStandard model = new ItemModelBombQuiver(FeaturesItems.bombBag, MOD_ID);
-					model.icon = TextureRegistry.getTexture(FeaturesItems.bombBag.namespaceID);
+					ItemModelStandard model = new ItemModelBombQuiver(FeaturesItems.bomb_Bag, MOD_ID);
+					model.icon = TextureRegistry.getTexture(FeaturesItems.bomb_Bag.namespaceID);
 					return model;
 				});
-			ModelHelper.setItemModel(FeaturesItems.bombBagGold,
+			ModelHelper.setItemModel(FeaturesItems.bomb_Bag_Gold,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.bombBagGold, MOD_ID);
-					model.icon = TextureRegistry.getTexture(FeaturesItems.bombBagGold.namespaceID);
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.bomb_Bag_Gold, MOD_ID);
+					model.icon = TextureRegistry.getTexture(FeaturesItems.bomb_Bag_Gold.namespaceID);
 					return model;
 				});
 
-			ModelHelper.setItemModel(FeaturesItems.catHelmet,
+			ModelHelper.setItemModel(FeaturesItems.cat_Helmet,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.catHelmet, MOD_ID);
-					model.icon = TextureRegistry.getTexture(FeaturesItems.catHelmet.namespaceID);
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.cat_Helmet, MOD_ID);
+					model.icon = TextureRegistry.getTexture(FeaturesItems.cat_Helmet.namespaceID);
 					return model;
 				});
 		}
 
 		if (FeaturesItems.newToolsEnabled == 1) {
-			ModelHelper.setItemModel(FeaturesItems.workbenchOnStick,
+			ModelHelper.setItemModel(FeaturesItems.workbench_On_Stick,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.workbenchOnStick, MOD_ID).setFull3D();
-					model.icon = TextureRegistry.getTexture(FeaturesItems.workbenchOnStick.namespaceID);
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.workbench_On_Stick, MOD_ID).setFull3D();
+					model.icon = TextureRegistry.getTexture(FeaturesItems.workbench_On_Stick.namespaceID);
 					return model;
 				});
 		}
 
 		if (FeaturesItems.miscItemsEnabled == 1) {
-			ModelHelper.setItemModel(FeaturesItems.mobSoul,
+			ModelHelper.setItemModel(FeaturesItems.mob_Soul,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.mobSoul, MOD_ID);
-					model.icon = TextureRegistry.getTexture(FeaturesItems.mobSoul.namespaceID);
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.mob_Soul, MOD_ID);
+					model.icon = TextureRegistry.getTexture(FeaturesItems.mob_Soul.namespaceID);
 					return model;
 				});
 
-			ModelHelper.setItemModel(FeaturesItems.fluxSeed,
+			ModelHelper.setItemModel(FeaturesItems.flux_Seed,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.fluxSeed, MOD_ID);
-					model.icon = TextureRegistry.getTexture(FeaturesItems.fluxSeed.namespaceID);
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.flux_Seed, MOD_ID);
+					model.icon = TextureRegistry.getTexture(FeaturesItems.flux_Seed.namespaceID);
 					return model;
 				});
 
-			ModelHelper.setItemModel(FeaturesItems.fertilizerBag,
+			ModelHelper.setItemModel(FeaturesItems.fertilizer_Bag,
 				() -> {
-					ItemModelStandard model = new ItemModelFertilizerBag(FeaturesItems.fertilizerBag, MOD_ID);
-					model.icon = TextureRegistry.getTexture(FeaturesItems.fertilizerBag.namespaceID);
+					ItemModelStandard model = new ItemModelFertilizerBag(FeaturesItems.fertilizer_Bag, MOD_ID);
+					model.icon = TextureRegistry.getTexture(FeaturesItems.fertilizer_Bag.namespaceID);
 					return model;
 				});
 		}
 
 		if (FeaturesItems.newToolsEnabled == 1) {
-			ModelHelper.setItemModel(FeaturesItems.paxelWood,
+			ModelHelper.setItemModel(FeaturesItems.paxel_Wood,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.paxelWood, MOD_ID).setFull3D();
-					model.icon = TextureRegistry.getTexture(FeaturesItems.paxelWood.namespaceID);
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.paxel_Wood, MOD_ID).setFull3D();
+					model.icon = TextureRegistry.getTexture(FeaturesItems.paxel_Wood.namespaceID);
 					return model;
 				});
-			ModelHelper.setItemModel(FeaturesItems.paxelStone,
+			ModelHelper.setItemModel(FeaturesItems.paxel_Stone,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.paxelStone, MOD_ID).setFull3D();
-					model.icon = TextureRegistry.getTexture(FeaturesItems.paxelStone.namespaceID);
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.paxel_Stone, MOD_ID).setFull3D();
+					model.icon = TextureRegistry.getTexture(FeaturesItems.paxel_Stone.namespaceID);
 					return model;
 				});
-			ModelHelper.setItemModel(FeaturesItems.paxelIron,
+			ModelHelper.setItemModel(FeaturesItems.paxel_Iron,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.paxelIron, MOD_ID).setFull3D();
-					model.icon = TextureRegistry.getTexture(FeaturesItems.paxelIron.namespaceID);
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.paxel_Iron, MOD_ID).setFull3D();
+					model.icon = TextureRegistry.getTexture(FeaturesItems.paxel_Iron.namespaceID);
 					return model;
 				});
-			ModelHelper.setItemModel(FeaturesItems.paxelGold,
+			ModelHelper.setItemModel(FeaturesItems.paxel_Gold,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.paxelGold, MOD_ID).setFull3D();
-					model.icon = TextureRegistry.getTexture(FeaturesItems.paxelGold.namespaceID);
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.paxel_Gold, MOD_ID).setFull3D();
+					model.icon = TextureRegistry.getTexture(FeaturesItems.paxel_Gold.namespaceID);
 					return model;
 				});
-			ModelHelper.setItemModel(FeaturesItems.paxelDiamond,
+			ModelHelper.setItemModel(FeaturesItems.paxel_Diamond,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.paxelDiamond, MOD_ID).setFull3D();
-					model.icon = TextureRegistry.getTexture(FeaturesItems.paxelDiamond.namespaceID);
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.paxel_Diamond, MOD_ID).setFull3D();
+					model.icon = TextureRegistry.getTexture(FeaturesItems.paxel_Diamond.namespaceID);
 					return model;
 				});
-			ModelHelper.setItemModel(FeaturesItems.paxelSteel,
+			ModelHelper.setItemModel(FeaturesItems.paxel_Steel,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.paxelSteel, MOD_ID).setFull3D();
-					model.icon = TextureRegistry.getTexture(FeaturesItems.paxelSteel.namespaceID);
-					return model;
-				});
-
-			ModelHelper.setItemModel(FeaturesItems.climbPickaxeWood,
-				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.climbPickaxeWood, MOD_ID).setFull3D();
-					model.icon = TextureRegistry.getTexture(FeaturesItems.climbPickaxeWood.namespaceID);
-					return model;
-				});
-			ModelHelper.setItemModel(FeaturesItems.climbPickaxeStone,
-				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.climbPickaxeStone, MOD_ID).setFull3D();
-					model.icon = TextureRegistry.getTexture(FeaturesItems.climbPickaxeStone.namespaceID);
-					return model;
-				});
-			ModelHelper.setItemModel(FeaturesItems.climbPickaxeIron,
-				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.climbPickaxeIron, MOD_ID).setFull3D();
-					model.icon = TextureRegistry.getTexture(FeaturesItems.climbPickaxeIron.namespaceID);
-					return model;
-				});
-			ModelHelper.setItemModel(FeaturesItems.climbPickaxeGold,
-				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.climbPickaxeGold, MOD_ID).setFull3D();
-					model.icon = TextureRegistry.getTexture(FeaturesItems.climbPickaxeGold.namespaceID);
-					return model;
-				});
-			ModelHelper.setItemModel(FeaturesItems.climbPickaxeDiamond,
-				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.climbPickaxeDiamond, MOD_ID).setFull3D();
-					model.icon = TextureRegistry.getTexture(FeaturesItems.climbPickaxeDiamond.namespaceID);
-					return model;
-				});
-			ModelHelper.setItemModel(FeaturesItems.climbPickaxeSteel,
-				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.climbPickaxeSteel, MOD_ID).setFull3D();
-					model.icon = TextureRegistry.getTexture(FeaturesItems.climbPickaxeSteel.namespaceID);
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.paxel_Steel, MOD_ID).setFull3D();
+					model.icon = TextureRegistry.getTexture(FeaturesItems.paxel_Steel.namespaceID);
 					return model;
 				});
 
-			ModelHelper.setItemModel(FeaturesItems.miningHammerWood,
+			ModelHelper.setItemModel(FeaturesItems.climb_Pickaxe_Wood,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.miningHammerWood, MOD_ID).setFull3D();
-					model.icon = TextureRegistry.getTexture(FeaturesItems.miningHammerWood.namespaceID);
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.climb_Pickaxe_Wood, MOD_ID).setFull3D();
+					model.icon = TextureRegistry.getTexture(FeaturesItems.climb_Pickaxe_Wood.namespaceID);
 					return model;
 				});
-			ModelHelper.setItemModel(FeaturesItems.miningHammerStone,
+			ModelHelper.setItemModel(FeaturesItems.climb_Pickaxe_Stone,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.miningHammerStone, MOD_ID).setFull3D();
-					model.icon = TextureRegistry.getTexture(FeaturesItems.miningHammerStone.namespaceID);
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.climb_Pickaxe_Stone, MOD_ID).setFull3D();
+					model.icon = TextureRegistry.getTexture(FeaturesItems.climb_Pickaxe_Stone.namespaceID);
 					return model;
 				});
-			ModelHelper.setItemModel(FeaturesItems.miningHammerIron,
+			ModelHelper.setItemModel(FeaturesItems.climb_Pickaxe_Iron,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.miningHammerIron, MOD_ID).setFull3D();
-					model.icon = TextureRegistry.getTexture(FeaturesItems.miningHammerIron.namespaceID);
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.climb_Pickaxe_Iron, MOD_ID).setFull3D();
+					model.icon = TextureRegistry.getTexture(FeaturesItems.climb_Pickaxe_Iron.namespaceID);
 					return model;
 				});
-			ModelHelper.setItemModel(FeaturesItems.miningHammerGold,
+			ModelHelper.setItemModel(FeaturesItems.climb_Pickaxe_Gold,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.miningHammerGold, MOD_ID).setFull3D();
-					model.icon = TextureRegistry.getTexture(FeaturesItems.miningHammerGold.namespaceID);
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.climb_Pickaxe_Gold, MOD_ID).setFull3D();
+					model.icon = TextureRegistry.getTexture(FeaturesItems.climb_Pickaxe_Gold.namespaceID);
 					return model;
 				});
-			ModelHelper.setItemModel(FeaturesItems.miningHammerDiamond,
+			ModelHelper.setItemModel(FeaturesItems.climb_Pickaxe_Diamond,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.miningHammerDiamond, MOD_ID).setFull3D();
-					model.icon = TextureRegistry.getTexture(FeaturesItems.miningHammerDiamond.namespaceID);
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.climb_Pickaxe_Diamond, MOD_ID).setFull3D();
+					model.icon = TextureRegistry.getTexture(FeaturesItems.climb_Pickaxe_Diamond.namespaceID);
 					return model;
 				});
-			ModelHelper.setItemModel(FeaturesItems.miningHammerSteel,
+			ModelHelper.setItemModel(FeaturesItems.climb_Pickaxe_Steel,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.miningHammerSteel, MOD_ID).setFull3D();
-					model.icon = TextureRegistry.getTexture(FeaturesItems.miningHammerSteel.namespaceID);
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.climb_Pickaxe_Steel, MOD_ID).setFull3D();
+					model.icon = TextureRegistry.getTexture(FeaturesItems.climb_Pickaxe_Steel.namespaceID);
+					return model;
+				});
+
+			ModelHelper.setItemModel(FeaturesItems.mining_Hammer_Wood,
+				() -> {
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.mining_Hammer_Wood, MOD_ID).setFull3D();
+					model.icon = TextureRegistry.getTexture(FeaturesItems.mining_Hammer_Wood.namespaceID);
+					return model;
+				});
+			ModelHelper.setItemModel(FeaturesItems.mining_Hammer_Stone,
+				() -> {
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.mining_Hammer_Stone, MOD_ID).setFull3D();
+					model.icon = TextureRegistry.getTexture(FeaturesItems.mining_Hammer_Stone.namespaceID);
+					return model;
+				});
+			ModelHelper.setItemModel(FeaturesItems.mining_Hammer_Iron,
+				() -> {
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.mining_Hammer_Iron, MOD_ID).setFull3D();
+					model.icon = TextureRegistry.getTexture(FeaturesItems.mining_Hammer_Iron.namespaceID);
+					return model;
+				});
+			ModelHelper.setItemModel(FeaturesItems.mining_Hammer_Gold,
+				() -> {
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.mining_Hammer_Gold, MOD_ID).setFull3D();
+					model.icon = TextureRegistry.getTexture(FeaturesItems.mining_Hammer_Gold.namespaceID);
+					return model;
+				});
+			ModelHelper.setItemModel(FeaturesItems.mining_Hammer_Diamond,
+				() -> {
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.mining_Hammer_Diamond, MOD_ID).setFull3D();
+					model.icon = TextureRegistry.getTexture(FeaturesItems.mining_Hammer_Diamond.namespaceID);
+					return model;
+				});
+			ModelHelper.setItemModel(FeaturesItems.mining_Hammer_Steel,
+				() -> {
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.mining_Hammer_Steel, MOD_ID).setFull3D();
+					model.icon = TextureRegistry.getTexture(FeaturesItems.mining_Hammer_Steel.namespaceID);
 					return model;
 				});
 		}

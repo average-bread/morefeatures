@@ -15,12 +15,12 @@ public class ItemCannonMixin {
 	@Inject(method = "onUseItem", at=@At("HEAD"), cancellable = true)
 	public void onUseItem(ItemStack itemstack, World world, Player entityplayer, CallbackInfoReturnable<ItemStack> cir) {
 		ItemStack quiverSlot = entityplayer.inventory.armorItemInSlot(2);
-		if (quiverSlot != null && quiverSlot.getItem().equals(FeaturesItems.bombBag) && quiverSlot.getMetadata() < quiverSlot.getMaxDamage()) {
+		if (quiverSlot != null && quiverSlot.getItem().equals(FeaturesItems.bomb_Bag) && quiverSlot.getMetadata() < quiverSlot.getMaxDamage()) {
 			entityplayer.inventory.armorItemInSlot(2).damageItem(1, entityplayer);
 			itemstack.damageItem(1, entityplayer);
 			world.playSoundAtEntity(entityplayer, entityplayer, "random.click", 1.0F, 1.9F);
 			cir.setReturnValue(new ItemStack(Items.HANDCANNON_LOADED, 1, itemstack.getMetadata(), itemstack.getData()));
-		} else if (quiverSlot != null && quiverSlot.getItem().equals(FeaturesItems.bombBagGold)) {
+		} else if (quiverSlot != null && quiverSlot.getItem().equals(FeaturesItems.bomb_Bag_Gold)) {
 			world.playSoundAtEntity(entityplayer, entityplayer, "random.click", 1.0F, 1.9F);
 			cir.setReturnValue(new ItemStack(Items.HANDCANNON_LOADED, 1, itemstack.getMetadata(), itemstack.getData()));
 		}

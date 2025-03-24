@@ -35,14 +35,14 @@ public class FeaturesCraft implements RecipeEntrypoint {
 	};
 
 	public static Item[] flowercrownResult = {
-		FeaturesItems.dandelionCrown,
-		FeaturesItems.roseCrown,
-		FeaturesItems.cherryCrown,
-		FeaturesItems.deadbushCrown,
-		FeaturesItems.orchidCrown,
-		FeaturesItems.heatherCrown,
-		FeaturesItems.bluebellCrown,
-		FeaturesItems.marigoldCrown
+		FeaturesItems.dandelion_Crown,
+		FeaturesItems.rose_Crown,
+		FeaturesItems.cherry_Crown,
+		FeaturesItems.deadbush_Crown,
+		FeaturesItems.orchid_Crown,
+		FeaturesItems.heather_Crown,
+		FeaturesItems.bluebell_Crown,
+		FeaturesItems.marigold_Crown
 	};
 
 	public static int[] regularMaterial = {
@@ -54,11 +54,11 @@ public class FeaturesCraft implements RecipeEntrypoint {
 	};
 
 	public static Item[] regularcrownResult = {
-		FeaturesItems.leatherCrown,
-		FeaturesItems.ironCrown,
-		FeaturesItems.goldCrown,
-		FeaturesItems.diamondCrown,
-		FeaturesItems.steelCrown
+		FeaturesItems.leather_Crown,
+		FeaturesItems.iron_Crown,
+		FeaturesItems.gold_Crown,
+		FeaturesItems.diamond_Crown,
+		FeaturesItems.steel_Crown
 	};
 
 	public static int[] smallsquireMaterial = {
@@ -68,7 +68,7 @@ public class FeaturesCraft implements RecipeEntrypoint {
 
 	public static Block[] smallsquireResult = {
 		FeaturesBlocks.ham,
-		FeaturesBlocks.cookedham
+		FeaturesBlocks.ham_Cooked
 	};
 
 	public static int[] paxelCraftAxeMaterial = {
@@ -105,12 +105,12 @@ public class FeaturesCraft implements RecipeEntrypoint {
 	};
 
 	public static Item[] paxelCraftResult = {
-		FeaturesItems.paxelWood,
-		FeaturesItems.paxelStone,
-		FeaturesItems.paxelIron,
-		FeaturesItems.paxelGold,
-		FeaturesItems.paxelDiamond,
-		FeaturesItems.paxelSteel
+		FeaturesItems.paxel_Wood,
+		FeaturesItems.paxel_Stone,
+		FeaturesItems.paxel_Iron,
+		FeaturesItems.paxel_Gold,
+		FeaturesItems.paxel_Diamond,
+		FeaturesItems.paxel_Steel
 	};
 
 	public static int[] toolMaterial = {
@@ -127,17 +127,17 @@ public class FeaturesCraft implements RecipeEntrypoint {
 	};
 
 	public static Item[] climbPickResult = {
-		FeaturesItems.climbPickaxeIron,
-		FeaturesItems.climbPickaxeGold,
-		FeaturesItems.climbPickaxeDiamond,
-		FeaturesItems.climbPickaxeSteel
+		FeaturesItems.climb_Pickaxe_Iron,
+		FeaturesItems.climb_Pickaxe_Gold,
+		FeaturesItems.climb_Pickaxe_Diamond,
+		FeaturesItems.climb_Pickaxe_Steel
 	};
 
 	public static Item[] hammerResult = {
-		FeaturesItems.miningHammerIron,
-		FeaturesItems.miningHammerGold,
-		FeaturesItems.miningHammerDiamond,
-		FeaturesItems.miningHammerSteel
+		FeaturesItems.mining_Hammer_Iron,
+		FeaturesItems.mining_Hammer_Gold,
+		FeaturesItems.mining_Hammer_Diamond,
+		FeaturesItems.mining_Hammer_Steel
 	};
 
 	@Override
@@ -148,184 +148,184 @@ public class FeaturesCraft implements RecipeEntrypoint {
 			if (FeaturesBlocks.coloredBlocksEnabled == 1) {
 				Registries.ITEM_GROUPS.register("morefeatures:glowstones", Registries.stackListOf(
 					Blocks.GLOWSTONE,
-					new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 0),
-					new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 1),
-					new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 2),
-					new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 3),
-					new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 4),
-					new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 5),
-					new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 6),
-					new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 7),
-					new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 8),
-					new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 9),
-					new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 10),
-					new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 11),
-					new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 12),
-					new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 13),
-					new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 14),
-					new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 15),
-					new ItemStack(FeaturesBlocks.nonameColoredGlowstone, 1, 0),
-					new ItemStack(FeaturesBlocks.nonameColoredGlowstone, 1, 1),
-					new ItemStack(FeaturesBlocks.nonameColoredGlowstone, 1, 2),
-					new ItemStack(FeaturesBlocks.nonameColoredGlowstone, 1, 3),
-					new ItemStack(FeaturesBlocks.nonameColoredGlowstone, 1, 4),
-					new ItemStack(FeaturesBlocks.nonameColoredGlowstone, 1, 5),
-					new ItemStack(FeaturesBlocks.nonameColoredGlowstone, 1, 6),
-					new ItemStack(FeaturesBlocks.nonameColoredGlowstone, 1, 7),
-					new ItemStack(FeaturesBlocks.nonameColoredGlowstone, 1, 8),
-					new ItemStack(FeaturesBlocks.nonameColoredGlowstone, 1, 9),
-					new ItemStack(FeaturesBlocks.nonameColoredGlowstone, 1, 10),
-					new ItemStack(FeaturesBlocks.nonameColoredGlowstone, 1, 11),
-					new ItemStack(FeaturesBlocks.nonameColoredGlowstone, 1, 12),
-					new ItemStack(FeaturesBlocks.nonameColoredGlowstone, 1, 13)));
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Glowstone, 1, 0),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Glowstone, 1, 1),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Glowstone, 1, 2),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Glowstone, 1, 3),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Glowstone, 1, 4),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Glowstone, 1, 5),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Glowstone, 1, 6),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Glowstone, 1, 7),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Glowstone, 1, 8),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Glowstone, 1, 9),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Glowstone, 1, 10),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Glowstone, 1, 11),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Glowstone, 1, 12),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Glowstone, 1, 13),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Glowstone, 1, 14),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Glowstone, 1, 15),
+					new ItemStack(FeaturesBlocks.noname_Colored_Glowstone, 1, 0),
+					new ItemStack(FeaturesBlocks.noname_Colored_Glowstone, 1, 1),
+					new ItemStack(FeaturesBlocks.noname_Colored_Glowstone, 1, 2),
+					new ItemStack(FeaturesBlocks.noname_Colored_Glowstone, 1, 3),
+					new ItemStack(FeaturesBlocks.noname_Colored_Glowstone, 1, 4),
+					new ItemStack(FeaturesBlocks.noname_Colored_Glowstone, 1, 5),
+					new ItemStack(FeaturesBlocks.noname_Colored_Glowstone, 1, 6),
+					new ItemStack(FeaturesBlocks.noname_Colored_Glowstone, 1, 7),
+					new ItemStack(FeaturesBlocks.noname_Colored_Glowstone, 1, 8),
+					new ItemStack(FeaturesBlocks.noname_Colored_Glowstone, 1, 9),
+					new ItemStack(FeaturesBlocks.noname_Colored_Glowstone, 1, 10),
+					new ItemStack(FeaturesBlocks.noname_Colored_Glowstone, 1, 11),
+					new ItemStack(FeaturesBlocks.noname_Colored_Glowstone, 1, 12),
+					new ItemStack(FeaturesBlocks.noname_Colored_Glowstone, 1, 13)));
 			}
 
 			if (FeaturesBlocks.coloredBlocksEnabled == 1){
-				Registries.ITEM_GROUPS.register("morefeatures:paperwall", Registries.stackListOf(Blocks.PAPER_WALL, new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 0),
-					new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 1),
-					new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 2),
-					new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 3),
-					new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 4),
-					new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 5),
-					new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 6),
-					new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 7),
-					new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 8),
-					new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 9),
-					new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 10),
-					new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 11),
-					new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 12),
-					new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 13),
-					new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 14),
-					new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 15),
-					new ItemStack(FeaturesBlocks.nonameColoredPaperwall, 1, 0),
-					new ItemStack(FeaturesBlocks.nonameColoredPaperwall, 1, 1),
-					new ItemStack(FeaturesBlocks.nonameColoredPaperwall, 1, 2),
-					new ItemStack(FeaturesBlocks.nonameColoredPaperwall, 1, 3),
-					new ItemStack(FeaturesBlocks.nonameColoredPaperwall, 1, 4),
-					new ItemStack(FeaturesBlocks.nonameColoredPaperwall, 1, 5),
-					new ItemStack(FeaturesBlocks.nonameColoredPaperwall, 1, 6),
-					new ItemStack(FeaturesBlocks.nonameColoredPaperwall, 1, 7),
-					new ItemStack(FeaturesBlocks.nonameColoredPaperwall, 1, 8),
-					new ItemStack(FeaturesBlocks.nonameColoredPaperwall, 1, 9),
-					new ItemStack(FeaturesBlocks.nonameColoredPaperwall, 1, 10),
-					new ItemStack(FeaturesBlocks.nonameColoredPaperwall, 1, 11),
-					new ItemStack(FeaturesBlocks.nonameColoredPaperwall, 1, 12),
-					new ItemStack(FeaturesBlocks.nonameColoredPaperwall, 1, 13)));
+				Registries.ITEM_GROUPS.register("morefeatures:paperwall", Registries.stackListOf(Blocks.PAPER_WALL, new ItemStack(FeaturesBlocks.vanilla_Colored_Paperwall, 1, 0),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Paperwall, 1, 1),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Paperwall, 1, 2),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Paperwall, 1, 3),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Paperwall, 1, 4),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Paperwall, 1, 5),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Paperwall, 1, 6),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Paperwall, 1, 7),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Paperwall, 1, 8),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Paperwall, 1, 9),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Paperwall, 1, 10),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Paperwall, 1, 11),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Paperwall, 1, 12),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Paperwall, 1, 13),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Paperwall, 1, 14),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Paperwall, 1, 15),
+					new ItemStack(FeaturesBlocks.noname_Colored_Paperwall, 1, 0),
+					new ItemStack(FeaturesBlocks.noname_Colored_Paperwall, 1, 1),
+					new ItemStack(FeaturesBlocks.noname_Colored_Paperwall, 1, 2),
+					new ItemStack(FeaturesBlocks.noname_Colored_Paperwall, 1, 3),
+					new ItemStack(FeaturesBlocks.noname_Colored_Paperwall, 1, 4),
+					new ItemStack(FeaturesBlocks.noname_Colored_Paperwall, 1, 5),
+					new ItemStack(FeaturesBlocks.noname_Colored_Paperwall, 1, 6),
+					new ItemStack(FeaturesBlocks.noname_Colored_Paperwall, 1, 7),
+					new ItemStack(FeaturesBlocks.noname_Colored_Paperwall, 1, 8),
+					new ItemStack(FeaturesBlocks.noname_Colored_Paperwall, 1, 9),
+					new ItemStack(FeaturesBlocks.noname_Colored_Paperwall, 1, 10),
+					new ItemStack(FeaturesBlocks.noname_Colored_Paperwall, 1, 11),
+					new ItemStack(FeaturesBlocks.noname_Colored_Paperwall, 1, 12),
+					new ItemStack(FeaturesBlocks.noname_Colored_Paperwall, 1, 13)));
 			}
 
 			if (FeaturesBlocks.coloredBlocksEnabled == 1){
 				Registries.ITEM_GROUPS.register("morefeatures:glasses", Registries.stackListOf(
 					Blocks.GLASS,
-					new ItemStack(FeaturesBlocks.vanillaColoredGlass, 1, 0),
-					new ItemStack(FeaturesBlocks.vanillaColoredGlass, 1, 1),
-					new ItemStack(FeaturesBlocks.vanillaColoredGlass, 1, 2),
-					new ItemStack(FeaturesBlocks.vanillaColoredGlass, 1, 3),
-					new ItemStack(FeaturesBlocks.vanillaColoredGlass, 1, 4),
-					new ItemStack(FeaturesBlocks.vanillaColoredGlass, 1, 5),
-					new ItemStack(FeaturesBlocks.vanillaColoredGlass, 1, 6),
-					new ItemStack(FeaturesBlocks.vanillaColoredGlass, 1, 7),
-					new ItemStack(FeaturesBlocks.vanillaColoredGlass, 1, 8),
-					new ItemStack(FeaturesBlocks.vanillaColoredGlass, 1, 9),
-					new ItemStack(FeaturesBlocks.vanillaColoredGlass, 1, 10),
-					new ItemStack(FeaturesBlocks.vanillaColoredGlass, 1, 11),
-					new ItemStack(FeaturesBlocks.vanillaColoredGlass, 1, 12),
-					new ItemStack(FeaturesBlocks.vanillaColoredGlass, 1, 13),
-					new ItemStack(FeaturesBlocks.vanillaColoredGlass, 1, 14),
-					new ItemStack(FeaturesBlocks.vanillaColoredGlass, 1, 15),
-					new ItemStack(FeaturesBlocks.nonameColoredGlass, 1, 0),
-					new ItemStack(FeaturesBlocks.nonameColoredGlass, 1, 1),
-					new ItemStack(FeaturesBlocks.nonameColoredGlass, 1, 2),
-					new ItemStack(FeaturesBlocks.nonameColoredGlass, 1, 3),
-					new ItemStack(FeaturesBlocks.nonameColoredGlass, 1, 4),
-					new ItemStack(FeaturesBlocks.nonameColoredGlass, 1, 5),
-					new ItemStack(FeaturesBlocks.nonameColoredGlass, 1, 6),
-					new ItemStack(FeaturesBlocks.nonameColoredGlass, 1, 7),
-					new ItemStack(FeaturesBlocks.nonameColoredGlass, 1, 8),
-					new ItemStack(FeaturesBlocks.nonameColoredGlass, 1, 9),
-					new ItemStack(FeaturesBlocks.nonameColoredGlass, 1, 10),
-					new ItemStack(FeaturesBlocks.nonameColoredGlass, 1, 11),
-					new ItemStack(FeaturesBlocks.nonameColoredGlass, 1, 12),
-					new ItemStack(FeaturesBlocks.nonameColoredGlass, 1, 13)));
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Glass, 1, 0),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Glass, 1, 1),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Glass, 1, 2),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Glass, 1, 3),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Glass, 1, 4),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Glass, 1, 5),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Glass, 1, 6),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Glass, 1, 7),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Glass, 1, 8),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Glass, 1, 9),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Glass, 1, 10),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Glass, 1, 11),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Glass, 1, 12),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Glass, 1, 13),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Glass, 1, 14),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Glass, 1, 15),
+					new ItemStack(FeaturesBlocks.noname_Colored_Glass, 1, 0),
+					new ItemStack(FeaturesBlocks.noname_Colored_Glass, 1, 1),
+					new ItemStack(FeaturesBlocks.noname_Colored_Glass, 1, 2),
+					new ItemStack(FeaturesBlocks.noname_Colored_Glass, 1, 3),
+					new ItemStack(FeaturesBlocks.noname_Colored_Glass, 1, 4),
+					new ItemStack(FeaturesBlocks.noname_Colored_Glass, 1, 5),
+					new ItemStack(FeaturesBlocks.noname_Colored_Glass, 1, 6),
+					new ItemStack(FeaturesBlocks.noname_Colored_Glass, 1, 7),
+					new ItemStack(FeaturesBlocks.noname_Colored_Glass, 1, 8),
+					new ItemStack(FeaturesBlocks.noname_Colored_Glass, 1, 9),
+					new ItemStack(FeaturesBlocks.noname_Colored_Glass, 1, 10),
+					new ItemStack(FeaturesBlocks.noname_Colored_Glass, 1, 11),
+					new ItemStack(FeaturesBlocks.noname_Colored_Glass, 1, 12),
+					new ItemStack(FeaturesBlocks.noname_Colored_Glass, 1, 13)));
 			}
 		} else {
 			if (FeaturesBlocks.coloredBlocksEnabled == 1){
 				Registries.ITEM_GROUPS.register("morefeatures:glowstones", Registries.stackListOf(
 					Blocks.GLOWSTONE,
-					new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 0),
-					new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 1),
-					new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 2),
-					new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 3),
-					new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 4),
-					new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 5),
-					new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 6),
-					new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 7),
-					new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 8),
-					new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 9),
-					new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 10),
-					new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 11),
-					new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 12),
-					new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 13),
-					new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 14),
-					new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 1, 15)));
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Glowstone, 1, 0),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Glowstone, 1, 1),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Glowstone, 1, 2),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Glowstone, 1, 3),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Glowstone, 1, 4),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Glowstone, 1, 5),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Glowstone, 1, 6),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Glowstone, 1, 7),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Glowstone, 1, 8),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Glowstone, 1, 9),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Glowstone, 1, 10),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Glowstone, 1, 11),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Glowstone, 1, 12),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Glowstone, 1, 13),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Glowstone, 1, 14),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Glowstone, 1, 15)));
 			}
 
 			if (FeaturesBlocks.coloredBlocksEnabled == 1){
-				Registries.ITEM_GROUPS.register("morefeatures:paperwall", Registries.stackListOf(Blocks.PAPER_WALL, new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 0),
-					new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 1),
-					new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 2),
-					new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 3),
-					new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 4),
-					new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 5),
-					new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 6),
-					new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 7),
-					new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 8),
-					new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 9),
-					new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 10),
-					new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 11),
-					new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 12),
-					new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 13),
-					new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 14),
-					new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 1, 15)));
+				Registries.ITEM_GROUPS.register("morefeatures:paperwall", Registries.stackListOf(Blocks.PAPER_WALL, new ItemStack(FeaturesBlocks.vanilla_Colored_Paperwall, 1, 0),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Paperwall, 1, 1),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Paperwall, 1, 2),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Paperwall, 1, 3),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Paperwall, 1, 4),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Paperwall, 1, 5),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Paperwall, 1, 6),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Paperwall, 1, 7),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Paperwall, 1, 8),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Paperwall, 1, 9),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Paperwall, 1, 10),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Paperwall, 1, 11),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Paperwall, 1, 12),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Paperwall, 1, 13),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Paperwall, 1, 14),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Paperwall, 1, 15)));
 			}
 
 			if (FeaturesBlocks.coloredBlocksEnabled == 1){
 				Registries.ITEM_GROUPS.register("morefeatures:glasses", Registries.stackListOf(
 					Blocks.GLASS,
-					new ItemStack(FeaturesBlocks.vanillaColoredGlass, 1, 0),
-					new ItemStack(FeaturesBlocks.vanillaColoredGlass, 1, 1),
-					new ItemStack(FeaturesBlocks.vanillaColoredGlass, 1, 2),
-					new ItemStack(FeaturesBlocks.vanillaColoredGlass, 1, 3),
-					new ItemStack(FeaturesBlocks.vanillaColoredGlass, 1, 4),
-					new ItemStack(FeaturesBlocks.vanillaColoredGlass, 1, 5),
-					new ItemStack(FeaturesBlocks.vanillaColoredGlass, 1, 6),
-					new ItemStack(FeaturesBlocks.vanillaColoredGlass, 1, 7),
-					new ItemStack(FeaturesBlocks.vanillaColoredGlass, 1, 8),
-					new ItemStack(FeaturesBlocks.vanillaColoredGlass, 1, 9),
-					new ItemStack(FeaturesBlocks.vanillaColoredGlass, 1, 10),
-					new ItemStack(FeaturesBlocks.vanillaColoredGlass, 1, 11),
-					new ItemStack(FeaturesBlocks.vanillaColoredGlass, 1, 12),
-					new ItemStack(FeaturesBlocks.vanillaColoredGlass, 1, 13),
-					new ItemStack(FeaturesBlocks.vanillaColoredGlass, 1, 14),
-					new ItemStack(FeaturesBlocks.vanillaColoredGlass, 1, 15)));
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Glass, 1, 0),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Glass, 1, 1),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Glass, 1, 2),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Glass, 1, 3),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Glass, 1, 4),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Glass, 1, 5),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Glass, 1, 6),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Glass, 1, 7),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Glass, 1, 8),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Glass, 1, 9),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Glass, 1, 10),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Glass, 1, 11),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Glass, 1, 12),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Glass, 1, 13),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Glass, 1, 14),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Glass, 1, 15)));
 
 				Registries.ITEM_GROUPS.register("morefeatures:glassetrapdoors", Registries.stackListOf(
 					Blocks.TRAPDOOR_GLASS,
-					new ItemStack(FeaturesBlocks.vanillaColoredGlassTrapdoor, 1, 0),
-					new ItemStack(FeaturesBlocks.vanillaColoredGlassTrapdoor, 1, 16),
-					new ItemStack(FeaturesBlocks.vanillaColoredGlassTrapdoor, 1, 32),
-					new ItemStack(FeaturesBlocks.vanillaColoredGlassTrapdoor, 1, 48),
-					new ItemStack(FeaturesBlocks.vanillaColoredGlassTrapdoor, 1, 64),
-					new ItemStack(FeaturesBlocks.vanillaColoredGlassTrapdoor, 1, 80),
-					new ItemStack(FeaturesBlocks.vanillaColoredGlassTrapdoor, 1, 96),
-					new ItemStack(FeaturesBlocks.vanillaColoredGlassTrapdoor, 1, 112),
-					new ItemStack(FeaturesBlocks.vanillaColoredGlassTrapdoor, 1, 128),
-					new ItemStack(FeaturesBlocks.vanillaColoredGlassTrapdoor, 1, 144),
-					new ItemStack(FeaturesBlocks.vanillaColoredGlassTrapdoor, 1, 160),
-					new ItemStack(FeaturesBlocks.vanillaColoredGlassTrapdoor, 1, 176),
-					new ItemStack(FeaturesBlocks.vanillaColoredGlassTrapdoor, 1, 192),
-					new ItemStack(FeaturesBlocks.vanillaColoredGlassTrapdoor, 1, 208),
-					new ItemStack(FeaturesBlocks.vanillaColoredGlassTrapdoor, 1, 224),
-					new ItemStack(FeaturesBlocks.vanillaColoredGlassTrapdoor, 1, 240)));
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Glass_Trapdoor, 1, 0),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Glass_Trapdoor, 1, 16),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Glass_Trapdoor, 1, 32),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Glass_Trapdoor, 1, 48),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Glass_Trapdoor, 1, 64),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Glass_Trapdoor, 1, 80),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Glass_Trapdoor, 1, 96),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Glass_Trapdoor, 1, 112),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Glass_Trapdoor, 1, 128),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Glass_Trapdoor, 1, 144),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Glass_Trapdoor, 1, 160),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Glass_Trapdoor, 1, 176),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Glass_Trapdoor, 1, 192),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Glass_Trapdoor, 1, 208),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Glass_Trapdoor, 1, 224),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Glass_Trapdoor, 1, 240)));
 			}
 		}
 	}
@@ -338,7 +338,7 @@ public class FeaturesCraft implements RecipeEntrypoint {
 					.setShape("GGG", "GDG", "GGG")
 					.addInput('D', Items.DYE, i)
 					.addInput('G', "morefeatures:glowstones")
-					.create("itemGroupExample", new ItemStack(FeaturesBlocks.vanillaColoredGlowstone, 8, 15 - i));
+					.create("itemGroupExample", new ItemStack(FeaturesBlocks.vanilla_Colored_Glowstone, 8, 15 - i));
 			}
 
 			RecipeBuilder.Shaped(MOD_ID)
@@ -352,7 +352,7 @@ public class FeaturesCraft implements RecipeEntrypoint {
 //						.setShape("GGG", "GDG", "GGG")
 //						.addInput('D', ModItems.dye, i)
 //						.addInput('G', "morefeatures:glowstones")
-//						.create("itemGroupExample", new ItemStack(FeaturesBlocks.nonameColoredGlowstone, 8, i));
+//						.create("itemGroupExample", new ItemStack(FeaturesBlocks.noname_Colored_Glowstone, 8, i));
 //				}
 //			}
 		}
@@ -363,7 +363,7 @@ public class FeaturesCraft implements RecipeEntrypoint {
 					.setShape("GGG", "GDG", "GGG")
 					.addInput('D', Items.DYE, i)
 					.addInput('G', "morefeatures:paperwall")
-					.create("itemGroupExample", new ItemStack(FeaturesBlocks.vanillaColoredPaperwall, 8, 15-i));
+					.create("itemGroupExample", new ItemStack(FeaturesBlocks.vanilla_Colored_Paperwall, 8, 15-i));
 			}
 
 //			if (FeaturesMain.nonamedyesOn) {
@@ -372,7 +372,7 @@ public class FeaturesCraft implements RecipeEntrypoint {
 //						.setShape("GGG", "GDG", "GGG")
 //						.addInput('D', ModItems.dye, i)
 //						.addInput('G', "morefeatures:paperwall")
-//						.create("itemGroupExample", new ItemStack(FeaturesBlocks.nonameColoredPaperwall, 8, i));
+//						.create("itemGroupExample", new ItemStack(FeaturesBlocks.noname_Colored_Paperwall, 8, i));
 //				}
 //			}
 
@@ -389,17 +389,17 @@ public class FeaturesCraft implements RecipeEntrypoint {
 					.setShape("GGG", "GDG", "GGG")
 					.addInput('D', Items.DYE, i)
 					.addInput('G', "morefeatures:glasses")
-					.create("itemGroupExample", new ItemStack(FeaturesBlocks.vanillaColoredGlass, 8, 15 - i));
+					.create("itemGroupExample", new ItemStack(FeaturesBlocks.vanilla_Colored_Glass, 8, 15 - i));
 
 				RecipeBuilder.Shaped(MOD_ID)
 					.setShape("GGG", "GGG")
-					.addInput('G', FeaturesBlocks.vanillaColoredGlass, 15 - i)
-					.create("itemGroupExample", new ItemStack(FeaturesBlocks.vanillaColoredGlassTrapdoor, 6, (15 - i)*16));
+					.addInput('G', FeaturesBlocks.vanilla_Colored_Glass, 15 - i)
+					.create("itemGroupExample", new ItemStack(FeaturesBlocks.vanilla_Colored_Glass_Trapdoor, 6, (15 - i)*16));
 
 				RecipeBuilder.Shapeless(MOD_ID)
 					.addInput("morefeatures:glassetrapdoors")
 					.addInput(Items.DYE, i)
-					.create("itemGroupExample", new ItemStack(FeaturesBlocks.vanillaColoredGlassTrapdoor, 1, (15 - i)*16));
+					.create("itemGroupExample", new ItemStack(FeaturesBlocks.vanilla_Colored_Glass_Trapdoor, 1, (15 - i)*16));
 			}
 
 			RecipeBuilder.Shaped(MOD_ID)
@@ -419,7 +419,7 @@ public class FeaturesCraft implements RecipeEntrypoint {
 //						.setShape("GGG", "GDG", "GGG")
 //						.addInput('D', ModItems.dye, i)
 //						.addInput('G', "morefeatures:glasses")
-//						.create("itemGroupExample", new ItemStack(FeaturesBlocks.nonameColoredGlass, 8, i));
+//						.create("itemGroupExample", new ItemStack(FeaturesBlocks.noname_Colored_Glass, 8, i));
 //				}
 //			}
 		}
@@ -430,7 +430,7 @@ public class FeaturesCraft implements RecipeEntrypoint {
 				.addInput('H', Blocks.BLOCK_GOLD)
 				.addInput('D', Blocks.SLATE)
 				.addInput('E', Blocks.SLATE_POLISHED)
-				.create("gilderCraft", new ItemStack(FeaturesBlocks.gildingTable, 1));
+				.create("gilderCraft", new ItemStack(FeaturesBlocks.gilding_Table, 1));
 		}
 
 		//flower crowns crafting
@@ -453,40 +453,40 @@ public class FeaturesCraft implements RecipeEntrypoint {
 					.addInput('C', Items.CLOTH)
 					.create("crown", new ItemStack(regularcrownResult[j], 1));
 			}
-			workbenchGroup.register("chainCrownReapir", new RecipeEntryRepairable(new ItemStack(FeaturesItems.chainCrown), new RecipeSymbol(Items.CHAINLINK.getDefaultStack())));
+			workbenchGroup.register("chainCrownReapir", new RecipeEntryRepairable(new ItemStack(FeaturesItems.chain_Crown), new RecipeSymbol(Items.CHAINLINK.getDefaultStack())));
 			RecipeBuilder.getRecipeGroup(MOD_ID, "workbench", new RecipeSymbol(Blocks.WORKBENCH.getDefaultStack()));
-			workbenchGroup.register("chaincrownScrap", new RecipeEntryScrap(FeaturesItems.chainCrown, Items.CHAINLINK, 4));
+			workbenchGroup.register("chaincrownScrap", new RecipeEntryScrap(FeaturesItems.chain_Crown, Items.CHAINLINK, 4));
 			if (FeaturesItems.blockArmorEnabled == 1) {
 				RecipeBuilder.Shaped(MOD_ID)
 					.setShape("HCH", "HHH")
 					.addInput('H', "minecraft:stones")
 					.addInput('C', Items.CLOTH)
-					.create("crown", new ItemStack(FeaturesItems.stoneCrown, 1));
+					.create("crown", new ItemStack(FeaturesItems.stone_Crown, 1));
 			}
 			if (FeaturesItems.miscArmorEnabled == 1) {
 				RecipeBuilder.Shaped(MOD_ID)
 					.setShape("HCH", "HHH")
 					.addInput('H', Blocks.BLOCK_OLIVINE)
 					.addInput('C', Items.CLOTH)
-					.create("crown", new ItemStack(FeaturesItems.olivineCrown, 1));
+					.create("crown", new ItemStack(FeaturesItems.olivine_Crown, 1));
 			}
 			if (FeaturesItems.blockArmorEnabled == 1) {
 				RecipeBuilder.Shaped(MOD_ID)
 					.setShape("HCH", "HHH")
 					.addInput('H', Blocks.BEDROCK)
 					.addInput('C', Items.CLOTH)
-					.create("crown", new ItemStack(FeaturesItems.bedrockCrown, 1));
+					.create("crown", new ItemStack(FeaturesItems.bedrock_Crown, 1));
 			}
 			if (FeaturesItems.oldArmorEnabled == 1) {
-				workbenchGroup.register("plateCrownReapir", new RecipeEntryRepairable(new ItemStack(FeaturesItems.plateCrown), new RecipeSymbol (Items.INGOT_IRON.getDefaultStack())));
+				workbenchGroup.register("plateCrownReapir", new RecipeEntryRepairable(new ItemStack(FeaturesItems.plate_Crown), new RecipeSymbol (Items.INGOT_IRON.getDefaultStack())));
 				RecipeBuilder.getRecipeGroup(MOD_ID, "workbench", new RecipeSymbol(Blocks.WORKBENCH.getDefaultStack()));
 			}
 			if (FeaturesItems.oldArmorEnabled == 1) {
 				RecipeBuilder.Shapeless(MOD_ID)
-					.addInput(FeaturesItems.leatherCrown)
-					.addInput(FeaturesItems.chainCrown)
-					.create("leather-chaincrown", new ItemStack(FeaturesItems.leatherChainCrown, 1));
-				workbenchGroup.register("leather-chainCrownReapir", new RecipeEntryRepairable (new ItemStack(FeaturesItems.leatherChainCrown), new RecipeSymbol(Items.CHAINLINK.getDefaultStack())));
+					.addInput(FeaturesItems.leather_Crown)
+					.addInput(FeaturesItems.chain_Crown)
+					.create("leather-chaincrown", new ItemStack(FeaturesItems.leather_Chain_Crown, 1));
+				workbenchGroup.register("leather-chainCrownReapir", new RecipeEntryRepairable (new ItemStack(FeaturesItems.leather_Chain_Crown), new RecipeSymbol(Items.CHAINLINK.getDefaultStack())));
 				RecipeBuilder.getRecipeGroup(MOD_ID, "workbench", new RecipeSymbol(Blocks.WORKBENCH.getDefaultStack()));
 			}
 		}
@@ -495,84 +495,84 @@ public class FeaturesCraft implements RecipeEntrypoint {
 			RecipeBuilder.Shaped(MOD_ID)
 				.setShape("HHH", "H H")
 				.addInput('H', Blocks.BEDROCK)
-				.create("helmets", new ItemStack(FeaturesItems.bedrockHelmet, 1));
+				.create("helmets", new ItemStack(FeaturesItems.bedrock_Helmet, 1));
 			RecipeBuilder.Shaped(MOD_ID)
 				.setShape("H H", "HHH", "HHH")
 				.addInput('H', Blocks.BEDROCK)
-				.create("chectplates", new ItemStack(FeaturesItems.bedrockChestplate, 1));
+				.create("chectplates", new ItemStack(FeaturesItems.bedrock_Chestplate, 1));
 			RecipeBuilder.Shaped(MOD_ID)
 				.setShape("HHH", "H H", "H H")
 				.addInput('H', Blocks.BEDROCK)
-				.create("leggings", new ItemStack(FeaturesItems.bedrockLeggings, 1));
+				.create("leggings", new ItemStack(FeaturesItems.bedrock_Leggings, 1));
 			RecipeBuilder.Shaped(MOD_ID)
 				.setShape("H H", "H H")
 				.addInput('H', Blocks.BEDROCK)
-				.create("boots", new ItemStack(FeaturesItems.bedrockBoots, 1));
+				.create("boots", new ItemStack(FeaturesItems.bedrock_Boots, 1));
 		}
 		//stone armor crafting
 		if (FeaturesItems.blockArmorEnabled == 1) {
 			RecipeBuilder.Shaped(MOD_ID)
 				.setShape("HHH", "H H")
 				.addInput('H', "minecraft:stones")
-				.create("helmets", new ItemStack(FeaturesItems.stoneHelmet, 1));
+				.create("helmets", new ItemStack(FeaturesItems.stone_Helmet, 1));
 			RecipeBuilder.Shaped(MOD_ID)
 				.setShape("H H", "HHH", "HHH")
 				.addInput('H', "minecraft:stones")
-				.create("chectplates", new ItemStack(FeaturesItems.stoneChestplate, 1));
+				.create("chectplates", new ItemStack(FeaturesItems.stone_Chestplate, 1));
 			RecipeBuilder.Shaped(MOD_ID)
 				.setShape("HHH", "H H", "H H")
 				.addInput('H', "minecraft:stones")
-				.create("leggings", new ItemStack(FeaturesItems.stoneLeggings, 1));
+				.create("leggings", new ItemStack(FeaturesItems.stone_Leggings, 1));
 			RecipeBuilder.Shaped(MOD_ID)
 				.setShape("H H", "H H")
 				.addInput('H', "minecraft:stones")
-				.create("boots", new ItemStack(FeaturesItems.stoneBoots, 1));
+				.create("boots", new ItemStack(FeaturesItems.stone_Boots, 1));
 		}
 		//olivine armor crafting
 		if (FeaturesItems.miscArmorEnabled == 1) {
 			RecipeBuilder.Shaped(MOD_ID)
 				.setShape("HHH", "H H")
 				.addInput('H', Blocks.BLOCK_OLIVINE)
-				.create("helmets", new ItemStack(FeaturesItems.olivineHelmet, 1));
+				.create("helmets", new ItemStack(FeaturesItems.olivine_Helmet, 1));
 			RecipeBuilder.Shaped(MOD_ID)
 				.setShape("H H", "HHH", "HHH")
 				.addInput('H', Blocks.BLOCK_OLIVINE)
-				.create("chectplates", new ItemStack(FeaturesItems.olivineChestplate, 1));
+				.create("chectplates", new ItemStack(FeaturesItems.olivine_Chestplate, 1));
 			RecipeBuilder.Shaped(MOD_ID)
 				.setShape("HHH", "H H", "H H")
 				.addInput('H', Blocks.BLOCK_OLIVINE)
-				.create("leggings", new ItemStack(FeaturesItems.olivineLeggings, 1));
+				.create("leggings", new ItemStack(FeaturesItems.olivine_Leggings, 1));
 			RecipeBuilder.Shaped(MOD_ID)
 				.setShape("H H", "H H")
 				.addInput('H', Blocks.BLOCK_OLIVINE)
-				.create("boots", new ItemStack(FeaturesItems.olivineBoots, 1));
+				.create("boots", new ItemStack(FeaturesItems.olivine_Boots, 1));
 		}
 		//leather-chain armor crafting and repairing
 		if (FeaturesItems.oldArmorEnabled == 1) {
 			RecipeBuilder.Shapeless(MOD_ID)
 				.addInput(Items.ARMOR_HELMET_LEATHER)
 				.addInput(Items.ARMOR_HELMET_CHAINMAIL)
-				.create("leather-chainHelmet", new ItemStack(FeaturesItems.leatherChainHelmet, 1));
+				.create("leather-chainHelmet", new ItemStack(FeaturesItems.leather_Chain_Helmet, 1));
 			RecipeBuilder.Shapeless(MOD_ID)
 				.addInput(Items.ARMOR_CHESTPLATE_LEATHER)
 				.addInput(Items.ARMOR_CHESTPLATE_CHAINMAIL)
-				.create("leather-chainChestplate", new ItemStack(FeaturesItems.leatherChainChestplate, 1));
+				.create("leather-chainChestplate", new ItemStack(FeaturesItems.leather_Chain_Chestplate, 1));
 			RecipeBuilder.Shapeless(MOD_ID)
 				.addInput(Items.ARMOR_LEGGINGS_LEATHER)
 				.addInput(Items.ARMOR_LEGGINGS_CHAINMAIL)
-				.create("leather-chainLeggings", new ItemStack(FeaturesItems.leatherChainLeggings, 1));
+				.create("leather-chainLeggings", new ItemStack(FeaturesItems.leather_Chain_Leggings, 1));
 			RecipeBuilder.Shapeless(MOD_ID)
 				.addInput(Items.ARMOR_BOOTS_LEATHER)
 				.addInput(Items.ARMOR_BOOTS_CHAINMAIL)
-				.create("leather-chainBoots", new ItemStack(FeaturesItems.leatherChainBoots, 1));
+				.create("leather-chainBoots", new ItemStack(FeaturesItems.leather_Chain_Boots, 1));
 
-			workbenchGroup.register("leather-chainHelmetReapir", new RecipeEntryRepairable(new ItemStack(FeaturesItems.leatherChainHelmet), new RecipeSymbol(Items.CHAINLINK.getDefaultStack())));
+			workbenchGroup.register("leather-chainHelmetReapir", new RecipeEntryRepairable(new ItemStack(FeaturesItems.leather_Chain_Helmet), new RecipeSymbol(Items.CHAINLINK.getDefaultStack())));
 			RecipeBuilder.getRecipeGroup(MOD_ID, "workbench", new RecipeSymbol(Blocks.WORKBENCH.getDefaultStack()));
-			workbenchGroup.register("leather-chainHelmetReapir", new RecipeEntryRepairable(new ItemStack(FeaturesItems.leatherChainChestplate), new RecipeSymbol(Items.CHAINLINK.getDefaultStack())));
+			workbenchGroup.register("leather-chainHelmetReapir", new RecipeEntryRepairable(new ItemStack(FeaturesItems.leather_Chain_Chestplate), new RecipeSymbol(Items.CHAINLINK.getDefaultStack())));
 			RecipeBuilder.getRecipeGroup(MOD_ID, "workbench", new RecipeSymbol(Blocks.WORKBENCH.getDefaultStack()));
-			workbenchGroup.register("leather-chainChestplateReapir", new RecipeEntryRepairable(new ItemStack (FeaturesItems.leatherChainLeggings), new RecipeSymbol(Items.CHAINLINK.getDefaultStack())));
+			workbenchGroup.register("leather-chainChestplateReapir", new RecipeEntryRepairable(new ItemStack (FeaturesItems.leather_Chain_Leggings), new RecipeSymbol(Items.CHAINLINK.getDefaultStack())));
 			RecipeBuilder.getRecipeGroup(MOD_ID, "workbench", new RecipeSymbol(Blocks.WORKBENCH.getDefaultStack()));
-			workbenchGroup.register("leather-chainLeggingsReapir", new RecipeEntryRepairable(new ItemStack (FeaturesItems.leatherChainBoots), new RecipeSymbol(Items.CHAINLINK.getDefaultStack())));
+			workbenchGroup.register("leather-chainLeggingsReapir", new RecipeEntryRepairable(new ItemStack (FeaturesItems.leather_Chain_Boots), new RecipeSymbol(Items.CHAINLINK.getDefaultStack())));
 			RecipeBuilder.getRecipeGroup(MOD_ID, "workbench", new RecipeSymbol(Blocks.WORKBENCH.getDefaultStack()));
 		}
 		//workbench on a stick crafting
@@ -581,7 +581,7 @@ public class FeaturesCraft implements RecipeEntrypoint {
 				.setShape(" W", "S ")
 				.addInput('S', Items.STICK)
 				.addInput('W', Blocks.WORKBENCH)
-				.create("craftingOnAStick", new ItemStack(FeaturesItems.workbenchOnStick, 1));
+				.create("craftingOnAStick", new ItemStack(FeaturesItems.workbench_On_Stick, 1));
 		}
 		//bomb quiver crafting
 		if (FeaturesItems.treasureEnabled == 1) {
@@ -590,20 +590,20 @@ public class FeaturesCraft implements RecipeEntrypoint {
 				.addInput('S', Items.STRING)
 				.addInput('L', Items.LEATHER)
 				.addInput('C', Items.CLOTH)
-				.create("bomBagCraft", new ItemStack(FeaturesItems.bombBag, 1, 48));
+				.create("bomBagCraft", new ItemStack(FeaturesItems.bomb_Bag, 1, 48));
 		}
 		//plate armor repairing
 		if (FeaturesItems.oldArmorEnabled == 1) {
-			workbenchGroup.register("plateHelmetReapir", new RecipeEntryRepairable(new ItemStack(FeaturesItems.plateHelmet), new RecipeSymbol (Items.INGOT_IRON.getDefaultStack())));
+			workbenchGroup.register("plateHelmetReapir", new RecipeEntryRepairable(new ItemStack(FeaturesItems.plate_Helmet), new RecipeSymbol (Items.INGOT_IRON.getDefaultStack())));
 			RecipeBuilder.getRecipeGroup(MOD_ID, "workbench", new RecipeSymbol(Blocks.WORKBENCH.getDefaultStack()));
-			workbenchGroup.register("plateChestplateReapir", new RecipeEntryRepairable(new ItemStack(FeaturesItems.plateHelmet), new RecipeSymbol (Items.INGOT_IRON.getDefaultStack())));
+			workbenchGroup.register("plateChestplateReapir", new RecipeEntryRepairable(new ItemStack(FeaturesItems.plate_Helmet), new RecipeSymbol (Items.INGOT_IRON.getDefaultStack())));
 			RecipeBuilder.getRecipeGroup(MOD_ID, "workbench", new RecipeSymbol(Blocks.WORKBENCH.getDefaultStack()));
 		}
 		//rainbow flower stuff
 		if (FeaturesBlocks.plantEnabled == 1){
 			for (int i = 0; i <= 15; i++) {
 				RecipeBuilder.Shapeless(MOD_ID)
-					.addInput(FeaturesBlocks.rainbowFlower)
+					.addInput(FeaturesBlocks.rainbow_Flower)
 					.addInput(Items.DYE, i)
 					.create("dye-cloning", new ItemStack(Items.DYE, 3, i));
 			}
@@ -630,11 +630,11 @@ public class FeaturesCraft implements RecipeEntrypoint {
 
 			RecipeBuilder.Furnace(MOD_ID)
 				.setInput(FeaturesBlocks.ham)
-				.create("cookingham", new ItemStack(FeaturesBlocks.cookedham));
+				.create("cookingham", new ItemStack(FeaturesBlocks.ham_Cooked));
 
 			RecipeBuilder.BlastFurnace(MOD_ID)
 				.setInput(FeaturesBlocks.ham)
-				.create("cookingham", new ItemStack(FeaturesBlocks.cookedham));
+				.create("cookingham", new ItemStack(FeaturesBlocks.ham_Cooked));
 		}
 
 		if (FeaturesItems.newToolsEnabled == 1){
@@ -654,13 +654,13 @@ public class FeaturesCraft implements RecipeEntrypoint {
 				.addInput('S', Items.STICK)
 				.addInput('M', "minecraft:planks")
 				.addInput('H', "minecraft:logs")
-				.create("climbpickcraft", new ItemStack(FeaturesItems.climbPickaxeWood));
+				.create("climbpickcraft", new ItemStack(FeaturesItems.climb_Pickaxe_Wood));
 			RecipeBuilder.Shaped(MOD_ID)
 				.setShape("MM ", "MSH", " S ")
 				.addInput('S', Items.STICK)
 				.addInput('M', "minecraft:cobblestones")
 				.addInput('H', "minecraft:stones")
-				.create("climbpickcraft", new ItemStack(FeaturesItems.climbPickaxeStone));
+				.create("climbpickcraft", new ItemStack(FeaturesItems.climb_Pickaxe_Stone));
 			for (int i = 0; i < 4; i++){
 				RecipeBuilder.Shaped(MOD_ID)
 					.setShape("MM ", "MSH", " S ")
@@ -675,13 +675,13 @@ public class FeaturesCraft implements RecipeEntrypoint {
 				.addInput('S', Items.STICK)
 				.addInput('M', "minecraft:planks")
 				.addInput('H', "minecraft:logs")
-				.create("hammercraft", new ItemStack(FeaturesItems.miningHammerWood));
+				.create("hammercraft", new ItemStack(FeaturesItems.mining_Hammer_Wood));
 			RecipeBuilder.Shaped(MOD_ID)
 				.setShape("HMH", "MSM", " S ")
 				.addInput('S', Items.STICK)
 				.addInput('M', "minecraft:cobblestones")
 				.addInput('H', "minecraft:stones")
-				.create("hammercraft", new ItemStack(FeaturesItems.miningHammerStone));
+				.create("hammercraft", new ItemStack(FeaturesItems.mining_Hammer_Stone));
 			for (int i = 0; i < 4; i++){
 				RecipeBuilder.Shaped(MOD_ID)
 					.setShape("HMH", "MSM", " S ")
@@ -694,7 +694,7 @@ public class FeaturesCraft implements RecipeEntrypoint {
 
 		if (FeaturesBlocks.miscBlocksEnabled == 1){
 			RecipeBuilder.Shapeless(MOD_ID)
-				.addInput(FeaturesBlocks.burnedLog)
+				.addInput(FeaturesBlocks.burned_Log)
 				.create("burnedlogsintoplanks", new ItemStack(Blocks.PLANKS_OAK_PAINTED, 4, 15));
 		}
 
@@ -704,7 +704,7 @@ public class FeaturesCraft implements RecipeEntrypoint {
 				.addInput('S', Items.STRING)
 				.addInput('L', Items.LEATHER)
 				.addInput('C', Items.CLOTH)
-				.create("bomBagCraft", new ItemStack(FeaturesItems.fertilizerBag, 1, 192	));
+				.create("bomBagCraft", new ItemStack(FeaturesItems.fertilizer_Bag, 1, 192));
 		}
 	}
 }

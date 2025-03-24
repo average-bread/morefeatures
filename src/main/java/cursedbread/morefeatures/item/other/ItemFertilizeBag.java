@@ -241,7 +241,7 @@ public class ItemFertilizeBag extends ItemQuiver {
 					}
 
 
-					else if (id == FeaturesBlocks.fluxCropws.id()){
+					else if (id == FeaturesBlocks.flux_Cropws.id()){
 						if (world.getBlockMetadata(blockX + addx, blockY, blockZ + addz) >= 7) {
 							return false;
 						} else {

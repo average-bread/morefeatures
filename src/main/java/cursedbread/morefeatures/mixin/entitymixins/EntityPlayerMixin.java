@@ -31,11 +31,11 @@ public abstract class EntityPlayerMixin extends Mob {
 			ItemStack leggings_item = Minecraft.getMinecraft().thePlayer.inventory.armorItemInSlot(1);
 			ItemStack boots_item = Minecraft.getMinecraft().thePlayer.inventory.armorItemInSlot(0);
 			if (
-				(helmet_item != null && helmet_item.getItem().equals(FeaturesItems.bedrockHelmet)) ||
-				(helmet_item != null && helmet_item.getItem().equals(FeaturesItems.bedrockCrown)) ||
-				(chest_item != null && chest_item.getItem().equals(FeaturesItems.bedrockChestplate)) ||
-				(leggings_item != null && leggings_item.getItem().equals(FeaturesItems.bedrockLeggings)) ||
-				(boots_item != null && boots_item.getItem().equals(FeaturesItems.bedrockBoots))
+				(helmet_item != null && helmet_item.getItem().equals(FeaturesItems.bedrock_Helmet)) ||
+				(helmet_item != null && helmet_item.getItem().equals(FeaturesItems.bedrock_Crown)) ||
+				(chest_item != null && chest_item.getItem().equals(FeaturesItems.bedrock_Chestplate)) ||
+				(leggings_item != null && leggings_item.getItem().equals(FeaturesItems.bedrock_Leggings)) ||
+				(boots_item != null && boots_item.getItem().equals(FeaturesItems.bedrock_Boots))
 			){
 				this.heal(100);
 			}
@@ -53,16 +53,16 @@ public abstract class EntityPlayerMixin extends Mob {
 			float olivinetorsoboost = 0;
 			float olivinelegsboost = 0;
 			float olivinebootsboost = 0;
-			if (chest_item != null && chest_item.getItem().equals(FeaturesItems.olivineChestplate)) {
+			if (chest_item != null && chest_item.getItem().equals(FeaturesItems.olivine_Chestplate)) {
 				olivinetorsoboost = this.speed + 0.05F;
 			}
-			if (leggings_item != null && leggings_item.getItem().equals(FeaturesItems.olivineLeggings)) {
+			if (leggings_item != null && leggings_item.getItem().equals(FeaturesItems.olivine_Leggings)) {
 				olivinelegsboost = this.speed + 0.03F;
 			}
-			if ((helmet_item != null && helmet_item.getItem().equals(FeaturesItems.olivineHelmet)) || (helmet_item != null && FeaturesItems.crownsEnabled == 1 && helmet_item.getItem().equals(FeaturesItems.olivineCrown))) {
+			if ((helmet_item != null && helmet_item.getItem().equals(FeaturesItems.olivine_Helmet)) || (helmet_item != null && FeaturesItems.crownsEnabled == 1 && helmet_item.getItem().equals(FeaturesItems.olivine_Crown))) {
 				olivineheadboost = this.speed + 0.01F;
 			}
-			if (boots_item != null && boots_item.getItem().equals(FeaturesItems.olivineBoots)) {
+			if (boots_item != null && boots_item.getItem().equals(FeaturesItems.olivine_Boots)) {
 				olivinebootsboost = this.speed + 0.01F;
 			}
 			float olivineboost = olivineheadboost + olivinetorsoboost + olivinelegsboost + olivinebootsboost;
@@ -87,7 +87,7 @@ public abstract class EntityPlayerMixin extends Mob {
 			if (gameFullBright == null){
 				gameFullBright = mc.fullbright;
 			}
-			if (helmet_item != null && helmet_item.getItem().equals(FeaturesItems.catHelmet)){
+			if (helmet_item != null && helmet_item.getItem().equals(FeaturesItems.cat_Helmet)){
 				if (!toggledFullBright && mc.fullbright)
 					gameFullBright = true;
 

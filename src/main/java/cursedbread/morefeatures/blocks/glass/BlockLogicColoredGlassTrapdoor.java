@@ -26,7 +26,7 @@ public class BlockLogicColoredGlassTrapdoor extends BlockLogicTrapDoorPainted im
 		switch (dropCause) {
 			case SILK_TOUCH:
 			case PICK_BLOCK: {
-				return new ItemStack[]{new ItemStack(FeaturesBlocks.vanillaColoredGlassTrapdoor, 1, (meta >> 4 & 15) << 4)};
+				return new ItemStack[]{new ItemStack(FeaturesBlocks.vanilla_Colored_Glass_Trapdoor, 1, (meta >> 4 & 15) << 4)};
 			}
 		}
 		return null;
@@ -39,7 +39,7 @@ public class BlockLogicColoredGlassTrapdoor extends BlockLogicTrapDoorPainted im
 
 	public void removeDye(World world, int x, int y, int z) {
 		int meta = world.getBlockMetadata(x, y, z);
-		world.setBlockAndMetadataWithNotify(x, y, z, FeaturesBlocks.vanillaColoredGlassTrapdoor.id(), meta & 15);
+		world.setBlockAndMetadataWithNotify(x, y, z, FeaturesBlocks.vanilla_Colored_Glass_Trapdoor.id(), meta & 15);
 	}
 
 	public void setColor(World world, int x, int y, int z, DyeColor color) {

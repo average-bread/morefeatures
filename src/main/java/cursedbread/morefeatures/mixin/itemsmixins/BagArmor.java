@@ -19,7 +19,7 @@ public class BagArmor {
 
 	@Inject(method = "mayPlace", at = @At("HEAD"), cancellable = true)
 	public void canPutStackInSlot(ItemStack itemstack, CallbackInfoReturnable<Boolean> cir) {
-		if ((itemstack != null && itemstack.getItem().equals(FeaturesItems.bombBag)) || itemstack != null && itemstack.getItem().equals(FeaturesItems.bombBagGold)) {
+		if ((itemstack != null && itemstack.getItem().equals(FeaturesItems.bomb_Bag)) || itemstack != null && itemstack.getItem().equals(FeaturesItems.bomb_Bag_Gold)) {
 			cir.setReturnValue(this.armorType == 2);
 		}
 	}

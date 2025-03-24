@@ -22,7 +22,7 @@ public class BlockLogicHam extends BlockLogic {
 		world.scheduleBlockUpdate(x, y, z, id(), block.tickDelay());
 		Biome biome = world.getBlockBiome(x,y,z);
 		if (biome == Biomes.NETHER_NETHER) {
-			world.setBlock(x, y, z, FeaturesBlocks.cookedham.id());
+			world.setBlock(x, y, z, FeaturesBlocks.ham_Cooked.id());
 			for (int i = 0; i < 10; i++){
 				world.spawnParticle("largesmoke", (double)x + Math.random(), (double)y + 1.5, (double)z + Math.random(), 0.0, 0.0, 0.0, 0);
 				world.playSoundEffect(null, SoundCategory.WORLD_SOUNDS, (double)x + 0.5, (double)y + 0.5, (double)z + 0.5, "random.fizz", 0.5F, 2.6F + (world.rand.nextFloat() - world.rand.nextFloat()) * 0.8F);

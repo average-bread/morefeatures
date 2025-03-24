@@ -23,7 +23,7 @@ public abstract class SoulDrop extends Entity {
 	private void soulDrop(Entity entity, CallbackInfo ci){
 		if (FeaturesItems.miscItemsEnabled > 0 && entity instanceof Player){
 			ItemStack heldStack = ((Player) entity).getHeldItem();
-			ItemStack drop = new ItemStack(FeaturesItems.mobSoul);
+			ItemStack drop = new ItemStack(FeaturesItems.mob_Soul);
 			if (heldStack != null && heldStack.getItem().equals(Items.TOOL_SWORD_GOLD)){
 				int i = (int) (Math.random() * 64);
 				if (i == 0) {

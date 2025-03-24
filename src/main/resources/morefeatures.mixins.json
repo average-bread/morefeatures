@@ -4,7 +4,7 @@
   "package": "cursedbread.morefeatures.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-    "blockmixins.NetherrriteCrushingMixin",
+    "blockmixins.NetherrackCrushingMixin",
     "entitymixins.EntityBagRender",
     "entitymixins.SoulDrop",
     "generationmixins.BigBirchTressMixin",
@@ -24,13 +24,13 @@
     "itemsmixins.WorkbenchFix",
     "itemsmixins.fuels.FurnanceBlastFuelMixin",
     "itemsmixins.fuels.FurnanceFuelMixin",
-    "superores.OreToSuperoreCoal",
-    "superores.OreToSuperoreDiamond",
-    "superores.OreToSuperoreGold",
-    "superores.OreToSuperoreIron",
-    "superores.OreToSuperoreLapis",
-    "superores.OreToSuperoreNetherCoal",
-    "superores.OreToSuperoreRedstone"
+    "blockmixins.superores.OreToSuperoreCoal",
+    "blockmixins.superores.OreToSuperoreDiamond",
+    "blockmixins.superores.OreToSuperoreGold",
+    "blockmixins.superores.OreToSuperoreIron",
+    "blockmixins.superores.OreToSuperoreLapis",
+    "blockmixins.superores.OreToSuperoreNetherCoal",
+    "blockmixins.superores.OreToSuperoreRedstone"
   ],
   "client": [
     "entitymixins.EntityPlayerMixin"

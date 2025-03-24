@@ -1,11 +1,7 @@
-package cursedbread.morefeatures.mixin.superores;
+package cursedbread.morefeatures.mixin.blockmixins.superores;
 
 import cursedbread.morefeatures.FeaturesMain;
 import cursedbread.morefeatures.blocks.FeaturesBlocks;
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
-import net.minecraft.core.block.Block;
-import net.minecraft.core.block.BlockLogic;
 import net.minecraft.core.block.BlockLogicOreGold;
 import net.minecraft.core.block.Blocks;
 import net.minecraft.core.world.World;
@@ -22,15 +18,15 @@ public class OreToSuperoreGold {
 		if (FeaturesBlocks.superoresEnabled == 1) {
 			if (g <= FeaturesMain.superoreChance - 1){
 				if (ore == Blocks.ORE_GOLD_STONE.id()){
-					world.setBlock(x, y, z, FeaturesBlocks.superGoldStoneOre.id());
+					world.setBlock(x, y, z, FeaturesBlocks.super_Gold_Stone_Ore.id());
 				} else if (ore == Blocks.ORE_GOLD_LIMESTONE.id()){
-					world.setBlock(x, y, z, FeaturesBlocks.superGoldLimestoneOre.id());
+					world.setBlock(x, y, z, FeaturesBlocks.super_Gold_Limestone_Ore.id());
 				} else if (ore == Blocks.ORE_GOLD_GRANITE.id()){
-					world.setBlock(x, y, z, FeaturesBlocks.superGoldGraniteOre.id());
+					world.setBlock(x, y, z, FeaturesBlocks.super_Gold_Granite_Ore.id());
 				} else if (ore == Blocks.ORE_GOLD_BASALT.id()){
-					world.setBlock(x, y, z, FeaturesBlocks.superGoldBasaltOre.id());
+					world.setBlock(x, y, z, FeaturesBlocks.super_Gold_Basalt_Ore.id());
 				} else if (ore == Blocks.ORE_GOLD_PERMAFROST.id()){
-					world.setBlock(x, y, z, FeaturesBlocks.superGoldPermafrostOre.id());
+					world.setBlock(x, y, z, FeaturesBlocks.super_Gold_Permafrost_Ore.id());
 				}
 			}
 		}

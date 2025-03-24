@@ -61,12 +61,12 @@ public class BurningLogMixin extends BlockLogic  {
 
 	@Unique
 	public void updateTick(World world, int x, int y, int z, Random rand) {
-		if (this.canMelt(world, x, y, z) && world.getBlockId(x, y, z) != FeaturesBlocks.burnedLog.id()) {
+		if (this.canMelt(world, x, y, z) && world.getBlockId(x, y, z) != FeaturesBlocks.burned_Log.id()) {
 			int meta = world.getBlockMetadata(x, y, z);
 			if (world.getBlockId(x, y+1, z) == 0){
 				world.setBlockWithNotify(x, y+1, z, Blocks.FIRE.id());
 			}
-			world.setBlockAndMetadataWithNotify(x, y, z, FeaturesBlocks.burnedLog.id(), meta);
+			world.setBlockAndMetadataWithNotify(x, y, z, FeaturesBlocks.burned_Log.id(), meta);
 			world.playSoundEffect(null, SoundCategory.WORLD_SOUNDS, (double)x + 0.5, (double)y + 0.5, (double)z + 0.5, "random.fizz", 0.5F, 2.6F + (world.rand.nextFloat() - world.rand.nextFloat()) * 0.8F);
 		}
 	}

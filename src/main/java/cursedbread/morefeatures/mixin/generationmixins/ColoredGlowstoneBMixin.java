@@ -36,7 +36,7 @@ public class ColoredGlowstoneBMixin {
 					} else {
 						r = 14;
 					}
-					world.setBlockAndMetadataWithNotify(x, y, z, FeaturesBlocks.vanillaColoredGlowstone.id(), r);
+					world.setBlockAndMetadataWithNotify(x, y, z, FeaturesBlocks.vanilla_Colored_Glowstone.id(), r);
 
 					for(int l = 0; l < 1500; ++l) {
 						int i1 = x + random.nextInt(8) - random.nextInt(8);
@@ -71,12 +71,12 @@ public class ColoredGlowstoneBMixin {
 									j2 = world.getBlockId(i1, j1, k1 + 1);
 								}
 
-								if (j2 == FeaturesBlocks.vanillaColoredGlowstone.id()) {
+								if (j2 == FeaturesBlocks.vanilla_Colored_Glowstone.id()) {
 									++l1;
 								}
 							}
 							if (l1 == 1) {
-								world.setBlockAndMetadataWithNotify(i1, j1, k1, FeaturesBlocks.vanillaColoredGlowstone.id(), r);
+								world.setBlockAndMetadataWithNotify(i1, j1, k1, FeaturesBlocks.vanilla_Colored_Glowstone.id(), r);
 							}
 						}
 					}
@@ -99,7 +99,7 @@ public class ColoredGlowstoneBMixin {
 						} else {
 							r = 9;
 						}
-						world.setBlockAndMetadataWithNotify(x, y, z, FeaturesBlocks.nonameColoredGlowstone.id(), r);
+						world.setBlockAndMetadataWithNotify(x, y, z, FeaturesBlocks.noname_Colored_Glowstone.id(), r);
 
 						for(int l = 0; l < 1500; ++l) {
 							int i1 = x + random.nextInt(8) - random.nextInt(8);
@@ -134,12 +134,12 @@ public class ColoredGlowstoneBMixin {
 										j2 = world.getBlockId(i1, j1, k1 + 1);
 									}
 
-									if (j2 == FeaturesBlocks.nonameColoredGlowstone.id()) {
+									if (j2 == FeaturesBlocks.noname_Colored_Glowstone.id()) {
 										++l1;
 									}
 								}
 								if (l1 == 1) {
-									world.setBlockAndMetadataWithNotify(i1, j1, k1, FeaturesBlocks.nonameColoredGlowstone.id(), r);
+									world.setBlockAndMetadataWithNotify(i1, j1, k1, FeaturesBlocks.noname_Colored_Glowstone.id(), r);
 								}
 							}
 						}

@@ -22,7 +22,7 @@ public abstract class SpawnerSurvival extends BlockLogic {
 
 	@Inject(method = "onBlockRightClicked", at = @At(value = "HEAD"), cancellable = true)
 	public void survivalActivated(World world, int x, int y, int z, Player player, Side side, double xPlaced, double yPlaced, CallbackInfoReturnable<Boolean> cir) {
-		ItemStack check = new ItemStack(FeaturesItems.mobSoul);
+		ItemStack check = new ItemStack(FeaturesItems.mob_Soul);
 		ItemStack stack = player.getHeldItem();
 		if (player.getHeldItem() != null && player.getHeldItem().isItemEqual(check)){
 			player.displayMobPickerScreen(x, y, z);

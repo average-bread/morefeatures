@@ -1,10 +1,7 @@
-package cursedbread.morefeatures.mixin.superores;
+package cursedbread.morefeatures.mixin.blockmixins.superores;
 
 import cursedbread.morefeatures.FeaturesMain;
 import cursedbread.morefeatures.blocks.FeaturesBlocks;
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
-import net.minecraft.core.block.Block;
 import net.minecraft.core.block.BlockLogicOreLapis;
 import net.minecraft.core.block.Blocks;
 import net.minecraft.core.world.World;
@@ -21,15 +18,15 @@ public class OreToSuperoreLapis {
 		if (FeaturesBlocks.superoresEnabled == 1) {
 			if (g <= FeaturesMain.superoreChance - 1){
 				if (ore == Blocks.ORE_LAPIS_STONE.id()){
-					world.setBlock(x, y, z, FeaturesBlocks.superLapisStoneOre.id());
+					world.setBlock(x, y, z, FeaturesBlocks.super_Lapis_Stone_Ore.id());
 				} else if (ore == Blocks.ORE_LAPIS_LIMESTONE.id()){
-					world.setBlock(x, y, z, FeaturesBlocks.superLapisLimestoneOre.id());
+					world.setBlock(x, y, z, FeaturesBlocks.super_Lapis_Limestone_Ore.id());
 				} else if (ore == Blocks.ORE_LAPIS_GRANITE.id()){
-					world.setBlock(x, y, z, FeaturesBlocks.superLapisGraniteOre.id());
+					world.setBlock(x, y, z, FeaturesBlocks.super_Lapis_Granite_Ore.id());
 				} else if (ore == Blocks.ORE_LAPIS_BASALT.id()){
-					world.setBlock(x, y, z, FeaturesBlocks.superLapisBasaltOre.id());
+					world.setBlock(x, y, z, FeaturesBlocks.super_Lapis_Basalt_Ore.id());
 				} else if (ore == Blocks.ORE_LAPIS_PERMAFROST.id()){
-					world.setBlock(x, y, z, FeaturesBlocks.superLapisPermafrostOre.id());
+					world.setBlock(x, y, z, FeaturesBlocks.super_Lapis_Permafrost_Ore.id());
 				}
 			}
 		}

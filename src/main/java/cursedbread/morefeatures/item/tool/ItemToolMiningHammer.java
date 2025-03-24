@@ -39,7 +39,7 @@ public class ItemToolMiningHammer extends ItemToolPickaxe {
 	}
 
 	protected void MineBlock(int x, int y, int z, World world, Mob mob) {
-		Item GoldItem = FeaturesItems.miningHammerGold;
+		Item GoldItem = FeaturesItems.mining_Hammer_Gold;
 		Item heldItem = Objects.requireNonNull(mob.getHeldItem()).getItem();
 		if (!world.isClientSide) {
 			if (world.getBlock(x, y, z) != null && !isBlockMatchToBlacklist(world.getBlock(x, y, z).id(), BlockHammersBlacklist)){

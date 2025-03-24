@@ -1,10 +1,7 @@
-package cursedbread.morefeatures.mixin.superores;
+package cursedbread.morefeatures.mixin.blockmixins.superores;
 
 import cursedbread.morefeatures.FeaturesMain;
 import cursedbread.morefeatures.blocks.FeaturesBlocks;
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
-import net.minecraft.core.block.Block;
 import net.minecraft.core.block.BlockLogicOreNetherCoal;
 import net.minecraft.core.block.Blocks;
 import net.minecraft.core.world.World;
@@ -21,7 +18,7 @@ public class OreToSuperoreNetherCoal {
 		if (FeaturesBlocks.superoresEnabled == 1) {
 			if (g <= FeaturesMain.superoreChance - 1){
 				if (ore == Blocks.ORE_NETHERCOAL_NETHERRACK.id()){
-					world.setBlock(x, y, z, FeaturesBlocks.superNetherCoalOre.id());
+					world.setBlock(x, y, z, FeaturesBlocks.super_Nether_Coal_Ore.id());
 				}
 			}
 		}

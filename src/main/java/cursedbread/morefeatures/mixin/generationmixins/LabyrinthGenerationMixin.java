@@ -106,27 +106,27 @@ public class LabyrinthGenerationMixin {
 			int i = random.nextInt(68);
 			if (i == 16) {
 				if (this.isHot) {
-					cir.setReturnValue( new ItemStack(FeaturesItems.catHelmet));
+					cir.setReturnValue( new ItemStack(FeaturesItems.cat_Helmet));
 				} else  {
-					cir.setReturnValue( new ItemStack(FeaturesItems.bombBagGold));
+					cir.setReturnValue( new ItemStack(FeaturesItems.bomb_Bag_Gold));
 				}
 			}
 		}
 		if (FeaturesItems.oldArmorEnabled == 1) {
 			int j = random.nextInt(32);
 			if (j == 1) {
-				cir.setReturnValue( new ItemStack(FeaturesItems.plateHelmet, 1, FeaturesItems.plateHelmet.getMaxDamage() - random.nextInt(FeaturesItems.plateHelmet.getMaxDamage())));
+				cir.setReturnValue( new ItemStack(FeaturesItems.plate_Helmet, 1, FeaturesItems.plate_Helmet.getMaxDamage() - random.nextInt(FeaturesItems.plate_Helmet.getMaxDamage())));
 			} else if (j == 2) {
-				cir.setReturnValue( new ItemStack(FeaturesItems.plateChestplate, 1, FeaturesItems.plateChestplate.getMaxDamage() - random.nextInt(FeaturesItems.plateChestplate.getMaxDamage())));
+				cir.setReturnValue( new ItemStack(FeaturesItems.plate_Chestplate, 1, FeaturesItems.plate_Chestplate.getMaxDamage() - random.nextInt(FeaturesItems.plate_Chestplate.getMaxDamage())));
 			}
 			if (FeaturesItems.crownsEnabled == 1 && j == 3){
-				cir.setReturnValue( new ItemStack(FeaturesItems.plateCrown, 1, FeaturesItems.plateCrown.getMaxDamage() - random.nextInt(FeaturesItems.plateCrown.getMaxDamage())));
+				cir.setReturnValue( new ItemStack(FeaturesItems.plate_Crown, 1, FeaturesItems.plate_Crown.getMaxDamage() - random.nextInt(FeaturesItems.plate_Crown.getMaxDamage())));
 			}
 		}
 		if (FeaturesItems.crownsEnabled == 1) {
 			int a = random.nextInt(16);
 			if (a == 1) {
-				cir.setReturnValue( new ItemStack(FeaturesItems.chainCrown, 1, FeaturesItems.chainCrown.getMaxDamage() - random.nextInt(FeaturesItems.chainCrown.getMaxDamage() / 2)));
+				cir.setReturnValue( new ItemStack(FeaturesItems.chain_Crown, 1, FeaturesItems.chain_Crown.getMaxDamage() - random.nextInt(FeaturesItems.chain_Crown.getMaxDamage() / 2)));
 			}
 		}
 	}

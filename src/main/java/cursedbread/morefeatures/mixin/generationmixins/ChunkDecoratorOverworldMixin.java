@@ -62,7 +62,7 @@ public class ChunkDecoratorOverworldMixin {
 				blockX = x + rand.nextInt(16) + 8;
 				blockY = minY + rand.nextInt(rangeY);
 				blockZ = z + rand.nextInt(16) + 8;
-				new WorldFeatureFlowers(FeaturesBlocks.rainbowFlower.id(), 1, false).place(world, rand, blockX, blockY, blockZ);
+				new WorldFeatureFlowers(FeaturesBlocks.rainbow_Flower.id(), 1, false).place(world, rand, blockX, blockY, blockZ);
 			}
 		}
 

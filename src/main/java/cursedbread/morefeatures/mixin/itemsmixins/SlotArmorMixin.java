@@ -19,7 +19,7 @@ public class SlotArmorMixin {
 
 	@Inject(method = "mayPlace", at = @At("HEAD"), cancellable = true)
 	public void canPutStackInSlot(ItemStack itemstack, CallbackInfoReturnable<Boolean> cir) {
-		if (itemstack != null && itemstack.getItem().equals(FeaturesItems.bombBag)) {
+		if (itemstack != null && itemstack.getItem().equals(FeaturesItems.bomb_Bag)) {
 			cir.setReturnValue(this.armorType == 1);
 		}
 	}

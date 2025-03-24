@@ -22,6 +22,7 @@ public class FeaturesMain implements ModInitializer, GameStartEntrypoint, Client
 	public static int newDungeonsEnabled;
 	public static int superoreChance;
 	public static int newGenerators;
+	public static int netherUpdate;
 
 	static {
 		Properties prop = new Properties();
@@ -49,6 +50,7 @@ public class FeaturesMain implements ModInitializer, GameStartEntrypoint, Client
 
 		prop.setProperty("New_structures", "1");
 		prop.setProperty("New_block_generators", "1");
+		prop.setProperty("New_nether_generation", "1");
 		ConfigHandler config = new ConfigHandler(MOD_ID,prop);
 
 
@@ -75,6 +77,7 @@ public class FeaturesMain implements ModInitializer, GameStartEntrypoint, Client
 		//Extra
 		newDungeonsEnabled = config.getInt("New_structures");
 		newGenerators = config.getInt("New_block_generators");
+		netherUpdate = config.getInt("New_nether_generation");
 	}
     @Override
     public void onInitialize() {

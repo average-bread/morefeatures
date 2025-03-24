@@ -110,7 +110,7 @@ public class BlockLogicCropsFlux extends BlockLogicFlower implements IBonemealab
 	}
 
 	public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int meta, TileEntity tileEntity) {
-		return meta != 7 ? new ItemStack[]{new ItemStack(FeaturesItems.fluxSeed)} : new ItemStack[]{new ItemStack(FeaturesItems.fluxSeed, world.rand.nextInt(3) + 1), new ItemStack(Items.STRING)};
+		return meta != 7 ? new ItemStack[]{new ItemStack(FeaturesItems.flux_Seed)} : new ItemStack[]{new ItemStack(FeaturesItems.flux_Seed, world.rand.nextInt(3) + 1), new ItemStack(Items.STRING)};
 	}
 
 	public boolean onBonemealUsed(ItemStack itemstack, @Nullable Player player, World world, int blockX, int blockY, int blockZ, Side side, double xPlaced, double yPlaced) {

@@ -16,7 +16,7 @@ public abstract class BlockGrassMixin {
     private int updateId(int id, World world, int x, int y, int z, Random rand) {
         if (FeaturesBlocks.plantEnabled == 1){
 			if (id == Blocks.FLOWER_RED.id() && rand.nextInt(100) <= FeaturesBlocks.rainbowFlowerChance - 1)
-				return FeaturesBlocks.rainbowFlower.id();
+				return FeaturesBlocks.rainbow_Flower.id();
 		}
 		return id;
 	}

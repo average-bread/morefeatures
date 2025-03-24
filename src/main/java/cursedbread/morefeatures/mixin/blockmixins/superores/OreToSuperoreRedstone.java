@@ -1,10 +1,7 @@
-package cursedbread.morefeatures.mixin.superores;
+package cursedbread.morefeatures.mixin.blockmixins.superores;
 
 import cursedbread.morefeatures.FeaturesMain;
 import cursedbread.morefeatures.blocks.FeaturesBlocks;
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
-import net.minecraft.core.block.Block;
 import net.minecraft.core.block.BlockLogicOreRedstone;
 import net.minecraft.core.block.Blocks;
 import net.minecraft.core.world.World;
@@ -21,15 +18,15 @@ public class OreToSuperoreRedstone {
 		if (FeaturesBlocks.superoresEnabled == 1) {
 			if (g <= FeaturesMain.superoreChance - 1){
 				if (ore == Blocks.ORE_REDSTONE_STONE.id()){
-					world.setBlock(x, y, z, FeaturesBlocks.superRedstoneStoneOre.id());
+					world.setBlock(x, y, z, FeaturesBlocks.super_Redstone_Stone_Ore.id());
 				} else if (ore == Blocks.ORE_REDSTONE_LIMESTONE.id()){
-					world.setBlock(x, y, z, FeaturesBlocks.superRedstoneLimestoneOre.id());
+					world.setBlock(x, y, z, FeaturesBlocks.super_Redstone_Limestone_Ore.id());
 				} else if (ore == Blocks.ORE_REDSTONE_GRANITE.id()){
-					world.setBlock(x, y, z, FeaturesBlocks.superRedstoneGraniteOre.id());
+					world.setBlock(x, y, z, FeaturesBlocks.super_Redstone_Granite_Ore.id());
 				} else if (ore == Blocks.ORE_REDSTONE_BASALT.id()){
-					world.setBlock(x, y, z, FeaturesBlocks.superRedstoneBasaltOre.id());
+					world.setBlock(x, y, z, FeaturesBlocks.super_Redstone_Basalt_Ore.id());
 				} else if (ore == Blocks.ORE_REDSTONE_PERMAFROST.id()){
-					world.setBlock(x, y, z, FeaturesBlocks.superRedstonePermafrostOre.id());
+					world.setBlock(x, y, z, FeaturesBlocks.super_Redstone_Permafrost_Ore.id());
 				}
 			}
 		}

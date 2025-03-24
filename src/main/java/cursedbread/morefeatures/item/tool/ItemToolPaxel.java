@@ -152,7 +152,7 @@ public class ItemToolPaxel extends Item {
 
 			world.playBlockSoundEffect(player, (double)((float)blockX + 0.5F), (double)((float)blockY + 0.5F), (double)((float)blockZ + 0.5F), Blocks.DIRT, EnumBlockSoundEffectType.MINE);
 			if (!world.isClientSide && (id == Blocks.GRASS.id() || id == Blocks.GRASS_RETRO.id() || id == Blocks.GRASS_SCORCHED.id()) && world.rand.nextInt(5) == 0) {
-				world.dropItem(blockX, blockY + 1, blockZ, new ItemStack(FeaturesItems.fluxSeed));
+				world.dropItem(blockX, blockY + 1, blockZ, new ItemStack(FeaturesItems.flux_Seed));
 			}
 
 			if (world.isClientSide) {
