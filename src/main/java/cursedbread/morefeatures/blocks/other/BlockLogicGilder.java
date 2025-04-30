@@ -25,7 +25,7 @@ public class BlockLogicGilder extends BlockLogic {
         // Init the hash map, done now due to init order
         if (!init) {
             item_map.put(Items.ARMOR_QUIVER.id, new ItemStack(Items.ARMOR_QUIVER_GOLD));
-            if (FeaturesItems.treasureEnabled == 1) {
+            if (FeaturesItems.bombBagEnabled == 1) {
                 item_map.put(FeaturesItems.bomb_Bag.id, new ItemStack(FeaturesItems.bomb_Bag_Gold));
             }
             init = true;

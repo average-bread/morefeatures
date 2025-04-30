@@ -57,7 +57,7 @@ public class ChunkDecoratorOverworldMixin {
 		float oreHeightModifier = (float)rangeY / 128.0F;
 		int treeDensity;
 
-		if (FeaturesBlocks.plantEnabled == 1) {
+		if (FeaturesBlocks.rainbowFlowerEnabled == 1) {
 			if ((rand.nextInt(2) == 0)) {
 				blockX = x + rand.nextInt(16) + 8;
 				blockY = minY + rand.nextInt(rangeY);

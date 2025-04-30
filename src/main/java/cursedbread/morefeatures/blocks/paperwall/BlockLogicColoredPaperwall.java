@@ -46,4 +46,8 @@ public class BlockLogicColoredPaperwall extends BlockLogic implements IPainted {
 	public void removeDye(World world, int x, int y, int z) {
 		world.setBlockMetadataWithNotify(x, y, z, 0);
 	}
+
+	public String getLanguageKey(int meta) {
+		return super.getLanguageKey(meta) + "." + this.fromMetadata(meta).colorID;
+	}
 }

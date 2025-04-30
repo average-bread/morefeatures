@@ -17,10 +17,20 @@ public abstract class FurnanceFuelMixin {
 
 	@Inject(method = "register()V", at = @At("TAIL"))
 	protected void register(CallbackInfo ci) {
-		this.addFuelEntry(FeaturesBlocks.burned_Log.id(), 1600);
-		this.addFuelEntry(FeaturesItems.workbench_On_Stick.id, 500);
-		this.addFuelEntry(FeaturesItems.paxel_Wood.id, 500);
-		this.addFuelEntry(FeaturesItems.climb_Pickaxe_Wood.id, 500);
-		this.addFuelEntry(FeaturesItems.mining_Hammer_Wood.id, 500);
+		if (FeaturesBlocks.burnedLogEnabled == 1){
+			this.addFuelEntry(FeaturesBlocks.burned_Log.id(), 1600);
+		}
+		if (FeaturesItems.workbenchOnStickEnabled == 1){
+			this.addFuelEntry(FeaturesItems.workbench_On_Stick.id, 500);
+		}
+		if (FeaturesItems.paxelsEnabled == 1){
+			this.addFuelEntry(FeaturesItems.paxel_Wood.id, 500);
+		}
+		if (FeaturesItems.climbPickaxesEnabled == 1){
+			this.addFuelEntry(FeaturesItems.climb_Pickaxe_Wood.id, 500);
+		}
+		if (FeaturesItems.miningHammersEnabled == 1){
+			this.addFuelEntry(FeaturesItems.mining_Hammer_Wood.id, 500);
+		}
 	}
 }

@@ -18,8 +18,8 @@ import static cursedbread.morefeatures.FeaturesMain.MOD_ID;
 
 @Environment(EnvType.CLIENT)
 public class BlockModelPaperwall<T extends BlockLogic> extends BlockModelStandard<T> {
-    public boolean nnd = false;
-    public int alt = 0;
+    public boolean nnd;
+    public int alt;
 
     public BlockModelPaperwall(Block block, int alt, boolean nnd) {
         super(block);

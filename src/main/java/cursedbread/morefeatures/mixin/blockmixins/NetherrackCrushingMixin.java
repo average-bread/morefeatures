@@ -34,7 +34,7 @@ public class NetherrackCrushingMixin extends BlockLogic {
 
 	@Inject(method = "getBreakResult(Lnet/minecraft/core/world/World;Lnet/minecraft/core/enums/EnumDropCause;ILnet/minecraft/core/block/entity/TileEntity;)[Lnet/minecraft/core/item/ItemStack;", at=@At("HEAD"), cancellable = true)
 	public void getBreakResult(World world, EnumDropCause dropCause, int meta, TileEntity tileEntity, CallbackInfoReturnable<ItemStack[]> cir) {
-		if (FeaturesMain.netherUpdate == 1 && dropCause == EnumDropCause.PISTON_CRUSH && block == Blocks.COBBLE_NETHERRACK){
+		if (FeaturesBlocks.netherGravelEnabled == 1 && dropCause == EnumDropCause.PISTON_CRUSH && block == Blocks.COBBLE_NETHERRACK){
 			cir.setReturnValue(new ItemStack[]{new ItemStack((IItemConvertible)FeaturesBlocks.netherrack_Gravel)});
 		}
 	}

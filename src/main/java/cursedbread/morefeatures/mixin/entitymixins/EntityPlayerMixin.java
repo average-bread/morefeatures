@@ -25,7 +25,7 @@ public abstract class EntityPlayerMixin extends Mob {
 
 	@Unique
 	public void bedrockProtection(){
-		if (FeaturesItems.blockArmorEnabled == 1){
+		if (FeaturesItems.bedrockArmorEnabled == 1){
 			ItemStack helmet_item = Minecraft.getMinecraft().thePlayer.inventory.armorItemInSlot(3);
 			ItemStack chest_item = Minecraft.getMinecraft().thePlayer.inventory.armorItemInSlot(2);
 			ItemStack leggings_item = Minecraft.getMinecraft().thePlayer.inventory.armorItemInSlot(1);
@@ -44,7 +44,7 @@ public abstract class EntityPlayerMixin extends Mob {
 
 	@Unique
 	public void speedOlivine(){
-		if (FeaturesItems.miscArmorEnabled == 1){
+		if (FeaturesItems.olivineArmorEnabled == 1){
 			ItemStack helmet_item = Minecraft.getMinecraft().thePlayer.inventory.armorItemInSlot(3);
 			ItemStack chest_item = Minecraft.getMinecraft().thePlayer.inventory.armorItemInSlot(2);
 			ItemStack leggings_item = Minecraft.getMinecraft().thePlayer.inventory.armorItemInSlot(1);
@@ -59,7 +59,7 @@ public abstract class EntityPlayerMixin extends Mob {
 			if (leggings_item != null && leggings_item.getItem().equals(FeaturesItems.olivine_Leggings)) {
 				olivinelegsboost = this.speed + 0.03F;
 			}
-			if ((helmet_item != null && helmet_item.getItem().equals(FeaturesItems.olivine_Helmet)) || (helmet_item != null && FeaturesItems.crownsEnabled == 1 && helmet_item.getItem().equals(FeaturesItems.olivine_Crown))) {
+			if ((helmet_item != null && helmet_item.getItem().equals(FeaturesItems.olivine_Helmet)) || (helmet_item != null && FeaturesItems.normalCrownsEnabled == 1 && helmet_item.getItem().equals(FeaturesItems.olivine_Crown))) {
 				olivineheadboost = this.speed + 0.01F;
 			}
 			if (boots_item != null && boots_item.getItem().equals(FeaturesItems.olivine_Boots)) {
@@ -81,7 +81,7 @@ public abstract class EntityPlayerMixin extends Mob {
 
 	@Unique
 	public void CatVision(){
-		if (FeaturesItems.treasureEnabled == 1){
+		if (FeaturesItems.cathelmetEnabled == 1){
 			Minecraft mc = Minecraft.getMinecraft();
 			ItemStack helmet_item = Minecraft.getMinecraft().thePlayer.inventory.armorItemInSlot(3);
 			if (gameFullBright == null){
@@ -116,15 +116,15 @@ public abstract class EntityPlayerMixin extends Mob {
 
 	@Inject(method = "onLivingUpdate()V", at = @At("TAIL"))
 	private void armor_effects(CallbackInfo ci) {
-		if (FeaturesItems.blockArmorEnabled == 1){
+		if (FeaturesItems.bedrockArmorEnabled == 1){
 			bedrockProtection();
 		}
 
-		if (FeaturesItems.miscArmorEnabled == 1 && !Global.isServer){
+		if (FeaturesItems.olivineArmorEnabled == 1 && !Global.isServer){
 			speedOlivine();
 		}
 
-		if (FeaturesItems.treasureEnabled == 1 && !Global.isServer){
+		if (FeaturesItems.cathelmetEnabled == 1 && !Global.isServer){
 			CatVision();
 		}
 	}

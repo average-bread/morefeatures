@@ -5,6 +5,13 @@
   "compatibilityLevel": "JAVA_8",
   "mixins": [
     "blockmixins.NetherrackCrushingMixin",
+    "blockmixins.superores.OreToSuperoreCoal",
+    "blockmixins.superores.OreToSuperoreDiamond",
+    "blockmixins.superores.OreToSuperoreGold",
+    "blockmixins.superores.OreToSuperoreIron",
+    "blockmixins.superores.OreToSuperoreLapis",
+    "blockmixins.superores.OreToSuperoreNetherCoal",
+    "blockmixins.superores.OreToSuperoreRedstone",
     "entitymixins.EntityBagRender",
     "entitymixins.SoulDrop",
     "generationmixins.BigBirchTressMixin",
@@ -15,6 +22,7 @@
     "generationmixins.ColoredGlowstoneBMixin",
     "generationmixins.LabyrinthGenerationMixin",
     "generationmixins.NewBlockGeneratorMixin",
+    "generationmixins.nether.ChunkDecoratorNetherMixin",
     "itemsmixins.BagArmor",
     "itemsmixins.ClimbingPickaxeMixin",
     "itemsmixins.ContainerWorkbenchMixin",
@@ -23,14 +31,7 @@
     "itemsmixins.SpawnerSurvival",
     "itemsmixins.WorkbenchFix",
     "itemsmixins.fuels.FurnanceBlastFuelMixin",
-    "itemsmixins.fuels.FurnanceFuelMixin",
-    "blockmixins.superores.OreToSuperoreCoal",
-    "blockmixins.superores.OreToSuperoreDiamond",
-    "blockmixins.superores.OreToSuperoreGold",
-    "blockmixins.superores.OreToSuperoreIron",
-    "blockmixins.superores.OreToSuperoreLapis",
-    "blockmixins.superores.OreToSuperoreNetherCoal",
-    "blockmixins.superores.OreToSuperoreRedstone"
+    "itemsmixins.fuels.FurnanceFuelMixin"
   ],
   "client": [
     "entitymixins.EntityPlayerMixin"

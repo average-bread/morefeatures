@@ -536,3 +536,10 @@ item.morefeatures.fertilizer.bag.desc=Store all your bone meal in it for your ga
 
 tile.morefeatures.netherrack.gravel.name=Netherrack Gravel
 tile.morefeatures.netherrack.gravel.desc=A loose collection of nether pebbles.
+
+item.morefeatures.dye.dryblood.name=Dry Blood Dye
+item.morefeatures.dye.dryblood.desc=Could be used to color certain blocks dry blood.
+
+tile.morefeatures.dryblood.planks.name=Dry Blood Planks
+tile.morefeatures.dryblood.planks.desc=Wooden planks, stained dry blood.
+

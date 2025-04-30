@@ -28,17 +28,21 @@ import static cursedbread.morefeatures.FeaturesMain.MOD_ID;
 public class FeatureModel implements ModelEntrypoint {
 	@Override
 	public void initBlockModels(BlockModelDispatcher dispatcher) {
-		if (FeaturesBlocks.coloredBlocksEnabled == 1) {
+		if (FeaturesBlocks.coloredGlowstoneEnabled == 1) {
 			ModelHelper.setBlockModel(
 				FeaturesBlocks.vanilla_Colored_Glowstone,
 				() -> new BlockModelColoredGlowstone<>(FeaturesBlocks.vanilla_Colored_Glowstone,
 					false));
+		}
 
+		if (FeaturesBlocks.coloredPaperwallEnabled == 1){
 			ModelHelper.setBlockModel(
 				FeaturesBlocks.vanilla_Colored_Paperwall,
 				() -> new BlockModelPaperwall<>(FeaturesBlocks.vanilla_Colored_Paperwall, FeaturesMain.paperWallAlt,
 					false));
+		}
 
+		if (FeaturesBlocks.coloredGlassEnabled == 1){
 			ModelHelper.setBlockModel(
 				FeaturesBlocks.vanilla_Colored_Glass,
 				() -> new BlockModelColoredGlass<>(FeaturesBlocks.vanilla_Colored_Glass, true,
@@ -54,19 +58,21 @@ public class FeatureModel implements ModelEntrypoint {
 			);
 		}
 
-		if (FeaturesBlocks.plantEnabled == 1){
+		if (FeaturesBlocks.rainbowFlowerEnabled == 1){
 			ModelHelper.setBlockModel(
 				FeaturesBlocks.rainbow_Flower,
 				() -> new BlockModelFlowerStackable<>(FeaturesBlocks.rainbow_Flower,
 					"morefeatures:block/flower_rainbow/")
 			);
+		}
 
+		if (FeaturesBlocks.fluxCropsEnabled == 1){
 			ModelHelper.setBlockModel(
 				FeaturesBlocks.flux_Cropws,
 				() -> new BlockModelCropsFlux<>(FeaturesBlocks.flux_Cropws));
 		}
 
-		if (FeaturesBlocks.miscBlocksEnabled == 1){
+		if (FeaturesBlocks.gildingTableEnabled == 1){
 			ModelHelper.setBlockModel(
 				FeaturesBlocks.gilding_Table,
 				() -> new BlockModelStandard<>(FeaturesBlocks.gilding_Table)
@@ -74,7 +80,9 @@ public class FeatureModel implements ModelEntrypoint {
 					.setTex(0,"minecraft:block/block_gold/top", Side.TOP)
 					.setTex(0,"minecraft:block/slate_top", Side.BOTTOM)
 			);
+		}
 
+		if (FeaturesBlocks.hamEnabled == 1){
 			ModelHelper.setBlockModel(
 				FeaturesBlocks.ham,
 				() -> new BlockModelStandard<>(FeaturesBlocks.ham)
@@ -86,7 +94,9 @@ public class FeatureModel implements ModelEntrypoint {
 				() -> new BlockModelStandard<>(FeaturesBlocks.ham_Cooked)
 					.setTex(0, "morefeatures:block/extra_block_ham_cooked_block", Side.sides)
 			);
+		}
 
+		if (FeaturesBlocks.burnedLogEnabled == 1){
 			ModelHelper.setBlockModel(
 				FeaturesBlocks.burned_Log,
 				() -> new BlockModelAxisAligned<>(FeaturesBlocks.burned_Log)
@@ -286,16 +296,18 @@ public class FeatureModel implements ModelEntrypoint {
 			);
 		}
 
-		ModelHelper.setBlockModel(
-			FeaturesBlocks.netherrack_Gravel,
-			() -> new BlockModelStandard<>(FeaturesBlocks.netherrack_Gravel)
-				.setTex(0,"morefeatures:block/nether_update_blocks/netherrack_gravel", Side.sides)
-		);
+		if (FeaturesBlocks.netherGravelEnabled == 1){
+			ModelHelper.setBlockModel(
+				FeaturesBlocks.netherrack_Gravel,
+				() -> new BlockModelStandard<>(FeaturesBlocks.netherrack_Gravel)
+					.setTex(0,"morefeatures:block/nether_update_blocks/netherrack_gravel", Side.sides)
+			);
+		}
 	}
 
 	@Override
 	public void initItemModels(ItemModelDispatcher dispatcher) {
-		if (FeaturesItems.crownsEnabled == 1) {
+		if (FeaturesItems.flowercrownsEnabled == 1) {
 			ModelHelper.setItemModel(FeaturesItems.dandelion_Crown,
 				() -> {
 					ItemModelStandard model = new ItemModelStandard(FeaturesItems.dandelion_Crown, MOD_ID);
@@ -353,7 +365,7 @@ public class FeatureModel implements ModelEntrypoint {
 				});
 		}
 
-		if (FeaturesItems.crownsEnabled == 1) {
+		if (FeaturesItems.normalCrownsEnabled == 1){
 			ModelHelper.setItemModel(FeaturesItems.leather_Crown,
 				() -> {
 					ItemModelStandard model = new ItemModelStandard(FeaturesItems.leather_Crown, MOD_ID);
@@ -391,7 +403,7 @@ public class FeatureModel implements ModelEntrypoint {
 					return model;
 				});
 
-			if (FeaturesItems.blockArmorEnabled == 1) {
+			if (FeaturesItems.stoneArmorEnabled == 1) {
 				ModelHelper.setItemModel(FeaturesItems.stone_Crown,
 					() -> {
 						ItemModelStandard model = new ItemModelStandard(FeaturesItems.stone_Crown, MOD_ID);
@@ -399,7 +411,7 @@ public class FeatureModel implements ModelEntrypoint {
 						return model;
 					});
 			}
-			if (FeaturesItems.miscArmorEnabled == 1) {
+			if (FeaturesItems.olivineArmorEnabled == 1) {
 				ModelHelper.setItemModel(FeaturesItems.olivine_Crown,
 					() -> {
 						ItemModelStandard model = new ItemModelStandard(FeaturesItems.olivine_Crown, MOD_ID);
@@ -407,7 +419,7 @@ public class FeatureModel implements ModelEntrypoint {
 						return model;
 					});
 			}
-			if (FeaturesItems.blockArmorEnabled == 1) {
+			if (FeaturesItems.bedrockArmorEnabled == 1) {
 				ModelHelper.setItemModel(FeaturesItems.bedrock_Crown,
 					() -> {
 						ItemModelStandard model = new ItemModelStandard(FeaturesItems.bedrock_Crown, MOD_ID);
@@ -415,7 +427,7 @@ public class FeatureModel implements ModelEntrypoint {
 						return model;
 					});
 			}
-			if (FeaturesItems.oldArmorEnabled == 1) {
+			if (FeaturesItems.plateArmorEnabled == 1) {
 				ModelHelper.setItemModel(FeaturesItems.plate_Crown,
 					() -> {
 						ItemModelStandard model = new ItemModelStandard(FeaturesItems.plate_Crown, MOD_ID);
@@ -423,7 +435,7 @@ public class FeatureModel implements ModelEntrypoint {
 						return model;
 					});
 			}
-			if (FeaturesItems.oldArmorEnabled == 1) {
+			if (FeaturesItems.studdedArmorEnabled == 1) {
 				ModelHelper.setItemModel(FeaturesItems.leather_Chain_Crown,
 					() -> {
 						ItemModelStandard model = new ItemModelStandard(FeaturesItems.leather_Chain_Crown, MOD_ID);
@@ -431,7 +443,7 @@ public class FeatureModel implements ModelEntrypoint {
 						return model;
 					});
 			}
-			if (FeaturesItems.miscArmorEnabled == 1) {
+			if (FeaturesItems.quartzArmorEnabled == 1) {
 				ModelHelper.setItemModel(FeaturesItems.quartz_Crown,
 					() -> {
 						ItemModelStandard model = new ItemModelStandard(FeaturesItems.quartz_Crown, MOD_ID);
@@ -441,7 +453,7 @@ public class FeatureModel implements ModelEntrypoint {
 			}
 		}
 
-		if (FeaturesItems.blockArmorEnabled == 1) {
+		if (FeaturesItems.bedrockArmorEnabled == 1) {
 			ModelHelper.setItemModel(FeaturesItems.bedrock_Helmet,
 				() -> {
 					ItemModelStandard model = new ItemModelStandard(FeaturesItems.bedrock_Helmet, MOD_ID);
@@ -468,7 +480,7 @@ public class FeatureModel implements ModelEntrypoint {
 				});
 		}
 
-		if (FeaturesItems.oldArmorEnabled == 1) {
+		if (FeaturesItems.plateArmorEnabled == 1) {
 			ModelHelper.setItemModel(FeaturesItems.plate_Helmet,
 				() -> {
 					ItemModelStandard model = new ItemModelStandard(FeaturesItems.plate_Helmet, MOD_ID);
@@ -483,7 +495,7 @@ public class FeatureModel implements ModelEntrypoint {
 				});
 		}
 
-		if (FeaturesItems.oldArmorEnabled == 1) {
+		if (FeaturesItems.studdedArmorEnabled == 1){
 			ModelHelper.setItemModel(FeaturesItems.leather_Chain_Helmet,
 				() -> {
 					ItemModelStandard model = new ItemModelStandard(FeaturesItems.leather_Chain_Helmet, MOD_ID);
@@ -510,7 +522,7 @@ public class FeatureModel implements ModelEntrypoint {
 				});
 		}
 
-		if (FeaturesItems.blockArmorEnabled == 1) {
+		if (FeaturesItems.stoneArmorEnabled == 1) {
 			ModelHelper.setItemModel(FeaturesItems.stone_Helmet,
 				() -> {
 					ItemModelStandard model = new ItemModelStandard(FeaturesItems.stone_Helmet, MOD_ID);
@@ -537,7 +549,7 @@ public class FeatureModel implements ModelEntrypoint {
 				});
 		}
 
-		if (FeaturesItems.miscArmorEnabled == 1) {
+		if (FeaturesItems.olivineArmorEnabled == 1) {
 			ModelHelper.setItemModel(FeaturesItems.olivine_Helmet,
 				() -> {
 					ItemModelStandard model = new ItemModelStandard(FeaturesItems.olivine_Helmet, MOD_ID);
@@ -562,9 +574,7 @@ public class FeatureModel implements ModelEntrypoint {
 					model.icon = TextureRegistry.getTexture(FeaturesItems.olivine_Boots.namespaceID);
 					return model;
 				});
-		}
 
-		if (FeaturesItems.miscArmorEnabled == 1) {
 			ModelHelper.setItemModel(FeaturesItems.quartz_Helmet,
 				() -> {
 					ItemModelStandard model = new ItemModelStandard(FeaturesItems.quartz_Helmet, MOD_ID);
@@ -591,7 +601,7 @@ public class FeatureModel implements ModelEntrypoint {
 				});
 		}
 
-		if (FeaturesItems.treasureEnabled == 1) {
+		if (FeaturesItems.bombBagEnabled == 1) {
 			ModelHelper.setItemModel(FeaturesItems.bomb_Bag,
 				() -> {
 					ItemModelStandard model = new ItemModelBombQuiver(FeaturesItems.bomb_Bag, MOD_ID);
@@ -604,7 +614,9 @@ public class FeatureModel implements ModelEntrypoint {
 					model.icon = TextureRegistry.getTexture(FeaturesItems.bomb_Bag_Gold.namespaceID);
 					return model;
 				});
+		}
 
+		if (FeaturesItems.cathelmetEnabled == 1){
 			ModelHelper.setItemModel(FeaturesItems.cat_Helmet,
 				() -> {
 					ItemModelStandard model = new ItemModelStandard(FeaturesItems.cat_Helmet, MOD_ID);
@@ -613,30 +625,25 @@ public class FeatureModel implements ModelEntrypoint {
 				});
 		}
 
-		if (FeaturesItems.newToolsEnabled == 1) {
-			ModelHelper.setItemModel(FeaturesItems.workbench_On_Stick,
-				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.workbench_On_Stick, MOD_ID).setFull3D();
-					model.icon = TextureRegistry.getTexture(FeaturesItems.workbench_On_Stick.namespaceID);
-					return model;
-				});
-		}
-
-		if (FeaturesItems.miscItemsEnabled == 1) {
+		if (FeaturesItems.mobSoulEnabled == 1) {
 			ModelHelper.setItemModel(FeaturesItems.mob_Soul,
 				() -> {
 					ItemModelStandard model = new ItemModelStandard(FeaturesItems.mob_Soul, MOD_ID);
 					model.icon = TextureRegistry.getTexture(FeaturesItems.mob_Soul.namespaceID);
 					return model;
 				});
+		}
 
+		if (FeaturesBlocks.fluxCropsEnabled == 1){
 			ModelHelper.setItemModel(FeaturesItems.flux_Seed,
 				() -> {
 					ItemModelStandard model = new ItemModelStandard(FeaturesItems.flux_Seed, MOD_ID);
 					model.icon = TextureRegistry.getTexture(FeaturesItems.flux_Seed.namespaceID);
 					return model;
 				});
+		}
 
+		if (FeaturesItems.ferlilizerBagEnabled == 1){
 			ModelHelper.setItemModel(FeaturesItems.fertilizer_Bag,
 				() -> {
 					ItemModelStandard model = new ItemModelFertilizerBag(FeaturesItems.fertilizer_Bag, MOD_ID);
@@ -645,7 +652,16 @@ public class FeatureModel implements ModelEntrypoint {
 				});
 		}
 
-		if (FeaturesItems.newToolsEnabled == 1) {
+		if (FeaturesItems.workbenchOnStickEnabled == 1) {
+			ModelHelper.setItemModel(FeaturesItems.workbench_On_Stick,
+				() -> {
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.workbench_On_Stick, MOD_ID).setFull3D();
+					model.icon = TextureRegistry.getTexture(FeaturesItems.workbench_On_Stick.namespaceID);
+					return model;
+				});
+		}
+
+		if (FeaturesItems.paxelsEnabled == 1){
 			ModelHelper.setItemModel(FeaturesItems.paxel_Wood,
 				() -> {
 					ItemModelStandard model = new ItemModelStandard(FeaturesItems.paxel_Wood, MOD_ID).setFull3D();
@@ -682,7 +698,9 @@ public class FeatureModel implements ModelEntrypoint {
 					model.icon = TextureRegistry.getTexture(FeaturesItems.paxel_Steel.namespaceID);
 					return model;
 				});
+		}
 
+		if (FeaturesItems.climbPickaxesEnabled == 1){
 			ModelHelper.setItemModel(FeaturesItems.climb_Pickaxe_Wood,
 				() -> {
 					ItemModelStandard model = new ItemModelStandard(FeaturesItems.climb_Pickaxe_Wood, MOD_ID).setFull3D();
@@ -719,7 +737,9 @@ public class FeatureModel implements ModelEntrypoint {
 					model.icon = TextureRegistry.getTexture(FeaturesItems.climb_Pickaxe_Steel.namespaceID);
 					return model;
 				});
+		}
 
+		if (FeaturesItems.miningHammersEnabled == 1){
 			ModelHelper.setItemModel(FeaturesItems.mining_Hammer_Wood,
 				() -> {
 					ItemModelStandard model = new ItemModelStandard(FeaturesItems.mining_Hammer_Wood, MOD_ID).setFull3D();

@@ -16,10 +16,14 @@ public abstract class FurnanceBlastFuelMixin {
 
 	@Inject(method = "register()V", at = @At("TAIL"))
 	protected void register(CallbackInfo ci) {
-		this.addFuelEntry(FeaturesItems.olivine_Helmet.id, 8000);
-		this.addFuelEntry(FeaturesItems.olivine_Chestplate.id, 12800);
-		this.addFuelEntry(FeaturesItems.olivine_Leggings.id, 11200);
-		this.addFuelEntry(FeaturesItems.olivine_Boots.id, 6400);
-		this.addFuelEntry(FeaturesItems.olivine_Crown.id, 8000);
+		if (FeaturesItems.olivineArmorEnabled == 1){
+			this.addFuelEntry(FeaturesItems.olivine_Helmet.id, 8000);
+			this.addFuelEntry(FeaturesItems.olivine_Chestplate.id, 12800);
+			this.addFuelEntry(FeaturesItems.olivine_Leggings.id, 11200);
+			this.addFuelEntry(FeaturesItems.olivine_Boots.id, 6400);
+			if (FeaturesItems.normalCrownsEnabled == 1){
+				this.addFuelEntry(FeaturesItems.olivine_Crown.id, 8000);
+			}
+		}
 	}
 }

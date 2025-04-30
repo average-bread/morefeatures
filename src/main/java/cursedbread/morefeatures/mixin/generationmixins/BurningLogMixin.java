@@ -51,7 +51,7 @@ public class BurningLogMixin extends BlockLogic  {
 			Side side = var6[var8];
 			Block<?> block = world.getBlock(x + side.getOffsetX(), y + side.getOffsetY(), z + side.getOffsetZ());
 			Material adjacentMaterial = block == null ? Material.air : block.getMaterial();
-			if (adjacentMaterial == Material.water || FeaturesBlocks.miscBlocksEnabled != 1) {
+			if (adjacentMaterial == Material.water || FeaturesBlocks.burnedLogEnabled != 1) {
 				return false;
 			}
 			canMelt |= adjacentMaterial == Material.lava;

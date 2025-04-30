@@ -12,7 +12,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public abstract class ContainerWorkbenchMixin {
     @Inject(method = "stillValid", at = @At(value = "RETURN"), cancellable = true)
     public void stillValid(Player player, CallbackInfoReturnable<Boolean> cir) {
-        if (FeaturesItems.newToolsEnabled == 1 && player.getHeldItem() != null && player.getHeldItem().itemID == FeaturesItems.workbench_On_Stick.id) {
+        if (FeaturesItems.workbenchOnStickEnabled == 1 && player.getHeldItem() != null && player.getHeldItem().itemID == FeaturesItems.workbench_On_Stick.id) {
             cir.setReturnValue(true);
         }
     }

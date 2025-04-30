@@ -14,7 +14,7 @@ import java.util.Random;
 public abstract class BlockGrassMixin {
     @ModifyVariable(method="updateTick",at=@At(value="LOAD"),name="idToSpawn")
     private int updateId(int id, World world, int x, int y, int z, Random rand) {
-        if (FeaturesBlocks.plantEnabled == 1){
+        if (FeaturesBlocks.rainbowFlowerEnabled == 1){
 			if (id == Blocks.FLOWER_RED.id() && rand.nextInt(100) <= FeaturesBlocks.rainbowFlowerChance - 1)
 				return FeaturesBlocks.rainbow_Flower.id();
 		}

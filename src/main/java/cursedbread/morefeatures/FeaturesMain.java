@@ -10,6 +10,8 @@ import turniplabs.halplibe.helper.*;
 import turniplabs.halplibe.util.ConfigHandler;
 import turniplabs.halplibe.util.GameStartEntrypoint;
 import turniplabs.halplibe.util.ModelEntrypoint;
+import turniplabs.halplibe.util.TomlConfigHandler;
+import turniplabs.halplibe.util.toml.Toml;
 
 import java.util.Properties;
 
@@ -19,66 +21,101 @@ public class FeaturesMain implements ModInitializer, GameStartEntrypoint, Client
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 	//public static boolean nonamedyesOn = ModVersionHelper.isModPresent("nonamedyes");
 	public static int paperWallAlt;
+	public static int newLabyrinthsEnabled;
 	public static int newDungeonsEnabled;
 	public static int superoreChance;
 	public static int newGenerators;
-	public static int netherUpdate;
+
+	private static final Toml TOML = new Toml("1 is enabled, 0 is disabled");
+	public static final TomlConfigHandler CFG;
 
 	static {
-		Properties prop = new Properties();
-		prop.setProperty("starting_block_id","2200");
-		prop.setProperty("starting_item_id","17890");
+		TOML.addCategory("IDs")
+			.addEntry("Starting_item_id", 19000)
+			.addEntry("Starting_block_id", 11000);
 
-		prop.setProperty("painted_or_alt_or_colored_paper_walls_texture_(0_or_1_or_2)","0");
+		TOML.addCategory("Meta_Stuff")
+			.addEntry("Painted_or_alt_or_colored_paper_walls_texture", "(0_or_1_or_2)", 0)
+			.addEntry("Chance_to_rainbow_a_flower", 5)
+			.addEntry("Chance_to_generate_a_super_ore", 5);
 
-		prop.setProperty("Comment", "yes_is_1|no_is_0");
+		TOML.addCategory("Blocks")
+			.addEntry("Colored_glowstone", 1)
+			.addEntry("Colored_paperwalls", 1)
+			.addEntry("Colored_glass", 1)
+			.addEntry("Gilding_table", 1)
+			.addEntry("Ham", 1)
+			.addEntry("Burned_log", 1)
+			.addEntry("Rainbow_flower", 1)
+			.addEntry("Flux_crops", 1)
+			.addEntry("Super_ores", 1)
+			.addEntry("Nether_gravel", 1);
 
-		prop.setProperty("Colored_blocks", "1");
-		prop.setProperty("Misc_blocks", "1");
-		prop.setProperty("Plants", "1");
-		prop.setProperty("Chance_to_rainbow_a_flower", "5");
-		prop.setProperty("Chance_to_generate_a_super_ore", "5");
-		prop.setProperty("Super_ores", "1");
+		TOML.addCategory("Items")
+			.addEntry("Flower_crowns", 1)
+			.addEntry("Crowns",1)
+			.addEntry("Bedrock_armor", 1)
+			.addEntry("Plate_armor", 1)
+			.addEntry("Studded_armor", 1)
+			.addEntry("Stone_armor", 1)
+			.addEntry("Olivine_armor", 1)
+			.addEntry("Quartz_armor", 1)
+			.addEntry("Bomb_bag", 1)
+			.addEntry("Workbench_on_a_stick", 1)
+			.addEntry("Mob_soul", 1)
+			.addEntry("Paxels", 1)
+			.addEntry("Climbing_pickaxes", 1)
+			.addEntry("Mining_hammer", 1)
+			.addEntry("Cat_helmet", 1)
+			.addEntry("Fertilizing_bag", 1);
 
-		prop.setProperty("Crowns", "1");
-		prop.setProperty("Block_armor", "1");
-		prop.setProperty("Old_armor", "1");
-		prop.setProperty("Misc_armor", "1");
-		prop.setProperty("Treasures", "1");
-		prop.setProperty("New_tools", "1");
-		prop.setProperty("Misc_items", "1");
+		TOML.addCategory("Other")
+			.addEntry("New_labyrinths", 1)
+			.addEntry("Nre_dungeons", 1)
+			.addEntry("New_block_generators",1);
 
-		prop.setProperty("New_structures", "1");
-		prop.setProperty("New_block_generators", "1");
-		prop.setProperty("New_nether_generation", "1");
-		ConfigHandler config = new ConfigHandler(MOD_ID,prop);
+		CFG = new TomlConfigHandler(MOD_ID, TOML);
 
+		FeaturesBlocks.blockId = CFG.getInt("IDs.Starting_block_id");
+		FeaturesItems.itemId = CFG.getInt("IDs.Starting_item_id");
 
-		//Meta
-		FeaturesBlocks.blockId = config.getInt("starting_block_id");
-		FeaturesItems.itemId = config.getInt("starting_item_id");
-		paperWallAlt = config.getInt("painted_or_alt_or_colored_paper_walls_texture_(0_or_1_or_2)");
+		paperWallAlt = CFG.getInt("Meta_Stuff.Painted_or_alt_or_colored_paper_walls_texture");
+		FeaturesBlocks.rainbowFlowerChance = CFG.getInt("Meta_Stuff.Chance_to_rainbow_a_flower");
+		superoreChance = CFG.getInt("Meta_Stuff.Chance_to_generate_a_super_ore");
 
-		//Blocks
-		FeaturesBlocks.coloredBlocksEnabled = config.getInt("Colored_blocks");
-		FeaturesBlocks.miscBlocksEnabled = config.getInt("Misc_blocks");
-		FeaturesBlocks.plantEnabled = config.getInt("Plants");
-		FeaturesBlocks.rainbowFlowerChance = Math.max(Math.min(config.getInt("Chance_to_rainbow_a_flower"), 100), 1);
-		superoreChance = Math.max(Math.min(config.getInt("Chance_to_generate_a_super_ore"), 100), 1);
-		FeaturesBlocks.superoresEnabled = config.getInt("Super_ores");
-		//Items
-		FeaturesItems.crownsEnabled = config.getInt("Crowns");
-		FeaturesItems.blockArmorEnabled = config.getInt("Block_armor");
-		FeaturesItems.oldArmorEnabled = config.getInt("Old_armor");
-		FeaturesItems.miscArmorEnabled = config.getInt("Misc_armor");
-		FeaturesItems.treasureEnabled = config.getInt("Treasures");
-		FeaturesItems.newToolsEnabled = config.getInt("New_tools");
-		FeaturesItems.miscItemsEnabled = config.getInt("Misc_items");
-		//Extra
-		newDungeonsEnabled = config.getInt("New_structures");
-		newGenerators = config.getInt("New_block_generators");
-		netherUpdate = config.getInt("New_nether_generation");
+		FeaturesBlocks.coloredGlowstoneEnabled = CFG.getInt("Blocks.Colored_glowstone");
+		FeaturesBlocks.coloredPaperwallEnabled = CFG.getInt("Blocks.Colored_paperwalls");
+		FeaturesBlocks.coloredGlassEnabled = CFG.getInt("Blocks.Colored_glass");
+		FeaturesBlocks.gildingTableEnabled = CFG.getInt("Blocks.Gilding_table");
+		FeaturesBlocks.hamEnabled = CFG.getInt("Blocks.Ham");
+		FeaturesBlocks.burnedLogEnabled = CFG.getInt("Blocks.Burned_log");
+		FeaturesBlocks.rainbowFlowerEnabled = CFG.getInt("Blocks.Rainbow_flower");
+		FeaturesBlocks.fluxCropsEnabled = CFG.getInt("Blocks.Flux_crops");
+		FeaturesBlocks.superoresEnabled = CFG.getInt("Blocks.Super_ores");
+		FeaturesBlocks.netherGravelEnabled = CFG.getInt("Blocks.Nether_gravel");
+
+		FeaturesItems.flowercrownsEnabled = CFG.getInt("Items.Flower_crowns");
+		FeaturesItems.normalCrownsEnabled = CFG.getInt("Items.Crowns");
+		FeaturesItems.bedrockArmorEnabled = CFG.getInt("Items.Bedrock_armor");
+		FeaturesItems.plateArmorEnabled = CFG.getInt("Items.Plate_armor");
+		FeaturesItems.studdedArmorEnabled = CFG.getInt("Items.Studded_armor");
+		FeaturesItems.stoneArmorEnabled = CFG.getInt("Items.Stone_armor");
+		FeaturesItems.olivineArmorEnabled = CFG.getInt("Items.Olivine_armor");
+		FeaturesItems.quartzArmorEnabled = CFG.getInt("Items.Quartz_armor");
+		FeaturesItems.bombBagEnabled = CFG.getInt("Items.Bomb_bag");
+		FeaturesItems.workbenchOnStickEnabled = CFG.getInt("Items.Workbench_on_a_stick");
+		FeaturesItems.mobSoulEnabled = CFG.getInt("Items.Mob_soul");
+		FeaturesItems.paxelsEnabled = CFG.getInt("Items.Paxels");
+		FeaturesItems.climbPickaxesEnabled = CFG.getInt("Items.Climbing_pickaxes");
+		FeaturesItems.miningHammersEnabled = CFG.getInt("Items.Mining_hammer");
+		FeaturesItems.cathelmetEnabled = CFG.getInt("Items.Cat_helmet");
+		FeaturesItems.ferlilizerBagEnabled = CFG.getInt("Items.Fertilizing_bag");
+
+		newLabyrinthsEnabled = CFG.getInt("Other.New_labyrinths");
+		newDungeonsEnabled = CFG.getInt("Other.Nre_dungeons");
+		newGenerators = CFG.getInt("Other.New_block_generators");
 	}
+
     @Override
     public void onInitialize() {
         LOGGER.info("Adding some stuff");

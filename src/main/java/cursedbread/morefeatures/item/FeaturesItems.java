@@ -1,5 +1,6 @@
 package cursedbread.morefeatures.item;
 
+import cursedbread.morefeatures.FeaturesMain;
 import cursedbread.morefeatures.blocks.FeaturesBlocks;
 import cursedbread.morefeatures.item.artifacts.ItemArmorUnbreakable;
 import cursedbread.morefeatures.item.artifacts.ItemBombQuiver;
@@ -11,6 +12,7 @@ import cursedbread.morefeatures.item.tool.ItemToolPaxel;
 import cursedbread.morefeatures.item.tool.StickWorkbench;
 import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemArmor;
+import net.minecraft.core.item.ItemBucket;
 import net.minecraft.core.item.ItemSeeds;
 import net.minecraft.core.item.material.ArmorMaterial;
 import net.minecraft.core.item.material.ToolMaterial;
@@ -54,8 +56,7 @@ public class FeaturesItems {
 	public static ArmorMaterial cat_Armor = ArmorHelper.createArmorMaterial(MOD_ID, "other/cat", 200, 0f, 0f, 0f, 0f);
 
 
-	public static int crownsEnabled;
-	//flower
+	public static int flowercrownsEnabled;
 	public static Item dandelion_Crown;
 	public static Item rose_Crown;
 	public static Item cherry_Crown;
@@ -64,14 +65,14 @@ public class FeaturesItems {
 	public static Item heather_Crown;
 	public static Item bluebell_Crown;
 	public static Item marigold_Crown;
-	//vanilla armor
+
+	public static int normalCrownsEnabled;
 	public static Item leather_Crown;
 	public static Item chain_Crown;
 	public static Item iron_Crown;
 	public static Item gold_Crown;
 	public static Item diamond_Crown;
 	public static Item steel_Crown;
-	//mf armor
 	public static Item bedrock_Crown;
 	public static Item stone_Crown;
 	public static Item olivine_Crown;
@@ -79,68 +80,75 @@ public class FeaturesItems {
 	public static Item leather_Chain_Crown;
 	public static Item plate_Crown;
 
-	public static int blockArmorEnabled;
-	//bedrock
+	public static int bedrockArmorEnabled;
 	public static Item bedrock_Helmet;
 	public static Item bedrock_Chestplate;
 	public static Item bedrock_Leggings;
 	public static Item bedrock_Boots;
-	//stone
+
+	public static int stoneArmorEnabled;
 	public static Item stone_Helmet;
 	public static Item stone_Chestplate;
 	public static Item stone_Leggings;
 	public static Item stone_Boots;
 
-	public static int oldArmorEnabled;
-	//studded
+	public static int studdedArmorEnabled;
 	public static Item leather_Chain_Helmet;
 	public static Item leather_Chain_Chestplate;
 	public static Item leather_Chain_Leggings;
 	public static Item leather_Chain_Boots;
-	//plate
+
+	public static int plateArmorEnabled;
 	public static Item plate_Helmet;
 	public static Item plate_Chestplate;
 
-	public static int miscArmorEnabled;
-	//olivine
+	public static int olivineArmorEnabled;
 	public static Item olivine_Helmet;
 	public static Item olivine_Chestplate;
 	public static Item olivine_Leggings;
 	public static Item olivine_Boots;
-	//quartz
+
+	public static int quartzArmorEnabled;
 	public static Item quartz_Helmet;
 	public static Item quartz_Chestplate;
 	public static Item quartz_Leggings;
 	public static Item quartz_Boots;
 
-	public static int treasureEnabled;
+	public static int bombBagEnabled;
 	public static Item bomb_Bag;
 	public static Item bomb_Bag_Gold;
+
+	public static int cathelmetEnabled;
 	public static Item cat_Helmet;
 
-	public static int miscItemsEnabled;
+	public static int mobSoulEnabled;
 	public static Item mob_Soul;
+
 	public static Item flux_Seed;
+
+	public static int ferlilizerBagEnabled;
 	public static Item fertilizer_Bag;
 
-	public static int newToolsEnabled;
-	//workbench
+	public static int workbenchOnStickEnabled;
 	public static Item workbench_On_Stick;
-	//paxels
+
+	public static int paxelsEnabled;
 	public static Item paxel_Wood;
 	public static Item paxel_Stone;
 	public static Item paxel_Iron;
 	public static Item paxel_Gold;
 	public static Item paxel_Diamond;
 	public static Item paxel_Steel;
-	//climbing pickaxe
+
+	public static int climbPickaxesEnabled;
 	public static Item climb_Pickaxe_Wood;
 	public static Item climb_Pickaxe_Stone;
 	public static Item climb_Pickaxe_Iron;
 	public static Item climb_Pickaxe_Gold;
 	public static Item climb_Pickaxe_Diamond;
 	public static Item climb_Pickaxe_Steel;
-	//mining hammer
+
+	public static int miningHammersEnabled;
 	public static Item mining_Hammer_Wood;
 	public static Item mining_Hammer_Stone;
 	public static Item mining_Hammer_Iron;
@@ -150,7 +158,7 @@ public class FeaturesItems {
 
 	public void initilizeItems() {
 		//items
-		if (crownsEnabled == 1) {
+		if (flowercrownsEnabled == 1) {
 			dandelion_Crown = new ItemBuilder(MOD_ID)
 			    .build(new ItemArmor("crown.dandeline", "morefeatures:item/armor/crown/dandeline_crown", itemId++, dandelion_Armor, 3));
 			rose_Crown = new ItemBuilder(MOD_ID)
@@ -169,7 +177,7 @@ public class FeaturesItems {
 				.build(new ItemArmor("crown.marigold", "morefeatures:item/armor/crown/marigold_crown", itemId++, marigold_Armor, 3));
 		}
 
-		if (crownsEnabled == 1) {
+		if (normalCrownsEnabled == 1) {
 			leather_Crown = new ItemBuilder(MOD_ID)
 			    .build(new ItemArmor("crown.leather", "morefeatures:item/armor/crown/leather_crown", itemId++, leather_Extra_Armor, 3));
 			chain_Crown = new ItemBuilder(MOD_ID)
@@ -183,38 +191,38 @@ public class FeaturesItems {
 			steel_Crown= new ItemBuilder(MOD_ID)
 			    .build(new ItemArmor("crown.steel", "morefeatures:item/armor/crown/steel_crown", itemId++, steel_Extra_Armor, 3));
 
-			if (blockArmorEnabled == 1) {
+			if (stoneArmorEnabled == 1) {
 				stone_Crown = new ItemBuilder(MOD_ID)
 				    .build(new ItemArmor("crown.stone", "morefeatures:item/armor/crown/stone_crown", itemId++, stone_Extra_Armor, 3));
 			}
 
-			if (miscArmorEnabled == 1) {
+			if (olivineArmorEnabled == 1) {
 				olivine_Crown = new ItemBuilder(MOD_ID)
 				    .build(new ItemArmor("crown.olivine", "morefeatures:item/armor/crown/olivine_crown", itemId++, olivine_Extra_Armor, 3));
 			}
 
-			if (blockArmorEnabled == 1) {
+			if (bedrockArmorEnabled == 1) {
 				bedrock_Crown = new ItemBuilder(MOD_ID)
 				    .build(new ItemArmorUnbreakable("crown.bedrock", "morefeatures:item/armor/crown/bedrock_crown", itemId++, bedrock_Extra_Armor, 3));
 			}
 
-			if (oldArmorEnabled == 1) {
+			if (plateArmorEnabled == 1) {
 				plate_Crown = new ItemBuilder(MOD_ID)
 				    .build(new ItemArmor("crown.plate", "morefeatures:item/armor/crown/plate_crown", itemId++, plate_Extra_Armor, 3));
 			}
 
-			if (oldArmorEnabled == 1) {
+			if (studdedArmorEnabled == 1) {
 				leather_Chain_Crown = new ItemBuilder(MOD_ID)
 				    .build(new ItemArmor("crown.leatherchain", "morefeatures:item/armor/crown/leatherchain_crown", itemId++, leather_Chain_Extra_Armor, 3));
 			}
 
-			if (miscArmorEnabled == 1) {
+			if (quartzArmorEnabled == 1) {
 				quartz_Crown = new ItemBuilder(MOD_ID)
 				    .build(new ItemArmor("crown.quartz", "morefeatures:item/armor/crown/quartz_crown", itemId++, quartz_Extra_Armor, 3));
 			}
 		}
 
-		if (blockArmorEnabled == 1) {
+		if (bedrockArmorEnabled == 1) {
 			bedrock_Helmet = new ItemBuilder(MOD_ID)
 			    .build(new ItemArmorUnbreakable("helmet.bedrock", "morefeatures:item/armor/bedrock/bedrock_helmet", itemId++, bedrock_Armor, 3));
 			bedrock_Chestplate = new ItemBuilder(MOD_ID)
@@ -225,14 +233,14 @@ public class FeaturesItems {
 			    .build(new ItemArmorUnbreakable("boots.bedrock", "morefeatures:item/armor/bedrock/bedrock_boots", itemId++, bedrock_Armor, 0));
 		}
 
-		if (oldArmorEnabled == 1) {
+		if (plateArmorEnabled == 1) {
 			plate_Helmet = new ItemBuilder(MOD_ID)
 			    .build(new ItemArmor("helmet.plate", "morefeatures:item/armor/plate/plate_helmet", itemId++, plate_Armor, 3));
 			plate_Chestplate = new ItemBuilder(MOD_ID)
 			    .build(new ItemArmor("chestplate.plate", "morefeatures:item/armor/plate/plate_chestplate", itemId++, plate_Armor, 2));
 		}
 
-		if (oldArmorEnabled == 1) {
+		if (studdedArmorEnabled == 1) {
 			leather_Chain_Helmet = new ItemBuilder(MOD_ID)
 			    .build(new ItemArmor("helmet.leatherchain", "morefeatures:item/armor/leatherchain/leatherchain_helmet", itemId++, leather_Chain_Armor, 3));
 			leather_Chain_Chestplate = new ItemBuilder(MOD_ID)
@@ -243,7 +251,7 @@ public class FeaturesItems {
 			    .build(new ItemArmor("boots.leatherchain", "morefeatures:item/armor/leatherchain/leatherchain_boots", itemId++, leather_Chain_Armor, 0));
 		}
 
-		if (blockArmorEnabled == 1) {
+		if (stoneArmorEnabled == 1) {
 			stone_Helmet = new ItemBuilder(MOD_ID)
 			    .build(new ItemArmor("helmet.stone", "morefeatures:item/armor/stone/stone_helmet", itemId++, stone_Armor, 3));
 			stone_Chestplate = new ItemBuilder(MOD_ID)
@@ -254,7 +262,7 @@ public class FeaturesItems {
 			    .build(new ItemArmor("boots.stone", "morefeatures:item/armor/stone/stone_boots", itemId++, stone_Armor, 0));
 		}
 
-		if (miscArmorEnabled == 1) {
+		if (olivineArmorEnabled == 1) {
 			olivine_Helmet = new ItemBuilder(MOD_ID)
 			    .build(new ItemArmor("helmet.olivine", "morefeatures:item/armor/olivine/olivine_helmet", itemId++, olivine_Armor, 3));
 			olivine_Chestplate = new ItemBuilder(MOD_ID)
@@ -265,7 +273,7 @@ public class FeaturesItems {
 			    .build(new ItemArmor("boots.olivine", "morefeatures:item/armor/olivine/olivine_boots", itemId++, olivine_Armor, 0));
 		}
 
-		if (miscArmorEnabled == 1) {
+		if (quartzArmorEnabled == 1) {
 			quartz_Helmet = new ItemBuilder(MOD_ID)
 			    .build(new ItemArmor("helmet.quartz", "morefeatures:item/armor/quartz/quartz_helmet", itemId++, quartz_Armor, 3));
 			quartz_Chestplate = new ItemBuilder(MOD_ID)
@@ -276,24 +284,24 @@ public class FeaturesItems {
 			    .build(new ItemArmor("boots.quartz", "morefeatures:item/armor/quartz/quartz_boots", itemId++, quartz_Armor, 0));
 		}
 
-		if (treasureEnabled == 1) {
+		if (bombBagEnabled == 1) {
 			bomb_Bag = new ItemBuilder(MOD_ID)
 			    .build(new ItemBombQuiver("bag.normal", "morefeatures:item/armor/artifacts/bomb_bag_empty", itemId++));
 			bomb_Bag_Gold = new ItemBuilder(MOD_ID)
 			    .build(new ItemBombQuiverEndless("bag.gold", "morefeatures:item/armor/artifacts/bomb_bag_gold", itemId++));
 		}
 
-		if (newToolsEnabled == 1) {
+		if (workbenchOnStickEnabled == 1) {
 			workbench_On_Stick = new ItemBuilder(MOD_ID)
 			    .build(new StickWorkbench("stick.workbench", "morefeatures:item/tool/workbench_on_stick", itemId++));
 		}
 
-		if (miscItemsEnabled == 1) {
+		if (mobSoulEnabled == 1) {
 			mob_Soul = new ItemBuilder(MOD_ID)
 			    .build(new Item("soul","morefeatures:item/other/soul", itemId++));
 		}
 
-		if (newToolsEnabled == 1){
+		if (paxelsEnabled == 1){
 			paxel_Wood = new ItemBuilder(MOD_ID)
 				.build(new ItemToolPaxel("paxel.wood", "morefeatures:item/tool/paxel/paxel_wood", itemId++, ToolMaterial.wood));
 			paxel_Stone = new ItemBuilder(MOD_ID)
@@ -306,7 +314,9 @@ public class FeaturesItems {
 				.build(new ItemToolPaxel("paxel.diamond", "morefeatures:item/tool/paxel/paxel_diamond", itemId++, ToolMaterial.diamond));
 			paxel_Steel = new ItemBuilder(MOD_ID)
 				.build(new ItemToolPaxel("paxel.steel", "morefeatures:item/tool/paxel/paxel_steel", itemId++, ToolMaterial.steel));
+		}
 
+		if (climbPickaxesEnabled == 1) {
 			climb_Pickaxe_Wood = new ItemBuilder(MOD_ID)
 				.build(new ItemToolClimbingPickaxe("climbpickaxe.wood", "morefeatures:item/tool/climbing_pickaxe/climbing_pickaxe_wood", itemId++, ToolMaterial.wood));
 			climb_Pickaxe_Stone = new ItemBuilder(MOD_ID)
@@ -319,7 +329,9 @@ public class FeaturesItems {
 				.build(new ItemToolClimbingPickaxe("climbpickaxe.diamond", "morefeatures:item/tool/climbing_pickaxe/climbing_pickaxe_diamond", itemId++, ToolMaterial.diamond));
 			climb_Pickaxe_Steel = new ItemBuilder(MOD_ID)
 				.build(new ItemToolClimbingPickaxe("climbpickaxe.steel", "morefeatures:item/tool/climbing_pickaxe/climbing_pickaxe_steel", itemId++, ToolMaterial.steel));
+		}
 
+		if (miningHammersEnabled == 1){
 			mining_Hammer_Wood = new ItemBuilder(MOD_ID)
 				.build(new ItemToolMiningHammer("mininghammer.wood", "morefeatures:item/tool/mining_hammer/mining_hammer_wood", itemId++, ToolMaterial.wood));
 			mining_Hammer_Stone = new ItemBuilder(MOD_ID)
@@ -334,17 +346,17 @@ public class FeaturesItems {
 				.build(new ItemToolMiningHammer("mininghammer.steel", "morefeatures:item/tool/mining_hammer/mining_hammer_steel", itemId++, ToolMaterial.steel));
 		}
 
-		if (miscItemsEnabled == 1){
+		if (FeaturesBlocks.fluxCropsEnabled == 1){
 			flux_Seed = new ItemBuilder(MOD_ID)
 				.build(new ItemSeeds("flux.seed", "morefeatures:item/other/seed_flux", itemId++, FeaturesBlocks.flux_Cropws));
 		}
 
-		if (treasureEnabled == 1){
+		if (cathelmetEnabled == 1){
 			cat_Helmet = new ItemBuilder(MOD_ID)
 				.build(new ItemArmorUnbreakable("cat.helmet", "morefeatures:item/armor/artifacts/armor_helmet_cat", itemId++, cat_Armor, 3));
 		}
 
-		if (miscItemsEnabled == 1){
+		if (ferlilizerBagEnabled == 1){
 			fertilizer_Bag = new ItemBuilder(MOD_ID)
 				.build(new ItemFertilizeBag("fertilizer.bag", "morefeatures:item/other/fertilizer_bag/fertilizer_bag_empty", itemId++));
 		}

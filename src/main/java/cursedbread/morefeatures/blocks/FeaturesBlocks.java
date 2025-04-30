@@ -58,25 +58,30 @@ public class FeaturesBlocks {
 
 	public static int blockId;
 
-	public static int coloredBlocksEnabled;
+	public static int coloredGlowstoneEnabled;
 	public static Block<?> vanilla_Colored_Glowstone;
 	public static Block<?> noname_Colored_Glowstone;
+	public static int coloredPaperwallEnabled;
 	public static Block<?> vanilla_Colored_Paperwall;
 	public static Block<?> noname_Colored_Paperwall;
+	public static int coloredGlassEnabled;
 	public static Block<?> vanilla_Colored_Glass;
 	public static Block<?> vanilla_Colored_Glass_Trapdoor;
 	public static Block<?> noname_Colored_Glass;
 	public static Block<?> noname_Colored_Glass_Trapdoor;
 
-	public static int miscBlocksEnabled;
+	public static int gildingTableEnabled;
 	public static Block<?> gilding_Table;
+	public static int hamEnabled;
 	public static Block<?> ham;
 	public static Block<?> ham_Cooked;
+	public static int burnedLogEnabled;
 	public static Block<?> burned_Log;
 
-	public static int plantEnabled;
+	public static int rainbowFlowerEnabled;
 	public static Block<BlockLogicFlowerStackable> rainbow_Flower;
 	public static int rainbowFlowerChance;
+	public static int fluxCropsEnabled;
 	public static Block<?> flux_Cropws;
 
 	public static int superoresEnabled;
@@ -124,66 +129,47 @@ public class FeaturesBlocks {
 
 	public static Block<?> super_Nether_Coal_Ore;
 
+	public static int netherGravelEnabled;
 	public static Block<?> netherrack_Gravel;
 
 	private void initializeBlockDetails() {
-		int color;
-		if (coloredBlocksEnabled == 1) {
-			Item.itemsList[vanilla_Colored_Glowstone.id()] = new ItemBlockPainted<>(vanilla_Colored_Glowstone, false);
-			for (color = 1; color < 16; color++) {
-				CreativeHelper.setParent(vanilla_Colored_Glowstone, color, vanilla_Colored_Glowstone, color-1);
-			}
-		}
-		if (coloredBlocksEnabled == 1) {
-			Item.itemsList[vanilla_Colored_Paperwall.id()] = new ItemBlockPainted<>(vanilla_Colored_Paperwall, false);
-			for (color = 2; color < 17; color++) {
-				CreativeHelper.setParent(vanilla_Colored_Paperwall, color - 1, vanilla_Colored_Paperwall, 0);
-			}
-		}
-		if (coloredBlocksEnabled == 1) {
-			Item.itemsList[vanilla_Colored_Glass.id()] = new ItemBlockPainted<>(vanilla_Colored_Glass, false);
-			for (color = 2; color < 17; color++) {
-				CreativeHelper.setParent(vanilla_Colored_Glass, color - 1, vanilla_Colored_Glass, color);
-			}
-			Item.itemsList[vanilla_Colored_Glass_Trapdoor.id()] = new ItemBlockPainted<>(vanilla_Colored_Glass_Trapdoor, true);
-			for (color = 2; color < 17; color++) {
-				CreativeHelper.setParent(vanilla_Colored_Glass_Trapdoor, color - 1, vanilla_Colored_Glass_Trapdoor, color);
-			}
-		}
+
 	}
 
 	public void initilizeBlocks() {
-		if (coloredBlocksEnabled == 1) {
+		if (coloredGlowstoneEnabled == 1) {
 			vanilla_Colored_Glowstone = glowstoneBlock
 				.build("vanilla.colored.glowstone", blockId++, b -> new BlockLogicColoredGlowstone(b, Material.glass))
 				.withDisabledNeighborNotifyOnMetadataChange();
 		}
 
-		if (coloredBlocksEnabled == 1) {
+		if (coloredPaperwallEnabled == 1) {
 			vanilla_Colored_Paperwall = paperwallBlock
 					.build("vanilla.paperwall", blockId++, b -> new BlockLogicColoredPaperwall(b, Material.wood));
 		}
-		if (coloredBlocksEnabled == 1) {
+
+		if (coloredGlassEnabled == 1) {
 			vanilla_Colored_Glass = coloredglass
 				.build("vanilla.colored.glass", blockId++, b -> new BlockLogicColoredGlass(b, Material.glass)).withTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.EXTENDS_MOTION_SENSOR_RANGE);
 			vanilla_Colored_Glass_Trapdoor = coloredglasstrapdoors
 				.build("vanilla.colored.glasstrapdoor", blockId++, b -> new BlockLogicColoredGlassTrapdoor(b, Material.glass)).withDisabledNeighborNotifyOnMetadataChange().setBlockItem((bl) -> new ItemBlockPainted<>(bl, true));
 		}
 
-		if (miscBlocksEnabled == 1) {
+		if (gildingTableEnabled == 1) {
 			gilding_Table = fullBlock
 				.setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.FENCES_CONNECT)
 				.setHardness(5f)
 				.build("gilder", blockId++, b -> new BlockLogicGilder(b));
 		}
 
-		if (plantEnabled == 1) {
+		if (rainbowFlowerEnabled == 1) {
 			rainbow_Flower = crossedBlock
 				.setBlockSound(new BlockSound("step.grass", "step.grass", 1.0f, 1.0f))
-				.build("flower.rainbow", blockId++, b -> (BlockLogicFlowerStackable) new BlockLogicFlowerStackable(b).setKilledByWeather().setBonemealable());
+				.build("flower.rainbow", blockId++,
+					b -> (BlockLogicFlowerStackable) new BlockLogicFlowerStackable(b).setKilledByWeather().setBonemealable());
 		}
 
-		if (miscBlocksEnabled == 1) {
+		if (hamEnabled == 1) {
 			ham = fullBlock
 				.setTags(BlockTags.FENCES_CONNECT, BlockTags.MINEABLE_BY_SWORD)
 				.setHardness(0.1f)
@@ -349,7 +335,7 @@ public class FeaturesBlocks {
 				.build("superore.nether.coal.netherrack", blockId++, b -> new BlockLogicSuperOreNetherCoal(b)).withBlastResistance(5.0F).withLightEmission(1.0F);
 		}
 
-		if (plantEnabled == 1) {
+		if (fluxCropsEnabled == 1) {
 			flux_Cropws = fullBlock
 				.setBlockSound(BlockSounds.GRASS)
 				.setHardness(0.0F)
@@ -361,8 +347,7 @@ public class FeaturesBlocks {
 				});
 		}
 
-
-		if (miscBlocksEnabled == 1){
+		if (burnedLogEnabled == 1){
 			burned_Log = fullBlock
 				.build("burned.log", blockId++, b -> new BlockLogicBurnedLog(b))
 				.withSound(BlockSounds.WOOD)
@@ -371,13 +356,14 @@ public class FeaturesBlocks {
 				.withTags(new Tag[]{BlockTags.FENCES_CONNECT, BlockTags.MINEABLE_BY_AXE});
 		}
 
-		if (FeaturesMain.netherUpdate == 1){
+		if (netherGravelEnabled == 1) {
 			netherrack_Gravel = fullBlock
-				.build("netherrack.gravel", blockId++, b ->new BlockLogicGravel(b))
+				.build("netherrack.gravel", blockId++, b -> new BlockLogicGravel(b))
 				.withSound(BlockSounds.GRAVEL)
 				.withHardness(0.6F)
 				.withTags(new Tag[]{BlockTags.MINEABLE_BY_SHOVEL});
 		}
+		initializeBlockDetails();
 	}
 }
 
