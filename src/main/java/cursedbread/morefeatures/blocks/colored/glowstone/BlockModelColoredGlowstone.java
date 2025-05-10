@@ -1,4 +1,4 @@
-package cursedbread.morefeatures.blocks.glowstone;
+package cursedbread.morefeatures.blocks.colored.glowstone;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
@@ -6,16 +6,8 @@ import net.minecraft.client.render.texture.stitcher.IconCoordinate;
 import net.minecraft.client.render.texture.stitcher.TextureRegistry;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.block.BlockLogic;
-import net.minecraft.core.block.entity.TileEntity;
-import net.minecraft.core.block.material.Material;
-import net.minecraft.core.enums.EnumDropCause;
-import net.minecraft.core.item.Item;
-import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.util.helper.Side;
-import net.minecraft.core.world.World;
 import net.minecraft.client.render.block.model.BlockModelStandard;
-
-import static cursedbread.morefeatures.FeaturesMain.MOD_ID;
 
 @Environment(EnvType.CLIENT)
 public class BlockModelColoredGlowstone<T extends BlockLogic> extends BlockModelStandard<T> {

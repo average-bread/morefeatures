@@ -1,11 +1,12 @@
 package cursedbread.morefeatures;
 
 import cursedbread.morefeatures.blocks.FeaturesBlocks;
+import cursedbread.morefeatures.blocks.colored.workbench.BlockModelColoredWorkbench;
 import cursedbread.morefeatures.blocks.flux.BlockModelCropsFlux;
-import cursedbread.morefeatures.blocks.glass.BlockModelColoredGlass;
-import cursedbread.morefeatures.blocks.glass.BlockModelColoredGlassTrapdoor;
-import cursedbread.morefeatures.blocks.glowstone.BlockModelColoredGlowstone;
-import cursedbread.morefeatures.blocks.paperwall.BlockModelPaperwall;
+import cursedbread.morefeatures.blocks.colored.glass.BlockModelColoredGlass;
+import cursedbread.morefeatures.blocks.colored.glass.BlockModelColoredGlassTrapdoor;
+import cursedbread.morefeatures.blocks.colored.glowstone.BlockModelColoredGlowstone;
+import cursedbread.morefeatures.blocks.colored.paperwall.BlockModelColoredPaperwall;
 import cursedbread.morefeatures.item.FeaturesItems;
 import cursedbread.morefeatures.item.artifacts.ItemModelBombQuiver;
 import cursedbread.morefeatures.item.other.ItemModelFertilizerBag;
@@ -38,7 +39,7 @@ public class FeatureModel implements ModelEntrypoint {
 		if (FeaturesBlocks.coloredPaperwallEnabled == 1){
 			ModelHelper.setBlockModel(
 				FeaturesBlocks.vanilla_Colored_Paperwall,
-				() -> new BlockModelPaperwall<>(FeaturesBlocks.vanilla_Colored_Paperwall, FeaturesMain.paperWallAlt,
+				() -> new BlockModelColoredPaperwall<>(FeaturesBlocks.vanilla_Colored_Paperwall, FeaturesMain.paperWallAlt,
 					false));
 		}
 
@@ -301,6 +302,20 @@ public class FeatureModel implements ModelEntrypoint {
 				FeaturesBlocks.netherrack_Gravel,
 				() -> new BlockModelStandard<>(FeaturesBlocks.netherrack_Gravel)
 					.setTex(0,"morefeatures:block/nether_update_blocks/netherrack_gravel", Side.sides)
+			);
+		}
+
+//		if (FeaturesBlocks.coloredLadderEnabled == 1){
+//			ModelHelper.setBlockModel(
+//				FeaturesBlocks.vanilla_Colored_Ladder,
+//				() -> new BlockModelColoredLadder<>(FeaturesBlocks.vanilla_Colored_Ladder, false)
+//			);
+//		}
+
+		if (FeaturesBlocks.coloredWorkbenchEnabled == 1){
+			ModelHelper.setBlockModel(
+				FeaturesBlocks.vanilla_Colored_Workbench,
+				() -> new BlockModelColoredWorkbench<>(FeaturesBlocks.vanilla_Colored_Workbench, false)
 			);
 		}
 	}

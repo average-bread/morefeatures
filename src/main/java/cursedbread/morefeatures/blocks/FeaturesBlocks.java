@@ -1,25 +1,24 @@
 package cursedbread.morefeatures.blocks;
 
-import cursedbread.morefeatures.FeaturesMain;
+import cursedbread.morefeatures.blocks.colored.workbench.BlockLogicColoredWorkbench;
 import cursedbread.morefeatures.blocks.flux.BlockLogicCropsFlux;
-import cursedbread.morefeatures.blocks.glass.*;
-import cursedbread.morefeatures.blocks.glowstone.*;
+import cursedbread.morefeatures.blocks.colored.glass.BlockLogicColoredGlass;
+import cursedbread.morefeatures.blocks.colored.glass.BlockLogicColoredGlassTrapdoor;
+import cursedbread.morefeatures.blocks.colored.glowstone.BlockLogicColoredGlowstone;
 import cursedbread.morefeatures.blocks.ores.*;
 import cursedbread.morefeatures.blocks.other.BlockLogicBurnedLog;
 import cursedbread.morefeatures.blocks.other.BlockLogicGilder;
 import cursedbread.morefeatures.blocks.other.BlockLogicHam;
-import cursedbread.morefeatures.blocks.paperwall.*;
+import cursedbread.morefeatures.blocks.colored.paperwall.BlockLogicColoredPaperwall;
 import cursedbread.morefeatures.item.FeaturesItems;
 import net.minecraft.core.block.*;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.block.tag.BlockTags;
 import net.minecraft.core.data.tag.Tag;
-import net.minecraft.core.item.Item;
 import net.minecraft.core.item.block.ItemBlockPainted;
 import net.minecraft.core.sound.BlockSound;
 import net.minecraft.core.sound.BlockSounds;
 import turniplabs.halplibe.helper.BlockBuilder;
-import turniplabs.halplibe.helper.CreativeHelper;
 
 import static cursedbread.morefeatures.FeaturesMain.MOD_ID;
 
@@ -132,6 +131,12 @@ public class FeaturesBlocks {
 	public static int netherGravelEnabled;
 	public static Block<?> netherrack_Gravel;
 
+	public static int coloredLadderEnabled;
+	public static Block<?> vanilla_Colored_Ladder;
+
+	public static int coloredWorkbenchEnabled;
+	public static Block<?> vanilla_Colored_Workbench;
+
 	private void initializeBlockDetails() {
 
 	}
@@ -140,17 +145,20 @@ public class FeaturesBlocks {
 		if (coloredGlowstoneEnabled == 1) {
 			vanilla_Colored_Glowstone = glowstoneBlock
 				.build("vanilla.colored.glowstone", blockId++, b -> new BlockLogicColoredGlowstone(b, Material.glass))
-				.withDisabledNeighborNotifyOnMetadataChange();
+				.withDisabledNeighborNotifyOnMetadataChange()
+				.setBlockItem((b) -> {return new ItemBlockPainted<>(b, false);});
 		}
 
 		if (coloredPaperwallEnabled == 1) {
 			vanilla_Colored_Paperwall = paperwallBlock
-					.build("vanilla.paperwall", blockId++, b -> new BlockLogicColoredPaperwall(b, Material.wood));
+					.build("vanilla.paperwall", blockId++, b -> new BlockLogicColoredPaperwall(b, Material.wood))
+				.setBlockItem((b) -> {return new ItemBlockPainted<>(b, false);});
 		}
 
 		if (coloredGlassEnabled == 1) {
 			vanilla_Colored_Glass = coloredglass
-				.build("vanilla.colored.glass", blockId++, b -> new BlockLogicColoredGlass(b, Material.glass)).withTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.EXTENDS_MOTION_SENSOR_RANGE);
+				.build("vanilla.colored.glass", blockId++, b -> new BlockLogicColoredGlass(b, Material.glass)).withTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.EXTENDS_MOTION_SENSOR_RANGE)
+				.setBlockItem((b) -> {return new ItemBlockPainted<>(b, false);});
 			vanilla_Colored_Glass_Trapdoor = coloredglasstrapdoors
 				.build("vanilla.colored.glasstrapdoor", blockId++, b -> new BlockLogicColoredGlassTrapdoor(b, Material.glass)).withDisabledNeighborNotifyOnMetadataChange().setBlockItem((bl) -> new ItemBlockPainted<>(bl, true));
 		}
@@ -353,7 +361,7 @@ public class FeaturesBlocks {
 				.withSound(BlockSounds.WOOD)
 				.withHardness(2.0F)
 				.withDisabledNeighborNotifyOnMetadataChange()
-				.withTags(new Tag[]{BlockTags.FENCES_CONNECT, BlockTags.MINEABLE_BY_AXE});
+				.withTags(BlockTags.FENCES_CONNECT, BlockTags.MINEABLE_BY_AXE);
 		}
 
 		if (netherGravelEnabled == 1) {
@@ -361,7 +369,26 @@ public class FeaturesBlocks {
 				.build("netherrack.gravel", blockId++, b -> new BlockLogicGravel(b))
 				.withSound(BlockSounds.GRAVEL)
 				.withHardness(0.6F)
-				.withTags(new Tag[]{BlockTags.MINEABLE_BY_SHOVEL});
+				.withTags(BlockTags.MINEABLE_BY_SHOVEL);
+		}
+
+//		if (coloredLadderEnabled == 1){
+//			vanilla_Colored_Ladder = new BlockBuilder(MOD_ID)
+//				.build("vanilla.colored.ladder", blockId++, b -> new BlockLogicColoredLadder(b))
+//				.withSound(BlockSounds.WOOD)
+//				.withHardness(0.4F)
+//				.withDisabledNeighborNotifyOnMetadataChange()
+//				.setBlockItem(ItemBlockLadder::new)
+//				.withTags(new Tag[]{BlockTags.MINEABLE_BY_AXE});
+//		}
+
+		if (coloredWorkbenchEnabled == 1){
+			vanilla_Colored_Workbench = new BlockBuilder(MOD_ID)
+				.setBlockSound(BlockSounds.WOOD)
+				.setHardness(2.5F)
+				.setTags(BlockTags.FENCES_CONNECT, BlockTags.MINEABLE_BY_AXE)
+				.build("vanilla.colored.workbench", blockId++, b -> new BlockLogicColoredWorkbench(b))
+				.setBlockItem((b) -> {return new ItemBlockPainted<>(b, false);});
 		}
 		initializeBlockDetails();
 	}

@@ -1,4 +1,4 @@
-package cursedbread.morefeatures.blocks.paperwall;
+package cursedbread.morefeatures.blocks.colored.paperwall;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
@@ -7,21 +7,14 @@ import net.minecraft.client.render.texture.stitcher.IconCoordinate;
 import net.minecraft.client.render.texture.stitcher.TextureRegistry;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.block.BlockLogic;
-import net.minecraft.core.block.entity.TileEntity;
-import net.minecraft.core.block.material.Material;
-import net.minecraft.core.enums.EnumDropCause;
-import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.util.helper.Side;
-import net.minecraft.core.world.World;
-
-import static cursedbread.morefeatures.FeaturesMain.MOD_ID;
 
 @Environment(EnvType.CLIENT)
-public class BlockModelPaperwall<T extends BlockLogic> extends BlockModelStandard<T> {
+public class BlockModelColoredPaperwall<T extends BlockLogic> extends BlockModelStandard<T> {
     public boolean nnd;
     public int alt;
 
-    public BlockModelPaperwall(Block block, int alt, boolean nnd) {
+    public BlockModelColoredPaperwall(Block block, int alt, boolean nnd) {
         super(block);
         this.nnd = nnd;
         this.alt = alt;

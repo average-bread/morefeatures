@@ -49,7 +49,8 @@ public class FeaturesMain implements ModInitializer, GameStartEntrypoint, Client
 			.addEntry("Rainbow_flower", 1)
 			.addEntry("Flux_crops", 1)
 			.addEntry("Super_ores", 1)
-			.addEntry("Nether_gravel", 1);
+			.addEntry("Nether_gravel", 1)
+			.addEntry("Colored_workbench", 1);
 
 		TOML.addCategory("Items")
 			.addEntry("Flower_crowns", 1)
@@ -69,7 +70,7 @@ public class FeaturesMain implements ModInitializer, GameStartEntrypoint, Client
 			.addEntry("Cat_helmet", 1)
 			.addEntry("Fertilizing_bag", 1);
 
-		TOML.addCategory("Other")
+		TOML.addCategory("Generation")
 			.addEntry("New_labyrinths", 1)
 			.addEntry("Nre_dungeons", 1)
 			.addEntry("New_block_generators",1);
@@ -93,6 +94,7 @@ public class FeaturesMain implements ModInitializer, GameStartEntrypoint, Client
 		FeaturesBlocks.fluxCropsEnabled = CFG.getInt("Blocks.Flux_crops");
 		FeaturesBlocks.superoresEnabled = CFG.getInt("Blocks.Super_ores");
 		FeaturesBlocks.netherGravelEnabled = CFG.getInt("Blocks.Nether_gravel");
+		FeaturesBlocks.coloredWorkbenchEnabled = CFG.getInt("Blocks.Colored_workbench");
 
 		FeaturesItems.flowercrownsEnabled = CFG.getInt("Items.Flower_crowns");
 		FeaturesItems.normalCrownsEnabled = CFG.getInt("Items.Crowns");
@@ -111,9 +113,9 @@ public class FeaturesMain implements ModInitializer, GameStartEntrypoint, Client
 		FeaturesItems.cathelmetEnabled = CFG.getInt("Items.Cat_helmet");
 		FeaturesItems.ferlilizerBagEnabled = CFG.getInt("Items.Fertilizing_bag");
 
-		newLabyrinthsEnabled = CFG.getInt("Other.New_labyrinths");
-		newDungeonsEnabled = CFG.getInt("Other.Nre_dungeons");
-		newGenerators = CFG.getInt("Other.New_block_generators");
+		newLabyrinthsEnabled = CFG.getInt("Generation.New_labyrinths");
+		newDungeonsEnabled = CFG.getInt("Generation.Nre_dungeons");
+		newGenerators = CFG.getInt("Generation.New_block_generators");
 	}
 
     @Override

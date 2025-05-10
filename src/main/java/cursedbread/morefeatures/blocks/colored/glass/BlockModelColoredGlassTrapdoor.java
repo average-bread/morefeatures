@@ -1,4 +1,4 @@
-package cursedbread.morefeatures.blocks.glass;
+package cursedbread.morefeatures.blocks.colored.glass;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
@@ -12,8 +12,6 @@ import net.minecraft.core.util.helper.Axis;
 import net.minecraft.core.util.helper.DyeColor;
 import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.util.helper.Sides;
-
-import java.util.Iterator;
 
 @Environment(EnvType.CLIENT)
 public class BlockModelColoredGlassTrapdoor<T extends BlockLogic> extends BlockModelTrapDoor<T> {
