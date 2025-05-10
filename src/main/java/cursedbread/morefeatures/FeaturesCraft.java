@@ -8,10 +8,7 @@ import net.minecraft.core.block.Blocks;
 import net.minecraft.core.data.registry.Registries;
 import net.minecraft.core.data.registry.recipe.RecipeGroup;
 import net.minecraft.core.data.registry.recipe.RecipeSymbol;
-import net.minecraft.core.data.registry.recipe.entry.RecipeEntryCrafting;
-import net.minecraft.core.data.registry.recipe.entry.RecipeEntryRepairable;
-import net.minecraft.core.data.registry.recipe.entry.RecipeEntryScrap;
-import net.minecraft.core.data.registry.recipe.entry.RecipeEntryUndyeing;
+import net.minecraft.core.data.registry.recipe.entry.*;
 import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.item.Items;
@@ -396,14 +393,7 @@ public class FeaturesCraft implements RecipeEntrypoint {
 	public void onRecipesReady() {
 		//colored glowstone crafting
 		if (FeaturesBlocks.coloredGlowstoneEnabled == 1) {
-			for (int i = 0; i <=15; i++) {
-				RecipeBuilder.Shaped(MOD_ID)
-					.setShape("GGG", "GDG", "GGG")
-					.addInput('D', Items.DYE, i)
-					.addInput('G', "morefeatures:glowstones")
-					.create("itemGroupExample", new ItemStack(FeaturesBlocks.vanilla_Colored_Glowstone, 8, 15 - i));
-			}
-
+			workbenchGroup.register("glowstonedyeing", new RecipeEntryDyeing(new RecipeSymbol("morefeatures:glowstones") , new ItemStack(FeaturesBlocks.vanilla_Colored_Glowstone), false, false));
 			workbenchGroup.register("glowstoneundyeing", new RecipeEntryUndyeing(new RecipeSymbol("morefeatures:glowstones") , new ItemStack(Blocks.GLOWSTONE)));
 //			if (FeaturesMain.nonamedyesOn) {
 //				for (int i = 0; i <=13; i++) {
@@ -417,13 +407,7 @@ public class FeaturesCraft implements RecipeEntrypoint {
 		}
 		//colored paper walls crafting
 		if (FeaturesBlocks.coloredPaperwallEnabled == 1) {
-			for (int i = 0; i <=15; i++){
-				RecipeBuilder.Shaped(MOD_ID)
-					.setShape("GGG", "GDG", "GGG")
-					.addInput('D', Items.DYE, i)
-					.addInput('G', "morefeatures:paperwall")
-					.create("itemGroupExample", new ItemStack(FeaturesBlocks.vanilla_Colored_Paperwall, 8, 15-i));
-			}
+
 
 //			if (FeaturesMain.nonamedyesOn) {
 //				for (int i = 0; i <=13; i++) {
@@ -434,31 +418,21 @@ public class FeaturesCraft implements RecipeEntrypoint {
 //						.create("itemGroupExample", new ItemStack(FeaturesBlocks.noname_Colored_Paperwall, 8, i));
 //				}
 //			}
-
+			workbenchGroup.register("paperwalldyeing", new RecipeEntryDyeing(new RecipeSymbol("morefeatures:paperwall") , new ItemStack(FeaturesBlocks.vanilla_Colored_Paperwall), false, false));
 			workbenchGroup.register("paperwallundyeing", new RecipeEntryUndyeing(new RecipeSymbol("morefeatures:paperwall") , new ItemStack(Blocks.PAPER_WALL)));
 		}
 		//colored glass crafting
 		if (FeaturesBlocks.coloredGlassEnabled == 1) {
 			for (int i = 0; i <=15; i++) {
 				RecipeBuilder.Shaped(MOD_ID)
-					.setShape("GGG", "GDG", "GGG")
-					.addInput('D', Items.DYE, i)
-					.addInput('G', "morefeatures:glasses")
-					.create("itemGroupExample", new ItemStack(FeaturesBlocks.vanilla_Colored_Glass, 8, 15 - i));
-
-				RecipeBuilder.Shaped(MOD_ID)
 					.setShape("GGG", "GGG")
 					.addInput('G', FeaturesBlocks.vanilla_Colored_Glass, 15 - i)
 					.create("itemGroupExample", new ItemStack(FeaturesBlocks.vanilla_Colored_Glass_Trapdoor, 6, (15 - i)*16));
-
-				RecipeBuilder.Shapeless(MOD_ID)
-					.addInput("morefeatures:glassetrapdoors")
-					.addInput(Items.DYE, i)
-					.create("itemGroupExample", new ItemStack(FeaturesBlocks.vanilla_Colored_Glass_Trapdoor, 1, (15 - i)*16));
 			}
 
+			workbenchGroup.register("glassdyeing", new RecipeEntryDyeing(new RecipeSymbol("morefeatures:glasses") , new ItemStack(FeaturesBlocks.vanilla_Colored_Glass), false, false));
 			workbenchGroup.register("glassundyeing", new RecipeEntryUndyeing(new RecipeSymbol("morefeatures:glasses") , new ItemStack(Blocks.GLASS)));
-
+			workbenchGroup.register("glasstrapdoordyeing", new RecipeEntryDyeing(new RecipeSymbol("morefeatures:glassetrapdoor") , new ItemStack(FeaturesBlocks.vanilla_Colored_Glass_Trapdoor), true, false));
 			workbenchGroup.register("glasstrapdoorundyeing", new RecipeEntryUndyeing(new RecipeSymbol("morefeatures:glassetrapdoors") , new ItemStack(Blocks.TRAPDOOR_GLASS)));
 //			if (FeaturesMain.nonamedyesOn) {
 //				for (int i = 0; i <=13; i++) {
@@ -786,20 +760,6 @@ public class FeaturesCraft implements RecipeEntrypoint {
 		}
 
 		if (FeaturesBlocks.coloredWorkbenchEnabled == 1){
-			for (int i = 0; i <=15; i++) {
-				RecipeBuilder.Shapeless(MOD_ID)
-					.addInput("morefeatures:workbenches")
-					.addInput(Items.DYE, i)
-					.create("coloringworkbenches", new ItemStack(FeaturesBlocks.vanilla_Colored_Workbench, 1, 15-i));
-
-
-
-				RecipeBuilder.Shaped(MOD_ID)
-					.setShape("WW", "WW")
-					.addInput('W', Blocks.PLANKS_OAK_PAINTED, i)
-					.create("craftingcoloredworkbench", new ItemStack(FeaturesBlocks.vanilla_Colored_Workbench, 1, i));
-			}
-
 			RecipeBuilder.ModifyWorkbench("minecraft").removeRecipe("workbench");
 
 			RecipeBuilder.Shaped(MOD_ID)
@@ -807,6 +767,14 @@ public class FeaturesCraft implements RecipeEntrypoint {
 				.addInput('W', "minecraft:planks")
 				.create("craftingnormalworkbench", new ItemStack(Blocks.WORKBENCH));
 
+			for (int i = 0; i <=15; i++) {
+				RecipeBuilder.Shaped(MOD_ID)
+					.setShape("WW", "WW")
+					.addInput('W', Blocks.PLANKS_OAK_PAINTED, i)
+					.create("craftingcoloredworkbench", new ItemStack(FeaturesBlocks.vanilla_Colored_Workbench, 1, i));
+			}
+
+			workbenchGroup.register("workbenchdyeing", new RecipeEntryDyeing(new RecipeSymbol("morefeatures:workbenches") , new ItemStack(FeaturesBlocks.vanilla_Colored_Workbench), false, false));
 			workbenchGroup.register("workbenchundyeing", new RecipeEntryUndyeing(new RecipeSymbol("morefeatures:workbenches") , new ItemStack(Blocks.WORKBENCH)));
 		}
 	}
