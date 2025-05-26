@@ -286,6 +286,27 @@ public class FeaturesCraft implements RecipeEntrypoint {
 					new ItemStack(FeaturesBlocks.vanilla_Colored_Workbench, 1, 14),
 					new ItemStack(FeaturesBlocks.vanilla_Colored_Workbench, 1, 15)));
 			}
+
+			if (FeaturesBlocks.coloredLadderEnabled == 1){
+				Registries.ITEM_GROUPS.register("morefeatures:ladders", Registries.stackListOf(
+					Blocks.LADDER_OAK,
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Ladder, 1, 0),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Ladder, 1, 16),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Ladder, 1, 32),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Ladder, 1, 48),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Ladder, 1, 64),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Ladder, 1, 80),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Ladder, 1, 96),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Ladder, 1, 112),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Ladder, 1, 128),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Ladder, 1, 144),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Ladder, 1, 160),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Ladder, 1, 176),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Ladder, 1, 192),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Ladder, 1, 208),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Ladder, 1, 224),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Ladder, 1, 240)));
+			}
 		} else {
 			if (FeaturesBlocks.coloredGlowstoneEnabled == 1){
 				Registries.ITEM_GROUPS.register("morefeatures:glowstones", Registries.stackListOf(
@@ -387,6 +408,27 @@ public class FeaturesCraft implements RecipeEntrypoint {
 					new ItemStack(FeaturesBlocks.vanilla_Colored_Workbench, 1, 14),
 					new ItemStack(FeaturesBlocks.vanilla_Colored_Workbench, 1, 15)));
 			}
+
+			if (FeaturesBlocks.coloredLadderEnabled == 1){
+				Registries.ITEM_GROUPS.register("morefeatures:ladders", Registries.stackListOf(
+					Blocks.LADDER_OAK,
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Ladder, 1, 0),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Ladder, 1, 16),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Ladder, 1, 32),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Ladder, 1, 48),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Ladder, 1, 64),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Ladder, 1, 80),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Ladder, 1, 96),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Ladder, 1, 112),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Ladder, 1, 128),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Ladder, 1, 144),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Ladder, 1, 160),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Ladder, 1, 176),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Ladder, 1, 192),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Ladder, 1, 208),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Ladder, 1, 224),
+					new ItemStack(FeaturesBlocks.vanilla_Colored_Ladder, 1, 240)));
+			}
 		}
 	}
 	@Override
@@ -432,7 +474,7 @@ public class FeaturesCraft implements RecipeEntrypoint {
 
 			workbenchGroup.register("glassdyeing", new RecipeEntryDyeing(new RecipeSymbol("morefeatures:glasses") , new ItemStack(FeaturesBlocks.vanilla_Colored_Glass), false, false));
 			workbenchGroup.register("glassundyeing", new RecipeEntryUndyeing(new RecipeSymbol("morefeatures:glasses") , new ItemStack(Blocks.GLASS)));
-			workbenchGroup.register("glasstrapdoordyeing", new RecipeEntryDyeing(new RecipeSymbol("morefeatures:glassetrapdoor") , new ItemStack(FeaturesBlocks.vanilla_Colored_Glass_Trapdoor), true, false));
+			workbenchGroup.register("glasstrapdoordyeing", new RecipeEntryDyeing(new RecipeSymbol("morefeatures:glassetrapdoors") , new ItemStack(FeaturesBlocks.vanilla_Colored_Glass_Trapdoor), true, false));
 			workbenchGroup.register("glasstrapdoorundyeing", new RecipeEntryUndyeing(new RecipeSymbol("morefeatures:glassetrapdoors") , new ItemStack(Blocks.TRAPDOOR_GLASS)));
 //			if (FeaturesMain.nonamedyesOn) {
 //				for (int i = 0; i <=13; i++) {
@@ -776,6 +818,11 @@ public class FeaturesCraft implements RecipeEntrypoint {
 
 			workbenchGroup.register("workbenchdyeing", new RecipeEntryDyeing(new RecipeSymbol("morefeatures:workbenches") , new ItemStack(FeaturesBlocks.vanilla_Colored_Workbench), false, false));
 			workbenchGroup.register("workbenchundyeing", new RecipeEntryUndyeing(new RecipeSymbol("morefeatures:workbenches") , new ItemStack(Blocks.WORKBENCH)));
+		}
+
+		if (FeaturesBlocks.coloredLadderEnabled == 1){
+			workbenchGroup.register("ladderdyeing", new RecipeEntryDyeing(new RecipeSymbol("morefeatures:ladders") , new ItemStack(FeaturesBlocks.vanilla_Colored_Ladder), true, false));
+			workbenchGroup.register("ladderundyeing", new RecipeEntryUndyeing(new RecipeSymbol("morefeatures:ladders") , new ItemStack(Blocks.LADDER_OAK)));
 		}
 	}
 }

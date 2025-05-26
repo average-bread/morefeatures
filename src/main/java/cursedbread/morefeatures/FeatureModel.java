@@ -1,6 +1,7 @@
 package cursedbread.morefeatures;
 
 import cursedbread.morefeatures.blocks.FeaturesBlocks;
+import cursedbread.morefeatures.blocks.colored.ladder.BlockModelColoredLadder;
 import cursedbread.morefeatures.blocks.colored.workbench.BlockModelColoredWorkbench;
 import cursedbread.morefeatures.blocks.flux.BlockModelCropsFlux;
 import cursedbread.morefeatures.blocks.colored.glass.BlockModelColoredGlass;
@@ -305,12 +306,12 @@ public class FeatureModel implements ModelEntrypoint {
 			);
 		}
 
-//		if (FeaturesBlocks.coloredLadderEnabled == 1){
-//			ModelHelper.setBlockModel(
-//				FeaturesBlocks.vanilla_Colored_Ladder,
-//				() -> new BlockModelColoredLadder<>(FeaturesBlocks.vanilla_Colored_Ladder, false)
-//			);
-//		}
+		if (FeaturesBlocks.coloredLadderEnabled == 1){
+			ModelHelper.setBlockModel(
+				FeaturesBlocks.vanilla_Colored_Ladder,
+				() -> new BlockModelColoredLadder<>(FeaturesBlocks.vanilla_Colored_Ladder, false)
+			);
+		}
 
 		if (FeaturesBlocks.coloredWorkbenchEnabled == 1){
 			ModelHelper.setBlockModel(

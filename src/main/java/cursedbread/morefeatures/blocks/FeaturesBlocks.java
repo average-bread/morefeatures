@@ -1,5 +1,7 @@
 package cursedbread.morefeatures.blocks;
 
+import cursedbread.morefeatures.blocks.colored.ladder.BlockLogicColoredLadder;
+import cursedbread.morefeatures.blocks.colored.ladder.ItemBlockPaintedLadder;
 import cursedbread.morefeatures.blocks.colored.workbench.BlockLogicColoredWorkbench;
 import cursedbread.morefeatures.blocks.flux.BlockLogicCropsFlux;
 import cursedbread.morefeatures.blocks.colored.glass.BlockLogicColoredGlass;
@@ -13,8 +15,10 @@ import cursedbread.morefeatures.blocks.colored.paperwall.BlockLogicColoredPaperw
 import cursedbread.morefeatures.item.FeaturesItems;
 import net.minecraft.core.block.*;
 import net.minecraft.core.block.material.Material;
+import net.minecraft.core.block.material.MaterialColor;
 import net.minecraft.core.block.tag.BlockTags;
 import net.minecraft.core.data.tag.Tag;
+import net.minecraft.core.item.block.ItemBlockLadder;
 import net.minecraft.core.item.block.ItemBlockPainted;
 import net.minecraft.core.sound.BlockSound;
 import net.minecraft.core.sound.BlockSounds;
@@ -277,44 +281,44 @@ public class FeaturesBlocks {
 			super_Redstone_Stone_Ore = fullBlock
 				.setTags(BlockTags.MINEABLE_BY_PICKAXE)
 				.setHardness(3f)
-				.build("superore.redstone.stone", blockId++, b -> new BlockLogicSuperOreRedstone(b, Blocks.STONE, Material.stone, false, FeaturesBlocks.super_Redstone_Stone_Ore, FeaturesBlocks.super_Redstone_Glowing_Stone_Ore)).withBlastResistance(2.0F);
+				.build("superore.redstone.stone", blockId++, b -> new BlockLogicSuperOreRedstone(b, Blocks.STONE, Material.stone, false, FeaturesBlocks.super_Redstone_Stone_Ore, FeaturesBlocks.super_Redstone_Glowing_Stone_Ore)).withBlastResistance(2.0F).withOverrideColor(MaterialColor.redstone);
 			super_Redstone_Basalt_Ore = fullBlock
 				.setTags(BlockTags.MINEABLE_BY_PICKAXE)
 				.setHardness(3f)
-				.build("superore.redstone.basalt", blockId++, b -> new BlockLogicSuperOreRedstone(b, Blocks.BASALT, Material.stone, false, FeaturesBlocks.super_Redstone_Basalt_Ore, FeaturesBlocks.super_Redstone_Glowing_Basalt_Ore)).withBlastResistance(2.0F);
+				.build("superore.redstone.basalt", blockId++, b -> new BlockLogicSuperOreRedstone(b, Blocks.BASALT, Material.stone, false, FeaturesBlocks.super_Redstone_Basalt_Ore, FeaturesBlocks.super_Redstone_Glowing_Basalt_Ore)).withBlastResistance(2.0F).withOverrideColor(MaterialColor.redstone);
 			super_Redstone_Limestone_Ore = fullBlock
 				.setTags(BlockTags.MINEABLE_BY_PICKAXE)
 				.setHardness(3f)
-				.build("superore.redstone.limestone", blockId++, b -> new BlockLogicSuperOreRedstone(b, Blocks.LIMESTONE, Material.stone, false, FeaturesBlocks.super_Redstone_Limestone_Ore, FeaturesBlocks.super_Redstone_Glowing_Limestone_Ore)).withBlastResistance(2.0F);
+				.build("superore.redstone.limestone", blockId++, b -> new BlockLogicSuperOreRedstone(b, Blocks.LIMESTONE, Material.stone, false, FeaturesBlocks.super_Redstone_Limestone_Ore, FeaturesBlocks.super_Redstone_Glowing_Limestone_Ore)).withBlastResistance(2.0F).withOverrideColor(MaterialColor.redstone);
 			super_Redstone_Granite_Ore = fullBlock
 				.setTags(BlockTags.MINEABLE_BY_PICKAXE)
 				.setHardness(3f)
-				.build("superore.redstone.granite", blockId++, b -> new BlockLogicSuperOreRedstone(b, Blocks.GRANITE, Material.stone, false, FeaturesBlocks.super_Redstone_Granite_Ore, FeaturesBlocks.super_Redstone_Glowing_Granite_Ore)).withBlastResistance(2.0F);
+				.build("superore.redstone.granite", blockId++, b -> new BlockLogicSuperOreRedstone(b, Blocks.GRANITE, Material.stone, false, FeaturesBlocks.super_Redstone_Granite_Ore, FeaturesBlocks.super_Redstone_Glowing_Granite_Ore)).withBlastResistance(2.0F).withOverrideColor(MaterialColor.redstone);
 			super_Redstone_Permafrost_Ore = fullBlock
 				.setTags(BlockTags.MINEABLE_BY_PICKAXE)
 				.setHardness(3f)
-				.build("superore.redstone.permafrost", blockId++, b -> new BlockLogicSuperOreRedstone(b, Blocks.PERMAFROST, Material.stone, false, FeaturesBlocks.super_Redstone_Permafrost_Ore, FeaturesBlocks.super_Redstone_Glowing_Permafrost_Ore)).withBlastResistance(2.0F);
+				.build("superore.redstone.permafrost", blockId++, b -> new BlockLogicSuperOreRedstone(b, Blocks.PERMAFROST, Material.stone, false, FeaturesBlocks.super_Redstone_Permafrost_Ore, FeaturesBlocks.super_Redstone_Glowing_Permafrost_Ore)).withBlastResistance(2.0F).withOverrideColor(MaterialColor.redstone);
 
 			super_Redstone_Glowing_Stone_Ore = fullBlock
 				.setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
 				.setHardness(3f)
-				.build("superore.redstone.glowing.stone", blockId++, b -> new BlockLogicSuperOreRedstone(b, Blocks.STONE, Material.stone, true, FeaturesBlocks.super_Redstone_Stone_Ore, FeaturesBlocks.super_Redstone_Glowing_Stone_Ore)).withBlastResistance(2.0F).withLightEmission(0.4F).withDisabledNeighborNotifyOnMetadataChange();
+				.build("superore.redstone.glowing.stone", blockId++, b -> new BlockLogicSuperOreRedstone(b, Blocks.STONE, Material.stone, true, FeaturesBlocks.super_Redstone_Stone_Ore, FeaturesBlocks.super_Redstone_Glowing_Stone_Ore)).withBlastResistance(2.0F).withOverrideColor(MaterialColor.redstone).withLightEmission(0.4F).withDisabledNeighborNotifyOnMetadataChange();
 			super_Redstone_Glowing_Basalt_Ore = fullBlock
 				.setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
 				.setHardness(3f)
-				.build("superore.redstone.glowing.basalt", blockId++, b -> new BlockLogicSuperOreRedstone(b, Blocks.BASALT, Material.stone, true, FeaturesBlocks.super_Redstone_Basalt_Ore, FeaturesBlocks.super_Redstone_Glowing_Basalt_Ore)).withBlastResistance(2.0F).withLightEmission(0.4F).withDisabledNeighborNotifyOnMetadataChange();
+				.build("superore.redstone.glowing.basalt", blockId++, b -> new BlockLogicSuperOreRedstone(b, Blocks.BASALT, Material.stone, true, FeaturesBlocks.super_Redstone_Basalt_Ore, FeaturesBlocks.super_Redstone_Glowing_Basalt_Ore)).withBlastResistance(2.0F).withOverrideColor(MaterialColor.redstone).withLightEmission(0.4F).withDisabledNeighborNotifyOnMetadataChange();
 			super_Redstone_Glowing_Limestone_Ore = fullBlock
 				.setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
 				.setHardness(3f)
-				.build("superore.redstone.glowing.limestone", blockId++, b -> new BlockLogicSuperOreRedstone(b, Blocks.LIMESTONE, Material.stone, true, FeaturesBlocks.super_Redstone_Limestone_Ore, FeaturesBlocks.super_Redstone_Glowing_Limestone_Ore)).withBlastResistance(2.0F).withLightEmission(0.4F).withDisabledNeighborNotifyOnMetadataChange();
+				.build("superore.redstone.glowing.limestone", blockId++, b -> new BlockLogicSuperOreRedstone(b, Blocks.LIMESTONE, Material.stone, true, FeaturesBlocks.super_Redstone_Limestone_Ore, FeaturesBlocks.super_Redstone_Glowing_Limestone_Ore)).withBlastResistance(2.0F).withOverrideColor(MaterialColor.redstone).withLightEmission(0.4F).withDisabledNeighborNotifyOnMetadataChange();
 			super_Redstone_Glowing_Granite_Ore = fullBlock
 				.setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
 				.setHardness(3f)
-				.build("superore.redstone.glowing.granite", blockId++, b -> new BlockLogicSuperOreRedstone(b, Blocks.GRANITE, Material.stone, true, FeaturesBlocks.super_Redstone_Granite_Ore, FeaturesBlocks.super_Redstone_Glowing_Granite_Ore)).withBlastResistance(2.0F).withLightEmission(0.4F).withDisabledNeighborNotifyOnMetadataChange();
+				.build("superore.redstone.glowing.granite", blockId++, b -> new BlockLogicSuperOreRedstone(b, Blocks.GRANITE, Material.stone, true, FeaturesBlocks.super_Redstone_Granite_Ore, FeaturesBlocks.super_Redstone_Glowing_Granite_Ore)).withBlastResistance(2.0F).withOverrideColor(MaterialColor.redstone).withLightEmission(0.4F).withDisabledNeighborNotifyOnMetadataChange();
 			super_Redstone_Glowing_Permafrost_Ore = fullBlock
 				.setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
 				.setHardness(3f)
-				.build("superore.redstone.glowing.permafrost", blockId++, b -> new BlockLogicSuperOreRedstone(b, Blocks.PERMAFROST, Material.stone, true, FeaturesBlocks.super_Redstone_Permafrost_Ore, FeaturesBlocks.super_Redstone_Glowing_Permafrost_Ore)).withBlastResistance(2.0F).withLightEmission(0.4F).withDisabledNeighborNotifyOnMetadataChange();
+				.build("superore.redstone.glowing.permafrost", blockId++, b -> new BlockLogicSuperOreRedstone(b, Blocks.PERMAFROST, Material.stone, true, FeaturesBlocks.super_Redstone_Permafrost_Ore, FeaturesBlocks.super_Redstone_Glowing_Permafrost_Ore)).withBlastResistance(2.0F).withOverrideColor(MaterialColor.redstone).withLightEmission(0.4F).withDisabledNeighborNotifyOnMetadataChange();
 
 			super_Diamond_Stone_Ore = fullBlock
 				.setTags(BlockTags.MINEABLE_BY_PICKAXE)
@@ -372,15 +376,15 @@ public class FeaturesBlocks {
 				.withTags(BlockTags.MINEABLE_BY_SHOVEL);
 		}
 
-//		if (coloredLadderEnabled == 1){
-//			vanilla_Colored_Ladder = new BlockBuilder(MOD_ID)
-//				.build("vanilla.colored.ladder", blockId++, b -> new BlockLogicColoredLadder(b))
-//				.withSound(BlockSounds.WOOD)
-//				.withHardness(0.4F)
-//				.withDisabledNeighborNotifyOnMetadataChange()
-//				.setBlockItem(ItemBlockLadder::new)
-//				.withTags(new Tag[]{BlockTags.MINEABLE_BY_AXE});
-//		}
+		if (coloredLadderEnabled == 1){
+			vanilla_Colored_Ladder = new BlockBuilder(MOD_ID)
+				.setBlockSound(BlockSounds.WOOD)
+				.setHardness(0.4F)
+				.setTags(BlockTags.MINEABLE_BY_AXE)
+				.build("vanilla.colored.ladder", blockId++, b -> new BlockLogicColoredLadder(b))
+				.withDisabledNeighborNotifyOnMetadataChange()
+				.setBlockItem(b -> new ItemBlockPaintedLadder<>(b, true));
+		}
 
 		if (coloredWorkbenchEnabled == 1){
 			vanilla_Colored_Workbench = new BlockBuilder(MOD_ID)
@@ -388,7 +392,7 @@ public class FeaturesBlocks {
 				.setHardness(2.5F)
 				.setTags(BlockTags.FENCES_CONNECT, BlockTags.MINEABLE_BY_AXE)
 				.build("vanilla.colored.workbench", blockId++, b -> new BlockLogicColoredWorkbench(b))
-				.setBlockItem((b) -> {return new ItemBlockPainted<>(b, false);});
+				.setBlockItem(b -> new ItemBlockPainted<>(b, false));
 		}
 		initializeBlockDetails();
 	}

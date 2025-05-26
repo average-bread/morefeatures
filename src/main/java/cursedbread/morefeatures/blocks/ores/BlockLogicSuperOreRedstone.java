@@ -112,47 +112,40 @@ public class BlockLogicSuperOreRedstone extends BlockLogic {
 
 	private void spawnParticles(World world, int x, int y, int z) {
 		Random random = world.rand;
-		boolean redstoneBrightness = true;
-		Color color = Colors.allRedstoneColors[10];
-		if (color != null) {
-			float red = (float)color.getRed() / 255.0F;
-			float green = (float)color.getGreen() / 255.0F;
-			float blue = (float)color.getBlue() / 255.0F;
-			double d = 0.0625;
+		int redstoneBrightness = 10;
+		double d = 0.0625;
 
-			for(int i = 0; i < 3; ++i) {
-				double px = (double)x + (double)random.nextFloat();
-				double py = (double)y + (double)random.nextFloat();
-				double pz = (double)z + (double)random.nextFloat();
-				if (i == 0 && !world.isBlockOpaqueCube(x, y + 1, z)) {
-					py = (double)(y + 1) + d;
-				}
-
-				if (i == 1 && !world.isBlockOpaqueCube(x, y - 1, z)) {
-					py = (double)(y + 0) - d;
-				}
-
-				if (i == 2 && !world.isBlockOpaqueCube(x, y, z + 1)) {
-					pz = (double)(z + 1) + d;
-				}
-
-				if (i == 3 && !world.isBlockOpaqueCube(x, y, z - 1)) {
-					pz = (double)(z + 0) - d;
-				}
-
-				if (i == 4 && !world.isBlockOpaqueCube(x + 1, y, z)) {
-					px = (double)(x + 1) + d;
-				}
-
-				if (i == 5 && !world.isBlockOpaqueCube(x - 1, y, z)) {
-					px = (double)(x + 0) - d;
-				}
-
-				if (px < (double)x || px > (double)(x + 1) || py < 0.0 || py > (double)(y + 1) || pz < (double)z || pz > (double)(z + 1)) {
-					world.spawnParticle("reddust", px, py, pz, (double)red, (double)green, (double)blue, 10);
-				}
+		for (int i = 0; i < 6; i++) {
+			double px = (double)x + (double)random.nextFloat();
+			double py = (double)y + (double)random.nextFloat();
+			double pz = (double)z + (double)random.nextFloat();
+			if (i == 0 && !world.isBlockOpaqueCube(x, y + 1, z)) {
+				py = (double)(y + 1) + d;
 			}
 
+			if (i == 1 && !world.isBlockOpaqueCube(x, y - 1, z)) {
+				py = (double)y - d;
+			}
+
+			if (i == 2 && !world.isBlockOpaqueCube(x, y, z + 1)) {
+				pz = (double)(z + 1) + d;
+			}
+
+			if (i == 3 && !world.isBlockOpaqueCube(x, y, z - 1)) {
+				pz = (double)z - d;
+			}
+
+			if (i == 4 && !world.isBlockOpaqueCube(x + 1, y, z)) {
+				px = (double)(x + 1) + d;
+			}
+
+			if (i == 5 && !world.isBlockOpaqueCube(x - 1, y, z)) {
+				px = (double)x - d;
+			}
+
+			if (px < (double)x || px > (double)(x + 1) || py < 0.0 || py > (double)(y + 1) || pz < (double)z || pz > (double)(z + 1)) {
+				world.spawnParticle("reddust", px, py, pz, 0.0, 0.0, 0.0, 10);
+			}
 		}
 	}
 }

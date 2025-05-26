@@ -10,24 +10,26 @@ import net.minecraft.core.block.BlockLogic;
 import net.minecraft.core.util.helper.DyeColor;
 import net.minecraft.core.util.helper.Side;
 
+import java.util.Iterator;
+
 @Environment(EnvType.CLIENT)
 public class BlockModelColoredLadder <T extends BlockLogic> extends BlockModelLadder {
-	public static final IconCoordinate[] textures = new IconCoordinate[16];
+	public static final IconCoordinate[] textures = new IconCoordinate[240];
 	public boolean nnd = false;
 	public BlockModelColoredLadder(Block block, boolean nnd) {
 		super(block);
 		this.nnd = nnd;
+
+		DyeColor c;
+		for(Iterator var2 = DyeColor.blockOrderedColors().iterator();
+			var2.hasNext();
+			textures[c.blockMeta] = TextureRegistry.getTexture("morefeatures:block/ladders/" + c.colorID)) {
+			c = (DyeColor)var2.next();
+		}
 	}
 
 	public IconCoordinate getBlockTextureFromSideAndMetadata(Side side, int data) {
 		int color = data >> 4 & 15;
-		int orientation = data & 3;
 		return textures[color];
-	}
-
-	static {
-		for(DyeColor c : DyeColor.blockOrderedColors()) {
-			textures[c.blockMeta] = TextureRegistry.getTexture("morefeatures:block/ladders/" + c.colorID);
-		}
 	}
 }
