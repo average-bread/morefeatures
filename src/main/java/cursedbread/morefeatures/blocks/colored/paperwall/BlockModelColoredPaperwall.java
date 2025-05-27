@@ -133,7 +133,7 @@ public class BlockModelColoredPaperwall<T extends BlockLogic> extends BlockModel
 
 	@Override
 	public IconCoordinate getBlockTextureFromSideAndMetadata(Side side, int data) {
-	    if (nnd) return textures_nnd[alt][data];
-	    return textures_v[alt][data];
+	    if (nnd) return textures_nnd[alt][data & 15];
+	    return textures_v[alt][data & 15];
 	}
 }

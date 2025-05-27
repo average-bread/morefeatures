@@ -56,7 +56,7 @@ public class BlockModelColoredGlass<T extends BlockLogic> extends BlockModelTran
 
 	@Override
     public IconCoordinate getBlockTextureFromSideAndMetadata(Side side, int data) {
-        if (nnd) return textures_nnd[data];
-		return textures_v[data];
+        if (nnd) return textures_nnd[data & 15];
+		return textures_v[data & 15];
 	}
 }

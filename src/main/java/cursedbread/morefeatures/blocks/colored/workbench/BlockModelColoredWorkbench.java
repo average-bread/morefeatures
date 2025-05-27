@@ -28,16 +28,16 @@ public class BlockModelColoredWorkbench <T extends BlockLogic> extends BlockMode
 
 	public IconCoordinate getBlockTextureFromSideAndMetadata(Side side, int data) {
 		if (side == Side.BOTTOM){
-			return bottomTextures[data];
+			return bottomTextures[data & 15];
 		}
 		if (side == Side.TOP){
-			return topTextures[data];
+			return topTextures[data & 15];
 		}
 		if (side == Side.EAST || side == Side.WEST){
-			return sideTextures[data];
+			return sideTextures[data & 15];
 		}
 		if (side == Side.NORTH || side == Side.SOUTH){
-			return frontTextures[data];
+			return frontTextures[data & 15];
 		}
 		return null;
 	}
