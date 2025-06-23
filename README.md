@@ -68,3 +68,7 @@ Currently, adds:
 * Cat helmet that can be found in desert labyrinth and lets the player see in dark
 
 * Fertilizing bags can be used to store up to 3 stacks of bone meal and to fertilize up to 3x3 area
+
+* Netherrack gravel that can be obtained by crushing cobbled netherrack with a reinforced piston. Can be trommeled for resources
+
+* Colored workbenches

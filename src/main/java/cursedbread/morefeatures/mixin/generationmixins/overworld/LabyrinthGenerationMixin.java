@@ -1,4 +1,4 @@
-package cursedbread.morefeatures.mixin.generationmixins;
+package cursedbread.morefeatures.mixin.generationmixins.overworld;
 
 import cursedbread.morefeatures.FeaturesMain;
 import cursedbread.morefeatures.item.FeaturesItems;

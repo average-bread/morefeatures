@@ -51,7 +51,7 @@ public class FeaturesMain implements ModInitializer, GameStartEntrypoint, Client
 			.addEntry("Super_ores", 1)
 			.addEntry("Nether_gravel", 1)
 			.addEntry("Colored_workbench", 1)
-			.addEntry("Colored_ladder", 0);
+			.addEntry("New_flowers", 1);
 
 		TOML.addCategory("Items")
 			.addEntry("Flower_crowns", 1)
@@ -96,7 +96,7 @@ public class FeaturesMain implements ModInitializer, GameStartEntrypoint, Client
 		FeaturesBlocks.superoresEnabled = CFG.getInt("Blocks.Super_ores");
 		FeaturesBlocks.netherGravelEnabled = CFG.getInt("Blocks.Nether_gravel");
 		FeaturesBlocks.coloredWorkbenchEnabled = CFG.getInt("Blocks.Colored_workbench");
-		FeaturesBlocks.coloredLadderEnabled = CFG.getInt("Blocks.Colored_ladder");
+		FeaturesBlocks.newFlowersEnabled = CFG.getInt("Blocks.New_flowers");
 
 		FeaturesItems.flowercrownsEnabled = CFG.getInt("Items.Flower_crowns");
 		FeaturesItems.normalCrownsEnabled = CFG.getInt("Items.Crowns");

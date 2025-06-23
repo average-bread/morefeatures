@@ -1,7 +1,5 @@
 package cursedbread.morefeatures.blocks;
 
-import cursedbread.morefeatures.blocks.colored.ladder.BlockLogicColoredLadder;
-import cursedbread.morefeatures.blocks.colored.ladder.ItemBlockPaintedLadder;
 import cursedbread.morefeatures.blocks.colored.workbench.BlockLogicColoredWorkbench;
 import cursedbread.morefeatures.blocks.flux.BlockLogicCropsFlux;
 import cursedbread.morefeatures.blocks.colored.glass.BlockLogicColoredGlass;
@@ -18,13 +16,17 @@ import net.minecraft.core.block.material.Material;
 import net.minecraft.core.block.material.MaterialColor;
 import net.minecraft.core.block.tag.BlockTags;
 import net.minecraft.core.data.tag.Tag;
+import net.minecraft.core.item.IItemConvertible;
+import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.item.block.ItemBlockLadder;
 import net.minecraft.core.item.block.ItemBlockPainted;
 import net.minecraft.core.sound.BlockSound;
 import net.minecraft.core.sound.BlockSounds;
 import turniplabs.halplibe.helper.BlockBuilder;
+import turniplabs.halplibe.helper.CreativeHelper;
 
 import static cursedbread.morefeatures.FeaturesMain.MOD_ID;
+import static net.minecraft.core.item.tool.ItemToolPickaxe.miningLevels;
 
 public class FeaturesBlocks {
 
@@ -141,8 +143,61 @@ public class FeaturesBlocks {
 	public static int coloredWorkbenchEnabled;
 	public static Block<?> vanilla_Colored_Workbench;
 
-	private void initializeBlockDetails() {
+	public static int newFlowersEnabled;
+	public static Block<?> whiteFlower;
+	public static Block<?> magentaFlower;
+	public static Block<?> limeFlower;
+	public static Block<?> grayFlower;
+	public static Block<?> silverFlower;
+	public static Block<?> cyanFlower;
+	public static Block<?> blueFlower;
+	public static Block<?> brownFlower;
+	public static Block<?> greenFlower;
+	public static Block<?> blackFlower;
 
+	private void initializeBlockDetails() {
+		miningLevels.put(super_Coal_Stone_Ore, 0);
+		miningLevels.put(super_Coal_Basalt_Ore, 0);
+		miningLevels.put(super_Coal_Limestone_Ore, 0);
+		miningLevels.put(super_Coal_Granite_Ore, 0);
+		miningLevels.put(super_Coal_Permafrost_Ore, 0);
+
+		miningLevels.put(super_Iron_Stone_Ore, 1);
+		miningLevels.put(super_Iron_Basalt_Ore, 1);
+		miningLevels.put(super_Iron_Limestone_Ore, 1);
+		miningLevels.put(super_Iron_Granite_Ore, 1);
+		miningLevels.put(super_Iron_Permafrost_Ore, 1);
+
+		miningLevels.put(super_Gold_Stone_Ore, 2);
+		miningLevels.put(super_Gold_Basalt_Ore, 2);
+		miningLevels.put(super_Gold_Limestone_Ore, 2);
+		miningLevels.put(super_Gold_Granite_Ore, 2);
+		miningLevels.put(super_Gold_Permafrost_Ore, 2);
+
+		miningLevels.put(super_Lapis_Stone_Ore, 1);
+		miningLevels.put(super_Lapis_Basalt_Ore, 1);
+		miningLevels.put(super_Lapis_Limestone_Ore, 1);
+		miningLevels.put(super_Lapis_Granite_Ore, 1);
+		miningLevels.put(super_Lapis_Permafrost_Ore, 1);
+
+		miningLevels.put(super_Redstone_Stone_Ore, 2);
+		miningLevels.put(super_Redstone_Basalt_Ore, 2);
+		miningLevels.put(super_Redstone_Limestone_Ore, 2);
+		miningLevels.put(super_Redstone_Granite_Ore, 2);
+		miningLevels.put(super_Redstone_Permafrost_Ore, 2);
+		miningLevels.put(super_Redstone_Glowing_Stone_Ore, 2);
+		miningLevels.put(super_Redstone_Glowing_Basalt_Ore, 2);
+		miningLevels.put(super_Redstone_Glowing_Limestone_Ore, 2);
+		miningLevels.put(super_Redstone_Glowing_Granite_Ore, 2);
+		miningLevels.put(super_Redstone_Glowing_Permafrost_Ore, 2);
+
+		miningLevels.put(super_Diamond_Stone_Ore, 2);
+		miningLevels.put(super_Diamond_Basalt_Ore, 2);
+		miningLevels.put(super_Diamond_Limestone_Ore, 2);
+		miningLevels.put(super_Diamond_Granite_Ore, 2);
+		miningLevels.put(super_Diamond_Permafrost_Ore, 2);
+
+		miningLevels.put(super_Nether_Coal_Ore, 2);
 	}
 
 	public void initilizeBlocks() {
@@ -376,16 +431,6 @@ public class FeaturesBlocks {
 				.withTags(BlockTags.MINEABLE_BY_SHOVEL);
 		}
 
-		if (coloredLadderEnabled == 1){
-			vanilla_Colored_Ladder = new BlockBuilder(MOD_ID)
-				.setBlockSound(BlockSounds.WOOD)
-				.setHardness(0.4F)
-				.setTags(BlockTags.MINEABLE_BY_AXE)
-				.build("vanilla.colored.ladder", blockId++, b -> new BlockLogicColoredLadder(b))
-				.withDisabledNeighborNotifyOnMetadataChange()
-				.setBlockItem(b -> new ItemBlockPaintedLadder<>(b, true));
-		}
-
 		if (coloredWorkbenchEnabled == 1){
 			vanilla_Colored_Workbench = new BlockBuilder(MOD_ID)
 				.setBlockSound(BlockSounds.WOOD)
@@ -393,6 +438,10 @@ public class FeaturesBlocks {
 				.setTags(BlockTags.FENCES_CONNECT, BlockTags.MINEABLE_BY_AXE)
 				.build("vanilla.colored.workbench", blockId++, b -> new BlockLogicColoredWorkbench(b))
 				.setBlockItem(b -> new ItemBlockPainted<>(b, false));
+		}
+
+		if (newFlowersEnabled == 1){
+
 		}
 		initializeBlockDetails();
 	}

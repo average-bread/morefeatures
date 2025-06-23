@@ -32,6 +32,15 @@ public class ItemToolMiningHammer extends ItemToolPickaxe {
 		Blocks.FLUID_WATER_STILL.id()
 	);
 
+	public boolean canHarvestBlock(Mob entityLiving, ItemStack itemStack, Block block) {
+		Integer miningLevel = (Integer)miningLevels.get(block);
+		if (miningLevel != null) {
+			return this.material.getMiningLevel() >= miningLevel;
+		} else {
+			return block.hasTag(BlockTags.MINEABLE_BY_PICKAXE);
+		}
+	}
+
 	private static boolean isBlockMatchToBlacklist(int BlockId, List<Integer> list) {
 		boolean BlockMatchToBlacklist;
 		BlockMatchToBlacklist = list.contains(BlockId);
@@ -41,8 +50,9 @@ public class ItemToolMiningHammer extends ItemToolPickaxe {
 	protected void MineBlock(int x, int y, int z, World world, Mob mob) {
 		Item GoldItem = FeaturesItems.mining_Hammer_Gold;
 		Item heldItem = Objects.requireNonNull(mob.getHeldItem()).getItem();
+		ItemStack itemStack = new ItemStack(mob.getHeldItem());
 		if (!world.isClientSide) {
-			if (world.getBlock(x, y, z) != null && !isBlockMatchToBlacklist(world.getBlock(x, y, z).id(), BlockHammersBlacklist)){
+			if (world.getBlock(x, y, z) != null && canHarvestBlock(mob, itemStack, world.getBlock(x, y, z)) && !isBlockMatchToBlacklist(world.getBlock(x, y, z).id(), BlockHammersBlacklist)){
 				if (world.getBlock(x, y, z) != null)
 					if (!heldItem.equals(GoldItem)) {
 						ItemStack[] itemToDrop = Objects.requireNonNull(world.getBlock(x, y, z)).getBreakResult(world, EnumDropCause.PROPER_TOOL, x, y, z, world.getBlockMetadata(x, y, z), world.getTileEntity(x, y, z));

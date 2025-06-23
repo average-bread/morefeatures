@@ -1,7 +1,6 @@
 package cursedbread.morefeatures;
 
 import cursedbread.morefeatures.blocks.FeaturesBlocks;
-import cursedbread.morefeatures.blocks.colored.ladder.BlockModelColoredLadder;
 import cursedbread.morefeatures.blocks.colored.workbench.BlockModelColoredWorkbench;
 import cursedbread.morefeatures.blocks.flux.BlockModelCropsFlux;
 import cursedbread.morefeatures.blocks.colored.glass.BlockModelColoredGlass;
@@ -303,13 +302,6 @@ public class FeatureModel implements ModelEntrypoint {
 				FeaturesBlocks.netherrack_Gravel,
 				() -> new BlockModelStandard<>(FeaturesBlocks.netherrack_Gravel)
 					.setTex(0,"morefeatures:block/nether_update_blocks/netherrack_gravel", Side.sides)
-			);
-		}
-
-		if (FeaturesBlocks.coloredLadderEnabled == 1){
-			ModelHelper.setBlockModel(
-				FeaturesBlocks.vanilla_Colored_Ladder,
-				() -> new BlockModelColoredLadder<>(FeaturesBlocks.vanilla_Colored_Ladder, false)
 			);
 		}
 

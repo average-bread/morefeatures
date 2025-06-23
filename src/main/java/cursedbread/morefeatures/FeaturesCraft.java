@@ -14,7 +14,6 @@ import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.item.Items;
 import turniplabs.halplibe.helper.RecipeBuilder;
 import turniplabs.halplibe.util.RecipeEntrypoint;
-//import goocraft4evr.nonamedyes.item.ModItems;
 
 
 public class FeaturesCraft implements RecipeEntrypoint {
