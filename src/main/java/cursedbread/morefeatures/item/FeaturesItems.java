@@ -2,40 +2,51 @@ package cursedbread.morefeatures.item;
 
 import cursedbread.morefeatures.FeaturesMain;
 import cursedbread.morefeatures.blocks.FeaturesBlocks;
-import cursedbread.morefeatures.item.artifacts.ItemArmorUnbreakable;
 import cursedbread.morefeatures.item.artifacts.ItemBombQuiver;
 import cursedbread.morefeatures.item.artifacts.ItemBombQuiverEndless;
 import cursedbread.morefeatures.item.other.ItemFertilizeBag;
-import cursedbread.morefeatures.item.tool.ItemToolClimbingPickaxe;
-import cursedbread.morefeatures.item.tool.ItemToolMiningHammer;
-import cursedbread.morefeatures.item.tool.ItemToolPaxel;
-import cursedbread.morefeatures.item.tool.StickWorkbench;
+import cursedbread.morefeatures.item.tool.*;
+import net.minecraft.core.data.tag.Tag;
 import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemArmor;
 import net.minecraft.core.item.ItemBucket;
 import net.minecraft.core.item.ItemSeeds;
 import net.minecraft.core.item.material.ArmorMaterial;
 import net.minecraft.core.item.material.ToolMaterial;
+import net.minecraft.core.item.tag.ItemTags;
+import net.minecraft.core.item.tool.ItemToolSword;
 import turniplabs.halplibe.helper.ArmorHelper;
 import turniplabs.halplibe.helper.ItemBuilder;
+import useless.moonsteel.MoonSteelItems;
 
 import static cursedbread.morefeatures.FeaturesMain.MOD_ID;
 
 public class FeaturesItems {
 	public static int itemId;
 
-	public static ArmorMaterial dandelion_Armor = ArmorHelper.createArmorMaterial(MOD_ID, "flowercrown/armor_dandelion", 27, 0f, 0f, 0f, 0f);
-	public static ArmorMaterial rose_Armor = ArmorHelper.createArmorMaterial(MOD_ID, "flowercrown/armor_rose", 27, 0f, 0f, 0f, 0f);
-	public static ArmorMaterial cherry_Armor = ArmorHelper.createArmorMaterial(MOD_ID, "flowercrown/armor_cherry", 27, 0f, 0f, 0f, 0f);
+	public static ArmorMaterial dandelion_Armor = ArmorHelper.createArmorMaterial(MOD_ID, "flowercrown/armor_dandelion", 0, 0f, 0f, 0f, 0f);
+	public static ArmorMaterial rose_Armor = ArmorHelper.createArmorMaterial(MOD_ID, "flowercrown/armor_rose", 0, 0f, 0f, 0f, 0f);
+	public static ArmorMaterial cherry_Armor = ArmorHelper.createArmorMaterial(MOD_ID, "flowercrown/armor_cherry", 0, 0f, 0f, 0f, 0f);
 	public static ArmorMaterial deadbush_Armor = ArmorHelper.createArmorMaterial(MOD_ID, "flowercrown/armor_deadbush", 1, -1000f, -1000f, -1000f, -1000f);
-	public static ArmorMaterial orchid_Armor = ArmorHelper.createArmorMaterial(MOD_ID, "flowercrown/armor_orchid", 27, 0f, 0f, 0f, 0f);
-	public static ArmorMaterial heather_Armor = ArmorHelper.createArmorMaterial(MOD_ID, "flowercrown/armor_heather", 27, 0f, 0f, 0f, 0f);
-	public static ArmorMaterial bluebell_Armor = ArmorHelper.createArmorMaterial(MOD_ID, "flowercrown/armor_bluebell", 27, 0f, 0f, 0f, 0f);
-	public static ArmorMaterial marigold_Armor = ArmorHelper.createArmorMaterial(MOD_ID, "flowercrown/armor_marigold", 27, 0f, 0f, 0f, 0f);
+	public static ArmorMaterial orchid_Armor = ArmorHelper.createArmorMaterial(MOD_ID, "flowercrown/armor_orchid", 0, 0f, 0f, 0f, 0f);
+	public static ArmorMaterial heather_Armor = ArmorHelper.createArmorMaterial(MOD_ID, "flowercrown/armor_heather", 0, 0f, 0f, 0f, 0f);
+	public static ArmorMaterial bluebell_Armor = ArmorHelper.createArmorMaterial(MOD_ID, "flowercrown/armor_bluebell", 0, 0f, 0f, 0f, 0f);
+	public static ArmorMaterial marigold_Armor = ArmorHelper.createArmorMaterial(MOD_ID, "flowercrown/armor_marigold", 0, 0f, 0f, 0f, 0f);
+
+	public static ArmorMaterial daisy_Armor = ArmorHelper.createArmorMaterial(MOD_ID, "flowercrown/armor_daisy", 0, 0f, 0f, 0f, 0f);
+	public static ArmorMaterial delphiniums_Armor = ArmorHelper.createArmorMaterial(MOD_ID, "flowercrown/armor_delphiniums", 0, 0f, 0f, 0f, 0f);
+	public static ArmorMaterial angelica_Armor = ArmorHelper.createArmorMaterial(MOD_ID, "flowercrown/armor_angelica", 0, 0f, 0f, 0f, 0f);
+	public static ArmorMaterial allium_Armor = ArmorHelper.createArmorMaterial(MOD_ID, "flowercrown/armor_allium", 0, 0f, 0f, 0f, 0f);
+	public static ArmorMaterial dustymiller_Armor = ArmorHelper.createArmorMaterial(MOD_ID, "flowercrown/armor_dustymiller", 0, 0f, 0f, 0f, 0f);
+	public static ArmorMaterial cyanrose_Armor = ArmorHelper.createArmorMaterial(MOD_ID, "flowercrown/armor_cyanrose", 0, 0f, 0f, 0f, 0f);
+	public static ArmorMaterial bluepoppy_Armor = ArmorHelper.createArmorMaterial(MOD_ID, "flowercrown/armor_bluepoppy", 0, 0f, 0f, 0f, 0f);
+	public static ArmorMaterial dahlia_Armor = ArmorHelper.createArmorMaterial(MOD_ID, "flowercrown/armor_dahlia", 0, 0f, 0f, 0f, 0f);
+	public static ArmorMaterial barrelcactus_Armor = ArmorHelper.createArmorMaterial(MOD_ID, "flowercrown/armor_barrelcactus", 0, 0f, 0f, 0f, 0f);
+	public static ArmorMaterial blacktulip_Armor = ArmorHelper.createArmorMaterial(MOD_ID, "flowercrown/armor_blacktulip", 0, 0f, 0f, 0f, 0f);
 
 
-	public static ArmorMaterial bedrock_Armor = ArmorHelper.createArmorMaterial(MOD_ID, "bedrock/armor_bedrock", 999999999, 999999999f, 999999999f, 999999999f, 999999999f);
-	public static ArmorMaterial bedrock_Extra_Armor = ArmorHelper.createArmorMaterial(MOD_ID, "bedrock/extra_armor_bedrock", 999999999, 999999999f, 999999999f, 999999999f, 999999999f);
+	public static ArmorMaterial bedrock_Armor = ArmorHelper.createArmorMaterial(MOD_ID, "bedrock/armor_bedrock", 0, 999999999f, 999999999f, 999999999f, 999999999f);
+	public static ArmorMaterial bedrock_Extra_Armor = ArmorHelper.createArmorMaterial(MOD_ID, "bedrock/extra_armor_bedrock", 0, 999999999f, 999999999f, 999999999f, 999999999f);
 	public static ArmorMaterial plate_Armor = ArmorHelper.createArmorMaterial(MOD_ID, "plate/armor_plate", 240, 58f, 58f, 58f, 58f);
 	public static ArmorMaterial plate_Extra_Armor = ArmorHelper.createArmorMaterial(MOD_ID, "plate/extra_armor_plate", 240, 58f, 58f, 58f, 58f);
 	public static ArmorMaterial leather_Extra_Armor = ArmorHelper.createArmorMaterial(MOD_ID, "crown/extra_armor_cloth", 180, 20f, 20f, 20f, 120f);
@@ -53,7 +64,12 @@ public class FeaturesItems {
 	public static ArmorMaterial quartz_Armor = ArmorHelper.createArmorMaterial(MOD_ID, "quartz/armor_quartz", 200, 10f, 0f, 20f, 30f);
 	public static ArmorMaterial quartz_Extra_Armor = ArmorHelper.createArmorMaterial(MOD_ID, "quartz/extra_armor_quartz", 200, 10f, 0f, 20f, 30f);
 
-	public static ArmorMaterial cat_Armor = ArmorHelper.createArmorMaterial(MOD_ID, "other/cat", 200, 0f, 0f, 0f, 0f);
+	public static ArmorMaterial cat_Armor = ArmorHelper.createArmorMaterial(MOD_ID, "other/cat", 0, 0f, 0f, 0f, 0f);
+
+	public static ToolMaterial glassTool = new ToolMaterial().setDurability(1).setDamage(10);
+
+	public static ArmorMaterial moonsteel_Extra_Armor = ArmorHelper.createArmorMaterial(MOD_ID, "crown/extra_armor_moonsteel", 800, 51f, 45f, 45f, 100f);
+
 
 
 	public static int flowercrownsEnabled;
@@ -65,6 +81,17 @@ public class FeaturesItems {
 	public static Item heather_Crown;
 	public static Item bluebell_Crown;
 	public static Item marigold_Crown;
+
+	public static Item daisy_Crown;
+	public static Item delphiniums_Crown;
+	public static Item angelica_Crown;
+	public static Item allium_Crown;
+	public static Item dustymiller_Crown;
+	public static Item cyanrose_Crown;
+	public static Item bluepoppy_Crown;
+	public static Item dahlia_Crown;
+	public static Item barrelcactus_Crown;
+	public static Item blacktulip_Crown;
 
 	public static int normalCrownsEnabled;
 	public static Item leather_Crown;
@@ -79,6 +106,8 @@ public class FeaturesItems {
 	public static Item quartz_Crown;
 	public static Item leather_Chain_Crown;
 	public static Item plate_Crown;
+
+	public static Item moonsteel_Crown;
 
 	public static int bedrockArmorEnabled;
 	public static Item bedrock_Helmet;
@@ -140,6 +169,8 @@ public class FeaturesItems {
 	public static Item paxel_Diamond;
 	public static Item paxel_Steel;
 
+	public static Item paxel_Moonsteel;
+
 	public static int climbPickaxesEnabled;
 	public static Item climb_Pickaxe_Wood;
 	public static Item climb_Pickaxe_Stone;
@@ -148,6 +179,8 @@ public class FeaturesItems {
 	public static Item climb_Pickaxe_Diamond;
 	public static Item climb_Pickaxe_Steel;
 
+	public static Item climb_pickaxe_Monnsteel;
+
 	public static int miningHammersEnabled;
 	public static Item mining_Hammer_Wood;
 	public static Item mining_Hammer_Stone;
@@ -155,6 +188,11 @@ public class FeaturesItems {
 	public static Item mining_Hammer_Gold;
 	public static Item mining_Hammer_Diamond;
 	public static Item mining_Hammer_Steel;
+
+	public static Item mining_hammer_MoonSteel;
+
+	public static int glassSwordEnabled;
+	public static Item glass_Sword;
 
 	public void initilizeItems() {
 		//items
@@ -175,6 +213,38 @@ public class FeaturesItems {
 				.build(new ItemArmor("crown.bluebell", "morefeatures:item/armor/crown/bluebell_crown", itemId++, bluebell_Armor, 3));
 			marigold_Crown = new ItemBuilder(MOD_ID)
 				.build(new ItemArmor("crown.marigold", "morefeatures:item/armor/crown/marigold_crown", itemId++, marigold_Armor, 3));
+
+			if (FeaturesBlocks.newFlowersEnabled == 1){
+				daisy_Crown = new ItemBuilder(MOD_ID)
+					.build(new ItemArmor("crown.daisy", "morefeatures:item/armor/crown/daisy_crown", itemId++,daisy_Armor, 3));
+
+				delphiniums_Crown = new ItemBuilder(MOD_ID)
+					.build(new ItemArmor("crown.delphiniums", "morefeatures:item/armor/crown/delphiniums_crown", itemId++,delphiniums_Armor, 3));
+
+				angelica_Crown = new ItemBuilder(MOD_ID)
+					.build(new ItemArmor("crown.angelica", "morefeatures:item/armor/crown/angelica_crown", itemId++,angelica_Armor, 3));
+
+				allium_Crown = new ItemBuilder(MOD_ID)
+					.build(new ItemArmor("crown.allium", "morefeatures:item/armor/crown/allium_crown", itemId++,allium_Armor, 3));
+
+				dustymiller_Crown = new ItemBuilder(MOD_ID)
+					.build(new ItemArmor("crown.dustymiller", "morefeatures:item/armor/crown/dustymiller_crown", itemId++,dustymiller_Armor, 3));
+
+				cyanrose_Crown = new ItemBuilder(MOD_ID)
+					.build(new ItemArmor("crown.cyanrose", "morefeatures:item/armor/crown/cyanrose_crown", itemId++,cyanrose_Armor, 3));
+
+				bluepoppy_Crown = new ItemBuilder(MOD_ID)
+					.build(new ItemArmor("crown.bluepoppy", "morefeatures:item/armor/crown/bluepoppy_crown", itemId++,bluepoppy_Armor, 3));
+
+				dahlia_Crown = new ItemBuilder(MOD_ID)
+					.build(new ItemArmor("crown.dahlia", "morefeatures:item/armor/crown/dahlia_crown", itemId++,dahlia_Armor, 3));
+
+				barrelcactus_Crown = new ItemBuilder(MOD_ID)
+					.build(new ItemArmor("crown.barrelcactus", "morefeatures:item/armor/crown/barrelcactus_crown", itemId++,barrelcactus_Armor, 3));
+
+				blacktulip_Crown = new ItemBuilder(MOD_ID)
+					.build(new ItemArmor("crown.blacktulip", "morefeatures:item/armor/crown/blacktulip_crown", itemId++,blacktulip_Armor, 3));
+			}
 		}
 
 		if (normalCrownsEnabled == 1) {
@@ -203,7 +273,7 @@ public class FeaturesItems {
 
 			if (bedrockArmorEnabled == 1) {
 				bedrock_Crown = new ItemBuilder(MOD_ID)
-				    .build(new ItemArmorUnbreakable("crown.bedrock", "morefeatures:item/armor/crown/bedrock_crown", itemId++, bedrock_Extra_Armor, 3));
+				    .build(new ItemArmor("crown.bedrock", "morefeatures:item/armor/crown/bedrock_crown", itemId++, bedrock_Extra_Armor, 3));
 			}
 
 			if (plateArmorEnabled == 1) {
@@ -224,13 +294,13 @@ public class FeaturesItems {
 
 		if (bedrockArmorEnabled == 1) {
 			bedrock_Helmet = new ItemBuilder(MOD_ID)
-			    .build(new ItemArmorUnbreakable("helmet.bedrock", "morefeatures:item/armor/bedrock/bedrock_helmet", itemId++, bedrock_Armor, 3));
+			    .build(new ItemArmor("helmet.bedrock", "morefeatures:item/armor/bedrock/bedrock_helmet", itemId++, bedrock_Armor, 3));
 			bedrock_Chestplate = new ItemBuilder(MOD_ID)
-			    .build(new ItemArmorUnbreakable("chestplate.bedrock", "morefeatures:item/armor/bedrock/bedrock_chestplate", itemId++, bedrock_Armor, 2));
+			    .build(new ItemArmor("chestplate.bedrock", "morefeatures:item/armor/bedrock/bedrock_chestplate", itemId++, bedrock_Armor, 2));
 			bedrock_Leggings = new ItemBuilder(MOD_ID)
-			    .build(new ItemArmorUnbreakable("leggings.bedrock", "morefeatures:item/armor/bedrock/bedrock_leggings", itemId++, bedrock_Armor, 1));
+			    .build(new ItemArmor("leggings.bedrock", "morefeatures:item/armor/bedrock/bedrock_leggings", itemId++, bedrock_Armor, 1));
 			bedrock_Boots = new ItemBuilder(MOD_ID)
-			    .build(new ItemArmorUnbreakable("boots.bedrock", "morefeatures:item/armor/bedrock/bedrock_boots", itemId++, bedrock_Armor, 0));
+			    .build(new ItemArmor("boots.bedrock", "morefeatures:item/armor/bedrock/bedrock_boots", itemId++, bedrock_Armor, 0));
 		}
 
 		if (plateArmorEnabled == 1) {
@@ -353,12 +423,36 @@ public class FeaturesItems {
 
 		if (cathelmetEnabled == 1){
 			cat_Helmet = new ItemBuilder(MOD_ID)
-				.build(new ItemArmorUnbreakable("cat.helmet", "morefeatures:item/armor/artifacts/armor_helmet_cat", itemId++, cat_Armor, 3));
+				.build(new ItemArmor("cat.helmet", "morefeatures:item/armor/artifacts/armor_helmet_cat", itemId++, cat_Armor, 3));
 		}
 
 		if (ferlilizerBagEnabled == 1){
 			fertilizer_Bag = new ItemBuilder(MOD_ID)
 				.build(new ItemFertilizeBag("fertilizer.bag", "morefeatures:item/other/fertilizer_bag/fertilizer_bag_empty", itemId++));
+		}
+
+		if (glassSwordEnabled == 1){
+			glass_Sword = new ItemBuilder(MOD_ID)
+				.build(new ItemToolGlassSword("tool.sword.glass", "morefeatures:item/tool/tool_sword_glass", itemId++, glassTool)).withTags(new Tag[]{ItemTags.PREVENT_CREATIVE_MINING});
+		}
+
+		if (FeaturesMain.moonmoonmoonOn){
+			if (normalCrownsEnabled == 1){
+				moonsteel_Crown= new ItemBuilder(MOD_ID)
+					.build(new ItemArmor("crown.moonsteel", "morefeatures:item/armor/crown/moonsteel_crown", itemId++, moonsteel_Extra_Armor, 3));
+			}
+			if (paxelsEnabled == 1){
+				paxel_Moonsteel = new ItemBuilder(MOD_ID)
+					.build(new ItemToolPaxel("paxel.moonsteel", "morefeatures:item/tool/paxel/paxel_moonsteel", itemId++, MoonSteelItems.moonSteelTool));
+			}
+			if (climbPickaxesEnabled == 1){
+				climb_pickaxe_Monnsteel = new ItemBuilder(MOD_ID)
+					.build(new ItemToolClimbingPickaxe("climbpickaxe.moonsteel", "morefeatures:item/tool/climbing_pickaxe/climbing_pickaxe_moonsteel", itemId++, MoonSteelItems.moonSteelTool));
+			}
+			if (miningHammersEnabled == 1){
+				mining_hammer_MoonSteel = new ItemBuilder(MOD_ID)
+					.build(new ItemToolMiningHammer("mininghammer.moonsteel", "morefeatures:item/tool/mining_hammer/mining_hammer_moonsteel", itemId++, MoonSteelItems.moonSteelTool));
+			}
 		}
 	}
 }

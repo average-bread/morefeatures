@@ -31,7 +31,8 @@
     "itemsmixins.SpawnerSurvival",
     "itemsmixins.WorkbenchFix",
     "itemsmixins.fuels.FurnanceBlastFuelMixin",
-    "itemsmixins.fuels.FurnanceFuelMixin"
+    "itemsmixins.fuels.FurnanceFuelMixin",
+    "modsupport.MoonMoonMoonCanBeFortunedMixin"
   ],
   "client": [
     "entitymixins.EntityPlayerMixin"

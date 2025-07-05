@@ -14,6 +14,8 @@ import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.item.Items;
 import turniplabs.halplibe.helper.RecipeBuilder;
 import turniplabs.halplibe.util.RecipeEntrypoint;
+import useless.moonsteel.MoonSteelBlocks;
+import useless.moonsteel.MoonSteelItems;
 
 
 public class FeaturesCraft implements RecipeEntrypoint {
@@ -32,6 +34,19 @@ public class FeaturesCraft implements RecipeEntrypoint {
 		Blocks.FLOWER_ORANGE.id()
 	};
 
+	public static int[] flowerMaterial2 = {
+		FeaturesBlocks.white_Flower.id(),
+		FeaturesBlocks.magenta_Flower.id(),
+		FeaturesBlocks.lime_Flower.id(),
+		FeaturesBlocks.gray_Flower.id(),
+		FeaturesBlocks.silver_Flower.id(),
+		FeaturesBlocks.cyan_Flower.id(),
+		FeaturesBlocks.blue_Flower.id(),
+		FeaturesBlocks.brown_Flower.id(),
+		FeaturesBlocks.green_Flower.id(),
+		FeaturesBlocks.black_Flower.id()
+	};
+
 	public static Item[] flowercrownResult = {
 		FeaturesItems.dandelion_Crown,
 		FeaturesItems.rose_Crown,
@@ -41,6 +56,19 @@ public class FeaturesCraft implements RecipeEntrypoint {
 		FeaturesItems.heather_Crown,
 		FeaturesItems.bluebell_Crown,
 		FeaturesItems.marigold_Crown
+	};
+
+	public static Item[] flowercrownResult2 = {
+		FeaturesItems.daisy_Crown,
+		FeaturesItems.delphiniums_Crown,
+		FeaturesItems.angelica_Crown,
+		FeaturesItems.allium_Crown,
+		FeaturesItems.dustymiller_Crown,
+		FeaturesItems.cyanrose_Crown,
+		FeaturesItems.bluepoppy_Crown,
+		FeaturesItems.dahlia_Crown,
+		FeaturesItems.barrelcactus_Crown,
+		FeaturesItems.blacktulip_Crown
 	};
 
 	public static int[] regularMaterial = {
@@ -504,6 +532,16 @@ public class FeaturesCraft implements RecipeEntrypoint {
 					.addInput('H', material)
 					.create("rown", new ItemStack(flowercrownResult[j], 1));
 			}
+
+			if (FeaturesBlocks.newFlowersEnabled == 1){
+				for (int j = 0; j < flowerMaterial2.length; j++) {
+					Item material = Item.itemsList[flowerMaterial2[j]];
+					RecipeBuilder.Shaped(MOD_ID)
+						.setShape("HHH", "H H", "HHH")
+						.addInput('H', material)
+						.create("rown", new ItemStack(flowercrownResult2[j], 1));
+				}
+			}
 		}
 		//regular crown crafting
 		if (FeaturesItems.normalCrownsEnabled == 1) {
@@ -822,6 +860,87 @@ public class FeaturesCraft implements RecipeEntrypoint {
 		if (FeaturesBlocks.coloredLadderEnabled == 1){
 			workbenchGroup.register("ladderdyeing", new RecipeEntryDyeing(new RecipeSymbol("morefeatures:ladders") , new ItemStack(FeaturesBlocks.vanilla_Colored_Ladder), true, false));
 			workbenchGroup.register("ladderundyeing", new RecipeEntryUndyeing(new RecipeSymbol("morefeatures:ladders") , new ItemStack(Blocks.LADDER_OAK)));
+		}
+
+		if (FeaturesItems.glassSwordEnabled == 1){
+			RecipeBuilder.Shaped(MOD_ID)
+				.setShape("G", "G", "S")
+				.addInput('S', Items.STICK)
+				.addInput('G', Blocks.GLASS)
+				.create("glasssword", new ItemStack(FeaturesItems.glass_Sword));
+		}
+
+		if (FeaturesMain.moonmoonmoonOn){
+			RecipeBuilder.Shaped(MOD_ID)
+				.setShape("APH", " W ", " S ")
+				.addInput('S', Items.STICK)
+				.addInput('A', MoonSteelItems.TOOL_AXE_MOONSTEEL)
+				.addInput('P', MoonSteelItems.TOOL_PICKAXE_MOONSTEEL)
+				.addInput('H', MoonSteelItems.TOOL_SHOVEL_MOONSTEEL)
+				.addInput('W', MoonSteelItems.TOOL_SWORD_MOONSTEEL)
+				.create("paxelcraft", new ItemStack(FeaturesItems.paxel_Moonsteel));
+
+			RecipeBuilder.Shaped(MOD_ID)
+				.setShape("MM ", "MSH", " S ")
+				.addInput('S', Items.STICK)
+				.addInput('M', MoonSteelItems.INGOT_MOONSTEEL)
+				.addInput('H', MoonSteelBlocks.BLOCK_MOONSTEEL)
+				.create("climbpickcraft", new ItemStack(FeaturesItems.climb_pickaxe_Monnsteel));
+
+			RecipeBuilder.Shaped(MOD_ID)
+				.setShape("HMH", "MSM", " S ")
+				.addInput('S', Items.STICK)
+				.addInput('M', MoonSteelItems.INGOT_MOONSTEEL)
+				.addInput('H', MoonSteelBlocks.BLOCK_MOONSTEEL)
+				.create("hammercraft", new ItemStack(FeaturesItems.mining_hammer_MoonSteel));
+
+			RecipeBuilder.Shaped(MOD_ID)
+				.setShape("HCH", "HHH")
+				.addInput('H', MoonSteelItems.INGOT_MOONSTEEL)
+				.addInput('C', Items.CLOTH)
+				.create("crown", new ItemStack(FeaturesItems.moonsteel_Crown, 1));
+		}
+
+		if (FeaturesBlocks.newFlowersEnabled == 1){
+			RecipeBuilder.Shapeless(MOD_ID)
+				.addInput(FeaturesBlocks.white_Flower)
+				.create("whiteflowertodye", new ItemStack(Items.DYE, 2, 15));
+
+			RecipeBuilder.Shapeless(MOD_ID)
+				.addInput(FeaturesBlocks.magenta_Flower)
+				.create("magentaflowertodye", new ItemStack(Items.DYE, 2, 13));
+
+			RecipeBuilder.Shapeless(MOD_ID)
+				.addInput(FeaturesBlocks.lime_Flower)
+				.create("limeflowertodye", new ItemStack(Items.DYE, 2, 10));
+
+			RecipeBuilder.Shapeless(MOD_ID)
+				.addInput(FeaturesBlocks.gray_Flower)
+				.create("grayflowertodye", new ItemStack(Items.DYE, 2, 8));
+
+			RecipeBuilder.Shapeless(MOD_ID)
+				.addInput(FeaturesBlocks.silver_Flower)
+				.create("silverflowertodye", new ItemStack(Items.DYE, 2, 7));
+
+			RecipeBuilder.Shapeless(MOD_ID)
+				.addInput(FeaturesBlocks.cyan_Flower)
+				.create("cyanflowertodye", new ItemStack(Items.DYE, 2, 6));
+
+			RecipeBuilder.Shapeless(MOD_ID)
+				.addInput(FeaturesBlocks.blue_Flower)
+				.create("blueflowertodye", new ItemStack(Items.DYE, 2, 4));
+
+			RecipeBuilder.Shapeless(MOD_ID)
+				.addInput(FeaturesBlocks.brown_Flower)
+				.create("brownflowertodye", new ItemStack(Items.DYE, 2, 3));
+
+			RecipeBuilder.Shapeless(MOD_ID)
+				.addInput(FeaturesBlocks.green_Flower)
+				.create("greenflowertodye", new ItemStack(Items.DYE, 2, 2));
+
+			RecipeBuilder.Shapeless(MOD_ID)
+				.addInput(FeaturesBlocks.black_Flower)
+				.create("blackflowertodye", new ItemStack(Items.DYE, 2, 0));
 		}
 	}
 }

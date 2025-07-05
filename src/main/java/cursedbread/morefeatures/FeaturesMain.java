@@ -4,6 +4,7 @@ import cursedbread.morefeatures.blocks.FeaturesBlocks;
 import cursedbread.morefeatures.item.FeaturesItems;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.loader.api.FabricLoader;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import turniplabs.halplibe.helper.*;
@@ -20,6 +21,7 @@ public class FeaturesMain implements ModInitializer, GameStartEntrypoint, Client
     public static final String MOD_ID = "morefeatures";
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 	//public static boolean nonamedyesOn = ModVersionHelper.isModPresent("nonamedyes");
+	public static boolean moonmoonmoonOn = FabricLoader.getInstance().isModLoaded("moonsteel");
 	public static int paperWallAlt;
 	public static int newLabyrinthsEnabled;
 	public static int newDungeonsEnabled;
@@ -69,7 +71,8 @@ public class FeaturesMain implements ModInitializer, GameStartEntrypoint, Client
 			.addEntry("Climbing_pickaxes", 1)
 			.addEntry("Mining_hammer", 1)
 			.addEntry("Cat_helmet", 1)
-			.addEntry("Fertilizing_bag", 1);
+			.addEntry("Fertilizing_bag", 1)
+			.addEntry("Glass_sword", 1);
 
 		TOML.addCategory("Generation")
 			.addEntry("New_labyrinths", 1)
@@ -114,6 +117,7 @@ public class FeaturesMain implements ModInitializer, GameStartEntrypoint, Client
 		FeaturesItems.miningHammersEnabled = CFG.getInt("Items.Mining_hammer");
 		FeaturesItems.cathelmetEnabled = CFG.getInt("Items.Cat_helmet");
 		FeaturesItems.ferlilizerBagEnabled = CFG.getInt("Items.Fertilizing_bag");
+		FeaturesItems.glassSwordEnabled = CFG.getInt("Items.Glass_sword");
 
 		newLabyrinthsEnabled = CFG.getInt("Generation.New_labyrinths");
 		newDungeonsEnabled = CFG.getInt("Generation.Nre_dungeons");

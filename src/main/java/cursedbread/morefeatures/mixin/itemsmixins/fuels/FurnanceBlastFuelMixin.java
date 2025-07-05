@@ -2,17 +2,16 @@ package cursedbread.morefeatures.mixin.itemsmixins.fuels;
 
 import cursedbread.morefeatures.item.FeaturesItems;
 import net.minecraft.core.crafting.LookupFuelFurnace;
+import net.minecraft.core.crafting.LookupFuelFurnaceBlast;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-@Mixin(value = LookupFuelFurnace.class, remap = false)
+@Mixin(value = LookupFuelFurnaceBlast.class, remap = false)
 
-public abstract class FurnanceBlastFuelMixin {
-	@Shadow
-	public abstract void addFuelEntry(int id, int fuelYield);
+public abstract class FurnanceBlastFuelMixin extends LookupFuelFurnace {
 
 	@Inject(method = "register()V", at = @At("TAIL"))
 	protected void register(CallbackInfo ci) {

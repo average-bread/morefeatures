@@ -20,7 +20,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import java.util.Random;
 
 @Mixin(value = ChunkDecoratorOverworld.class, remap = false)
-public class ChunkDecoratorOverworldMixin {
+public class  ChunkDecoratorOverworldMixin {
 
     @Shadow @Final private PerlinNoise treeDensityNoise;
     @Final private World world;
@@ -54,15 +54,79 @@ public class ChunkDecoratorOverworldMixin {
 		int j4;
 		int k7;
 		int k4;
+		int i14;
 		float oreHeightModifier = (float)rangeY / 128.0F;
 		int treeDensity;
 
 		if (FeaturesBlocks.rainbowFlowerEnabled == 1) {
-			if ((rand.nextInt(2) == 0)) {
+			for(i14 = 0; i14 < 3; ++i14) {
 				blockX = x + rand.nextInt(16) + 8;
 				blockY = minY + rand.nextInt(rangeY);
 				blockZ = z + rand.nextInt(16) + 8;
-				new WorldFeatureFlowers(FeaturesBlocks.rainbow_Flower.id(), 1, false).place(world, rand, blockX, blockY, blockZ);
+				(new WorldFeatureFlowers(FeaturesBlocks.rainbow_Flower.id(), 4, true)).place(this.world, rand, blockX, blockY, blockZ);
+			}
+		}
+
+		if (FeaturesBlocks.newFlowersEnabled == 1){
+			for(i14 = 0; i14 < 3; ++i14) {
+				blockX = x + rand.nextInt(16) + 8;
+				blockY = minY + rand.nextInt(rangeY);
+				blockZ = z + rand.nextInt(16) + 8;
+				(new WorldFeatureFlowers(FeaturesBlocks.white_Flower.id(), 64, true)).place(this.world, rand, blockX, blockY, blockZ);
+			}
+			for(i14 = 0; i14 < 3; ++i14) {
+				blockX = x + rand.nextInt(16) + 8;
+				blockY = minY + rand.nextInt(rangeY);
+				blockZ = z + rand.nextInt(16) + 8;
+				(new WorldFeatureFlowers(FeaturesBlocks.magenta_Flower.id(), 64, true)).place(this.world, rand, blockX, blockY, blockZ);
+			}
+			for(i14 = 0; i14 < 3; ++i14) {
+				blockX = x + rand.nextInt(16) + 8;
+				blockY = minY + rand.nextInt(rangeY);
+				blockZ = z + rand.nextInt(16) + 8;
+				(new WorldFeatureFlowers(FeaturesBlocks.lime_Flower.id(), 64, true)).place(this.world, rand, blockX, blockY, blockZ);
+			}
+			for(i14 = 0; i14 < 3; ++i14) {
+				blockX = x + rand.nextInt(16) + 8;
+				blockY = minY + rand.nextInt(rangeY);
+				blockZ = z + rand.nextInt(16) + 8;
+				(new WorldFeatureFlowers(FeaturesBlocks.gray_Flower.id(), 64, true)).place(this.world, rand, blockX, blockY, blockZ);
+			}
+			for(i14 = 0; i14 < 3; ++i14) {
+				blockX = x + rand.nextInt(16) + 8;
+				blockY = minY + rand.nextInt(rangeY);
+				blockZ = z + rand.nextInt(16) + 8;
+				(new WorldFeatureFlowers(FeaturesBlocks.silver_Flower.id(), 64, true)).place(this.world, rand, blockX, blockY, blockZ);
+			}
+			for(i14 = 0; i14 < 3; ++i14) {
+				blockX = x + rand.nextInt(16) + 8;
+				blockY = minY + rand.nextInt(rangeY);
+				blockZ = z + rand.nextInt(16) + 8;
+				(new WorldFeatureFlowers(FeaturesBlocks.cyan_Flower.id(), 64, true)).place(this.world, rand, blockX, blockY, blockZ);
+			}
+			for(i14 = 0; i14 < 3; ++i14) {
+				blockX = x + rand.nextInt(16) + 8;
+				blockY = minY + rand.nextInt(rangeY);
+				blockZ = z + rand.nextInt(16) + 8;
+				(new WorldFeatureFlowers(FeaturesBlocks.blue_Flower.id(), 64, true)).place(this.world, rand, blockX, blockY, blockZ);
+			}
+			for(i14 = 0; i14 < 3; ++i14) {
+				blockX = x + rand.nextInt(16) + 8;
+				blockY = minY + rand.nextInt(rangeY);
+				blockZ = z + rand.nextInt(16) + 8;
+				(new WorldFeatureFlowers(FeaturesBlocks.brown_Flower.id(), 64, true)).place(this.world, rand, blockX, blockY, blockZ);
+			}
+			for(i14 = 0; i14 < 3; ++i14) {
+				blockX = x + rand.nextInt(16) + 8;
+				blockY = minY + rand.nextInt(rangeY);
+				blockZ = z + rand.nextInt(16) + 8;
+				(new WorldFeatureFlowers(FeaturesBlocks.green_Flower.id(), 64, true)).place(this.world, rand, blockX, blockY, blockZ);
+			}
+			for(i14 = 0; i14 < 3; ++i14) {
+				blockX = x + rand.nextInt(16) + 8;
+				blockY = minY + rand.nextInt(rangeY);
+				blockZ = z + rand.nextInt(16) + 8;
+				(new WorldFeatureFlowers(FeaturesBlocks.black_Flower.id(), 64, true)).place(this.world, rand, blockX, blockY, blockZ);
 			}
 		}
 

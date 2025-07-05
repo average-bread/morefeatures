@@ -311,6 +311,68 @@ public class FeatureModel implements ModelEntrypoint {
 				() -> new BlockModelColoredWorkbench<>(FeaturesBlocks.vanilla_Colored_Workbench, false)
 			);
 		}
+
+		if (FeaturesBlocks.newFlowersEnabled == 1){
+			ModelHelper.setBlockModel(
+				FeaturesBlocks.white_Flower,
+				() -> new BlockModelFlowerStackable<>(FeaturesBlocks.white_Flower,
+					"morefeatures:block/flower_white/")
+			);
+
+			ModelHelper.setBlockModel(
+				FeaturesBlocks.magenta_Flower,
+				() -> new BlockModelFlowerStackable<>(FeaturesBlocks.magenta_Flower,
+					"morefeatures:block/flower_magenta/")
+			);
+
+			ModelHelper.setBlockModel(
+				FeaturesBlocks.lime_Flower,
+				() -> new BlockModelFlowerStackable<>(FeaturesBlocks.lime_Flower,
+					"morefeatures:block/flower_lime/")
+			);
+
+			ModelHelper.setBlockModel(
+				FeaturesBlocks.gray_Flower,
+				() -> new BlockModelFlowerStackable<>(FeaturesBlocks.gray_Flower,
+					"morefeatures:block/flower_gray/")
+			);
+
+			ModelHelper.setBlockModel(
+				FeaturesBlocks.silver_Flower,
+				() -> new BlockModelFlowerStackable<>(FeaturesBlocks.silver_Flower,
+					"morefeatures:block/flower_silver/")
+			);
+
+			ModelHelper.setBlockModel(
+				FeaturesBlocks.cyan_Flower,
+				() -> new BlockModelFlowerStackable<>(FeaturesBlocks.cyan_Flower,
+					"morefeatures:block/flower_cyan/")
+			);
+
+			ModelHelper.setBlockModel(
+				FeaturesBlocks.blue_Flower,
+				() -> new BlockModelFlowerStackable<>(FeaturesBlocks.blue_Flower,
+					"morefeatures:block/flower_blue/")
+			);
+
+			ModelHelper.setBlockModel(
+				FeaturesBlocks.brown_Flower,
+				() -> new BlockModelFlowerStackable<>(FeaturesBlocks.brown_Flower,
+					"morefeatures:block/flower_brown/")
+			);
+
+			ModelHelper.setBlockModel(
+				FeaturesBlocks.green_Flower,
+				() -> new BlockModelFlowerStackable<>(FeaturesBlocks.green_Flower,
+					"morefeatures:block/flower_green/")
+			);
+
+			ModelHelper.setBlockModel(
+				FeaturesBlocks.black_Flower,
+				() -> new BlockModelFlowerStackable<>(FeaturesBlocks.black_Flower,
+					"morefeatures:block/flower_black/")
+			);
+		}
 	}
 
 	@Override
@@ -371,6 +433,78 @@ public class FeatureModel implements ModelEntrypoint {
 					model.icon = TextureRegistry.getTexture(FeaturesItems.marigold_Crown.namespaceID);
 					return model;
 				});
+
+			if (FeaturesBlocks.newFlowersEnabled == 1){
+				ModelHelper.setItemModel(FeaturesItems.daisy_Crown,
+					() -> {
+						ItemModelStandard model = new ItemModelStandard(FeaturesItems.daisy_Crown, MOD_ID);
+						model.icon = TextureRegistry.getTexture(FeaturesItems.daisy_Crown.namespaceID);
+						return model;
+					});
+
+				ModelHelper.setItemModel(FeaturesItems.delphiniums_Crown,
+					() -> {
+						ItemModelStandard model = new ItemModelStandard(FeaturesItems.delphiniums_Crown, MOD_ID);
+						model.icon = TextureRegistry.getTexture(FeaturesItems.delphiniums_Crown.namespaceID);
+						return model;
+					});
+
+				ModelHelper.setItemModel(FeaturesItems.angelica_Crown,
+					() -> {
+						ItemModelStandard model = new ItemModelStandard(FeaturesItems.angelica_Crown, MOD_ID);
+						model.icon = TextureRegistry.getTexture(FeaturesItems.angelica_Crown.namespaceID);
+						return model;
+					});
+
+				ModelHelper.setItemModel(FeaturesItems.allium_Crown,
+					() -> {
+						ItemModelStandard model = new ItemModelStandard(FeaturesItems.allium_Crown, MOD_ID);
+						model.icon = TextureRegistry.getTexture(FeaturesItems.allium_Crown.namespaceID);
+						return model;
+					});
+
+				ModelHelper.setItemModel(FeaturesItems.dustymiller_Crown,
+					() -> {
+						ItemModelStandard model = new ItemModelStandard(FeaturesItems.dustymiller_Crown, MOD_ID);
+						model.icon = TextureRegistry.getTexture(FeaturesItems.dustymiller_Crown.namespaceID);
+						return model;
+					});
+
+				ModelHelper.setItemModel(FeaturesItems.cyanrose_Crown,
+					() -> {
+						ItemModelStandard model = new ItemModelStandard(FeaturesItems.cyanrose_Crown, MOD_ID);
+						model.icon = TextureRegistry.getTexture(FeaturesItems.cyanrose_Crown.namespaceID);
+						return model;
+					});
+
+				ModelHelper.setItemModel(FeaturesItems.bluepoppy_Crown,
+					() -> {
+						ItemModelStandard model = new ItemModelStandard(FeaturesItems.bluepoppy_Crown, MOD_ID);
+						model.icon = TextureRegistry.getTexture(FeaturesItems.bluepoppy_Crown.namespaceID);
+						return model;
+					});
+
+				ModelHelper.setItemModel(FeaturesItems.dahlia_Crown,
+					() -> {
+						ItemModelStandard model = new ItemModelStandard(FeaturesItems.dahlia_Crown, MOD_ID);
+						model.icon = TextureRegistry.getTexture(FeaturesItems.dahlia_Crown.namespaceID);
+						return model;
+					});
+
+				ModelHelper.setItemModel(FeaturesItems.barrelcactus_Crown,
+					() -> {
+						ItemModelStandard model = new ItemModelStandard(FeaturesItems.barrelcactus_Crown, MOD_ID);
+						model.icon = TextureRegistry.getTexture(FeaturesItems.barrelcactus_Crown.namespaceID);
+						return model;
+					});
+
+				ModelHelper.setItemModel(FeaturesItems.blacktulip_Crown,
+					() -> {
+						ItemModelStandard model = new ItemModelStandard(FeaturesItems.blacktulip_Crown, MOD_ID);
+						model.icon = TextureRegistry.getTexture(FeaturesItems.blacktulip_Crown.namespaceID);
+						return model;
+					});
+			}
 		}
 
 		if (FeaturesItems.normalCrownsEnabled == 1){
@@ -784,6 +918,50 @@ public class FeatureModel implements ModelEntrypoint {
 					model.icon = TextureRegistry.getTexture(FeaturesItems.mining_Hammer_Steel.namespaceID);
 					return model;
 				});
+		}
+
+		if (FeaturesItems.glassSwordEnabled == 1){
+			ModelHelper.setItemModel(FeaturesItems.glass_Sword,
+				() -> {
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.glass_Sword, MOD_ID).setFull3D();
+					model.icon = TextureRegistry.getTexture(FeaturesItems.glass_Sword.namespaceID);
+					return model;
+				});
+		}
+
+		if (FeaturesMain.moonmoonmoonOn){
+			if (FeaturesItems.normalCrownsEnabled == 1){
+				ModelHelper.setItemModel(FeaturesItems.moonsteel_Crown,
+					() -> {
+						ItemModelStandard model = new ItemModelStandard(FeaturesItems.moonsteel_Crown, MOD_ID);
+						model.icon = TextureRegistry.getTexture(FeaturesItems.moonsteel_Crown.namespaceID);
+						return model;
+					});
+			}
+			if (FeaturesItems.paxelsEnabled == 1){
+				ModelHelper.setItemModel(FeaturesItems.paxel_Moonsteel,
+					() -> {
+						ItemModelStandard model = new ItemModelStandard(FeaturesItems.paxel_Moonsteel, MOD_ID).setFull3D();
+						model.icon = TextureRegistry.getTexture(FeaturesItems.paxel_Moonsteel.namespaceID);
+						return model;
+					});
+			}
+			if (FeaturesItems.climbPickaxesEnabled == 1){
+				ModelHelper.setItemModel(FeaturesItems.climb_pickaxe_Monnsteel,
+					() -> {
+						ItemModelStandard model = new ItemModelStandard(FeaturesItems.climb_pickaxe_Monnsteel, MOD_ID).setFull3D();
+						model.icon = TextureRegistry.getTexture(FeaturesItems.climb_pickaxe_Monnsteel.namespaceID);
+						return model;
+					});
+			}
+			if (FeaturesItems.miningHammersEnabled == 1){
+				ModelHelper.setItemModel(FeaturesItems.mining_hammer_MoonSteel,
+					() -> {
+						ItemModelStandard model = new ItemModelStandard(FeaturesItems.mining_hammer_MoonSteel, MOD_ID).setFull3D();
+						model.icon = TextureRegistry.getTexture(FeaturesItems.mining_hammer_MoonSteel.namespaceID);
+						return model;
+					});
+			}
 		}
 	}
 

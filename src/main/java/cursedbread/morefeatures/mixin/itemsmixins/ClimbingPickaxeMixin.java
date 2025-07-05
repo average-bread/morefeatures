@@ -1,5 +1,6 @@
 package cursedbread.morefeatures.mixin.itemsmixins;
 
+import cursedbread.morefeatures.FeaturesMain;
 import cursedbread.morefeatures.item.FeaturesItems;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.entity.Entity;
@@ -23,12 +24,22 @@ public abstract class ClimbingPickaxeMixin extends Entity {
 
 	@Unique
 	private boolean isClimbingItem(ItemStack is) {
-		return is != null && (is.getItem().equals(FeaturesItems.climb_Pickaxe_Wood) ||
-							  is.getItem().equals(FeaturesItems.climb_Pickaxe_Stone) ||
-							  is.getItem().equals(FeaturesItems.climb_Pickaxe_Iron) ||
-							  is.getItem().equals(FeaturesItems.climb_Pickaxe_Gold) ||
-							  is.getItem().equals(FeaturesItems.climb_Pickaxe_Diamond) ||
-							  is.getItem().equals(FeaturesItems.climb_Pickaxe_Steel));
+		if (FeaturesMain.moonmoonmoonOn){
+			return is != null && (is.getItem().equals(FeaturesItems.climb_Pickaxe_Wood) ||
+				is.getItem().equals(FeaturesItems.climb_Pickaxe_Stone) ||
+				is.getItem().equals(FeaturesItems.climb_Pickaxe_Iron) ||
+				is.getItem().equals(FeaturesItems.climb_Pickaxe_Gold) ||
+				is.getItem().equals(FeaturesItems.climb_Pickaxe_Diamond) ||
+				is.getItem().equals(FeaturesItems.climb_Pickaxe_Steel) ||
+				is.getItem().equals(FeaturesItems.climb_pickaxe_Monnsteel));
+		} else {
+			return is != null && (is.getItem().equals(FeaturesItems.climb_Pickaxe_Wood) ||
+				is.getItem().equals(FeaturesItems.climb_Pickaxe_Stone) ||
+				is.getItem().equals(FeaturesItems.climb_Pickaxe_Iron) ||
+				is.getItem().equals(FeaturesItems.climb_Pickaxe_Gold) ||
+				is.getItem().equals(FeaturesItems.climb_Pickaxe_Diamond) ||
+				is.getItem().equals(FeaturesItems.climb_Pickaxe_Steel));
+		}
 	}
 
 	@Unique private int ValidClimbingItemSlot(Player p) {

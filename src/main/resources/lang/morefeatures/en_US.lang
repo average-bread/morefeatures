@@ -220,6 +220,8 @@ item.morefeatures.crown.diamond.name=Diamond Crown
 item.morefeatures.crown.diamond.desc=A fancy diamond crown.
 item.morefeatures.crown.steel.name=Steel Crown
 item.morefeatures.crown.steel.desc=A durable steel crown.
+item.morefeatures.crown.moonsteel.name=Moonsteel Crown
+item.morefeatures.crown.moonsteel.desc=A weightless moonsteel crown.
 
 item.morefeatures.helmet.bedrock.name=Bedrock Helmet
 item.morefeatures.helmet.bedrock.desc=An impossibly strong bedrock helmet.
@@ -481,6 +483,8 @@ item.morefeatures.paxel.diamond.name=Diamond Paxel
 item.morefeatures.paxel.diamond.desc=Slay monsters, dig up the dirt, pick some stone or chop some trees with this diamond tool.
 item.morefeatures.paxel.steel.name=Steel Paxel
 item.morefeatures.paxel.steel.desc=Slay monsters, dig up the dirt, pick some stone or chop some trees with this steel tool.
+item.morefeatures.paxel.moonsteel.name=Moonsteel Paxel
+item.morefeatures.paxel.moonsteel.desc=Slay monsters, dig up the dirt, pick some stone or chop some trees with this fortunate moonsteel tool.
 
 item.morefeatures.climbpickaxe.wood.name=Wooden Climbing Pickaxe
 item.morefeatures.climbpickaxe.wood.desc=Pick some stone and climb walls with this wooden tool.
@@ -494,6 +498,8 @@ item.morefeatures.climbpickaxe.diamond.name=Diamond Climbing Pickaxe
 item.morefeatures.climbpickaxe.diamond.desc=Pick some stone and climb walls with this diamond tool.
 item.morefeatures.climbpickaxe.steel.name=Steel Climbing Pickaxe
 item.morefeatures.climbpickaxe.steel.desc=Pick some stone and climb walls with this steel tool.
+item.morefeatures.climbpickaxe.moonsteel.name=Moonsteel Climbing Pickaxe
+item.morefeatures.climbpickaxe.moonsteel.desc=Pick some stone and climb walls with this fortunate moonsteel tool.
 
 item.morefeatures.mininghammer.wood.name=Wooden Mining Hammer
 item.morefeatures.mininghammer.wood.desc=Pick a big amount of stone with this wooden tool.
@@ -507,6 +513,8 @@ item.morefeatures.mininghammer.diamond.name=Diamond Mining Hammer
 item.morefeatures.mininghammer.diamond.desc=Pick a big amount of stone with this diamond tool.
 item.morefeatures.mininghammer.steel.name=Steel Mining Hammer
 item.morefeatures.mininghammer.steel.desc=Pick a big amount of stone with this steel tool.
+item.morefeatures.mininghammer.moonsteel.name=Moonsteel Mining Hammer
+item.morefeatures.mininghammer.moonsteel.desc=Pick a big amount of stone with this fortunate moonsteel tool.
 
 tile.morefeatures.superore.coal.stone.name=Super Stone Coal Ore
 tile.morefeatures.superore.coal.stone.desc=A CHONK of coal embedded in stone.
@@ -609,3 +617,50 @@ item.morefeatures.dye.dryblood.desc=Could be used to color certain blocks dry bl
 tile.morefeatures.dryblood.planks.name=Dry Blood Planks
 tile.morefeatures.dryblood.planks.desc=Wooden planks, stained dry blood.
 
+tile.morefeatures.ocean.stone.name=Ocean Stone
+tile.morefeatures.ocean.stone.desc=A block of solid ocean stone.
+
+item.morefeatures.tool.sword.glass.name=Glass Sword
+item.morefeatures.tool.sword.glass.desc=Slay pesky monsters with this insanely sharp but fragile glass blade.
+
+tile.morefeatures.flower.white.name=Daisy
+tile.morefeatures.flower.white.desc=A beautiful white flower.
+tile.morefeatures.flower.magenta.name=Delphiniums
+tile.morefeatures.flower.magenta.desc=A beautiful magenta flower.
+tile.morefeatures.flower.lime.name=Angelica
+tile.morefeatures.flower.lime.desc=A beautiful lime flower.
+tile.morefeatures.flower.gray.name=Allium
+tile.morefeatures.flower.gray.desc=A beautiful gray flower.
+tile.morefeatures.flower.silver.name=Dusty Miller
+tile.morefeatures.flower.silver.desc=A beautiful light gray flower.
+tile.morefeatures.flower.cyan.name=Cyan Rose
+tile.morefeatures.flower.cyan.desc=A beautiful cyan flower.
+tile.morefeatures.flower.blue.name=Blue Poppy
+tile.morefeatures.flower.blue.desc=A beautiful blue flower.
+tile.morefeatures.flower.brown.name=Dahlia
+tile.morefeatures.flower.brown.desc=A beautiful brown flower.
+tile.morefeatures.flower.green.name=Barrel Cactus
+tile.morefeatures.flower.green.desc=A beautiful green...flower?
+tile.morefeatures.flower.black.name=Black Tulip
+tile.morefeatures.flower.black.desc=A beautiful black flower.
+
+item.morefeatures.crown.daisy.name=Daisy Crown
+item.morefeatures.crown.daisy.desc=Flower crown made with daisy.
+item.morefeatures.crown.delphiniums.name=Delphiniums Crown
+item.morefeatures.crown.delphiniums.desc=Flower crown made with delphiniums.
+item.morefeatures.crown.angelica.name=Angelica Crown
+item.morefeatures.crown.angelica.desc=Flower crown made with angelica.
+item.morefeatures.crown.allium.name=Allium Crown
+item.morefeatures.crown.allium.desc=Flower crown made with allium.
+item.morefeatures.crown.dustymiller.name=Dusty Miller Crown
+item.morefeatures.crown.dustymiller.desc=Flower crown made with dusty miller.
+item.morefeatures.crown.cyanrose.name=Cyan Rose Crown
+item.morefeatures.crown.cyanrose.desc=Flower crown made with cyan rose.
+item.morefeatures.crown.bluepoppy.name=Blue Poppy Crown
+item.morefeatures.crown.bluepoppy.desc=Flower crown made with blue poppy.
+item.morefeatures.crown.dahlia.name=Dahlia Crown
+item.morefeatures.crown.dahlia.desc=Flower crown made with dahlia.
+item.morefeatures.crown.barrelcactus.name=Barrel Cactus Crown
+item.morefeatures.crown.barrelcactus.desc=Flower crown made with barrel cactus.
+item.morefeatures.crown.blacktulip.name=Black Tulip Crown
+item.morefeatures.crown.blacktulip.desc=Flower crown made with black tulip.
