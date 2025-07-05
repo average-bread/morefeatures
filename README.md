@@ -72,3 +72,9 @@ Currently, adds:
 * Netherrack gravel that can be obtained by crushing cobbled netherrack with a reinforced piston. Can be trommeled for resources
 
 * Colored workbenches
+
+* 10 new flowers (with flower crowns)
+
+* Glass sword
+
+* MoonMoonMoon support
