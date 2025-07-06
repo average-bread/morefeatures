@@ -3,6 +3,7 @@
   "minVersion": "0.8",
   "package": "cursedbread.morefeatures.mixin",
   "compatibilityLevel": "JAVA_8",
+  "plugin": "cursedbread.morefeatures.FeatureMixinPlugin",
   "mixins": [
     "blockmixins.NetherrackCrushingMixin",
     "blockmixins.superores.OreToSuperoreCoal",
@@ -32,6 +33,7 @@
     "itemsmixins.WorkbenchFix",
     "itemsmixins.fuels.FurnanceBlastFuelMixin",
     "itemsmixins.fuels.FurnanceFuelMixin",
+    "modsupport.MoonGravityMixin",
     "modsupport.MoonMoonMoonCanBeFortunedMixin"
   ],
   "client": [

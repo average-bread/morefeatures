@@ -80,6 +80,8 @@ repositories {
 		metadataSources { artifact() }
 	}
 
+	maven { url = "https://maven.bawnorton.com/releases" }
+
 }
 
 dependencies {
@@ -94,6 +96,8 @@ dependencies {
 
 	modImplementation ("useless:moonsteel:1.1.0-7.3_03")
 	implementation "useless:btwaila:1.2.1-7.3_01"
+
+	include(implementation(annotationProcessor("com.github.bawnorton.mixinsquared:mixinsquared-fabric:0.3.3")))
 
 	implementation "org.slf4j:slf4j-api:1.8.0-beta4"
 	implementation "org.apache.logging.log4j:log4j-slf4j18-impl:2.16.0"

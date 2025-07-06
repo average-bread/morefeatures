@@ -15,7 +15,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(value = Player.class, remap = false)
-public abstract class EntityPlayerMixin extends Mob {
+public abstract class EntityPlayerMixin extends Mob{
 	@Shadow
 	protected float baseSpeed;
 
