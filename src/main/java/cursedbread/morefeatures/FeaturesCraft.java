@@ -12,6 +12,8 @@ import net.minecraft.core.data.registry.recipe.entry.*;
 import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.item.Items;
+import silveon22.deep.block.DEEPBlocks;
+import silveon22.deep.item.DEEPItems;
 import turniplabs.halplibe.helper.RecipeBuilder;
 import turniplabs.halplibe.util.RecipeEntrypoint;
 import useless.moonsteel.MoonSteelBlocks;
@@ -941,6 +943,82 @@ public class FeaturesCraft implements RecipeEntrypoint {
 			RecipeBuilder.Shapeless(MOD_ID)
 				.addInput(FeaturesBlocks.black_Flower)
 				.create("blackflowertodye", new ItemStack(Items.DYE, 2, 0));
+		}
+
+		if (FeaturesMain.deepOn){
+			RecipeBuilder.Shaped(MOD_ID)
+				.setShape("APH", " W ", " S ")
+				.addInput('S', Items.STICK)
+				.addInput('A', DEEPItems.amethystAxe)
+				.addInput('P', DEEPItems.amethystPickaxe)
+				.addInput('H', DEEPItems.amethystShovel)
+				.addInput('W', DEEPItems.amethystSword)
+				.create("paxelcraft", new ItemStack(FeaturesItems.paxel_Amethyst));
+			RecipeBuilder.Shaped(MOD_ID)
+				.setShape("APH", " W ", " S ")
+				.addInput('S', Items.STICK)
+				.addInput('A', DEEPItems.silverAxe)
+				.addInput('P', DEEPItems.silverPickaxe)
+				.addInput('H', DEEPItems.silverShovel)
+				.addInput('W', DEEPItems.silverSword)
+				.create("paxelcraft", new ItemStack(FeaturesItems.paxel_Silver));
+			RecipeBuilder.Shaped(MOD_ID)
+				.setShape("APH", " W ", " S ")
+				.addInput('S', Items.STICK)
+				.addInput('A', DEEPItems.leadAxe)
+				.addInput('P', DEEPItems.leadPickaxe)
+				.addInput('H', DEEPItems.leadShovel)
+				.addInput('W', DEEPItems.leadSword)
+				.create("paxelcraft", new ItemStack(FeaturesItems.paxel_Lead));
+
+			RecipeBuilder.Shaped(MOD_ID)
+				.setShape("MM ", "MSH", " S ")
+				.addInput('S', Items.STICK)
+				.addInput('M', DEEPItems.amethyst)
+				.addInput('H', DEEPBlocks.amethystBlock)
+				.create("climbpickcraft", new ItemStack(FeaturesItems.climb_pickaxe_Amethyst));
+			RecipeBuilder.Shaped(MOD_ID)
+				.setShape("MM ", "MSH", " S ")
+				.addInput('S', Items.STICK)
+				.addInput('M', DEEPItems.ingotSilver)
+				.addInput('H', DEEPBlocks.silverBlock)
+				.create("climbpickcraft", new ItemStack(FeaturesItems.climb_pickaxe_Silver));
+			RecipeBuilder.Shaped(MOD_ID)
+				.setShape("MM ", "MSH", " S ")
+				.addInput('S', Items.STICK)
+				.addInput('M', DEEPItems.ingotLead)
+				.addInput('H', DEEPBlocks.leadBlock)
+				.create("climbpickcraft", new ItemStack(FeaturesItems.climb_pickaxe_Lead));
+
+			RecipeBuilder.Shaped(MOD_ID)
+				.setShape("HMH", "MSM", " S ")
+				.addInput('S', Items.STICK)
+				.addInput('M', DEEPItems.amethyst)
+				.addInput('H', DEEPBlocks.amethystBlock)
+				.create("hammercraft", new ItemStack(FeaturesItems.mining_hammer_Amethyst));
+			RecipeBuilder.Shaped(MOD_ID)
+				.setShape("HMH", "MSM", " S ")
+				.addInput('S', Items.STICK)
+				.addInput('M', DEEPItems.ingotSilver)
+				.addInput('H', DEEPBlocks.silverBlock)
+				.create("hammercraft", new ItemStack(FeaturesItems.mining_hammer_Silver));
+			RecipeBuilder.Shaped(MOD_ID)
+				.setShape("HMH", "MSM", " S ")
+				.addInput('S', Items.STICK)
+				.addInput('M', DEEPItems.ingotLead)
+				.addInput('H', DEEPBlocks.leadBlock)
+				.create("hammercraft", new ItemStack(FeaturesItems.mining_hammer_Lead));
+
+			RecipeBuilder.Shaped(MOD_ID)
+				.setShape("HCH", "HHH")
+				.addInput('H', DEEPItems.amethyst)
+				.addInput('C', Items.CLOTH)
+				.create("crown", new ItemStack(FeaturesItems.amethyst_Crown, 1));
+			RecipeBuilder.Shaped(MOD_ID)
+				.setShape("HCH", "HHH")
+				.addInput('H', DEEPItems.ingotSilver)
+				.addInput('C', Items.CLOTH)
+				.create("crown", new ItemStack(FeaturesItems.silver_Crown, 1));
 		}
 	}
 }

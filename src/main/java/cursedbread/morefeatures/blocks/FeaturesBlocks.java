@@ -1,11 +1,13 @@
 package cursedbread.morefeatures.blocks;
 
+import cursedbread.morefeatures.FeaturesMain;
 import cursedbread.morefeatures.blocks.colored.workbench.BlockLogicColoredWorkbench;
 import cursedbread.morefeatures.blocks.flux.BlockLogicCropsFlux;
 import cursedbread.morefeatures.blocks.colored.glass.BlockLogicColoredGlass;
 import cursedbread.morefeatures.blocks.colored.glass.BlockLogicColoredGlassTrapdoor;
 import cursedbread.morefeatures.blocks.colored.glowstone.BlockLogicColoredGlowstone;
 import cursedbread.morefeatures.blocks.ores.*;
+import cursedbread.morefeatures.blocks.ores.deep.*;
 import cursedbread.morefeatures.blocks.other.BlockLogicBurnedLog;
 import cursedbread.morefeatures.blocks.other.BlockLogicGilder;
 import cursedbread.morefeatures.blocks.other.BlockLogicHam;
@@ -134,6 +136,35 @@ public class FeaturesBlocks {
 
 	public static Block<?> super_Nether_Coal_Ore;
 
+	public static Block<?> super_Rhodonite_Ore;
+
+	public static Block<?> super_Amethyst_Stone_Ore;
+	public static Block<?> super_Amethyst_Basalt_Ore;
+	public static Block<?> super_Amethyst_Limestone_Ore;
+	public static Block<?> super_Amethyst_Granite_Ore;
+	public static Block<?> super_Amethyst_Permafrost_Ore;
+
+	public static Block<?> super_Silver_Stone_Ore;
+	public static Block<?> super_Silver_Basalt_Ore;
+	public static Block<?> super_Silver_Limestone_Ore;
+	public static Block<?> super_Silver_Granite_Ore;
+	public static Block<?> super_Silver_Permafrost_Ore;
+	public static Block<?> super_Silver_Netherrack_Ore;
+
+	public static Block<?> super_Uranium_Stone_Ore;
+	public static Block<?> super_Uranium_Basalt_Ore;
+	public static Block<?> super_Uranium_Limestone_Ore;
+	public static Block<?> super_Uranium_Granite_Ore;
+	public static Block<?> super_Uranium_Permafrost_Ore;
+
+	public static Block<?> super_Lead_Stone_Ore;
+	public static Block<?> super_Lead_Basalt_Ore;
+	public static Block<?> super_Lead_Limestone_Ore;
+	public static Block<?> super_Lead_Granite_Ore;
+	public static Block<?> super_Lead_Permafrost_Ore;
+
+	public static Block<?> super_Topaz_Ore;
+
 	public static int netherGravelEnabled;
 	public static Block<?> netherrack_Gravel;
 
@@ -198,6 +229,37 @@ public class FeaturesBlocks {
 		miningLevels.put(super_Diamond_Permafrost_Ore, 2);
 
 		miningLevels.put(super_Nether_Coal_Ore, 2);
+
+		if (FeaturesMain.deepOn){
+			miningLevels.put(super_Rhodonite_Ore, 2);
+
+			miningLevels.put(super_Amethyst_Stone_Ore, 2);
+			miningLevels.put(super_Amethyst_Basalt_Ore, 2);
+			miningLevels.put(super_Amethyst_Limestone_Ore, 2);
+			miningLevels.put(super_Amethyst_Granite_Ore, 2);
+			miningLevels.put(super_Amethyst_Permafrost_Ore, 2);
+
+			miningLevels.put(super_Silver_Stone_Ore, 2);
+			miningLevels.put(super_Silver_Basalt_Ore, 2);
+			miningLevels.put(super_Silver_Limestone_Ore, 2);
+			miningLevels.put(super_Silver_Granite_Ore, 2);
+			miningLevels.put(super_Silver_Permafrost_Ore, 2);
+			miningLevels.put(super_Silver_Netherrack_Ore, 2);
+
+			miningLevels.put(super_Uranium_Stone_Ore, 2);
+			miningLevels.put(super_Uranium_Basalt_Ore, 2);
+			miningLevels.put(super_Uranium_Limestone_Ore, 2);
+			miningLevels.put(super_Uranium_Granite_Ore, 2);
+			miningLevels.put(super_Uranium_Permafrost_Ore, 2);
+
+			miningLevels.put(super_Lead_Stone_Ore, 1);
+			miningLevels.put(super_Lead_Basalt_Ore, 1);
+			miningLevels.put(super_Lead_Limestone_Ore, 1);
+			miningLevels.put(super_Lead_Granite_Ore, 1);
+			miningLevels.put(super_Lead_Permafrost_Ore, 1);
+
+			miningLevels.put(super_Topaz_Ore, 2);
+		}
 	}
 
 	public void initilizeBlocks() {
@@ -500,6 +562,133 @@ public class FeaturesBlocks {
 				.setTags(BlockTags.PLANTABLE_IN_JAR)
 				.build("flower.black", blockId++,
 					b -> (BlockLogicFlowerStackable) new BlockLogicFlowerStackable(b).setKilledByWeather().setBonemealable());
+		}
+
+		if (FeaturesMain.deepOn){
+			if (superoresEnabled == 1){
+				super_Rhodonite_Ore = fullBlock
+					.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+					.setHardness(3f)
+					.setLuminance(15)
+					.build("superore.rhodonite.netherrack", blockId++, b -> new BlockLogicSuperOreRhodonite(b))
+					.withBlastResistance(5.0F);
+
+				super_Amethyst_Stone_Ore = fullBlock
+					.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+					.setHardness(3f)
+					.build("superore.amethyst.stone", blockId++, b -> new BlockLogicSuperOreAmethyst(b))
+					.withBlastResistance(5.0F);
+				super_Amethyst_Basalt_Ore = fullBlock
+					.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+					.setHardness(3f)
+					.build("superore.amethyst.basalt", blockId++, b -> new BlockLogicSuperOreAmethyst(b))
+					.withBlastResistance(5.0F);
+				super_Amethyst_Limestone_Ore = fullBlock
+					.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+					.setHardness(3f)
+					.build("superore.amethyst.limestone", blockId++, b -> new BlockLogicSuperOreAmethyst(b))
+					.withBlastResistance(5.0F);
+				super_Amethyst_Granite_Ore = fullBlock
+					.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+					.setHardness(3f)
+					.build("superore.amethyst.granite", blockId++, b -> new BlockLogicSuperOreAmethyst(b))
+					.withBlastResistance(5.0F);
+				super_Amethyst_Permafrost_Ore = fullBlock
+					.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+					.setHardness(3f)
+					.build("superore.amethyst.permafrost", blockId++, b -> new BlockLogicSuperOreAmethyst(b))
+					.withBlastResistance(5.0F);
+
+				super_Silver_Stone_Ore = fullBlock
+					.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+					.setHardness(3f)
+					.build("superore.silver.stone", blockId++, b -> new BlockLogicSuperOreSilver(b))
+					.withBlastResistance(5.0F);
+				super_Silver_Basalt_Ore = fullBlock
+					.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+					.setHardness(3f)
+					.build("superore.silver.basalt", blockId++, b -> new BlockLogicSuperOreSilver(b))
+					.withBlastResistance(5.0F);
+				super_Silver_Limestone_Ore = fullBlock
+					.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+					.setHardness(3f)
+					.build("superore.silver.limestone", blockId++, b -> new BlockLogicSuperOreSilver(b))
+					.withBlastResistance(5.0F);
+				super_Silver_Granite_Ore = fullBlock
+					.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+					.setHardness(3f)
+					.build("superore.silver.granite", blockId++, b -> new BlockLogicSuperOreSilver(b))
+					.withBlastResistance(5.0F);
+				super_Silver_Permafrost_Ore = fullBlock
+					.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+					.setHardness(3f)
+					.build("superore.silver.permafrost", blockId++, b -> new BlockLogicSuperOreSilver(b))
+					.withBlastResistance(5.0F);
+				super_Silver_Netherrack_Ore = fullBlock
+					.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+					.setHardness(3f)
+					.build("superore.silver.netherrack", blockId++, b -> new BlockLogicSuperOreSilver(b))
+					.withBlastResistance(5.0F);
+
+				super_Uranium_Stone_Ore = fullBlock
+					.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+					.setHardness(3f)
+					.build("superore.uranium.stone", blockId++, b -> new BlockLogicSuperOreUranium(b))
+					.withBlastResistance(5.0F);
+				super_Uranium_Basalt_Ore = fullBlock
+					.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+					.setHardness(3f)
+					.build("superore.uranium.basalt", blockId++, b -> new BlockLogicSuperOreUranium(b))
+					.withBlastResistance(5.0F);
+				super_Uranium_Limestone_Ore = fullBlock
+					.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+					.setHardness(3f)
+					.build("superore.uranium.limestone", blockId++, b -> new BlockLogicSuperOreUranium(b))
+					.withBlastResistance(5.0F);
+				super_Uranium_Granite_Ore = fullBlock
+					.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+					.setHardness(3f)
+					.build("superore.uranium.granite", blockId++, b -> new BlockLogicSuperOreUranium(b))
+					.withBlastResistance(5.0F);
+				super_Uranium_Permafrost_Ore = fullBlock
+					.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+					.setHardness(3f)
+					.build("superore.uranium.permafrost", blockId++, b -> new BlockLogicSuperOreUranium(b))
+					.withBlastResistance(5.0F);
+
+				super_Lead_Stone_Ore = fullBlock
+					.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+					.setHardness(3f)
+					.build("superore.lead.stone", blockId++, b -> new BlockLogicSuperOreLead(b))
+					.withBlastResistance(5.0F);
+				super_Lead_Basalt_Ore = fullBlock
+					.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+					.setHardness(3f)
+					.build("superore.lead.basalt", blockId++, b -> new BlockLogicSuperOreLead(b))
+					.withBlastResistance(5.0F);
+				super_Lead_Limestone_Ore = fullBlock
+					.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+					.setHardness(3f)
+					.build("superore.lead.limestone", blockId++, b -> new BlockLogicSuperOreLead(b))
+					.withBlastResistance(5.0F);
+				super_Lead_Granite_Ore = fullBlock
+					.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+					.setHardness(3f)
+					.build("superore.lead.granite", blockId++, b -> new BlockLogicSuperOreLead(b))
+					.withBlastResistance(5.0F);
+				super_Lead_Permafrost_Ore = fullBlock
+					.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+					.setHardness(3f)
+					.build("superore.lead.permafrost", blockId++, b -> new BlockLogicSuperOreLead(b))
+					.withBlastResistance(5.0F);
+
+				super_Topaz_Ore = fullBlock
+					.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+					.setHardness(3f)
+					.setLuminance(6)
+					.build("superore.topaz.netherrack", blockId++, b -> new BlockLogicSuperOreTopaz(b))
+					.withBlastResistance(5.0F);
+			}
 		}
 
 		initializeBlockDetails();

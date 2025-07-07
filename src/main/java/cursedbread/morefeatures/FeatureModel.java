@@ -373,6 +373,139 @@ public class FeatureModel implements ModelEntrypoint {
 					"morefeatures:block/flower_black/")
 			);
 		}
+
+		if (FeaturesMain.deepOn){
+			if (FeaturesBlocks.superoresEnabled == 1){
+				ModelHelper.setBlockModel(
+					FeaturesBlocks.super_Rhodonite_Ore,
+					() -> new BlockModelStandard<>(FeaturesBlocks.super_Rhodonite_Ore)
+						.setTex(0, "morefeatures:block/ores/deep/rhodonite/netherrack", Side.sides)
+						.setTex(1, "morefeatures:block/ores/deep/rhodonite/overlay", Side.sides)
+				);
+
+				ModelHelper.setBlockModel(
+					FeaturesBlocks.super_Amethyst_Stone_Ore,
+					() -> new BlockModelStandard<>(FeaturesBlocks.super_Amethyst_Stone_Ore)
+						.setTex(0, "morefeatures:block/ores/deep/amethyst/stone", Side.sides)
+				);
+				ModelHelper.setBlockModel(
+					FeaturesBlocks.super_Amethyst_Basalt_Ore,
+					() -> new BlockModelStandard<>(FeaturesBlocks.super_Amethyst_Basalt_Ore)
+						.setTex(0, "morefeatures:block/ores/deep/amethyst/basalt", Side.sides)
+				);
+				ModelHelper.setBlockModel(
+					FeaturesBlocks.super_Amethyst_Limestone_Ore,
+					() -> new BlockModelStandard<>(FeaturesBlocks.super_Amethyst_Limestone_Ore)
+						.setTex(0, "morefeatures:block/ores/deep/amethyst/limestone", Side.sides)
+				);
+				ModelHelper.setBlockModel(
+					FeaturesBlocks.super_Amethyst_Granite_Ore,
+					() -> new BlockModelStandard<>(FeaturesBlocks.super_Amethyst_Granite_Ore)
+						.setTex(0, "morefeatures:block/ores/deep/amethyst/granite", Side.sides)
+				);
+				ModelHelper.setBlockModel(
+					FeaturesBlocks.super_Amethyst_Permafrost_Ore,
+					() -> new BlockModelStandard<>(FeaturesBlocks.super_Amethyst_Permafrost_Ore)
+						.setTex(0, "morefeatures:block/ores/deep/amethyst/permafrost", Side.sides)
+				);
+
+				ModelHelper.setBlockModel(
+					FeaturesBlocks.super_Silver_Stone_Ore,
+					() -> new BlockModelStandard<>(FeaturesBlocks.super_Silver_Stone_Ore)
+						.setTex(0, "morefeatures:block/ores/deep/silver/stone", Side.sides)
+				);
+				ModelHelper.setBlockModel(
+					FeaturesBlocks.super_Silver_Basalt_Ore,
+					() -> new BlockModelStandard<>(FeaturesBlocks.super_Silver_Basalt_Ore)
+						.setTex(0, "morefeatures:block/ores/deep/silver/basalt", Side.sides)
+				);
+				ModelHelper.setBlockModel(
+					FeaturesBlocks.super_Silver_Limestone_Ore,
+					() -> new BlockModelStandard<>(FeaturesBlocks.super_Silver_Limestone_Ore)
+						.setTex(0, "morefeatures:block/ores/deep/silver/limestone", Side.sides)
+				);
+				ModelHelper.setBlockModel(
+					FeaturesBlocks.super_Silver_Granite_Ore,
+					() -> new BlockModelStandard<>(FeaturesBlocks.super_Silver_Granite_Ore)
+						.setTex(0, "morefeatures:block/ores/deep/silver/granite", Side.sides)
+				);
+				ModelHelper.setBlockModel(
+					FeaturesBlocks.super_Silver_Permafrost_Ore,
+					() -> new BlockModelStandard<>(FeaturesBlocks.super_Silver_Permafrost_Ore)
+						.setTex(0, "morefeatures:block/ores/deep/silver/permafrost", Side.sides)
+				);
+				ModelHelper.setBlockModel(
+					FeaturesBlocks.super_Silver_Netherrack_Ore,
+					() -> new BlockModelStandard<>(FeaturesBlocks.super_Silver_Netherrack_Ore)
+						.setTex(0, "morefeatures:block/ores/deep/silver/netherrack", Side.sides)
+						.setTex(1, "morefeatures:block/ores/deep/silver/overlay", Side.sides)
+				);
+
+				ModelHelper.setBlockModel(
+					FeaturesBlocks.super_Uranium_Stone_Ore,
+					() -> new BlockModelStandard<>(FeaturesBlocks.super_Amethyst_Stone_Ore)
+						.setTex(0, "morefeatures:block/ores/deep/uranium/stone", Side.sides)
+						.setTex(1, "morefeatures:block/ores/deep/uranium/overlay", Side.sides)
+				);
+				ModelHelper.setBlockModel(
+					FeaturesBlocks.super_Uranium_Basalt_Ore,
+					() -> new BlockModelStandard<>(FeaturesBlocks.super_Uranium_Basalt_Ore)
+						.setTex(0, "morefeatures:block/ores/deep/uranium/basalt", Side.sides)
+						.setTex(1, "morefeatures:block/ores/deep/uranium/overlay", Side.sides)
+				);
+				ModelHelper.setBlockModel(
+					FeaturesBlocks.super_Uranium_Limestone_Ore,
+					() -> new BlockModelStandard<>(FeaturesBlocks.super_Uranium_Limestone_Ore)
+						.setTex(0, "morefeatures:block/ores/deep/uranium/limestone", Side.sides)
+						.setTex(1, "morefeatures:block/ores/deep/uranium/overlay", Side.sides)
+				);
+				ModelHelper.setBlockModel(
+					FeaturesBlocks.super_Uranium_Granite_Ore,
+					() -> new BlockModelStandard<>(FeaturesBlocks.super_Uranium_Granite_Ore)
+						.setTex(0, "morefeatures:block/ores/deep/uranium/granite", Side.sides)
+						.setTex(1, "morefeatures:block/ores/deep/uranium/overlay", Side.sides)
+				);
+				ModelHelper.setBlockModel(
+					FeaturesBlocks.super_Uranium_Permafrost_Ore,
+					() -> new BlockModelStandard<>(FeaturesBlocks.super_Uranium_Permafrost_Ore)
+						.setTex(0, "morefeatures:block/ores/deep/uranium/permafrost", Side.sides)
+						.setTex(1, "morefeatures:block/ores/deep/uranium/overlay", Side.sides)
+				);
+
+				ModelHelper.setBlockModel(
+					FeaturesBlocks.super_Lead_Stone_Ore,
+					() -> new BlockModelStandard<>(FeaturesBlocks.super_Lead_Stone_Ore)
+						.setTex(0, "morefeatures:block/ores/deep/lead/stone", Side.sides)
+				);
+				ModelHelper.setBlockModel(
+					FeaturesBlocks.super_Lead_Basalt_Ore,
+					() -> new BlockModelStandard<>(FeaturesBlocks.super_Lead_Basalt_Ore)
+						.setTex(0, "morefeatures:block/ores/deep/lead/basalt", Side.sides)
+				);
+				ModelHelper.setBlockModel(
+					FeaturesBlocks.super_Lead_Limestone_Ore,
+					() -> new BlockModelStandard<>(FeaturesBlocks.super_Lead_Limestone_Ore)
+						.setTex(0, "morefeatures:block/ores/deep/lead/limestone", Side.sides)
+				);
+				ModelHelper.setBlockModel(
+					FeaturesBlocks.super_Lead_Granite_Ore,
+					() -> new BlockModelStandard<>(FeaturesBlocks.super_Lead_Granite_Ore)
+						.setTex(0, "morefeatures:block/ores/deep/lead/granite", Side.sides)
+				);
+				ModelHelper.setBlockModel(
+					FeaturesBlocks.super_Lead_Permafrost_Ore,
+					() -> new BlockModelStandard<>(FeaturesBlocks.super_Lead_Permafrost_Ore)
+						.setTex(0, "morefeatures:block/ores/deep/lead/permafrost", Side.sides)
+				);
+
+				ModelHelper.setBlockModel(
+					FeaturesBlocks.super_Topaz_Ore,
+					() -> new BlockModelStandard<>(FeaturesBlocks.super_Topaz_Ore)
+						.setTex(0, "morefeatures:block/ores/deep/topaz/netherrack", Side.sides)
+						.setTex(1, "morefeatures:block/ores/deep/topaz/overlay", Side.sides)
+				);
+			}
+		}
 	}
 
 	@Override
@@ -959,6 +1092,83 @@ public class FeatureModel implements ModelEntrypoint {
 					() -> {
 						ItemModelStandard model = new ItemModelStandard(FeaturesItems.mining_hammer_MoonSteel, MOD_ID).setFull3D();
 						model.icon = TextureRegistry.getTexture(FeaturesItems.mining_hammer_MoonSteel.namespaceID);
+						return model;
+					});
+			}
+		}
+
+		if (FeaturesMain.deepOn){
+			if (FeaturesItems.normalCrownsEnabled == 1){
+				ModelHelper.setItemModel(FeaturesItems.amethyst_Crown,
+					() -> {
+						ItemModelStandard model = new ItemModelStandard(FeaturesItems.amethyst_Crown, MOD_ID);
+						model.icon = TextureRegistry.getTexture(FeaturesItems.amethyst_Crown.namespaceID);
+						return model;
+					});
+				ModelHelper.setItemModel(FeaturesItems.silver_Crown,
+					() -> {
+						ItemModelStandard model = new ItemModelStandard(FeaturesItems.silver_Crown, MOD_ID);
+						model.icon = TextureRegistry.getTexture(FeaturesItems.silver_Crown.namespaceID);
+						return model;
+					});
+			}
+			if (FeaturesItems.paxelsEnabled == 1){
+				ModelHelper.setItemModel(FeaturesItems.paxel_Amethyst,
+					() -> {
+						ItemModelStandard model = new ItemModelStandard(FeaturesItems.paxel_Amethyst, MOD_ID).setFull3D();
+						model.icon = TextureRegistry.getTexture(FeaturesItems.paxel_Amethyst.namespaceID);
+						return model;
+					});
+				ModelHelper.setItemModel(FeaturesItems.paxel_Silver,
+					() -> {
+						ItemModelStandard model = new ItemModelStandard(FeaturesItems.paxel_Silver, MOD_ID).setFull3D();
+						model.icon = TextureRegistry.getTexture(FeaturesItems.paxel_Silver.namespaceID);
+						return model;
+					});
+				ModelHelper.setItemModel(FeaturesItems.paxel_Lead,
+					() -> {
+						ItemModelStandard model = new ItemModelStandard(FeaturesItems.paxel_Lead, MOD_ID).setFull3D();
+						model.icon = TextureRegistry.getTexture(FeaturesItems.paxel_Lead.namespaceID);
+						return model;
+					});
+			}
+			if (FeaturesItems.climbPickaxesEnabled == 1){
+				ModelHelper.setItemModel(FeaturesItems.climb_pickaxe_Amethyst,
+					() -> {
+						ItemModelStandard model = new ItemModelStandard(FeaturesItems.climb_pickaxe_Amethyst, MOD_ID).setFull3D();
+						model.icon = TextureRegistry.getTexture(FeaturesItems.climb_pickaxe_Amethyst.namespaceID);
+						return model;
+					});
+				ModelHelper.setItemModel(FeaturesItems.climb_pickaxe_Silver,
+					() -> {
+						ItemModelStandard model = new ItemModelStandard(FeaturesItems.climb_pickaxe_Silver, MOD_ID).setFull3D();
+						model.icon = TextureRegistry.getTexture(FeaturesItems.climb_pickaxe_Silver.namespaceID);
+						return model;
+					});
+				ModelHelper.setItemModel(FeaturesItems.climb_pickaxe_Lead,
+					() -> {
+						ItemModelStandard model = new ItemModelStandard(FeaturesItems.climb_pickaxe_Lead, MOD_ID).setFull3D();
+						model.icon = TextureRegistry.getTexture(FeaturesItems.climb_pickaxe_Lead.namespaceID);
+						return model;
+					});
+			}
+			if (FeaturesItems.miningHammersEnabled == 1){
+				ModelHelper.setItemModel(FeaturesItems.mining_hammer_Amethyst,
+					() -> {
+						ItemModelStandard model = new ItemModelStandard(FeaturesItems.mining_hammer_Amethyst, MOD_ID).setFull3D();
+						model.icon = TextureRegistry.getTexture(FeaturesItems.mining_hammer_Amethyst.namespaceID);
+						return model;
+					});
+				ModelHelper.setItemModel(FeaturesItems.mining_hammer_Silver,
+					() -> {
+						ItemModelStandard model = new ItemModelStandard(FeaturesItems.mining_hammer_Silver, MOD_ID).setFull3D();
+						model.icon = TextureRegistry.getTexture(FeaturesItems.mining_hammer_Silver.namespaceID);
+						return model;
+					});
+				ModelHelper.setItemModel(FeaturesItems.mining_hammer_Lead,
+					() -> {
+						ItemModelStandard model = new ItemModelStandard(FeaturesItems.mining_hammer_Lead, MOD_ID).setFull3D();
+						model.icon = TextureRegistry.getTexture(FeaturesItems.mining_hammer_Lead.namespaceID);
 						return model;
 					});
 			}

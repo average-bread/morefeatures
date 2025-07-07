@@ -220,8 +220,13 @@ item.morefeatures.crown.diamond.name=Diamond Crown
 item.morefeatures.crown.diamond.desc=A fancy diamond crown.
 item.morefeatures.crown.steel.name=Steel Crown
 item.morefeatures.crown.steel.desc=A durable steel crown.
+
 item.morefeatures.crown.moonsteel.name=Moonsteel Crown
 item.morefeatures.crown.moonsteel.desc=A weightless moonsteel crown.
+item.morefeatures.crown.amethyst.name=Amethyst Crown
+item.morefeatures.crown.amethyst.desc=A powerful amethyst crown.
+item.morefeatures.crown.silver.name=Silver Crown
+item.morefeatures.crown.silver.desc=A somewhat delicate silver crown.
 
 item.morefeatures.helmet.bedrock.name=Bedrock Helmet
 item.morefeatures.helmet.bedrock.desc=An impossibly strong bedrock helmet.
@@ -483,8 +488,15 @@ item.morefeatures.paxel.diamond.name=Diamond Paxel
 item.morefeatures.paxel.diamond.desc=Slay monsters, dig up the dirt, pick some stone or chop some trees with this diamond tool.
 item.morefeatures.paxel.steel.name=Steel Paxel
 item.morefeatures.paxel.steel.desc=Slay monsters, dig up the dirt, pick some stone or chop some trees with this steel tool.
+
 item.morefeatures.paxel.moonsteel.name=Moonsteel Paxel
 item.morefeatures.paxel.moonsteel.desc=Slay monsters, dig up the dirt, pick some stone or chop some trees with this fortunate moonsteel tool.
+item.morefeatures.paxel.amethyst.name=Amethyst Paxel
+item.morefeatures.paxel.amethyst.desc=Slay monsters, dig up the dirt, pick some stone or chop some trees with this powerful amethyst tool.
+item.morefeatures.paxel.silver.name=Silver Paxel
+item.morefeatures.paxel.silver.desc=Slay monsters, dig up the dirt, pick some stone or chop some trees with this silver tool.
+item.morefeatures.paxel.lead.name=Lead Paxel
+item.morefeatures.paxel.lead.desc=Slay monsters, dig up the dirt, pick some stone or chop some trees with this lead tool.
 
 item.morefeatures.climbpickaxe.wood.name=Wooden Climbing Pickaxe
 item.morefeatures.climbpickaxe.wood.desc=Pick some stone and climb walls with this wooden tool.
@@ -498,8 +510,15 @@ item.morefeatures.climbpickaxe.diamond.name=Diamond Climbing Pickaxe
 item.morefeatures.climbpickaxe.diamond.desc=Pick some stone and climb walls with this diamond tool.
 item.morefeatures.climbpickaxe.steel.name=Steel Climbing Pickaxe
 item.morefeatures.climbpickaxe.steel.desc=Pick some stone and climb walls with this steel tool.
+
 item.morefeatures.climbpickaxe.moonsteel.name=Moonsteel Climbing Pickaxe
 item.morefeatures.climbpickaxe.moonsteel.desc=Pick some stone and climb walls with this fortunate moonsteel tool.
+item.morefeatures.climbpickaxe.amethyst.name=Amethyst Climbing Pickaxe
+item.morefeatures.climbpickaxe.amethyst.desc=Pick some stone and climb walls with this powerful amethyst tool.
+item.morefeatures.climbpickaxe.silver.name=Silver Climbing Pickaxe
+item.morefeatures.climbpickaxe.silver.desc=Pick some stone and climb walls with this silver tool.
+item.morefeatures.climbpickaxe.lead.name=Lead Climbing Pickaxe
+item.morefeatures.climbpickaxe.lead.desc=Pick some stone and climb walls with with this lead tool.
 
 item.morefeatures.mininghammer.wood.name=Wooden Mining Hammer
 item.morefeatures.mininghammer.wood.desc=Pick a big amount of stone with this wooden tool.
@@ -513,8 +532,15 @@ item.morefeatures.mininghammer.diamond.name=Diamond Mining Hammer
 item.morefeatures.mininghammer.diamond.desc=Pick a big amount of stone with this diamond tool.
 item.morefeatures.mininghammer.steel.name=Steel Mining Hammer
 item.morefeatures.mininghammer.steel.desc=Pick a big amount of stone with this steel tool.
+
 item.morefeatures.mininghammer.moonsteel.name=Moonsteel Mining Hammer
 item.morefeatures.mininghammer.moonsteel.desc=Pick a big amount of stone with this fortunate moonsteel tool.
+item.morefeatures.mininghammer.amethyst.name=Amethyst Mining Hammer
+item.morefeatures.mininghammer.amethyst.desc=Pick a big amount of stone with this powerful amethyst tool.
+item.morefeatures.mininghammer.silver.name=Silver Mining Hammer
+item.morefeatures.mininghammer.silver.desc=Pick a big amount of stone with this silver tool.
+item.morefeatures.mininghammer.lead.name=Lead Mining Hammer
+item.morefeatures.mininghammer.lead.desc=Pick a big amount of stone with this lead tool.
 
 tile.morefeatures.superore.coal.stone.name=Super Stone Coal Ore
 tile.morefeatures.superore.coal.stone.desc=A CHONK of coal embedded in stone.
@@ -595,6 +621,58 @@ tile.morefeatures.superore.diamond.permafrost.desc=A CHONK of diamond embedded i
 
 tile.morefeatures.superore.nether.coal.netherrack.name=Super Nether Coal Ore
 tile.morefeatures.superore.nether.coal.netherrack.desc=A CHONK of nether coal embedded in netherrack.
+
+tile.morefeatures.superore.rhodonite.netherrack.name=Super Rhodonite Ore
+tile.morefeatures.superore.rhodonite.netherrack.desc=A CHONK of rhodonite embedded in netherrack.
+
+tile.morefeatures.superore.amethyst.stone.name=Super Stone Amethyst Ore
+tile.morefeatures.superore.amethyst.stone.desc=A CHONK of amethyst embedded in stone.
+tile.morefeatures.superore.amethyst.basalt.name=Super Basalt Amethyst Ore
+tile.morefeatures.superore.amethyst.basalt.desc=A CHONK of amethyst embedded in basalt.
+tile.morefeatures.superore.amethyst.limestone.name=Super Limestone Amethyst Ore
+tile.morefeatures.superore.amethyst.limestone.desc=A CHONK of amethyst embedded in limestone.
+tile.morefeatures.superore.amethyst.granite.name=Super Granite Amethyst Ore
+tile.morefeatures.superore.amethyst.granite.desc=A CHONK of amethyst embedded in granite.
+tile.morefeatures.superore.amethyst.permafrost.name=Super Permafrost Amethyst Ore
+tile.morefeatures.superore.amethyst.permafrost.desc=A CHONK of amethyst embedded in permafrost.
+
+tile.morefeatures.superore.silver.stone.name=Super Stone Silver Ore
+tile.morefeatures.superore.silver.stone.desc=A CHONK of silver embedded in stone.
+tile.morefeatures.superore.silver.basalt.name=Super Basalt Silver Ore
+tile.morefeatures.superore.silver.basalt.desc=A CHONK of silver embedded in basalt.
+tile.morefeatures.superore.silver.limestone.name=Super Limestone Silver Ore
+tile.morefeatures.superore.silver.limestone.desc=A CHONK of silver embedded in limestone.
+tile.morefeatures.superore.silver.granite.name=Super Granite Silver Ore
+tile.morefeatures.superore.silver.granite.desc=A CHONK of silver embedded in granite.
+tile.morefeatures.superore.silver.permafrost.name=Super Permafrost Silver Ore
+tile.morefeatures.superore.silver.permafrost.desc=A CHONK of silver embedded in permafrost.
+tile.morefeatures.superore.silver.netherrack.name=Super Netherrack Silver Ore
+tile.morefeatures.superore.silver.netherrack.desc=A CHONK of silver embedded in netherrack.
+
+tile.morefeatures.superore.uranium.stone.name=Super Stone Uranium Ore
+tile.morefeatures.superore.uranium.stone.desc=A CHONK of uranium embedded in stone.
+tile.morefeatures.superore.uranium.basalt.name=Super Basalt Uranium Ore
+tile.morefeatures.superore.uranium.basalt.desc=A CHONK of uranium embedded in basalt.
+tile.morefeatures.superore.uranium.limestone.name=Super Limestone Uranium Ore
+tile.morefeatures.superore.uranium.limestone.desc=A CHONK of uranium embedded in limestone.
+tile.morefeatures.superore.uranium.granite.name=Super Granite Uranium Ore
+tile.morefeatures.superore.uranium.granite.desc=A CHONK of uranium embedded in granite.
+tile.morefeatures.superore.uranium.permafrost.name=Super Permafrost Uranium Ore
+tile.morefeatures.superore.uranium.permafrost.desc=A CHONK of uranium embedded in permafrost.
+
+tile.morefeatures.superore.lead.stone.name=Super Stone Lead Ore
+tile.morefeatures.superore.lead.stone.desc=A CHONK of lead embedded in stone.
+tile.morefeatures.superore.lead.basalt.name=Super Basalt Lead Ore
+tile.morefeatures.superore.lead.basalt.desc=A CHONK of lead embedded in basalt.
+tile.morefeatures.superore.lead.limestone.name=Super Limestone Lead Ore
+tile.morefeatures.superore.lead.limestone.desc=A CHONK of lead embedded in limestone.
+tile.morefeatures.superore.lead.granite.name=Super Granite Lead Ore
+tile.morefeatures.superore.lead.granite.desc=A CHONK of lead embedded in granite.
+tile.morefeatures.superore.lead.permafrost.name=Super Permafrost Lead Ore
+tile.morefeatures.superore.lead.permafrost.desc=A CHONK of lead embedded in permafrost.
+
+tile.morefeatures.superore.topaz.netherrack.name=Super Topaz Ore
+tile.morefeatures.superore.topaz.netherrack.desc=A CHONK of topaz embedded in netherrack.
 
 tile.morefeatures.fire.red.name=Red Fire
 tile.morefeatures.fire.red.desc=Extra hot.

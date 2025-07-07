@@ -96,6 +96,8 @@ dependencies {
 
 	modImplementation ("useless:moonsteel:1.1.0-7.3_03")
 	implementation "useless:btwaila:1.2.1-7.3_01"
+	modImplementation project.files ("build/libs/deep-1.0.0.jar")
+
 
 	include(implementation(annotationProcessor("com.github.bawnorton.mixinsquared:mixinsquared-fabric:0.3.3")))
 

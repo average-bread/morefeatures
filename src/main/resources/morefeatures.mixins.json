@@ -33,8 +33,14 @@
     "itemsmixins.WorkbenchFix",
     "itemsmixins.fuels.FurnanceBlastFuelMixin",
     "itemsmixins.fuels.FurnanceFuelMixin",
-    "modsupport.MoonGravityMixin",
-    "modsupport.MoonMoonMoonCanBeFortunedMixin"
+    "modsupport.deep.superores.OreToSuperoreAmethyst",
+    "modsupport.deep.superores.OreToSuperoreLead",
+    "modsupport.deep.superores.OreToSuperoreRhodonite",
+    "modsupport.deep.superores.OreToSuperoreSilver",
+    "modsupport.deep.superores.OreToSuperoreTopaz",
+    "modsupport.deep.superores.OreToSuperoreUranium",
+    "modsupport.moonmoonmoon.MoonGravityMixin",
+    "modsupport.moonmoonmoon.MoonMoonMoonCanBeFortunedMixin"
   ],
   "client": [
     "entitymixins.EntityPlayerMixin"

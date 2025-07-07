@@ -68,8 +68,13 @@ public class FeaturesItems {
 
 	public static ToolMaterial glassTool = new ToolMaterial().setDurability(1).setDamage(10);
 
-	public static ArmorMaterial moonsteel_Extra_Armor = ArmorHelper.createArmorMaterial(MOD_ID, "crown/extra_armor_moonsteel", 800, 51f, 45f, 45f, 100f);
+	public static ArmorMaterial moonsteel_Extra_Armor = ArmorHelper.createArmorMaterial(MOD_ID, "crown/moonsteel/extra_armor_moonsteel", 800, 51f, 45f, 45f, 100f);
+	public static ArmorMaterial amethyst_Extra_Armor = ArmorHelper.createArmorMaterial(MOD_ID, "crown/deep/extra_armor_amethyst", 55, 80.0F, 80.0F, 80.0F, 80.0F);
+	public static ArmorMaterial silver_Extra_Armor = ArmorHelper.createArmorMaterial(MOD_ID, "crown/deep/extra_armor_silver", 160, 60.0F, 50.0F, 50.0F, 40.0F);
 
+	public static ToolMaterial amethyst = new ToolMaterial().setDurability(96).setEfficiency(55.0F, 100.0F).setMiningLevel(3).setDamage(5).setBlockHitDelay(0);
+	public static ToolMaterial silver = new ToolMaterial().setDurability(512).setEfficiency(4.0F, 9.0F).setMiningLevel(2).setSilkTouch(true);
+	public static ToolMaterial lead = new ToolMaterial().setDurability(512).setEfficiency(7.0F, 10.0F).setMiningLevel(2);
 
 
 	public static int flowercrownsEnabled;
@@ -108,6 +113,8 @@ public class FeaturesItems {
 	public static Item plate_Crown;
 
 	public static Item moonsteel_Crown;
+	public static Item amethyst_Crown;
+	public static Item silver_Crown;
 
 	public static int bedrockArmorEnabled;
 	public static Item bedrock_Helmet;
@@ -170,6 +177,9 @@ public class FeaturesItems {
 	public static Item paxel_Steel;
 
 	public static Item paxel_Moonsteel;
+	public static Item paxel_Amethyst;
+	public static Item paxel_Silver;
+	public static Item paxel_Lead;
 
 	public static int climbPickaxesEnabled;
 	public static Item climb_Pickaxe_Wood;
@@ -180,6 +190,9 @@ public class FeaturesItems {
 	public static Item climb_Pickaxe_Steel;
 
 	public static Item climb_pickaxe_Monnsteel;
+	public static Item climb_pickaxe_Amethyst;
+	public static Item climb_pickaxe_Silver;
+	public static Item climb_pickaxe_Lead;
 
 	public static int miningHammersEnabled;
 	public static Item mining_Hammer_Wood;
@@ -190,6 +203,9 @@ public class FeaturesItems {
 	public static Item mining_Hammer_Steel;
 
 	public static Item mining_hammer_MoonSteel;
+	public static Item mining_hammer_Amethyst;
+	public static Item mining_hammer_Silver;
+	public static Item mining_hammer_Lead;
 
 	public static int glassSwordEnabled;
 	public static Item glass_Sword;
@@ -439,19 +455,52 @@ public class FeaturesItems {
 		if (FeaturesMain.moonmoonmoonOn){
 			if (normalCrownsEnabled == 1){
 				moonsteel_Crown= new ItemBuilder(MOD_ID)
-					.build(new ItemArmor("crown.moonsteel", "morefeatures:item/armor/crown/moonsteel_crown", itemId++, moonsteel_Extra_Armor, 3));
+					.build(new ItemArmor("crown.moonsteel", "morefeatures:item/armor/crown/moonsteel/moonsteel_crown", itemId++, moonsteel_Extra_Armor, 3));
 			}
 			if (paxelsEnabled == 1){
 				paxel_Moonsteel = new ItemBuilder(MOD_ID)
-					.build(new ItemToolPaxel("paxel.moonsteel", "morefeatures:item/tool/paxel/paxel_moonsteel", itemId++, MoonSteelItems.moonSteelTool));
+					.build(new ItemToolPaxel("paxel.moonsteel", "morefeatures:item/tool/paxel/moonsteel/paxel_moonsteel", itemId++, MoonSteelItems.moonSteelTool));
 			}
 			if (climbPickaxesEnabled == 1){
 				climb_pickaxe_Monnsteel = new ItemBuilder(MOD_ID)
-					.build(new ItemToolClimbingPickaxe("climbpickaxe.moonsteel", "morefeatures:item/tool/climbing_pickaxe/climbing_pickaxe_moonsteel", itemId++, MoonSteelItems.moonSteelTool));
+					.build(new ItemToolClimbingPickaxe("climbpickaxe.moonsteel", "morefeatures:item/tool/climbing_pickaxe/moonsteel/climbing_pickaxe_moonsteel", itemId++, MoonSteelItems.moonSteelTool));
 			}
 			if (miningHammersEnabled == 1){
 				mining_hammer_MoonSteel = new ItemBuilder(MOD_ID)
-					.build(new ItemToolMiningHammer("mininghammer.moonsteel", "morefeatures:item/tool/mining_hammer/mining_hammer_moonsteel", itemId++, MoonSteelItems.moonSteelTool));
+					.build(new ItemToolMiningHammer("mininghammer.moonsteel", "morefeatures:item/tool/mining_hammer/moonsteel/mining_hammer_moonsteel", itemId++, MoonSteelItems.moonSteelTool));
+			}
+		}
+
+		if (FeaturesMain.deepOn){
+			if (normalCrownsEnabled == 1){
+				amethyst_Crown= new ItemBuilder(MOD_ID)
+					.build(new ItemArmor("crown.amethyst", "morefeatures:item/armor/crown/deep/amethyst_crown", itemId++, amethyst_Extra_Armor, 3));
+				silver_Crown= new ItemBuilder(MOD_ID)
+					.build(new ItemArmor("crown.silver", "morefeatures:item/armor/crown/deep/silver_crown", itemId++, silver_Extra_Armor, 3));
+			}
+			if (paxelsEnabled == 1){
+				paxel_Amethyst = new ItemBuilder(MOD_ID)
+					.build(new ItemToolPaxel("paxel.amethyst", "morefeatures:item/tool/paxel/deep/paxel_amethyst", itemId++, amethyst));
+				paxel_Silver = new ItemBuilder(MOD_ID)
+					.build(new ItemToolPaxel("paxel.silver", "morefeatures:item/tool/paxel/deep/paxel_silver", itemId++, silver));
+				paxel_Lead = new ItemBuilder(MOD_ID)
+					.build(new ItemToolPaxel("paxel.lead", "morefeatures:item/tool/paxel/deep/paxel_lead", itemId++, lead));
+			}
+			if (climbPickaxesEnabled == 1){
+				climb_pickaxe_Amethyst = new ItemBuilder(MOD_ID)
+					.build(new ItemToolClimbingPickaxe("climbpickaxe.amethyst", "morefeatures:item/tool/climbing_pickaxe/deep/climbing_pickaxe_amethyst", itemId++, amethyst));
+				climb_pickaxe_Silver = new ItemBuilder(MOD_ID)
+					.build(new ItemToolClimbingPickaxe("climbpickaxe.silver", "morefeatures:item/tool/climbing_pickaxe/deep/climbing_pickaxe_silver", itemId++, silver));
+				climb_pickaxe_Lead = new ItemBuilder(MOD_ID)
+					.build(new ItemToolClimbingPickaxe("climbpickaxe.lead", "morefeatures:item/tool/climbing_pickaxe/deep/climbing_pickaxe_lead", itemId++, lead));
+			}
+			if (miningHammersEnabled == 1){
+				mining_hammer_Amethyst = new ItemBuilder(MOD_ID)
+					.build(new ItemToolMiningHammer("mininghammer.amethyst", "morefeatures:item/tool/mining_hammer/deep/mining_hammer_amethyst", itemId++, amethyst));
+				mining_hammer_Silver = new ItemBuilder(MOD_ID)
+					.build(new ItemToolMiningHammer("mininghammer.silver", "morefeatures:item/tool/mining_hammer/deep/mining_hammer_silver", itemId++, silver));
+				mining_hammer_Lead = new ItemBuilder(MOD_ID)
+					.build(new ItemToolMiningHammer("mininghammer.lead", "morefeatures:item/tool/mining_hammer/deep/mining_hammer_lead", itemId++, lead));
 			}
 		}
 	}

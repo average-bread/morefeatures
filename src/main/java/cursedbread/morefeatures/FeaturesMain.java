@@ -22,6 +22,7 @@ public class FeaturesMain implements ModInitializer, GameStartEntrypoint, Client
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 	//public static boolean nonamedyesOn = ModVersionHelper.isModPresent("nonamedyes");
 	public static boolean moonmoonmoonOn = FabricLoader.getInstance().isModLoaded("moonsteel");
+	public static boolean deepOn = FabricLoader.getInstance().isModLoaded("deep");
 	public static int paperWallAlt;
 	public static int newLabyrinthsEnabled;
 	public static int newDungeonsEnabled;

@@ -1,6 +1,8 @@
-package cursedbread.morefeatures.mixin.modsupport;
+package cursedbread.morefeatures.mixin.modsupport.moonmoonmoon;
 
+import cursedbread.morefeatures.FeaturesMain;
 import cursedbread.morefeatures.blocks.ores.*;
+import cursedbread.morefeatures.blocks.ores.deep.*;
 import net.minecraft.core.block.*;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -20,5 +22,14 @@ public class MoonMoonMoonCanBeFortunedMixin {
 		if (Block.hasLogicClass(block, BlockLogicSuperOreLapis.class)) cir.setReturnValue(true);
 		if (Block.hasLogicClass(block, BlockLogicSuperOreNetherCoal.class)) cir.setReturnValue(true);
 		if (Block.hasLogicClass(block, BlockLogicSuperOreRedstone.class)) cir.setReturnValue(true);
+
+		if (FeaturesMain.deepOn){
+			if (Block.hasLogicClass(block, BlockLogicSuperOreRhodonite.class)) cir.setReturnValue(true);
+			if (Block.hasLogicClass(block, BlockLogicSuperOreAmethyst.class)) cir.setReturnValue(true);
+			if (Block.hasLogicClass(block, BlockLogicSuperOreSilver.class)) cir.setReturnValue(true);
+			if (Block.hasLogicClass(block, BlockLogicSuperOreUranium.class)) cir.setReturnValue(true);
+			if (Block.hasLogicClass(block, BlockLogicSuperOreLead.class)) cir.setReturnValue(true);
+			if (Block.hasLogicClass(block, BlockLogicSuperOreTopaz.class)) cir.setReturnValue(true);
+		}
 	}
 }

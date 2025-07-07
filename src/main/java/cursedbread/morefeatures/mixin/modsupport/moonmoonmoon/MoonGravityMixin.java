@@ -1,17 +1,14 @@
-package cursedbread.morefeatures.mixin.modsupport;
+package cursedbread.morefeatures.mixin.modsupport.moonmoonmoon;
 
 import com.bawnorton.mixinsquared.TargetHandler;
 import cursedbread.morefeatures.FeaturesMain;
 import cursedbread.morefeatures.item.FeaturesItems;
-import net.minecraft.client.Minecraft;
 import net.minecraft.core.entity.player.Player;
 import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemStack;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.Redirect;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import useless.moonsteel.MoonSteelItems;
 
 @Mixin(value = Player.class, remap = false, priority = 1500)
