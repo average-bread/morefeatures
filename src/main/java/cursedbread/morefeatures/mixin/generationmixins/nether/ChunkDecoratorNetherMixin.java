@@ -48,6 +48,7 @@ public class ChunkDecoratorNetherMixin {
 		int k4;
 		int treeDensity;
 		float oreHeightModifier = (float)rangeY / 128.0F;
+		BlockLogicSand.fallInstantly = true;
 
 		if (FeaturesBlocks.netherGravelEnabled == 1){
 			for(j4 = 0; (float)j4 < oreHeightModifier; ++j4) {
@@ -57,5 +58,7 @@ public class ChunkDecoratorNetherMixin {
 				(new WorldFeatureOre(FeaturesBlocks.netherrack_Gravel.id(), 32)).place(this.world, rand, k7, k4, treeDensity);
 			}
 		}
+
+		BlockLogicSand.fallInstantly = false;
 	}
 }

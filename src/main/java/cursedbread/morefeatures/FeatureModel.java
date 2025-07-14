@@ -513,56 +513,56 @@ public class FeatureModel implements ModelEntrypoint {
 		if (FeaturesItems.flowercrownsEnabled == 1) {
 			ModelHelper.setItemModel(FeaturesItems.dandelion_Crown,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.dandelion_Crown, MOD_ID);
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.dandelion_Crown, null);
 					model.icon = TextureRegistry.getTexture(FeaturesItems.dandelion_Crown.namespaceID);
 					return model;
 				});
 
 			ModelHelper.setItemModel(FeaturesItems.rose_Crown,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.rose_Crown, MOD_ID);
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.rose_Crown, null);
 					model.icon = TextureRegistry.getTexture(FeaturesItems.rose_Crown.namespaceID);
 					return model;
 				});
 
 			ModelHelper.setItemModel(FeaturesItems.cherry_Crown,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.cherry_Crown, MOD_ID);
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.cherry_Crown, null);
 					model.icon = TextureRegistry.getTexture(FeaturesItems.cherry_Crown.namespaceID);
 					return model;
 				});
 
 			ModelHelper.setItemModel(FeaturesItems.deadbush_Crown,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.deadbush_Crown, MOD_ID);
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.deadbush_Crown, null);
 					model.icon = TextureRegistry.getTexture(FeaturesItems.deadbush_Crown.namespaceID);
 					return model;
 				});
 
 			ModelHelper.setItemModel(FeaturesItems.orchid_Crown,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.orchid_Crown, MOD_ID);
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.orchid_Crown, null);
 					model.icon = TextureRegistry.getTexture(FeaturesItems.orchid_Crown.namespaceID);
 					return model;
 				});
 
 			ModelHelper.setItemModel(FeaturesItems.heather_Crown,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.heather_Crown, MOD_ID);
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.heather_Crown, null);
 					model.icon = TextureRegistry.getTexture(FeaturesItems.heather_Crown.namespaceID);
 					return model;
 				});
 
 			ModelHelper.setItemModel(FeaturesItems.bluebell_Crown,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.bluebell_Crown, MOD_ID);
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.bluebell_Crown, null);
 					model.icon = TextureRegistry.getTexture(FeaturesItems.bluebell_Crown.namespaceID);
 					return model;
 				});
 
 			ModelHelper.setItemModel(FeaturesItems.marigold_Crown,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.marigold_Crown, MOD_ID);
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.marigold_Crown, null);
 					model.icon = TextureRegistry.getTexture(FeaturesItems.marigold_Crown.namespaceID);
 					return model;
 				});
@@ -570,70 +570,70 @@ public class FeatureModel implements ModelEntrypoint {
 			if (FeaturesBlocks.newFlowersEnabled == 1){
 				ModelHelper.setItemModel(FeaturesItems.daisy_Crown,
 					() -> {
-						ItemModelStandard model = new ItemModelStandard(FeaturesItems.daisy_Crown, MOD_ID);
+						ItemModelStandard model = new ItemModelStandard(FeaturesItems.daisy_Crown, null);
 						model.icon = TextureRegistry.getTexture(FeaturesItems.daisy_Crown.namespaceID);
 						return model;
 					});
 
 				ModelHelper.setItemModel(FeaturesItems.delphiniums_Crown,
 					() -> {
-						ItemModelStandard model = new ItemModelStandard(FeaturesItems.delphiniums_Crown, MOD_ID);
+						ItemModelStandard model = new ItemModelStandard(FeaturesItems.delphiniums_Crown, null);
 						model.icon = TextureRegistry.getTexture(FeaturesItems.delphiniums_Crown.namespaceID);
 						return model;
 					});
 
 				ModelHelper.setItemModel(FeaturesItems.angelica_Crown,
 					() -> {
-						ItemModelStandard model = new ItemModelStandard(FeaturesItems.angelica_Crown, MOD_ID);
+						ItemModelStandard model = new ItemModelStandard(FeaturesItems.angelica_Crown, null);
 						model.icon = TextureRegistry.getTexture(FeaturesItems.angelica_Crown.namespaceID);
 						return model;
 					});
 
 				ModelHelper.setItemModel(FeaturesItems.allium_Crown,
 					() -> {
-						ItemModelStandard model = new ItemModelStandard(FeaturesItems.allium_Crown, MOD_ID);
+						ItemModelStandard model = new ItemModelStandard(FeaturesItems.allium_Crown, null);
 						model.icon = TextureRegistry.getTexture(FeaturesItems.allium_Crown.namespaceID);
 						return model;
 					});
 
 				ModelHelper.setItemModel(FeaturesItems.dustymiller_Crown,
 					() -> {
-						ItemModelStandard model = new ItemModelStandard(FeaturesItems.dustymiller_Crown, MOD_ID);
+						ItemModelStandard model = new ItemModelStandard(FeaturesItems.dustymiller_Crown, null);
 						model.icon = TextureRegistry.getTexture(FeaturesItems.dustymiller_Crown.namespaceID);
 						return model;
 					});
 
 				ModelHelper.setItemModel(FeaturesItems.cyanrose_Crown,
 					() -> {
-						ItemModelStandard model = new ItemModelStandard(FeaturesItems.cyanrose_Crown, MOD_ID);
+						ItemModelStandard model = new ItemModelStandard(FeaturesItems.cyanrose_Crown, null);
 						model.icon = TextureRegistry.getTexture(FeaturesItems.cyanrose_Crown.namespaceID);
 						return model;
 					});
 
 				ModelHelper.setItemModel(FeaturesItems.bluepoppy_Crown,
 					() -> {
-						ItemModelStandard model = new ItemModelStandard(FeaturesItems.bluepoppy_Crown, MOD_ID);
+						ItemModelStandard model = new ItemModelStandard(FeaturesItems.bluepoppy_Crown, null);
 						model.icon = TextureRegistry.getTexture(FeaturesItems.bluepoppy_Crown.namespaceID);
 						return model;
 					});
 
 				ModelHelper.setItemModel(FeaturesItems.dahlia_Crown,
 					() -> {
-						ItemModelStandard model = new ItemModelStandard(FeaturesItems.dahlia_Crown, MOD_ID);
+						ItemModelStandard model = new ItemModelStandard(FeaturesItems.dahlia_Crown, null);
 						model.icon = TextureRegistry.getTexture(FeaturesItems.dahlia_Crown.namespaceID);
 						return model;
 					});
 
 				ModelHelper.setItemModel(FeaturesItems.barrelcactus_Crown,
 					() -> {
-						ItemModelStandard model = new ItemModelStandard(FeaturesItems.barrelcactus_Crown, MOD_ID);
+						ItemModelStandard model = new ItemModelStandard(FeaturesItems.barrelcactus_Crown, null);
 						model.icon = TextureRegistry.getTexture(FeaturesItems.barrelcactus_Crown.namespaceID);
 						return model;
 					});
 
 				ModelHelper.setItemModel(FeaturesItems.blacktulip_Crown,
 					() -> {
-						ItemModelStandard model = new ItemModelStandard(FeaturesItems.blacktulip_Crown, MOD_ID);
+						ItemModelStandard model = new ItemModelStandard(FeaturesItems.blacktulip_Crown, null);
 						model.icon = TextureRegistry.getTexture(FeaturesItems.blacktulip_Crown.namespaceID);
 						return model;
 					});
@@ -643,37 +643,37 @@ public class FeatureModel implements ModelEntrypoint {
 		if (FeaturesItems.normalCrownsEnabled == 1){
 			ModelHelper.setItemModel(FeaturesItems.leather_Crown,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.leather_Crown, MOD_ID);
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.leather_Crown, null);
 					model.icon = TextureRegistry.getTexture(FeaturesItems.leather_Crown.namespaceID);
 					return model;
 				});
 			ModelHelper.setItemModel(FeaturesItems.chain_Crown,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.chain_Crown, MOD_ID);
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.chain_Crown, null);
 					model.icon = TextureRegistry.getTexture(FeaturesItems.chain_Crown.namespaceID);
 					return model;
 				});
 			ModelHelper.setItemModel(FeaturesItems.iron_Crown,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.iron_Crown, MOD_ID);
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.iron_Crown, null);
 					model.icon = TextureRegistry.getTexture(FeaturesItems.iron_Crown.namespaceID);
 					return model;
 				});
 			ModelHelper.setItemModel(FeaturesItems.gold_Crown,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.gold_Crown, MOD_ID);
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.gold_Crown, null);
 					model.icon = TextureRegistry.getTexture(FeaturesItems.gold_Crown.namespaceID);
 					return model;
 				});
 			ModelHelper.setItemModel(FeaturesItems.diamond_Crown,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.diamond_Crown, MOD_ID);
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.diamond_Crown, null);
 					model.icon = TextureRegistry.getTexture(FeaturesItems.diamond_Crown.namespaceID);
 					return model;
 				});
 			ModelHelper.setItemModel(FeaturesItems.steel_Crown,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.steel_Crown, MOD_ID);
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.steel_Crown, null);
 					model.icon = TextureRegistry.getTexture(FeaturesItems.steel_Crown.namespaceID);
 					return model;
 				});
@@ -681,7 +681,7 @@ public class FeatureModel implements ModelEntrypoint {
 			if (FeaturesItems.stoneArmorEnabled == 1) {
 				ModelHelper.setItemModel(FeaturesItems.stone_Crown,
 					() -> {
-						ItemModelStandard model = new ItemModelStandard(FeaturesItems.stone_Crown, MOD_ID);
+						ItemModelStandard model = new ItemModelStandard(FeaturesItems.stone_Crown, null);
 						model.icon = TextureRegistry.getTexture(FeaturesItems.stone_Crown.namespaceID);
 						return model;
 					});
@@ -689,7 +689,7 @@ public class FeatureModel implements ModelEntrypoint {
 			if (FeaturesItems.olivineArmorEnabled == 1) {
 				ModelHelper.setItemModel(FeaturesItems.olivine_Crown,
 					() -> {
-						ItemModelStandard model = new ItemModelStandard(FeaturesItems.olivine_Crown, MOD_ID);
+						ItemModelStandard model = new ItemModelStandard(FeaturesItems.olivine_Crown, null);
 						model.icon = TextureRegistry.getTexture(FeaturesItems.olivine_Crown.namespaceID);
 						return model;
 					});
@@ -697,7 +697,7 @@ public class FeatureModel implements ModelEntrypoint {
 			if (FeaturesItems.bedrockArmorEnabled == 1) {
 				ModelHelper.setItemModel(FeaturesItems.bedrock_Crown,
 					() -> {
-						ItemModelStandard model = new ItemModelStandard(FeaturesItems.bedrock_Crown, MOD_ID);
+						ItemModelStandard model = new ItemModelStandard(FeaturesItems.bedrock_Crown, null);
 						model.icon = TextureRegistry.getTexture(FeaturesItems.bedrock_Crown.namespaceID);
 						return model;
 					});
@@ -705,7 +705,7 @@ public class FeatureModel implements ModelEntrypoint {
 			if (FeaturesItems.plateArmorEnabled == 1) {
 				ModelHelper.setItemModel(FeaturesItems.plate_Crown,
 					() -> {
-						ItemModelStandard model = new ItemModelStandard(FeaturesItems.plate_Crown, MOD_ID);
+						ItemModelStandard model = new ItemModelStandard(FeaturesItems.plate_Crown, null);
 						model.icon = TextureRegistry.getTexture(FeaturesItems.plate_Crown.namespaceID);
 						return model;
 					});
@@ -713,7 +713,7 @@ public class FeatureModel implements ModelEntrypoint {
 			if (FeaturesItems.studdedArmorEnabled == 1) {
 				ModelHelper.setItemModel(FeaturesItems.leather_Chain_Crown,
 					() -> {
-						ItemModelStandard model = new ItemModelStandard(FeaturesItems.leather_Chain_Crown, MOD_ID);
+						ItemModelStandard model = new ItemModelStandard(FeaturesItems.leather_Chain_Crown, null);
 						model.icon = TextureRegistry.getTexture(FeaturesItems.leather_Chain_Crown.namespaceID);
 						return model;
 					});
@@ -721,7 +721,7 @@ public class FeatureModel implements ModelEntrypoint {
 			if (FeaturesItems.quartzArmorEnabled == 1) {
 				ModelHelper.setItemModel(FeaturesItems.quartz_Crown,
 					() -> {
-						ItemModelStandard model = new ItemModelStandard(FeaturesItems.quartz_Crown, MOD_ID);
+						ItemModelStandard model = new ItemModelStandard(FeaturesItems.quartz_Crown, null);
 						model.icon = TextureRegistry.getTexture(FeaturesItems.quartz_Crown.namespaceID);
 						return model;
 					});
@@ -731,25 +731,25 @@ public class FeatureModel implements ModelEntrypoint {
 		if (FeaturesItems.bedrockArmorEnabled == 1) {
 			ModelHelper.setItemModel(FeaturesItems.bedrock_Helmet,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.bedrock_Helmet, MOD_ID);
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.bedrock_Helmet, null);
 					model.icon = TextureRegistry.getTexture(FeaturesItems.bedrock_Helmet.namespaceID);
 					return model;
 				});
 			ModelHelper.setItemModel(FeaturesItems.bedrock_Chestplate,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.bedrock_Chestplate, MOD_ID);
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.bedrock_Chestplate, null);
 					model.icon = TextureRegistry.getTexture(FeaturesItems.bedrock_Chestplate.namespaceID);
 					return model;
 				});
 			ModelHelper.setItemModel(FeaturesItems.bedrock_Leggings,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.bedrock_Leggings, MOD_ID);
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.bedrock_Leggings, null);
 					model.icon = TextureRegistry.getTexture(FeaturesItems.bedrock_Leggings.namespaceID);
 					return model;
 				});
 			ModelHelper.setItemModel(FeaturesItems.bedrock_Boots,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.bedrock_Boots, MOD_ID);
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.bedrock_Boots, null);
 					model.icon = TextureRegistry.getTexture(FeaturesItems.bedrock_Boots.namespaceID);
 					return model;
 				});
@@ -758,13 +758,13 @@ public class FeatureModel implements ModelEntrypoint {
 		if (FeaturesItems.plateArmorEnabled == 1) {
 			ModelHelper.setItemModel(FeaturesItems.plate_Helmet,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.plate_Helmet, MOD_ID);
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.plate_Helmet, null);
 					model.icon = TextureRegistry.getTexture(FeaturesItems.plate_Helmet.namespaceID);
 					return model;
 				});
 			ModelHelper.setItemModel(FeaturesItems.plate_Chestplate,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.plate_Chestplate, MOD_ID);
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.plate_Chestplate, null);
 					model.icon = TextureRegistry.getTexture(FeaturesItems.plate_Chestplate.namespaceID);
 					return model;
 				});
@@ -773,25 +773,25 @@ public class FeatureModel implements ModelEntrypoint {
 		if (FeaturesItems.studdedArmorEnabled == 1){
 			ModelHelper.setItemModel(FeaturesItems.leather_Chain_Helmet,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.leather_Chain_Helmet, MOD_ID);
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.leather_Chain_Helmet, null);
 					model.icon = TextureRegistry.getTexture(FeaturesItems.leather_Chain_Helmet.namespaceID);
 					return model;
 				});
 			ModelHelper.setItemModel(FeaturesItems.leather_Chain_Chestplate,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.leather_Chain_Chestplate, MOD_ID);
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.leather_Chain_Chestplate, null);
 					model.icon = TextureRegistry.getTexture(FeaturesItems.leather_Chain_Chestplate.namespaceID);
 					return model;
 				});
 			ModelHelper.setItemModel(FeaturesItems.leather_Chain_Leggings,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.leather_Chain_Leggings, MOD_ID);
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.leather_Chain_Leggings, null);
 					model.icon = TextureRegistry.getTexture(FeaturesItems.leather_Chain_Leggings.namespaceID);
 					return model;
 				});
 			ModelHelper.setItemModel(FeaturesItems.leather_Chain_Boots,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.leather_Chain_Boots, MOD_ID);
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.leather_Chain_Boots, null);
 					model.icon = TextureRegistry.getTexture(FeaturesItems.leather_Chain_Boots.namespaceID);
 					return model;
 				});
@@ -800,25 +800,25 @@ public class FeatureModel implements ModelEntrypoint {
 		if (FeaturesItems.stoneArmorEnabled == 1) {
 			ModelHelper.setItemModel(FeaturesItems.stone_Helmet,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.stone_Helmet, MOD_ID);
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.stone_Helmet, null);
 					model.icon = TextureRegistry.getTexture(FeaturesItems.stone_Helmet.namespaceID);
 					return model;
 				});
 			ModelHelper.setItemModel(FeaturesItems.stone_Chestplate,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.stone_Chestplate, MOD_ID);
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.stone_Chestplate, null);
 					model.icon = TextureRegistry.getTexture(FeaturesItems.stone_Chestplate.namespaceID);
 					return model;
 				});
 			ModelHelper.setItemModel(FeaturesItems.stone_Leggings,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.stone_Leggings, MOD_ID);
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.stone_Leggings, null);
 					model.icon = TextureRegistry.getTexture(FeaturesItems.stone_Leggings.namespaceID);
 					return model;
 				});
 			ModelHelper.setItemModel(FeaturesItems.stone_Boots,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.stone_Boots, MOD_ID);
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.stone_Boots, null);
 					model.icon = TextureRegistry.getTexture(FeaturesItems.stone_Boots.namespaceID);
 					return model;
 				});
@@ -827,50 +827,50 @@ public class FeatureModel implements ModelEntrypoint {
 		if (FeaturesItems.olivineArmorEnabled == 1) {
 			ModelHelper.setItemModel(FeaturesItems.olivine_Helmet,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.olivine_Helmet, MOD_ID);
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.olivine_Helmet, null);
 					model.icon = TextureRegistry.getTexture(FeaturesItems.olivine_Helmet.namespaceID);
 					return model;
 				});
 			ModelHelper.setItemModel(FeaturesItems.olivine_Chestplate,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.olivine_Chestplate, MOD_ID);
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.olivine_Chestplate, null);
 					model.icon = TextureRegistry.getTexture(FeaturesItems.olivine_Chestplate.namespaceID);
 					return model;
 				});
 			ModelHelper.setItemModel(FeaturesItems.olivine_Leggings,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.olivine_Leggings, MOD_ID);
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.olivine_Leggings, null);
 					model.icon = TextureRegistry.getTexture(FeaturesItems.olivine_Leggings.namespaceID);
 					return model;
 				});
 			ModelHelper.setItemModel(FeaturesItems.olivine_Boots,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.olivine_Boots, MOD_ID);
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.olivine_Boots, null);
 					model.icon = TextureRegistry.getTexture(FeaturesItems.olivine_Boots.namespaceID);
 					return model;
 				});
 
 			ModelHelper.setItemModel(FeaturesItems.quartz_Helmet,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.quartz_Helmet, MOD_ID);
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.quartz_Helmet, null);
 					model.icon = TextureRegistry.getTexture(FeaturesItems.quartz_Helmet.namespaceID);
 					return model;
 				});
 			ModelHelper.setItemModel(FeaturesItems.quartz_Chestplate,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.quartz_Chestplate, MOD_ID);
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.quartz_Chestplate, null);
 					model.icon = TextureRegistry.getTexture(FeaturesItems.quartz_Chestplate.namespaceID);
 					return model;
 				});
 			ModelHelper.setItemModel(FeaturesItems.quartz_Leggings,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.quartz_Leggings, MOD_ID);
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.quartz_Leggings, null);
 					model.icon = TextureRegistry.getTexture(FeaturesItems.quartz_Leggings.namespaceID);
 					return model;
 				});
 			ModelHelper.setItemModel(FeaturesItems.quartz_Boots,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.quartz_Boots, MOD_ID);
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.quartz_Boots, null);
 					model.icon = TextureRegistry.getTexture(FeaturesItems.quartz_Boots.namespaceID);
 					return model;
 				});
@@ -879,13 +879,13 @@ public class FeatureModel implements ModelEntrypoint {
 		if (FeaturesItems.bombBagEnabled == 1) {
 			ModelHelper.setItemModel(FeaturesItems.bomb_Bag,
 				() -> {
-					ItemModelStandard model = new ItemModelBombQuiver(FeaturesItems.bomb_Bag, MOD_ID);
+					ItemModelStandard model = new ItemModelBombQuiver(FeaturesItems.bomb_Bag, null);
 					model.icon = TextureRegistry.getTexture(FeaturesItems.bomb_Bag.namespaceID);
 					return model;
 				});
 			ModelHelper.setItemModel(FeaturesItems.bomb_Bag_Gold,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.bomb_Bag_Gold, MOD_ID);
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.bomb_Bag_Gold, null);
 					model.icon = TextureRegistry.getTexture(FeaturesItems.bomb_Bag_Gold.namespaceID);
 					return model;
 				});
@@ -894,7 +894,7 @@ public class FeatureModel implements ModelEntrypoint {
 		if (FeaturesItems.cathelmetEnabled == 1){
 			ModelHelper.setItemModel(FeaturesItems.cat_Helmet,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.cat_Helmet, MOD_ID);
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.cat_Helmet, null);
 					model.icon = TextureRegistry.getTexture(FeaturesItems.cat_Helmet.namespaceID);
 					return model;
 				});
@@ -903,7 +903,7 @@ public class FeatureModel implements ModelEntrypoint {
 		if (FeaturesItems.mobSoulEnabled == 1) {
 			ModelHelper.setItemModel(FeaturesItems.mob_Soul,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.mob_Soul, MOD_ID);
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.mob_Soul, null);
 					model.icon = TextureRegistry.getTexture(FeaturesItems.mob_Soul.namespaceID);
 					return model;
 				});
@@ -912,7 +912,7 @@ public class FeatureModel implements ModelEntrypoint {
 		if (FeaturesBlocks.fluxCropsEnabled == 1){
 			ModelHelper.setItemModel(FeaturesItems.flux_Seed,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.flux_Seed, MOD_ID);
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.flux_Seed, null);
 					model.icon = TextureRegistry.getTexture(FeaturesItems.flux_Seed.namespaceID);
 					return model;
 				});
@@ -921,7 +921,7 @@ public class FeatureModel implements ModelEntrypoint {
 		if (FeaturesItems.ferlilizerBagEnabled == 1){
 			ModelHelper.setItemModel(FeaturesItems.fertilizer_Bag,
 				() -> {
-					ItemModelStandard model = new ItemModelFertilizerBag(FeaturesItems.fertilizer_Bag, MOD_ID);
+					ItemModelStandard model = new ItemModelFertilizerBag(FeaturesItems.fertilizer_Bag, null);
 					model.icon = TextureRegistry.getTexture(FeaturesItems.fertilizer_Bag.namespaceID);
 					return model;
 				});
@@ -930,7 +930,7 @@ public class FeatureModel implements ModelEntrypoint {
 		if (FeaturesItems.workbenchOnStickEnabled == 1) {
 			ModelHelper.setItemModel(FeaturesItems.workbench_On_Stick,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.workbench_On_Stick, MOD_ID).setFull3D();
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.workbench_On_Stick, null).setFull3D();
 					model.icon = TextureRegistry.getTexture(FeaturesItems.workbench_On_Stick.namespaceID);
 					return model;
 				});
@@ -939,37 +939,37 @@ public class FeatureModel implements ModelEntrypoint {
 		if (FeaturesItems.paxelsEnabled == 1){
 			ModelHelper.setItemModel(FeaturesItems.paxel_Wood,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.paxel_Wood, MOD_ID).setFull3D();
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.paxel_Wood, null).setFull3D();
 					model.icon = TextureRegistry.getTexture(FeaturesItems.paxel_Wood.namespaceID);
 					return model;
 				});
 			ModelHelper.setItemModel(FeaturesItems.paxel_Stone,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.paxel_Stone, MOD_ID).setFull3D();
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.paxel_Stone, null).setFull3D();
 					model.icon = TextureRegistry.getTexture(FeaturesItems.paxel_Stone.namespaceID);
 					return model;
 				});
 			ModelHelper.setItemModel(FeaturesItems.paxel_Iron,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.paxel_Iron, MOD_ID).setFull3D();
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.paxel_Iron, null).setFull3D();
 					model.icon = TextureRegistry.getTexture(FeaturesItems.paxel_Iron.namespaceID);
 					return model;
 				});
 			ModelHelper.setItemModel(FeaturesItems.paxel_Gold,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.paxel_Gold, MOD_ID).setFull3D();
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.paxel_Gold, null).setFull3D();
 					model.icon = TextureRegistry.getTexture(FeaturesItems.paxel_Gold.namespaceID);
 					return model;
 				});
 			ModelHelper.setItemModel(FeaturesItems.paxel_Diamond,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.paxel_Diamond, MOD_ID).setFull3D();
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.paxel_Diamond, null).setFull3D();
 					model.icon = TextureRegistry.getTexture(FeaturesItems.paxel_Diamond.namespaceID);
 					return model;
 				});
 			ModelHelper.setItemModel(FeaturesItems.paxel_Steel,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.paxel_Steel, MOD_ID).setFull3D();
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.paxel_Steel, null).setFull3D();
 					model.icon = TextureRegistry.getTexture(FeaturesItems.paxel_Steel.namespaceID);
 					return model;
 				});
@@ -978,37 +978,37 @@ public class FeatureModel implements ModelEntrypoint {
 		if (FeaturesItems.climbPickaxesEnabled == 1){
 			ModelHelper.setItemModel(FeaturesItems.climb_Pickaxe_Wood,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.climb_Pickaxe_Wood, MOD_ID).setFull3D();
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.climb_Pickaxe_Wood, null).setFull3D();
 					model.icon = TextureRegistry.getTexture(FeaturesItems.climb_Pickaxe_Wood.namespaceID);
 					return model;
 				});
 			ModelHelper.setItemModel(FeaturesItems.climb_Pickaxe_Stone,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.climb_Pickaxe_Stone, MOD_ID).setFull3D();
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.climb_Pickaxe_Stone, null).setFull3D();
 					model.icon = TextureRegistry.getTexture(FeaturesItems.climb_Pickaxe_Stone.namespaceID);
 					return model;
 				});
 			ModelHelper.setItemModel(FeaturesItems.climb_Pickaxe_Iron,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.climb_Pickaxe_Iron, MOD_ID).setFull3D();
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.climb_Pickaxe_Iron, null).setFull3D();
 					model.icon = TextureRegistry.getTexture(FeaturesItems.climb_Pickaxe_Iron.namespaceID);
 					return model;
 				});
 			ModelHelper.setItemModel(FeaturesItems.climb_Pickaxe_Gold,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.climb_Pickaxe_Gold, MOD_ID).setFull3D();
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.climb_Pickaxe_Gold, null).setFull3D();
 					model.icon = TextureRegistry.getTexture(FeaturesItems.climb_Pickaxe_Gold.namespaceID);
 					return model;
 				});
 			ModelHelper.setItemModel(FeaturesItems.climb_Pickaxe_Diamond,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.climb_Pickaxe_Diamond, MOD_ID).setFull3D();
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.climb_Pickaxe_Diamond, null).setFull3D();
 					model.icon = TextureRegistry.getTexture(FeaturesItems.climb_Pickaxe_Diamond.namespaceID);
 					return model;
 				});
 			ModelHelper.setItemModel(FeaturesItems.climb_Pickaxe_Steel,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.climb_Pickaxe_Steel, MOD_ID).setFull3D();
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.climb_Pickaxe_Steel, null).setFull3D();
 					model.icon = TextureRegistry.getTexture(FeaturesItems.climb_Pickaxe_Steel.namespaceID);
 					return model;
 				});
@@ -1017,37 +1017,37 @@ public class FeatureModel implements ModelEntrypoint {
 		if (FeaturesItems.miningHammersEnabled == 1){
 			ModelHelper.setItemModel(FeaturesItems.mining_Hammer_Wood,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.mining_Hammer_Wood, MOD_ID).setFull3D();
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.mining_Hammer_Wood, null).setFull3D();
 					model.icon = TextureRegistry.getTexture(FeaturesItems.mining_Hammer_Wood.namespaceID);
 					return model;
 				});
 			ModelHelper.setItemModel(FeaturesItems.mining_Hammer_Stone,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.mining_Hammer_Stone, MOD_ID).setFull3D();
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.mining_Hammer_Stone, null).setFull3D();
 					model.icon = TextureRegistry.getTexture(FeaturesItems.mining_Hammer_Stone.namespaceID);
 					return model;
 				});
 			ModelHelper.setItemModel(FeaturesItems.mining_Hammer_Iron,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.mining_Hammer_Iron, MOD_ID).setFull3D();
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.mining_Hammer_Iron, null).setFull3D();
 					model.icon = TextureRegistry.getTexture(FeaturesItems.mining_Hammer_Iron.namespaceID);
 					return model;
 				});
 			ModelHelper.setItemModel(FeaturesItems.mining_Hammer_Gold,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.mining_Hammer_Gold, MOD_ID).setFull3D();
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.mining_Hammer_Gold, null).setFull3D();
 					model.icon = TextureRegistry.getTexture(FeaturesItems.mining_Hammer_Gold.namespaceID);
 					return model;
 				});
 			ModelHelper.setItemModel(FeaturesItems.mining_Hammer_Diamond,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.mining_Hammer_Diamond, MOD_ID).setFull3D();
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.mining_Hammer_Diamond, null).setFull3D();
 					model.icon = TextureRegistry.getTexture(FeaturesItems.mining_Hammer_Diamond.namespaceID);
 					return model;
 				});
 			ModelHelper.setItemModel(FeaturesItems.mining_Hammer_Steel,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.mining_Hammer_Steel, MOD_ID).setFull3D();
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.mining_Hammer_Steel, null).setFull3D();
 					model.icon = TextureRegistry.getTexture(FeaturesItems.mining_Hammer_Steel.namespaceID);
 					return model;
 				});
@@ -1056,8 +1056,17 @@ public class FeatureModel implements ModelEntrypoint {
 		if (FeaturesItems.glassSwordEnabled == 1){
 			ModelHelper.setItemModel(FeaturesItems.glass_Sword,
 				() -> {
-					ItemModelStandard model = new ItemModelStandard(FeaturesItems.glass_Sword, MOD_ID).setFull3D();
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.glass_Sword, null).setFull3D();
 					model.icon = TextureRegistry.getTexture(FeaturesItems.glass_Sword.namespaceID);
+					return model;
+				});
+		}
+
+		if (FeaturesItems.boomStickEnabled == 1){
+			ModelHelper.setItemModel(FeaturesItems.boom_stick,
+				() -> {
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.boom_stick, null).setFull3D();
+					model.icon = TextureRegistry.getTexture(FeaturesItems.boom_stick.namespaceID);
 					return model;
 				});
 		}
@@ -1066,7 +1075,7 @@ public class FeatureModel implements ModelEntrypoint {
 			if (FeaturesItems.normalCrownsEnabled == 1){
 				ModelHelper.setItemModel(FeaturesItems.moonsteel_Crown,
 					() -> {
-						ItemModelStandard model = new ItemModelStandard(FeaturesItems.moonsteel_Crown, MOD_ID);
+						ItemModelStandard model = new ItemModelStandard(FeaturesItems.moonsteel_Crown, null);
 						model.icon = TextureRegistry.getTexture(FeaturesItems.moonsteel_Crown.namespaceID);
 						return model;
 					});
@@ -1074,7 +1083,7 @@ public class FeatureModel implements ModelEntrypoint {
 			if (FeaturesItems.paxelsEnabled == 1){
 				ModelHelper.setItemModel(FeaturesItems.paxel_Moonsteel,
 					() -> {
-						ItemModelStandard model = new ItemModelStandard(FeaturesItems.paxel_Moonsteel, MOD_ID).setFull3D();
+						ItemModelStandard model = new ItemModelStandard(FeaturesItems.paxel_Moonsteel, null).setFull3D();
 						model.icon = TextureRegistry.getTexture(FeaturesItems.paxel_Moonsteel.namespaceID);
 						return model;
 					});
@@ -1082,7 +1091,7 @@ public class FeatureModel implements ModelEntrypoint {
 			if (FeaturesItems.climbPickaxesEnabled == 1){
 				ModelHelper.setItemModel(FeaturesItems.climb_pickaxe_Monnsteel,
 					() -> {
-						ItemModelStandard model = new ItemModelStandard(FeaturesItems.climb_pickaxe_Monnsteel, MOD_ID).setFull3D();
+						ItemModelStandard model = new ItemModelStandard(FeaturesItems.climb_pickaxe_Monnsteel, null).setFull3D();
 						model.icon = TextureRegistry.getTexture(FeaturesItems.climb_pickaxe_Monnsteel.namespaceID);
 						return model;
 					});
@@ -1090,7 +1099,7 @@ public class FeatureModel implements ModelEntrypoint {
 			if (FeaturesItems.miningHammersEnabled == 1){
 				ModelHelper.setItemModel(FeaturesItems.mining_hammer_MoonSteel,
 					() -> {
-						ItemModelStandard model = new ItemModelStandard(FeaturesItems.mining_hammer_MoonSteel, MOD_ID).setFull3D();
+						ItemModelStandard model = new ItemModelStandard(FeaturesItems.mining_hammer_MoonSteel, null).setFull3D();
 						model.icon = TextureRegistry.getTexture(FeaturesItems.mining_hammer_MoonSteel.namespaceID);
 						return model;
 					});
@@ -1101,13 +1110,13 @@ public class FeatureModel implements ModelEntrypoint {
 			if (FeaturesItems.normalCrownsEnabled == 1){
 				ModelHelper.setItemModel(FeaturesItems.amethyst_Crown,
 					() -> {
-						ItemModelStandard model = new ItemModelStandard(FeaturesItems.amethyst_Crown, MOD_ID);
+						ItemModelStandard model = new ItemModelStandard(FeaturesItems.amethyst_Crown, null);
 						model.icon = TextureRegistry.getTexture(FeaturesItems.amethyst_Crown.namespaceID);
 						return model;
 					});
 				ModelHelper.setItemModel(FeaturesItems.silver_Crown,
 					() -> {
-						ItemModelStandard model = new ItemModelStandard(FeaturesItems.silver_Crown, MOD_ID);
+						ItemModelStandard model = new ItemModelStandard(FeaturesItems.silver_Crown, null);
 						model.icon = TextureRegistry.getTexture(FeaturesItems.silver_Crown.namespaceID);
 						return model;
 					});
@@ -1115,19 +1124,19 @@ public class FeatureModel implements ModelEntrypoint {
 			if (FeaturesItems.paxelsEnabled == 1){
 				ModelHelper.setItemModel(FeaturesItems.paxel_Amethyst,
 					() -> {
-						ItemModelStandard model = new ItemModelStandard(FeaturesItems.paxel_Amethyst, MOD_ID).setFull3D();
+						ItemModelStandard model = new ItemModelStandard(FeaturesItems.paxel_Amethyst, null).setFull3D();
 						model.icon = TextureRegistry.getTexture(FeaturesItems.paxel_Amethyst.namespaceID);
 						return model;
 					});
 				ModelHelper.setItemModel(FeaturesItems.paxel_Silver,
 					() -> {
-						ItemModelStandard model = new ItemModelStandard(FeaturesItems.paxel_Silver, MOD_ID).setFull3D();
+						ItemModelStandard model = new ItemModelStandard(FeaturesItems.paxel_Silver, null).setFull3D();
 						model.icon = TextureRegistry.getTexture(FeaturesItems.paxel_Silver.namespaceID);
 						return model;
 					});
 				ModelHelper.setItemModel(FeaturesItems.paxel_Lead,
 					() -> {
-						ItemModelStandard model = new ItemModelStandard(FeaturesItems.paxel_Lead, MOD_ID).setFull3D();
+						ItemModelStandard model = new ItemModelStandard(FeaturesItems.paxel_Lead, null).setFull3D();
 						model.icon = TextureRegistry.getTexture(FeaturesItems.paxel_Lead.namespaceID);
 						return model;
 					});
@@ -1135,19 +1144,19 @@ public class FeatureModel implements ModelEntrypoint {
 			if (FeaturesItems.climbPickaxesEnabled == 1){
 				ModelHelper.setItemModel(FeaturesItems.climb_pickaxe_Amethyst,
 					() -> {
-						ItemModelStandard model = new ItemModelStandard(FeaturesItems.climb_pickaxe_Amethyst, MOD_ID).setFull3D();
+						ItemModelStandard model = new ItemModelStandard(FeaturesItems.climb_pickaxe_Amethyst, null).setFull3D();
 						model.icon = TextureRegistry.getTexture(FeaturesItems.climb_pickaxe_Amethyst.namespaceID);
 						return model;
 					});
 				ModelHelper.setItemModel(FeaturesItems.climb_pickaxe_Silver,
 					() -> {
-						ItemModelStandard model = new ItemModelStandard(FeaturesItems.climb_pickaxe_Silver, MOD_ID).setFull3D();
+						ItemModelStandard model = new ItemModelStandard(FeaturesItems.climb_pickaxe_Silver, null).setFull3D();
 						model.icon = TextureRegistry.getTexture(FeaturesItems.climb_pickaxe_Silver.namespaceID);
 						return model;
 					});
 				ModelHelper.setItemModel(FeaturesItems.climb_pickaxe_Lead,
 					() -> {
-						ItemModelStandard model = new ItemModelStandard(FeaturesItems.climb_pickaxe_Lead, MOD_ID).setFull3D();
+						ItemModelStandard model = new ItemModelStandard(FeaturesItems.climb_pickaxe_Lead, null).setFull3D();
 						model.icon = TextureRegistry.getTexture(FeaturesItems.climb_pickaxe_Lead.namespaceID);
 						return model;
 					});
@@ -1155,19 +1164,19 @@ public class FeatureModel implements ModelEntrypoint {
 			if (FeaturesItems.miningHammersEnabled == 1){
 				ModelHelper.setItemModel(FeaturesItems.mining_hammer_Amethyst,
 					() -> {
-						ItemModelStandard model = new ItemModelStandard(FeaturesItems.mining_hammer_Amethyst, MOD_ID).setFull3D();
+						ItemModelStandard model = new ItemModelStandard(FeaturesItems.mining_hammer_Amethyst, null).setFull3D();
 						model.icon = TextureRegistry.getTexture(FeaturesItems.mining_hammer_Amethyst.namespaceID);
 						return model;
 					});
 				ModelHelper.setItemModel(FeaturesItems.mining_hammer_Silver,
 					() -> {
-						ItemModelStandard model = new ItemModelStandard(FeaturesItems.mining_hammer_Silver, MOD_ID).setFull3D();
+						ItemModelStandard model = new ItemModelStandard(FeaturesItems.mining_hammer_Silver, null).setFull3D();
 						model.icon = TextureRegistry.getTexture(FeaturesItems.mining_hammer_Silver.namespaceID);
 						return model;
 					});
 				ModelHelper.setItemModel(FeaturesItems.mining_hammer_Lead,
 					() -> {
-						ItemModelStandard model = new ItemModelStandard(FeaturesItems.mining_hammer_Lead, MOD_ID).setFull3D();
+						ItemModelStandard model = new ItemModelStandard(FeaturesItems.mining_hammer_Lead, null).setFull3D();
 						model.icon = TextureRegistry.getTexture(FeaturesItems.mining_hammer_Lead.namespaceID);
 						return model;
 					});

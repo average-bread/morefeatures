@@ -210,6 +210,9 @@ public class FeaturesItems {
 	public static int glassSwordEnabled;
 	public static Item glass_Sword;
 
+	public static int boomStickEnabled;
+	public static Item boom_stick;
+
 	public void initilizeItems() {
 		//items
 		if (flowercrownsEnabled == 1) {
@@ -450,6 +453,11 @@ public class FeaturesItems {
 		if (glassSwordEnabled == 1){
 			glass_Sword = new ItemBuilder(MOD_ID)
 				.build(new ItemToolGlassSword("tool.sword.glass", "morefeatures:item/tool/tool_sword_glass", itemId++, glassTool)).withTags(new Tag[]{ItemTags.PREVENT_CREATIVE_MINING});
+		}
+
+		if (boomStickEnabled == 1){
+			boom_stick = new ItemBuilder(MOD_ID)
+				.build(new ItemExplosiveChargeOnAStick("boom.stick", "morefeatures:item/tool/explosive_charge_on_a_stick", itemId++));
 		}
 
 		if (FeaturesMain.moonmoonmoonOn){

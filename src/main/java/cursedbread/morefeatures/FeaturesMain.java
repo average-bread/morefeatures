@@ -73,7 +73,8 @@ public class FeaturesMain implements ModInitializer, GameStartEntrypoint, Client
 			.addEntry("Mining_hammer", 1)
 			.addEntry("Cat_helmet", 1)
 			.addEntry("Fertilizing_bag", 1)
-			.addEntry("Glass_sword", 1);
+			.addEntry("Glass_sword", 1)
+			.addEntry("Explosive_charge_on_a_stick", 1);
 
 		TOML.addCategory("Generation")
 			.addEntry("New_labyrinths", 1)
@@ -119,6 +120,7 @@ public class FeaturesMain implements ModInitializer, GameStartEntrypoint, Client
 		FeaturesItems.cathelmetEnabled = CFG.getInt("Items.Cat_helmet");
 		FeaturesItems.ferlilizerBagEnabled = CFG.getInt("Items.Fertilizing_bag");
 		FeaturesItems.glassSwordEnabled = CFG.getInt("Items.Glass_sword");
+		FeaturesItems.boomStickEnabled = CFG.getInt("Items.Explosive_charge_on_a_stick");
 
 		newLabyrinthsEnabled = CFG.getInt("Generation.New_labyrinths");
 		newDungeonsEnabled = CFG.getInt("Generation.Nre_dungeons");

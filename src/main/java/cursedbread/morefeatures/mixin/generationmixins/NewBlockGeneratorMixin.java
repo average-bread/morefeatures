@@ -9,6 +9,8 @@ import net.minecraft.core.block.material.Material;
 import net.minecraft.core.entity.Entity;
 import net.minecraft.core.sound.SoundCategory;
 import net.minecraft.core.world.World;
+import net.minecraft.core.world.biome.BiomeNether;
+import net.minecraft.core.world.biome.Biomes;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
@@ -67,6 +69,12 @@ public class NewBlockGeneratorMixin extends BlockLogic {
 						world.setBlockWithNotify(x, y, z, Blocks.PERMAFROST.id());
 					} else {
 					world.setBlockWithNotify(x, y, z, Blocks.COBBLE_PERMAFROST.id());
+					}
+				} else if (data != 0 && world.getBlockBiome(x, y, z) == Biomes.NETHER_NETHER) {
+					if (nethercoalId) {
+						world.setBlockWithNotify(x, y, z, Blocks.NETHERRACK.id());
+					} else {
+						world.setBlockWithNotify(x, y, z, Blocks.COBBLE_NETHERRACK.id());
 					}
 				} else if (data <= 2 && nethercoalId) {
 					world.setBlockWithNotify(x, y, z, Blocks.GRANITE.id());

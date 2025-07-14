@@ -42,7 +42,6 @@ public class  ChunkDecoratorOverworldMixin {
 		int minY = world.getWorldType().getMinY();
 		int maxY = world.getWorldType().getMaxY();
 		int rangeY = maxY + 1 - minY;
-		BlockLogicSand.fallInstantly = true;
 		int x = chunkX << 4;
 		int z = chunkZ << 4;
 		int y = world.getHeightValue(x + 16, z + 16);
@@ -57,6 +56,7 @@ public class  ChunkDecoratorOverworldMixin {
 		int i14;
 		float oreHeightModifier = (float)rangeY / 128.0F;
 		int treeDensity;
+		BlockLogicSand.fallInstantly = true;
 
 		if (FeaturesBlocks.rainbowFlowerEnabled == 1) {
 			for(i14 = 0; i14 < 3; ++i14) {
@@ -169,6 +169,8 @@ public class  ChunkDecoratorOverworldMixin {
 				}
 			}
 		}
+
+		BlockLogicSand.fallInstantly = false;
 	}
 }
 
