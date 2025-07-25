@@ -916,45 +916,6 @@ public class FeaturesCraft implements RecipeEntrypoint {
 				.create("boomstick", new ItemStack(FeaturesItems.boom_stick));
 		}
 
-		if (FeaturesMain.moonmoonmoonOn){
-			if (FeaturesItems.paxelsEnabled == 1) {
-				RecipeBuilder.Shaped(MOD_ID)
-					.setShape("APH", " W ", " S ")
-					.addInput('S', Items.STICK)
-					.addInput('A', MoonSteelItems.TOOL_AXE_MOONSTEEL)
-					.addInput('P', MoonSteelItems.TOOL_PICKAXE_MOONSTEEL)
-					.addInput('H', MoonSteelItems.TOOL_SHOVEL_MOONSTEEL)
-					.addInput('W', MoonSteelItems.TOOL_SWORD_MOONSTEEL)
-					.create("paxelcraft", new ItemStack(FeaturesItems.paxel_Moonsteel));
-			}
-
-			if (FeaturesItems.climbPickaxesEnabled == 1) {
-				RecipeBuilder.Shaped(MOD_ID)
-					.setShape("MM ", "MSH", " S ")
-					.addInput('S', Items.STICK)
-					.addInput('M', MoonSteelItems.INGOT_MOONSTEEL)
-					.addInput('H', MoonSteelBlocks.BLOCK_MOONSTEEL)
-					.create("climbpickcraft", new ItemStack(FeaturesItems.climb_pickaxe_Monnsteel));
-			}
-
-			if (FeaturesItems.miningHammersEnabled == 1) {
-				RecipeBuilder.Shaped(MOD_ID)
-					.setShape("HMH", "MSM", " S ")
-					.addInput('S', Items.STICK)
-					.addInput('M', MoonSteelItems.INGOT_MOONSTEEL)
-					.addInput('H', MoonSteelBlocks.BLOCK_MOONSTEEL)
-					.create("hammercraft", new ItemStack(FeaturesItems.mining_hammer_MoonSteel));
-			}
-
-			if (FeaturesItems.normalCrownsEnabled == 1) {
-				RecipeBuilder.Shaped(MOD_ID)
-					.setShape("HCH", "HHH")
-					.addInput('H', MoonSteelItems.INGOT_MOONSTEEL)
-					.addInput('C', Items.CLOTH)
-					.create("crown", new ItemStack(FeaturesItems.moonsteel_Crown, 1));
-			}
-		}
-
 		if (FeaturesBlocks.newFlowersEnabled == 1){
 			RecipeBuilder.Shapeless(MOD_ID)
 				.addInput(FeaturesBlocks.white_Flower)
@@ -997,6 +958,110 @@ public class FeaturesCraft implements RecipeEntrypoint {
 				.create("blackflowertodye", new ItemStack(Items.DYE, 2, 0));
 		}
 
+		if (FeaturesBlocks.woodMeshEnabled == 1) {
+			RecipeBuilder.Shaped(MOD_ID)
+				.setShape("SSS", "S S", "SSS")
+				.addInput('S', Items.STICK)
+				.create("woodmesh", new ItemStack(FeaturesBlocks.wood_Mesh));
+		}
+
+		if (FeaturesItems.scytheEnabled == 1){
+			int[] toolMaterial = {
+				Items.INGOT_IRON.id,
+				Items.INGOT_GOLD.id,
+				Items.DIAMOND.id,
+				Items.INGOT_STEEL.id
+			};
+			int[] toolHeavyMaterial = {
+				Blocks.BLOCK_IRON.id(),
+				Blocks.BLOCK_GOLD.id(),
+				Blocks.BLOCK_DIAMOND.id(),
+				Blocks.BLOCK_STEEL.id()
+			};
+			Item[] scytheResult = {
+				FeaturesItems.scythe_Iron,
+				FeaturesItems.scythe_Gold,
+				FeaturesItems.scythe_Diamond,
+				FeaturesItems.scythe_Steel
+			};
+
+			String[] scytheNames = {
+				"iron",
+				"gold",
+				"diamond",
+				"steel"
+			};
+
+			RecipeBuilder.Shaped(MOD_ID)
+				.setShape(" MH", "M S", "  S")
+				.addInput('S', Items.STICK)
+				.addInput('H', "minecraft:logs")
+				.addInput('M', "minecraft:planks")
+				.create("scythecraftwood", new ItemStack(FeaturesItems.mining_Hammer_Wood));
+			RecipeBuilder.Shaped(MOD_ID)
+				.setShape(" MH", "M S", "  S")
+				.addInput('S', Items.STICK)
+				.addInput('H', "minecraft:stones")
+				.addInput('M', "minecraft:cobblestones")
+				.create("scythecraftstone", new ItemStack(FeaturesItems.mining_Hammer_Stone));
+			for (int i = 0; i < 4; i++){
+				RecipeBuilder.Shaped(MOD_ID)
+					.setShape(" MH", "M S", "  S")
+					.addInput('S', Items.STICK)
+					.addInput('H', Item.itemsList[toolHeavyMaterial[i]])
+					.addInput('M', Item.itemsList[toolMaterial[i]])
+					.create("scythecraft" + scytheNames[i], new ItemStack(scytheResult[i]));
+			}
+		}
+
+		if (FeaturesMain.moonmoonmoonOn){
+			if (FeaturesItems.paxelsEnabled == 1) {
+				RecipeBuilder.Shaped(MOD_ID)
+					.setShape("APH", " W ", " S ")
+					.addInput('S', Items.STICK)
+					.addInput('A', MoonSteelItems.TOOL_AXE_MOONSTEEL)
+					.addInput('P', MoonSteelItems.TOOL_PICKAXE_MOONSTEEL)
+					.addInput('H', MoonSteelItems.TOOL_SHOVEL_MOONSTEEL)
+					.addInput('W', MoonSteelItems.TOOL_SWORD_MOONSTEEL)
+					.create("paxelcraftmoonsteel", new ItemStack(FeaturesItems.paxel_Moonsteel));
+			}
+
+			if (FeaturesItems.climbPickaxesEnabled == 1) {
+				RecipeBuilder.Shaped(MOD_ID)
+					.setShape("MM ", "MSH", " S ")
+					.addInput('S', Items.STICK)
+					.addInput('M', MoonSteelItems.INGOT_MOONSTEEL)
+					.addInput('H', MoonSteelBlocks.BLOCK_MOONSTEEL)
+					.create("climbpickcraftmoonsteel", new ItemStack(FeaturesItems.climb_pickaxe_Monnsteel));
+			}
+
+			if (FeaturesItems.miningHammersEnabled == 1) {
+				RecipeBuilder.Shaped(MOD_ID)
+					.setShape("HMH", "MSM", " S ")
+					.addInput('S', Items.STICK)
+					.addInput('M', MoonSteelItems.INGOT_MOONSTEEL)
+					.addInput('H', MoonSteelBlocks.BLOCK_MOONSTEEL)
+					.create("hammercraftmoonsteel", new ItemStack(FeaturesItems.mining_hammer_MoonSteel));
+			}
+
+			if (FeaturesItems.normalCrownsEnabled == 1) {
+				RecipeBuilder.Shaped(MOD_ID)
+					.setShape("HCH", "HHH")
+					.addInput('H', MoonSteelItems.INGOT_MOONSTEEL)
+					.addInput('C', Items.CLOTH)
+					.create("crownmoonsteel", new ItemStack(FeaturesItems.moonsteel_Crown, 1));
+			}
+
+			if (FeaturesItems.scytheEnabled == 1){
+				RecipeBuilder.Shaped(MOD_ID)
+					.setShape(" MH", "M S", "  S")
+					.addInput('S', Items.STICK)
+					.addInput('H', MoonSteelBlocks.BLOCK_MOONSTEEL)
+					.addInput('M', MoonSteelItems.INGOT_MOONSTEEL)
+					.create("scythecraftmoonsteel", new ItemStack(FeaturesItems.scythe_MoonSteel));
+			}
+		}
+
 		if (FeaturesMain.deepOn){
 			if (FeaturesItems.paxelsEnabled == 1) {
 				RecipeBuilder.Shaped(MOD_ID)
@@ -1006,7 +1071,7 @@ public class FeaturesCraft implements RecipeEntrypoint {
 					.addInput('P', DEEPItems.amethystPickaxe)
 					.addInput('H', DEEPItems.amethystShovel)
 					.addInput('W', DEEPItems.amethystSword)
-					.create("paxelcraft", new ItemStack(FeaturesItems.paxel_Amethyst));
+					.create("paxelcraftamethyst", new ItemStack(FeaturesItems.paxel_Amethyst));
 				RecipeBuilder.Shaped(MOD_ID)
 					.setShape("APH", " W ", " S ")
 					.addInput('S', Items.STICK)
@@ -1014,7 +1079,7 @@ public class FeaturesCraft implements RecipeEntrypoint {
 					.addInput('P', DEEPItems.silverPickaxe)
 					.addInput('H', DEEPItems.silverShovel)
 					.addInput('W', DEEPItems.silverSword)
-					.create("paxelcraft", new ItemStack(FeaturesItems.paxel_Silver));
+					.create("paxelcraftsilver", new ItemStack(FeaturesItems.paxel_Silver));
 				RecipeBuilder.Shaped(MOD_ID)
 					.setShape("APH", " W ", " S ")
 					.addInput('S', Items.STICK)
@@ -1022,7 +1087,7 @@ public class FeaturesCraft implements RecipeEntrypoint {
 					.addInput('P', DEEPItems.leadPickaxe)
 					.addInput('H', DEEPItems.leadShovel)
 					.addInput('W', DEEPItems.leadSword)
-					.create("paxelcraft", new ItemStack(FeaturesItems.paxel_Lead));
+					.create("paxelcraftlead", new ItemStack(FeaturesItems.paxel_Lead));
 			}
 
 			if (FeaturesItems.climbPickaxesEnabled == 1) {
@@ -1031,19 +1096,19 @@ public class FeaturesCraft implements RecipeEntrypoint {
 					.addInput('S', Items.STICK)
 					.addInput('M', DEEPItems.amethyst)
 					.addInput('H', DEEPBlocks.amethystBlock)
-					.create("climbpickcraft", new ItemStack(FeaturesItems.climb_pickaxe_Amethyst));
+					.create("climbpickcraftamethyst", new ItemStack(FeaturesItems.climb_pickaxe_Amethyst));
 				RecipeBuilder.Shaped(MOD_ID)
 					.setShape("MM ", "MSH", " S ")
 					.addInput('S', Items.STICK)
 					.addInput('M', DEEPItems.ingotSilver)
 					.addInput('H', DEEPBlocks.silverBlock)
-					.create("climbpickcraft", new ItemStack(FeaturesItems.climb_pickaxe_Silver));
+					.create("climbpickcraftsilver", new ItemStack(FeaturesItems.climb_pickaxe_Silver));
 				RecipeBuilder.Shaped(MOD_ID)
 					.setShape("MM ", "MSH", " S ")
 					.addInput('S', Items.STICK)
 					.addInput('M', DEEPItems.ingotLead)
 					.addInput('H', DEEPBlocks.leadBlock)
-					.create("climbpickcraft", new ItemStack(FeaturesItems.climb_pickaxe_Lead));
+					.create("climbpickcraftlead", new ItemStack(FeaturesItems.climb_pickaxe_Lead));
 			}
 
 			if (FeaturesItems.miningHammersEnabled == 1) {
@@ -1052,19 +1117,19 @@ public class FeaturesCraft implements RecipeEntrypoint {
 					.addInput('S', Items.STICK)
 					.addInput('M', DEEPItems.amethyst)
 					.addInput('H', DEEPBlocks.amethystBlock)
-					.create("hammercraft", new ItemStack(FeaturesItems.mining_hammer_Amethyst));
+					.create("hammercraftamethyst", new ItemStack(FeaturesItems.mining_hammer_Amethyst));
 				RecipeBuilder.Shaped(MOD_ID)
 					.setShape("HMH", "MSM", " S ")
 					.addInput('S', Items.STICK)
 					.addInput('M', DEEPItems.ingotSilver)
 					.addInput('H', DEEPBlocks.silverBlock)
-					.create("hammercraft", new ItemStack(FeaturesItems.mining_hammer_Silver));
+					.create("hammercraftsilver", new ItemStack(FeaturesItems.mining_hammer_Silver));
 				RecipeBuilder.Shaped(MOD_ID)
 					.setShape("HMH", "MSM", " S ")
 					.addInput('S', Items.STICK)
 					.addInput('M', DEEPItems.ingotLead)
 					.addInput('H', DEEPBlocks.leadBlock)
-					.create("hammercraft", new ItemStack(FeaturesItems.mining_hammer_Lead));
+					.create("hammercraftlead", new ItemStack(FeaturesItems.mining_hammer_Lead));
 			}
 
 			if (FeaturesItems.normalCrownsEnabled == 1){
@@ -1072,12 +1137,33 @@ public class FeaturesCraft implements RecipeEntrypoint {
 					.setShape("HCH", "HHH")
 					.addInput('H', DEEPItems.amethyst)
 					.addInput('C', Items.CLOTH)
-					.create("crown", new ItemStack(FeaturesItems.amethyst_Crown, 1));
+					.create("crownamethyst", new ItemStack(FeaturesItems.amethyst_Crown, 1));
 				RecipeBuilder.Shaped(MOD_ID)
 					.setShape("HCH", "HHH")
 					.addInput('H', DEEPItems.ingotSilver)
 					.addInput('C', Items.CLOTH)
-					.create("crown", new ItemStack(FeaturesItems.silver_Crown, 1));
+					.create("crownsilver", new ItemStack(FeaturesItems.silver_Crown, 1));
+			}
+
+			if (FeaturesItems.scytheEnabled == 1){
+				RecipeBuilder.Shaped(MOD_ID)
+					.setShape(" MH", "M S", "  S")
+					.addInput('S', Items.STICK)
+					.addInput('H', DEEPBlocks.amethystBlock)
+					.addInput('M', DEEPItems.amethyst)
+					.create("scythecraftamethyst", new ItemStack(FeaturesItems.scythe_Amethyst));
+				RecipeBuilder.Shaped(MOD_ID)
+					.setShape(" MH", "M S", "  S")
+					.addInput('S', Items.STICK)
+					.addInput('M', DEEPItems.ingotLead)
+					.addInput('H', DEEPBlocks.leadBlock)
+					.create("scythecraftlead", new ItemStack(FeaturesItems.scythe_Lead));
+				RecipeBuilder.Shaped(MOD_ID)
+					.setShape(" MH", "M S", "  S")
+					.addInput('S', Items.STICK)
+					.addInput('M', DEEPItems.ingotSilver)
+					.addInput('H', DEEPBlocks.silverBlock)
+					.create("scythecraftsilver", new ItemStack(FeaturesItems.scythe_Silver));
 			}
 		}
 	}

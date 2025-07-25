@@ -293,9 +293,9 @@ item.morefeatures.crown.quartz.desc=A renewable quartz crown.
 item.morefeatures.stick.workbench.name=Workbench On A Stick
 item.morefeatures.stick.workbench.desc=Right click to craft whenever you want!.
 
-item.morefeatures.bag.normal.name=Bomb Quiver
+item.morefeatures.bag.normal.name=Bomb Bag
 item.morefeatures.bag.normal.desc=Hold your explosive charges in style.
-item.morefeatures.bag.gold.name=Golden Bomb Quiver
+item.morefeatures.bag.gold.name=Golden Bomb Bag
 item.morefeatures.bag.gold.desc=An endless supply of explosive charges.
 
 item.morefeatures.soul.name=Mob Soul
@@ -745,3 +745,28 @@ item.morefeatures.crown.blacktulip.desc=Flower crown made with black tulip.
 
 item.morefeatures.boom.stick.name=Explosive Charge On A Stick
 item.morefeatures.boom.stick.desc=For steel loving melee fighters.
+
+tile.morefeatures.mesh.wood.name=Wood Mesh Block
+tile.morefeatures.mesh.wood.desc=Allows some items to pass through from the surrounding water.
+
+item.morefeatures.scythe.wood.name=Wooden Scythe
+item.morefeatures.scythe.wood.desc=Till and protect the land with this wooden tool.
+item.morefeatures.scythe.stone.name=Stone Scythe
+item.morefeatures.scythe.stone.desc=Till and protect the land with this stone tool.
+item.morefeatures.scythe.iron.name=Iron Scythe
+item.morefeatures.scythe.iron.desc=Till and protect the land with this iron tool.
+item.morefeatures.scythe.gold.name=Golden Scythe
+item.morefeatures.scythe.gold.desc=Till and protect the land with this golden tool.
+item.morefeatures.scythe.diamond.name=Diamond Scythe
+item.morefeatures.scythe.diamond.desc=Till and protect the land with this diamond tool.
+item.morefeatures.scythe.steel.name=Steel Scythe
+item.morefeatures.scythe.steel.desc=Till and protect the land with this steel tool.
+
+item.morefeatures.scythe.moonsteel.name=Moonsteel Scythe
+item.morefeatures.scythe.moonsteel.desc=Till and protect the land with this moonsteel tool.
+item.morefeatures.scythe.amethyst.name=Amethyst Scythe
+item.morefeatures.scythe.amethyst.desc=Till and protect the land with this amethyst tool.
+item.morefeatures.scythe.silver.name=Silver Scythe
+item.morefeatures.scythe.silver.desc=Till and protect the land with this silver tool.
+item.morefeatures.scythe.lead.name=Lead Scythe
+item.morefeatures.scythe.lead.desc=Till and protect the land with this lead tool.

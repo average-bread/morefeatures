@@ -15,6 +15,7 @@ import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.item.Items;
 import net.minecraft.core.item.material.ToolMaterial;
+import net.minecraft.core.item.tool.ItemTool;
 import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.world.World;
 import org.jetbrains.annotations.Nullable;
@@ -22,14 +23,14 @@ import org.jetbrains.annotations.Nullable;
 import java.util.HashMap;
 import java.util.Map;
 
-public class ItemToolPaxel extends Item {
+public class ItemToolPaxel extends ItemTool {
 	private int weaponDamage;
 	private ToolMaterial material;
 
 	public static Map<Block, Integer> miningLevels = new HashMap();
 
 	public ItemToolPaxel(String name, String namespaceID, int id, ToolMaterial enumtoolmaterial) {
-		super(name, namespaceID, id);
+		super(name, namespaceID, id, 2, enumtoolmaterial, BlockTags.MINEABLE_BY_PICKAXE);
 		this.maxStackSize = 1;
 		this.setMaxDamage(enumtoolmaterial.getDurability());
 		this.weaponDamage = 4 + enumtoolmaterial.getDamage() * 2;

@@ -4,17 +4,16 @@ import cursedbread.morefeatures.FeaturesMain;
 import cursedbread.morefeatures.blocks.FeaturesBlocks;
 import cursedbread.morefeatures.item.artifacts.ItemBombQuiver;
 import cursedbread.morefeatures.item.artifacts.ItemBombQuiverEndless;
+import cursedbread.morefeatures.item.other.ItemExplosiveChargeOnAStick;
 import cursedbread.morefeatures.item.other.ItemFertilizeBag;
 import cursedbread.morefeatures.item.tool.*;
 import net.minecraft.core.data.tag.Tag;
 import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemArmor;
-import net.minecraft.core.item.ItemBucket;
 import net.minecraft.core.item.ItemSeeds;
 import net.minecraft.core.item.material.ArmorMaterial;
 import net.minecraft.core.item.material.ToolMaterial;
 import net.minecraft.core.item.tag.ItemTags;
-import net.minecraft.core.item.tool.ItemToolSword;
 import turniplabs.halplibe.helper.ArmorHelper;
 import turniplabs.halplibe.helper.ItemBuilder;
 import useless.moonsteel.MoonSteelItems;
@@ -76,6 +75,7 @@ public class FeaturesItems {
 	public static ToolMaterial silver = new ToolMaterial().setDurability(512).setEfficiency(4.0F, 9.0F).setMiningLevel(2).setSilkTouch(true);
 	public static ToolMaterial lead = new ToolMaterial().setDurability(512).setEfficiency(7.0F, 10.0F).setMiningLevel(2);
 
+	public static Tag<Item> ALLOW_CLIMBING = Tag.of("allow_climbing");
 
 	public static int flowercrownsEnabled;
 	public static Item dandelion_Crown;
@@ -206,6 +206,19 @@ public class FeaturesItems {
 	public static Item mining_hammer_Amethyst;
 	public static Item mining_hammer_Silver;
 	public static Item mining_hammer_Lead;
+
+	public static int scytheEnabled;
+	public static Item scythe_Wood;
+	public static Item scythe_Stone;
+	public static Item scythe_Iron;
+	public static Item scythe_Gold;
+	public static Item scythe_Diamond;
+	public static Item scythe_Steel;
+
+	public static Item scythe_MoonSteel;
+	public static Item scythe_Amethyst;
+	public static Item scythe_Silver;
+	public static Item scythe_Lead;
 
 	public static int glassSwordEnabled;
 	public static Item glass_Sword;
@@ -407,16 +420,22 @@ public class FeaturesItems {
 
 		if (climbPickaxesEnabled == 1) {
 			climb_Pickaxe_Wood = new ItemBuilder(MOD_ID)
+				.addTags(ALLOW_CLIMBING)
 				.build(new ItemToolClimbingPickaxe("climbpickaxe.wood", "morefeatures:item/tool/climbing_pickaxe/climbing_pickaxe_wood", itemId++, ToolMaterial.wood));
 			climb_Pickaxe_Stone = new ItemBuilder(MOD_ID)
+				.addTags(ALLOW_CLIMBING)
 				.build(new ItemToolClimbingPickaxe("climbpickaxe.stone", "morefeatures:item/tool/climbing_pickaxe/climbing_pickaxe_stone", itemId++, ToolMaterial.stone));
 			climb_Pickaxe_Iron = new ItemBuilder(MOD_ID)
+				.addTags(ALLOW_CLIMBING)
 				.build(new ItemToolClimbingPickaxe("climbpickaxe.iron", "morefeatures:item/tool/climbing_pickaxe/climbing_pickaxe_iron", itemId++, ToolMaterial.iron));
 			climb_Pickaxe_Gold = new ItemBuilder(MOD_ID)
+				.addTags(ALLOW_CLIMBING)
 				.build(new ItemToolClimbingPickaxe("climbpickaxe.gold", "morefeatures:item/tool/climbing_pickaxe/climbing_pickaxe_gold", itemId++, ToolMaterial.gold));
 			climb_Pickaxe_Diamond = new ItemBuilder(MOD_ID)
+				.addTags(ALLOW_CLIMBING)
 				.build(new ItemToolClimbingPickaxe("climbpickaxe.diamond", "morefeatures:item/tool/climbing_pickaxe/climbing_pickaxe_diamond", itemId++, ToolMaterial.diamond));
 			climb_Pickaxe_Steel = new ItemBuilder(MOD_ID)
+				.addTags(ALLOW_CLIMBING)
 				.build(new ItemToolClimbingPickaxe("climbpickaxe.steel", "morefeatures:item/tool/climbing_pickaxe/climbing_pickaxe_steel", itemId++, ToolMaterial.steel));
 		}
 
@@ -460,6 +479,21 @@ public class FeaturesItems {
 				.build(new ItemExplosiveChargeOnAStick("boom.stick", "morefeatures:item/tool/explosive_charge_on_a_stick", itemId++));
 		}
 
+		if (scytheEnabled == 1){
+			scythe_Wood = new ItemBuilder(MOD_ID)
+				.build(new ItemToolScythe("scythe.wood", "morefeatures:item/tool/scythe/tool_scythe_wood", itemId++, ToolMaterial.wood));
+			scythe_Stone = new ItemBuilder(MOD_ID)
+				.build(new ItemToolScythe("scythe.stone", "morefeatures:item/tool/scythe/tool_scythe_stone", itemId++, ToolMaterial.stone));
+			scythe_Iron = new ItemBuilder(MOD_ID)
+				.build(new ItemToolScythe("scythe.iron", "morefeatures:item/tool/scythe/tool_scythe_iron", itemId++, ToolMaterial.iron));
+			scythe_Gold = new ItemBuilder(MOD_ID)
+				.build(new ItemToolScythe("scythe.gold", "morefeatures:item/tool/scythe/tool_scythe_gold", itemId++, ToolMaterial.gold));
+			scythe_Diamond = new ItemBuilder(MOD_ID)
+				.build(new ItemToolScythe("scythe.diamond", "morefeatures:item/tool/scythe/tool_scythe_diamond", itemId++, ToolMaterial.diamond));
+			scythe_Steel = new ItemBuilder(MOD_ID)
+				.build(new ItemToolScythe("scythe.steel", "morefeatures:item/tool/scythe/tool_scythe_steel", itemId++, ToolMaterial.steel));
+		}
+
 		if (FeaturesMain.moonmoonmoonOn){
 			if (normalCrownsEnabled == 1){
 				moonsteel_Crown= new ItemBuilder(MOD_ID)
@@ -471,11 +505,16 @@ public class FeaturesItems {
 			}
 			if (climbPickaxesEnabled == 1){
 				climb_pickaxe_Monnsteel = new ItemBuilder(MOD_ID)
+					.addTags(ALLOW_CLIMBING)
 					.build(new ItemToolClimbingPickaxe("climbpickaxe.moonsteel", "morefeatures:item/tool/climbing_pickaxe/moonsteel/climbing_pickaxe_moonsteel", itemId++, MoonSteelItems.moonSteelTool));
 			}
 			if (miningHammersEnabled == 1){
 				mining_hammer_MoonSteel = new ItemBuilder(MOD_ID)
 					.build(new ItemToolMiningHammer("mininghammer.moonsteel", "morefeatures:item/tool/mining_hammer/moonsteel/mining_hammer_moonsteel", itemId++, MoonSteelItems.moonSteelTool));
+			}
+			if (scytheEnabled == 1) {
+				scythe_MoonSteel = new ItemBuilder(MOD_ID)
+					.build(new ItemToolScythe("scythe.moonsteel", "morefeatures:item/tool/scythe/moonsteel/tool_scythe_moonsteel", itemId++, MoonSteelItems.moonSteelTool));
 			}
 		}
 
@@ -496,10 +535,13 @@ public class FeaturesItems {
 			}
 			if (climbPickaxesEnabled == 1){
 				climb_pickaxe_Amethyst = new ItemBuilder(MOD_ID)
+					.addTags(ALLOW_CLIMBING)
 					.build(new ItemToolClimbingPickaxe("climbpickaxe.amethyst", "morefeatures:item/tool/climbing_pickaxe/deep/climbing_pickaxe_amethyst", itemId++, amethyst));
 				climb_pickaxe_Silver = new ItemBuilder(MOD_ID)
+					.addTags(ALLOW_CLIMBING)
 					.build(new ItemToolClimbingPickaxe("climbpickaxe.silver", "morefeatures:item/tool/climbing_pickaxe/deep/climbing_pickaxe_silver", itemId++, silver));
 				climb_pickaxe_Lead = new ItemBuilder(MOD_ID)
+					.addTags(ALLOW_CLIMBING)
 					.build(new ItemToolClimbingPickaxe("climbpickaxe.lead", "morefeatures:item/tool/climbing_pickaxe/deep/climbing_pickaxe_lead", itemId++, lead));
 			}
 			if (miningHammersEnabled == 1){
@@ -509,6 +551,14 @@ public class FeaturesItems {
 					.build(new ItemToolMiningHammer("mininghammer.silver", "morefeatures:item/tool/mining_hammer/deep/mining_hammer_silver", itemId++, silver));
 				mining_hammer_Lead = new ItemBuilder(MOD_ID)
 					.build(new ItemToolMiningHammer("mininghammer.lead", "morefeatures:item/tool/mining_hammer/deep/mining_hammer_lead", itemId++, lead));
+			}
+			if (scytheEnabled == 1) {
+				scythe_Amethyst = new ItemBuilder(MOD_ID)
+					.build(new ItemToolScythe("scythe.amethyst", "morefeatures:item/tool/scythe/deep/tool_scythe_amethyst", itemId++, amethyst));
+				scythe_Lead = new ItemBuilder(MOD_ID)
+					.build(new ItemToolScythe("scythe.lead", "morefeatures:item/tool/scythe/deep/tool_scythe_lead", itemId++, lead));
+				scythe_Silver = new ItemBuilder(MOD_ID)
+					.build(new ItemToolScythe("scythe.silver", "morefeatures:item/tool/scythe/deep/tool_scythe_silver", itemId++, silver));
 			}
 		}
 	}

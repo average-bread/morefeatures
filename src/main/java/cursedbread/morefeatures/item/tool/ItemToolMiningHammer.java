@@ -5,11 +5,13 @@ import net.minecraft.core.block.Block;
 import net.minecraft.core.block.Blocks;
 import net.minecraft.core.block.tag.BlockTags;
 import net.minecraft.core.entity.Mob;
+import net.minecraft.core.entity.player.Player;
 import net.minecraft.core.enums.EnumDropCause;
 import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.item.material.ToolMaterial;
 import net.minecraft.core.item.tool.ItemToolPickaxe;
+import net.minecraft.core.player.gamemode.Gamemode;
 import net.minecraft.core.util.helper.Direction;
 import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.world.World;
@@ -37,7 +39,7 @@ public class ItemToolMiningHammer extends ItemToolPickaxe {
 		if (miningLevel != null) {
 			return this.material.getMiningLevel() >= miningLevel;
 		} else {
-			return block.hasTag(BlockTags.MINEABLE_BY_PICKAXE);
+			return block.hasTag(BlockTags.MINEABLE_BY_PICKAXE) || block.hasTag(BlockTags.MINEABLE_BY_SHOVEL);
 		}
 	}
 
@@ -48,6 +50,7 @@ public class ItemToolMiningHammer extends ItemToolPickaxe {
 	}
 
 	protected void MineBlock(int x, int y, int z, World world, Mob mob) {
+		Player player = (Player) mob;
 		Item GoldItem = FeaturesItems.mining_Hammer_Gold;
 		Item heldItem = Objects.requireNonNull(mob.getHeldItem()).getItem();
 		ItemStack itemStack = new ItemStack(mob.getHeldItem());
@@ -57,13 +60,13 @@ public class ItemToolMiningHammer extends ItemToolPickaxe {
 					if (!heldItem.equals(GoldItem)) {
 						ItemStack[] itemToDrop = Objects.requireNonNull(world.getBlock(x, y, z)).getBreakResult(world, EnumDropCause.PROPER_TOOL, x, y, z, world.getBlockMetadata(x, y, z), world.getTileEntity(x, y, z));
 						world.setBlockWithNotify(x, y, z, 0);
-						if (itemToDrop != null) {
+						if (itemToDrop != null && player.getGamemode() != Gamemode.creative) {
 							Arrays.stream(itemToDrop).filter(Objects::nonNull).forEach(expDrop -> world.dropItem(x, y, z, expDrop));
 						}
 					} else {
 						ItemStack[] itemToDrop = Objects.requireNonNull(world.getBlock(x, y, z)).getBreakResult(world, EnumDropCause.SILK_TOUCH, x, y, z, world.getBlockMetadata(x, y, z), world.getTileEntity(x, y, z));
 						world.setBlockWithNotify(x, y, z, 0);
-						if (itemToDrop != null) {
+						if (itemToDrop != null && player.getGamemode() != Gamemode.creative) {
 							Arrays.stream(itemToDrop).filter(Objects::nonNull).forEach(expDrop -> world.dropItem(x, y, z, expDrop));
 						}
 					}

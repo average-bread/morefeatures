@@ -2,8 +2,10 @@ package cursedbread.morefeatures.mixin.generationmixins.overworld;
 
 import cursedbread.morefeatures.FeaturesMain;
 import cursedbread.morefeatures.item.FeaturesItems;
+import net.minecraft.core.WeightedRandomBag;
 import net.minecraft.core.block.Blocks;
 import net.minecraft.core.item.ItemStack;
+import net.minecraft.core.item.Items;
 import net.minecraft.core.world.World;
 import net.minecraft.core.world.biome.Biome;
 import net.minecraft.core.world.biome.Biomes;
@@ -30,12 +32,17 @@ public class LabyrinthGenerationMixin {
 	int brickBlockB;
 	@Shadow
 	int slabBlock;
+	@Shadow
+	public ItemStack treasureItem;
+	@Shadow
+	public WeightedRandomBag<String> spawnerMonsters;
 
 	@Unique
 	private boolean isHot;
-
 	@Unique
 	private boolean isSwamp;
+	@Unique
+	private boolean isBrick;
 
 	@Inject(method = "place", at = @At("HEAD"))
 	public void generate(World world, Random random, int x, int y, int z, CallbackInfoReturnable<Boolean> cir) {
@@ -80,38 +87,30 @@ public class LabyrinthGenerationMixin {
 				this.brickBlockA = Blocks.BRICK_LAPIS.id();
 				this.brickBlockB = Blocks.BRICK_LAPIS.id();
 				this.slabBlock = Blocks.SLAB_BRICK_CLAY.id();
+				this.isBrick = true;
 			}
 		}
 	}
 
-
-	@Inject(method = "pickMobSpawner(Ljava/util/Random;)Ljava/lang/String;", at = @At("HEAD"), cancellable = true)
-	private void pickMobSpawner(Random random, CallbackInfoReturnable<String> cir) {
-		if (FeaturesMain.newDungeonsEnabled == 1) {
-			int i = random.nextInt(4);
-			if (i == 0) {
-				cir.setReturnValue("Skeleton");
-			} else if (i == 1) {
-				cir.setReturnValue("Zombie");
-			} else{
-				cir.setReturnValue(isSwamp && i == 2 ? "Creeper" : "ArmouredZombie");
-				cir.setReturnValue(isHot && i == 2 ? "Scorpion" : "ArmouredZombie");
-			}
+	@Inject(method = "place", at = @At(value = "INVOKE", target = "Lnet/minecraft/core/world/generate/feature/WorldFeatureLabyrinth;canReplace(Lnet/minecraft/core/world/World;III)Z"))
+	public void generateTreasure(World world, Random random, int x, int y, int z, CallbackInfoReturnable<Boolean> cir) {
+		if (this.isHot) {
+			this.spawnerMonsters.addEntry("Scorpion", 1.0);
+			this.spawnerMonsters.addEntry("ArmouredZombie", 1.0);
+			this.treasureItem = FeaturesItems.cat_Helmet.getDefaultStack();
+		}
+		if (this.isBrick) {
+			this.spawnerMonsters.addEntry("ArmouredZombie", 1.0);
+			this.treasureItem = FeaturesItems.bomb_Bag_Gold.getDefaultStack();
+		}
+		if (this.isSwamp) {
+			this.spawnerMonsters.addEntry("Creeper", 1.0);
+			this.spawnerMonsters.addEntry("ArmouredZombie", 1.0);
 		}
 	}
 
 	@Inject(method = "pickCheckLootItem", at = @At("HEAD"), cancellable = true)
 	private void pickCheckLootItem(Random random, CallbackInfoReturnable<ItemStack> cir) {
-		if (FeaturesItems.bombBagEnabled == 1) {
-			int i = random.nextInt(68);
-			if (i == 16) {
-				if (this.isHot && FeaturesItems.cathelmetEnabled == 1) {
-					cir.setReturnValue( new ItemStack(FeaturesItems.cat_Helmet));
-				} else  {
-					cir.setReturnValue( new ItemStack(FeaturesItems.bomb_Bag_Gold));
-				}
-			}
-		}
 		if (FeaturesItems.plateArmorEnabled == 1) {
 			int j = random.nextInt(32);
 			if (j == 1) {

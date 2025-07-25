@@ -1,10 +1,9 @@
-package cursedbread.morefeatures.item.tool;
+package cursedbread.morefeatures.item.other;
 
 import net.minecraft.core.entity.Mob;
 import net.minecraft.core.entity.player.Player;
 import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemStack;
-import net.minecraft.core.sound.SoundCategory;
 import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.world.World;
 

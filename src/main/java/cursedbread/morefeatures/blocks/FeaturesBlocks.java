@@ -12,6 +12,7 @@ import cursedbread.morefeatures.blocks.other.BlockLogicBurnedLog;
 import cursedbread.morefeatures.blocks.other.BlockLogicGilder;
 import cursedbread.morefeatures.blocks.other.BlockLogicHam;
 import cursedbread.morefeatures.blocks.colored.paperwall.BlockLogicColoredPaperwall;
+import cursedbread.morefeatures.blocks.other.BlockLogicMeshWood;
 import cursedbread.morefeatures.item.FeaturesItems;
 import net.minecraft.core.block.*;
 import net.minecraft.core.block.material.Material;
@@ -185,6 +186,9 @@ public class FeaturesBlocks {
 	public static Block<BlockLogicFlowerStackable> brown_Flower;
 	public static Block<BlockLogicFlowerStackable> green_Flower;
 	public static Block<BlockLogicFlowerStackable> black_Flower;
+
+	public static int woodMeshEnabled;
+	public static Block<?> wood_Mesh;
 
 	private void initializeBlockDetails() {
 		miningLevels.put(super_Coal_Stone_Ore, 0);
@@ -505,63 +509,71 @@ public class FeaturesBlocks {
 		if (newFlowersEnabled == 1){
 			white_Flower = new BlockBuilder(MOD_ID)
 				.setBlockSound(new BlockSound("step.grass", "step.grass", 1.0f, 1.0f))
-				.setTags(new Tag[]{BlockTags.BROKEN_BY_FLUIDS, BlockTags.PLANTABLE_IN_JAR, BlockTags.SHEEPS_FAVOURITE_BLOCK, BlockTags.SHEARS_DO_SILK_TOUCH})
+				.setTags(BlockTags.BROKEN_BY_FLUIDS, BlockTags.PLANTABLE_IN_JAR, BlockTags.SHEEPS_FAVOURITE_BLOCK, BlockTags.SHEARS_DO_SILK_TOUCH)
 				.build("flower.white", blockId++,
 					b -> (BlockLogicFlowerStackable) new BlockLogicFlowerStackable(b).setKilledByWeather().setBonemealable());
 
 			magenta_Flower = new BlockBuilder(MOD_ID)
 				.setBlockSound(new BlockSound("step.grass", "step.grass", 1.0f, 1.0f))
-				.setTags(new Tag[]{BlockTags.BROKEN_BY_FLUIDS, BlockTags.PLANTABLE_IN_JAR, BlockTags.SHEEPS_FAVOURITE_BLOCK, BlockTags.SHEARS_DO_SILK_TOUCH})
+				.setTags(BlockTags.BROKEN_BY_FLUIDS, BlockTags.PLANTABLE_IN_JAR, BlockTags.SHEEPS_FAVOURITE_BLOCK, BlockTags.SHEARS_DO_SILK_TOUCH)
 				.build("flower.magenta", blockId++,
 					b -> (BlockLogicFlowerStackable) new BlockLogicFlowerStackable(b).setKilledByWeather().setBonemealable());
 
 			lime_Flower = new BlockBuilder(MOD_ID)
 				.setBlockSound(new BlockSound("step.grass", "step.grass", 1.0f, 1.0f))
-				.setTags(new Tag[]{BlockTags.BROKEN_BY_FLUIDS, BlockTags.PLANTABLE_IN_JAR, BlockTags.SHEEPS_FAVOURITE_BLOCK, BlockTags.SHEARS_DO_SILK_TOUCH})
+				.setTags(BlockTags.BROKEN_BY_FLUIDS, BlockTags.PLANTABLE_IN_JAR, BlockTags.SHEEPS_FAVOURITE_BLOCK, BlockTags.SHEARS_DO_SILK_TOUCH)
 				.build("flower.lime", blockId++,
 					b -> (BlockLogicFlowerStackable) new BlockLogicFlowerStackable(b).setKilledByWeather().setBonemealable());
 
 			gray_Flower = new BlockBuilder(MOD_ID)
 				.setBlockSound(new BlockSound("step.grass", "step.grass", 1.0f, 1.0f))
-				.setTags(new Tag[]{BlockTags.BROKEN_BY_FLUIDS, BlockTags.PLANTABLE_IN_JAR, BlockTags.SHEEPS_FAVOURITE_BLOCK, BlockTags.SHEARS_DO_SILK_TOUCH})
+				.setTags(BlockTags.BROKEN_BY_FLUIDS, BlockTags.PLANTABLE_IN_JAR, BlockTags.SHEEPS_FAVOURITE_BLOCK, BlockTags.SHEARS_DO_SILK_TOUCH)
 				.build("flower.gray", blockId++,
 					b -> (BlockLogicFlowerStackable) new BlockLogicFlowerStackable(b).setKilledByWeather().setBonemealable());
 
 			silver_Flower = new BlockBuilder(MOD_ID)
 				.setBlockSound(new BlockSound("step.grass", "step.grass", 1.0f, 1.0f))
-				.setTags(new Tag[]{BlockTags.BROKEN_BY_FLUIDS, BlockTags.PLANTABLE_IN_JAR, BlockTags.SHEEPS_FAVOURITE_BLOCK, BlockTags.SHEARS_DO_SILK_TOUCH})
+				.setTags(BlockTags.BROKEN_BY_FLUIDS, BlockTags.PLANTABLE_IN_JAR, BlockTags.SHEEPS_FAVOURITE_BLOCK, BlockTags.SHEARS_DO_SILK_TOUCH)
 				.build("flower.silver", blockId++,
 					b -> (BlockLogicFlowerStackable) new BlockLogicFlowerStackable(b).setKilledByWeather().setBonemealable());
 
 			cyan_Flower = new BlockBuilder(MOD_ID)
 				.setBlockSound(new BlockSound("step.grass", "step.grass", 1.0f, 1.0f))
-				.setTags(new Tag[]{BlockTags.BROKEN_BY_FLUIDS, BlockTags.PLANTABLE_IN_JAR, BlockTags.SHEEPS_FAVOURITE_BLOCK, BlockTags.SHEARS_DO_SILK_TOUCH})
+				.setTags(BlockTags.BROKEN_BY_FLUIDS, BlockTags.PLANTABLE_IN_JAR, BlockTags.SHEEPS_FAVOURITE_BLOCK, BlockTags.SHEARS_DO_SILK_TOUCH)
 				.build("flower.cyan", blockId++,
 					b -> (BlockLogicFlowerStackable) new BlockLogicFlowerStackable(b).setKilledByWeather().setBonemealable());
 
 			blue_Flower = new BlockBuilder(MOD_ID)
 				.setBlockSound(new BlockSound("step.grass", "step.grass", 1.0f, 1.0f))
-				.setTags(new Tag[]{BlockTags.BROKEN_BY_FLUIDS, BlockTags.PLANTABLE_IN_JAR, BlockTags.SHEEPS_FAVOURITE_BLOCK, BlockTags.SHEARS_DO_SILK_TOUCH})
+				.setTags(BlockTags.BROKEN_BY_FLUIDS, BlockTags.PLANTABLE_IN_JAR, BlockTags.SHEEPS_FAVOURITE_BLOCK, BlockTags.SHEARS_DO_SILK_TOUCH)
 				.build("flower.blue", blockId++,
 					b -> (BlockLogicFlowerStackable) new BlockLogicFlowerStackable(b).setKilledByWeather().setBonemealable());
 
 			brown_Flower = new BlockBuilder(MOD_ID)
 				.setBlockSound(new BlockSound("step.grass", "step.grass", 1.0f, 1.0f))
-				.setTags(new Tag[]{BlockTags.BROKEN_BY_FLUIDS, BlockTags.PLANTABLE_IN_JAR, BlockTags.SHEEPS_FAVOURITE_BLOCK, BlockTags.SHEARS_DO_SILK_TOUCH})
+				.setTags(BlockTags.BROKEN_BY_FLUIDS, BlockTags.PLANTABLE_IN_JAR, BlockTags.SHEEPS_FAVOURITE_BLOCK, BlockTags.SHEARS_DO_SILK_TOUCH)
 				.build("flower.brown", blockId++,
 					b -> (BlockLogicFlowerStackable) new BlockLogicFlowerStackable(b).setKilledByWeather().setBonemealable());
 
 			green_Flower = new BlockBuilder(MOD_ID)
 				.setBlockSound(new BlockSound("step.grass", "step.grass", 1.0f, 1.0f))
-				.setTags(new Tag[]{BlockTags.BROKEN_BY_FLUIDS, BlockTags.PLANTABLE_IN_JAR, BlockTags.SHEEPS_FAVOURITE_BLOCK, BlockTags.SHEARS_DO_SILK_TOUCH})
+				.setTags(BlockTags.BROKEN_BY_FLUIDS, BlockTags.PLANTABLE_IN_JAR, BlockTags.SHEEPS_FAVOURITE_BLOCK, BlockTags.SHEARS_DO_SILK_TOUCH)
 				.build("flower.green", blockId++,
 					b -> (BlockLogicFlowerStackable) new BlockLogicFlowerStackable(b).setKilledByWeather().setBonemealable());
 
 			black_Flower = new BlockBuilder(MOD_ID)
 				.setBlockSound(new BlockSound("step.grass", "step.grass", 1.0f, 1.0f))
-				.setTags(new Tag[]{BlockTags.BROKEN_BY_FLUIDS, BlockTags.PLANTABLE_IN_JAR, BlockTags.SHEEPS_FAVOURITE_BLOCK, BlockTags.SHEARS_DO_SILK_TOUCH})
+				.setTags(BlockTags.BROKEN_BY_FLUIDS, BlockTags.PLANTABLE_IN_JAR, BlockTags.SHEEPS_FAVOURITE_BLOCK, BlockTags.SHEARS_DO_SILK_TOUCH)
 				.build("flower.black", blockId++,
 					b -> (BlockLogicFlowerStackable) new BlockLogicFlowerStackable(b).setKilledByWeather().setBonemealable());
+		}
+
+		if (woodMeshEnabled == 1) {
+			wood_Mesh = new BlockBuilder(MOD_ID)
+				.setBlockSound(BlockSounds.WOOD)
+				.setHardness(1.5F)
+				.setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.CAN_HANG_OFF)
+				.build("mesh.wood", blockId++, b -> new BlockLogicMeshWood(b));
 		}
 
 		if (FeaturesMain.deepOn){

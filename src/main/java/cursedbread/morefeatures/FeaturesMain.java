@@ -54,7 +54,8 @@ public class FeaturesMain implements ModInitializer, GameStartEntrypoint, Client
 			.addEntry("Super_ores", 1)
 			.addEntry("Nether_gravel", 1)
 			.addEntry("Colored_workbench", 1)
-			.addEntry("New_flowers", 1);
+			.addEntry("New_flowers", 1)
+			.addEntry("Wood_mesh", 1);
 
 		TOML.addCategory("Items")
 			.addEntry("Flower_crowns", 1)
@@ -74,7 +75,8 @@ public class FeaturesMain implements ModInitializer, GameStartEntrypoint, Client
 			.addEntry("Cat_helmet", 1)
 			.addEntry("Fertilizing_bag", 1)
 			.addEntry("Glass_sword", 1)
-			.addEntry("Explosive_charge_on_a_stick", 1);
+			.addEntry("Explosive_charge_on_a_stick", 1)
+			.addEntry("Scythe", 1);
 
 		TOML.addCategory("Generation")
 			.addEntry("New_labyrinths", 1)
@@ -102,6 +104,7 @@ public class FeaturesMain implements ModInitializer, GameStartEntrypoint, Client
 		FeaturesBlocks.netherGravelEnabled = CFG.getInt("Blocks.Nether_gravel");
 		FeaturesBlocks.coloredWorkbenchEnabled = CFG.getInt("Blocks.Colored_workbench");
 		FeaturesBlocks.newFlowersEnabled = CFG.getInt("Blocks.New_flowers");
+		FeaturesBlocks.woodMeshEnabled = CFG.getInt("Blocks.Wood_mesh");
 
 		FeaturesItems.flowercrownsEnabled = CFG.getInt("Items.Flower_crowns");
 		FeaturesItems.normalCrownsEnabled = CFG.getInt("Items.Crowns");
@@ -121,6 +124,7 @@ public class FeaturesMain implements ModInitializer, GameStartEntrypoint, Client
 		FeaturesItems.ferlilizerBagEnabled = CFG.getInt("Items.Fertilizing_bag");
 		FeaturesItems.glassSwordEnabled = CFG.getInt("Items.Glass_sword");
 		FeaturesItems.boomStickEnabled = CFG.getInt("Items.Explosive_charge_on_a_stick");
+		FeaturesItems.scytheEnabled = CFG.getInt("Items.Scythe");
 
 		newLabyrinthsEnabled = CFG.getInt("Generation.New_labyrinths");
 		newDungeonsEnabled = CFG.getInt("Generation.Nre_dungeons");

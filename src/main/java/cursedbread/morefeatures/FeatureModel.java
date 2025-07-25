@@ -10,6 +10,7 @@ import cursedbread.morefeatures.blocks.colored.paperwall.BlockModelColoredPaperw
 import cursedbread.morefeatures.item.FeaturesItems;
 import cursedbread.morefeatures.item.artifacts.ItemModelBombQuiver;
 import cursedbread.morefeatures.item.other.ItemModelFertilizerBag;
+import cursedbread.morefeatures.item.models.ItemModelBig;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.render.EntityRenderDispatcher;
@@ -22,8 +23,6 @@ import net.minecraft.client.render.texture.stitcher.TextureRegistry;
 import net.minecraft.core.util.helper.Side;
 import turniplabs.halplibe.helper.ModelHelper;
 import turniplabs.halplibe.util.ModelEntrypoint;
-
-import static cursedbread.morefeatures.FeaturesMain.MOD_ID;
 
 @Environment(EnvType.CLIENT)
 public class FeatureModel implements ModelEntrypoint {
@@ -371,6 +370,14 @@ public class FeatureModel implements ModelEntrypoint {
 				FeaturesBlocks.black_Flower,
 				() -> new BlockModelFlowerStackable<>(FeaturesBlocks.black_Flower,
 					"morefeatures:block/flower_black/")
+			);
+		}
+
+		if (FeaturesBlocks.woodMeshEnabled == 1) {
+			ModelHelper.setBlockModel(
+				FeaturesBlocks.wood_Mesh,
+				() -> new BlockModelTransparent<>(FeaturesBlocks.wood_Mesh, true)
+					.setTex(0,"morefeatures:block/mesh_wood", Side.sides)
 			);
 		}
 
@@ -1071,6 +1078,45 @@ public class FeatureModel implements ModelEntrypoint {
 				});
 		}
 
+		if (FeaturesItems.scytheEnabled == 1){
+			ModelHelper.setItemModel(FeaturesItems.scythe_Wood,
+				() -> {
+					ItemModelStandard model = new ItemModelBig(FeaturesItems.scythe_Wood, null).setFull3D();
+					model.icon = TextureRegistry.getTexture(FeaturesItems.scythe_Wood.namespaceID);
+					return model;
+				});
+			ModelHelper.setItemModel(FeaturesItems.scythe_Stone,
+				() -> {
+					ItemModelStandard model = new ItemModelBig(FeaturesItems.scythe_Stone, null).setFull3D();
+					model.icon = TextureRegistry.getTexture(FeaturesItems.scythe_Stone.namespaceID);
+					return model;
+				});ModelHelper.setItemModel(FeaturesItems.scythe_Iron,
+				() -> {
+					ItemModelStandard model = new ItemModelBig(FeaturesItems.scythe_Iron, null).setFull3D();
+					model.icon = TextureRegistry.getTexture(FeaturesItems.scythe_Iron.namespaceID);
+					return model;
+				});
+			ModelHelper.setItemModel(FeaturesItems.scythe_Gold,
+				() -> {
+					ItemModelStandard model = new ItemModelBig(FeaturesItems.scythe_Gold, null).setFull3D();
+					model.icon = TextureRegistry.getTexture(FeaturesItems.scythe_Gold.namespaceID);
+					return model;
+				});
+			ModelHelper.setItemModel(FeaturesItems.scythe_Diamond,
+				() -> {
+					ItemModelStandard model = new ItemModelBig(FeaturesItems.scythe_Diamond, null).setFull3D();
+					model.icon = TextureRegistry.getTexture(FeaturesItems.scythe_Diamond.namespaceID);
+					return model;
+				});
+			ModelHelper.setItemModel(FeaturesItems.scythe_Steel,
+				() -> {
+					ItemModelStandard model = new ItemModelBig(FeaturesItems.scythe_Steel, null).setFull3D();
+					model.icon = TextureRegistry.getTexture(FeaturesItems.scythe_Steel.namespaceID);
+					return model;
+				});
+
+		}
+
 		if (FeaturesMain.moonmoonmoonOn){
 			if (FeaturesItems.normalCrownsEnabled == 1){
 				ModelHelper.setItemModel(FeaturesItems.moonsteel_Crown,
@@ -1101,6 +1147,14 @@ public class FeatureModel implements ModelEntrypoint {
 					() -> {
 						ItemModelStandard model = new ItemModelStandard(FeaturesItems.mining_hammer_MoonSteel, null).setFull3D();
 						model.icon = TextureRegistry.getTexture(FeaturesItems.mining_hammer_MoonSteel.namespaceID);
+						return model;
+					});
+			}
+			if (FeaturesItems.scytheEnabled == 1){
+				ModelHelper.setItemModel(FeaturesItems.scythe_MoonSteel,
+					() -> {
+						ItemModelStandard model = new ItemModelBig(FeaturesItems.scythe_MoonSteel, null).setFull3D();
+						model.icon = TextureRegistry.getTexture(FeaturesItems.scythe_MoonSteel.namespaceID);
 						return model;
 					});
 			}
@@ -1178,6 +1232,26 @@ public class FeatureModel implements ModelEntrypoint {
 					() -> {
 						ItemModelStandard model = new ItemModelStandard(FeaturesItems.mining_hammer_Lead, null).setFull3D();
 						model.icon = TextureRegistry.getTexture(FeaturesItems.mining_hammer_Lead.namespaceID);
+						return model;
+					});
+			}
+			if (FeaturesItems.scytheEnabled == 1){
+				ModelHelper.setItemModel(FeaturesItems.scythe_Amethyst,
+					() -> {
+						ItemModelStandard model = new ItemModelBig(FeaturesItems.scythe_Amethyst, null).setFull3D();
+						model.icon = TextureRegistry.getTexture(FeaturesItems.scythe_Amethyst.namespaceID);
+						return model;
+					});
+				ModelHelper.setItemModel(FeaturesItems.scythe_Lead,
+					() -> {
+						ItemModelStandard model = new ItemModelBig(FeaturesItems.scythe_Lead, null).setFull3D();
+						model.icon = TextureRegistry.getTexture(FeaturesItems.scythe_Lead.namespaceID);
+						return model;
+					});
+				ModelHelper.setItemModel(FeaturesItems.scythe_Silver,
+					() -> {
+						ItemModelStandard model = new ItemModelBig(FeaturesItems.scythe_Silver, null).setFull3D();
+						model.icon = TextureRegistry.getTexture(FeaturesItems.scythe_Silver.namespaceID);
 						return model;
 					});
 			}
