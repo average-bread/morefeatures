@@ -1,6 +1,7 @@
 package cursedbread.morefeatures;
 
 import cursedbread.morefeatures.blocks.FeaturesBlocks;
+import cursedbread.morefeatures.entities.FeatureEntities;
 import cursedbread.morefeatures.item.FeaturesItems;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.ModInitializer;
@@ -55,7 +56,8 @@ public class FeaturesMain implements ModInitializer, GameStartEntrypoint, Client
 			.addEntry("Nether_gravel", 1)
 			.addEntry("Colored_workbench", 1)
 			.addEntry("New_flowers", 1)
-			.addEntry("Wood_mesh", 1);
+			.addEntry("Wood_mesh", 1)
+			.addEntry("More_tnt", 1);
 
 		TOML.addCategory("Items")
 			.addEntry("Flower_crowns", 1)
@@ -76,7 +78,8 @@ public class FeaturesMain implements ModInitializer, GameStartEntrypoint, Client
 			.addEntry("Fertilizing_bag", 1)
 			.addEntry("Glass_sword", 1)
 			.addEntry("Explosive_charge_on_a_stick", 1)
-			.addEntry("Scythe", 1);
+			.addEntry("Scythe", 1)
+			.addEntry("Coal_chunks", 1);
 
 		TOML.addCategory("Generation")
 			.addEntry("New_labyrinths", 1)
@@ -105,6 +108,7 @@ public class FeaturesMain implements ModInitializer, GameStartEntrypoint, Client
 		FeaturesBlocks.coloredWorkbenchEnabled = CFG.getInt("Blocks.Colored_workbench");
 		FeaturesBlocks.newFlowersEnabled = CFG.getInt("Blocks.New_flowers");
 		FeaturesBlocks.woodMeshEnabled = CFG.getInt("Blocks.Wood_mesh");
+		FeaturesBlocks.moreTntEnabled = CFG.getInt("Blocks.More_tnt");
 
 		FeaturesItems.flowercrownsEnabled = CFG.getInt("Items.Flower_crowns");
 		FeaturesItems.normalCrownsEnabled = CFG.getInt("Items.Crowns");
@@ -125,6 +129,7 @@ public class FeaturesMain implements ModInitializer, GameStartEntrypoint, Client
 		FeaturesItems.glassSwordEnabled = CFG.getInt("Items.Glass_sword");
 		FeaturesItems.boomStickEnabled = CFG.getInt("Items.Explosive_charge_on_a_stick");
 		FeaturesItems.scytheEnabled = CFG.getInt("Items.Scythe");
+		FeaturesItems.coalChunksEnabled = CFG.getInt("Items.Coal_chunks");
 
 		newLabyrinthsEnabled = CFG.getInt("Generation.New_labyrinths");
 		newDungeonsEnabled = CFG.getInt("Generation.Nre_dungeons");
@@ -136,6 +141,7 @@ public class FeaturesMain implements ModInitializer, GameStartEntrypoint, Client
         LOGGER.info("Adding some stuff");
 		new FeaturesBlocks().initilizeBlocks();
 		new FeaturesItems().initilizeItems();
+		new FeatureEntities().initilizeEntities();
     }
 
 	@Override

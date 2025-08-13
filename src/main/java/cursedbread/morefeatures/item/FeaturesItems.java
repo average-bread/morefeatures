@@ -226,6 +226,11 @@ public class FeaturesItems {
 	public static int boomStickEnabled;
 	public static Item boom_stick;
 
+	public static int coalChunksEnabled;
+	public static Item coal_chunk;
+	public static Item charcoal_chunk;
+	public static Item nethercoal_chunk;
+
 	public void initilizeItems() {
 		//items
 		if (flowercrownsEnabled == 1) {
@@ -492,6 +497,15 @@ public class FeaturesItems {
 				.build(new ItemToolScythe("scythe.diamond", "morefeatures:item/tool/scythe/tool_scythe_diamond", itemId++, ToolMaterial.diamond));
 			scythe_Steel = new ItemBuilder(MOD_ID)
 				.build(new ItemToolScythe("scythe.steel", "morefeatures:item/tool/scythe/tool_scythe_steel", itemId++, ToolMaterial.steel));
+		}
+
+		if (coalChunksEnabled == 1){
+			coal_chunk = new ItemBuilder(MOD_ID)
+				.build(new Item("coal.chunk", "morefeatures:item/other/coal_chunks/coal_chunk", itemId++));
+			charcoal_chunk = new ItemBuilder(MOD_ID)
+				.build(new Item("charcoal.chunk", "morefeatures:item/other/coal_chunks/charcoal_chunk", itemId++));
+			nethercoal_chunk = new ItemBuilder(MOD_ID)
+				.build(new Item("nethercoal.chunk", "morefeatures:item/other/coal_chunks/nethercoal_chunk", itemId++));
 		}
 
 		if (FeaturesMain.moonmoonmoonOn){

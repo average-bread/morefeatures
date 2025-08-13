@@ -70,12 +70,12 @@ public class BlockLogicMeshWood extends BlockLogicTransparent {
 				} else {
 					meshloot = new ItemStack(Items.FOOD_FISH_RAW);
 				}
+				EntityItem entityitem = world.dropItem(x, y, z, meshloot);
+				entityitem.yd *= 0.0f;
+				entityitem.xd *= 0.0f;
+				entityitem.zd *= 0.0f;
+				water = 0;
 			}
-			EntityItem entityitem = world.dropItem(x, y, z, meshloot);
-			entityitem.yd *= 0.0f;
-			entityitem.xd *= 0.0f;
-			entityitem.zd *= 0.0f;
-			water = 0;
 		}
 	}
 

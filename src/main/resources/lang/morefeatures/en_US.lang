@@ -770,3 +770,13 @@ item.morefeatures.scythe.silver.name=Silver Scythe
 item.morefeatures.scythe.silver.desc=Till and protect the land with this silver tool.
 item.morefeatures.scythe.lead.name=Lead Scythe
 item.morefeatures.scythe.lead.desc=Till and protect the land with this lead tool.
+
+item.morefeatures.coal.chunk.name=Coal Chunk
+item.morefeatures.coal.chunk.desc=A nibble of coal used for fuel.
+item.morefeatures.charcoal.chunk.name=Charcoal Chunk
+item.morefeatures.charcoal.chunk.desc=A nibble of charred wood used for fuel.
+item.morefeatures.nethercoal.chunk.name=Nether Coal Chunk
+item.morefeatures.nethercoal.chunk.desc=A nibble of mysterious coal-like substance that emits immense heat.
+
+tile.morefeatures.x5.tnt.name=X5 TNT
+tile.morefeatures.x5.tnt.desc=Goes off with a bang five times bigger that the normal one.

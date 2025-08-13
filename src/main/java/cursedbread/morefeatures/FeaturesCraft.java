@@ -628,7 +628,7 @@ public class FeaturesCraft implements RecipeEntrypoint {
 		if (FeaturesItems.plateArmorEnabled == 1) {
 			workbenchGroup.register("plateHelmetReapir", new RecipeEntryRepairable(new ItemStack(FeaturesItems.plate_Helmet), new RecipeSymbol (Items.INGOT_IRON.getDefaultStack())));
 			RecipeBuilder.getRecipeGroup(MOD_ID, "workbench", new RecipeSymbol(Blocks.WORKBENCH.getDefaultStack()));
-			workbenchGroup.register("plateChestplateReapir", new RecipeEntryRepairable(new ItemStack(FeaturesItems.plate_Helmet), new RecipeSymbol (Items.INGOT_IRON.getDefaultStack())));
+			workbenchGroup.register("plateChestplateReapir", new RecipeEntryRepairable(new ItemStack(FeaturesItems.plate_Chestplate), new RecipeSymbol (Items.INGOT_IRON.getDefaultStack())));
 			RecipeBuilder.getRecipeGroup(MOD_ID, "workbench", new RecipeSymbol(Blocks.WORKBENCH.getDefaultStack()));
 		}
 		//rainbow flower stuff
@@ -997,13 +997,13 @@ public class FeaturesCraft implements RecipeEntrypoint {
 				.addInput('S', Items.STICK)
 				.addInput('H', "minecraft:logs")
 				.addInput('M', "minecraft:planks")
-				.create("scythecraftwood", new ItemStack(FeaturesItems.mining_Hammer_Wood));
+				.create("scythecraftwood", new ItemStack(FeaturesItems.scythe_Wood));
 			RecipeBuilder.Shaped(MOD_ID)
 				.setShape(" MH", "M S", "  S")
 				.addInput('S', Items.STICK)
 				.addInput('H', "minecraft:stones")
 				.addInput('M', "minecraft:cobblestones")
-				.create("scythecraftstone", new ItemStack(FeaturesItems.mining_Hammer_Stone));
+				.create("scythecraftstone", new ItemStack(FeaturesItems.scythe_Stone));
 			for (int i = 0; i < 4; i++){
 				RecipeBuilder.Shaped(MOD_ID)
 					.setShape(" MH", "M S", "  S")
@@ -1012,6 +1012,48 @@ public class FeaturesCraft implements RecipeEntrypoint {
 					.addInput('M', Item.itemsList[toolMaterial[i]])
 					.create("scythecraft" + scytheNames[i], new ItemStack(scytheResult[i]));
 			}
+		}
+
+		if (FeaturesItems.coalChunksEnabled == 1){
+			RecipeBuilder.Shaped(MOD_ID)
+				.setShape("XXX", "X X", "XXX")
+				.addInput('X', FeaturesItems.coal_chunk)
+				.create("coalcraft", new ItemStack(Items.COAL));
+			RecipeBuilder.Shapeless(MOD_ID)
+				.addInput(Items.COAL)
+				.create("coalchunkcraft", new ItemStack(FeaturesItems.coal_chunk, 8));
+
+			RecipeBuilder.Shaped(MOD_ID)
+				.setShape("XXX", "X X", "XXX")
+				.addInput('X', FeaturesItems.charcoal_chunk)
+				.create("coalcraft", new ItemStack(Items.COAL, 1, 1));
+			RecipeBuilder.Shapeless(MOD_ID)
+				.addInput(Items.COAL, 1)
+				.create("coalchunkcraft", new ItemStack(FeaturesItems.charcoal_chunk, 8));
+
+			RecipeBuilder.Shaped(MOD_ID)
+				.setShape("XXX", "X X", "XXX")
+				.addInput('X', FeaturesItems.nethercoal_chunk)
+				.create("coalcraft", new ItemStack(Items.NETHERCOAL));
+			RecipeBuilder.Shapeless(MOD_ID)
+				.addInput(Items.NETHERCOAL)
+				.create("coalchunkcraft", new ItemStack(FeaturesItems.nethercoal_chunk, 8));
+
+			RecipeBuilder.Shaped(MOD_ID)
+				.setShape("XX", " S")
+				.addInput('X', FeaturesItems.coal_chunk)
+				.addInput('S', Items.STICK)
+				.create("torchfromcoalchunk", new ItemStack(Blocks.TORCH_COAL));
+			RecipeBuilder.Shaped(MOD_ID)
+				.setShape("XX", " S")
+				.addInput('X', FeaturesItems.charcoal_chunk)
+				.addInput('S', Items.STICK)
+				.create("torchfromcharcoalcoalchunk", new ItemStack(Blocks.TORCH_COAL));
+			RecipeBuilder.Shaped(MOD_ID)
+				.setShape("X", "S")
+				.addInput('X', FeaturesItems.nethercoal_chunk)
+				.addInput('S', Items.STICK)
+				.create("torchfromnethercoalchunk", new ItemStack(Blocks.TORCH_COAL));
 		}
 
 		if (FeaturesMain.moonmoonmoonOn){

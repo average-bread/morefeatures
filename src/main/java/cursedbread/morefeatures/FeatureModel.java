@@ -7,6 +7,8 @@ import cursedbread.morefeatures.blocks.colored.glass.BlockModelColoredGlass;
 import cursedbread.morefeatures.blocks.colored.glass.BlockModelColoredGlassTrapdoor;
 import cursedbread.morefeatures.blocks.colored.glowstone.BlockModelColoredGlowstone;
 import cursedbread.morefeatures.blocks.colored.paperwall.BlockModelColoredPaperwall;
+import cursedbread.morefeatures.entities.tnt.EntityRenderX5Tnt;
+import cursedbread.morefeatures.entities.tnt.EntityX5PrimedTnt;
 import cursedbread.morefeatures.item.FeaturesItems;
 import cursedbread.morefeatures.item.artifacts.ItemModelBombQuiver;
 import cursedbread.morefeatures.item.other.ItemModelFertilizerBag;
@@ -62,7 +64,7 @@ public class FeatureModel implements ModelEntrypoint {
 			ModelHelper.setBlockModel(
 				FeaturesBlocks.rainbow_Flower,
 				() -> new BlockModelFlowerStackable<>(FeaturesBlocks.rainbow_Flower,
-					"morefeatures:block/flower_rainbow/")
+					"morefeatures:block/flowers/flower_rainbow/")
 			);
 		}
 
@@ -315,61 +317,61 @@ public class FeatureModel implements ModelEntrypoint {
 			ModelHelper.setBlockModel(
 				FeaturesBlocks.white_Flower,
 				() -> new BlockModelFlowerStackable<>(FeaturesBlocks.white_Flower,
-					"morefeatures:block/flower_white/")
+					"morefeatures:block/flowers/flower_white/")
 			);
 
 			ModelHelper.setBlockModel(
 				FeaturesBlocks.magenta_Flower,
 				() -> new BlockModelFlowerStackable<>(FeaturesBlocks.magenta_Flower,
-					"morefeatures:block/flower_magenta/")
+					"morefeatures:block/flowers/flower_magenta/")
 			);
 
 			ModelHelper.setBlockModel(
 				FeaturesBlocks.lime_Flower,
 				() -> new BlockModelFlowerStackable<>(FeaturesBlocks.lime_Flower,
-					"morefeatures:block/flower_lime/")
+					"morefeatures:block/flowers/flower_lime/")
 			);
 
 			ModelHelper.setBlockModel(
 				FeaturesBlocks.gray_Flower,
 				() -> new BlockModelFlowerStackable<>(FeaturesBlocks.gray_Flower,
-					"morefeatures:block/flower_gray/")
+					"morefeatures:block/flowers/flower_gray/")
 			);
 
 			ModelHelper.setBlockModel(
 				FeaturesBlocks.silver_Flower,
 				() -> new BlockModelFlowerStackable<>(FeaturesBlocks.silver_Flower,
-					"morefeatures:block/flower_silver/")
+					"morefeatures:block/flowers/flower_silver/")
 			);
 
 			ModelHelper.setBlockModel(
 				FeaturesBlocks.cyan_Flower,
 				() -> new BlockModelFlowerStackable<>(FeaturesBlocks.cyan_Flower,
-					"morefeatures:block/flower_cyan/")
+					"morefeatures:block/flowers/flower_cyan/")
 			);
 
 			ModelHelper.setBlockModel(
 				FeaturesBlocks.blue_Flower,
 				() -> new BlockModelFlowerStackable<>(FeaturesBlocks.blue_Flower,
-					"morefeatures:block/flower_blue/")
+					"morefeatures:block/flowers/flower_blue/")
 			);
 
 			ModelHelper.setBlockModel(
 				FeaturesBlocks.brown_Flower,
 				() -> new BlockModelFlowerStackable<>(FeaturesBlocks.brown_Flower,
-					"morefeatures:block/flower_brown/")
+					"morefeatures:block/flowers/flower_brown/")
 			);
 
 			ModelHelper.setBlockModel(
 				FeaturesBlocks.green_Flower,
 				() -> new BlockModelFlowerStackable<>(FeaturesBlocks.green_Flower,
-					"morefeatures:block/flower_green/")
+					"morefeatures:block/flowers/flower_green/")
 			);
 
 			ModelHelper.setBlockModel(
 				FeaturesBlocks.black_Flower,
 				() -> new BlockModelFlowerStackable<>(FeaturesBlocks.black_Flower,
-					"morefeatures:block/flower_black/")
+					"morefeatures:block/flowers/flower_black/")
 			);
 		}
 
@@ -378,6 +380,16 @@ public class FeatureModel implements ModelEntrypoint {
 				FeaturesBlocks.wood_Mesh,
 				() -> new BlockModelTransparent<>(FeaturesBlocks.wood_Mesh, true)
 					.setTex(0,"morefeatures:block/mesh_wood", Side.sides)
+			);
+		}
+
+		if (FeaturesBlocks.moreTntEnabled == 1){
+			ModelHelper.setBlockModel(
+				FeaturesBlocks.x5_Tnt,
+				() -> new BlockModelStandard<>(FeaturesBlocks.x5_Tnt)
+					.setTex(0,"morefeatures:block/more_tnt/x5_tnt/side", Side.sides)
+					.setTex(0,"morefeatures:block/more_tnt/x5_tnt/top", Side.TOP)
+					.setTex(0,"morefeatures:block/more_tnt/x5_tnt/bottom", Side.BOTTOM)
 			);
 		}
 
@@ -1117,6 +1129,27 @@ public class FeatureModel implements ModelEntrypoint {
 
 		}
 
+		if (FeaturesItems.coalChunksEnabled == 1){
+			ModelHelper.setItemModel(FeaturesItems.coal_chunk,
+				() -> {
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.coal_chunk, null);
+					model.icon = TextureRegistry.getTexture(FeaturesItems.coal_chunk.namespaceID);
+					return model;
+				});
+			ModelHelper.setItemModel(FeaturesItems.charcoal_chunk,
+				() -> {
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.charcoal_chunk, null);
+					model.icon = TextureRegistry.getTexture(FeaturesItems.charcoal_chunk.namespaceID);
+					return model;
+				});
+			ModelHelper.setItemModel(FeaturesItems.nethercoal_chunk,
+				() -> {
+					ItemModelStandard model = new ItemModelStandard(FeaturesItems.nethercoal_chunk, null);
+					model.icon = TextureRegistry.getTexture(FeaturesItems.nethercoal_chunk.namespaceID);
+					return model;
+				});
+		}
+
 		if (FeaturesMain.moonmoonmoonOn){
 			if (FeaturesItems.normalCrownsEnabled == 1){
 				ModelHelper.setItemModel(FeaturesItems.moonsteel_Crown,
@@ -1260,7 +1293,8 @@ public class FeatureModel implements ModelEntrypoint {
 
 	@Override
 	public void initEntityModels(EntityRenderDispatcher dispatcher) {
-
+		ModelHelper.setEntityModel(EntityX5PrimedTnt.class,
+			() -> new EntityRenderX5Tnt());
 	}
 
 	@Override

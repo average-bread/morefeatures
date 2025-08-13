@@ -3,6 +3,7 @@ package cursedbread.morefeatures.mixin.itemsmixins.fuels;
 import cursedbread.morefeatures.blocks.FeaturesBlocks;
 import cursedbread.morefeatures.item.FeaturesItems;
 import net.minecraft.core.crafting.LookupFuelFurnace;
+import net.minecraft.core.item.Items;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -31,6 +32,14 @@ public abstract class FurnanceFuelMixin {
 		}
 		if (FeaturesItems.miningHammersEnabled == 1){
 			this.addFuelEntry(FeaturesItems.mining_Hammer_Wood.id, 500);
+		}
+		if (FeaturesItems.scytheEnabled == 1){
+			this.addFuelEntry(FeaturesItems.scythe_Wood.id, 500);
+		}
+		if (FeaturesItems.coalChunksEnabled == 1){
+			this.addFuelEntry(FeaturesItems.coal_chunk.id, 200);
+			this.addFuelEntry(FeaturesItems.charcoal_chunk.id, 200);
+			this.addFuelEntry(FeaturesItems.nethercoal_chunk.id, 800);
 		}
 	}
 }

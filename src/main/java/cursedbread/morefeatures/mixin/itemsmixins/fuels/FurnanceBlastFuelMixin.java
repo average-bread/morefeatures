@@ -1,8 +1,10 @@
 package cursedbread.morefeatures.mixin.itemsmixins.fuels;
 
 import cursedbread.morefeatures.item.FeaturesItems;
+import net.minecraft.core.block.Blocks;
 import net.minecraft.core.crafting.LookupFuelFurnace;
 import net.minecraft.core.crafting.LookupFuelFurnaceBlast;
+import net.minecraft.core.item.Items;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -23,6 +25,9 @@ public abstract class FurnanceBlastFuelMixin extends LookupFuelFurnace {
 			if (FeaturesItems.normalCrownsEnabled == 1){
 				this.addFuelEntry(FeaturesItems.olivine_Crown.id, 8000);
 			}
+		}
+		if (FeaturesItems.coalChunksEnabled == 1){
+			this.addFuelEntry(FeaturesItems.nethercoal_chunk.id, 200);
 		}
 	}
 }

@@ -23,13 +23,7 @@ public class BlockLogicColoredGlassTrapdoor extends BlockLogicTrapDoorPainted im
 	}
 
 	public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-		switch (dropCause) {
-			case SILK_TOUCH:
-			case PICK_BLOCK: {
-				return new ItemStack[]{new ItemStack(FeaturesBlocks.vanilla_Colored_Glass_Trapdoor, 1, (meta >> 4 & 15) << 4)};
-			}
-		}
-		return null;
+		return new ItemStack[]{new ItemStack(FeaturesBlocks.vanilla_Colored_Glass_Trapdoor, 1, (meta >> 4 & 15) << 4)};
 	}
 
 	@Override

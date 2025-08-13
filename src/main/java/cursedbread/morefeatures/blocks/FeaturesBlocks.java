@@ -13,20 +13,16 @@ import cursedbread.morefeatures.blocks.other.BlockLogicGilder;
 import cursedbread.morefeatures.blocks.other.BlockLogicHam;
 import cursedbread.morefeatures.blocks.colored.paperwall.BlockLogicColoredPaperwall;
 import cursedbread.morefeatures.blocks.other.BlockLogicMeshWood;
+import cursedbread.morefeatures.blocks.tnt.BlockLogicX5Tnt;
 import cursedbread.morefeatures.item.FeaturesItems;
 import net.minecraft.core.block.*;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.block.material.MaterialColor;
 import net.minecraft.core.block.tag.BlockTags;
-import net.minecraft.core.data.tag.Tag;
-import net.minecraft.core.item.IItemConvertible;
-import net.minecraft.core.item.ItemStack;
-import net.minecraft.core.item.block.ItemBlockLadder;
 import net.minecraft.core.item.block.ItemBlockPainted;
 import net.minecraft.core.sound.BlockSound;
 import net.minecraft.core.sound.BlockSounds;
 import turniplabs.halplibe.helper.BlockBuilder;
-import turniplabs.halplibe.helper.CreativeHelper;
 
 import static cursedbread.morefeatures.FeaturesMain.MOD_ID;
 import static net.minecraft.core.item.tool.ItemToolPickaxe.miningLevels;
@@ -189,6 +185,9 @@ public class FeaturesBlocks {
 
 	public static int woodMeshEnabled;
 	public static Block<?> wood_Mesh;
+
+	public static int moreTntEnabled;
+	public static Block<?> x5_Tnt;
 
 	private void initializeBlockDetails() {
 		miningLevels.put(super_Coal_Stone_Ore, 0);
@@ -574,6 +573,13 @@ public class FeaturesBlocks {
 				.setHardness(1.5F)
 				.setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.CAN_HANG_OFF)
 				.build("mesh.wood", blockId++, b -> new BlockLogicMeshWood(b));
+		}
+
+		if (moreTntEnabled == 1){
+			x5_Tnt = new BlockBuilder(MOD_ID)
+				.setBlockSound(BlockSounds.GRASS)
+				.setHardness(0.0F)
+				.build("x5.tnt", blockId++, b -> new BlockLogicX5Tnt(b));
 		}
 
 		if (FeaturesMain.deepOn){
