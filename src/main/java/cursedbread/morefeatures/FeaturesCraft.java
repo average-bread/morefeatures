@@ -1056,6 +1056,14 @@ public class FeaturesCraft implements RecipeEntrypoint {
 				.create("torchfromnethercoalchunk", new ItemStack(Blocks.TORCH_COAL));
 		}
 
+		if (FeaturesBlocks.moreTntEnabled == 1){
+			RecipeBuilder.Shaped(MOD_ID)
+				.setShape("TST", "STS", "TST")
+				.addInput('S', Blocks.SAND)
+				.addInput('T', Blocks.TNT)
+				.create("x5tntn", new ItemStack(FeaturesBlocks.x5_Tnt));
+		}
+
 		if (FeaturesMain.moonmoonmoonOn){
 			if (FeaturesItems.paxelsEnabled == 1) {
 				RecipeBuilder.Shaped(MOD_ID)
